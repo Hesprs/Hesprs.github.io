@@ -1,34 +1,100 @@
 h1 {
 	font-family: Noto Sans;
-	font-weight: 800
+	font-weight: 900;
+	color: rgb(108, 46, 255);
+	text-align: center;
 }
 
 h2 {
 	font-family: Noto Sans;
-	font-weight: 700
+	font-weight: 800;
+	color: rgb(108, 46, 255);
+	text-align: center;
 }
 
 h3 {
 	font-family: Noto Sans;
-	font-weight: 600
+	font-weight: 700;
+	color: rgb(108, 46, 255);
+	text-align: center;
 }
 
 h4 {
 	font-family: Noto Sans;
-	font-weight: 500
+	font-weight: 600;
+	color: rgb(108, 46, 255);
+	text-align: center;
 }
 
 h5 {
 	font-family: Noto Sans;
-	font-weight: 400
+	font-weight: 500;
+	color: rgb(108, 46, 255);
+	text-align: center;
 }
 
 h6 {
 	font-family: Noto Sans;
-	font-weight: 300
+	font-weight: 400;
+	color: rgb(108, 46, 255);
+	text-align: center;
 }
 
 p {
 	font-family: Noto Sans;
-	font-weight: 200
+	font-weight: 300;
+	color: rgb(60, 60, 60);
+}
+
+img {
+	border-radius: 50px;
+	object-fit: contain;
+	width: 90%
+}
+
+.sidenav {
+	height: 100%;
+	width: auto;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	padding: 10px 16px 10px 16px;
+	background-color: #111;
+	overflow-x: hidden;
+}
+  
+.sidenav a {
+    padding: 0px 0px 4px 0px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #c3c3c3;
+    display: block;
+	font-family: Noto Sans;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+main {
+	margin-left: 100px;
+	padding: 0px 5%;
+}
+
+@media (max-width: 768px) {
+	.sidenav {
+		height: auto;
+		width: 100%;
+	}
+
+	.sidenav a {
+		padding: 0px 16px 0px 0px;
+		display: inline;
+	}
+
+	main {
+		margin-left: 0px;
+		margin-top: 70px;
+	}
 }
