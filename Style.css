@@ -1,2 +1,9 @@
-@font-face {
+h1 {
+	font-family: Noto Sans;
+  font-weight: 500
+}
+
+p {
+  font-family: Noto Sans;
+  font-weight: 100
 }
