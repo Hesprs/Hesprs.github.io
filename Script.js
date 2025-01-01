@@ -7,12 +7,12 @@ function resize() {
         main.style.margin = "20px 20px 20px " + (sidenav.offsetWidth + 40) + "px";
         rectangle.style.width = (main.offsetWidth - 3) + "px";
         rectangle.style.height = "calc(100% - 43px)";
-        upper_cover.style.height = 20 + "px";
+        upper_cover.style.height = 19.5 + "px";
     } else {
         main.style.margin = (sidenav.offsetHeight + 40) + "px 20px 20px 20px";
         rectangle.style.height = "calc(100% - 63px - " + sidenav.offsetHeight + "px)";
         rectangle.style.width = "calc(100% - 43px)";
-        upper_cover.style.height = (sidenav.offsetHeight + 39.75) + "px";
+        upper_cover.style.height = (sidenav.offsetHeight + 39.5) + "px";
     }
 }
 
