@@ -1,3 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 20px);
+	background-color: rgb(240, 244, 248);
+}
+
+.demobox {
+	flex: 1 1 auto;
+	border: 2px solid rgb(228, 232, 233);
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+	display: flex;
+}
+
+.rectangle {
+	border: 2px solid rgb(228, 232, 233);
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgb(247, 249, 250);
+	border-radius: 10px;
+	height: calc(100% - 43px);
+	width: calc(100% - 43px);
+	margin: 20px 20px 20px 10px;
+	z-index: -1;
+}
+
+.cover {
+	position: fixed;
+	background-color: rgb(240, 244, 248);
+	height: 20px;
+	width: 100%;
+}
+
 h1 {
 	font-family: Noto Sans;
 	font-weight: 900;
@@ -47,54 +84,80 @@ p {
 }
 
 img {
-	border-radius: 50px;
+	display: block;
+	border-radius: 10px;
 	object-fit: contain;
-	width: 90%
+	width: 100%;
+}
+
+.center_text {
+	display: block;
+	margin: auto auto auto 20px;
+	text-align: center;
+	padding-left: 0px;
+	font-family: Noto Sans;
+	font-weight: 300;
+	color: rgb(60, 60, 60);
 }
 
 .sidenav {
-	height: 100%;
-	width: auto;
 	position: fixed;
-	z-index: 1;
+	height: calc(100% - 40px);
+	width: auto;
 	top: 0;
 	left: 0;
-	padding: 10px 16px 10px 16px;
-	background-color: #111;
+	margin: 20px 10px 20px 20px;
 	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	z-index: 1;
 }
   
 .sidenav a {
-    padding: 0px 0px 4px 0px;
+    padding: 8px 8px 8px 8px;
+	display: flex;
+	flex-direction: row;
     text-decoration: none;
-    font-size: 25px;
-    color: #c3c3c3;
-    display: block;
+    font-size: 15px;
+    color: rgb(60, 60, 60);
 	font-family: Noto Sans;
+	font-weight: 300;
+	border-radius:10px; 
+	font-style: normal;
 }
-  
-.sidenav a:hover {
-    color: #f1f1f1;
+
+a {
+    text-decoration: none;
+    color: rgb(102, 47, 255);
+	font-family: Noto Sans;
+	font-weight: 800;
+	font-style: italic;
+	border-radius:10px; 
+}
+
+a:hover {
+    color: rgb(109, 173, 208);
 }
 
 main {
-	margin-left: 100px;
-	padding: 0px 5%;
+	margin: 20px 20px 20px 0px;
+	padding: 1px 20px 1px 20px;
+}
+  
+.sidenav a:hover {
+    color: rgb(109, 173, 208);
+	background-color: rgb(215, 231, 244);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	.sidenav {
 		height: auto;
 		width: 100%;
+		flex-direction: row;
+		gap: 10px;
 	}
-
-	.sidenav a {
-		padding: 0px 16px 0px 0px;
-		display: inline;
-	}
-
-	main {
-		margin-left: 0px;
-		margin-top: 70px;
+	.center_text {
+		margin-left: 5px;
 	}
 }
