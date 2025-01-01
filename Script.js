@@ -12,7 +12,7 @@ function resize() {
         main.style.margin = (sidenav.offsetHeight + 40) + "px 20px 20px 20px";
         rectangle.style.height = "calc(100% - 63px - " + sidenav.offsetHeight + "px)";
         rectangle.style.width = "calc(100% - 43px)";
-        upper_cover.style.height = (sidenav.offsetHeight + 40) + "px";
+        upper_cover.style.height = (sidenav.offsetHeight + 39.75) + "px";
     }
 }
 
