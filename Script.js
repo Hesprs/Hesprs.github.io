@@ -10,9 +10,9 @@ function resize() {
         upper_cover.style.height = 15 + "px";
     } else {
         main.style.margin = (sidenav.offsetHeight + 30) + "px 15px 15px 15px";
-        rectangle.style.height = "calc(100% - 53px - " + sidenav.offsetHeight + "px)";
+        rectangle.style.height = "calc(100% - 48px - " + sidenav.offsetHeight + "px)";
         rectangle.style.width = "calc(100% - 33px)";
-        upper_cover.style.height = (sidenav.offsetHeight + 40) + "px";
+        upper_cover.style.height = (sidenav.offsetHeight + 30) + "px";
     }
 }
 
