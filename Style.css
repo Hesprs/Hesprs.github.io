@@ -1,13 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    height: calc(100% - 20px);
-	background-color: rgb(240, 244, 248);
+    height: calc(100% - 15px);
+    background-color: rgb(240, 244, 248);
 }
 
 .demobox {
 	flex: 1 1 auto;
-	border: 2px solid rgb(228, 232, 233);
+	border: 1.5px solid rgb(228, 232, 233);
 	background-color: rgb(255, 255, 255);
 	border-radius: 10px;
 	padding: 10px;
@@ -16,22 +16,22 @@ body {
 }
 
 .rectangle {
-	border: 2px solid rgb(228, 232, 233);
+	border: 1.5px solid rgb(228, 232, 233);
 	position: fixed;
 	right: 0px;
 	bottom: 0px;
 	background-color: rgb(247, 249, 250);
 	border-radius: 10px;
-	height: calc(100% - 43px);
-	width: calc(100% - 43px);
-	margin: 20px 20px 20px 10px;
+	height: calc(100% - 33px);
+	width: calc(100% - 33px);
+	margin: 15px 15px 15px 7.5px;
 	z-index: -1;
 }
 
 .cover {
 	position: fixed;
 	background-color: rgb(240, 244, 248);
-	height: 20px;
+	height: 15px;
 	width: 100%;
 }
 
@@ -102,15 +102,15 @@ img {
 
 .sidenav {
 	position: fixed;
-	height: calc(100% - 40px);
+	height: calc(100% - 30px);
 	width: auto;
 	top: 0;
 	left: 0;
-	margin: 20px 10px 20px 20px;
+	margin: 15px 7.5px 15px 15px;
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 15px;
 	z-index: 1;
 }
   
@@ -147,7 +147,7 @@ main {
   
 .sidenav a:hover {
     color: rgb(109, 173, 208);
-	background-color: rgb(215, 231, 244);
+    background-color: rgb(215, 231, 244);
 }
 
 @media (max-width: 767px) {
