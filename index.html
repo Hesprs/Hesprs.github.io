@@ -8,19 +8,38 @@
     <link href="https://fonts.loli.net/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link type="image/png" sizes="32x32" rel="icon" href="https://pic1.imgdb.cn/item/67737c0ed0e0a243d4ecfc38.png">
 	<script src="Script.js"></script>
+	<script>
+		function shift() {
+			var a = document.getElementById("1");
+			var b = document.getElementById("2");
+			var c = document.getElementById("3");
+			if (window.innerWidth >= 767) {
+				a.style = "border-radius: 10px 10px 0px 0px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+				b.style = "border-radius: 0px; border-width: 0px 1.5px 0px 1.5px";
+				c.style = "border-radius: 0px 0px 10px 10px;";
+			} else {
+				a.style = "border-radius: 10px 0px 0px 10px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+				b.style = "border-radius: 0px; border-width: 1.5px 0px 1.5px 0px";
+				c.style = "border-radius: 0px 10px 10px 0px;";
+			}
+		}
+		window.addEventListener('DOMContentLoaded', shift);
+		window.addEventListener('load', shift);
+		window.addEventListener('resize', shift);
+	</script>
 </head>
 <body>
 	<div class="sidenav" id="sidenav">
-		<a href="index.html" style="border-radius:10px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208)">
-			<img src="https://img.icons8.com/fluency/100/orca.png" alt="home" style="width: 30px; border-radius: 0px;">
+		<a href="index.html" id="1">
+			<img src="https://img.icons8.com/fluency/100/orca.png" alt="Home" style="width: 30px; border-radius: 0px;">
 			<dir class="center_text">Home</dir>
 		</a>
-		<a href="#">
-			<img src="https://pic1.imgdb.cn/item/67747804d0e0a243d4ed4499.png" alt="home" style="width: 30px; border-radius: 0px;">
+		<a href="#" id="2">
+			<img src="https://pic1.imgdb.cn/item/67747804d0e0a243d4ed4499.png" alt="Categories" style="width: 30px; border-radius: 0px;">
 			<dir class="center_text">Categories</dir>
 		</a>
-		<a href="About.html">
-			<img src="https://pic1.imgdb.cn/item/67747882d0e0a243d4ed449a.png" alt="home" style="width: 30px; border-radius: 0px;">
+		<a href="About.html" id="3">
+			<img src="https://pic1.imgdb.cn/item/67747882d0e0a243d4ed449a.png" alt="About" style="width: 30px; border-radius: 0px;">
 			<dir class="center_text">About</dir>
 		</a>
 	</div>
