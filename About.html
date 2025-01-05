@@ -4,23 +4,34 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hēsperus' Blog</title>
-	<link rel="stylesheet" href="Style.css">
+	<link rel="stylesheet" href="css/Style.css">
+	<link rel="stylesheet" href="css/Toggler.css">
     <link href="https://fonts.loli.net/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link type="image/png" sizes="32x32" rel="icon" href="https://pic1.imgdb.cn/item/67737c0ed0e0a243d4ecfc38.png">
 	<script src="Script.js"></script>
 	<script>
 		function shift() {
-			var a = document.getElementById("1");
-			var b = document.getElementById("2");
-			var c = document.getElementById("3");
+			const a = document.getElementById("1");
+			const b = document.getElementById("2");
+			const c = document.getElementById("3");
+			const dn = document.getElementById("dn");
+			dn.addEventListener('change', shift);
 			if (window.innerWidth >= 767) {
 				a.style = "border-radius: 10px 10px 0px 0px;";
-				b.style = "border-radius: 0px; border-width: 0px 1.5px 0px 1.5px";
-				c.style = "border-radius: 0px 0px 10px 10px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+				b.style = "border-radius: 0px; border-width: 0px 2px 0px 2px";
+				if (dn.checked) {
+					c.style = "border-radius: 0px 0px 10px 10px; background-color: rgb(75, 75, 75); color: rgb(215, 231, 244);";
+				} else {
+					c.style = "border-radius: 0px 0px 10px 10px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+				}
 			} else {
 				a.style = "border-radius: 10px 0px 0px 10px;";
-				b.style = "border-radius: 0px; border-width: 1.5px 0px 1.5px 0px";
-				c.style = "border-radius: 0px 10px 10px 0px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+				b.style = "border-radius: 0px; border-width: 2px 0px 2px 0px";
+				if (dn.checked) {
+					c.style = "border-radius: 0px 10px 10px 0px; background-color: rgb(75, 75, 75); color: rgb(215, 231, 244);";
+				} else {
+					c.style = "border-radius: 0px 10px 10px 0px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+				}
 			}
 		}
 		window.addEventListener('DOMContentLoaded', shift);
@@ -42,9 +53,27 @@
 			<img src="https://pic1.imgdb.cn/item/67747882d0e0a243d4ed449a.png" alt="About" style="width: 30px; border-radius: 0px;">
 			<dir class="center_text">About</dir>
 		</a>
+		<div class="entry" style="right: 0px; bottom: 0px;">
+			<div class="toggleWrapper">
+				<input type="checkbox" class="dn" id="dn">
+				<label for="dn" class="toggle">
+				  	<span class="toggle__handler">
+						<span class="crater crater--1"></span>
+						<span class="crater crater--2"></span>
+						<span class="crater crater--3"></span>
+				 	</span>
+				  	<span class="star star--1"></span>
+				  	<span class="star star--2"></span>
+				  	<span class="star star--3"></span>
+				  	<span class="star star--4"></span>
+				  	<span class="star star--5"></span>
+				  	<span class="star star--6"></span>
+				</label>
+			</div>
+		</div>
 	</div>
-	<div class="cover" style="top: 0px;" id="upper_cover"></div>
-	<div class="cover" style="bottom: 0px;"></div>
+	<div class="cover_up" id="upper_cover"></div>
+	<div class="cover_down" id="downer_cover"></div>
 	<div class="rectangle" id="rectangle"></div>
 	<main id="main">
 		<h1>About Hēsperus</h1>
@@ -98,7 +127,7 @@
 				<div class="center_text" style="margin-left: 10px;">𝕏<br><a href="https://x.com/Hesprs">hesprs</a></div>
 			</div>
 		</div>
-		<hr>
+		<br><hr>
 		<h1>All you want to know</h1>
 		<p>This "strange" website is set up by Hēsperus himself. However, he hasn't got enough ability or time to develop it. As a result, this website is now as primitive as a rock painting from a hominid. After all, as loog as it can work properly, we can't desire too much, huh?</p>
 		<p><div style="text-align: right;">Copyright © Hēsperus 2025<br>Icons by <a href="https://icons8.com">icons8</a></div></p>
