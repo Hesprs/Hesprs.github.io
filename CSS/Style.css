@@ -1,7 +1,5 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: calc(100% - 15px);
+	margin: 0px;
     background-color: rgb(240, 244, 248);
 	font-family: Noto Sans;
 	color: rgb(60, 60, 60);
@@ -16,6 +14,7 @@ body.dark {
 
 main {
 	padding: 1px 17px 1px 17px;
+	z-index: 1;
 }
 
 h1 {
@@ -198,8 +197,8 @@ img {
 
 .rectangle {
 	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	border: 2px solid rgb(228, 232, 233);
 	position: fixed;
 	right: 15px;
@@ -237,6 +236,18 @@ img {
 } body.dark .cover_down {
 	background-color: rgb(38, 38, 38);
 	border-top: 2px solid rgb(90, 90, 90);
+}
+
+.background {
+	background-color: rgb(240, 244, 248);
+	z-index: -2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	transition: 300ms;
+} body.dark .background {
+	background-color: rgb(38, 38, 38);
 }
 
 @media (max-width: 767px) {
