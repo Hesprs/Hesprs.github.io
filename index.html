@@ -18,7 +18,7 @@
 			dn.addEventListener('change', shift);
 			if (window.innerWidth >= 767) {
 				c.style = "border-radius: 0px 0px 10px 10px;";
-				b.style = "border-radius: 0px; border-width: 0px 2px 0px 2px";
+				b.style = "border-radius: 0px; border-width: 0px 1px 0px 2px";
 				if (dn.checked) {
 					a.style = "border-radius: 10px 10px 0px 0px; background-color: rgb(75, 75, 75); color: rgb(215, 231, 244);";
 				} else {
@@ -26,7 +26,7 @@
 				}
 			} else {
 				c.style = "border-radius: 0px 10px 10px 0px;";
-				b.style = "border-radius: 0px; border-width: 2px 0px 2px 0px";
+				b.style = "border-radius: 0px; border-width: 1px 0px 1px 0px";
 				if (dn.checked) {
 					a.style = "border-radius: 10px 0px 0px 10px; background-color: rgb(75, 75, 75); color: rgb(215, 231, 244);";
 				} else {
@@ -40,54 +40,56 @@
 	</script>
 </head>
 <body>
-	<div class="background"></div>
-	<div class="sidenav" id="sidenav">
-		<a href="index.html" id="1">
-			<img src="https://img.icons8.com/fluency/100/orca.png" alt="Home" style="width: 30px; border-radius: 0px;">
-			<dir class="center_text">Home</dir>
-		</a>
-		<a href="#" id="2">
-			<img src="https://pic1.imgdb.cn/item/67747804d0e0a243d4ed4499.png" alt="Categories" style="width: 30px; border-radius: 0px;">
-			<dir class="center_text">Categories</dir>
-		</a>
-		<a href="About.html" id="3">
-			<img src="https://pic1.imgdb.cn/item/67747882d0e0a243d4ed449a.png" alt="About" style="width: 30px; border-radius: 0px;">
-			<dir class="center_text">About</dir>
-		</a>
-		<div class="entry" style="right: 0px; bottom: 0px;">
-			<div class="toggleWrapper">
-				<input type="checkbox" class="dn" id="dn">
-				<label for="dn" class="toggle">
-				  	<span class="toggle__handler">
-						<span class="crater crater--1"></span>
-						<span class="crater crater--2"></span>
-						<span class="crater crater--3"></span>
-				 	</span>
-				  	<span class="star star--1"></span>
-				  	<span class="star star--2"></span>
-				  	<span class="star star--3"></span>
-				  	<span class="star star--4"></span>
-				  	<span class="star star--5"></span>
-				  	<span class="star star--6"></span>
-				</label>
+	<div class="background">
+		<div class="sidenav" id="sidenav">
+			<a href="index.html" id="1">
+				<img src="https://img.icons8.com/fluency/100/orca.png" alt="Home" style="width: 30px; border-radius: 0px;">
+				<dir class="center_text_non_color">Home</dir>
+			</a>
+			<a href="#" id="2">
+				<img src="https://pic1.imgdb.cn/item/67747804d0e0a243d4ed4499.png" alt="Categories" style="width: 30px; border-radius: 0px;">
+				<dir class="center_text_non_color">Categories</dir>
+			</a>
+			<a href="About.html" id="3">
+				<img src="https://pic1.imgdb.cn/item/67747882d0e0a243d4ed449a.png" alt="About" style="width: 30px; border-radius: 0px;">
+				<dir class="center_text_non_color">About</dir>
+			</a>
+			<div class="entry" style="margin-top: auto; margin-left: auto;">
+				<div class="label_light">Light</div>
+				<div class="toggleWrapper">
+					<input type="checkbox" class="dn" id="dn">
+					<label for="dn" class="toggle">
+					  	<span class="toggle__handler">
+							<span class="crater crater--1"></span>
+							<span class="crater crater--2"></span>
+							<span class="crater crater--3"></span>
+					 	</span>
+					  	<span class="star star--1"></span>
+					  	<span class="star star--2"></span>
+					  	<span class="star star--3"></span>
+					  	<span class="star star--4"></span>
+					  	<span class="star star--5"></span>
+					  	<span class="star star--6"></span>
+					</label>
+				</div>
+				<div class="label_dark">Dark</div>
 			</div>
 		</div>
+		<div class="rectangle" id="rectangle">
+			<main id="main">
+				<h1>Something about "Aphroselene Moonstone"</h1>
+				<img src="https://pic1.imgdb.cn/item/6773b710d0e0a243d4ed179f.jpg" alt="Moonstone">
+				<p>Moonstone is a captivating gemstone known for its unique optical phenomenon called adularescence, which gives it a shimmering, ethereal glow reminiscent of moonlight. This gemstone is primarily composed of sodium potassium aluminum silicate and belongs to the feldspar mineral group. The name "moonstone" derives from its visual effect, where light appears to diffuse through the stone, creating a milky, bluish sheen that can change depending on the angle of light and the thickness of the layers within the stone.</p>
+				<p>Since Moonstone looks a lot like the moonshine, ancient Romans believed that it was formed from moonlight. If you look at the gem closely, you'll see a dance of light that lurks on the insides of the gem. Ancient Greeks merged the names of the goddess of love (Aphrodite) and the goddess of the moon (Selene) and christened Moonstone as “Aphroselene”.</p>
+				<h3>Historical Significance</h3>
+				<p>Moonstone has a rich history that spans various cultures and civilizations. The ancient Romans believed that moonstone was formed from frozen moonlight, associating it with their lunar deities and considering it a symbol of love and fertility. In Hindu mythology, moonstone is revered as a sacred stone, often linked to the goddess Ganesha and believed to possess mystical properties that enhance intuition and emotional balance. </p>
+				<p>Throughout history, moonstone has been used in jewelry and spiritual practices, valued not only for its beauty but also for its purported healing properties. It is often regarded as a stone of new beginnings, promoting emotional stability and calming energies.</p>
+				<h3>Physical Properties</h3>
+				<p>Moonstone typically exhibits a range of colors, including white, grey, blue, and even shades of orange and green. The most prized varieties display a strong blue sheen, particularly those sourced from Sri Lanka and Myanmar. The gemstone is relatively soft, rated between 6 and 6.5 on the Mohs scale of hardness, which means it requires careful handling to avoid scratches and damage.</p>
+				<h3>Cultural and Spiritual Associations</h3>
+				<p>In modern times, moonstone continues to be celebrated for its connection to the divine feminine and its ability to enhance intuition and emotional healing. It is often used in meditation practices and is believed to provide protection, especially for travelers. The gemstone's association with the moon also ties it to themes of cyclical change and renewal, making it a popular choice for those seeking spiritual growth and clarity.</p>
+			</main>
+		</div>
 	</div>
-	<div class="cover_up" id="upper_cover"></div>
-	<div class="cover_down" id="downer_cover"></div>
-	<div class="rectangle" id="rectangle"></div>
-	<main id="main">
-		<h1>Something about "Aphroselene Moonstone"</h1>
-		<img src="https://pic1.imgdb.cn/item/6773b710d0e0a243d4ed179f.jpg" alt="Moonstone">
-		<p>Moonstone is a captivating gemstone known for its unique optical phenomenon called adularescence, which gives it a shimmering, ethereal glow reminiscent of moonlight. This gemstone is primarily composed of sodium potassium aluminum silicate and belongs to the feldspar mineral group. The name "moonstone" derives from its visual effect, where light appears to diffuse through the stone, creating a milky, bluish sheen that can change depending on the angle of light and the thickness of the layers within the stone.</p>
-		<p>Since Moonstone looks a lot like the moonshine, ancient Romans believed that it was formed from moonlight. If you look at the gem closely, you'll see a dance of light that lurks on the insides of the gem. Ancient Greeks merged the names of the goddess of love (Aphrodite) and the goddess of the moon (Selene) and christened Moonstone as “Aphroselene”.</p>
-		<h3>Historical Significance</h3>
-		<p>Moonstone has a rich history that spans various cultures and civilizations. The ancient Romans believed that moonstone was formed from frozen moonlight, associating it with their lunar deities and considering it a symbol of love and fertility. In Hindu mythology, moonstone is revered as a sacred stone, often linked to the goddess Ganesha and believed to possess mystical properties that enhance intuition and emotional balance. </p>
-		<p>Throughout history, moonstone has been used in jewelry and spiritual practices, valued not only for its beauty but also for its purported healing properties. It is often regarded as a stone of new beginnings, promoting emotional stability and calming energies.</p>
-		<h3>Physical Properties</h3>
-		<p>Moonstone typically exhibits a range of colors, including white, grey, blue, and even shades of orange and green. The most prized varieties display a strong blue sheen, particularly those sourced from Sri Lanka and Myanmar. The gemstone is relatively soft, rated between 6 and 6.5 on the Mohs scale of hardness, which means it requires careful handling to avoid scratches and damage.</p>
-		<h3>Cultural and Spiritual Associations</h3>
-		<p>In modern times, moonstone continues to be celebrated for its connection to the divine feminine and its ability to enhance intuition and emotional healing. It is often used in meditation practices and is believed to provide protection, especially for travelers. The gemstone's association with the moon also ties it to themes of cyclical change and renewal, making it a popular choice for those seeking spiritual growth and clarity.</p>
-	</main>
 </body>
 </html>
