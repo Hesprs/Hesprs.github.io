@@ -6,7 +6,7 @@
 	<title>Hēsperus' Blog</title>
 	<link rel="stylesheet" href="CSS/Style.css">
 	<link rel="stylesheet" href="CSS/Toggler.css">
-    <link href="https://fonts.loli.net/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link type="image/png" sizes="32x32" rel="icon" href="https://pic1.imgdb.cn/item/67737c0ed0e0a243d4ecfc38.png">
 	<script src="Script.js"></script>
 	<script>
@@ -18,19 +18,19 @@
 			dn.addEventListener('change', shift);
 			if (window.innerWidth >= 767) {
 				a.style = "border-radius: 10px 10px 0px 0px;";
-				b.style = "border-radius: 0px; border-width: 0px 1px 0px 2px";
+				b.style = "border-radius: 0px; border-width: 0px 1px 0px 1px";
 				if (dn.checked) {
-					c.style = "border-radius: 0px 0px 10px 10px; background-color: rgb(75, 75, 75); color: rgb(215, 231, 244);";
+					c.style = "border-radius: 0px 0px 10px 10px; background-color: rgb(75, 75, 75); color: rgb(190, 222, 248);";
 				} else {
-					c.style = "border-radius: 0px 0px 10px 10px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+					c.style = "border-radius: 0px 0px 10px 10px; background-color: rgb(190, 222, 248); color: rgb(109, 173, 208);";
 				}
 			} else {
 				a.style = "border-radius: 10px 0px 0px 10px;";
 				b.style = "border-radius: 0px; border-width: 1px 0px 1px 0px";
 				if (dn.checked) {
-					c.style = "border-radius: 0px 10px 10px 0px; background-color: rgb(75, 75, 75); color: rgb(215, 231, 244);";
+					c.style = "border-radius: 0px 10px 10px 0px; background-color: rgb(75, 75, 75); color: rgb(190, 222, 248);";
 				} else {
-					c.style = "border-radius: 0px 10px 10px 0px; background-color: rgb(215, 231, 244); color: rgb(109, 173, 208);";
+					c.style = "border-radius: 0px 10px 10px 0px; background-color: rgb(190, 222, 248); color: rgb(109, 173, 208);";
 				}
 			}
 		}
@@ -43,15 +43,15 @@
 	<div class="background">
 		<div class="sidenav" id="sidenav">
 			<a href="index.html" id="1">
-				<img src="https://img.icons8.com/fluency/100/orca.png" alt="Home" style="width: 30px; border-radius: 0px;">
+				<img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Home" style="width: 30px;">
 				<dir class="center_text_non_color">Home</dir>
 			</a>
 			<a href="#" id="2">
-				<img src="https://pic1.imgdb.cn/item/67747804d0e0a243d4ed4499.png" alt="Categories" style="width: 30px; border-radius: 0px;">
+				<img class="icon" src="https://pic1.imgdb.cn/item/67747804d0e0a243d4ed4499.png" alt="Categories" style="width: 30px;">
 				<dir class="center_text_non_color">Categories</dir>
 			</a>
-			<a href="About.html" id="3">
-				<img src="https://pic1.imgdb.cn/item/67747882d0e0a243d4ed449a.png" alt="About" style="width: 30px; border-radius: 0px;">
+			<a href="About.html" id="3" style="z-index: 1;">
+				<img class="icon" src="https://pic1.imgdb.cn/item/67747882d0e0a243d4ed449a.png" alt="About" style="width: 30px;">
 				<dir class="center_text_non_color">About</dir>
 			</a>
 			<div class="entry" style="margin-top: auto; margin-left: auto;">
@@ -80,51 +80,51 @@
 				<h1>About Hēsperus</h1>
 				<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px;">
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/orca.png" alt="Orca" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Orca" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Blog<br><a href="https://hesprs.github.io">hesprs.github.io</a></div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/mail--v1.png" alt="Mail" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="Mail" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Mail<br>Hesprs@outlook.com</div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">QQ<br>Hesprs42</div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/weixing.png" alt="Wechat" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/weixing.png" alt="Wechat" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Wechat<br>Hesprs</div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/color/100/bilibili.png" alt="Bilibili" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/color/100/bilibili.png" alt="Bilibili" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Bilbili<br><a href="https://space.bilibili.com/3546710445919039?spm_id_from=333.1007.0.0">bili_88807849505</a></div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/color/100/baidu.png" alt="Baidu" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/color/100/baidu.png" alt="Baidu" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Baidu Forum<br><a href="https://tieba.baidu.com/home/main?id=tb.1.ec6a5f2f.3w0fUzVDySoOUvStm1BvvA?t=1595059656&fr=index">Hēsperus</a></div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/material-outlined/100/zhihu.png" alt="Zhihu" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/material-outlined/100/zhihu.png" alt="Zhihu" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Zhihu<br><a href="https://www.zhihu.com/people/ydshpw">高卢总督</a></div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/github.png" alt="Github" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="Github" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">GitHub<br><a href="https://github.com/Hesprs">Hesprs</a></div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Reddit<br><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/discord.png" alt="Discord" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/discord.png" alt="Discord" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Discord<br>Hesperus</div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/instagram-new.png" alt="Instagram" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/instagram-new.png" alt="Instagram" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">Instagram<br><a href="https://www.instagram.com/hes.prs/">hes.prs</a></div>
 					</div>
 					<div class="demobox">
-						<img src="https://img.icons8.com/fluency/100/twitterx--v1.png" alt="𝕏" style="width: 40px; border-radius: 0px; margin: auto 0px auto auto;">
+						<img class="icon" src="https://img.icons8.com/fluency/100/twitterx--v1.png" alt="𝕏" style="width: 40px; margin: auto 0px auto auto;">
 						<div class="center_text" style="margin-left: 10px;">𝕏<br><a href="https://x.com/Hesprs">hesprs</a></div>
 					</div>
 				</div>
