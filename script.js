@@ -59,7 +59,7 @@ function initialize() {
 function inpage_navi() {
     let current_page = window.location.href;
     current_page = current_page.replace("https://hesprs.github.io/", "");
-    location.replace("http://127.0.0.1:5500/");
+    location.replace("https://hesprs.github.io");
     localStorage.setItem('title', current_page);
 }
 
