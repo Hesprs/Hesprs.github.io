@@ -127,7 +127,7 @@ async function shift_title(title) {
     const main = document.getElementById("main");
     const rectangle = document.getElementById("rectangle");
     try {
-        const response = await fetch("/HTML/" + title + ".html");
+        const response = await fetch("/Contents/" + title + ".txt");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
