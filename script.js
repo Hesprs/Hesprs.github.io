@@ -135,8 +135,6 @@ async function shift_title(title) {
         setTimeout(async () => {
             main.innerHTML = await response.text();
             rectangle.scrollTo(0, 0);
-        }, 300);
-        setTimeout(() => {
             main.style.opacity = 1;
         }, 300);
     } catch (error) {
