@@ -126,7 +126,7 @@ function shift() {
 function shift_title(title) {
     const main = document.getElementById("main");
     const rectangle = document.getElementById("rectangle");
-    main.style.opacity = 0;
+    rectangle.style.opacity = 0;
     let timer = 0;
     setTimeout(() => timer = 1, 150);
     fetch("/Contents/" + title + ".txt")
@@ -135,14 +135,14 @@ function shift_title(title) {
             if (timer === 1) {
                 rectangle.scrollTo(0, 0);
                 main.innerHTML = result;
-                main.style.opacity = 1;
+                rectangle.style.opacity = 1;
                 return;
             } else {
                 const interval = setInterval(() => {
                     if (timer === 1) {
                         rectangle.scrollTo(0, 0);
                         main.innerHTML = result;
-                        main.style.opacity = 1;
+                        rectangle.style.opacity = 1;
                         clearInterval(interval);
                         return;
                     }
