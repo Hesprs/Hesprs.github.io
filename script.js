@@ -123,21 +123,31 @@ function shift() {
     }
 }
 
-async function shift_title(title) {
+function shift_title(title) {
     const main = document.getElementById("main");
     const rectangle = document.getElementById("rectangle");
-    try {
-        const response = await fetch("/Contents/" + title + ".txt");
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        main.style.opacity = 0;
-        setTimeout(async () => {
-            main.innerHTML = await response.text();
-            rectangle.scrollTo(0, 0);
-            main.style.opacity = 1;
-        }, 300);
-    } catch (error) {
-        console.error('Failed to load:', error);
-    }
+    main.style.opacity = 0;
+    let timer = 0;
+    setTimeout(() => timer = 1, 150);
+    fetch("/Contents/" + title + ".txt")
+        .then(result => result.text())
+        .then(result => {
+            if (timer === 1) {
+                rectangle.scrollTo(0, 0);
+                main.innerHTML = result;
+                main.style.opacity = 1;
+                return;
+            } else {
+                const interval = setInterval(() => {
+                    if (timer === 1) {
+                        rectangle.scrollTo(0, 0);
+                        main.innerHTML = result;
+                        main.style.opacity = 1;
+                        clearInterval(interval);
+                        return;
+                    }
+                }, 25);
+            }
+        })
+        .catch(error => console.error('Error:', error));
 }

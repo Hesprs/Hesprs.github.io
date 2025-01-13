@@ -7,7 +7,7 @@ body {
 
 main {
 	padding: 1px 15px 1px 15px;
-	transition: opacity 300ms; 
+	transition: opacity 150ms; 
 }
 
 h1 {
@@ -105,18 +105,15 @@ img {
 
 .center_text {
 	margin: auto auto auto 12px;
-	font-weight: 300;
 	padding: 0px;
-	transition: 300ms;
-	color: rgb(60, 60, 60);
-} body.dark .center_text {
-	color: rgb(255, 255, 255);
+	font-weight: 300;
 }
 
-.center_text_non_color {
-	margin: auto auto auto 12px;
-	padding: 0px;
-	font-weight: 300;
+.color {
+	transition: 300ms;
+	color: rgb(60, 60, 60);
+} body.dark .color {
+	color: rgb(255, 255, 255);
 }
 
 .sidenav {
@@ -134,11 +131,15 @@ img {
 	flex-direction: column;
 	margin: 0px;
 	border-radius: 10px;
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
 	transition: 300ms;
-} body.dark .sidenav_wrapper {
+}
+
+.shadow {
+	box-shadow: 0px 2px 5px rgb(200, 200, 200);
+} body.dark .shadow {
 	box-shadow: 0px 2px 5px rgb(30, 30, 30);
 }
+
 
 .entry {
     padding: 8px 12px 8px 12px;
@@ -147,15 +148,13 @@ img {
 	flex-direction: row;
 	font-weight: 300;
 	border-radius: 10px;
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
 	color: rgb(60, 60, 60);
 	height: 30px;
 	width: auto;
-	transition: 300ms;
+	transition: color 300ms , background-color 300ms, box-shadow 300ms;
 	margin-top: auto;
 	margin-left: 0px;
 } body.dark .entry {
-	box-shadow: 0px 2px 5px rgb(30, 30, 30);
 	background-color: rgb(45, 45, 45);
 	color: rgb(255, 255, 255);
 } .entry:hover {
@@ -171,37 +170,7 @@ img {
 	color: rgb(190, 222, 248);
 }
 
-.entry_non_shadow {
-    padding: 8px 12px 8px 12px;
-	background-color: rgb(247, 249, 250);
-	display: flex;
-	flex-direction: row;
-	font-weight: 300;
-	border-radius: 10px;
-	color: rgb(60, 60, 60);
-	height: 30px;
-	width: auto;
-	transition: color 300ms , background-color 300ms;
-	margin-top: auto;
-	margin-left: 0px;
-} body.dark .entry_non_shadow {
-	background-color: rgb(45, 45, 45);
-	color: rgb(255, 255, 255);
-} .entry_non_shadow:hover {
-    color: rgb(109, 173, 208);
-    background-color: rgb(229, 238, 245);
-} body.dark .entry_non_shadow:hover {
-	background-color: rgb(60, 60, 60);
-	color: rgb(190, 222, 248);
-} .entry_non_shadow:active:hover {
-    background-color: rgb(190, 222, 248);
-} body.dark .entry_non_shadow:active:hover {
-	background-color: rgb(75, 75, 75);
-	color: rgb(190, 222, 248);
-}
-
 .demobox {
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
 	flex: 1 1 auto;
 	background-color: rgb(255, 255, 255);
 	border-radius: 10px;
@@ -210,7 +179,6 @@ img {
 	display: flex;
 	transition: 300ms;
 } body.dark .demobox {
-	box-shadow: 0px 2px 5px rgb(30, 30, 30);
 	background-color: rgb(53, 53, 53);
 }
 
@@ -221,11 +189,9 @@ img {
 	transition: 300ms;
 	overflow: scroll;
 	color: rgb(60, 60, 60);
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 } body.dark .rectangle {
-	box-shadow: 0px 2px 5px rgb(30, 30, 30);
 	color: rgb(255, 255, 255);
 	background-color: rgb(45, 45, 45);
 } .rectangle::-webkit-scrollbar {
@@ -297,7 +263,7 @@ img {
 		margin-top: 0px;
 	}
 
-	.entry_non_shadow {
+	.entry {
 		margin-left: auto;
 		margin-top: 0px;
 	}
