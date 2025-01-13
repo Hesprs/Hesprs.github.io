@@ -272,7 +272,7 @@ img {
 		flex-direction: column;
 	}
 
-	.center_text_non_color {
+	.sidenav .center_text {
 		width: 0px;
 		margin: 0px;
 		visibility: hidden;

@@ -146,7 +146,7 @@ function shift_title(title) {
                         clearInterval(interval);
                         return;
                     }
-                }, 25);
+                }, 50);
             }
         })
         .catch(error => console.error('Error:', error));
