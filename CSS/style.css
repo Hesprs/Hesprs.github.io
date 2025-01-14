@@ -7,7 +7,6 @@ body {
 
 main {
 	padding: 1px 15px 1px 15px;
-	transition: opacity 150ms; 
 }
 
 h1 {
@@ -186,7 +185,7 @@ img {
 	margin: 15px 15px 15px 15px;
 	background-color: rgb(247, 249, 250);
 	border-radius: 10px;
-	transition: 300ms;
+	transition: color 300ms, background-color 300ms, opacity 200ms, box-shadow 300ms;
 	overflow: scroll;
 	color: rgb(60, 60, 60);
 	-ms-overflow-style: none;
@@ -244,6 +243,23 @@ img {
 	transition: background-color 300ms;
 } body.dark .division {
 	background-color: rgb(30, 30, 30);
+}
+
+.spinner {
+	box-sizing: border-box;
+	width: 60px;
+	height: 60px;
+	padding: 3px;
+	overflow: visible;
+} .spinner > circle {
+	fill: none;
+	stroke: currentColor;
+	cx: 50%;
+	cy: 50%;
+	r: 50%;
+	stroke-width: 6px;
+	stroke-linecap: round;
+	transform-origin: center;
 }
 
 @media (max-width: 767px) {

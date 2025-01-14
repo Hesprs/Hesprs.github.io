@@ -1,5 +1,12 @@
 let entry = 1;
 
+function cover() {
+    const cover = document.getElementById("cover");
+    const rectangle = document.getElementById("rectangle");
+    cover.style.width = rectangle.offsetWidth + "px";
+    cover.style.height = rectangle.offsetHeight + "px";
+}
+
 function toggle() {
     const dn = document.getElementById("dn");
     if (dn.checked) {
@@ -42,12 +49,13 @@ function change_4() {
 function initialize() {
     const currentTheme = window.matchMedia("(prefers-color-scheme: dark)");
     const dn = document.getElementById("dn");
+    var title = localStorage.getItem('title');
     if (currentTheme.matches) {
         dn.checked = true;
         document.body.classList.add('dark');
     }
+    cover();
     shift();
-    var title = localStorage.getItem('title');
     if (title !== null) {
         shift_title(title);
         localStorage.removeItem('title');
@@ -126,23 +134,24 @@ function shift() {
 function shift_title(title) {
     const main = document.getElementById("main");
     const rectangle = document.getElementById("rectangle");
-    rectangle.style.opacity = 0;
+    const cover = document.getElementById("cover");
+    cover.style.opacity = 1;
     let timer = 0;
-    setTimeout(() => timer = 1, 150);
+    setTimeout(() => timer = 1, 200);
     fetch("/Contents/" + title + ".txt")
         .then(result => result.text())
         .then(result => {
             if (timer === 1) {
                 rectangle.scrollTo(0, 0);
                 main.innerHTML = result;
-                rectangle.style.opacity = 1;
+                cover.style.opacity = 0;
                 return;
             } else {
                 const interval = setInterval(() => {
                     if (timer === 1) {
                         rectangle.scrollTo(0, 0);
                         main.innerHTML = result;
-                        rectangle.style.opacity = 1;
+                        cover.style.opacity = 0;
                         clearInterval(interval);
                         return;
                     }
