@@ -144,21 +144,20 @@ function shift_title(title) {
     setTimeout(() => {
         timer = 1;
         cover.style.pointerEvents = "auto";
-    }, 150);
+    }, 200);
     fetch("/Contents/" + title + ".txt")
         .then(result => result.text())
         .then(result => {
             if (timer === 1) {
                 rectangle.scrollTo(0, 0);
-                main.innerHTML = result;
+                rectangle.innerHTML = result;
                 cover.style.opacity = 0;
                 cover.style.pointerEvents = "none";
             } else {
                 const interval = setInterval(() => {
                     if (timer === 1) {
                         rectangle.scrollTo(0, 0);
-                        main.innerHTML = result;
-                        rectangle.scrollTo(0, 0); // to prevent the bug of not loading the content in Safari while scrolling
+                        rectangle.innerHTML = "<main>" + result + "</main>";
                         cover.style.opacity = 0;
                         cover.style.pointerEvents = "none";
                         clearInterval(interval);
