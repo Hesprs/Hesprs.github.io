@@ -158,7 +158,7 @@ function shift_title(title) {
                     if (timer === 1) {
                         rectangle.scrollTo(0, 0);
                         main.innerHTML = result;
-                        main.innerHTML = result; // to prevent the bug of not loading the content in Safari while scrolling
+                        rectangle.scrollTo(0, 0); // to prevent the bug of not loading the content in Safari while scrolling
                         cover.style.opacity = 0;
                         cover.style.pointerEvents = "none";
                         clearInterval(interval);
