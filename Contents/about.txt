@@ -52,4 +52,5 @@
 <br><hr>
 <h1>All you want to know</h1>
 <p>This "strange" website is set up by Hēsperus himself. However, he hasn't got enough ability or time to develop it. As a result, this website is now as primitive as a rock painting from a hominid. After all, as loog as it can work properly, we can't desire too much, huh?</p>
-<p><div style="text-align: right;">Copyright © Hēsperus 2025<br>Icons by <a href="https://icons8.com">icons8</a></div></p>
+<div class = "color" style="text-align: right; font-weight: 300; transition: color 300ms;">Copyright © Hēsperus 2025<br>Icons by <a href="https://icons8.com">icons8</a></div>
+<p></p>

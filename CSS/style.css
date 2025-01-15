@@ -13,7 +13,7 @@ h1 {
 	font-weight: 900;
 	color: rgb(108, 46, 255);
 	text-align: center;
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark h1 {
 	color: rgb(254, 247, 167);
 }
@@ -22,7 +22,7 @@ h2 {
 	font-weight: 800;
 	color: rgb(108, 46, 255);
 	text-align: center;
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark h2 {
 	color: rgb(254, 247, 167);
 }
@@ -31,7 +31,7 @@ h3 {
 	font-weight: 700;
 	color: rgb(108, 46, 255);
 	text-align: center;
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark h3 {
 	color: rgb(254, 247, 167);
 }
@@ -40,7 +40,7 @@ h4 {
 	font-weight: 600;
 	color: rgb(108, 46, 255);
 	text-align: center;
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark h4 {
 	color: rgb(254, 247, 167);
 }
@@ -49,7 +49,7 @@ h5 {
 	font-weight: 500;
 	color: rgb(108, 46, 255);
 	text-align: center;
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark h5 {
 	color: rgb(254, 247, 167);
 }
@@ -58,13 +58,17 @@ h6 {
 	font-weight: 400;
 	color: rgb(108, 46, 255);
 	text-align: center;
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark h6 {
 	color: rgb(254, 247, 167);
 }
 
 p {
 	font-weight: 300;
+	color: rgb(60, 60, 60);
+	transition: color 300ms;
+} body.dark p {
+	color: rgb(255, 255, 255);
 }
 
 a {
@@ -73,14 +77,14 @@ a {
 	font-weight: 800;
 	font-style: italic;
 	border-radius:10px;
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark a {
 	color: rgb(254, 247, 167);
 }
 
 a:hover {
     color: rgb(109, 173, 208);
-	transition: 300ms;
+	transition: color 300ms;
 } body.dark a:hover {
 	color: rgb(109, 173, 208);
 }
@@ -89,10 +93,7 @@ img {
 	border-radius: 10px;
 	object-fit: contain;
 	width: 100%;
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
-	transition: 300ms;
-} body.dark img {
-	box-shadow: 0px 2px 5px rgb(30, 30, 30);
+	transition: box-shadow 300ms;
 }
 
 .icon {
@@ -106,10 +107,10 @@ img {
 	margin: auto auto auto 12px;
 	padding: 0px;
 	font-weight: 300;
+	transition: color 300ms;
 }
 
 .color {
-	transition: 300ms;
 	color: rgb(60, 60, 60);
 } body.dark .color {
 	color: rgb(255, 255, 255);
@@ -176,22 +177,23 @@ img {
 	padding: 8px 12px 8px 12px;
 	text-align: center;
 	display: flex;
-	transition: 300ms;
+	transition: background-color 300ms, box-shadow 300ms;
 } body.dark .demobox {
 	background-color: rgb(53, 53, 53);
 }
 
 .rectangle {
-	margin: 15px 15px 15px 15px;
 	background-color: rgb(247, 249, 250);
 	border-radius: 10px;
 	transition: color 300ms, background-color 300ms, opacity 200ms, box-shadow 300ms;
 	overflow: scroll;
-	color: rgb(60, 60, 60);
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+	position: fixed;
+	margin: 0px;
+	right: 15px;
+	bottom: 15px;
 } body.dark .rectangle {
-	color: rgb(255, 255, 255);
 	background-color: rgb(45, 45, 45);
 } .rectangle::-webkit-scrollbar {
     display: none;
@@ -255,12 +257,16 @@ img {
 } .spinner > circle {
 	fill: none;
 	stroke: currentColor;
+	transition: stroke 300ms;
 	cx: 50%;
 	cy: 50%;
 	r: 50%;
+	stroke: rgb(108, 46, 255);
 	stroke-width: 6px;
 	stroke-linecap: round;
 	transform-origin: center;
+} body.dark .spinner > circle {
+	stroke: rgb(254, 247, 167);
 }
 
 @media (max-width: 767px) {

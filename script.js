@@ -1,10 +1,22 @@
 let entry = 1;
+let layer = 0;
 
 function cover_resize() {
     const cover = document.getElementById("cover");
-    const rectangle = document.getElementById("rectangle");
-    cover.style.width = rectangle.offsetWidth + "px";
-    cover.style.height = rectangle.offsetHeight + "px";
+    const sidenav = document.getElementById("sidenav");
+    const rectangle_0 = document.getElementById("rectangle_0");
+    const rectangle_1 = document.getElementById("rectangle_1");
+    if (window.innerWidth >= 768) {
+        cover.style.width = (window.innerWidth - sidenav.offsetWidth - 45) + "px";
+        cover.style.height = (window.innerHeight - 30) + "px";
+    } else {
+        cover.style.width = (window.innerWidth - 30) + "px";
+        cover.style.height = (window.innerHeight - sidenav.offsetHeight - 45) + "px";
+    }
+    rectangle_0.style.width = cover.offsetWidth + "px";
+    rectangle_0.style.height = cover.offsetHeight + "px";
+    rectangle_1.style.width = cover.offsetWidth + "px";
+    rectangle_1.style.height = cover.offsetHeight + "px";
 }
 
 function toggle() {
@@ -136,11 +148,18 @@ function shift() {
 }
 
 function shift_title(title) {
-    const main = document.getElementById("main");
-    const rectangle = document.getElementById("rectangle");
+    const main_0 = document.getElementById("main_0");
+    const rectangle_0 = document.getElementById("rectangle_0");
+    const main_1 = document.getElementById("main_1");
+    const rectangle_1 = document.getElementById("rectangle_1");
     const cover = document.getElementById("cover");
     cover.style.opacity = 1;
     let timer = 0;
+    if (layer === 0) {
+        layer = 1;
+    } else {
+        layer = 0;
+    }
     setTimeout(() => {
         timer = 1;
         cover.style.pointerEvents = "auto";
@@ -148,21 +167,54 @@ function shift_title(title) {
     fetch("/Contents/" + title + ".txt")
         .then(result => result.text())
         .then(result => {
-            if (timer === 1) {
-                rectangle.scrollTo(0, 0);
-                rectangle.innerHTML = result;
-                cover.style.opacity = 0;
-                cover.style.pointerEvents = "none";
+            if (layer === 0) {
+                if (timer === 1) {
+                    rectangle_0.scrollTo(0, 0);
+                    main_0.innerHTML = result;
+                    rectangle_0.style.pointerEvents = "auto";
+                    rectangle_0.style.visibility = "visible";
+                    rectangle_1.style.visibility = "hidden";
+                    cover.style.opacity = 0;
+                    cover.style.pointerEvents = "none";
+                } else {
+                    const interval = setInterval(() => {
+                        if (timer === 1) {
+                            rectangle_0.scrollTo(0, 0);
+                            main_0.innerHTML = result;
+                            rectangle_0.style.pointerEvents = "auto";
+                            rectangle_0.style.visibility = "visible";
+                            rectangle_1.style.visibility = "hidden";
+                            cover.style.opacity = 0;
+                            cover.style.pointerEvents = "none";
+                            clearInterval(interval);
+                        }
+                    }, 50);
+                }
             } else {
-                const interval = setInterval(() => {
-                    if (timer === 1) {
-                        rectangle.scrollTo(0, 0);
-                        rectangle.innerHTML = "<main>" + result + "</main>";
-                        cover.style.opacity = 0;
-                        cover.style.pointerEvents = "none";
-                        clearInterval(interval);
-                    }
-                }, 50);
+                if (timer === 1) {
+                    rectangle_1.scrollTo(0, 0);
+                    main_1.innerHTML = result;
+                    main_0.innerHTML = "";
+                    rectangle_0.style.pointerEvents = "none";
+                    rectangle_1.style.visibility = "visible";
+                    rectangle_0.style.visibility = "hidden";
+                    cover.style.opacity = 0;
+                    cover.style.pointerEvents = "none";
+                } else {
+                    const interval = setInterval(() => {
+                        if (timer === 1) {
+                            rectangle_1.scrollTo(0, 0);
+                            main_1.innerHTML = result;
+                            main_0.innerHTML = "";
+                            rectangle_0.style.pointerEvents = "none";
+                            rectangle_1.style.visibility = "visible";
+                            rectangle_0.style.visibility = "hidden";
+                            cover.style.opacity = 0;
+                            cover.style.pointerEvents = "none";
+                            clearInterval(interval);
+                        }
+                    }, 50);
+                }
             }
         })
         .catch(error => console.error('Error:', error));
