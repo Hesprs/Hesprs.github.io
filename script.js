@@ -1,6 +1,6 @@
 let entry = 1;
 
-function cover() {
+function cover_resize() {
     const cover = document.getElementById("cover");
     const rectangle = document.getElementById("rectangle");
     cover.style.width = rectangle.offsetWidth + "px";
@@ -49,12 +49,16 @@ function change_4() {
 function initialize() {
     const currentTheme = window.matchMedia("(prefers-color-scheme: dark)");
     const dn = document.getElementById("dn");
+    const background = document.getElementById("background");
+    setTimeout(() => {
+        background.style.opacity = 1;
+    }, 500);
     var title = localStorage.getItem('title');
     if (currentTheme.matches) {
         dn.checked = true;
         document.body.classList.add('dark');
     }
-    cover();
+    cover_resize();
     shift();
     if (title !== null) {
         shift_title(title);
@@ -137,7 +141,10 @@ function shift_title(title) {
     const cover = document.getElementById("cover");
     cover.style.opacity = 1;
     let timer = 0;
-    setTimeout(() => timer = 1, 200);
+    setTimeout(() => {
+        timer = 1;
+        cover.style.pointerEvents = "auto";
+    }, 150);
     fetch("/Contents/" + title + ".txt")
         .then(result => result.text())
         .then(result => {
@@ -145,15 +152,15 @@ function shift_title(title) {
                 rectangle.scrollTo(0, 0);
                 main.innerHTML = result;
                 cover.style.opacity = 0;
-                return;
+                cover.style.pointerEvents = "none";
             } else {
                 const interval = setInterval(() => {
                     if (timer === 1) {
                         rectangle.scrollTo(0, 0);
                         main.innerHTML = result;
                         cover.style.opacity = 0;
+                        cover.style.pointerEvents = "none";
                         clearInterval(interval);
-                        return;
                     }
                 }, 50);
             }
