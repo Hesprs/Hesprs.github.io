@@ -64,7 +64,7 @@ function initialize() {
     const background = document.getElementById("background");
     setTimeout(() => {
         background.style.opacity = 1;
-    }, 500);
+    }, 800);
     var title = localStorage.getItem('title');
     if (currentTheme.matches) {
         dn.checked = true;
@@ -148,9 +148,7 @@ function shift() {
 }
 
 function shift_title(title) {
-    const main_0 = document.getElementById("main_0");
     const rectangle_0 = document.getElementById("rectangle_0");
-    const main_1 = document.getElementById("main_1");
     const rectangle_1 = document.getElementById("rectangle_1");
     const cover = document.getElementById("cover");
     cover.style.opacity = 1;
@@ -165,57 +163,65 @@ function shift_title(title) {
         cover.style.pointerEvents = "auto";
     }, 200);
     fetch("/Contents/" + title + ".txt")
-        .then(result => result.text())
-        .then(result => {
-            if (layer === 0) {
-                if (timer === 1) {
-                    rectangle_0.scrollTo(0, 0);
-                    main_0.innerHTML = result;
-                    rectangle_0.style.pointerEvents = "auto";
-                    rectangle_0.style.visibility = "visible";
-                    rectangle_1.style.visibility = "hidden";
-                    cover.style.opacity = 0;
-                    cover.style.pointerEvents = "none";
-                } else {
-                    const interval = setInterval(() => {
-                        if (timer === 1) {
-                            rectangle_0.scrollTo(0, 0);
-                            main_0.innerHTML = result;
-                            rectangle_0.style.pointerEvents = "auto";
-                            rectangle_0.style.visibility = "visible";
-                            rectangle_1.style.visibility = "hidden";
-                            cover.style.opacity = 0;
-                            cover.style.pointerEvents = "none";
-                            clearInterval(interval);
-                        }
-                    }, 50);
-                }
+    .then(async (result) => {
+        if (!result.ok) {
+            const res = await fetch("/Contents/404.txt");
+            return res.text();
+        } else {
+            return result.text();
+        }
+    })
+    .then(result => {
+        if (layer === 0) {
+            if (timer === 1) {
+                rectangle_0.scrollTo(0, 0);
+                rectangle_0.innerHTML = result;
+                rectangle_1.innerHTML = "";
+                rectangle_0.style.pointerEvents = "auto";
+                rectangle_0.style.visibility = "visible";
+                rectangle_1.style.visibility = "hidden";
+                cover.style.opacity = 0;
+                cover.style.pointerEvents = "none";
             } else {
-                if (timer === 1) {
-                    rectangle_1.scrollTo(0, 0);
-                    main_1.innerHTML = result;
-                    main_0.innerHTML = "";
-                    rectangle_0.style.pointerEvents = "none";
-                    rectangle_1.style.visibility = "visible";
-                    rectangle_0.style.visibility = "hidden";
-                    cover.style.opacity = 0;
-                    cover.style.pointerEvents = "none";
-                } else {
-                    const interval = setInterval(() => {
-                        if (timer === 1) {
-                            rectangle_1.scrollTo(0, 0);
-                            main_1.innerHTML = result;
-                            main_0.innerHTML = "";
-                            rectangle_0.style.pointerEvents = "none";
-                            rectangle_1.style.visibility = "visible";
-                            rectangle_0.style.visibility = "hidden";
-                            cover.style.opacity = 0;
-                            cover.style.pointerEvents = "none";
-                            clearInterval(interval);
-                        }
-                    }, 50);
-                }
+                const interval = setInterval(() => {
+                    if (timer === 1) {
+                        rectangle_0.scrollTo(0, 0);
+                        rectangle_0.innerHTML = result;
+                        rectangle_1.innerHTML = "";
+                        rectangle_0.style.pointerEvents = "auto";
+                        rectangle_0.style.visibility = "visible";
+                        rectangle_1.style.visibility = "hidden";
+                        cover.style.opacity = 0;
+                        cover.style.pointerEvents = "none";
+                        clearInterval(interval);
+                    }
+                }, 50);
             }
-        })
-        .catch(error => console.error('Error:', error));
+        } else {
+            if (timer === 1) {
+                rectangle_1.scrollTo(0, 0);
+                rectangle_1.innerHTML = result;
+                rectangle_0.innerHTML = "";
+                rectangle_0.style.pointerEvents = "none";
+                rectangle_1.style.visibility = "visible";
+                rectangle_0.style.visibility = "hidden";
+                cover.style.opacity = 0;
+                cover.style.pointerEvents = "none";
+            } else {
+                const interval = setInterval(() => {
+                    if (timer === 1) {
+                        rectangle_1.scrollTo(0, 0);
+                        rectangle_1.innerHTML = result;
+                        rectangle_0.innerHTML = "";
+                        rectangle_0.style.pointerEvents = "none";
+                        rectangle_1.style.visibility = "visible";
+                        rectangle_0.style.visibility = "hidden";
+                        cover.style.opacity = 0;
+                        cover.style.pointerEvents = "none";
+                        clearInterval(interval);
+                    }
+                }, 50);
+            }
+        }
+    });
 }
