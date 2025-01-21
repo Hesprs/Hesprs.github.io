@@ -1,3 +1,2 @@
 # Current Bugs
-1. Highlight indicator won't change when access blog though url.
-2. Shift topic animation doesn't work well in Safari.
+1. The highlight indicator won't change when accessing the blog through URLs.
