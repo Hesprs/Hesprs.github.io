@@ -265,6 +265,17 @@ function mouse_down(e) {
     background.style.userSelect = 'none';
 }
 
+function touch_start(e) {
+    const background = document.getElementById('background');
+    offset = e.touches[0].clientX - sidenav_width;
+    isDragging = true;
+    background.style.webkitUserSelect = 'none';
+    background.style.mozUserSelect = 'none';
+    background.style.msUserSelect = 'none';
+    background.style.oUserSelect = 'none';
+    background.style.userSelect = 'none';
+}
+
 function mouse_move(e) {
     if (isDragging) {
         const cover = document.getElementById('cover');
@@ -294,6 +305,59 @@ function mouse_move(e) {
             dn_minimal();
             setInterval(() => cover_resize(), 20);
         } else if (e.clientX >= 150 + offset && sidenav_minimal) {
+            sidenav_minimal = false;
+            let transition = 300;
+            sidenav.style.transition = 'width 300ms';
+            cover.style.transition = 'color 300ms, background-color 300ms, opacity 200ms, box-shadow 300ms, width 300ms';
+            sidenav_width = 150;
+            show('text_1');
+            show('text_2');
+            show('text_3');
+            dn_complete();
+            fade = setInterval(() => {
+                sidenav.style.transition = 'width ' + transition + 'ms';
+                cover.style.transition = 'color 300ms, background-color 300ms, opacity 200ms, box-shadow 300ms, width ' + transition + 'ms';
+                cover_resize();
+                transition -= 20;
+            }, 20);
+            setTimeout(() => {
+                clearInterval(fade);
+                sidenav.style.transition = '';
+                cover.style.transition = '';
+            }, 300);
+        }
+    }
+}
+
+function touch_move(e) {
+    if (isDragging) {
+        const cover = document.getElementById('cover');
+        const sidenav = document.getElementById('sidenav');
+        if (e.touches[0].clientX - offset >= 150 && e.touches[0].clientX - offset <= window.innerWidth - 345 && !sidenav_minimal) {
+            sidenav_width = (e.touches[0].clientX - offset);
+            cover_resize();
+        } else if (e.touches[0].clientX - offset < 150 && e.touches[0].clientX > 46 + offset && !sidenav_minimal) {
+            sidenav_width = 150;
+            cover_resize();
+        } else if (e.touches[0].clientX - offset > window.innerWidth - 345) {
+            sidenav_width = window.innerWidth - 345;
+            cover_resize();
+        }
+        if (e.touches[0].clientX <= 46 + offset && !sidenav_minimal) {
+            sidenav_minimal = true;
+            sidenav.style.transition = 'width 300ms';
+            cover.style.transition = 'color 300ms, background-color 300ms, opacity 200ms, box-shadow 300ms, width 300ms';
+            setTimeout(() => {
+                sidenav.style.transition = '';
+                cover.style.transition = '';
+            }, 300);
+            sidenav_width = 46;
+            hide('text_1');
+            hide('text_2');
+            hide('text_3');
+            dn_minimal();
+            setInterval(() => cover_resize(), 20);
+        } else if (e.touches[0].clientX >= 150 + offset && sidenav_minimal) {
             sidenav_minimal = false;
             let transition = 300;
             sidenav.style.transition = 'width 300ms';

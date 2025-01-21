@@ -27,12 +27,17 @@
 			b.addEventListener('click', change_2);
 			c.addEventListener('click', change_3);
 			d.addEventListener('click', change_4);
+			stretch_bar.addEventListener('touchstart', touch_start);
 			stretch_bar.addEventListener('mousedown', mouse_down);
 			document.addEventListener('mousemove', mouse_move);
+			document.addEventListener('touchmove', touch_move);
 			window.addEventListener('mouseup', mouse_up);
+			window.addEventListener('touchend', mouse_up);
 			document.addEventListener('mouseleave', mouse_up);
 			stretch_bar.addEventListener('mouseover', hover_color);
+			stretch_bar.addEventListener('touchstart', hover_color);
 			stretch_bar.addEventListener('mouseout', out_color);
+			stretch_bar.addEventListener('touchend', out_color);
 		}
 		window.addEventListener('DOMContentLoaded', startup);
 	</script>
