@@ -16,45 +16,35 @@ h1 {
 	transition: color 300ms;
 } body.dark h1 {
 	color: rgb(254, 247, 167);
-}
-
-h2 {
+} h2 {
 	font-weight: 800;
 	color: rgb(108, 46, 255);
 	text-align: center;
 	transition: color 300ms;
 } body.dark h2 {
 	color: rgb(254, 247, 167);
-}
-
-h3 {
+} h3 {
 	font-weight: 700;
 	color: rgb(108, 46, 255);
 	text-align: center;
 	transition: color 300ms;
 } body.dark h3 {
 	color: rgb(254, 247, 167);
-}
-
-h4 {
+} h4 {
 	font-weight: 600;
 	color: rgb(108, 46, 255);
 	text-align: center;
 	transition: color 300ms;
 } body.dark h4 {
 	color: rgb(254, 247, 167);
-}
-
-h5 {
+} h5 {
 	font-weight: 500;
 	color: rgb(108, 46, 255);
 	text-align: center;
 	transition: color 300ms;
 } body.dark h5 {
 	color: rgb(254, 247, 167);
-}
-
-h6 {
+} h6 {
 	font-weight: 400;
 	color: rgb(108, 46, 255);
 	text-align: center;
@@ -80,9 +70,7 @@ a {
 	transition: color 300ms;
 } body.dark a {
 	color: rgb(254, 247, 167);
-}
-
-a:hover {
+} a:hover {
     color: rgb(109, 173, 208);
 	transition: color 300ms;
 } body.dark a:hover {
@@ -96,35 +84,44 @@ img {
 	transition: box-shadow 300ms;
 }
 
+svg {
+	overflow: visible;
+}
+
 .icon {
 	box-shadow: 0px 0px 0px;
 	margin: auto 0px auto 0px;
 } body.dark .icon {
 	box-shadow: 0px 0px 0px;
-}
-
-.center_text {
+} .center_text {
 	margin: auto auto auto 12px;
 	padding: 0px;
 	font-weight: 300;
-	transition: color 300ms;
+	transition: color 300ms, opacity 300ms, margin 300ms;
 }
 
 .color {
 	color: rgb(60, 60, 60);
 } body.dark .color {
 	color: rgb(255, 255, 255);
+} .shadow {
+	box-shadow: 0px 2px 5px rgb(200, 200, 200);
+} body.dark .shadow {
+	box-shadow: 0px 2px 5px rgb(30, 30, 30);
+} .fancy_color {
+	color: #FFCF96;
+} body.dark .fancy_color {
+	color: #749DD6;
 }
 
 .sidenav {
 	height: calc(100% - 30px);
-	width: auto;
+	width: 150px;
 	display: flex;
 	flex-direction: column;
 	margin: 15px 0px 15px 15px;
-}
-
-.sidenav_wrapper {
+	transition: width 0ms;
+} .sidenav_wrapper {
 	display: flex;
 	width: auto;
 	height: auto;
@@ -132,42 +129,46 @@ img {
 	margin: 0px;
 	border-radius: 10px;
 	transition: 300ms;
+} .division {
+	height: 1px;
+	width: 100%;
+	background-color: rgb(210, 210, 210);
+	transition: background-color 300ms;
+} body.dark .division {
+	background-color: rgb(30, 30, 30);
 }
-
-.shadow {
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
-} body.dark .shadow {
-	box-shadow: 0px 2px 5px rgb(30, 30, 30);
-}
-
 
 .entry {
-    padding: 8px 12px 8px 12px;
+	cursor: pointer;
+    padding: 8px 8px 8px 8px;
 	background-color: rgb(247, 249, 250);
 	display: flex;
 	flex-direction: row;
 	font-weight: 300;
 	border-radius: 10px;
-	color: rgb(60, 60, 60);
 	height: 30px;
-	width: auto;
 	transition: color 300ms , background-color 300ms, box-shadow 300ms;
 	margin-top: auto;
 	margin-left: 0px;
 } body.dark .entry {
 	background-color: rgb(45, 45, 45);
-	color: rgb(255, 255, 255);
 } .entry:hover {
-    color: rgb(109, 173, 208);
+	.center_text {
+    	color: rgb(109, 173, 208);
+	}
     background-color: rgb(229, 238, 245);
 } body.dark .entry:hover {
+	.center_text {
+		color: rgb(190, 222, 248);
+	}
 	background-color: rgb(60, 60, 60);
-	color: rgb(190, 222, 248);
 } .entry:active:hover {
     background-color: rgb(190, 222, 248);
 } body.dark .entry:active:hover {
+	.center_text {
+		color: rgb(190, 222, 248);
+	}
 	background-color: rgb(75, 75, 75);
-	color: rgb(190, 222, 248);
 }
 
 .demobox {
@@ -217,7 +218,7 @@ img {
 
 .label_light {
 	padding: 0px;
-	transition: color 300ms;
+	transition: color 300ms, opacity 300ms, margin 300ms;
 	color: rgb(109, 173, 208);
 	left: 0px;
 	margin: auto 0px auto 0px;
@@ -225,11 +226,9 @@ img {
 	font-weight: 800;
 } body.dark .label_light {
 	color: rgb(255, 255, 255);
-}
-
-.label_dark {
+} .label_dark {
 	padding: 0px;
-	transition: color 300ms;
+	transition: color 300ms, opacity 300ms, margin 300ms;
 	color: rgb(60, 60, 60);
 	right: 0px;
 	margin: auto 0px auto 0px;
@@ -239,13 +238,18 @@ img {
 	color: rgb(190, 222, 248);
 }
 
-.division {
-	height: 1px;
+.stretch_bar_wrapper {
+	height: calc(100% - 15px);
+	width: 1px;
+	padding: 7.5px 7px 7.5px 7px;
+	background-color: transparent;
+	cursor: e-resize;
+} .stretch_bar {
+	height: 100%;
 	width: 100%;
-	background-color: rgb(210, 210, 210);
-	transition: background-color 300ms;
-} body.dark .division {
-	background-color: rgb(30, 30, 30);
+	pointer-events: none;
+	background-color: transparent;
+	transition: background-color 300ms, box-shadow 300ms;
 }
 
 .spinner {
@@ -272,18 +276,12 @@ img {
 @media (max-width: 767px) {
 	.sidenav {
 		height: auto;
-		width: calc(100% - 30px);
 		flex-direction: row;
 		margin: 15px 15px 0px 15px;
 	}
 
 	.sidenav_wrapper {
 		flex-direction: row;
-	}
-
-	.entry {
-		margin-left: auto;
-		margin-top: 0px;
 	}
 
 	.entry {
@@ -310,5 +308,9 @@ img {
 	.division {
 		height: 100%;
 		width: 1px;
+	}
+
+	.stretch_bar {
+		visibility: hidden;
 	}
 }
