@@ -1,8 +1,35 @@
 .toggleWrapper {
     height: 30px;
-    margin: auto;
+    margin: auto 0px auto 0px;
     display: flex;
     transition: opacity 150ms;
+}
+
+.label_light {
+    display: flex;
+    align-items: center;
+	padding: 0px;
+	transition: color 300ms, opacity 300ms, margin 300ms;
+	color: rgb(109, 173, 208);
+	left: 0px;
+	margin: auto auto auto 0px;
+	font-size: 10px;
+	font-weight: 800;
+} body.dark .label_light {
+	color: rgb(255, 255, 255);
+} .label_dark {
+    display: flex;
+    align-items: center;
+	padding: 0px;
+    direction: rtl;
+	transition: color 300ms, opacity 300ms, margin 300ms;
+	color: rgb(60, 60, 60);
+	right: 0px;
+	margin: auto 0px auto auto;
+	font-size: 10px;
+	font-weight: 800;
+} body.dark .label_dark {
+	color: rgb(190, 222, 248);
 }
 
 input[type='checkbox'] {
@@ -179,9 +206,18 @@ input[type='checkbox']:checked + .theme-toggle .theme-toggle__within g path {
     border: none;
     background: none;
     cursor: pointer;
+    transition: color 300ms;
 }
 
 .theme-toggle__within * {
     transform-origin: center;
     transition: transform calc(var(--theme-toggle__within--duration)) cubic-bezier(0, 0, 0, 1.25);
+}
+
+@media (max-width: 767px) {
+    .label_dark, .label_light {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
 }
