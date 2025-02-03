@@ -292,6 +292,8 @@ svg {
 	height: 0px;
 } .margin {
 	margin: 0px;
+} .pointer {
+	pointer-events: none;
 }
 
 @media (max-width: 767.9px) {
