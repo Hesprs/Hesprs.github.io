@@ -21,7 +21,7 @@ const surls = [
 /*0*/'https://music.163.com/song/media/outer/url?id=28481734.mp3',                                                                                                                                                                                                                    
 /*1*/'https://music.163.com/song/media/outer/url?id=1922395111.mp3',
 /*2*/'https://music.163.com/song/media/outer/url?id=1911868531.mp3',
-/*3*/'https://ws.stream.qqmusic.qq.com/C400004Plyaj0QlCIJ.m4a?guid=519453035&vkey=1966EED84C29862D615703741B830A3E9B01881786DD6F937C9DAC877EB1FB5A56CBC6945096B93E19B6A738CC341EF614B340C7CE03120A__v21e2a16b2&uin=&fromtag=120032&src=C400001Adjs637aGZ3.m4a',
+/*3*/'https://ws.stream.qqmusic.qq.com/C400004Plyaj0QlCIJ.m4a?guid=911806690&vkey=FE949A382ECEDCBD1AB2BC6050B05D0B32ECB3001A83B59064097556E0DF682CA34A6CEC269B8430C7BEC363BF839F47D9168742F06E311A__v21e2a16b6&uin=&fromtag=120032&src=C400001Adjs637aGZ3.m4a',
 /*4*/'https://music.163.com/song/media/outer/url?id=1394601255.mp3'
 ]
 const iurls = [
