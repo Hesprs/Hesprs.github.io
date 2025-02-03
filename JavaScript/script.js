@@ -196,7 +196,7 @@ function toggle() {
 function turn_dark() {
     dark = ' checked';
     document.body.classList.add('dark');
-    if (!sidenav_minimal) {
+    if (!sidenav_minimal && window.innerWidth >= 768) {
         next_dark.classList.remove('opacity');
         next_light.classList.add('opacity');
         if (isPlaying) {
@@ -212,7 +212,7 @@ function turn_dark() {
 function turn_light() {
     dark = '';
     document.body.classList.remove('dark');
-    if (!sidenav_minimal) {
+    if (!sidenav_minimal && window.innerWidth >= 768) {
         next_dark.classList.add('opacity');
         next_light.classList.remove('opacity');
         if (isPlaying) {
@@ -518,7 +518,7 @@ function out_color() {
 
 function hide(element, duration = 300) {
     const e = document.getElementById(element);
-    e.classList.add('width', 'height', 'opacity');
+    e.classList.add('width', 'height', 'opacity', 'pointer');
     setTimeout(() => {
         e.classList.add('margin');
     }, duration)
@@ -528,7 +528,7 @@ function icon_hide(element, duration = 300) {
     const e = document.getElementById(element);
     e.classList.add('opacity');
     setTimeout(() => {
-        e.classList.add('height', 'weight', 'margin');
+        e.classList.add('height', 'weight', 'margin', 'pointer');
     }, duration)
 }
 
@@ -536,7 +536,7 @@ function show(element, duration = 300) {
     const e = document.getElementById(element);
     e.classList.remove('margin', 'opacity');
     setTimeout(() => {
-        e.classList.remove('width', 'height');
+        e.classList.remove('width', 'height', 'pointer');
     }, duration) 
 }
 

@@ -6,7 +6,7 @@ function loadSong() {
 
 function playSong() {
     cover_1.style.animationPlayState = 'running';
-    if (!sidenav_minimal) {
+    if (!sidenav_minimal && window.innerWidth >= 768) {
         if (dn.checked) {
             play_dark.classList.add('opacity');
             pause_dark.classList.remove('opacity');
@@ -20,7 +20,7 @@ function playSong() {
 
 function pauseSong() {
     cover_1.style.animationPlayState = 'paused';
-    if (!sidenav_minimal) {
+    if (!sidenav_minimal && window.innerWidth >= 768) {
         if (dn.checked) {
             play_dark.classList.remove('opacity');
             pause_dark.classList.add('opacity');
@@ -97,37 +97,37 @@ function music_complete() {
     musicContainer.style.height = '80px';
     upper_music_navigation.style.height = '30px';
     bottom_music_navigation.style.height = '20px';
-    progress_container.classList.remove('width', 'height', 'margin', 'opacity');
+    progress_container.classList.remove('width', 'height', 'margin', 'opacity', 'pointer');
     show('title');
     title.style.padding = '0px 0px 0px 8px';
     progress_container.style.margin = 'auto 0px auto 0px';
     if (dn.checked) {
-        next_light.classList.remove('width', 'height', 'margin');
-        next_dark.classList.remove('width', 'height', 'margin', 'opacity');
+        next_light.classList.remove('width', 'height', 'margin', 'pointer');
+        next_dark.classList.remove('width', 'height', 'margin', 'opacity', 'pointer');
         if (isPlaying) {
-            play_dark.classList.remove('width', 'height', 'margin');
-            pause_dark.classList.remove('width', 'height', 'margin', 'opacity');
-            pause_light.classList.remove('width', 'height', 'margin');
-            play_light.classList.remove('width', 'height', 'margin');
+            play_dark.classList.remove('width', 'height', 'margin', 'pointer');
+            pause_dark.classList.remove('width', 'height', 'margin', 'opacity', 'pointer');
+            pause_light.classList.remove('width', 'height', 'margin', 'pointer');
+            play_light.classList.remove('width', 'height', 'margin', 'pointer');
         } else {
-            pause_dark.classList.remove('width', 'height', 'margin');
-            pause_light.classList.remove('width', 'height', 'margin');
-            play_dark.classList.remove('width', 'height', 'margin', 'opacity');
-            play_light.classList.remove('width', 'height', 'margin');
+            pause_dark.classList.remove('width', 'height', 'margin', 'pointer');
+            pause_light.classList.remove('width', 'height', 'margin', 'pointer');
+            play_dark.classList.remove('width', 'height', 'margin', 'opacity', 'pointer');
+            play_light.classList.remove('width', 'height', 'margin', 'pointer');
         }
     } else {
-        next_dark.classList.remove('width', 'height', 'margin');
-        next_light.classList.remove('width', 'height', 'margin', 'opacity');
+        next_dark.classList.remove('width', 'height', 'margin', 'pointer');
+        next_light.classList.remove('width', 'height', 'margin', 'opacity', 'pointer');
         if (isPlaying) {
-            pause_light.classList.remove('width', 'height', 'margin', 'opacity');
-            pause_dark.classList.remove('width', 'height', 'margin');
-            play_dark.classList.remove('width', 'height', 'margin');
-            play_light.classList.remove('width', 'height', 'margin');
+            pause_light.classList.remove('width', 'height', 'margin', 'opacity', 'pointer');
+            pause_dark.classList.remove('width', 'height', 'margin', 'pointer');
+            play_dark.classList.remove('width', 'height', 'margin', 'pointer');
+            play_light.classList.remove('width', 'height', 'margin', 'pointer');
         } else {
-            play_light.classList.remove('width', 'height', 'margin', 'opacity');
-            pause_dark.classList.remove('width', 'height', 'margin');
-            play_dark.classList.remove('width', 'height', 'margin');
-            pause_light.classList.remove('width', 'height', 'margin');
+            play_light.classList.remove('width', 'height', 'margin', 'opacity', 'pointer');
+            pause_dark.classList.remove('width', 'height', 'margin', 'pointer');
+            play_dark.classList.remove('width', 'height', 'margin', 'pointer');
+            pause_light.classList.remove('width', 'height', 'margin', 'pointer');
         }
     }
     musicContainer.removeEventListener('click', plause);
