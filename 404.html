@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset='utf-8'>
 	<title>Hēsperus' Blog</title>
-    <script src="script.js"></script>
     <script>
+        function inpage_navi() {
+            let current_page = window.location.href;
+            current_page = current_page.replace('https://hesprs.github.io/', '');
+            location.replace('https://hesprs.github.io');
+            localStorage.setItem('title', current_page);
+        }
         window.addEventListener('DOMContentLoaded', inpage_navi);
     </script>
 </head>

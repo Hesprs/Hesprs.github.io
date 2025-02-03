@@ -9,6 +9,17 @@ main {
 	padding: 1px 15px 1px 15px;
 }
 
+hr {
+	height: 1px;
+	width: calc(100% - 18px);
+	margin: 8px;
+	background-color: rgb(210, 210, 210);
+	transition: background-color 300ms;
+	border: none;
+} body.dark hr {
+	background-color: rgb(100, 100, 100);
+}
+
 h1 {
 	font-weight: 900;
 	color: rgb(108, 46, 255);
@@ -100,6 +111,7 @@ svg {
 	padding: 0px;
 	font-weight: 300;
 	transition: color 300ms, opacity 300ms;
+	white-space: nowrap;
 } .demobox .center_text {
 	flex-direction: column;
 }
@@ -162,15 +174,17 @@ svg {
 } body.dark .entry {
 	color: rgb(255, 255, 255);
 	background-color: rgb(45, 45, 45);
-} .entry:hover {
+}
+
+.clickable:hover {
     color: rgb(109, 173, 208);
     background-color: rgb(229, 238, 245);
-} body.dark .entry:hover {
+} body.dark .clickable:hover {
 	color: rgb(190, 222, 248);
 	background-color: rgb(60, 60, 60);
-} .entry:active:hover {
+} .clickable:active:hover {
     background-color: rgb(190, 222, 248);
-} body.dark .entry:active:hover {
+} body.dark .clickable:active:hover {
 	color: rgb(190, 222, 248);
 	background-color: rgb(75, 75, 75);
 }
@@ -179,7 +193,7 @@ svg {
 	flex: 1 1 auto;
 	background-color: rgb(255, 255, 255);
 	border-radius: 10px;
-	padding: 8px 12px 8px 12px;
+	padding: 8px 8px 8px 8px;
 	text-align: center;
 	display: flex;
 	transition: background-color 300ms, box-shadow 300ms;
@@ -268,6 +282,16 @@ svg {
 } body.dark .checked:hover {
 	background-color: rgb(75, 75, 75);
 	color: rgb(190, 222, 248);
+}
+
+.opacity {
+	opacity: 0;
+} .width {
+	width: 0px;
+} .height {
+	height: 0px;
+} .margin {
+	margin: 0px;
 }
 
 @media (max-width: 767.9px) {

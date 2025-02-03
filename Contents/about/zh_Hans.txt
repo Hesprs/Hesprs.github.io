@@ -1,0 +1,57 @@
+<main>
+	<h1>关于 Hēsperus</h1>
+	<div style='display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px;'>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='Orca' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>博客<br><a href='https://hesprs.github.io'>hesprs.github.io</a></div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/mail--v1.png' alt='Mail' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>邮箱<br>Hesprs@outlook.com</div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png' alt='QQ' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>QQ<br>Hesprs42</div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/weixing.png' alt='Wechat' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>微信<br>Hesprs</div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/color/100/bilibili.png' alt='Bilibili' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>哔哩哔哩<br><a href='https://space.bilibili.com/3546710445919039?spm_id_from=333.1007.0.0'>bili_88807849505</a></div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/color/100/baidu.png' alt='Baidu' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>百度贴吧<br><a href='https://tieba.baidu.com/home/main?id=tb.1.ec6a5f2f.3w0fUzVDySoOUvStm1BvvA?t=1595059656&fr=index'>Hēsperus</a></div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/material-outlined/100/zhihu.png' alt='Zhihu' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>知乎<br><a href='https://www.zhihu.com/people/ydshpw'>高卢总督</a></div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/github.png' alt='Github' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>GitHub<br><a href='https://github.com/Hesprs'>Hesprs</a></div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/reddit.png' alt='Reddit' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>Reddit<br><a href='https://www.reddit.com/user/Hesprs/'>Hesprs</a></div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/discord.png' alt='Discord' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>Discord<br>Hesperus</div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/instagram-new.png' alt='Instagram' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>Instagram<br><a href='https://www.instagram.com/hes.prs/'>hes.prs</a></div>
+		</div>
+		<div class='demobox shadow'>
+			<img class='icon' src='https://img.icons8.com/fluency/100/twitterx--v1.png' alt='𝕏' style='width: 40px; height:40px; margin: auto 0px auto auto;'>
+			<div class='center_text color' style='margin-left: 10px;'>𝕏<br><a href='https://x.com/Hesprs'>hesprs</a></div>
+		</div>
+	</div>
+	<br><hr>
+	<h1>你想知道的一切</h1>
+	<p>这个“奇怪”的网站是由 Hēsperus 自己搭建的。然而，他没有足够的能力或时间来开发它。因此，这个网站现在就像原始人的岩画一样简陋。毕竟，只要它能正常工作，我们就不能要求太多，对吧？</p>
+	<p style='text-align: right;'>版权所有 © Hēsperus 2025<br>图标由 <a href='https://icons8.com'>icons8</a> 提供</p>	
+</main>

@@ -1,18 +1,18 @@
-function loadSong(song) {
-    title.innerText = song;
-    audio.src = 'http://hb.frp.one:11111/music/' + song + '/track.mp3';
-    cover_1.src = 'http://hb.frp.one:11111/music/' + song + '/100.png';;
+function loadSong() {
+    title.innerText = songs[songIndex];
+    audio.src = surls[songIndex];
+    cover_1.src = iurls[songIndex];
 }
 
 function playSong() {
     cover_1.style.animationPlayState = 'running';
     if (!sidenav_minimal) {
         if (dn.checked) {
-            play_dark.style.opacity = "0";
-            pause_dark.style.opacity = "1";
+            play_dark.classList.add('opacity');
+            pause_dark.classList.remove('opacity');
         } else {
-            play_light.style.opacity = "0";
-            pause_light.style.opacity = "1";
+            play_light.classList.add('opacity');
+            pause_light.classList.remove('opacity');
         }
     }
     audio.play();
@@ -22,11 +22,11 @@ function pauseSong() {
     cover_1.style.animationPlayState = 'paused';
     if (!sidenav_minimal) {
         if (dn.checked) {
-            play_dark.style.opacity = "1";
-            pause_dark.style.opacity = "0";
+            play_dark.classList.remove('opacity');
+            pause_dark.classList.add('opacity');
         } else {
-            play_light.style.opacity = "1";
-            pause_light.style.opacity = "0";
+            play_light.classList.remove('opacity');
+            pause_light.classList.add('opacity');
         }
     }
     audio.pause();
@@ -34,10 +34,10 @@ function pauseSong() {
 
 function nextSong() {
     songIndex++;
-    if (songIndex > songs.length - 1) {
+    if (songIndex === songs.length) {
         songIndex = 0;
     }
-    loadSong(songs[songIndex]);
+    loadSong();
     if (isPlaying) {
         audio.play();
     }
@@ -65,4 +65,72 @@ function plause() {
         playSong();
         isPlaying = true;
     }
+}
+
+function music_minimal() {
+    musicContainer.style.height = '30px';
+    icon_hide('play_dark');
+    icon_hide('play_light');
+    icon_hide('pause_light');
+    icon_hide('pause_dark');
+    icon_hide('next_light');
+    icon_hide('next_dark');
+    icon_hide('progress-container');
+    hide('title');
+    title.style.padding = '0px';
+    setTimeout(() => {
+        upper_music_navigation.style.height = '0px';
+        bottom_music_navigation.style.height = '0px';
+    }, 300)
+    fade_in = setInterval(() => {
+        cover_resize();
+    }, 20);
+    setTimeout(() => {
+        clearInterval(fade_in);
+    }, 300);
+    musicContainer.addEventListener('click', plause);
+    musicContainer.classList.add('expand');
+    playButton.removeEventListener('click', plause);
+}
+
+function music_complete() {
+    musicContainer.style.height = '80px';
+    upper_music_navigation.style.height = '30px';
+    bottom_music_navigation.style.height = '20px';
+    progress_container.classList.remove('width', 'height', 'margin', 'opacity');
+    show('title');
+    title.style.padding = '0px 0px 0px 8px';
+    progress_container.style.margin = 'auto 0px auto 0px';
+    if (dn.checked) {
+        next_light.classList.remove('width', 'height', 'margin');
+        next_dark.classList.remove('width', 'height', 'margin', 'opacity');
+        if (isPlaying) {
+            play_dark.classList.remove('width', 'height', 'margin');
+            pause_dark.classList.remove('width', 'height', 'margin', 'opacity');
+            pause_light.classList.remove('width', 'height', 'margin');
+            play_light.classList.remove('width', 'height', 'margin');
+        } else {
+            pause_dark.classList.remove('width', 'height', 'margin');
+            pause_light.classList.remove('width', 'height', 'margin');
+            play_dark.classList.remove('width', 'height', 'margin', 'opacity');
+            play_light.classList.remove('width', 'height', 'margin');
+        }
+    } else {
+        next_dark.classList.remove('width', 'height', 'margin');
+        next_light.classList.remove('width', 'height', 'margin', 'opacity');
+        if (isPlaying) {
+            pause_light.classList.remove('width', 'height', 'margin', 'opacity');
+            pause_dark.classList.remove('width', 'height', 'margin');
+            play_dark.classList.remove('width', 'height', 'margin');
+            play_light.classList.remove('width', 'height', 'margin');
+        } else {
+            play_light.classList.remove('width', 'height', 'margin', 'opacity');
+            pause_dark.classList.remove('width', 'height', 'margin');
+            play_dark.classList.remove('width', 'height', 'margin');
+            pause_light.classList.remove('width', 'height', 'margin');
+        }
+    }
+    musicContainer.removeEventListener('click', plause);
+    musicContainer.classList.remove('expand');
+    playButton.addEventListener('click', plause);
 }

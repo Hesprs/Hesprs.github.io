@@ -8,7 +8,6 @@
 }
 
 .music-container {
-    
     padding: 8px 8px 8px 8px;
 	background-color: rgb(247, 249, 250);
 	font-weight: 300;
@@ -25,7 +24,7 @@
 
 .expand {
     cursor: pointer;
-} .expand:hover {  
+} .expand:hover {
     color: rgb(109, 173, 208);
     background-color: rgb(229, 238, 245);
 } body.dark .expand:hover {
