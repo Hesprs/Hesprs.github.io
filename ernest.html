@@ -17,13 +17,13 @@
     hr {
       height: 1px;
       width: 100%;
-      margin: 10px;
+      margin: 20px 0px;
       background-color: rgb(255, 255, 255);
       border: none;
     }
     body {
       font-family: 'Arial', sans-serif;
-      background: url('https://pic1.imgdb.cn/item/67aed1e4d0e0a243d4ff11c9.jpg') no-repeat center center fixed;
+      background: url('https://pic1.imgdb.cn/item/67b0a553d0e0a243d4ffb0ab.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #f1f1f1;
       min-height: 100vh;
@@ -32,6 +32,17 @@
       justify-content: center;
       padding: 20px;
       text-align: center;
+      transition: padding 0.5s ease;
+    }
+    html {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      overflow: hidden;
+    } html::-webkit-scrollbar {
+      display: none;
+    }
+    html.show {
+      overflow: scroll;
     }
     .poster {
       max-width: 1300px;
@@ -44,22 +55,19 @@
     }
     h1 {
       font-size: 4rem;
-      margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       font-family: Cormorant SC;
     }
     h2 {
       font-size: 2rem;
-      margin: 20px 0 20px;
+      margin: 20px 0px 20px 0px;
+      display: inline;
     }
     p, li {
+      margin: 20px 0px 0px 0px;
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 15px;
-    }
-    .highlight {
-      color: #ffcc00;
-      font-weight: bold;
     }
     ul {
       list-style: none;
@@ -67,17 +75,267 @@
       margin: 0 0 15px;
     }
     .animated-text {
-      font-size: 1.5rem;
-      margin-top: 20px;
-      animation: glow 1.5s ease-in-out infinite alternate;
+      font-family: Cormorant SC;
+      font-weight: bold;
+      font-size: 2rem;
+      animation: glow 3s ease-in-out infinite alternate;
+      position: absolute;
+      top: 360px;
+      left: calc(50% - 475.87px);
+      pointer-events: none;
+      transition: top 0.5s ease;
+    }
+    .animated-next {
+      font-family: Redley;
+      font-weight: bold;
+      font-size: 1.4rem;
+      animation: vibrate 2s ease 0s infinite normal none;
+      position: absolute;
+      bottom: 25px;
+      left: calc(50% - 277.085px);
+      pointer-events: none;
+      transition: bottom 0.5s ease;
+    }
+    @keyframes vibrate {
+      0% {
+      transform: translate(0);
+      }
+    
+      10% {
+      transform: translate(-2px, -2px);
+      }
+    
+      20% {
+      transform: translate(2px, -2px);
+      }
+    
+      30% {
+      transform: translate(-2px, 2px);
+      }
+    
+      40% {
+      transform: translate(2px, 2px);
+      }
+    
+      50% {
+      transform: translate(-2px, -2px);
+      }
+    
+      60% {
+      transform: translate(2px, -2px);
+      }
+    
+      70% {
+      transform: translate(-2px, 2px);
+      }
+    
+      80% {
+      transform: translate(-2px, -2px);
+      }
+    
+      90% {
+      transform: translate(2px, -2px);
+      }
+    
+      100% {
+      transform: translate(0);
+      }
     }
     @keyframes glow {
       from {
-        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+        text-shadow: 0 0 10px #ffcc00, 0 0 30px #ffcc00, 0 0 50px #ffcc00;
       }
       to {
-        text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+        text-shadow: 0 0 20px #ffcc00, 0 0 50px #ffcc00, 0 0 70px #ffcc00;
       }
+    }
+    @keyframes dial {
+      0% {
+        transform: rotate(0);
+        transform-origin: center;
+      }
+      5% {
+        transform: rotate(30deg);
+        transform-origin: center;
+      } 8.33% {
+        transform: rotate(30deg);
+        transform-origin: center;
+      }
+      13.66% {
+        transform: rotate(60deg);
+        transform-origin: center;
+      } 16.66% {
+        transform: rotate(60deg);
+        transform-origin: center;
+      }
+      22% {
+        transform: rotate(90deg);
+        transform-origin: center;
+      } 25% {
+        transform: rotate(90deg);
+        transform-origin: center;
+      }
+      30.33% {
+        transform: rotate(120deg);
+        transform-origin: center;
+      } 33.33% {
+        transform: rotate(120deg);
+        transform-origin: center;
+      }
+      38.66% {
+        transform: rotate(150deg);
+        transform-origin: center;
+      } 41.66% {
+        transform: rotate(150deg);
+        transform-origin: center;
+      }
+      47% {
+        transform: rotate(180deg);
+        transform-origin: center;
+      } 50% {
+        transform: rotate(180deg);
+        transform-origin: center;
+      }
+      55.33% {
+        transform: rotate(210deg);
+        transform-origin: center;
+      } 58.33% {
+        transform: rotate(210deg);
+        transform-origin: center;
+      }
+      63.66% {
+        transform: rotate(240deg);
+        transform-origin: center;
+      } 66.66% {
+        transform: rotate(240deg);
+        transform-origin: center;
+      }
+      72% {
+        transform: rotate(270deg);
+        transform-origin: center;
+      } 75% {
+        transform: rotate(270deg);
+        transform-origin: center;
+      }
+      80.33% {
+        transform: rotate(300deg);
+        transform-origin: center;
+      } 83.33% {
+        transform: rotate(300deg);
+        transform-origin: center;
+      }
+      88.66% {
+        transform: rotate(330deg);
+        transform-origin: center;
+      } 91.66% {
+        transform: rotate(330deg);
+        transform-origin: center;
+      }
+      97% {
+        transform: rotate(360deg);
+        transform-origin: center;
+      } 100% {
+        transform: rotate(360deg);
+        transform-origin: center;
+      }
+    }
+    @keyframes dial2 {
+      0% {
+        transform: rotate(0);
+        transform-origin: center;
+      }
+      7.913% {
+        transform: rotate(0deg);
+        transform-origin: center;
+      } 8.33% {
+        transform: rotate(30deg);
+        transform-origin: center;
+      }
+      16.243% {
+        transform: rotate(30deg);
+        transform-origin: center;
+      } 16.66% {
+        transform: rotate(60deg);
+        transform-origin: center;
+      }
+      24.583% {
+        transform: rotate(60deg);
+        transform-origin: center;
+      } 25% {
+        transform: rotate(90deg);
+        transform-origin: center;
+      }
+      32.913% {
+        transform: rotate(90deg);
+        transform-origin: center;
+      } 33.33% {
+        transform: rotate(120deg);
+        transform-origin: center;
+      }
+      41.243% {
+        transform: rotate(120deg);
+        transform-origin: center;
+      } 41.66% {
+        transform: rotate(150deg);
+        transform-origin: center;
+      }
+      49.583% {
+        transform: rotate(150deg);
+        transform-origin: center;
+      } 50% {
+        transform: rotate(180deg);
+        transform-origin: center;
+      }
+      57.913% {
+        transform: rotate(180deg);
+        transform-origin: center;
+      } 58.33% {
+        transform: rotate(210deg);
+        transform-origin: center;
+      }
+      66.243% {
+        transform: rotate(210deg);
+        transform-origin: center;
+      } 66.66% {
+        transform: rotate(240deg);
+        transform-origin: center;
+      }
+      74.583% {
+        transform: rotate(240deg);
+        transform-origin: center;
+      } 75% {
+        transform: rotate(270deg);
+        transform-origin: center;
+      }
+      82.913% {
+        transform: rotate(270deg);
+        transform-origin: center;
+      } 83.33% {
+        transform: rotate(300deg);
+        transform-origin: center;
+      }
+      91.243% {
+        transform: rotate(300deg);
+        transform-origin: center;
+      } 91.66% {
+        transform: rotate(330deg);
+        transform-origin: center;
+      }
+      99.583% {
+        transform: rotate(330deg);
+        transform-origin: center;
+      } 100% {
+        transform: rotate(360deg);
+        transform-origin: center;
+      }
+    }
+    .empha {
+      color: #ffcc00;
+      font-weight: bold;
+      font-family: Cormorant SC;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
     }
     .footer {
       margin-top: 10px;
@@ -91,8 +349,7 @@
     }
     .box {
       position: relative;
-      height: 350px;
-      flex-grow: 1;
+      height: 450px;
       display: flex;
       align-items: center;
     }
@@ -105,11 +362,20 @@
       transition: opacity 0.3s;
       opacity: 1;
       position: absolute;
-      top: 0px;
-      left: 0px;
       z-index: 1;
+      box-shadow: 0px 2px 5px rgb(30, 30, 30);
     } .hover-image:hover {
       opacity: 0;
+    }
+    .dial {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      z-index: 1;
+      filter: drop-shadow(5px 5px 5px #222);
     }
     .hover-text {
       font-size: 1.2rem;
@@ -122,54 +388,106 @@
 <body>
   <div class="poster">
     <h1>The Importance of Being Earnest</h1>
-    <h2><class="highlight">Victorian Societal Norms on Females</class> and the <p class="highlight">First Wave of Feminism</p></h2>
-    <p>
-      Oscar Wilde’s satire not only entertains but also critiques the superficial nature of Victorian society. Through the depiction of female characters, the play reveals the tension between traditional roles and the emerging modernity of women's identity.
-    </p>
+    <h2 class="empha">Victorian Societal Norms </h2> <h2> on females and the </h2> <h2 class="empha"> First Wave of Feminism</h2>
     <hr>
-
-    <div style="display: flex; flex-direction: row;">
-
-      <div style="width: 35%;">
-        <h2>Societal Trends</h2>
+    <div style="display: grid; grid-template-columns: 35% 30% 35%;">
+      <div>
+        <h1 class="empha">Societal Trends</h1>
         <ul class="demo" style="flex-direction: column;">
           <div class="box">
-            <img src="https://pic1.imgdb.cn/item/67aed1e5d0e0a243d4ff11ca.jpg" alt="Gender Expectations" class="hover-image">
-            <span class="hover-text">Gender Expectations: Even empowered women were expected to adhere to the shallow standards of their society.</span>
+            <img src="https://pic1.imgdb.cn/item/67aed1e5d0e0a243d4ff11ca.jpg" alt="Feminism" class="hover-image">
+            <span class="hover-text"><h3 class="empha" style="font-size: 1.5em;">Rising Feminism</h3>Late in the 19th century, with the unprecedented growth of industry, victorian females began to be more conscious about their independence and equality than men. Then comes the first wave of feminism which focuses on the legal right and suffrage of women. At the same time, the New Woman Movement started to liberate social stereotypes about gender.</span>
           </div>
           <div class="box">
-            <img src="https://pic1.imgdb.cn/item/67aed1ded0e0a243d4ff11c7.jpg" alt="Irony and Hypocrisy" class="hover-image">
-            <span class="hover-text">Irony and Hypocrisy: Wilde’s witty commentary exposes the contradictions between personal desires and societal expectations.</span>
+            <img src="https://pic1.imgdb.cn/item/67aed1ded0e0a243d4ff11c7.jpg" alt="Irony" class="hover-image">
+            <span class="hover-text"><h3 class="empha" style="font-size: 1.5em;">Remaining Patriarchy</h3>This satire's most ingenious point is the mockery of Victorian norms. It depicts a host of educated females in the aristocracy stratum, seemingly independent and smart. And then it gradually reveals the hypocrisy and absurdity in their nature, indicating that although the society has seen some revolutionary concepts, it is still managed under the fixed cliche aligned with patriarchy.</span>
           </div>
         </ul>
       </div>
-
-      <div style="width: 30%;">
-        <audio src="http://music.163.com/song/media/outer/url?id=1983513897.mp3"></audio>
+      <div style="display: flex; flex-direction: column; margin: 70px 30px 15px 30px; justify-content: space-between;">
+        <div class="box" style="aspect-ratio: 1/1; width: 100%; height: unset;"> 
+          <img src="https://pic1.imgdb.cn/item/67b09d2fd0e0a243d4ffac85.jpg" alt="Wilde" class="hover-image">
+          <span class="hover-text">Oscar Wilde's satire not only entertains but also critiques the superficialness of Victorian society. Through the depiction of female characters, the play reveals the tension between traditional women's perceptions and emerging modernity.</span>
+        </div>
+        <div class="box" style="aspect-ratio: 1/1; width: 100%; height: unset; margin: auto 0px auto 0px;"> 
+          <img src="https://pic1.imgdb.cn/item/67b01e93d0e0a243d4ff89b5.png" alt="hand" class="dial" id="hand" style="z-index: 3; animation: dial 13.5s cubic-bezier(0.46, 0, 0.21, 1) infinite; pointer-events: none; animation-play-state: paused;">
+          <img src="https://pic1.imgdb.cn/item/67b032abd0e0a243d4ff8d5f.png" alt="hand" class="dial" id="hand2" style="margin-left: 44%; width: 12%; z-index: 2; animation: dial2 162s cubic-bezier(0.46, 0, 0.21, 1) infinite; pointer-events: none; animation-play-state: paused;">
+          <img src="https://pic1.imgdb.cn/item/67b01e93d0e0a243d4ff89b6.png" alt="dial" class="dial" id="dial">
+          <span class="hover-text"></span>
+        </div>
+        <div class="box" style="aspect-ratio: 1/1; width: 100%; height: unset;"> 
+          <img src="https://pic1.imgdb.cn/item/67b09d30d0e0a243d4ffac87.jpg" alt="Conclusion" class="hover-image">
+          <span class="hover-text">The progress of history is consistent and lasting, it shows the evolution of human will and the liberation of all females all over the globe. Following the first tide of feminism comes the second, the third and the fourth. The conception of gender equality, self-awareness and independence subsequently covers every aspect of our lives.</span>
+        </div>
+        <audio src="http://music.163.com/song/media/outer/url?id=1983513149.mp3" id="audio"></audio>
       </div>
-
-
-      <div style="width: 35%;">
-        <h2>Female Roles</h2>
+      <div>
+        <h1 class="empha">Female Roles</h1>
         <ul class="demo" style="flex-direction: column;">
           <div class="box">
-            <img src="https://pic1.imgdb.cn/item/67aed1ddd0e0a243d4ff11c5.jpg" alt="Subversion of Conformity" class="hover-image">
-            <span class="hover-text">Subversion of Conformity: Despite their seemingly conventional roles, these characters subtly assert their agency within restrictive social boundaries.</span>
+            <img src="https://pic1.imgdb.cn/item/67aed1ddd0e0a243d4ff11c5.jpg" alt="Cecily and Gwendolen" class="hover-image">
+            <span class="hover-text"><h3 class="empha" style="font-size: 1.5em;">Cecily and Gwendolen</h3>Either blanketed by innocence or adorned with nobility, they all fall in love with an unreal man called 'Ernest' against their warden's will. Such behaviour may demonstrate their intelligence and independence but inevitably sinks into the marsh of ignorance and superficialness. By the sharp comparison between the moment before and after they've known the fact, it has been clarified that they disguise themselves to be pure and morally superior more or less.</span>
           </div>
           <div class="box">
             <img src="https://pic1.imgdb.cn/item/67aed1ddd0e0a243d4ff11c6.png" alt="Lady Bracknell" class="hover-image">
-            <span class="hover-text">Lady Bracknell<br>She seems to pwn the power of dictation in marriage, while the every judgement of her are originated form the perspective of ancestry and social gackground of wealth. Suggesting she has alienated as the vindicator of patriarchism.</span>
+            <span class="hover-text"><h3 class="empha" style="font-size: 1.5em;">Lady Bracknell</h3>She seems to own the authority in marriage, while every judgement of her originated from the perspective of ancestry and social background, suggesting she has alienated as the vindicator of norms formed in the patriarchism era.</span>
           </div>
         </ul>
       </div>
     </div>
     <hr>
-    <div class="animated-text">
-      "In a world of appearances, let authenticity be your rebellion."
-    </div>
     <div class="footer">
       <p>Poster by Hesperus | Reflecting on Oscar Wilde's Satirical Genius</p>
     </div>
   </div>
 </body>
+<div class="animated-text" id="text">
+  "In a World of Appearances, Let Authenticity Be Your Rebellion."
+</div>
+<pre class="animated-next" id="next">
+  ✦  ----------   Click Anywhere to Continue   ----------  ✦
+</pre>
+<script>
+  const audio = document.getElementById('audio');
+  const dial = document.getElementById('dial');
+  const hand = document.getElementById('hand');
+  const hand2 = document.getElementById('hand2');
+  const text = document.getElementById('text');
+  const next = document.getElementById('next');
+  const body = document.body;
+  const html = document.documentElement;
+  let isPlaying = false;
+  let show = false;
+  body.style.paddingTop = `${window.innerHeight + 30}px`;
+  body.addEventListener('click', function() {
+    if (!show) {
+      audio.play();
+      show = true;
+      isPlaying = true;
+      body.style.paddingTop = '30px';
+      html.classList.add('show');
+      hand.style.animationPlayState = 'running';
+      hand2.style.animationPlayState = 'running';
+      text.style.top = `${250 - window.innerHeight}px`;
+      next.style.bottom = `${50 + window.innerHeight}px`;
+    }
+  });
+  audio.addEventListener('ended', function() {
+    audio.currentTime = 0;
+    audio.play();
+  });
+  dial.addEventListener('click', function() {
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+      hand.style.animationPlayState = 'paused';
+      hand2.style.animationPlayState = 'paused';
+    } else {
+      audio.play();
+      isPlaying = true;
+      hand.style.animationPlayState = 'running';
+      hand2.style.animationPlayState = 'running';
+    }
+  });
+</script>
 </html>
