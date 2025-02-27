@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta name="author" content="Hēsperus">
+	<meta name="description" content="">
+	<title>Hēsperus' Blog</title>
+	<link rel='stylesheet' href='CSS/style.css'>
+	<link rel='stylesheet' href='CSS/toggler.css'>
+	<link rel='stylesheet' href='CSS/pop_up.css'>
+	<link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
+	<link type='image/png' sizes='32x32' rel='icon' href='https://img.icons8.com/fluency/100/orca.png'>
+	<input type='radio' id='en' name='language' value='en'>
+	<input type='radio' id='zh_Hans' name='language' value='zh_Hans'>
+	<input type='radio' id='de' name='language' value='de'>
+	<input type='radio' id='homepage' name='category' value='homepage'>
+	<input type='radio' id='learning' name='category' value='learning'>
+	<input type='radio' id='humanities' name='category' value='humanities'>
+	<input type='radio' id='development' name='category' value='development'>
+	<input type='radio' id='others' name='category' value='others'>
+	<input type='radio' id='about' name='category' value='about'>
+	<input type='checkbox' id='dn'>
+</head>
+<body>
+	<div class='background' id='background'>
+		<div class='shade' id='shade'></div>
+		<div class='pop_up' id='pop_up'>
+			<div style='padding: 8px 15px 8px 15px; display: flex; width: calc(100% - 30px);'>
+				<img class='icon' src='https://pic1.imgdb.cn/item/67a5b350d0e0a243d4fc7e2b.png' alt='back' style='height: 30px; width: 17.4px;' id='back'>
+				<div class='center_text theme_color' style='margin: 0px auto 0px auto; font-size: 22px; height: 30px; font-weight: 500;' id='pop_up_title'></div>
+				<div style='width: 17.4px'></div>
+			</div>
+			<hr style='margin: 0px; width: 100%;'>
+			<div class='content' id='pop_up_content' style='position: unset; display:flex; flex-direction:column; padding: 0px 15px 0px 15px; width: calc(100% - 30px);'></div>
+		</div>
+
+		<div class='sidenav' id='sidenav'>
+			<div class='sidenav_wrapper shadow' id='search_bar_wrapper'>
+				<div class='entry clickable upper' id='previous'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous' style='height: 30px; width:30px;'>
+						<dir class='center_text' id='text_previous' style='direction: rtl; margin: auto 0px auto auto;'></dir>
+					</div>
+				</div>
+				<div class='division'></div>
+				<div class='sidenav_wrapper shadow' style='border-radius: 0px; box-shadow: none; flex-direction: row;'>
+					<div class='label_wrapper' id='search_input_wrapper'>
+						<input type='text' id='search_bar'>
+					</div>
+					<div class='vertical_division' id='side_division'></div>
+					<div class='entry clickable' id='search_button' style='border-radius: 0px 0px 10px 0px;'>
+						<div class='label_wrapper' style='min-width: 30px;'>
+							<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' style='height: 30px; width:30px;'></img>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='sidenav_wrapper shadow'>
+				<label for='homepage' class='entry clickable upper' id='homepage_label'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' style='height: 30px; width:30px;' id='homepage_icon'>
+						<dir class='center_text' id='text_homepage'></dir>
+					</div>
+				</label>
+				<div class='division'></div>
+				<label for='learning' class='entry clickable' id='learning_label'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/quill-with-ink.png' alt='learning' style='height: 30px; width:30px;' id='learning_icon'>
+						<dir class='center_text' id='text_learning'></dir>
+					</div>
+				</label>
+				<div class='division'></div>
+				<label for='humanities' class='entry clickable' id='humanities_label'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/mona-lisa.png' alt='humanities' style='height: 30px; width:30px;' id='humanities_icon'>
+						<dir class='center_text' id='text_humanities'></dir>
+					</div>
+				</label>
+				<div class='division'></div>
+				<label for='development' class='entry clickable' id='development_label'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/macbook-settings.png' alt='development' style='height: 30px; width:30px;' id='development_icon'>
+						<dir class='center_text' id='text_development'></dir>
+					</div>
+				</label>
+				<div class='division'></div>
+				<label for='others' class='entry clickable' id='others_label'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/oat-milk.png' alt='others' style='height: 30px; width:30px;' id='others_icon'>
+						<dir class='center_text' id='text_others'></dir>
+					</div>
+				</label>
+				<div class='division'></div>
+				<label for='about' class='entry clickable lower' id='about_label'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' style='height: 30px; width:30px;' id='about_icon'>
+						<dir class='center_text' id='text_about'></dir>
+					</div>
+				</label>
+			</div>
+			<div class='sidenav_wrapper' id='search_bar_center_wrapper'>
+				<div class='entry clickable' id='previous_center'>
+					<div class='label_wrapper'  style='border-radius: 10px 10px 0px 0px;'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous' style='height: 30px; width:30px;'>
+						<dir class='center_text' id='text_previous_center' style='direction: rtl; margin: auto 0px auto auto;'></dir>
+					</div>
+				</div>
+				<div class='division show'></div>
+				<input type='text' id='search_bar_center'>
+				<div class='division show'></div>
+				<div class='entry clickable' id='search_button_center' style='border-radius: 0px 0px 10px 1px;'>
+					<div class='label_wrapper'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' style='height: 30px; width:30px;'></img>
+					</div>
+				</div>
+			</div>
+			<div class='sidenav_wrapper shadow' style='margin: auto 0px 0px auto;'>
+				<div class='music_container upper' id='music_container'>
+					<div class='label_wrapper' style='min-height: 80px; flex-direction: column;'>
+						<div style='margin: 0px; display: flex; height: 30px;'>
+							<img class='icon' src='https://pic1.imgdb.cn/item/67a20090d0e0a243d4fbcfce.png' alt='music-cover' id='music_cover'/>
+							<div id='music_title' class='center_text' style='white-space: normal; margin: auto 0px auto auto; direction: rtl; font-size: 15px; height: 30px; padding: 0px 0px 0px 8px; line-height: 17px;'></div>
+						</div>
+						<div class='progress_container' id='progress_container'>
+							<div class='progress' id='progress'></div>
+						</div>
+						<div style='margin: 0px; display: flex; height: 20px;'>
+						  	<button id='play' class='action-btn' style='margin: 0px auto 0px 0px;'>
+								<img class='icon navi_ico' src='https://img.icons8.com/fluency-systems-filled/100/play.png' alt='play' id='play_light'/>
+								<img class='icon navi_ico opacity' src='https://img.icons8.com/fluency-systems-filled/100/pause.png' alt='pause' id='pause_light'/>
+								<img class='icon navi_ico opacity' src='https://img.icons8.com/?size=100&id=q0nxNdfpbYVl&format=png&color=FFFFFF' alt='pause' id='pause_dark'/>
+								<img class='icon navi_ico' src='https://img.icons8.com/?size=100&id=fjx0LfGCNuZb&format=png&color=FFFFFF' alt='play' id='play_dark'/>
+						  	</button>
+						  	<button id='next' class='action-btn'>
+								<img class='icon navi_ico' src='https://img.icons8.com/fluency-systems-filled/100/end.png' alt='next' style='right: 0px;' id='next_light'/>
+								<img class='icon navi_ico' src='https://img.icons8.com/?size=100&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' style='right: 0px;' id='next_dark'/>
+					  		</button>
+						</div>
+						<audio src='https://music.163.com/song/media/outer/url?id=1437405183.mp3' id='audio'></audio>
+					</div>
+				</div>
+				<div class='division'></div>
+				<div class='entry clickable' id='language_option'>
+					<div class='label_wrapper'>
+						<img class='icon' alt='flag' style='height: 30px; width: 30px;' id='nations'>
+						<div class='center_text' id='text_language' style='direction: rtl; margin: auto 0px auto auto;'></div>
+					</div>
+				</div>
+				<div class='division'></div>
+				<label class='entry clickable lower' id='day_night' for='dn' style='display: flex; align-items: center; justify-content: center; text-align: center;'>
+					<div class='label_wrapper' style='min-width: 0px;'>
+						<div class='text_light' id='text_light'></div>
+						<div class='toggleWrapper fancy_color' id='toggleWrapper'>
+							<div class='toggle'>
+								<span class='toggle__handler'>
+									<span class='crater crater--1'></span>
+									<span class='crater crater--2'></span>
+									<span class='crater crater--3'></span>
+								</span>
+								<span class='star star--1'></span>
+								<span class='star star--2'></span>
+								<span class='star star--3'></span>
+								<span class='star star--4'></span>
+								<span class='star star--5'></span>
+								<span class='star star--6'></span>
+							</div>
+						</div>
+						<div class='text_dark' id='text_dark'></div>
+					</div>
+				</label>
+			</div>
+		</div>
+		<div class='stretch_bar_wrapper' id='stretch_bar'>
+			<div class='stretch_bar' id='stretch_bar_1'></div>	
+		</div>
+		<div class='rectangle_wrapper'>
+			<div class='rectangle shadow' id='content_district'>
+				<div style='display: flex; height: 30px; padding: 8px 15px 8px 15px;' id='title_bar'>
+					<div id='crumb_navigation'></div>
+					<div id='downloads' style='display: flex; gap: 10px;'></div>
+				</div>
+				<hr style='margin: 0px; width: 100%;'>
+				<div class = 'content' id='content_1'></div>
+				<div class = 'content' id='content_0'></div>
+			</div>
+			<div class='rectangle' style='display: flex; align-items: center; justify-content: center;' id='cover'>
+				<svg class='spinner'>
+					<circle>
+					  <animateTransform attributeName='transform' type='rotate' values='-90;810' keyTimes='0;1' dur='2s' repeatCount='indefinite'></animateTransform>
+					  <animate attributeName='stroke-dashoffset' values='0%;0%;-157.080%' calcMode='spline' keySplines='0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0' keyTimes='0;0.5;1' dur='2s' repeatCount='indefinite'></animate>
+					  <animate attributeName='stroke-dasharray' values='0% 314.159%;157.080% 157.080%;0% 314.159%' calcMode='spline' keySplines='0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0' keyTimes='0;0.5;1' dur='2s' repeatCount='indefinite'></animate>
+					</circle>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<script src='JavaScript/music player.js'></script>
+	<script src='JavaScript/objects.js'></script>
+	<script src='JavaScript/script.js'></script>
+</body>
+</html>
