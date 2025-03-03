@@ -6,11 +6,6 @@ const articles = {
         address: 'others/moonstone',
         languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://pic1.imgdb.cn/item/679f4cb4d0e0a243d4f9907c.jpg',
-        introduction: {
-            en: 'This article describes Moonstone, a gemstone known for its ethereal glow and historical significance, particularly its association with the moon, love, fertility, and spiritual healing.',
-            zh_Hans: '此文章描述了月长石，这是一种以其神秘光辉和历史意义而闻名的宝石，特别是它与月亮、爱、肥沃以及精神疗愈的关联。',
-            de: 'Dieser Artikel beschreibt den Mondstein, ein Edelstein, der für sein ätherisches Leuchten und seine historische Bedeutung bekannt ist, insbesondere seine Verbindung zum Mond, zur Liebe, Fruchtbarkeit und spirituellen Heilung.'
-        }
     },
     
     about: {
@@ -20,12 +15,6 @@ const articles = {
         address: 'about',
         languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://pic1.imgdb.cn/item/67be9b49d0e0a243d405dc31.png',
-        introduction: {
-            en: 'The content introduces Hēsperus and his personal website, which, despite being underdeveloped due to time constraints, serves as a platform to connect with him across various social media and online forums.',
-            zh_Hans: '内容介绍了Hēsperus及其个人网站，尽管由于时间限制尚未完善，但它仍然作为一个平台，使人们能够在多个社交媒体和在线论坛上与他联系。',
-            de: 'Der Inhalt stellt Hēsperus und seine persönliche Website vor, die aufgrund von Zeitmangel zwar nicht vollständig entwickelt ist, aber dennoch als Plattform dient, um mit ihm über verschiedene soziale Medien und Online-Foren in Kontakt zu treten.'
-        },
-        hide: true,
     },
 
     homepage: {
@@ -37,7 +26,7 @@ const articles = {
         languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://pic1.imgdb.cn/item/679f4cb4d0e0a243d4f9907c.jpg',
         introduction: {
-            en: 'This article describes Moonstone, a gemstone known for its ethereal glow and historical significance, particularly its association with the moon, love, fertility, and spiritual healing.',
+            en: 'This website is a elaboration',
             zh_Hans: '此文章描述了月长石，这是一种以其神秘光辉和历史意义而闻名的宝石，特别是它与月亮、爱、肥沃以及精神疗愈的关联。',
             de: 'Dieser Artikel beschreibt den Mondstein, ein Edelstein, der für sein ätherisches Leuchten und seine historische Bedeutung bekannt ist, insbesondere seine Verbindung zum Mond, zur Liebe, Fruchtbarkeit und spirituellen Heilung.'
         },
@@ -49,7 +38,7 @@ const articles = {
         zh_Hans: '求知',
         de: 'Lernen',
         address: 'learning',
-        directory: ['radicals'],
+        directory: ['radicals', 'save_power'],
         languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://photo-cdn2.icons8.com/xG_J1xz8gP2N1VB1bzpZY8NDbWy6tcKlHMSmhBvlZHg/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi9kNDljOTUyMWJh/ZmQ0MTdlODJkNmI5/MmM0MGM2YTA4MS5q/cGc.jpg',
         introduction: {
@@ -114,11 +103,6 @@ const articles = {
         address: 'learning/radicals',
         languages: ['en'],
         thumbnail: 'https://pic1.imgdb.cn/item/67bea288d0e0a243d405e065.png',
-        introduction: {
-            en: 'The content is a dictionary of English radicals, providing definitions and explanations of various prefixes, suffixes, and root words, organized alphabetically to aid in understanding word formation and meanings.',
-            zh_Hans: '该内容是一个英语词根字典，按字母顺序整理了各种前缀、后缀和词根，并提供定义和解释，以帮助理解单词的构成和含义。',
-            de: 'Der Inhalt ist ein Englisch Wörterbuch der Wortstämme, das alphabetisch geordnet verschiedene Präfixe, Suffixe und Wortwurzeln mit Definitionen und Erklärungen bereitstellt, um das Verständnis der Wortbildung und -bedeutung zu erleichtern.'
-        }
     },
 
     fascist_propaganda: {
@@ -128,11 +112,15 @@ const articles = {
         address: 'humanities/fascist_propaganda',
         languages: ['en'],
         thumbnail: 'https://pic1.imgdb.cn/item/67bff469d0e0a243d406b8cd.jpg',
-        introduction: {
-            en: 'The content explains how fascist regimes use psychological phenomena such as mass hysteria, deindividuation, and terror management theory to manipulate society, create fear, and establish control.',
-            zh_Hans: '内容讲述了法西斯政权如何利用集体恐慌、去个性化和恐惧管理理论等心理现象来操纵社会，制造恐惧，并建立控制。',
-            de: 'Der Inhalt erläutert, wie faschistische Regime psychologische Phänomene wie Massenhysterie, Deindividuation und Terror-Management-Theorie nutzen, um die Gesellschaft zu manipulieren, Angst zu erzeugen und Kontrolle zu etablieren.'
-        }
+    },
+
+    save_power: {
+        en: 'Save Ppower Icon',
+        zh_Hans: 'Save Ppower Icon',
+        de: 'Save Ppower Icon',
+        address: 'learning/save_power',
+        languages: ['en'],
+        thumbnail: 'https://pic1.imgdb.cn/item/67c5cf88d0e0a243d40aebf3.png',
     },
 };
 
@@ -145,7 +133,7 @@ const music = [
     },
     {
         name:'Faster Than Light',
-        url: 'https://m10.music.126.net/20250227212355/70a3a8cbff503a66386df36c7d3653d3/ymusic/530c/5553/535b/dfd6251b20b9d1e6b248d14f54bf9fa4.mp3?vuutv=8QekrXDUSi/FsTZ7dTMJK1M9gxlaeEiKmETR6HRs3t0kgPhcIgz3fO5Dmw+ind9/ePeFmzk0O/AJuTlNswBnGwekmPRX3hkoLAC0dF/drPk=',
+        url: 'https://music.163.com/song/media/outer/url?id=1393259804.mp3',
         img: 'https://p1.music.126.net/CJJvMmVYktLsSmxQ2OpH8A==/109951164386591264.jpg?param=100x100',
         img_HD: 'https://p1.music.126.net/CJJvMmVYktLsSmxQ2OpH8A==/109951164386591264.jpg?param=1000x1000'
     },
@@ -154,6 +142,12 @@ const music = [
         url: 'https://music.163.com/song/media/outer/url?id=29722369.mp3',
         img: 'https://p2.music.126.net/Q3s90qB6VYpbonkBOubFhg==/109951164071976757.jpg?param=100x100',
         img_HD: 'https://p2.music.126.net/Q3s90qB6VYpbonkBOubFhg==/109951164071976757.jpg?param=1000x1000'
+    },
+    {
+        name:'Rule The World',
+        url: 'https://music.163.com/song/media/outer/url?id=1983513884.mp3',
+        img: 'https://p2.music.126.net/07y7BipINZolu-JncrjBDA==/109951167898539138.jpg?param=100x100',
+        img_HD: 'https://p2.music.126.net/07y7BipINZolu-JncrjBDA==/109951167898539138.jpg?param=1000x1000'
     },
     {
         name:'a Memories for Us',
