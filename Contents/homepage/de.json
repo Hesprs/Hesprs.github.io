@@ -1,0 +1,11 @@
+{
+    "introduction": "Willkommen auf Hesperus' Blog! Diese Website ist das Ergebnis von Hesperus' dreimonatiger Arbeit. Er hat die Website Stein für Stein aufgebaut, vom HTML-, CSS- und JavaScript-Anfänger bis hin zur Erstellung einer solch „exquisiten“ Website.",
+    "content": "<h1>Cyber-Anzeigetafel</h1> <hr> <a href='https://easylink.cc/kim9l1' style='text-align: center; width: calc(100% - 30px); display: block;'>! Klicken Sie auf diesen Text, um ein Demo-Video anzusehen !</a> <div style='display: flex; flex-wrap: wrap; gap: 15px; padding: 15px 0px 15px 0px;'> <div class='card shadow' id='learning_directory'> <img src='https://photo-cdn2.icons8.com/xG_J1xz8gP2N1VB1bzpZY8NDbWy6tcKlHMSmhBvlZHg/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi9kNDljOTUyMWJh/ZmQ0MTdlODJkNmI5/MmM0MGM2YTA4MS5q/cGc.jpg' alt='Lernen' class='background_img'> <div class='overlay'> <p>Lernen</p> </div> </div> <div class='card shadow' id='humanities_directory'> <img src='https://pic1.imgdb.cn/item/67c086fad0e0a243d4075204.jpg' alt='Geisteswissenschaften' class='background_img'> <div class='overlay'> <p>Geisteswissenschaften</p> </div> </div> <div class='card shadow' id='development_directory'> <img src='https://pic1.imgdb.cn/item/67c08e72d0e0a243d40755d0.png' alt='Entwicklung' class='background_img'> <div class='overlay'> <p>Entwicklung</p> </div> </div> <div class='card shadow' id='others_directory'> <img src='https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg' alt='Andere' class='background_img'> <div class='overlay'> <p>Andere</p> </div> </div> <div class='card shadow' id='about_directory'> <img src='https://pic1.imgdb.cn/item/67be9b49d0e0a243d405dc31.png' alt='Über' class='background_img'> <div class='overlay'> <p>Über</p> </div> </div> </div>",
+    "click_listeners": [
+        "learning_directory",
+        "humanities_directory",
+        "development_directory",
+        "others_directory",
+        "about_directory"
+    ]
+}

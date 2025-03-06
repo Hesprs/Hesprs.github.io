@@ -22,13 +22,12 @@ const articles = {
         zh_Hans: '主页',
         de: 'Homepage',
         address: 'homepage',
-        directory: ['learning', 'humanities', 'development', 'others', 'about'],
         languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://pic1.imgdb.cn/item/679f4cb4d0e0a243d4f9907c.jpg',
         introduction: {
-            en: 'This website is a elaboration',
-            zh_Hans: '此文章描述了月长石，这是一种以其神秘光辉和历史意义而闻名的宝石，特别是它与月亮、爱、肥沃以及精神疗愈的关联。',
-            de: 'Dieser Artikel beschreibt den Mondstein, ein Edelstein, der für sein ätherisches Leuchten und seine historische Bedeutung bekannt ist, insbesondere seine Verbindung zum Mond, zur Liebe, Fruchtbarkeit und spirituellen Heilung.'
+            en: '',
+            zh_Hans: '',
+            de: ''
         },
         hide: true,
     },
@@ -71,6 +70,7 @@ const articles = {
         de: 'Entwicklung',
         address: 'development',
         languages: ['en', 'zh_Hans', 'de'],
+        directory: ['build_website'],
         thumbnail: 'https://pic1.imgdb.cn/item/67c08e72d0e0a243d40755d0.png',
         introduction: {
             en: 'The word \'development\' is used to describe the process of programming a digital work. Articles involved in this classification mainly contain the technique and experience relating to development.',
@@ -110,17 +110,26 @@ const articles = {
         zh_Hans: '法西斯如何蛊惑人心',
         de: 'Wie Faschisten Propagieren',
         address: 'humanities/fascist_propaganda',
-        languages: ['en'],
+        languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://pic1.imgdb.cn/item/67bff469d0e0a243d406b8cd.jpg',
     },
 
     save_power: {
         en: 'Save Ppower Icon',
-        zh_Hans: 'Save Ppower Icon',
-        de: 'Save Ppower Icon',
+        zh_Hans: '节约能源图标',
+        de: 'Energiesparsymbol',
         address: 'learning/save_power',
         languages: ['en'],
         thumbnail: 'https://pic1.imgdb.cn/item/67c5cf88d0e0a243d40aebf3.png',
+    },
+
+    build_website: {
+        en: 'Build a Website for Free',
+        zh_Hans: '免费搭建网站',
+        de: 'Eine Website kostenlos erstellen',
+        address: 'development/build_website',
+        languages: ['en', 'zh_Hans', 'de'],
+        thumbnail: 'https://img.picui.cn/free/2025/03/05/67c7d661b2c75.png',
     },
 };
 
@@ -255,6 +264,16 @@ const translation = {
         de: 'Diese Seite zeigt das Ergebnis der Suche nach „',
         de2: '“ im Blog-Repertoire.'
     },
+    click_anywhere_to_continue: {
+        en: 'Click Anywhere to Continue',
+        zh_Hans: '单击任意位置继续',
+        de: 'Klicken Sie Irgendwo, um Fortzufahren'
+    },
+    hesperus_blog: {
+        en: 'Hēsperus\' Blog',
+        zh_Hans: 'Hēsperus 的博客',
+        de: 'Hēsperus Blog'
+    }
 };
 
 const formats = [
@@ -274,4 +293,23 @@ const formats = [
         format: 'pptx',
         url: 'https://pic1.imgdb.cn/item/67a837aad0e0a243d4fd3947.png'
     },
+    {
+        format: 'img',
+        url: 'https://img.icons8.com/fluency/100/image--v1.png'
+    },
 ];
+
+const showcases = [
+    {
+        url: 'https://img.picui.cn/free/2025/03/05/67c8438f8bce6.jpg',
+        en: 'Liberty  Egality  Unity  Rationality',
+        zh_Hans: '自由  平等  团结  理性',
+        de: 'Freiheit  Gleichheit  Einheit  Rationalität'
+    },
+    {
+        url: 'https://img.picui.cn/free/2025/03/05/67c8522e7a0bc.png',
+        en: '',
+        zh_Hans: '自由   平等   团结   理性',
+        de: 'Freiheit   Gleichheit   Einheit   Rationalität'
+    }
+]

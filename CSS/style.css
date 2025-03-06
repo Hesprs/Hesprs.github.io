@@ -7,6 +7,34 @@
     }
 }
 
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateY(-8px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateY(8px);
+	}
+
+	80% {
+		transform: translateY(6.4px);
+	}
+
+	90% {
+		transform: translateY(-6.4px);
+	}
+}
+
 html {
 	height: 0px;
 }
@@ -15,6 +43,18 @@ body {
 	margin: 0px;
 	font-family: Jost;
 	font-size: 112.5%;
+	background-color: rgb(240, 244, 248);
+	display: flex;
+	z-index: -2;
+	position: fixed;
+	opacity: 0;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	transition: background-color 300ms, opacity 500ms;
+} body.dark {
+	background-color: rgb(38, 38, 38);
 }
 
 input[type=text] {
@@ -185,6 +225,30 @@ img {
 	display: block;
 }
 
+.continue {
+	padding: 15px;
+	font-weight: 500;
+	font-size: 20px;
+	position: absolute;
+	bottom: 20px;
+	text-shadow: 2px 2px 3px black;
+	text-align: center;
+	width: calc(100% - 30px);
+	color: rgb(255, 255, 255);
+	animation: myAnim 10s ease 0s infinite normal forwards;
+} .slogan {
+	padding: 15px;
+	white-space: pre-wrap;
+	font-weight: 600;
+	font-size: 50px;
+	position: absolute;
+	top: 30%;
+	text-shadow: 3px 3px 6px rgb(40, 40, 40);
+	text-align: center;
+	width: calc(100% - 30px);
+	color: rgb(254, 247, 167);
+}
+
 .music_container {
 	background-color: rgb(247, 249, 250);
 	color: rgb(60, 60, 60);
@@ -349,24 +413,38 @@ img {
 }
 
 .background {
-	background-color: rgb(240, 244, 248);
 	display: flex;
 	z-index: -1;
 	flex-direction: row;
 	position: fixed;
-	opacity: 0;
-	top: 0px;
+	top: 100%;
 	left: 0px;
 	right: 0px;
-	bottom: 0px;
-	transition: background-color 300ms, opacity 500ms;
-} body.dark .background {
-	background-color: rgb(38, 38, 38);
+	bottom: -100%;
+	transition: top 500ms, bottom 500ms;
 } .background.on_dragging {
 	-moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+} body.slide .background {
+	top: 0px;
+	bottom: 0px;
+}
+
+.showcase {
+	display: flex;
+	z-index: -1;
+	flex-direction: row;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	transition: top 500ms, bottom 500ms;
+} body.slide .showcase {
+	top: -100%;
+	bottom: 100%;
 }
 
 .spinner {
@@ -637,20 +715,23 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	position: relative;
     flex: 1 1 200px;
 	min-width: 200px;
-} .card img {
+} .card:hover .overlay {
+	opacity: 0;
+}
+
+.background_img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	max-width: unset;
-} .card:hover .overlay {
-	opacity: 0;
+	border-radius: 0px;
 }
 
 .overlay {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 50%;
+	height: 30%;
 	background: linear-gradient(to top, rgb(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 	padding: 15px;
 	box-sizing: border-box;

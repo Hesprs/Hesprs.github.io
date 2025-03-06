@@ -21,6 +21,7 @@ const entry_list = document.getElementsByName('category');
 const cover = document.getElementById('cover');
 const sidenav = document.getElementById('sidenav');
 const background = document.getElementById('background');
+const showcase = document.getElementById('showcase');
 const stretch_bar_1 = document.getElementById('stretch_bar_1');
 const toggleWrapper = document.getElementById('toggleWrapper');
 const text_dark = document.getElementById('text_dark');
@@ -79,6 +80,7 @@ shade.addEventListener('click', () => {back_shade(); second_pop_up = false;});
 language_option.addEventListener('click', language_clicked);
 nextButton.addEventListener('click', nextSong);
 playButton.addEventListener('click', plause);
+showcase.addEventListener('click', () => document.body.classList.add('slide'));
 progress_container.addEventListener('click', setProgress);
 window.addEventListener('resize', responsive_resize);
 previous.addEventListener('click', previous_page);
@@ -92,14 +94,10 @@ document.addEventListener('keydown', enter_to_search);
 
 function initialize() {
     setTimeout(() => {
-        background.style.opacity = 1;
+        document.body.style.opacity = 1;
     }, 800);
-    const currentTheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (currentTheme.matches) {
-        dn.checked = true;
-        document.body.classList.add('dark');
-    }
     let redirect = localStorage.getItem('title');
+    document.body.classList.add('slide');
     if (redirect === null) {
         current_page = 'homepage';
         detect_language();
@@ -113,6 +111,16 @@ function initialize() {
             current_page = redirect;
             detect_language();
         }
+    }
+    const currentTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (currentTheme.matches) {
+        dn.checked = true;
+        document.body.classList.add('dark');
+//        document.getElementById('background_img').src = showcases[1].url;
+//        document.getElementById('slogan').innerHTML = `${showcases[1][language]}`;
+//    } else {
+//        document.getElementById('background_img').src = showcases[0].url;
+//        document.getElementById('slogan').innerHTML = `${showcases[0][language]}`;
     }
     document.getElementById(language).checked = true;
     music_title.innerHTML = translation.music_player[language];
@@ -444,6 +452,11 @@ function show_pop_up() {
 }
 
 async function shift_title(title, entry = true, back = false) {
+    timer = 0;
+    const timer_interval = setInterval(() => {
+        timer += 10;
+    }, 10);
+    cover.style.opacity = 1;
     if (!back) {
         if (title !== current_page) {
             history.push(current_page);
@@ -452,17 +465,8 @@ async function shift_title(title, entry = true, back = false) {
         history.pop();
     }
     current_page = title;
-    let downloads = '';
-    timer = 0;
-    const timer_interval = setInterval(() => {
-        timer += 10;
-    }, 10);
-    cover.style.opacity = 1;
     layer = 1 - layer;
-    const content = await get_address(entry);
-    if (content.downloads != undefined) {
-        downloads = content.downloads;
-    }
+    const content = await resolve_url(entry);
     if (content.introduction != undefined) {
         modify_url(`/${language}/${current_page}`, content.introduction);
     } else {
@@ -478,40 +482,40 @@ async function shift_title(title, entry = true, back = false) {
     }
     setTimeout(() => {
         if (articles[current_page] != undefined) {
-            crumb(articles[current_page].address, downloads);
+            crumb(articles[current_page].address, content.downloads);
         }
         content_0.scrollTo(0, 0);
         content_1.innerHTML = '';
-        if (content == 'directory') {
-            compile_directory(articles[current_page].directory);
-        } else if (content == 'search') {
-            search(current_page.replace('search=', ''));
-        } else {
-            content_0.innerHTML = `${content.warning}<main style='${content.main_styles}'>${content.content}</main>`;
-        }
+        content_0.innerHTML = `${content.warning}<main style='${content.main_styles}'>${content.content}</main>`;
         content_0.style.pointerEvents = 'auto';
         content_0.style.visibility = 'visible';
         content_1.style.visibility = 'hidden';
         cover.style.opacity = 0;
         cover.style.pointerEvents = 'none';
+        if (content.click_listeners != undefined) {
+            event_listeners(content.click_listeners);
+        }
     }, timer);
 }
 
-async function get_address(entry) {
+async function resolve_url(entry) {
     let address, content;
     let warning = '';
-    let main_styles = '';
     if (articles[current_page] == undefined || current_page === '404' || current_page.includes('search=')) {
         setTimeout(() => content_district.classList.add('s404'), 195 - timer);
         for (let i = 0; i < entry_list.length; i ++) {
             document.getElementById(entry_list[i].value).checked = false;
         }
         change_category();
-        if (current_page.includes('search=')) {
-            main_style = 'display: flex; justify-content: space-between; gap: 15px; margin: 15px 0px 15px 0px; flex-direction: column;';
-            return 'search';
+        if (!current_page.includes('search=')) {
+            address = `404/${language}.json`;
+        } else {
+            address = 'done';
+            content = search(current_page.replace('search=', ''));
+            if (content === '404') {
+                address = `404/${language}.json`;
+            }
         }
-        address = `404/${language}.json`;
     } else {
         setTimeout(() => content_district.classList.remove('s404'), 195 - timer);
         if (entry) {
@@ -537,38 +541,50 @@ async function get_address(entry) {
                 warning += `${translation.dot[language]}</p>`;
                 address = `${articles[current_page].address}/en.json`;
             }
+        } else {
+            address = 'done';
+            content = compile_directory(articles[current_page].directory);
         }
     }
-    if (address != undefined) {
+    if (address !== 'done') {
         content = await fetch(`/Contents/${address}`);
         content = await content.json();
-        content.warning = warning;
-        if (content.main_styles != undefined) {
-            content.main_styles = main_styles;
-        }
-        return content;
-    } else {
-        return 'directory';
     }
+    content.warning = warning;
+    if (content.main_styles == undefined) {
+        content.main_styles = '';
+    }
+    if (content.downloads == undefined) {
+        content.downloads = '';
+    }
+    return content;
 }
 
 function compile_directory(directory) {
-    main_style = 'display: flex; flex-wrap: wrap; gap: 15px; padding: 15px;';
     let content = '';
+    let click_listeners = [];
     for (let i = 0; i < directory.length; i ++) {
         let target = articles[directory[i]];
         content += `
             <div class='card shadow' id='${directory[i]}_directory'>
-                <img src="${target.thumbnail}" alt="${target[language]}">
+                <img src="${target.thumbnail}" alt="${target[language]}" class='background_img'/>
                 <div class="overlay">
                     <p>${target[language]}</p>
                 </div>
     	    </div>
         `;
+        click_listeners.push(`${directory[i]}_directory`);
     }
-    document.getElementById(`content_${layer}`).innerHTML = `<main style='${main_style}'>${content}</main>`;
-    for (let i = 0; i < directory.length; i ++) {
-        document.getElementById(`${directory[i]}_directory`).addEventListener('click', function() {
+    return {
+        main_styles: 'display: flex; flex-wrap: wrap; gap: 15px; padding: 15px;',
+        content: content,
+        click_listeners: click_listeners
+    };
+}
+
+function event_listeners(listener_list) {
+    for (let i = 0; i < listener_list.length; i ++) {
+        document.getElementById(listener_list[i]).addEventListener('click', function() {
             shift_title(this.getAttribute('id').replace('_directory', ''));
         });
     }
@@ -703,17 +719,23 @@ function dn_complete() {
     `;
 }
 
-function modify_url(url = '', introduction = '') { 
-    let stateObj = { id: '100' }; 
-    window.history.replaceState(stateObj, 'Page 3', url);
-    if (current_page.includes('search=')) {
-        document.title = current_page.replace('search=', translation.search[language].replace('...', ': '));
-    } else if (articles[current_page] != undefined) {
-        document.title = articles[current_page][language];
-    } else { 
-        document.title = current_page;
+function modify_url(url = '', introduction) {
+    if (url.split('/')[2] !== 'homepage') {
+        let stateObj = { id: '100' }; 
+        window.history.replaceState(stateObj, 'Page 3', url);
+        if (current_page.includes('search=')) {
+            document.title = current_page.replace('search=', translation.search[language].replace('...', ': '));
+        } else if (articles[current_page] != undefined) {
+            document.title = articles[current_page][language];
+        } else { 
+            document.title = current_page;
+        }
+    } else {
+        let stateObj = { id: '100' }; 
+        window.history.replaceState(stateObj, 'Page 3', '');
+        document.title = translation.hesperus_blog[language];
     }
-    if (introduction === '') {
+    if (introduction == undefined) {
         if (current_page.includes('search=')) {
             meta.description.content = translation.search_description[language] + current_page.replace('search=', '') + translation.search_description[`${language}2`];
         } else if (articles[current_page] != undefined) {
@@ -755,6 +777,7 @@ function change_languages() {
     search_bar.placeholder = translation.search[language];
     search_bar_center.placeholder = translation.search[language];
     nations.src = translation.nations[language];
+    document.getElementById('continue').innerHTML = translation.click_anywhere_to_continue[language];
     if (!ever_played_music) {
         music_title.innerHTML = translation.music_player[language];
     }
@@ -765,7 +788,7 @@ function change_languages() {
         text_dark.classList.remove('chinese');
         text_light.classList.remove('chinese');
     }
-    shift_title(current_page, false);
+    shift_title(current_page);
 }
 
 function pop_up_change_languages() {
@@ -797,7 +820,7 @@ function previous_page() {
     }
 }
 
-async function search(prompt) {
+function search(prompt) {
     let article_list = [];
     for (const key in articles) {
         if (articles[key][language].toLowerCase().includes(prompt.toLowerCase()) && articles[key].hide == undefined) {
@@ -805,10 +828,9 @@ async function search(prompt) {
         }
     }
     if (article_list.length === 0) {
-        let content = await get_address('404', language, false);
-        document.getElementById(`content_${layer}`).innerHTML = `${warning}<main style='${main_style}'>${content}</main>`;
+        return '404';
     } else {
-        compile_directory(article_list);
+        return compile_directory(article_list);
     }
 }
 
