@@ -1,0 +1,255 @@
+<head>
+    <link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <title>8values Results</title>
+    <meta charset="utf-8">
+    <script src="ideologies.js"></script>
+</head>
+
+<body>
+<h1>8values</h1>
+<hr>
+
+<h1>结果</h1>
+
+<h2>经济：<span class="weight-300" id="economic-label"></span></h2>
+<div class="axis">
+    <img height="128pt" id="img-equality" src="value_images/equality.svg"/>
+    <div class="bar equality" id="bar-equality">
+        <div class="text-wrapper" id="equality"></div>
+    </div>
+    <div class="bar wealth" id="bar-wealth">
+        <div class="text-wrapper" id="wealth"></div>
+    </div>
+    <img height="128pt" id="img-wealth" src="value_images/markets.svg"/>
+</div>
+<h2>外交：<span class="weight-300" id="diplomatic-label"></span></h2>
+<div class="axis">
+    <img height="128pt" id="img-might" src="value_images/nation.svg"/>
+    <div class="bar might" id="bar-might">
+        <div class="text-wrapper" id="might"></div>
+    </div>
+    <div class="bar peace" id="bar-peace">
+        <div class="text-wrapper" id="peace"></div>
+    </div>
+    <img height="128pt" id="img-peace" src="value_images/globe.svg"/>
+</div>
+<h2>民事：<span class="weight-300" id="state-label"></span></h2>
+<div class="axis">
+    <img height="128pt" id="img-liberty" src="value_images/liberty.svg"/>
+    <div class="bar liberty" id="bar-liberty">
+        <div class="text-wrapper" id="liberty"></div>
+    </div>
+    <div class="bar authority" id="bar-authority">
+        <div class="text-wrapper" id="authority"></div>
+    </div>
+    <img height="128pt" id="img-authority" src="value_images/authority.svg"/>
+</div>
+<h2>社会：<span class="weight-300" id="society-label"></span></h2>
+<div class="axis">
+    <img height="128pt" id="img-tradition" src="value_images/tradition.svg"/>
+    <div class="bar tradition" id="bar-tradition">
+        <div class="text-wrapper" id="tradition"></div>
+    </div>
+    <div class="bar progress" id="bar-progress">
+        <div class="text-wrapper" id="progress"></div>
+    </div>
+    <img height="128pt" id="img-progress" src="value_images/progress.svg"/>
+</div>
+<h2>最接近匹配：<span class="weight-300" id="ideology-label"></span></h2>
+<p>意识形态匹配是一项正在进行的工作，其准确性远不如价值观和轴线。</p>
+<p>您可以复制并粘贴页面顶部网址或使用下面的图片发送这些结果。认为您的匹配意识形态有误？想帮助我们校准测试？请将结果和你的政治意识形态一并发送至
+    eightvalues@gmail.com，或向我们提出任何意见、问题或批评。</p>
+<hr/>
+<img id="banner" src="">
+<button class="button" onclick="location.href='index.html';">返回</button>
+<br>
+
+<script>
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1)
+        var vars = query.split("&")
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=")
+            if (pair[0] == variable) {
+                return pair[1]
+            }
+        }
+        return (NaN);
+    }
+
+    function setBarValue(name, value) {
+        innerel = document.getElementById(name)
+        outerel = document.getElementById("bar-" + name)
+        outerel.style.width = (value + "%")
+        innerel.innerHTML = (value + "%")
+        if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
+            innerel.style.visibility = "hidden"
+        }
+    }
+
+    const econArray = ["共产主义", "社会主义", "社会", "中间派", "市场", "资本主义", "自由放任"]
+    const diplArray = ["世界主义", "国际主义", "和平主义", "平衡", "爱国主义", "民族主义", "沙文主义"]
+    const govtArray = ["无政府主义", "自由主义", "自由派", "温和派", "国家主义", "专制主义", "极权主义"]
+    const sctyArray = ["革命", "非常进步", "进步", "中立", "传统", "非常传统", "反动"]
+
+    function setLabel(val, ary) {
+        if (val > 100) {
+            return ""
+        } else if (val > 90) {
+            return ary[0]
+        } else if (val > 75) {
+            return ary[1]
+        } else if (val > 60) {
+            return ary[2]
+        } else if (val >= 40) {
+            return ary[3]
+        } else if (val >= 25) {
+            return ary[4]
+        } else if (val >= 10) {
+            return ary[5]
+        } else if (val >= 0) {
+            return ary[6]
+        } else {
+            return ""
+        }
+    }
+
+    equality = getQueryVariable("e")
+    peace = getQueryVariable("d")
+    liberty = getQueryVariable("g")
+    progress = getQueryVariable("s")
+    wealth = (100 - equality).toFixed(1)
+    might = (100 - peace).toFixed(1)
+    authority = (100 - liberty).toFixed(1)
+    tradition = (100 - progress).toFixed(1)
+
+    setBarValue("equality", equality)
+    setBarValue("wealth", wealth)
+    setBarValue("peace", peace)
+    setBarValue("might", might)
+    setBarValue("liberty", liberty)
+    setBarValue("authority", authority)
+    setBarValue("progress", progress)
+    setBarValue("tradition", tradition)
+
+    document.getElementById("economic-label").innerHTML = setLabel(equality, econArray)
+    document.getElementById("diplomatic-label").innerHTML = setLabel(peace, diplArray)
+    document.getElementById("state-label").innerHTML = setLabel(liberty, govtArray)
+    document.getElementById("society-label").innerHTML = setLabel(progress, sctyArray)
+
+    ideology = ""
+    ideodist = Infinity
+    for (var i = 0; i < ideologies.length; i++) {
+        dist = 0
+        dist += Math.pow(Math.abs(ideologies[i].stats.econ - equality), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.govt - liberty), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - peace), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
+        if (dist < ideodist) {
+            ideology = ideologies[i].name
+            ideodist = dist
+        }
+    }
+    document.getElementById("ideology-label").innerHTML = ideology
+
+    function createImage(src, x, y, w, h) {
+        img = new Image()
+        img.src = src
+        img.onLoad = function () {
+            ctx.drawImage(img, x, y, w, h)
+        }
+    }
+
+    window.onload = function () {
+        var c = document.createElement("canvas")
+        var ctx = c.getContext("2d")
+        c.width = 800;
+        c.height = 650;
+        ctx.fillStyle = "#EEEEEE"
+        ctx.fillRect(0, 0, 800, 650);
+
+        img = document.getElementById("img-equality")
+        ctx.drawImage(img, 20, 140, 100, 100);
+        img = document.getElementById("img-wealth")
+        ctx.drawImage(img, 680, 140, 100, 100)
+        img = document.getElementById("img-might")
+        ctx.drawImage(img, 20, 270, 100, 100)
+        img = document.getElementById("img-peace")
+        ctx.drawImage(img, 680, 270, 100, 100)
+        img = document.getElementById("img-liberty")
+        ctx.drawImage(img, 20, 400, 100, 100)
+        img = document.getElementById("img-authority")
+        ctx.drawImage(img, 680, 400, 100, 100)
+        img = document.getElementById("img-tradition")
+        ctx.drawImage(img, 20, 530, 100, 100)
+        img = document.getElementById("img-progress")
+        ctx.drawImage(img, 680, 530, 100, 100)
+
+        ctx.fillStyle = "#222222"
+        ctx.fillRect(120, 150, 560, 80)
+        ctx.fillRect(120, 280, 560, 80)
+        ctx.fillRect(120, 410, 560, 80)
+        ctx.fillRect(120, 540, 560, 80)
+        ctx.fillStyle = "#f44336"
+        ctx.fillRect(120, 154, 5.6 * equality - 2, 72)
+        ctx.fillStyle = "#00897b"
+        ctx.fillRect(682 - 5.6 * wealth, 154, 5.6 * wealth - 2, 72)
+        ctx.fillStyle = "#ff9800"
+        ctx.fillRect(120, 284, 5.6 * might - 2, 72)
+        ctx.fillStyle = "#03a9f4"
+        ctx.fillRect(682 - 5.6 * peace, 284, 5.6 * peace - 2, 72)
+        ctx.fillStyle = "#ffeb3b"
+        ctx.fillRect(120, 414, 5.6 * liberty - 2, 72)
+        ctx.fillStyle = "#3f51b5"
+        ctx.fillRect(682 - 5.6 * authority, 414, 5.6 * authority - 2, 72)
+        ctx.fillStyle = "#8bc34a"
+        ctx.fillRect(120, 544, 5.6 * tradition - 2, 72)
+        ctx.fillStyle = "#9c27b0"
+        ctx.fillRect(682 - 5.6 * progress, 544, 5.6 * progress - 2, 72)
+        ctx.fillStyle = "#222222"
+        ctx.font = "700 80px Jost"
+        ctx.textAlign = "left"
+        ctx.fillText("8values", 20, 80)
+        ctx.font = "50px Jost"
+        ctx.textAlign = "right";
+        ctx.fillText(ideology, 780, 80)
+
+        ctx.textAlign = "left"
+        if (equality > 30) {
+            ctx.fillText(equality + "%", 130, 207.5)
+        }
+        if (might > 30) {
+            ctx.fillText(might + "%", 130, 337.5)
+        }
+        if (liberty > 30) {
+            ctx.fillText(liberty + "%", 130, 467.5)
+        }
+        if (tradition > 30) {
+            ctx.fillText(tradition + "%", 130, 597.5)
+        }
+        ctx.textAlign = "right"
+        if (wealth > 30) {
+            ctx.fillText(wealth + "%", 670, 207.5)
+        }
+        if (peace > 30) {
+            ctx.fillText(peace + "%", 670, 337.5)
+        }
+        if (authority > 30) {
+            ctx.fillText(authority + "%", 670, 467.5)
+        }
+        if (progress > 30) {
+            ctx.fillText(progress + "%", 670, 597.5)
+        }
+
+        ctx.font = "300 30px Jost"
+        ctx.textAlign = "center"
+        ctx.fillText("经济：" + document.getElementById("economic-label").innerHTML, 400, 140)
+        ctx.fillText("外交：" + document.getElementById("diplomatic-label").innerHTML, 400, 270)
+        ctx.fillText("民事：" + document.getElementById("state-label").innerHTML, 400, 400)
+        ctx.fillText("社会：" + document.getElementById("society-label").innerHTML, 400, 530)
+
+        document.getElementById("banner").src = c.toDataURL();
+    }
+</script>
+</body>

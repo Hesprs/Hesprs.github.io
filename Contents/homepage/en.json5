@@ -1,0 +1,39 @@
+{
+    introduction: "Welcome to Hēsperus' blog! This website is an elaboration of Hēsperus' three months, he built up the website brick by brick, from an HTML, CSS, and JavaScript jackaroo to creating such an 'exquisite' website.",
+    content: "\
+        <h1>Cyber Display Board</h1>\
+        <hr />\
+        <div style='display: flex; flex-wrap: wrap; gap: 15px; padding: 15px 0px 15px 0px;'>\
+            <div class='card shadow' id='learning_directory'>\
+                <img src='https://photo-cdn2.icons8.com/xG_J1xz8gP2N1VB1bzpZY8NDbWy6tcKlHMSmhBvlZHg/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi9kNDljOTUyMWJh/ZmQ0MTdlODJkNmI5/MmM0MGM2YTA4MS5q/cGc.jpg' alt='Learning' class='background_img'/>\
+                <div class='overlay'><p>Learning</p></div>\
+            </div>\
+            <div class='card shadow' id='humanities_directory'>\
+                <img src='https://pic1.imgdb.cn/item/67c086fad0e0a243d4075204.jpg' alt='Humanities' class='background_img' />\
+                <div class='overlay'><p>Humanities</p></div>\
+            </div>\
+            <div class='card shadow' id='development_directory'>\
+                <img src='https://pic1.imgdb.cn/item/67c08e72d0e0a243d40755d0.png' alt='Development' class='background_img' />\
+                <div class='overlay'><p>Development</p></div>\
+            </div>\
+            <div class='card shadow' id='others_directory'>\
+                <img src='https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg' alt='Others' class='background_img' />\
+                <div class='overlay'><p>Others</p></div>\
+            </div>\
+            <div class='card shadow' id='about_directory'>\
+                <img src='https://pic1.imgdb.cn/item/67be9b49d0e0a243d405dc31.png' alt='About' class='background_img' />\
+                <div class='overlay'><p>About</p></div>\
+            </div>\
+        </div>\
+    ",
+    click_listeners: {
+        type: "redirect",
+        list: [
+            "learning_directory",
+            "humanities_directory",
+            "development_directory",
+            "others_directory",
+            "about_directory"
+        ]
+    }
+}

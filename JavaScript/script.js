@@ -6,15 +6,15 @@ let sidenav_fold_level = 0;
 let sidenav_width_level = 0;
 let timer = 0;
 let custom_width = 165;
-let isPlaying = 0;
 let pop_up_index = 0; // 0 void, 1 music, 2 catalogue, 3 options, 4 languages, 5 search;
 let isDragging = 0; // 0 void, 1 mouse, 2 touch
 let hovered = false;
 let ever_played_music = false;
 let second_pop_up = false;
-let throttle = true;
+let throttle_resize = true;
+let throttle_mouse_move = true;
 let sidenav_minimal = false;
-let current_page, language;
+let current_page, language, timeout, timeout_2;
 let history = [];
 
 const entry_list = document.getElementsByName('category');
@@ -35,12 +35,6 @@ const progress = document.getElementById('progress');
 const progress_container = document.getElementById('progress_container');
 const music_title = document.getElementById('music_title');
 const music_cover = document.getElementById('music_cover');
-const play_light = document.getElementById('play_light');
-const play_dark = document.getElementById('play_dark');
-const pause_light = document.getElementById('pause_light');
-const pause_dark = document.getElementById('pause_dark');
-const next_light = document.getElementById('next_light');
-const next_dark = document.getElementById('next_dark');
 const dn = document.getElementById('dn');
 const back_button = document.getElementById('back');
 const shade = document.getElementById('shade');
@@ -59,49 +53,54 @@ const search_button = document.getElementById('search_button');
 const search_button_center = document.getElementById('search_button_center');
 const search_bar = document.getElementById('search_bar');
 const search_bar_center = document.getElementById('search_bar_center');
+const warning_bar = document.getElementById('warning_bar');
+const warning_text = document.getElementById('warning_text');
+const warning_icon = document.getElementById('warning_icon');
 const meta = document.getElementsByTagName('meta');
 
 stretch_bar.addEventListener('touchstart', touch_start);
 stretch_bar.addEventListener('mousedown', mouse_down);
-document.addEventListener('mousemove', mouse_move);
-document.addEventListener('touchmove', mouse_move);
-window.addEventListener('mouseup', mouse_up);
-window.addEventListener('touchend', mouse_up);
-document.addEventListener('mouseleave', mouse_up);
 stretch_bar.addEventListener('mouseover', hover_color);
 stretch_bar.addEventListener('touchstart', hover_color);
 stretch_bar.addEventListener('mouseout', out_color);
 stretch_bar.addEventListener('touchend', out_color);
-window.addEventListener('DOMContentLoaded', initialize);
 audio.addEventListener('timeupdate', updateProgress);
 audio.addEventListener('ended', nextSong);
-back_button.addEventListener('click', back);
-shade.addEventListener('click', () => {back_shade(); second_pop_up = false;});
-language_option.addEventListener('click', language_clicked);
+progress_container.addEventListener('click', setProgress);
 nextButton.addEventListener('click', nextSong);
 playButton.addEventListener('click', plause);
+language_option.addEventListener('click', language_clicked);
+back_button.addEventListener('click', back);
 showcase.addEventListener('click', () => document.body.classList.add('slide'));
-progress_container.addEventListener('click', setProgress);
-window.addEventListener('resize', responsive_resize);
+shade.addEventListener('click', () => {back_shade(); second_pop_up = false;});
 previous.addEventListener('click', previous_page);
 previous_center.addEventListener('click', previous_page);
 search_button.addEventListener('click', search_clicked);
 search_button_center.addEventListener('click', search_clicked);
 search_bar.addEventListener('input', () => synchronize_search('side'));
 search_bar_center.addEventListener('input', () => synchronize_search('center'));
-dn.addEventListener('click', () => document.body.classList.toggle('dark'));
+dn.addEventListener('click', toggle_dark);
+document.getElementById('warning_bar_wrapper').addEventListener('click', warning_bar_clicked);
 document.addEventListener('keydown', enter_to_search);
+document.addEventListener('touchcancel', mouse_up);
+document.addEventListener('mousemove', mouse_move);
+document.addEventListener('touchmove', mouse_move);
+document.addEventListener('mouseleave', mouse_up);
+window.addEventListener('DOMContentLoaded', initialize);
+window.addEventListener('resize', responsive_resize);
+window.addEventListener('mouseup', mouse_up);
+window.addEventListener('touchend', mouse_up);
 
 function initialize() {
     setTimeout(() => {
         document.body.style.opacity = 1;
     }, 800);
     let redirect = localStorage.getItem('title');
-    document.body.classList.add('slide');
     if (redirect === null) {
         current_page = 'homepage';
         detect_language();
     } else {
+        document.body.classList.add('slide');
         localStorage.removeItem('title');
         if (redirect.includes('/')) {
             redirect = redirect.split('/');
@@ -116,11 +115,11 @@ function initialize() {
     if (currentTheme.matches) {
         dn.checked = true;
         document.body.classList.add('dark');
-//        document.getElementById('background_img').src = showcases[1].url;
-//        document.getElementById('slogan').innerHTML = `${showcases[1][language]}`;
-//    } else {
-//        document.getElementById('background_img').src = showcases[0].url;
-//        document.getElementById('slogan').innerHTML = `${showcases[0][language]}`;
+        document.getElementById('background_img').src = showcases[1].url;
+        document.getElementById('slogan').innerHTML = `${showcases[1][language]}`;
+    } else {
+        document.getElementById('background_img').src = showcases[0].url;
+        document.getElementById('slogan').innerHTML = `${showcases[0][language]}`;
     }
     document.getElementById(language).checked = true;
     music_title.innerHTML = translation.music_player[language];
@@ -139,18 +138,29 @@ function detect_language() {
     }
 }
 
+function toggle_dark() {
+    document.body.classList.toggle('dark');
+    if (articles[current_page] != undefined) {
+        if (articles[current_page].iframe != undefined) {
+            document.getElementById('iframe').contentWindow.document.body.classList.toggle('dark');
+        }
+    }
+}
+
 function responsive_resize() {
-    if (throttle) {
-        throttle = false;
+    if (throttle_resize) {
+        throttle_resize = false;
         setTimeout(() => {
-            throttle = true;
-        }, 10);
+            throttle_resize = true;
+        }, 15);
         if (window.innerWidth >= 768) {
             if (window.innerHeight < 620) {
                 if (window.innerHeight < 574) {
                     if (sidenav_fold_level !== 2) {
                         if (sidenav_width_level === 0) {
                             transitioning();
+                        } else {
+                            sidenav.classList.remove('transitioning');
                         }
                         if (sidenav_fold_level === 0) {
                             minimal_start();
@@ -161,6 +171,8 @@ function responsive_resize() {
                 } else if (sidenav_fold_level !== 1) {
                     if (sidenav_width_level === 0) {
                         transitioning();
+                    } else {
+                        sidenav.classList.remove('transitioning');
                     }
                     if (sidenav_fold_level === 2) {
                         super_minimal_end();
@@ -176,6 +188,8 @@ function responsive_resize() {
                 if (!sidenav_minimal) {
                     if (sidenav_width_level === 0) {
                         transitioning();
+                    } else {
+                        sidenav.classList.remove('transitioning');
                     }
                     minimal_end();
                 }
@@ -193,10 +207,12 @@ function responsive_resize() {
                 sidenav_fold_level = 1;
             }
             if (window.innerWidth < 574) {
-                if (sidenav_width_level === 1) {
-                    transitioning();
-                }
                 if (sidenav_fold_level !== 2) {
+                    if (sidenav_width_level === 1) {
+                        transitioning();
+                    } else {
+                        sidenav.classList.remove('transitioning');
+                    }
                     super_minimal_start();
                     sidenav_fold_level = 2;
                 }
@@ -204,10 +220,12 @@ function responsive_resize() {
                     sidenav_width_level = 2;
                 }
             } else {
-                if (sidenav_width_level === 2) {
-                    transitioning();
-                }
                 if (sidenav_fold_level !== 1) {
+                    if (sidenav_width_level === 2) {
+                        transitioning();
+                    } else {
+                        sidenav.classList.remove('transitioning');
+                    }
                     if (sidenav_fold_level === 2) {
                         super_minimal_end();
                     } else {
@@ -229,8 +247,9 @@ function responsive_resize() {
 }
 
 function transitioning() {
+    clearTimeout(timeout);
     sidenav.classList.add('transitioning');
-    setTimeout(() => sidenav.classList.remove('transitioning'), 300)
+    timeout = setTimeout(() => sidenav.classList.remove('transitioning'), 300)
 }
 
 function minimal_start() {
@@ -265,7 +284,7 @@ function super_minimal_end() {
     if (ever_played_music) {
         music_cover.src = music[songIndex].img;
     } else {
-        music_cover.src = 'https://pic1.imgdb.cn/item/67a20090d0e0a243d4fbcfce.png';
+        music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
     }
     document.getElementById('about_icon').src = 'https://img.icons8.com/fluency/100/info-popup.png';
     const about_label = document.getElementById('about_label');
@@ -321,7 +340,7 @@ function settings() {
             pop_up_music_cover.src = music[songIndex].img;
             pop_up_music_cover.style.borderRadius = '50%';
         } else {
-            pop_up_music_cover.src = 'https://pic1.imgdb.cn/item/67a20090d0e0a243d4fbcfce.png';
+            pop_up_music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
         }
         if (language === 'zh_Hans') {
             document.getElementById('pop_up_text_dark').classList.add('chinese');
@@ -421,15 +440,15 @@ function language_clicked() {
         pop_up_content.innerHTML = `
 	    	<div style='display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px; margin: auto 0px auto 0px;'>
 	    		<label for='en' class='demobox shadow color clickable' id='en_label'>
-	    			<img class='icon' src='https://pic1.imgdb.cn/item/679f7a55d0e0a243d4f99b21.png' alt='UK flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
+	    			<img class='icon' src='https://img.icons8.com/fluency/100/great-britain-circular.png' alt='UK flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
 	    			<div class='center_text' style='margin-left: 10px;'>English</div>
 	    		</label>
 	    		<label for='zh_Hans' class='demobox shadow color clickable' id='zh_Hans_label'>
-	    			<img class='icon' src='https://pic1.imgdb.cn/item/67a03c54d0e0a243d4f9a619.png' alt='CN flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
+	    			<img class='icon' src='https://img.icons8.com/fluency/100/china-circular.png' alt='CN flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
 	    			<div class='center_text' style='margin-left: 10px;'>简体中文</div>
 	    		</label>
 	    		<label for='de' class='demobox shadow color clickable' id='de_label'>
-	    			<img class='icon' src='https://pic1.imgdb.cn/item/67a04128d0e0a243d4f9a6b4.png' alt='DE flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
+	    			<img class='icon' src='https://img.icons8.com/fluency/100/germany-circular.png' alt='DE flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
 	    			<div class='center_text' style='margin-left: 10px;'>Deutsch</div>
 	    		</label>
 	    	</div>
@@ -484,23 +503,23 @@ async function shift_title(title, entry = true, back = false) {
         if (articles[current_page] != undefined) {
             crumb(articles[current_page].address, content.downloads);
         }
+        if (content.warning != undefined) {
+            warn('alarm', content.warning);
+        }
         content_0.scrollTo(0, 0);
         content_1.innerHTML = '';
-        content_0.innerHTML = `${content.warning}<main style='${content.main_styles}'>${content.content}</main>`;
-        content_0.style.pointerEvents = 'auto';
-        content_0.style.visibility = 'visible';
-        content_1.style.visibility = 'hidden';
+        content_district.classList.toggle('slides');
+        content_0.innerHTML = `<main style='${content.main_styles}'>${content.content}</main>`;
         cover.style.opacity = 0;
         cover.style.pointerEvents = 'none';
         if (content.click_listeners != undefined) {
-            event_listeners(content.click_listeners);
+            event_listeners(content.click_listeners.list, content.click_listeners.type);
         }
     }, timer);
 }
 
 async function resolve_url(entry) {
-    let address, content;
-    let warning = '';
+    let address, content, warning;
     if (articles[current_page] == undefined || current_page === '404' || current_page.includes('search=')) {
         setTimeout(() => content_district.classList.add('s404'), 195 - timer);
         for (let i = 0; i < entry_list.length; i ++) {
@@ -522,35 +541,45 @@ async function resolve_url(entry) {
             document.getElementById(articles[current_page].address.split('/')[0]).checked = true;
             change_category();
         }
-        if (articles[current_page].directory == undefined) {
+        if (articles[current_page].directory != undefined) {
+            address = 'done';
+            content = compile_directory(articles[current_page].directory);
+        } else if (articles[current_page].iframe != undefined) {
+            content = {
+                content: `<iframe src='/Contents/${articles[current_page].address}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
+                main_styles: 'width: 100%; height: 100%; position: absolute; padding: 0px;',
+            };
             for (let i = 0; i < articles[current_page].languages.length; i ++) {
                 if (articles[current_page].languages[i] === language) {
-                    address = `${articles[current_page].address}/${language}.json`;
+                    address = 'done';
                     break;
                 }
             }
             if (address == undefined) {
-                warning = `<p class='warning'>${translation.this_article_is_only_available_in[language]}`;
-                for (let i = 0; i < articles[current_page].languages.length; i ++) {
-                    if (i != 0) {
-                        warning += `, ${translation.language[articles[current_page].languages[i]]}`;
-                    } else {
-                        warning += translation.language[articles[current_page].languages[i]];
-                    }
-                }
-                warning += `${translation.dot[language]}</p>`;
-                address = `${articles[current_page].address}/en.json`;
+                warning = language_warning();
+                address = 'done';
             }
         } else {
-            address = 'done';
-            content = compile_directory(articles[current_page].directory);
+            for (let i = 0; i < articles[current_page].languages.length; i ++) {
+                if (articles[current_page].languages[i] === language) {
+                    address = `${articles[current_page].address}/${language}.json5`;
+                    break;
+                }
+            }
+            if (address == undefined) {
+                warning = language_warning();
+                address = `${articles[current_page].address}/en.json5`;
+            }
         }
     }
     if (address !== 'done') {
         content = await fetch(`/Contents/${address}`);
-        content = await content.json();
+        content = await content.text();
+        content = JSON5.parse(content);
     }
-    content.warning = warning;
+    if (warning != undefined) {
+        content.warning = warning;
+    }
     if (content.main_styles == undefined) {
         content.main_styles = '';
     }
@@ -558,6 +587,19 @@ async function resolve_url(entry) {
         content.downloads = '';
     }
     return content;
+}
+
+function language_warning() {
+    let warning = translation.this_article_is_only_available_in[language];
+    for (let i = 0; i < articles[current_page].languages.length; i ++) {
+        if (i != 0) {
+            warning += `, ${translation.language[articles[current_page].languages[i]]}`;
+        } else {
+            warning += translation.language[articles[current_page].languages[i]];
+        }
+    }
+    warning += translation.dot[language];
+    return warning;
 }
 
 function compile_directory(directory) {
@@ -578,15 +620,20 @@ function compile_directory(directory) {
     return {
         main_styles: 'display: flex; flex-wrap: wrap; gap: 15px; padding: 15px;',
         content: content,
-        click_listeners: click_listeners
+        click_listeners: {
+            type: 'redirect',
+            list: click_listeners
+        }
     };
 }
 
-function event_listeners(listener_list) {
-    for (let i = 0; i < listener_list.length; i ++) {
-        document.getElementById(listener_list[i]).addEventListener('click', function() {
-            shift_title(this.getAttribute('id').replace('_directory', ''));
-        });
+function event_listeners(listener_list, type) {
+    if (type === 'redirect') {
+        for (let i = 0; i < listener_list.length; i ++) {
+            document.getElementById(listener_list[i]).addEventListener('click', function() {
+                shift_title(this.getAttribute('id').replace('_directory', ''));
+            });
+        }
     }
 }
 
@@ -628,46 +675,63 @@ function mouse_down(e) {
     offset = e.clientX - sidenav.offsetWidth;
     isDragging = 1;
     background.classList.add('on_dragging');
+    content_district.classList.toggle('slides');
 }
 
 function touch_start(e) {
     offset = e.touches[0].clientX - sidenav.offsetWidth;
     isDragging = 2;
     background.classList.add('on_dragging');
+    content_district.classList.toggle('slides');
 }
 
 function mouse_move(e) {
-    if (isDragging !== 0) {
-        if (isDragging === 1) {
-            position = e.clientX - offset;
-        } else {
-            position = e.touches[0].clientX - offset;
-        }
-        if (position >= 165 && position <= window.innerWidth - 345 && !sidenav_minimal) {
-            sidenav.style.width = `${position}px`;
-        } else if (position < 46 && !sidenav_minimal) {
-            transitioning();
-            sidenav.style.width = '';
-            sidenav_minimal = true;
-            minimal_start();
-            musicContainer.addEventListener('click', music_clicked);
-        } else if (position >= 100 && sidenav_minimal) {
-            transitioning();
-            sidenav.style.width = '165px';
-            sidenav_minimal = false;
-            minimal_end();
-            dn_complete();
-            musicContainer.removeEventListener('click', music_clicked);
+    if (throttle_mouse_move) {
+        throttle_mouse_move = false;
+        setTimeout(() => {
+            throttle_mouse_move = true;
+        }, 15);
+        if (isDragging !== 0) {
+            e.preventDefault();
+            if (isDragging === 1) {
+               position = e.clientX - offset;
+            } else {
+                position = e.touches[0].clientX - offset;
+            }
+            if (position >= 165 && position <= window.innerWidth - 345 && !sidenav_minimal) {
+                sidenav.style.width = `${position}px`;
+            } else if (position < 46 && !sidenav_minimal) {
+                transitioning();
+                sidenav.style.width = '';
+                sidenav_minimal = true;
+                minimal_start();
+                musicContainer.addEventListener('click', music_clicked);
+            } else if (position >= 100 && sidenav_minimal) {
+                transitioning();
+                sidenav.style.width = '165px';
+                sidenav_minimal = false;
+                minimal_end();
+                dn_complete();
+                musicContainer.removeEventListener('click', music_clicked);
+            }
         }
     }
 }
 
 function mouse_up() {
-    isDragging = 0;
+    if (isDragging !== 0) {
+        content_district.classList.toggle('slides');
+        isDragging = 0;
+        background.classList.remove('on_dragging');
+        if (articles[current_page] != undefined) {
+            if (articles[current_page].iframe != undefined) {
+                document.getElementById('iframe').contentWindow.focus();
+            }
+        }
+    }
     if (!hovered) {
         stretch_bar_1.style.backgroundColor = 'transparent';
     }
-    background.classList.remove('on_dragging');
 }
 
 function hover_color() {
@@ -879,4 +943,16 @@ function enter_to_search(event) {
     if (event.key === 'Enter') {
         search_clicked();
     }
+}
+
+function warn(type, message) {
+    warning_icon.src = warning_icons[type];
+    warning_text.innerHTML = message;
+    warning_bar.classList.add('show');
+    timeout_2 = setTimeout(() => warning_bar.classList.remove('show'), 3000);
+}
+
+function warning_bar_clicked() {
+    warning_bar.classList.toggle('show');
+    clearTimeout(timeout_2);
 }

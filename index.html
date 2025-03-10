@@ -9,6 +9,7 @@
 	<link rel='stylesheet' href='CSS/style.css'>
 	<link rel='stylesheet' href='CSS/toggler.css'>
 	<link rel='stylesheet' href='CSS/pop_up.css'>
+	<link rel='stylesheet' href='CSS/common.css'>
 	<link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
 	<link type='image/png' sizes='32x32' rel='icon' href='https://img.icons8.com/fluency/100/orca.png'>
 </head>
@@ -23,6 +24,12 @@
 	<input type='radio' id='others' name='category' value='others'>
 	<input type='radio' id='about' name='category' value='about'>
 	<input type='checkbox' id='dn'>
+	<div class='centerer'  id='warning_bar'>
+		<div class='warning_bar clickable shadow' id='warning_bar_wrapper'>
+			<img class='icon' id='warning_icon' src='https://img.icons8.com/fluency/100/box-important--v1.png' />
+			<div class='center_text' id='warning_text'></div>
+		</div>
+	</div>
 	<div class='showcase' id='showcase'>
 		<img class='background_img' id='background_img'/>
 		<div class='slogan' id='slogan'></div>
@@ -63,42 +70,42 @@
 			<div class='sidenav_wrapper shadow'>
 				<label for='homepage' class='entry clickable upper' id='homepage_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' style='height: 30px; width:30px;' id='homepage_icon'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' id='homepage_icon'>
 						<dir class='center_text' id='text_homepage'></dir>
 					</div>
 				</label>
 				<div class='division'></div>
 				<label for='learning' class='entry clickable' id='learning_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/quill-with-ink.png' alt='learning' style='height: 30px; width:30px;' id='learning_icon'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/quill-with-ink.png' alt='learning' id='learning_icon'>
 						<dir class='center_text' id='text_learning'></dir>
 					</div>
 				</label>
 				<div class='division'></div>
 				<label for='humanities' class='entry clickable' id='humanities_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/mona-lisa.png' alt='humanities' style='height: 30px; width:30px;' id='humanities_icon'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/mona-lisa.png' alt='humanities' id='humanities_icon'>
 						<dir class='center_text' id='text_humanities'></dir>
 					</div>
 				</label>
 				<div class='division'></div>
 				<label for='development' class='entry clickable' id='development_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/macbook-settings.png' alt='development' style='height: 30px; width:30px;' id='development_icon'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/macbook-settings.png' alt='development' id='development_icon'>
 						<dir class='center_text' id='text_development'></dir>
 					</div>
 				</label>
 				<div class='division'></div>
 				<label for='others' class='entry clickable' id='others_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/oat-milk.png' alt='others' style='height: 30px; width:30px;' id='others_icon'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/oat-milk.png' alt='others' id='others_icon'>
 						<dir class='center_text' id='text_others'></dir>
 					</div>
 				</label>
 				<div class='division'></div>
 				<label for='about' class='entry clickable lower' id='about_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' style='height: 30px; width:30px;' id='about_icon'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' id='about_icon'>
 						<dir class='center_text' id='text_about'></dir>
 					</div>
 				</label>
@@ -123,7 +130,7 @@
 				<div class='music_container upper' id='music_container'>
 					<div class='label_wrapper' style='min-height: 80px; flex-direction: column;'>
 						<div style='margin: 0px; display: flex; height: 30px;'>
-							<img class='icon' src='https://pic1.imgdb.cn/item/67a20090d0e0a243d4fbcfce.png' alt='music-cover' id='music_cover'/>
+							<img class='icon' src='https://img.icons8.com/fluency/100/lyre.png' alt='music-cover' id='music_cover'/>
 							<div id='music_title' class='center_text' style='white-space: normal; margin: auto 0px auto auto; direction: rtl; font-size: 15px; height: 30px; padding: 0px 0px 0px 8px; line-height: 17px;'></div>
 						</div>
 						<div class='progress_container' id='progress_container'>
@@ -131,14 +138,14 @@
 						</div>
 						<div style='margin: 0px; display: flex; height: 20px;'>
 						  	<button id='play' class='action-btn' style='margin: 0px auto 0px 0px;'>
-								<img class='icon navi_ico' src='https://img.icons8.com/fluency-systems-filled/100/play.png' alt='play' id='play_light'/>
-								<img class='icon navi_ico opacity' src='https://img.icons8.com/fluency-systems-filled/100/pause.png' alt='pause' id='pause_light'/>
-								<img class='icon navi_ico opacity' src='https://img.icons8.com/?size=100&id=q0nxNdfpbYVl&format=png&color=FFFFFF' alt='pause' id='pause_dark'/>
-								<img class='icon navi_ico' src='https://img.icons8.com/?size=100&id=fjx0LfGCNuZb&format=png&color=FFFFFF' alt='play' id='play_dark'/>
+								<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/play.png' alt='play' id='play_light'/>
+								<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/pause.png' alt='pause' id='pause_light'/>
+								<img class='icon' src='https://img.icons8.com/?size=100&id=q0nxNdfpbYVl&format=png&color=FFFFFF' alt='pause' id='pause_dark'/>
+								<img class='icon' src='https://img.icons8.com/?size=100&id=fjx0LfGCNuZb&format=png&color=FFFFFF' alt='play' id='play_dark'/>
 						  	</button>
 						  	<button id='next' class='action-btn'>
-								<img class='icon navi_ico' src='https://img.icons8.com/fluency-systems-filled/100/end.png' alt='next' style='right: 0px;' id='next_light'/>
-								<img class='icon navi_ico' src='https://img.icons8.com/?size=100&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' style='right: 0px;' id='next_dark'/>
+								<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/end.png' alt='next' style='right: 0px;' id='next_light'/>
+								<img class='icon' src='https://img.icons8.com/?size=100&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' style='right: 0px;' id='next_dark'/>
 					  		</button>
 						</div>
 						<audio src='https://music.163.com/song/media/outer/url?id=1437405183.mp3' id='audio'></audio>
@@ -188,7 +195,7 @@
 				<div class = 'content' id='content_1'></div>
 				<div class = 'content' id='content_0'></div>
 			</div>
-			<div class='rectangle' style='display: flex; align-items: center; justify-content: center;' id='cover'>
+			<div class='rectangle' id='cover'>
 				<svg class='spinner'>
 					<circle>
 					  <animateTransform attributeName='transform' type='rotate' values='-90;810' keyTimes='0;1' dur='2s' repeatCount='indefinite'></animateTransform>
@@ -202,5 +209,6 @@
 	<script src='JavaScript/music player.js'></script>
 	<script src='JavaScript/objects.js'></script>
 	<script src='JavaScript/script.js'></script>
+	<script src="https://unpkg.com/json5@latest/dist/index.min.js"></script>
 </body>
 </html>

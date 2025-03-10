@@ -22,7 +22,7 @@ const articles = {
         zh_Hans: '主页',
         de: 'Homepage',
         address: 'homepage',
-        languages: ['en', 'zh_Hans', 'de'],
+        directory: ['learning', 'humanities', 'development', 'others', 'about'],
         thumbnail: 'https://pic1.imgdb.cn/item/679f4cb4d0e0a243d4f9907c.jpg',
         introduction: {
             en: '',
@@ -38,7 +38,6 @@ const articles = {
         de: 'Lernen',
         address: 'learning',
         directory: ['radicals', 'save_power'],
-        languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://photo-cdn2.icons8.com/xG_J1xz8gP2N1VB1bzpZY8NDbWy6tcKlHMSmhBvlZHg/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi9kNDljOTUyMWJh/ZmQ0MTdlODJkNmI5/MmM0MGM2YTA4MS5q/cGc.jpg',
         introduction: {
             en: 'The blogger regards this as the most frequently used category, which he wants to squeeze all the nuanced school assignments and learning notes in. Two reasons include getting all the finished works away from his desktop and seeking a new residence.',
@@ -53,8 +52,7 @@ const articles = {
         zh_Hans: '人文',
         de: 'Geistes',
         address: 'humanities',
-        languages: ['en', 'zh_Hans', 'de'],
-        directory: ['fascist_propaganda'],
+        directory: ['fascist_propaganda', '8values'],
         thumbnail: 'https://pic1.imgdb.cn/item/67c086fad0e0a243d4075204.jpg',
         introduction: {
             en: 'The Humanities are the fruit throughout the epic evolution of human intelligence, often including literature, sociology, economics, politics, art, history, philosophy and so on, serving as the beacon of human progress.',
@@ -69,7 +67,6 @@ const articles = {
         zh_Hans: '开发',
         de: 'Entwicklung',
         address: 'development',
-        languages: ['en', 'zh_Hans', 'de'],
         directory: ['build_website'],
         thumbnail: 'https://pic1.imgdb.cn/item/67c08e72d0e0a243d40755d0.png',
         introduction: {
@@ -86,7 +83,6 @@ const articles = {
         de: 'Andere',
         address: 'others',
         directory: ['moonstone'],
-        languages: ['en', 'zh_Hans', 'de'],
         thumbnail: 'https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg',
         introduction: {
             en: 'It\'s impossible to involve all the topics of articles in the aforesaid categories. Consequently, an \'others\' folder is required to accommodate the rest articles. The documents in it usually involve a diverse range of propositions.',
@@ -129,6 +125,21 @@ const articles = {
         de: 'Eine Website kostenlos erstellen',
         address: 'development/build_website',
         languages: ['en', 'zh_Hans', 'de'],
+        thumbnail: 'https://img.picui.cn/free/2025/03/05/67c7d661b2c75.png',
+    },
+
+    '8values': {
+        en: 'Ideology Test',
+        zh_Hans: '价值观测试',
+        de: 'Eine Website kostenlos erstellen',
+        address: 'humanities/8values',
+        iframe: true,
+        languages: ['zh_Hans'],
+        introduction: {
+            en: 'It\'s impossible to involve all the topics of articles in the aforesaid categories. Consequently, an \'others\' folder is required to accommodate the rest articles. The documents in it usually involve a diverse range of propositions.',
+            zh_Hans: '无法将所有文章主题都归入上述类别，因此需要一个“其他”文件夹来容纳剩余的文章。其中的文档通常涉及各种不同的主题。',
+            de: 'Es ist unmöglich, alle Themen der Artikel in den oben genannten Kategorien unterzubringen. Daher ist ein "Andere"-Ordner erforderlich, um die restlichen Artikel aufzunehmen. Die Dokumente darin behandeln normalerweise eine Vielzahl von Themen.'
+        },
         thumbnail: 'https://img.picui.cn/free/2025/03/05/67c7d661b2c75.png',
     },
 };
@@ -207,9 +218,9 @@ const translation = {
         de: 'Dunkel'
     },
     nations: {
-        en: 'https://pic1.imgdb.cn/item/679f7a55d0e0a243d4f99b21.png',
-        zh_Hans: 'https://pic1.imgdb.cn/item/67a03c54d0e0a243d4f9a619.png',
-        de: 'https://pic1.imgdb.cn/item/67a04128d0e0a243d4f9a6b4.png'
+        en: 'https://img.icons8.com/fluency/100/great-britain-circular.png',
+        zh_Hans: 'https://img.icons8.com/fluency/100/china-circular.png',
+        de: 'https://img.icons8.com/fluency/100/germany-circular.png'
     },
     languages: {
         en: 'Languages',
@@ -237,9 +248,9 @@ const translation = {
         de: 'Dieser Artikel ist nur verfügbar in: '
     },
     dot: {
-        en: '.',
+        en: '. ',
         zh_Hans: '。',
-        de: '.'
+        de: '. '
     },
     previous: {
         en: 'Previous',
@@ -313,3 +324,8 @@ const showcases = [
         de: 'Freiheit   Gleichheit   Einheit   Rationalität'
     }
 ]
+
+const warning_icons = {
+    alarm: 'https://img.icons8.com/fluency/100/box-important--v1.png',
+    error: 'https://img.icons8.com/fluency/100/cancel.png',
+}
