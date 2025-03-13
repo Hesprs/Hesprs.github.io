@@ -620,7 +620,7 @@ function compile_directory(directory) {
                 </div>
     	    </div>
         `;
-        click_listeners.push(`${directory[i]}_directory`);
+        click_listeners.push(`${directory[i]}_redirect`);
     }
     return {
         main_styles: 'display: flex; flex-wrap: wrap; gap: 15px; padding: 15px; min-height: unset;',
