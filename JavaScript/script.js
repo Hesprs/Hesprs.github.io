@@ -527,12 +527,12 @@ async function resolve_url(entry) {
         }
         change_category();
         if (!current_page.includes('search=')) {
-            address = `404/${language}.json`;
+            address = `404/${language}.json5`;
         } else {
             address = 'done';
             content = search(current_page.replace('search=', ''));
             if (content === '404') {
-                address = `404/${language}.json`;
+                address = `404/${language}.json5`;
             }
         }
     } else {
@@ -613,7 +613,7 @@ function compile_directory(directory) {
     for (let i = 0; i < directory.length; i ++) {
         let target = articles[directory[i]];
         content += `
-            <div class='card shadow' id='${directory[i]}_directory'>
+            <div class='card shadow' id='${directory[i]}_redirect'>
                 <img src="${target.thumbnail}" alt="${target[language]}" class='background_img'/>
                 <div class="overlay">
                     <p>${target[language]}</p>
