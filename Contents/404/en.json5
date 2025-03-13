@@ -1,4 +1,0 @@
-{
-    main_styles: 'align-items: center; justify-content: center; display: flex; height: 100%; padding: 0px;',
-    content: '<h1 style="margin: auto;">Not Found!</h1>'
-}
