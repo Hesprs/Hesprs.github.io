@@ -1,0 +1,45 @@
+.pop_up {
+    height: calc(60% + 50px);
+    width: calc(30% + 200px);
+    background-color: rgb(247, 249, 250);
+	border-radius: 10px;
+	transition: color 300ms, background-color 300ms, opacity 200ms, box-shadow 300ms;
+	overflow: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	position: fixed;
+	top: calc(20% - 25px);
+    left: calc(35% - 100px);
+    bottom: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 5px 10px rgb(100, 100, 100);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+} body.dark .pop_up {
+    box-shadow: 0px 5px 10px rgb(30, 30, 30);
+	background-color: rgb(45, 45, 45);
+} .pop_up::-webkit-scrollbar {
+    display: none;
+}
+
+.shade {
+    pointer-events: none;
+    opacity: 0;
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    transition: opacity 300ms;
+    backdrop-filter: blur(5px) saturate(120%);
+    -webkit-backdrop-filter: blur(5px) saturate(120%);
+    position: fixed;
+}
+
+input[type='radio'] {
+    height: 0px;
+    width: 0px;
+    margin: 0px;
+    visibility: hidden;
+    overflow: hidden;
+}
