@@ -253,4 +253,5 @@ div.tradition {
     height: 100%;
     display: flex;
     align-items: center;
+    transition: color 300ms;
 }

@@ -5,7 +5,7 @@ const articles = {
         de: 'Mondstein (Aphroselene)',
         address: 'others/moonstone',
         languages: ['en', 'zh_Hans', 'de'],
-        thumbnail: 'https://pic1.imgdb.cn/item/679f4cb4d0e0a243d4f9907c.jpg',
+        thumbnail: 'https://img1.tucang.cc/api/image/show/9e15869388f63f4ddaf292ed3a0da0b5',
     },
     
     about: {
@@ -23,7 +23,6 @@ const articles = {
         de: 'Homepage',
         address: 'homepage',
         directory: ['learning', 'humanities', 'development', 'others', 'about'],
-        thumbnail: 'https://pic1.imgdb.cn/item/679f4cb4d0e0a243d4f9907c.jpg',
         introduction: {
             en: '',
             zh_Hans: '',
