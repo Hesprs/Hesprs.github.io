@@ -560,7 +560,7 @@ async function resolve_url(entry) {
                 warning = language_warning();
                 address = 'done';
                 content = {
-                    content: `<iframe src='/Contents/${articles[current_page].address}/en/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
+                    content: `<iframe src='/Contents/${articles[current_page].address}/${articles[current_page].languages[0]}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
                     main_styles: 'width: 100%; height: 100%; position: absolute; padding: 0px;',
                 };
             }
@@ -573,7 +573,7 @@ async function resolve_url(entry) {
             }
             if (address == undefined) {
                 warning = language_warning();
-                address = `${articles[current_page].address}/en.json5`;
+                address = `${articles[current_page].address}/${articles[current_page].languages[0]}.json5`;
             }
         }
     }
