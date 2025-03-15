@@ -131,9 +131,9 @@ const articles = {
     '8values': {
         en: 'Ideology Test',
         zh_Hans: '价值观测试',
-        de: 'Eine Website kostenlos erstellen',
+        de: 'Ideologie-Test',
         address: 'humanities/8values',
-        iframe: true,
+        iframe: 'https://github.com/8values/8values.github.io', 
         languages: ['en', 'zh_Hans'],
         introduction: {
             en: '8values is, in essence, a political quiz that attempts to assign percentages for eight different political values. At the end of the quiz, your answers will be compared to the maximum possible for each value.',

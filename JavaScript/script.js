@@ -56,6 +56,7 @@ const search_bar_center = document.getElementById('search_bar_center');
 const warning_bar = document.getElementById('warning_bar');
 const warning_text = document.getElementById('warning_text');
 const warning_icon = document.getElementById('warning_icon');
+const github_corner = document.getElementById('github_corner');
 const meta = document.getElementsByTagName('meta');
 
 stretch_bar.addEventListener('touchstart', touch_start);
@@ -506,6 +507,12 @@ async function shift_title(title, entry = true, back = false) {
         if (content.warning != undefined) {
             warn('alarm', content.warning);
         }
+        if (content.github == undefined) {
+            github_corner.classList.remove('show');
+        } else {
+            github_corner.href = content.github;
+            github_corner.classList.add('show');
+        }
         content_0.scrollTo(0, 0);
         content_1.innerHTML = '';
         content_district.classList.toggle('slides');
@@ -545,7 +552,6 @@ async function resolve_url(entry) {
             address = 'done';
             content = compile_directory(articles[current_page].directory);
         } else if (articles[current_page].iframe != undefined) {
-            
             for (let i = 0; i < articles[current_page].languages.length; i ++) {
                 if (articles[current_page].languages[i] === language) {
                     content = {
@@ -563,6 +569,9 @@ async function resolve_url(entry) {
                     content: `<iframe src='/Contents/${articles[current_page].address}/${articles[current_page].languages[0]}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
                     main_styles: 'width: 100%; height: 100%; position: absolute; padding: 0px;',
                 };
+            }
+            if (articles[current_page].iframe !== '') {
+                content.github = articles[current_page].iframe;
             }
         } else {
             for (let i = 0; i < articles[current_page].languages.length; i ++) {

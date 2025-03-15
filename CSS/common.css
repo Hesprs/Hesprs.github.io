@@ -121,9 +121,9 @@ a, .fake_a {
 }
 
 .shadow {
-	filter: drop-shadow(0px 2px 5px rgb(200, 200, 200));
+	filter: drop-shadow(0px 2px 3px rgb(200, 200, 200));
 } body.dark .shadow {
-	filter: drop-shadow(0px 2px 5px rgb(30, 30, 30));
+	filter: drop-shadow(0px 2px 3px rgb(30, 30, 30));
 }
 
 img {
@@ -134,9 +134,9 @@ img {
 	max-width: 800px;
 	margin: 0px auto 0px auto;
 	display: block;
-	filter: drop-shadow(0px 2px 5px rgb(200, 200, 200));
+	filter: drop-shadow(0px 2px 3px rgb(200, 200, 200));
 } body.dark main img {
-	filter: drop-shadow(0px 2px 5px rgb(30, 30, 30));
+	filter: drop-shadow(0px 2px 3px rgb(30, 30, 30));
 }
 
 .clickable:hover {
@@ -177,10 +177,12 @@ img {
 }
 
 .github-corner {
+	visibility: hidden;
+	pointer-events: none;
 	cursor: auto;
     z-index: 10;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 47px;
     right: 0;
     border: 0;
     fill: #151513;
@@ -189,14 +191,15 @@ img {
 	color: rgb(255, 255, 255);
 } body.dark .github-corner {
 	color: rgb(255, 255, 255);
-}
-
-.github_corner_body, .octo-arm, .octo-body {
+} .corner, .octo-arm, .octo-body {
     cursor: pointer;
+} .octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
+    animation: octocat-wave 560ms ease-in-out;
 }
 
-.octo-body:hover ~ .octo-arm, .github_corner_body:hover ~ .octo-arm {
-    animation: octocat-wave 500ms ease-in-out;
+.github-corner.show {
+	visibility: visible;
+	pointer-events: auto;
 }
 
 @keyframes octocat-wave {
@@ -209,6 +212,15 @@ img {
     40%, 80% {
         transform: rotate(10deg);
     }
+}
+
+@media (max-width: 500px) {
+	.octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
+		animation: none;
+	}
+	.octo-arm {
+		animation: octocat-wave 560ms ease-in-out;
+	}
 }
 
 strong {
