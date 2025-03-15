@@ -1,2 +1,2 @@
 # Current Bugs
-1. The highlight indicator won't change when accessing the blog through URLs.
+1. The website takes too long to load.
