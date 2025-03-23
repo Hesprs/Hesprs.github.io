@@ -48,6 +48,7 @@ body {
 	height: 100%;
 	object-fit: cover;
 	max-width: unset;
+} #background_img {
 	border-radius: 0px;
 }
 
@@ -81,7 +82,9 @@ body {
 	transition: background-color 300ms, opacity 300ms, filter 300ms, border 300ms;
 }
 
-.background, .showcase {
+#background_img {
+	z-index: -2;
+} .background, .showcase {
 	z-index: -1;
 } #content_1, #content_district.slides #content_0 {
 	z-index: 0;
@@ -146,21 +149,21 @@ input[type=text] {
 }
 
 .continue {
-	padding: 10px;
+	padding: 5px;
 	font-weight: 500;
-	font-size: calc(15px + 0.4vw);
+	font-size: calc(10px + 0.4vw);
 	position: absolute;
-	bottom: 10px;
+	bottom: 5px;
 	text-shadow: 2px 2px 3px black;
 	text-align: center;
-	width: calc(100% - 30px);
+	width: calc(100% - 10px);
 	color: rgb(255, 255, 255);
 	animation: myAnim 10s ease 0s infinite normal forwards;
 } .slogan {
 	padding: 15px;
 	white-space: pre-wrap;
 	font-weight: 600;
-	font-size: calc(10px + 4vw);
+	font-size: calc(30px + 3vw);
 	position: absolute;
 	text-shadow: 3px 3px 6px rgb(40, 40, 40);
 	text-align: center;

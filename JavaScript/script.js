@@ -98,7 +98,10 @@ function initialize() {
         current_page = 'homepage';
         detect_language();
     } else {
-        document.body.classList.add('slide');
+        document.body.classList.add('slide', 'non-transition');
+        setTimeout(() => {
+            document.body.classList.remove('non-transition');
+        }, 10);
         localStorage.removeItem('title');
         if (redirect.includes('/')) {
             redirect = redirect.split('/');
@@ -115,7 +118,7 @@ function initialize() {
         document.body.classList.add('dark');
     }
     const randint = Math.floor(Math.random() * showcases.length);
-    document.body.style.background = `url('${showcases[randint].url}') no-repeat center center fixed`;
+    document.getElementById('background_img').src = showcases[randint].url;
     const slogan = document.getElementById('slogan');
     slogan.innerHTML = showcases[randint][language];
     slogan.style.top = `${showcases[randint].position}%`;
