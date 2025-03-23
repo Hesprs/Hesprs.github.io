@@ -124,7 +124,7 @@ function initialize() {
     sidenav.style.width = `${custom_width}px`;
     change_languages();
     responsive_resize();
-    document.getElementById('badge').classList.add('hide');
+    //document.getElementById('badge').classList.add('hide');
 }
 
 function detect_language() {
