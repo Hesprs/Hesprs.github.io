@@ -52,7 +52,7 @@ const articles = {
         de: 'Geistes',
         address: 'humanities',
         directory: ['fascist_propaganda', '8values'],
-        thumbnail: 'https://pic1.imgdb.cn/item/67c086fad0e0a243d4075204.jpg',
+        thumbnail: 'https://img1.tucang.cc/api/image/show/095706d788fd1d47e2ee022fe81733fd',
         introduction: {
             en: 'The Humanities are the fruit throughout the epic evolution of human intelligence, often including literature, sociology, economics, politics, art, history, philosophy and so on, serving as the beacon of human progress.',
             zh_Hans: '人文科学是人类智慧漫长演进的结晶，通常包括文学、社会学、经济学、政治学、艺术、历史、哲学等，是人类进步的火炬。',
@@ -144,6 +144,12 @@ const articles = {
 };
 
 const music = [
+    {
+        name:'Marry Christmas, Mr. Laurence',
+        url: 'https://music.163.com/song/media/outer/url?id=443070377.mp3',
+        img: 'https://p1.music.126.net/PywoXPKK3AjseU0Wx9wdXw==/109951167267731534.jpg?param=100x100',
+        img_HD: 'https://p1.music.126.net/PywoXPKK3AjseU0Wx9wdXw==/109951167267731534.jpg?param=1000x1000'
+    },
     {
         name:'Wicked Games',
         url: 'https://music.163.com/song/media/outer/url?id=1437405183.mp3',
@@ -311,17 +317,33 @@ const formats = [
 
 const showcases = [
     {
-        url: 'https://img.picui.cn/free/2025/03/05/67c8438f8bce6.jpg',
-        en: 'Liberty  Egality  Unity  Rationality',
-        zh_Hans: '自由  平等  团结  理性',
-        de: 'Freiheit  Gleichheit  Einheit  Rationalität'
+        position: 10,
+        url: 'https://img1.tucang.cc/api/image/show/b1ccfcace0d0565854fe957d1ebe6249',
+        en: 'Liberty  Egality<br>Unity  Rationality',
+        zh_Hans: '自由  平等<br>团结  理性',
+        de: 'Freiheit  Gleichheit<br>Einheit  Rationalität'
     },
     {
-        url: 'https://img.picui.cn/free/2025/03/05/67c8522e7a0bc.png',
-        en: '',
-        zh_Hans: '自由   平等   团结   理性',
-        de: 'Freiheit   Gleichheit   Einheit   Rationalität'
-    }
+        position: 45,
+        url: 'https://img1.tucang.cc/api/image/show/cdbfa0f9e1f139335688be2228299837',
+        en: 'Ultra-Futurism',
+        zh_Hans: '超未来主义',
+        de: 'Ultra-Futurismus'
+    },
+    {
+        position: 17,
+        url: 'https://img1.tucang.cc/api/image/show/177852b6cae1b02f7f69358d610c3593',
+        en: 'Sub Radiis Stellae',
+        zh_Hans: '于星芒之下',
+        de: 'Sub Radiis Stellae'
+    },
+    {
+        position: 33,
+        url: 'https://img1.tucang.cc/api/image/show/3fbd74f31e839b2a9ca30a166aa5cba3',
+        en: 'To the glory that was Greece<br>The grandeur that was Rome',
+        zh_Hans: '光荣属于希腊<br>伟大属于罗马',
+        de: 'Zu der Herrlichkeit, die Griechenland war<br>der Erhabenheit, die Rom war.'
+    },
 ]
 
 const warning_icons = {

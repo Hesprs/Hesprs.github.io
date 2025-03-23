@@ -5,22 +5,22 @@ html {
 body {
 	margin: 0px;
 	font-family: Jost;
-	background-color: rgb(247, 249, 250);
 	display: flex;
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
-	transition: background-color 300ms, opacity 500ms;
 	color: rgb(60, 60, 60);
     z-index: -2;
 	flex-direction: column;
+	background-size: cover !important;
 } body.dark {
-	background-color: rgb(45, 45, 45);
 	color: rgb(255, 255, 255);
 } body * {
 	font-size: calc(15px + 0.3vw);
+} body.non-transition *, body.non-transition {
+	transition: none !important;
 }
 
 body, main {
@@ -32,14 +32,23 @@ body, main {
 
 .center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong {
 	transition: color 300ms, opacity 300ms;
-} .demobox, hr, img {
-	transition: background-color 300ms, opacity 300ms, filter 300ms;
+} .demobox, hr, img, body {
+	transition: background 300ms, opacity 300ms, filter 300ms;
 }
 
 main {
 	padding: 1px 15px 1px 15px;
 	overflow: scroll;
 	min-height: calc(100% - 2px);
+} main.normal_padding {
+	padding: 15px;
+    min-height: calc(100% - 30px);
+} main.top_padding {
+	padding: 15px 15px 1px 15px;
+    min-height: calc(100% - 16px);
+} main.bottom_padding {
+	padding: 1px 15px 15px 15px;
+    min-height: calc(100% - 16px);
 }
 
 hr {
@@ -127,7 +136,7 @@ a, .fake_a {
 }
 
 img {
-	border-radius: 10px;
+	border-radius: 15px;
 	object-fit: contain;
 	width: 100%;
 } main img {
@@ -141,21 +150,21 @@ img {
 
 .clickable:hover {
     color: rgb(109, 173, 208);
-    background-color: rgb(229, 238, 245) !important;
+    background-color: rgba(229, 238, 245, 0.5) !important;
 } body.dark .clickable:hover {
 	color: rgb(190, 222, 248);
-	background-color: rgb(60, 60, 60) !important;
+	background-color: rgba(60, 60, 60, 0.5) !important;
 } .clickable:active:hover {
-    background-color: rgb(190, 222, 248) !important;
+    background-color: rgba(190, 222, 248, 0.5) !important;
 } body.dark .clickable:active:hover {
 	color: rgb(190, 222, 248);
-	background-color: rgb(75, 75, 75) !important;
+	background-color: rgba(75, 75, 75, 0.5) !important;
 }
 
 .demobox {
 	flex: 1 1 auto;
 	background-color: rgb(255, 255, 255);
-	border-radius: 10px;
+	border-radius: 15px;
 	padding: 8px 8px 8px 8px;
 	align-items: center;
   	justify-content: center;
@@ -214,12 +223,21 @@ img {
     }
 }
 
-@media (max-width: 500px) {
+.corner_svg {
+	height: 80px;
+	width: 80px;
+}
+
+@media (max-width: 768px) {
 	.octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
 		animation: none;
 	}
 	.octo-arm {
 		animation: octocat-wave 560ms ease-in-out;
+	}
+	.corner_svg {
+		height: 60px;
+		width: 60px;
 	}
 }
 

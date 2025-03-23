@@ -88,7 +88,7 @@ function music_clicked() {
     setTimeout(() => {
         pop_up_title.innerHTML = translation.music_player[language];
         pop_up_content.innerHTML = `
-            <img alt='music-cover' src='https://pic1.imgdb.cn/item/67a2e294d0e0a243d4fbe0a8.png' id='pop_up_music_cover' style='border-radius: 10px; margin: auto auto 0px auto;'/>
+            <img alt='music-cover' src='https://pic1.imgdb.cn/item/67a2e294d0e0a243d4fbe0a8.png' id='pop_up_music_cover' style='border-radius: 10px; margin: auto auto 0px auto;' class='shadow' />
 	    	<div id='pop_up_music_title' class='center_text color' style='margin: 15px auto 0px auto; height: 30px; width: fit-content; font-size: 18px;'>${translation.music_player[language]}</div>
 	    	<div class='progress_container' id='pop_up_progress_container' style = 'margin: 15px 0px 15px 0px; height: 4px; width: 100%;'>
 	    		<div class='progress' id='pop_up_progress'></div>

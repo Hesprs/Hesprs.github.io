@@ -24,12 +24,24 @@
                 <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>\
             </div>\
         </div>\
-        <br />\
         <hr />\
         <h1>Hēsperus\' Ideologie</h1>\
         <img src="https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699" />\
         <p style="text-align: center;" id="8values_redirect" class="fake_a">Von 8values, klicken Sie hier, um den Test selbst durchzuführen.</p>\
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons von <a href="https://icons8.com">icons8</a></p>\
+        <hr />\
+        <h1>Update-Log</h1>\
+        <h4>V 2.0 &nbsp; 23/3/2025</h4>\
+        <ol>\
+            <li>Die Benutzeroberfläche gründlich überarbeiten, indem der Unschärfeeffekt angewendet wird;</li>\
+            <li>Bilder, die zuvor nur auf der Willkommensseite erschienen, werden nun auf der gesamten Website verwendet, wobei bei jedem Besuch zufällig eines als Hintergrund ausgewählt wird.</li>\
+            <li>Ein Hēsperus-Abzeichen wird während des Ladens der Website angezeigt, um die Leere des weißen Bildschirms auszugleichen;</li>\
+            <li>Das Benutzererlebnis für den Artikel „8values“ optimieren;</li>\
+            <li>Die GitHub-Ecke, der Willkommensseiten-Slogan und die „Weiter“-Anzeige passen ihre Skalierung nun automatisch an die Bildschirmbreite an;</li>\
+            <li>Ein neues Lied, „Merry Christmas, Mr. Lawrence“, zum Musikplayer hinzufügen;</li>\
+            <li>Den globalen Radius der abgerundeten Ecken überarbeiten;</li>\
+            <li>Einige Bilder zu einem stabileren und schnelleren Bildhosting-Dienst übertragen.</li>\
+        </ol>\
     ',
     click_listeners: {
         type: "redirect",

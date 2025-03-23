@@ -2,7 +2,7 @@
     height: calc(60% + 50px);
     width: calc(30% + 200px);
     background-color: rgb(247, 249, 250);
-	border-radius: 10px;
+	border-radius: 15px;
 	transition: color 300ms, background-color 300ms, opacity 200ms, box-shadow 300ms;
 	overflow: scroll;
 	-ms-overflow-style: none;

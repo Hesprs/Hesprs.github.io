@@ -93,9 +93,6 @@ window.addEventListener('mouseup', mouse_up);
 window.addEventListener('touchend', mouse_up);
 
 function initialize() {
-    setTimeout(() => {
-        document.body.style.opacity = 1;
-    }, 800);
     let redirect = localStorage.getItem('title');
     if (redirect === null) {
         current_page = 'homepage';
@@ -116,17 +113,18 @@ function initialize() {
     if (currentTheme.matches) {
         dn.checked = true;
         document.body.classList.add('dark');
-        document.getElementById('background_img').src = showcases[1].url;
-        document.getElementById('slogan').innerHTML = `${showcases[1][language]}`;
-    } else {
-        document.getElementById('background_img').src = showcases[0].url;
-        document.getElementById('slogan').innerHTML = `${showcases[0][language]}`;
     }
+    const randint = Math.floor(Math.random() * showcases.length);
+    document.body.style.background = `url('${showcases[randint].url}') no-repeat center center fixed`;
+    const slogan = document.getElementById('slogan');
+    slogan.innerHTML = showcases[randint][language];
+    slogan.style.top = `${showcases[randint].position}%`;
     document.getElementById(language).checked = true;
     music_title.innerHTML = translation.music_player[language];
     sidenav.style.width = `${custom_width}px`;
     change_languages();
     responsive_resize();
+    document.getElementById('badge').classList.add('hide');
 }
 
 function detect_language() {
@@ -477,6 +475,7 @@ async function shift_title(title, entry = true, back = false) {
         timer += 10;
     }, 10);
     cover.style.opacity = 1;
+    content_district.style.opacity = 0;
     if (!back) {
         if (title !== current_page) {
             history.push(current_page);
@@ -518,6 +517,7 @@ async function shift_title(title, entry = true, back = false) {
         content_district.classList.toggle('slides');
         content_0.innerHTML = `<main style='${content.main_styles}'>${content.content}</main>`;
         cover.style.opacity = 0;
+        content_district.style.opacity = 1;
         cover.style.pointerEvents = 'none';
         if (content.click_listeners != undefined) {
             event_listeners(content.click_listeners.list, content.click_listeners.type);

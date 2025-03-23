@@ -36,17 +36,20 @@ function next_question(mult, language) {
     qn++; 
     if (qn < questions.length) {
         init_question(language);
+        if (qn === 1) {
+            document.getElementById("back_button").onclick = () => prev_question(language);
+        }
     } else {
         results();
     }
 }
 
 function prev_question(language) {
-    if (qn == 0) {
-        return;
-    }
     qn--;
     init_question(language);
+    if (qn === 0) {
+        document.getElementById("back_button").onclick = () => location.href = 'instructions.html';
+    }
 }
 
 function calc_score(score, max) {
@@ -230,6 +233,10 @@ function result_ini(language) {
 }
 
 function check_dark() {
+    document.body.classList.add('non-transition');
+    setTimeout(() => {
+        document.body.classList.remove('non-transition');
+    }, 10);
     if (parent.document.body.classList.contains('dark')) {
         document.body.classList.add("dark");
     } else {

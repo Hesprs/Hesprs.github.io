@@ -24,12 +24,24 @@
                 <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>\
             </div>\
         </div>\
-        <br />\
         <hr />\
         <h1>Hēsperus\' Ideology</h1>\
         <img src="https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699" />\
         <p style="text-align: center;" id="8values_redirect" class="fake_a">From 8values, click me to take the test for yourself.</p>\
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons by <a href="https://icons8.com">icons8</a></p>\
+        <hr />\
+        <h1>Update Log</h1>\
+        <h4>V 2.0 &nbsp; 2025年3月23日</h4>\
+        <ol>\
+		    <li>Thoroughly reconstruct the user interface by applying the blur effect;</li>\
+		    <li>Images that previously appeared only on the welcome page are now applied across the whole website, with one being randomly selected as the background on each visit;</li>\
+		    <li>A Hēsperus badge will appear while the website is loading to compensate for the emptiness of the blank scree;</li>\
+            <li>Optimize the user experience for the article "8values";</li>\
+            <li>The GitHub corner, welcome page slogan and "continue" indicator can now self-adapt their scales according to the screen width;</li>\
+            <li>Add a new song, "Marry Christmas, Mr. Laurence," to the music player;</li>\
+            <li>Revise global round corner radius;</li>\
+            <li>Transfer some images to a more stable and faster image hosting service.</li>\
+		</ol>\
     ',
     click_listeners: {
         type: 'redirect',

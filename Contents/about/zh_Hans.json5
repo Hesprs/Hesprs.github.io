@@ -24,12 +24,24 @@
                 <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>\
             </div>\
         </div>\
-        <br />\
         <hr />\
         <h1>Hēsperus的价值观</h1>\
         <img src="https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699" />\
         <p style="text-align: center;" id="8values_redirect" class="fake_a">来自8values，点击此处亲自测试。</p>\
         <p style="text-align: right;">版权所有 © Hēsperus 2025<br />图标提供：<a href="https://icons8.com">icons8</a></p>\
+        <hr />\
+        <h1>更新日志</h1>\
+        <h4>V 2.0 &nbsp; 23/3/2025</h4>\
+        <ol>\
+            <li>彻底重构用户界面，应用模糊效果；</li>\
+            <li>原先仅出现在欢迎页的图片现在将应用于整个网站，每次访问时随机选择一张作为背景；</li>\
+            <li>网站加载时将显示 Hēsperus 徽章，以弥补空白屏幕的单调；</li>\
+            <li>优化文章《8values》的用户体验；</li>\
+            <li>GitHub 角标、欢迎页标语和“继续”指示器现在能够根据屏幕宽度自适应缩放；</li>\
+            <li>为音乐播放器新增歌曲《Merry Christmas, Mr. Lawrence》；</li>\
+            <li>调整全局圆角半径；</li>\
+            <li>将部分图片迁移至更稳定且更快速的图床服务。</li>\
+        </ol>\
     ',
     click_listeners: {
         type: "redirect",
