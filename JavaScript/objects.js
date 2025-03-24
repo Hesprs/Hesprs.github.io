@@ -339,7 +339,7 @@ const showcases = [
     },
     {
         position: 33,
-        url: 'https://img1.tucang.cc/api/image/show/3fbd74f31e839b2a9ca30a166aa5cba3',
+        url: 'https://img1.tucang.cc/api/image/show/818420e558af37cbc465cb0f81ad9c46',
         en: 'To the glory that was Greece<br>The grandeur that was Rome',
         zh_Hans: '光荣属于希腊<br>伟大属于罗马',
         de: 'Zu der Herrlichkeit, die Griechenland war<br>der Erhabenheit, die Rom war.'

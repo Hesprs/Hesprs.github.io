@@ -12,7 +12,6 @@ let hovered = false;
 let ever_played_music = false;
 let second_pop_up = false;
 let throttle_resize = true;
-let throttle_mouse_move = true;
 let sidenav_minimal = false;
 let current_page, language, timeout, timeout_2;
 let history = [];
@@ -262,9 +261,11 @@ function minimal_start() {
     dn_minimal();
 }
 
-function minimal_end() {
+function minimal_end(custom = true) {
     sidenav.classList.remove('minimal');
-    sidenav.style.width = `${Math.max(custom_width, 170)}px`;
+    if (custom) {
+        sidenav.style.width = `${Math.max(custom_width, 170)}px`;
+    }
     musicContainer.removeEventListener('click', music_clicked);
     dn_complete();
 }
@@ -703,33 +704,26 @@ function touch_start(e) {
 }
 
 function mouse_move(e) {
-    if (throttle_mouse_move) {
-        throttle_mouse_move = false;
-        setTimeout(() => {
-            throttle_mouse_move = true;
-        }, 15);
-        if (isDragging !== 0) {
-            if (isDragging === 1) {
-               position = e.clientX - offset;
-            } else {
-                position = e.touches[0].clientX - offset;
-            }
-            if (position >= 170 && position <= window.innerWidth - 345 && !sidenav_minimal) {
-                sidenav.style.width = `${position}px`;
-            } else if (position < 46 && !sidenav_minimal) {
-                transitioning();
-                sidenav.style.width = '';
-                sidenav_minimal = true;
-                minimal_start();
-                musicContainer.addEventListener('click', music_clicked);
-            } else if (position >= 100 && sidenav_minimal) {
-                transitioning();
-                sidenav.style.width = '170px';
-                sidenav_minimal = false;
-                minimal_end();
-                dn_complete();
-                musicContainer.removeEventListener('click', music_clicked);
-            }
+    if (isDragging !== 0) {
+        if (isDragging === 1) {
+           position = e.clientX - offset;
+        } else {
+            position = e.touches[0].clientX - offset;
+        }
+        if (position >= 170 && position <= background.offsetWidth - 345 && !sidenav_minimal) {
+            sidenav.style.width = `${position}px`;
+        } else if (position < 46 && !sidenav_minimal) {
+            transitioning();
+            sidenav.style.width = '';
+            sidenav_minimal = true;
+            minimal_start();
+            musicContainer.addEventListener('click', music_clicked);
+        } else if (position >= 100 && sidenav_minimal) {
+            transitioning();
+            sidenav.style.width = '170px';
+            sidenav_minimal = false;
+            minimal_end(false);
+            musicContainer.removeEventListener('click', music_clicked);
         }
     }
 }

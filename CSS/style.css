@@ -79,7 +79,7 @@ body {
 .crumb, .warning, .text_dark, .text_light, #search_bar {
 	transition: color 300ms, opacity 300ms;
 } .entry, .music_container, .progress_container, .warning_bar, .card, .overlay, .sidenav_wrapper, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, .rectangle_wrapper, .sidenav_wrapper {
-	transition: background-color 300ms, opacity 300ms, filter 300ms, border 300ms;
+	transition: background-color 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms;
 }
 
 #background_img {
@@ -151,7 +151,7 @@ input[type=text] {
 .continue {
 	padding: 5px;
 	font-weight: 500;
-	font-size: calc(10px + 0.4vw);
+	font-size: calc(20px + 0.3vw);
 	position: absolute;
 	bottom: 5px;
 	text-shadow: 2px 2px 3px black;
@@ -209,16 +209,14 @@ input[type=text] {
 }
   
 .progress_container {
-	border: rgb(235, 235, 235) solid 0.5px;
-    background-color: rgba(200, 200, 200, 0.5);
+	border: rgb(255, 255, 255) solid 0.75px;
     border-radius: 2px;
     cursor: pointer;
     margin: auto 0px auto 0px;
     height: 4px;
     width: 100%;
 } body.dark .progress_container {
-    background-color: rgba(67, 67, 67, 0.5);
-	border: rgb(62, 62, 62) solid 0.5px;
+	border: rgb(100, 100, 100) solid 0.75px;
 }
   
 .progress {
@@ -249,14 +247,15 @@ input[type=text] {
 	display: flex;
 	position: relative;
 	border-radius: 15px;
+	background-image: url(https://img1.tucang.cc/api/image/show/15855c09a9c3b8accc1f5c155f9c6e82);
 	margin: 15px 15px 15px 0px;
-	border: rgba(255, 255, 255, 0.6) solid 0.5px;
-	background-color: rgba(255, 255, 255, 0.65);
-	backdrop-filter: blur(30px) saturate(180%);
-	-webkit-backdrop-filter: blur(30px) saturate(180%);
+	border: rgb(255, 255, 255) solid 0.75px;
+	background-color: rgba(255, 255, 255, 0.80);
+	backdrop-filter: blur(70px) saturate(200%);
+	-webkit-backdrop-filter: blur(70px) saturate(200%);
 } body.dark .rectangle_wrapper {
-	border: rgba(60, 60, 60, 0.6) solid 0.5px;
-	background-color: rgba(38, 38, 38, 0.75);
+	border: rgb(100, 100, 100) solid 0.75px;
+	background-color: rgba(38, 38, 38, 0.80);
 }
 
 .rectangle {
@@ -271,11 +270,11 @@ input[type=text] {
 }
 
 body.dark .pop_up hr, body.dark #title_bar + hr {
-	background-color: rgba(62, 62, 62);
-	height: 0.5px;
+	background-color: rgba(100, 100, 100);
+	height: 0.75px;
 } .pop_up hr, #title_bar + hr {
-	background-color: rgba(235, 235, 235);
-	height: 0.5px;
+	background-color: rgba(255, 255, 255);
+	height: 0.75px;
 }
 
 .content {
@@ -297,8 +296,8 @@ body.dark .pop_up hr, body.dark #title_bar + hr {
 	flex-direction: row;
 	position: fixed;
 	top: 100%;
-	left: 0px;
-	right: 0px;
+	width: 100%;
+	max-width: 1200px;
 	bottom: -100%;
 	transition: top 500ms, bottom 500ms;
 } .background.on_dragging {
@@ -611,6 +610,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	box-sizing: border-box;
 	display: flex;
 	align-items: flex-end;
+	border-radius: 0px 0px 15px 15px;
 } .overlay p {
 	color: white;
 	font-size: 1.2rem;
@@ -640,25 +640,29 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 }
 
 .sidenav_wrapper {
+	background-image: url(https://img1.tucang.cc/api/image/show/15855c09a9c3b8accc1f5c155f9c6e82);
 	display: flex;
 	margin: 0px;
 	border-radius: 15px;
 	overflow: hidden;
-	border: rgba(255, 255, 255, 0.6) solid 0.5px;
-	background-color: rgba(255, 255, 255, 0.65);
-	backdrop-filter: blur(30px) saturate(180%);
-	-webkit-backdrop-filter: blur(30px) saturate(180%);
+	border: rgb(255, 255, 255) solid 0.75px;
+	background-color: rgba(255, 255, 255, 0.80);
+	backdrop-filter: blur(70px) saturate(200%);
+	-webkit-backdrop-filter: blur(70px) saturate(200%);
 } body.dark .sidenav_wrapper {
-	border: rgba(60, 60, 60, 0.6) solid 0.5px;
-	background-color: rgba(38, 38, 38, 0.75);
+	border: rgb(100, 100, 100) solid 0.75px;
+	background-color: rgba(38, 38, 38, 0.80);
 }
 
 .vertical_division {
 	height: 100%;
-	width: 0.5px;
-	background-color: rgba(235, 235, 235);
-} body.dark .vertical_division {
-	background-color: rgba(62, 62, 62);
+	width: 0.75px;
+}
+
+.division, .vertical_division {
+	background-color: rgba(255, 255, 255);
+} body.dark .division, body.dark .vertical_division {
+	background-color: rgba(100, 100, 100);
 }
 
 @media (min-width: 768px) {
@@ -699,11 +703,8 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 		flex-direction: column;
 		margin: 15px 0px 15px 15px;
 	} .division {
-		height: 0.5px;
+		height: 0.75px;
 		width: 100%;
-		background-color: rgba(235, 235, 235);
-	} body.dark .division {
-		background-color: rgba(62, 62, 62);
 	}
 
 	.upper {
@@ -804,9 +805,9 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	.sidenav.super_minimal #search_bar_center_wrapper {
 		margin: 15px 0px 15px 0px !important;
 		flex-grow: 1;
-		border: rgba(255, 255, 255, 0.6) solid 0.5px;
+		border: rgba(255, 255, 255) solid 0.75px;
 	} body.dark .sidenav.super_minimal #search_bar_center_wrapper {
-		border: rgba(60, 60, 60, 0.6) solid 0.5px;
+		border: rgba(100, 100, 100) solid 0.75px;
 	}
 
 	.sidenav.super_minimal #search_bar_center_wrapper .entry {
@@ -851,10 +852,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 
 	.division {
 		height: 100%;
-		width: 0.5px;
-		background-color: rgb(235, 235, 235);
-	} body.dark .division {
-		background-color: rgba(62, 62, 62);
+		width: 0.75px;
 	}
 
 	.background {
