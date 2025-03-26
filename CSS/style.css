@@ -271,10 +271,8 @@ input[type=text] {
 
 body.dark .pop_up hr, body.dark #title_bar + hr {
 	background-color: rgba(100, 100, 100);
-	height: 0.75px;
 } .pop_up hr, #title_bar + hr {
 	background-color: rgba(255, 255, 255);
-	height: 0.75px;
 }
 
 .content {
