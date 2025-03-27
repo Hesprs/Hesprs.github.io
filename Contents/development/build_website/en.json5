@@ -9,31 +9,31 @@
         <hr />\
         <h2>Process</h2>\
         <h3>1. Sign Up for GitHub</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c71f0a990ea.jpg" alt="sign up" />\
+        <img src="https://img1.tucang.cc/api/image/show/113010b318eeb9c8da6403e8c6dc3ce6" alt="sign up" />\
         <p> Register a GitHub account at <a href="https://github.com/">https://github.com</a>. Enter your username, email, and password, then verify your email address.</p>\
         <h3>2. Create a New Repository</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c721b6c8002.png" alt="create a repository" />\
+        <img src="https://img1.tucang.cc/api/image/show/bbafb398935a68e8a91fc76d893b6884" alt="create a repository" />\
         <p> Click the <strong>"+"</strong> button in the top right corner and select <strong>"New Repository"</strong> to create a new repository. </p>\
         <h3>3. Set the Repository Name</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c71f0a750fd.png" alt="name repository" />\
+        <img src="https://img1.tucang.cc/api/image/show/ecf97aa545d470aa856933a79412151c" alt="name repository" />\
         <p>In the <strong>Repository name</strong> field, enter your repository name as <strong>(your GitHub username).github.io</strong> (this will be your domain name). Keep all other  options as default, then click <strong>"Create Repository"</strong>.\</p>\
         <h3>4. Create a Codespace</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c71f0a87768.png" alt="start code" />\
+        <img src="https://img1.tucang.cc/api/image/show/cd442448e9c358b3e6ffecfdfc68e97c" alt="start code" />\
         <p>After entering the repository page, click <strong>"Create a Codespace"</strong> and confirm (this process may take some time).</p>\
         <h3>5. Create an HTML File</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c721b6c30b2.png" alt="index.html" />\
+        <img src="https://img1.tucang.cc/api/image/show/86c757b84f344d2c8def335f9de13522" alt="index.html" />\
         <p>On your computer, please create a new text file named <strong>index.txt</strong> and write some basic HTML code inside it. Then save the file and rename the extension to <strong>.html</strong>.</p>\
         <h3>6. Upload the File to GitHub</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c721b6112b6.png" alt="frag file" />\
+        <img src="https://img1.tucang.cc/api/image/show/912108582d6a5fce0b88db6f7cede887" alt="frag file" />\
         <p>Drag and drop your <strong>index.html</strong> file into your GitHub repository webpage, then click <strong>"Commit Changes"</strong> at the bottom.</p>\
         <h3>7. Enable GitHub Pages</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c721b72968f.png" alt="github page" />\
+        <img src="https://img1.tucang.cc/api/image/show/0a3d24dfa120ad0645e33bfcdb7395b8" alt="github page" />\
         <p>Go to <strong>Settings - Pages</strong>, then change the <strong>branch</strong> option from <strong>None</strong> to <strong>Main</strong> and click <strong>"Save"</strong>. Wait about a minute for deployment.</p>\
         <h3>8. Confirm Deployment</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c71f0a876dc.png" alt="page been built" />\
+        <img src="https://img1.tucang.cc/api/image/show/446ca4a5939cd1c8b29737334b043453" alt="page been built" />\
         <p>Refresh the page, and you should see a success notification.</p>\
         <h3>9. Visit Your Website</h3>\
-        <img src="https://img.picui.cn/free/2025/03/04/67c71f0a87e7c.png" alt="result" />\
+        <img src="https://img1.tucang.cc/api/image/show/8e94d942d48c21f7dff1ac37ec6c6dba" alt="result" />\
         <p> Open your browser and visit <strong>(your GitHub username).github.io</strong> — your website is now live! Congratulations on successfully publishing your first personal website.     </p>\
         <hr />\
         <h2>Conclusion</h2>\

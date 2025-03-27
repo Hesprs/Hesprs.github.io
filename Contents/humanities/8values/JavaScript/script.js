@@ -8,7 +8,7 @@ let qn = 0;
 
 function init_question(language) {
     document.getElementById("question-text").innerHTML = questions[qn][language];
-    if (language === 'zh_Hans') {
+    if (language === 'zh-Hans') {
        document.getElementById("question-number").innerHTML = "第 " + (qn + 1) + " 个问题，共 " + (questions.length)+" 个"; 
     } else {
         document.getElementById("question-number").innerHTML = "Question " + (qn + 1) + " of " + (questions.length);

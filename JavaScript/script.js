@@ -126,12 +126,12 @@ function initialize() {
     sidenav.style.width = `${custom_width}px`;
     change_languages();
     responsive_resize();
-    setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 1000); // for smooth experience and preload the images
+    setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 500); // for smooth experience and preload the images
 }
 
 function detect_language() {
     if (navigator.language.includes('zh')) {
-        language = 'zh_Hans';
+        language = 'zh-Hans';
     } else if (navigator.language.includes('de')) {
         language = 'de';
     } else {
@@ -345,7 +345,7 @@ function settings() {
         } else {
             pop_up_music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
         }
-        if (language === 'zh_Hans') {
+        if (language === 'zh-Hans') {
             document.getElementById('pop_up_text_dark').classList.add('chinese');
             document.getElementById('pop_up_text_light').classList.add('chinese');
         }
@@ -446,7 +446,7 @@ function language_clicked() {
 	    			<img class='icon' src='https://img.icons8.com/fluency/100/great-britain-circular.png' alt='UK flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
 	    			<div class='center_text' style='margin-left: 10px;'>English</div>
 	    		</label>
-	    		<label for='zh_Hans' class='demobox shadow color clickable' id='zh_Hans_label'>
+	    		<label for='zh-Hans' class='demobox shadow color clickable' id='zh-Hans_label'>
 	    			<img class='icon' src='https://img.icons8.com/fluency/100/china-circular.png' alt='CN flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
 	    			<div class='center_text' style='margin-left: 10px;'>简体中文</div>
 	    		</label>
@@ -855,7 +855,7 @@ function change_languages() {
     if (!ever_played_music) {
         music_title.innerHTML = translation.music_player[language];
     }
-    if (language === 'zh_Hans') {
+    if (language === 'zh-Hans') {
         text_dark.classList.add('chinese');
         text_light.classList.add('chinese');
     } else {

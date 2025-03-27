@@ -6,10 +6,6 @@ html {
     display: none;
 }
 
-main {
-    scroll-behavior: smooth;
-}
-
 p.value {
     margin-top: 22px;
     margin-bottom: 22px;
@@ -70,7 +66,7 @@ p.value {
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: background-color 300ms, filter 300ms;
+    transition: background-color 300ms, box-shadow 300ms;
 } body.dark .center {
     background-color: rgb(53, 53, 53);
 }
@@ -130,7 +126,7 @@ img {
     text-align: center;
     text-decoration: none;
     display: block;
-    transition: color 300ms, background-color 300ms, filter 300ms;
+    transition: color 300ms, background-color 300ms, box-shadow 300ms;
     cursor: pointer;
     background: #03a9f4;
 }
@@ -165,6 +161,7 @@ img {
 .arrow {
     width: 80%;
     height: auto;
+    box-shadow: none;
 }
 div.explanation_blurb_left {
     vertical-align: top;

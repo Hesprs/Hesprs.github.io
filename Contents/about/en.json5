@@ -31,12 +31,21 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons by <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update Log</h1>\
+        <h4>V 2.1.0 &nbsp; 27/3/2025</h4>\
+        <ol>\
+		    <li>Transfer all the images in a naughty image host service which causes illegal cookies use to a more stable, fater and safer one;</li>\
+            <li>Change all the mistaken "zh_Hans" to "zh-Hans";</li>\
+            <li>Improve some of the images\' resolution;</li>\
+            <li>Change the cover of "Humanities";</li>\
+		    <li>Fix the bug of shadow error under icons and music covers;</li>\
+		    <li>Fix the bug of the quiz page in 8values which doesn\'t span the whole width of the content area.</li>\
+		</ol>\
         <h4>V 2.0.1 &nbsp; 24/3/2025</h4>\
         <ol>\
 		    <li>Adjust the blur effect for better visual accessibility;</li>\
 		    <li>Adjust the self-adapt ratio of welcome page slogan and "continue";</li>\
 		    <li>Upgrade a background image\'s resolution;</li>\
-            <li>Limit the maximum width of content dash to assure visval ease;</li>\
+            <li>Limit the maximum width of content dash to assure visual ease;</li>\
             <li>Optimize for Safari display;</li>\
             <li>Fix the bug of width error when release the minimized side navigation.</li>\
 		</ol>\
@@ -49,7 +58,8 @@
             <li>The GitHub corner, welcome page slogan and "continue" indicator can now self-adapt their scales according to the screen width;</li>\
             <li>Add a new song, "Marry Christmas, Mr. Laurence," to the music player;</li>\
             <li>Revise global round corner radius;</li>\
-            <li>Transfer some images to a more stable and faster image hosting service.</li>\
+            <li>Transfer some images to a more stable and faster image hosting service;</li>\
+            <li>Start a new part - Update Log in "about".</li>\
 		</ol>\
     ',
     click_listeners: {

@@ -31,6 +31,15 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons von <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update-Log</h1>\
+        <h4>V 2.1.0 &nbsp; 27/3/2025</h4>\
+        <ol>\
+            <li>Alle Bilder aus einem Bildhostingdienst mit illegaler Cookie-Nutzung zu einem stabileren, schnelleren und sichereren Dienst übertragen;</li>\
+            <li>Falsche "zh_Hans" in "zh-Hans" korrigiert;</li>\
+            <li>Auflösung einiger Bilder verbessert;</li>\
+            <li>Umschlag von "Humanities" geändert;</li>\
+            <li>Fehler im Schatten unter Icons und Musikcover behoben;</li>\
+            <li>Fehler der Quiz-Seite in 8values behoben, die nicht die gesamte Breite des Inhaltsbereichs einnimmt.</li>\
+        </ol>\
         <h4>V 2.0.1 &nbsp; 24/3/2025</h4>\
         <ol>\
             <li>Den Unschärfeeffekt für bessere visuelle Zugänglichkeit anpassen;</li>\

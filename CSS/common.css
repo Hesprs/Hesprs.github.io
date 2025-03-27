@@ -42,6 +42,7 @@ main {
 	padding: 1px 15px 1px 15px;
 	overflow: scroll;
 	min-height: calc(100% - 2px);
+	width: calc(100% - 30px);
 } main.normal_padding {
 	padding: 15px;
     min-height: calc(100% - 30px);
@@ -57,7 +58,7 @@ hr {
 	height: 0.75px;
 	width: 100%;
 	margin: 15px 0px 15px 0px;
-	background-color: rgb(210, 210, 210);
+	background-color: rgba(255, 255, 255);
 	border: none;
 } body.dark hr {
 	background-color: rgb(100, 100, 100);

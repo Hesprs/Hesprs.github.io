@@ -269,12 +269,6 @@ input[type=text] {
 	overflow: hidden;
 }
 
-body.dark .pop_up hr, body.dark #title_bar + hr {
-	background-color: rgba(100, 100, 100);
-} .pop_up hr, #title_bar + hr {
-	background-color: rgba(255, 255, 255);
-}
-
 .content {
 	overscroll-behavior: contain;
 	overflow: scroll;
@@ -302,6 +296,7 @@ body.dark .pop_up hr, body.dark #title_bar + hr {
 	-moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
+	-webkit-user-select: none;
     user-select: none;
 } body.slide .background {
 	top: 0px;
@@ -410,11 +405,17 @@ body.dark .pop_up hr, body.dark #title_bar + hr {
 	margin: auto 0px auto 0px;
 	height: 30px;
 	width:30px;
-	filter: none;
+	box-shadow: none;
 }
 
 svg {
 	overflow: visible;
+}
+
+.filter {
+	filter: drop-shadow(0px 2px 3px rgb(200, 200, 200));
+} body.dark .filter {
+	filter: drop-shadow(0px 2px 2px rgb(30, 30, 30));
 }
 
 #next_dark,
