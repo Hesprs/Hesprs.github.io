@@ -270,7 +270,17 @@ ideologies = [
         }
     },
     {
-        "zh-Hans": "中立",
+        "zh-Hans": "温和左派",
+        "en": "Moderate Left-Wing",
+        "stats": {
+            "econ": 60,
+            "dipl": 50,
+            "govt": 50,
+            "scty": 60
+        }
+    },
+    {
+        "zh-Hans": "中庸派",
         "en": "Centrist",
         "stats": {
             "econ": 50,
