@@ -71,6 +71,11 @@ p.value {
     background-color: rgb(53, 53, 53);
 }
 
+.column img {
+    box-shadow: none;
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5))
+}
+
 .center p {
     margin: 0px;
     width: 100%;
@@ -203,35 +208,35 @@ div.bar {
     width: 50%;
 }
 
-div.equality {
+.equality {
     background-color: #f44336;
     border-right-style: solid;
 }
-div.wealth {
+.wealth {
     background-color: #00897b;
     border-left-style: solid;
 }
-div.liberty {
+.liberty {
     background-color: #ffeb3b;
     border-right-style: solid;
 }
-div.authority {
+.authority {
     background-color: #3f51b5;
     border-left-style: solid;
 }
-div.peace {
+.peace {
     background-color: #03a9f4;
     border-left-style: solid;
 }
-div.might {
+.might {
     background-color: #ff9800;
     border-right-style: solid;
 }
-div.progress {
+.progress {
     background-color: #9c27b0;
     border-left-style: solid;
 }
-div.tradition {
+.tradition {
     background-color: #8bc34a;
     border-right-style: solid;
 }

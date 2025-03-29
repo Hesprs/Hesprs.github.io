@@ -31,6 +31,15 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons von <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update-Log</h1>\
+        <h4>V 2.1.1 &nbsp; 29/3/2025</h4>\
+        <ol>\
+            <li>Die Titelleiste ist jetzt schwebend und erscheint nur noch oben oder unten auf der Inhaltsseite;</li>\
+            <li>Die Auflösung einiger Bilder verbessern;</li>\
+            <li>Den Radius der abgerundeten Ecken der zentralen Suchleiste anpassen;</li>\
+            <li>Den uralten Fehler beheben, dass das Webseiten-Layout nicht an verschiedene Bildschirmgrößen angepasst wurde;</li>\
+            <li>Die visuelle Darstellung und die chinesische Übersetzung von „values8“ verbessern;</li>\
+            <li>Den Fehler der zentralen Suchleiste mit uneinheitlichen Randstärken beheben.</li>\
+        </ol>\
         <h4>V 2.1.0 &nbsp; 27/3/2025</h4>\
         <ol>\
             <li>Alle Bilder aus einem Bildhostingdienst mit illegaler Cookie-Nutzung zu einem stabileren, schnelleren und sichereren Dienst übertragen;</li>\
@@ -59,6 +68,7 @@
             <li>Ein neues Lied, „Merry Christmas, Mr. Lawrence“, zum Musikplayer hinzufügen;</li>\
             <li>Den globalen Radius der abgerundeten Ecken überarbeiten;</li>\
             <li>Einige Bilder zu einem stabileren und schnelleren Bildhosting-Dienst übertragen.</li>\
+            <li>Beginnen eines neuen Abschnitts – Update-Log im Bereich „Über“.</li>\
         </ol>\
     ',
     click_listeners: {

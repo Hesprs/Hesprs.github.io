@@ -11,7 +11,6 @@ let isDragging = 0; // 0 void, 1 mouse, 2 touch
 let hovered = false;
 let ever_played_music = false;
 let second_pop_up = false;
-let throttle_resize = true;
 let sidenav_minimal = false;
 let current_page, language, timeout, timeout_2;
 let history = [];
@@ -126,7 +125,7 @@ function initialize() {
     sidenav.style.width = `${custom_width}px`;
     change_languages();
     responsive_resize();
-    setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 500); // for smooth experience and preload the images
+    setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
 }
 
 function detect_language() {
@@ -149,108 +148,86 @@ function toggle_dark() {
 }
 
 function responsive_resize() {
-    if (throttle_resize) {
-        throttle_resize = false;
-        setTimeout(() => {
-            throttle_resize = true;
-        }, 15);
-        if (window.innerWidth >= 768) {
-            if (window.innerHeight < 620) {
-                if (window.innerHeight < 574) {
-                    if (sidenav_fold_level !== 2) {
-                        if (sidenav_width_level === 0) {
-                            transitioning();
-                        } else {
-                            sidenav.classList.remove('transitioning');
-                        }
-                        if (sidenav_fold_level === 0) {
-                            minimal_start();
-                        }
-                        super_minimal_start();
-                        sidenav_fold_level = 2;
-                    }
-                } else if (sidenav_fold_level !== 1) {
-                    if (sidenav_width_level === 0) {
-                        transitioning();
-                    } else {
-                        sidenav.classList.remove('transitioning');
-                    }
-                    if (sidenav_fold_level === 2) {
-                        super_minimal_end();
-                    } else if (sidenav_fold_level === 0 && !sidenav_minimal) {
-                        minimal_start();
-                    }
-                    sidenav_fold_level = 1;
-                }
-            } else if (sidenav_fold_level !== 0) {
-                if (sidenav_fold_level === 2) {
-                    super_minimal_end();
-                }
-                if (!sidenav_minimal) {
-                    if (sidenav_width_level === 0) {
-                        transitioning();
-                    } else {
-                        sidenav.classList.remove('transitioning');
-                    }
-                    minimal_end();
-                }
-                sidenav_fold_level = 0;
-            }
-            if (cover.offsetWidth < 300) {
-                sidenav.style.width = `${window.innerWidth - 345}px`;
-            }
-            if (sidenav_width_level !== 0) {
-                sidenav_width_level = 0;
-            }
-        } else {
-            if (sidenav_fold_level === 0 && !sidenav_minimal) {
-                minimal_start();
-                sidenav_fold_level = 1;
-            }
-            if (window.innerWidth < 574) {
+    if (window.innerWidth >= 768) {
+        if (window.innerHeight < 620) {
+            if (window.innerHeight < 574) {
                 if (sidenav_fold_level !== 2) {
-                    if (sidenav_width_level === 1) {
-                        transitioning();
-                    } else {
-                        sidenav.classList.remove('transitioning');
+                    transition_or_not(0);
+                    if (sidenav_fold_level === 0) {
+                        minimal_start();
                     }
                     super_minimal_start();
                     sidenav_fold_level = 2;
                 }
-                if (sidenav_width_level !== 2) {
-                    sidenav_width_level = 2;
+            } else if (sidenav_fold_level !== 1) {
+                transition_or_not(0);
+                if (sidenav_fold_level === 2) {
+                    super_minimal_end();
+                } else if (sidenav_fold_level === 0 && !sidenav_minimal) {
+                    minimal_start();
                 }
-            } else {
-                if (sidenav_fold_level !== 1) {
-                    if (sidenav_width_level === 2) {
-                        transitioning();
-                    } else {
-                        sidenav.classList.remove('transitioning');
-                    }
-                    if (sidenav_fold_level === 2) {
-                        super_minimal_end();
-                    } else {
-                        minimal_start();
-                    }
-                    sidenav_fold_level = 1;
-                }
-                if (sidenav_width_level !== 1) {
-                    sidenav_width_level = 1;
-                }
-            } 
+                sidenav_fold_level = 1;
+            }
+        } else if (sidenav_fold_level !== 0) {
+            transition_or_not(0);
+            if (sidenav_fold_level === 2) {
+                super_minimal_end();
+            }
+            if (!sidenav_minimal) {
+                minimal_end();
+            }
+            sidenav_fold_level = 0;
         }
-        if (pop_up_index === 1) {
-            let proper = Math.min(pop_up_content.offsetWidth - 30, pop_up_content.offsetHeight - 150)
-            pop_up_music_cover.style.width = `${proper}px`;
-            pop_up_music_cover.style.height = `${proper}px`;
+        if (cover.offsetWidth < 300) {
+            sidenav.style.width = `${window.innerWidth - 345}px`;
         }
+        if (sidenav_width_level !== 0) {
+            sidenav_width_level = 0;
+        }
+    } else {
+        if (sidenav_fold_level === 0 && !sidenav_minimal) {
+            minimal_start();
+            sidenav_fold_level = 1;
+        }
+        if (window.innerWidth < 574) {
+            if (sidenav_fold_level !== 2) {
+                transition_or_not(1);
+                super_minimal_start();
+                sidenav_fold_level = 2;
+            }
+            if (sidenav_width_level !== 2) {
+                sidenav_width_level = 2;
+            }
+        } else {
+            if (sidenav_fold_level !== 1) {
+                transition_or_not(2);
+                if (sidenav_fold_level === 2) {
+                    super_minimal_end();
+                } else {
+                    minimal_start();
+                }
+                sidenav_fold_level = 1;
+            }
+            if (sidenav_width_level !== 1) {
+                sidenav_width_level = 1;
+            }
+        } 
+    }
+    if (pop_up_index === 1) {
+        let proper = Math.min(pop_up_content.offsetWidth - 30, pop_up_content.offsetHeight - 150)
+        pop_up_music_cover.style.width = `${proper}px`;
+        pop_up_music_cover.style.height = `${proper}px`;
     }
 }
 
-function transitioning() {
-    clearTimeout(timeout);
-    sidenav.classList.add('transitioning');
-    timeout = setTimeout(() => sidenav.classList.remove('transitioning'), 300)
+function transition_or_not(level) {
+    if (sidenav_width_level === level) {
+        clearTimeout(timeout);
+        sidenav.classList.add('transitioning');
+        timeout = setTimeout(() => sidenav.classList.remove('transitioning'), 300)
+    } else {
+        sidenav.classList.remove('transitioning');
+    }
 }
 
 function minimal_start() {
@@ -519,13 +496,15 @@ async function shift_title(title, entry = true, back = false) {
         content_0.scrollTo(0, 0);
         content_1.innerHTML = '';
         content_district.classList.toggle('slides');
-        content_0.innerHTML = `<main style='${content.main_styles}'>${content.content}</main>`;
+        content_0.innerHTML = `<main class='${content.main_classes}' style='${content.main_styles}'>${content.content}</main>`;
         cover.style.opacity = 0;
         content_district.style.opacity = 1;
+        content_district.classList.remove('hide_title_bar');
         cover.style.pointerEvents = 'none';
         if (content.click_listeners != undefined) {
             event_listeners(content.click_listeners.list, content.click_listeners.type);
         }
+       content_0.addEventListener('scroll', scroll_to_hide);
     }, timer);
 }
 
@@ -601,6 +580,9 @@ async function resolve_url(entry) {
     if (content.main_styles == undefined) {
         content.main_styles = '';
     }
+    if (content.main_classes == undefined) {
+        content.main_classes = '';
+    }
     if (content.downloads == undefined) {
         content.downloads = '';
     }
@@ -636,7 +618,7 @@ function compile_directory(directory) {
         click_listeners.push(`${directory[i]}_redirect`);
     }
     return {
-        main_styles: 'display: flex; flex-wrap: wrap; gap: 15px; padding: 15px; min-height: unset;',
+        main_classes: 'directory',
         content: content,
         click_listeners: {
             type: 'redirect',
@@ -713,13 +695,13 @@ function mouse_move(e) {
         if (position >= 170 && position <= background.offsetWidth - 345 && !sidenav_minimal) {
             sidenav.style.width = `${position}px`;
         } else if (position < 46 && !sidenav_minimal) {
-            transitioning();
+            transition_or_not(0);
             sidenav.style.width = '';
             sidenav_minimal = true;
             minimal_start();
             musicContainer.addEventListener('click', music_clicked);
         } else if (position >= 100 && sidenav_minimal) {
-            transitioning();
+            transition_or_not(0);
             sidenav.style.width = '170px';
             sidenav_minimal = false;
             minimal_end(false);
@@ -965,4 +947,13 @@ function warn(type, message) {
 function warning_bar_clicked() {
     warning_bar.classList.toggle('show');
     clearTimeout(timeout_2);
+}
+
+function scroll_to_hide() {
+    const content = document.getElementById(`content_${layer}`);
+    if (content.scrollTop > 47 && content.scrollTop < content.scrollHeight - content.offsetHeight - 1) {
+        content_district.classList.add('hide_title_bar');
+    } else if (content.scrollTop <= 0 || content.scrollTop >= content.scrollHeight - content.offsetHeight - 1) {
+        content_district.classList.remove('hide_title_bar');
+    }
 }

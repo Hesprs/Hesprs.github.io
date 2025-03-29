@@ -90,7 +90,7 @@ body {
 	z-index: 0;
 } #content_district.slides #content_1, #content_0 {
 	z-index: 1;
-} #cover {
+} #cover, #title_bar, #title_bar + hr {
 	z-index: 2;
 } #badge {
 	z-index: 3;
@@ -112,14 +112,14 @@ input[type=text] {
 }
 
 .sidenav.super_minimal .show {
-	height: 1px !important;
+	height: 0.75px !important;
 	width: 100% !important;
 	opacity: 1 !important;
 	visibility: visible !important;
 } @media (max-width: 767.9px) {
 	.sidenav.super_minimal .show {
 		height: 100% !important;
-		width: 1px !important;
+		width: 0.75px !important;
 	}
 }
 
@@ -179,7 +179,7 @@ input[type=text] {
     flex-direction: column;
 	overflow: hidden;
 }
-  
+
 .action-btn {
     border: 0px;
     cursor: pointer;
@@ -199,15 +199,15 @@ input[type=text] {
     width: 40px;
 	left: -20px;
 }
-  
+
 .action-btn:focus {
     outline: none;
 }
-  
+
 .action-btn:hover {
     color: #8d91fe;
 }
-  
+
 .progress_container {
 	border: rgb(255, 255, 255) solid 0.75px;
     border-radius: 2px;
@@ -218,7 +218,7 @@ input[type=text] {
 } body.dark .progress_container {
 	border: rgb(100, 100, 100) solid 0.75px;
 }
-  
+
 .progress {
     background-color: rgb(108, 46, 255);
     border-radius: 5px;
@@ -253,6 +253,7 @@ input[type=text] {
 	background-color: rgba(255, 255, 255, 0.80);
 	backdrop-filter: blur(70px) saturate(200%);
 	-webkit-backdrop-filter: blur(70px) saturate(200%);
+	overflow: hidden;
 } body.dark .rectangle_wrapper {
 	border: rgb(100, 100, 100) solid 0.75px;
 	background-color: rgba(38, 38, 38, 0.80);
@@ -269,16 +270,49 @@ input[type=text] {
 	overflow: hidden;
 }
 
+.directory {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	padding: 15px;
+	min-height: unset;
+}
+
+#title_bar {
+	display: flex;
+	height: 30px;
+	padding: 8px 15px;
+	transition: top 150ms;
+	position: absolute;
+	top: 0px;
+} #title_bar + hr {
+	position: absolute;
+	top: 46px;
+	transition: top 150ms;
+}
+
+#content_district.hide_title_bar #title_bar {
+	top: -46.75px;
+} #content_district.hide_title_bar #title_bar + hr {
+	top: -0.75px;
+} #content_district.hide_title_bar .content {
+	border-width: 0px;
+}
+
 .content {
+	box-sizing: border-box;
+	border: transparent solid;
+	border-width: 47.75px 0px 0px 0px;
 	overscroll-behavior: contain;
 	overflow: scroll;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	margin: 0px;
 	width: 100%;
-	height: calc(100% - 47px);
+	height: 100%;
 	position: absolute;
 	background-color: transparent;
+	transition: border-width 150ms;
 } .content::-webkit-scrollbar {
     display: none;
 }
@@ -336,6 +370,60 @@ input[type=text] {
 	transform-origin: center;
 } body.dark .spinner > circle {
 	stroke: rgb(254, 247, 167);
+}
+
+.github-corner {
+	visibility: hidden;
+	pointer-events: none;
+	cursor: auto;
+    z-index: 10;
+    position: fixed;
+    top: 46.75px;
+    right: 0;
+    border: 0;
+    fill: #151513;
+    color: rgb(255, 255, 255);
+	transition: top 200ms;
+} .github-corner:hover {
+	color: rgb(255, 255, 255);
+} body.dark .github-corner {
+	color: rgb(255, 255, 255);
+} .corner, .octo-arm, .octo-body {
+    cursor: pointer;
+} .octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+#content_district.hide_title_bar .github-corner {
+	top: 0px;
+}
+
+.github-corner.show {
+	visibility: visible;
+	pointer-events: auto;
+}
+
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    20%, 60% {
+        transform: rotate(-25deg);
+    }
+    40%, 80% {
+        transform: rotate(10deg);
+    }
+}
+
+.corner_svg {
+	height: 80px;
+	width: 80px;
+	fill:#151513;
+	color:#fff;
+	position: absolute;
+	top: 0;
+	border: 0;
+	right: 0;
 }
 
 .checked {
@@ -405,6 +493,8 @@ input[type=text] {
 	margin: auto 0px auto 0px;
 	height: 30px;
 	width:30px;
+	box-shadow: none;
+} body.dark .icon {
 	box-shadow: none;
 }
 
@@ -948,9 +1038,9 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	.sidenav.super_minimal #search_bar_center_wrapper {
 		margin: 0px 15px 0px 15px !important;
 		flex-grow: 1;
-		border: rgba(255, 255, 255, 0.6) solid 0.5px;
+		border: rgba(255, 255, 255, 0.6) solid 0.75px;
 	} body.dark .sidenav.super_minimal #search_bar_center_wrapper {
-		border: rgba(60, 60, 60, 0.6) solid 0.5px;
+		border: rgba(60, 60, 60, 0.6) solid 0.75px;
 	}
 
 	.sidenav.super_minimal #search_bar_center_wrapper .entry {
@@ -967,4 +1057,5 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	margin: 0px;
 	filter: none;
 	border: none;
+	border-radius: 23px;
 }

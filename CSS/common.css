@@ -7,7 +7,6 @@ body {
 	font-family: Jost;
 	display: flex;
 	align-items: center;
-	align-content: center;
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -43,6 +42,8 @@ main {
 	overflow: scroll;
 	min-height: calc(100% - 2px);
 	width: calc(100% - 30px);
+	scroll-behavior: smooth;
+	transition: padding 200ms;
 } main.normal_padding {
 	padding: 15px;
     min-height: calc(100% - 30px);
@@ -186,49 +187,6 @@ img {
 	white-space: nowrap;
 } .demobox .center_text {
 	flex-direction: column;
-}
-
-.github-corner {
-	visibility: hidden;
-	pointer-events: none;
-	cursor: auto;
-    z-index: 10;
-    position: fixed;
-    top: 46.75px;
-    right: 0;
-    border: 0;
-    fill: #151513;
-    color: rgb(255, 255, 255);
-} .github-corner:hover {
-	color: rgb(255, 255, 255);
-} body.dark .github-corner {
-	color: rgb(255, 255, 255);
-} .corner, .octo-arm, .octo-body {
-    cursor: pointer;
-} .octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
-    animation: octocat-wave 560ms ease-in-out;
-}
-
-.github-corner.show {
-	visibility: visible;
-	pointer-events: auto;
-}
-
-@keyframes octocat-wave {
-    0%, 100% {
-        transform: rotate(0);
-    }
-    20%, 60% {
-        transform: rotate(-25deg);
-    }
-    40%, 80% {
-        transform: rotate(10deg);
-    }
-}
-
-.corner_svg {
-	height: 80px;
-	width: 80px;
 }
 
 @media (max-width: 768px) {

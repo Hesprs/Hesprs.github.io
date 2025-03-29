@@ -319,9 +319,9 @@ const showcases = [
     {
         position: 10,
         url: 'https://img1.tucang.cc/api/image/show/b1ccfcace0d0565854fe957d1ebe6249',
-        en: 'Liberty  Egality<br>Unity  Rationality',
-        'zh-Hans': '自由  平等<br>团结  理性',
-        de: 'Freiheit  Gleichheit<br>Einheit  Rationalität'
+        en: 'Liberty Egality<br>Unity Rationality',
+        'zh-Hans': '自由 平等<br>团结 理性',
+        de: 'Freiheit Gleichheit<br>Einheit Rationalität'
     },
     {
         position: 45,
@@ -332,14 +332,14 @@ const showcases = [
     },
     {
         position: 17,
-        url: 'https://img1.tucang.cc/api/image/show/177852b6cae1b02f7f69358d610c3593',
+        url: 'https://img1.tucang.cc/api/image/show/7987be7eed6a1ce9b8067524472c12e5',
         en: 'Sub Radiis Stellae',
         'zh-Hans': '于星芒之下',
         de: 'Sub Radiis Stellae'
     },
     {
         position: 33,
-        url: 'https://img1.tucang.cc/api/image/show/818420e558af37cbc465cb0f81ad9c46',
+        url: 'https://img1.tucang.cc/api/image/show/82e38d9fde5413ac52538786608809cb',
         en: 'To the glory that was Greece<br>The grandeur that was Rome',
         'zh-Hans': '光荣属于希腊<br>伟大属于罗马',
         de: 'Zu der Herrlichkeit, die Griechenland war<br>der Erhabenheit, die Rom war.'

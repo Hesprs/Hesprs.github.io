@@ -43,3 +43,19 @@ input[type='radio'] {
     visibility: hidden;
     overflow: hidden;
 }
+
+.pop_up_content {
+	overscroll-behavior: contain;
+	overflow: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	margin: 0px;
+	height: 100%;
+	background-color: transparent;
+    display:flex;
+    flex-direction:column;
+    padding: 0px 15px 0px 15px;
+    width: calc(100% - 30px);
+} .pop_up_content::-webkit-scrollbar {
+    display: none;
+}

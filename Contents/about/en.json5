@@ -31,6 +31,15 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons by <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update Log</h1>\
+        <h4>V 2.1.1 &nbsp; 29/3/2025</h4>\
+        <ol>\
+            <li>The title bar is floating now, it will only appear at the top or bottom of the content page;</li>\
+            <li>Improve some of the images\' resolution;</li>\
+            <li>Adjust the round corner radius of centeral search bar;</li>\
+		    <li>Fix the 1000-year-old failure of adjusting the webpage layout to match the various screen size;</li>\
+		    <li>Improve the visual effect and Chinese translation of "values8";</li>\
+            <li>Fix the bug of central search bar with nonidentical thickness borders.</li>\
+		</ol>\
         <h4>V 2.1.0 &nbsp; 27/3/2025</h4>\
         <ol>\
 		    <li>Transfer all the images in a naughty image host service which causes illegal cookies use to a more stable, fater and safer one;</li>\
@@ -38,7 +47,7 @@
             <li>Improve some of the images\' resolution;</li>\
             <li>Change the cover of "Humanities";</li>\
 		    <li>Fix the bug of shadow error under icons and music covers;</li>\
-		    <li>Fix the bug of the quiz page in 8values which doesn\'t span the whole width of the content area.</li>\
+		    <li>Fix the bug of the quiz page in 8values which doesn\'t span the whole width of the content area;</li>\
 		</ol>\
         <h4>V 2.0.1 &nbsp; 24/3/2025</h4>\
         <ol>\
@@ -51,7 +60,7 @@
 		</ol>\
         <h4>V 2.0.0 &nbsp; 23/3/2025</h4>\
         <ol>\
-		    <li>Thoroughly reconstruct the user interface by applying the blur effect;</li>\
+		    <li>Reconstruct the user interface by applying the blur effect;</li>\
 		    <li>Images that previously appeared only on the welcome page are now applied across the whole website, with one being randomly selected as the background on each visit;</li>\
 		    <li>A Hēsperus badge will appear while the website is loading to compensate for the emptiness of the blank scree;</li>\
             <li>Optimize the user experience for the article "8values";</li>\

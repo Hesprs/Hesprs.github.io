@@ -60,7 +60,7 @@ questions = [
         },
     },
     {
-        "zh-Hans": "各尽所能，各取所需。",
+        "zh-Hans": "我支持 ”各尽所能，各取所需“ 。",
         en: "From each according to his ability, to each according to his needs.",
         effect: {
             econ: 10,
@@ -380,7 +380,7 @@ questions = [
         },
     },
     {
-        "zh-Hans": "等级制度的国家是最好的。",
+        "zh-Hans": "阶级制度的国家是最好的。",
         en: "A hierarchical state is best.",
         effect: {
             econ: -10,
@@ -400,7 +400,7 @@ questions = [
         },
     },
     {
-        "zh-Hans": "领导力越强越好。",
+        "zh-Hans": "领导权威越强越好。",
         en: "The stronger the leadership, the better.",
         effect: {
             econ: 0,
@@ -610,7 +610,7 @@ questions = [
         },
     },
     {
-        "zh-Hans": "我支持国家买断的全民医疗保健。",
+        "zh-Hans": "我支持国家买断的全民医疗保障。",
         en: "I support single-payer, universal healthcare.",
         effect: {
             econ: 10,
