@@ -96,10 +96,10 @@ function initialize() {
         current_page = 'homepage';
         detect_language();
     } else {
-        document.body.classList.add('slide', 'non-transition');
+        document.body.classList.add('slide', 'non_transition');
         setTimeout(() => {
-            document.body.classList.remove('non-transition');
-        }, 10);
+            document.body.classList.remove('non_transition');
+        }, 20);
         localStorage.removeItem('title');
         if (redirect.includes('/')) {
             redirect = redirect.split('/');
@@ -315,12 +315,12 @@ function settings() {
     			<div class='text_dark' id='pop_up_text_dark'>${translation.dark[language]}</div>
     		</label>
         `;
-        const pop_up_music_cover = document.getElementById('pop_up_settings_music_cover');
+        const pop_up_settings_music_cover = document.getElementById('pop_up_settings_music_cover');
         if (ever_played_music) {
-            pop_up_music_cover.src = music[songIndex].img;
-            pop_up_music_cover.style.borderRadius = '50%';
+            pop_up_settings_music_cover.src = music[songIndex].img;
+            pop_up_settings_music_cover.style.borderRadius = '50%';
         } else {
-            pop_up_music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
+            pop_up_settings_music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
         }
         if (language === 'zh-Hans') {
             document.getElementById('pop_up_text_dark').classList.add('chinese');
@@ -499,7 +499,6 @@ async function shift_title(title, entry = true, back = false) {
         content_0.innerHTML = `<main class='${content.main_classes}' style='${content.main_styles}'>${content.content}</main>`;
         cover.style.opacity = 0;
         content_district.style.opacity = 1;
-        content_district.classList.remove('hide_title_bar');
         cover.style.pointerEvents = 'none';
         if (content.click_listeners != undefined) {
             event_listeners(content.click_listeners.list, content.click_listeners.type);
@@ -511,7 +510,11 @@ async function shift_title(title, entry = true, back = false) {
 async function resolve_url(entry) {
     let address, content, warning;
     if (articles[current_page] == undefined || current_page === '404' || current_page.includes('search=')) {
-        setTimeout(() => content_district.classList.add('s404'), 195 - timer);
+        setTimeout(() => {
+            content_district.classList.add('non_transition');
+            setTimeout(() => content_district.classList.remove('non_transition'), 20);
+            content_district.classList.add('hide_title_bar');
+        }, 195 - timer);
         for (let i = 0; i < entry_list.length; i ++) {
             document.getElementById(entry_list[i].value).checked = false;
         }
@@ -526,7 +529,11 @@ async function resolve_url(entry) {
             }
         }
     } else {
-        setTimeout(() => content_district.classList.remove('s404'), 195 - timer);
+        setTimeout(() => {
+            content_district.classList.add('non_transition');
+            setTimeout(() => content_district.classList.remove('non_transition'), 20);
+            content_district.classList.remove('hide_title_bar');
+        }, 195 - timer);
         if (entry) {
             document.getElementById(articles[current_page].address.split('/')[0]).checked = true;
             change_category();
@@ -950,10 +957,12 @@ function warning_bar_clicked() {
 }
 
 function scroll_to_hide() {
-    const content = document.getElementById(`content_${layer}`);
-    if (content.scrollTop > 47 && content.scrollTop < content.scrollHeight - content.offsetHeight - 1) {
-        content_district.classList.add('hide_title_bar');
-    } else if (content.scrollTop <= 0 || content.scrollTop >= content.scrollHeight - content.offsetHeight - 1) {
-        content_district.classList.remove('hide_title_bar');
+    if (!current_page.includes('search=')) {
+        const content = document.getElementById(`content_${layer}`);
+        if (content.scrollTop > 47 && content.scrollTop < content.scrollHeight - content.clientHeight - 5) {
+            content_district.classList.add('hide_title_bar');
+        } else if (content.scrollTop <= 0 || content.scrollTop >= content.scrollHeight - content.clientHeight - 5) {
+            content_district.classList.remove('hide_title_bar');
+        }
     }
 }

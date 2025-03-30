@@ -70,6 +70,16 @@ ideologies = [
         }
     },
     {
+        "zh-Hans": "主体/斯巴达主义",
+        "en": "Juche/Spartanism",
+        "stats": {
+            "econ": 90,
+            "dipl": 0,
+            "govt": 0,
+            "scty": 30
+        }
+    },
+    {
         "zh-Hans": "宗教共产主义",
         "en": "Religious Communism",
         "stats": {

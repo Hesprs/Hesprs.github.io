@@ -1,3 +1,4 @@
 # Current Bugs
 
-1. The website is forbidden in some browsers with strict security settings, due to the naughty use of cookies of an image hosting service.
+1. Title bar is unable to hide automatically in ifame articles.
+2. Type in languages except "en", "zh-Hans", and "de" to URL and visit the website, it will fail.

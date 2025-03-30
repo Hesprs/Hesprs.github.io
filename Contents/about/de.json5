@@ -31,6 +31,30 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons von <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update-Log</h1>\
+        <h4>V 2.1.2 &nbsp; 30/03/2025</h4>\
+        <ol>\
+            <li>Behebung des Fehlers mit nicht übereinstimmenden Farben an den Rändern der zentralen Suchleiste;</li>\
+            <li>Behebung des Fehlers, bei dem das Musikcover im Einstellungen-Menü sich nicht dreht, selbst wenn Musik abgespielt wird;</li>\
+            <li>Behebung des Fehlers mit redundanten Schatten unter den Symbolen für "Einstellungen" und "Musikcover" in der Hauptoberfläche;</li>\
+            <li>Behebung des Fehlers mit einer Höhenabweichung von 1 Pixel zwischen Inhaltsbereich und Titelleiste;</li>\
+            <li>Behebung des Fehlers, bei dem die Titelleiste beim Wechsel zu einer neuen Seite kurz sichtbar bleibt, wenn sie zuvor ausgeblendet war;</li>\
+            <li>Behebung des Fehlers der nicht funktionierenden Titelleiste auf Such- und 404-Fehlerseiten;</li>\
+            <li>Behebung des Fehlers der nicht zentrierten 404-Fehlerseite;</li>\
+            <li>Korrektur einiger nuancenreicher Rechtschreibfehler;</li>\
+            <li>Erhebliche Verbesserung der Benutzererfahrung von "8alues" durch:\
+                <ul>\
+                   <li>Responsive Design des Abschnitts "Was sind die acht Werte?";</li>\
+                   <li>Hell- und Dunkelmodus für Pfeile im Abschnitt "Was sind die acht Werte?";</li>\
+                   <li>Entfernung redundanter Schatten unter Symbolen des 8values;</li>\
+                   <li>Hinzufügung mehrerer vergessener sanfter Schattenfarbenübergänge;</li>\
+                   <li>Behebung des Fehlers bei der Farbfüllung der vier Achsen auf der Ergebnis-Seite;</li>\
+                   <li>Hinzufügung eines unteren Abstands auf der Ergebnis-Seite;</li>\
+                   <li>Verwendung eines größeren Rahmenradius für das Ergebnisbild;</li>\
+                   <li>Hinzufügung zweier weiterer Ideologien: "Juche/Spartanismus" und "Gemäßigte Linke";</li>\
+                   <li>Überarbeitung einiger Fragebewertungswerte für mehr Objektivität.</li>\
+                </ul>\
+            </li>\
+        </ol>\
         <h4>V 2.1.1 &nbsp; 29/3/2025</h4>\
         <ol>\
             <li>Die Titelleiste ist jetzt schwebend und erscheint nur noch oben oder unten auf der Inhaltsseite;</li>\

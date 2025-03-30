@@ -20,7 +20,7 @@ body {
 	color: rgb(255, 255, 255);
 } body * {
 	font-size: calc(15px + 0.3vw);
-} body.non-transition *, body.non-transition {
+} body.non_transition *, body.non_transition {
 	transition: none !important;
 }
 

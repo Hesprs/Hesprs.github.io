@@ -31,14 +31,38 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons by <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update Log</h1>\
+        <h4>V 2.1.2 &nbsp; 30/3/2025</h4>\
+        <ol>\
+            <li>Fix the bug of central search bar borders with nonidentical colours;</li>\
+            <li>Fix the bug that the music cover in the "settings" pop up menu refuses to rotate even if the music is playing;</li>\
+            <li>Fix the bug of redundant shadow under "settings" and "music cover" icons in the main interface;</li>\
+            <li>Fix the bug of misaligned height of 1 pixel between content area and title bar;</li>\
+            <li>Fix the bug that the title bar will be shown lingeringly when shifting to a new page and the bar is hidden previously;</li>\
+            <li>Fix the bug of title bar failure in search and 404 pages;</li>\
+            <li>Fix the bug of non-central-alighed 404 page;</li>\
+            <li>Fix some nuanced spelling mistakes;</li>\
+            <li>Improve the user experience of "8alues" tremendously by implementing:\
+                <ul>\
+                   <li>Responsive design of the "What are the eight values?" part;</li>\
+                   <li>Light and dark mode of arrows in the "What are the eight values?" part;</li>\
+                   <li>Removal of redundant shadow under icons of 8values;</li>\
+                   <li>Addition of several omitted smooth translations of shadow colours;</li>\
+                   <li>Bug fix of the colour-filling failure of four axes in the result page;</li>\
+                   <li>Addition of the bottom padding in the result page;</li>\
+                   <li>Application of larger border radius of the result image;</li>\
+                   <li>Addition of two more ideologies: "Juche/Spartanism" and "Moderate Left-Wing";</li>\
+                   <li>Revisal of some questions\' judging values to be more objective.</li>\
+		        </ul>\
+            </li>\
+		</ol>\
         <h4>V 2.1.1 &nbsp; 29/3/2025</h4>\
         <ol>\
             <li>The title bar is floating now, it will only appear at the top or bottom of the content page;</li>\
             <li>Improve some of the images\' resolution;</li>\
-            <li>Adjust the round corner radius of centeral search bar;</li>\
+            <li>Adjust the round corner radius of central search bar;</li>\
 		    <li>Fix the 1000-year-old failure of adjusting the webpage layout to match the various screen size;</li>\
-		    <li>Improve the visual effect and Chinese translation of "values8";</li>\
-            <li>Fix the bug of central search bar with nonidentical thickness borders.</li>\
+		    <li>Improve the visual effect and Chinese translation of "8values";</li>\
+            <li>Fix the bug of central search bar borders with nonidentical thickness.</li>\
 		</ol>\
         <h4>V 2.1.0 &nbsp; 27/3/2025</h4>\
         <ol>\
@@ -65,7 +89,7 @@
 		    <li>A Hēsperus badge will appear while the website is loading to compensate for the emptiness of the blank scree;</li>\
             <li>Optimize the user experience for the article "8values";</li>\
             <li>The GitHub corner, welcome page slogan and "continue" indicator can now self-adapt their scales according to the screen width;</li>\
-            <li>Add a new song, "Marry Christmas, Mr. Laurence," to the music player;</li>\
+            <li>Add a new song, "Marry Christmas, Mr. Laurence" to the music player;</li>\
             <li>Revise global round corner radius;</li>\
             <li>Transfer some images to a more stable and faster image hosting service;</li>\
             <li>Start a new part - Update Log in "about".</li>\

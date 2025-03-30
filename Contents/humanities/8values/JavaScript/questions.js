@@ -3,7 +3,7 @@ questions = [
         "zh-Hans": "企业的压迫比政府的压迫更令人担忧。",
         en: "Oppression by corporations is more of a concern than oppression by governments.",
         effect: {
-            econ: 10,
+            econ: 9,
             dipl: 0,
             govt: -5,
             scty: 0,
@@ -23,7 +23,7 @@ questions = [
         "zh-Hans": "市场越自由，人民就越自由。",
         en: "The freer the markets, the freer the people.",
         effect: {
-            econ: -10,
+            econ: -8.5,
             dipl: 0,
             govt: 0,
             scty: 0,
@@ -43,10 +43,10 @@ questions = [
         "zh-Hans": "政府资助的研究比交给市场进行的研究对人民更有利。",
         en: "Publicly-funded research is more beneficial to the people than leaving it to the market.",
         effect: {
-            econ: 10,
+            econ: 9,
             dipl: 0,
             govt: 0,
-            scty: 10,
+            scty: 4,
         },
     },
     {
@@ -63,7 +63,7 @@ questions = [
         "zh-Hans": "我支持 ”各尽所能，各取所需“ 。",
         en: "From each according to his ability, to each according to his needs.",
         effect: {
-            econ: 10,
+            econ: 9.5,
             dipl: 0,
             govt: 0,
             scty: 0,
@@ -103,7 +103,7 @@ questions = [
         "zh-Hans": "道路和电力等基本公用事业应为公有。",
         en: "Basic utilities like roads and electricity should be publicly owned.",
         effect: {
-            econ: 10,
+            econ: 7,
             dipl: 0,
             govt: 0,
             scty: 0,
@@ -154,8 +154,8 @@ questions = [
         en: "The United Nations should be abolished.",
         effect: {
             econ: 0,
-            dipl: -10,
-            govt: -5,
+            dipl: -9,
+            govt: -2,
             scty: 0,
         },
     },
@@ -164,8 +164,8 @@ questions = [
         en: "Military action by our nation is often necessary to protect it.",
         effect: {
             econ: 0,
-            dipl: -10,
-            govt: -10,
+            dipl: -12,
+            govt: -8,
             scty: 0,
         },
     },
@@ -173,10 +173,10 @@ questions = [
         "zh-Hans": "我支持区域联盟，比如欧盟。",
         en: "I support regional unions, such as the European Union.",
         effect: {
-            econ: -5,
-            dipl: 10,
-            govt: 10,
-            scty: 5,
+            econ: -3,
+            dipl: 8,
+            govt: 7,
+            scty: 3,
         },
     },
     {
@@ -194,7 +194,7 @@ questions = [
         en: "A united world government would be beneficial to mankind.",
         effect: {
             econ: 0,
-            dipl: 10,
+            dipl: 8,
             govt: 0,
             scty: 0,
         },
@@ -234,7 +234,7 @@ questions = [
         en: "International aid is a waste of money.",
         effect: {
             econ: -5,
-            dipl: -10,
+            dipl: -7,
             govt: 0,
             scty: 0,
         },
@@ -305,8 +305,8 @@ questions = [
         effect: {
             econ: 0,
             dipl: 0,
-            govt: -10,
-            scty: -5,
+            govt: -8,
+            scty: -3,
         },
     },
     {
@@ -375,7 +375,7 @@ questions = [
         effect: {
             econ: 0,
             dipl: 0,
-            govt: 10,
+            govt: 7,
             scty: 5,
         },
     },
@@ -465,7 +465,7 @@ questions = [
         effect: {
             econ: 0,
             dipl: 0,
-            govt: -10,
+            govt: -6,
             scty: -10,
         },
     },
@@ -496,7 +496,7 @@ questions = [
             econ: 0,
             dipl: 10,
             govt: 0,
-            scty: 10,
+            scty: 9,
         },
     },
     {
@@ -516,7 +516,7 @@ questions = [
             econ: 0,
             dipl: 0,
             govt: 0,
-            scty: -10,
+            scty: -8,
         },
     },
     {
@@ -545,8 +545,8 @@ questions = [
         effect: {
             econ: -5,
             dipl: 0,
-            govt: 10,
-            scty: 2,
+            govt: 8,
+            scty: 5,
         },
     },
     {
@@ -586,7 +586,7 @@ questions = [
             econ: 0,
             dipl: -5,
             govt: -5,
-            scty: -10,
+            scty: -12,
         },
     },
     {
@@ -605,7 +605,7 @@ questions = [
         effect: {
             econ: 0,
             dipl: 0,
-            govt: -10,
+            govt: -7,
             scty: 0,
         },
     },
@@ -636,7 +636,7 @@ questions = [
             econ: 0,
             dipl: 0,
             govt: 0,
-            scty: -10,
+            scty: -9,
         },
     },
     {
@@ -693,10 +693,10 @@ questions = [
         "zh-Hans": "最重要的是我们要实现我们团队的目标。",
         en: "It is important that we further my group's goals above all others.",
         effect: {
-            econ: -10,
-            dipl: -10,
-            govt: -10,
-            scty: -10,
+            econ: -8,
+            dipl: -9,
+            govt: -7,
+            scty: -8,
         },
     },
 ];
