@@ -28,6 +28,7 @@ const stretch_bar = document.getElementById('stretch_bar');
 const musicContainer = document.getElementById('music_container');
 const playButton = document.getElementById('play');
 const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('previous');
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
 const progress_container = document.getElementById('progress_container');
@@ -40,7 +41,7 @@ const pop_up = document.getElementById('pop_up');
 const language_option = document.getElementById('language_option');
 const text_language = document.getElementById('text_language');
 const text_previous = document.getElementById('text_previous');
-const previous = document.getElementById('previous');
+const previous = document.getElementById('previous_page');
 const previous_center = document.getElementById('previous_center');
 const nations = document.getElementById('nations');
 const pop_up_title = document.getElementById('pop_up_title');
@@ -67,6 +68,7 @@ audio.addEventListener('timeupdate', updateProgress);
 audio.addEventListener('ended', nextSong);
 progress_container.addEventListener('click', setProgress);
 nextButton.addEventListener('click', nextSong);
+prevButton.addEventListener('click', prevSong);
 playButton.addEventListener('click', plause);
 language_option.addEventListener('click', language_clicked);
 back_button.addEventListener('click', back);
@@ -802,7 +804,11 @@ function modify_url(url = '', introduction) {
         if (current_page.includes('search=')) {
             meta.description.content = translation.search_description[language] + current_page.replace('search=', '') + translation.search_description[`${language}2`];
         } else if (articles[current_page] != undefined) {
-            meta.description.content = articles[current_page].introduction[language];
+            if (articles[current_page].introduction[language] == undefined) {
+                meta.description.content = Object.values(articles[current_page].introduction)[0];
+            } else {
+                meta.description.content = articles[current_page].introduction[language];
+            }
         } else { 
             meta.description.content = translation.not_found_description[language];
         }

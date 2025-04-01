@@ -1,5 +1,5 @@
 {
-    introduction: '内容介绍了Hēsperus及其个人网站，尽管由于时间限制而未充分开发，但它作为一个平台可以跨各种社交媒体和在线论坛与他进行联系。',
+    introduction: '此页面介绍了他的个人网站、社交媒体链接（GitHub、Reddit、QQ）和联系方式，包含8values意识形态测试结果、详细的网站更新日志及简约设计。',
     content: '\
         <h1>关于Hēsperus</h1>\
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px;">\
@@ -31,6 +31,13 @@
         <p style="text-align: right;">版权所有 © Hēsperus 2025<br />图标提供：<a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>更新日志</h1>\
+        <h4>V 2.1.3 &nbsp; 2025年4月1日</h4>\
+        <ol>\
+            <li>为音乐播放器新增歌曲《Una Mattina》；</li>\
+            <li>为音乐播放器添加“上一首”按钮；</li>\
+            <li>重写“主页”和“关于”页面的描述文案；</li>\
+            <li>优化每篇文章描述的选择逻辑。</li>\
+        </ol>\
         <h4>V 2.1.2 &nbsp; 2025年3月30日</h4>\
         <ol>\
             <li>修复中央搜索框边框颜色不一致的问题；</li>\

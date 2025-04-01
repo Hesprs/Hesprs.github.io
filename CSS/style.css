@@ -182,30 +182,24 @@ input[type=text] {
 
 .action-btn {
     border: 0px;
-    cursor: pointer;
     margin: 0px;
     padding: 0px;
-    background-color: transparent;
     position: relative;
 }
 
-#play .icon, #next .icon, #pop_up_play .icon, #pop_up_next .icon {
+.action-btn .icon {
+	cursor: pointer;
     height: 20px;
     width: 20px;
     bottom: 0px;
     position: absolute;
-} #pop_up_play .icon, #pop_up_next .icon {
+} .pop_up .action-btn .icon {
     height: 40px;
     width: 40px;
-	left: -20px;
 }
 
 .action-btn:focus {
     outline: none;
-}
-
-.action-btn:hover {
-    color: #8d91fe;
 }
 
 .progress_container {
@@ -499,9 +493,13 @@ svg {
 }
 
 #next_dark,
+#previous_dark,
 #pop_up_next_dark,
+#pop_up_previous_dark,
 body.dark #next_light,
+body.dark #previous_light,
 body.dark #pop_up_next_light,
+body.dark #pop_up_previous_light,
 #pause_light,
 #play_dark,
 #pause_dark,
@@ -529,9 +527,13 @@ body.dark #pop_up_content.playing #pop_up_pause_light {
 	transition: opacity 300ms;
 	opacity: 0;
 } #next_light,
+#previous_light,
 #pop_up_next_light,
+#pop_up_previous_light,
 body.dark #next_dark,
+body.dark #previous_dark,
 body.dark #pop_up_next_dark,
+body.dark #pop_up_previous_dark,
 #play_light,
 #pop_up_play_light,
 body.dark #play_dark,
@@ -585,15 +587,18 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 }
 
 .centerer {
-	position: fixed;
 	width: 0px;
 	overflow: visible;
-	left: 50%;
 	justify-content: center;
 	display: flex;
+}
+
+#warning_bar {
+	left: 50%;
+	position: fixed;
 	top: -50px;
 	transition: top 300ms;
-} .centerer.show {
+} #warning_bar.show {
 	top: 15px;
 }
 
@@ -743,6 +748,10 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	width: 0.75px;
 }
 
+#previous, #pop_up_previous {
+	transform: rotate(180deg);
+}
+
 .division, .vertical_division {
 	background-color: rgba(255, 255, 255);
 } body.dark .division, body.dark .vertical_division {
@@ -759,7 +768,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	}
 
 	#search_bar_center {
-		writing-mode: vertical-lr;
+		writing-mode: sideways-lr;
 	}
 
 	.stretch_bar_wrapper {

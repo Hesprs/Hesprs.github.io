@@ -46,6 +46,26 @@ function nextSong() {
     }
 }
 
+function prevSong() {
+    if (!ever_played_music) {
+        songIndex = music.length - 1;
+        first_play(true);
+    } else {
+        songIndex--;
+        if (songIndex === -1) {
+            songIndex = music.length - 1;
+        }
+        loadSong();
+    }
+    if (musicContainer.classList.contains('playing')) {
+        audio.play();
+    }
+    progress.style.width = '0px';
+    if (pop_up_index === 1) {
+        pop_up_progress.style.width = '0px';
+    }
+}
+
 function updateProgress() {
     const progressPercent = (audio.currentTime / audio.duration) * 100;
     progress.style.width = `${progressPercent}%`;
@@ -88,13 +108,17 @@ function music_clicked() {
 	    		<div class='progress' id='pop_up_progress'></div>
 	    	</div>
 	    	<div style='display: flex; height: 40px; margin-bottom: auto; background-color: transparent;'>
-	    	  	<button id='pop_up_play' class='action-btn' style='margin: 0px auto 0px auto;'>
+                <button id='pop_up_previous' class='action-btn cneterer' style='margin: 0px auto 0px auto;'>
+	    			<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/end.png' alt='next' id='pop_up_previous_light'/>
+	    			<img class='icon' src='https://img.icons8.com/?size=100&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' id='pop_up_previous_dark'/>
+	    	  	</button>
+	    	  	<button id='pop_up_play' class='action-btn centerer'>
 	    			<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/play.png' alt='play' id='pop_up_play_light'/>
 	    			<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/pause.png' alt='pause' id='pop_up_pause_light'/>
 	    			<img class='icon' src='https://img.icons8.com/?size=100&id=q0nxNdfpbYVl&format=png&color=FFFFFF' alt='pause' id='pop_up_pause_dark'/>
 	    			<img class='icon' src='https://img.icons8.com/?size=100&id=fjx0LfGCNuZb&format=png&color=FFFFFF' alt='play' id='pop_up_play_dark'/>
 	    	  	</button>
-	    	  	<button id='pop_up_next' class='action-btn' style='margin: 0px auto 0px auto;'>
+	    	  	<button id='pop_up_next' class='action-btn centerer' style='margin: 0px auto 0px auto;'>
 	    			<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/end.png' alt='next' id='pop_up_next_light'/>
 	    			<img class='icon' src='https://img.icons8.com/?size=100&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' id='pop_up_next_dark'/>
 	    	  	</button>
@@ -102,11 +126,13 @@ function music_clicked() {
         `;
         window.pop_up_playButton = document.getElementById('pop_up_play');
         window.pop_up_nextButton = document.getElementById('pop_up_next');
+        window.pop_up_prevButton = document.getElementById('pop_up_previous');
         window.pop_up_progress = document.getElementById('pop_up_progress');
         window.pop_up_progress_container = document.getElementById('pop_up_progress_container');
         window.pop_up_music_title = document.getElementById('pop_up_music_title');
         window.pop_up_music_cover = document.getElementById('pop_up_music_cover');
         pop_up_nextButton.addEventListener('click', nextSong);
+        pop_up_prevButton.addEventListener('click', prevSong);
         pop_up_playButton.addEventListener('click', plause);
         pop_up_progress_container.addEventListener('click', setProgress);
         if (ever_played_music) {
@@ -129,8 +155,8 @@ function music_clicked() {
     }, delay);
 }
 
-function first_play () {
-    loadSong(false);
+function first_play(reload = false) {
+    loadSong(reload);
     music_cover.style.borderRadius = '50%';
     ever_played_music = true;
     if (pop_up_index === 1) {

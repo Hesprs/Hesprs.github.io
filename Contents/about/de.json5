@@ -1,5 +1,5 @@
 {
-    introduction: 'Der Inhalt stellt Hēsperus und seine persönliche Website vor, die trotz der unterentwickelten Natur aufgrund von Zeitbeschränkungen als Plattform dient, um ihn über verschiedene soziale Medien und Online-Foren zu erreichen.',
+    introduction: 'Der Seite stellt seine persönliche Website vor, mit Links zu sozialen Medien (GitHub, Reddit, QQ) und Kontaktdaten. Enthält 8values-Ideologietestergebnisse, detaillierte Update-Protokolle und minimalistisches Design.',
     content: '\
         <h1>Über Hēsperus</h1>\
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px;">\
@@ -31,7 +31,14 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons von <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update-Log</h1>\
-        <h4>V 2.1.2 &nbsp; 30/03/2025</h4>\
+        <h4>V 2.1.3 &nbsp; 01.04.2025</h4>\
+        <ol>\
+            <li>Hinzufügen eines neuen Songs "Una Mattina" zum Musikplayer;</li>\
+            <li>Hinzufügen eines "Zurück"-Buttons zum Musikplayer;</li>\
+            <li>Überarbeitung der Beschreibungen für "Startseite" und "Über";</li>\
+            <li>Optimierung der Logik zur Auswahl der Beschreibung für jeden Artikel.</li>\
+        </ol>\
+        <h4>V 2.1.2 &nbsp; 30.03.2025</h4>\
         <ol>\
             <li>Behebung des Fehlers mit nicht übereinstimmenden Farben an den Rändern der zentralen Suchleiste;</li>\
             <li>Behebung des Fehlers, bei dem das Musikcover im Einstellungen-Menü sich nicht dreht, selbst wenn Musik abgespielt wird;</li>\
@@ -55,7 +62,7 @@
                 </ul>\
             </li>\
         </ol>\
-        <h4>V 2.1.1 &nbsp; 29/3/2025</h4>\
+        <h4>V 2.1.1 &nbsp; 29.3.2025</h4>\
         <ol>\
             <li>Die Titelleiste ist jetzt schwebend und erscheint nur noch oben oder unten auf der Inhaltsseite;</li>\
             <li>Die Auflösung einiger Bilder verbessern;</li>\
@@ -64,7 +71,7 @@
             <li>Die visuelle Darstellung und die chinesische Übersetzung von „values8“ verbessern;</li>\
             <li>Den Fehler der zentralen Suchleiste mit uneinheitlichen Randstärken beheben.</li>\
         </ol>\
-        <h4>V 2.1.0 &nbsp; 27/3/2025</h4>\
+        <h4>V 2.1.0 &nbsp; 27.3.2025</h4>\
         <ol>\
             <li>Alle Bilder aus einem Bildhostingdienst mit illegaler Cookie-Nutzung zu einem stabileren, schnelleren und sichereren Dienst übertragen;</li>\
             <li>Falsche "zh_Hans" in "zh-Hans" korrigiert;</li>\
@@ -73,7 +80,7 @@
             <li>Fehler im Schatten unter Icons und Musikcover behoben;</li>\
             <li>Fehler der Quiz-Seite in 8values behoben, die nicht die gesamte Breite des Inhaltsbereichs einnimmt.</li>\
         </ol>\
-        <h4>V 2.0.1 &nbsp; 24/3/2025</h4>\
+        <h4>V 2.0.1 &nbsp; 24.3.2025</h4>\
         <ol>\
             <li>Den Unschärfeeffekt für bessere visuelle Zugänglichkeit anpassen;</li>\
             <li>Das Selbstanpassungsverhältnis des Willkommensseiten-Slogans und von „Weiter“ anpassen;</li>\
@@ -82,7 +89,7 @@
             <li>Optimierung für die Anzeige in Safari;</li>\
             <li>Den Fehler der falschen Breite beim Wiederherstellen der minimierten Seiten-Navigation beheben.</li>\
         </ol>\
-        <h4>V 2.0.0 &nbsp; 23/3/2025</h4>\
+        <h4>V 2.0.0 &nbsp; 23.3.2025</h4>\
         <ol>\
             <li>Die Benutzeroberfläche gründlich überarbeiten, indem der Unschärfeeffekt angewendet wird;</li>\
             <li>Bilder, die zuvor nur auf der Willkommensseite erschienen, werden nun auf der gesamten Website verwendet, wobei bei jedem Besuch zufällig eines als Hintergrund ausgewählt wird.</li>\

@@ -24,9 +24,9 @@ const articles = {
         address: 'homepage',
         directory: ['learning', 'humanities', 'development', 'others', 'about'],
         introduction: {
-            en: '',
-            'zh-Hans': '',
-            de: ''
+            en: 'Welcome to the personal blog of Hēsperus, whose aim is to create a website with high quality content, up-to-date aesthetics, and immersive personalized experience.',
+            'zh-Hans': '欢迎来到Hēsperus的个人博客，其目标是创建一个拥有高质量内容、现代美学和沉浸式个性化体验的网站。',
+            de: 'Willkommen beim persönlichen Blog von Hēsperus, dessen Ziel es ist, eine Website mit hochwertigen Inhalten, moderner Ästhetik und einzigartigem, immersiven Benutzererlebnis zu schaffen.'
         },
         hide: true,
     },
@@ -54,7 +54,7 @@ const articles = {
         directory: ['fascist_propaganda', '8values'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a',
         introduction: {
-            en: 'The Humanities are the fruit throughout the epic evolution of human intelligence, often including literature, sociology, economics, politics, art, history, philosophy and so on, serving as the beacon of human progress.',
+            en: 'The Humanities are the fruit throughout the epic evolution of human intelligence, often including literature, sociology, economics, politics, art, history, philosophy and so on, serving as beacons of human progress.',
             'zh-Hans': '人文科学是人类智慧漫长演进的结晶，通常包括文学、社会学、经济学、政治学、艺术、历史、哲学等，是人类进步的火炬。',
             de: 'Die Geisteswissenschaften sind die Frucht der epischen Entwicklung der menschlichen Intelligenz und umfassen oft Literatur, Soziologie, Wirtschaftswissenschaften, Politik, Kunst, Geschichte, Philosophie und so weiter. Sie dienen als Leuchtturm des menschlichen Fortschritts.'
         },
@@ -149,6 +149,12 @@ const music = [
         url: 'https://music.163.com/song/media/outer/url?id=443070377.mp3',
         img: 'https://p1.music.126.net/PywoXPKK3AjseU0Wx9wdXw==/109951167267731534.jpg?param=100x100',
         img_HD: 'https://p1.music.126.net/PywoXPKK3AjseU0Wx9wdXw==/109951167267731534.jpg?param=1000x1000'
+    },
+    {
+        name:'Una Mattina',
+        url: 'https://www.kumeiwp.com/wj/230557/2025/03/30/0cc64a9cee29640d0d28f46c1b20d131.mp3',
+        img: 'https://p1.music.126.net/jCy2nwCEF_NhI184jkDsTA==/109951165967129801.jpg?param=100x100',
+        img_HD: 'https://p1.music.126.net/jCy2nwCEF_NhI184jkDsTA==/109951165967129801.jpg?param=1000x1000'
     },
     {
         name:'Wicked Games',
