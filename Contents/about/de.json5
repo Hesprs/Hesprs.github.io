@@ -31,6 +31,16 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons von <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update-Log</h1>\
+        <h4>V 2.1.4 &nbsp; 05.04.2025</h4>\
+        <ol>\
+            <li>Hinzufügen eines Urheberrechtsvermerks zu selbst erstellten Artikeln;</li>\
+            <li>Neugestaltung der "Startseite";</li>\
+            <li>Hinzufügen eines neuen Artikels "Die Befreiten Liebe" in der Kategorie "Menschlichkeit";</li>\
+            <li>Erhebliche Leistungsoptimierung durch Throttling für wiederholt aufgerufene Funktionen;</li>\
+            <li>Verringerung der Schriftgröße und angemessene Vergrößerung des Absatzabstands für bessere Lesbarkeit;</li>\
+            <li>Behebung des Fehlers mit nicht zentrierten Steuerungstasten des Musikplayers im Pop-up-Menü;</li>\
+            <li>Behebung des Fehlers, bei dem die URL nach dem Wechsel zur "Startseite" die der vorherigen Seite beibehält.</li>\
+        </ol>\
         <h4>V 2.1.3 &nbsp; 01.04.2025</h4>\
         <ol>\
             <li>Hinzufügen eines neuen Songs "Una Mattina" zum Musikplayer;</li>\
