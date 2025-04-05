@@ -57,6 +57,8 @@ const warning_text = document.getElementById('warning_text');
 const warning_icon = document.getElementById('warning_icon');
 const github_corner = document.getElementById('github_corner');
 const meta = document.getElementsByTagName('meta');
+const throttledResize = throttle(responsive_resize, 100);
+const throttledMouseMove = throttle(mouse_move, 16);
 
 stretch_bar.addEventListener('touchstart', touch_start);
 stretch_bar.addEventListener('mousedown', mouse_down);
@@ -84,11 +86,11 @@ dn.addEventListener('click', toggle_dark);
 document.getElementById('warning_bar_wrapper').addEventListener('click', warning_bar_clicked);
 document.addEventListener('keydown', enter_to_search);
 document.addEventListener('touchcancel', mouse_up);
-document.addEventListener('mousemove', mouse_move);
-document.addEventListener('touchmove', mouse_move);
+document.addEventListener('mousemove', throttledMouseMove);
+document.addEventListener('touchmove', throttledMouseMove);
 document.addEventListener('mouseleave', mouse_up);
 window.addEventListener('DOMContentLoaded', initialize);
-window.addEventListener('resize', responsive_resize);
+window.addEventListener('resize', throttledResize);
 window.addEventListener('mouseup', mouse_up);
 window.addEventListener('touchend', mouse_up);
 
@@ -128,6 +130,29 @@ function initialize() {
     change_languages();
     responsive_resize();
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
+}
+
+function throttle(func, interval) {
+    let timeout = null;
+    let lastArgs = null;
+    let lastCallTime = -Infinity;
+    return function throttled(...args) {
+        const now = Date.now();
+        const timeSinceLast = now - lastCallTime;
+        if (timeSinceLast >= interval) {
+            func.apply(this, args);
+            lastCallTime = now;
+        } else {
+            lastArgs = args;
+            if (!timeout) {
+                timeout = setTimeout(() => {
+                    func.apply(this, lastArgs);
+                    lastCallTime = Date.now();
+                    timeout = null;
+                }, interval - timeSinceLast);
+            }
+        }
+    };
 }
 
 function detect_language() {
@@ -505,7 +530,8 @@ async function shift_title(title, entry = true, back = false) {
         if (content.click_listeners != undefined) {
             event_listeners(content.click_listeners.list, content.click_listeners.type);
         }
-       content_0.addEventListener('scroll', scroll_to_hide);
+        const throttledScroll = throttle(scroll_to_hide, 100);
+        content_0.addEventListener('scroll', throttledScroll);
     }, timer);
 }
 
@@ -619,9 +645,7 @@ function compile_directory(directory) {
         content += `
             <div class='card shadow' id='${directory[i]}_redirect'>
                 <img src="${target.thumbnail}" alt="${target[language]}" class='background_img'/>
-                <div class="overlay">
-                    <p>${target[language]}</p>
-                </div>
+                <div class="overlay">${target[language]}</div>
     	    </div>
         `;
         click_listeners.push(`${directory[i]}_redirect`);
@@ -695,27 +719,26 @@ function touch_start(e) {
 }
 
 function mouse_move(e) {
-    if (isDragging !== 0) {
-        if (isDragging === 1) {
-           position = e.clientX - offset;
-        } else {
-            position = e.touches[0].clientX - offset;
-        }
-        if (position >= 170 && position <= background.offsetWidth - 345 && !sidenav_minimal) {
-            sidenav.style.width = `${position}px`;
-        } else if (position < 46 && !sidenav_minimal) {
-            transition_or_not(0);
-            sidenav.style.width = '';
-            sidenav_minimal = true;
-            minimal_start();
-            musicContainer.addEventListener('click', music_clicked);
-        } else if (position >= 100 && sidenav_minimal) {
-            transition_or_not(0);
-            sidenav.style.width = '170px';
-            sidenav_minimal = false;
-            minimal_end(false);
-            musicContainer.removeEventListener('click', music_clicked);
-        }
+    if (isDragging === 0) return;
+    if (isDragging === 1) {
+        position = e.clientX - offset;
+    } else {
+        position = e.touches[0].clientX - offset;
+    }
+    if (position >= 170 && position <= background.offsetWidth - 345 && !sidenav_minimal) {
+        sidenav.style.width = `${position}px`;
+    } else if (position < 46 && !sidenav_minimal) {
+        transition_or_not(0);
+        sidenav.style.width = '';
+        sidenav_minimal = true;
+        minimal_start();
+        musicContainer.addEventListener('click', music_clicked);
+    } else if (position >= 100 && sidenav_minimal) {
+        transition_or_not(0);
+        sidenav.style.width = '170px';
+        sidenav_minimal = false;
+        minimal_end(false);
+        musicContainer.removeEventListener('click', music_clicked);
     }
 }
 
@@ -797,7 +820,7 @@ function modify_url(url = '', introduction) {
         }
     } else {
         let stateObj = { id: '100' }; 
-        window.history.replaceState(stateObj, 'Page 3', '');
+        window.history.replaceState(stateObj, 'Page 3', '/');
         document.title = translation.hesperus_blog[language];
     }
     if (introduction == undefined) {

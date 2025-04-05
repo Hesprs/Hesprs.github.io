@@ -1,28 +1,11 @@
 const articles = {
-    moonstone: {
-        en: 'Moonstone (Aphroselene)',
-        'zh-Hans': '月长石 (阿芙罗塞勒涅)',
-        de: 'Mondstein (Aphroselene)',
-        address: 'others/moonstone',
-        languages: ['en', 'zh-Hans', 'de'],
-        thumbnail: 'https://img1.tucang.cc/api/image/show/866691c4462ffcf585df787d0c60d6d2',
-    },
-    
-    about: {
-        en: 'About',
-        'zh-Hans': '关于',
-        de: 'Über',
-        address: 'about',
-        languages: ['en', 'zh-Hans', 'de'],
-        thumbnail: 'https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23',
-    },
-
     homepage: {
         en: 'Homepage',
         'zh-Hans': '主页',
         de: 'Homepage',
         address: 'homepage',
-        directory: ['learning', 'humanities', 'development', 'others', 'about'],
+        //directory: ['learning', 'humanities', 'development', 'others', 'about'],
+        languages: ['en', 'zh-Hans', 'de'],
         introduction: {
             en: 'Welcome to the personal blog of Hēsperus, whose aim is to create a website with high quality content, up-to-date aesthetics, and immersive personalized experience.',
             'zh-Hans': '欢迎来到Hēsperus的个人博客，其目标是创建一个拥有高质量内容、现代美学和沉浸式个性化体验的网站。',
@@ -51,7 +34,7 @@ const articles = {
         'zh-Hans': '人文',
         de: 'Geistes',
         address: 'humanities',
-        directory: ['fascist_propaganda', '8values'],
+        directory: ['lovership', 'fascist_propaganda', '8values'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a',
         introduction: {
             en: 'The Humanities are the fruit throughout the epic evolution of human intelligence, often including literature, sociology, economics, politics, art, history, philosophy and so on, serving as beacons of human progress.',
@@ -91,6 +74,24 @@ const articles = {
         hide: true,
     },
 
+    about: {
+        en: 'About',
+        'zh-Hans': '关于',
+        de: 'Über',
+        address: 'about',
+        languages: ['en', 'zh-Hans', 'de'],
+        thumbnail: 'https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23',
+    },
+
+    moonstone: {
+        en: 'Moonstone (Aphroselene)',
+        'zh-Hans': '月长石 (阿芙罗塞勒涅)',
+        de: 'Mondstein (Aphroselene)',
+        address: 'others/moonstone',
+        languages: ['en', 'zh-Hans', 'de'],
+        thumbnail: 'https://img1.tucang.cc/api/image/show/866691c4462ffcf585df787d0c60d6d2',
+    },
+
     radicals: {
         en: 'Dictionary of Radicals',
         'zh-Hans': '词根大典',
@@ -121,7 +122,7 @@ const articles = {
     build_website: {
         en: 'Build a Website for Free',
         'zh-Hans': '免费搭建网站',
-        de: 'Eine Website kostenlos erstellen',
+        de: 'Eine Website Kostenlos Erstellen',
         address: 'development/build_website',
         languages: ['en', 'zh-Hans', 'de'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/98bb1f17d8f1c0ca92e137022750d952',
@@ -140,6 +141,15 @@ const articles = {
             de: '8values ist im Wesentlichen ein politischer Test, der versucht, Prozentsätze für acht verschiedene politische Werte zuzuordnen. Am Ende des Tests werden Ihre Antworten mit dem maximal möglichen Wert für jede politische Ausrichtung verglichen.'
         },
         thumbnail: 'https://img1.tucang.cc/api/image/show/41c77f2809ee514d680b805b96f346e3',
+    },
+
+    lovership: {
+        en: 'The Liberated Lovership',
+        'zh-Hans': '解放恋爱论',
+        de: 'Die Befreiten Liebe',
+        address: 'humanities/lovership',
+        languages: ['en', 'zh-Hans'],
+        thumbnail: 'https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d',
     },
 };
 

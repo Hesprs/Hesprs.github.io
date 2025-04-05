@@ -214,7 +214,7 @@ input[type=text] {
 }
 
 .progress {
-    background-color: rgb(108, 46, 255);
+    background-color: rgb(132, 67, 255);
     border-radius: 5px;
     height: 100%;
     width: 0%;
@@ -362,7 +362,7 @@ input[type=text] {
 	cx: 50%;
 	cy: 50%;
 	r: 50%;
-	stroke: rgb(108, 46, 255);
+	stroke: rgb(132, 67, 255);
 	stroke-width: 6px;
 	stroke-linecap: round;
 	transform-origin: center;
@@ -453,7 +453,7 @@ input[type=text] {
 }
 
 .theme_color {
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 } body.dark .theme_color {
     color: rgb(254, 247, 167);
 }
@@ -700,12 +700,10 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	display: flex;
 	align-items: flex-end;
 	border-radius: 0px 0px 15px 15px;
-} .overlay p {
 	color: white;
-	font-size: 1.2rem;
+	font-size: calc(15px + 0.3vw);
 	margin: 0;
 }
-
 .thumbnail {
 	aspect-ratio: 1 / 1;
 	height: 100%;

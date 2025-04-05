@@ -43,7 +43,8 @@
             <li><strong>Single file upload limit:</strong> 100MB</li>\
             <li><strong>Monthly bandwidth limit:</strong> 100GB (which is usually sufficient)</li>\
         </ul>\
-        <p>To optimize performance, I highly recommend using a domestic <strong>image hosting service</strong> for storing images. This reduces GitHub&#39;s load, saves storage space, and     speeds up access.</p>\
-        <p>This tutorial only scratches the surface of website development. To achieve more customization, you should learn <strong>CSS</strong> and <strong>JavaScript</strong>. Thanks   to the rapid advancements in <strong>large language models (LLMs)</strong>, the future of no-code development looks very promising.</p>\
+        <p>To optimize performance, I highly recommend using a domestic <strong>image hosting service</strong> for storing images. This reduces GitHub\'s load, saves storage space, and speeds up access.</p>\
+        <p>This tutorial only scratches the surface of website development. To achieve more customization, you should learn <strong>CSS</strong> and <strong>JavaScript</strong>. Thanks to the rapid advancements in <strong>large language models (LLMs)</strong>, the future of no-code development looks very promising.</p>\
+        <p style="text-align: right;">Copyright ©️ Hēsperus</p>\
     '
 }

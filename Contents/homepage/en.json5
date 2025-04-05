@@ -1,39 +1,67 @@
 {
-    introduction: "Welcome to Hēsperus' blog! This website is an elaboration of Hēsperus' three months, he built up the website brick by brick, from an HTML, CSS, and JavaScript jackaroo to creating such an 'exquisite' website.",
-    content: "\
-        <h1>Cyber Display Board</h1>\
-        <hr />\
-        <div style='display: flex; flex-wrap: wrap; gap: 15px; padding: 15px 0px 15px 0px;'>\
-            <div class='card shadow' id='learning_redirect'>\
-                <img src='https://photo-cdn2.icons8.com/xG_J1xz8gP2N1VB1bzpZY8NDbWy6tcKlHMSmhBvlZHg/rs:fit:1608:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi9kNDljOTUyMWJh/ZmQ0MTdlODJkNmI5/MmM0MGM2YTA4MS5q/cGc.jpg' alt='Learning' class='background_img'/>\
-                <div class='overlay'><p>Learning</p></div>\
+    content: '\
+        <h1>Recommended Articles</h1>\
+        <div class="directory" style="padding: 0px;">\
+            <div class="card shadow" id="8values_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/41c77f2809ee514d680b805b96f346e3" alt="ideologies" class="background_img" />\
+                <div class="overlay">Ideology Test</div>\
             </div>\
-            <div class='card shadow' id='humanities_redirect'>\
-                <img src='https://pic1.imgdb.cn/item/67c086fad0e0a243d4075204.jpg' alt='Humanities' class='background_img' />\
-                <div class='overlay'><p>Humanities</p></div>\
+            <div class="card shadow" id="lovership_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d" alt="R evoL ution"    class="background_img" />\
+                <div class="overlay">The Liberated Lovership</div>\
             </div>\
-            <div class='card shadow' id='development_redirect'>\
-                <img src='https://pic1.imgdb.cn/item/67c08e72d0e0a243d40755d0.png' alt='Development' class='background_img' />\
-                <div class='overlay'><p>Development</p></div>\
+            <div class="card shadow" id="fascist_propaganda_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/52f7b856ccd492df8dbaf0c13b032ed6" alt="fascist"   class="background_img"/>\
+                <div class="overlay">How Fascists Propagate</div>\
             </div>\
-            <div class='card shadow' id='others_redirect'>\
-                <img src='https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg' alt='Others' class='background_img' />\
-                <div class='overlay'><p>Others</p></div>\
+            <div class="card shadow" id="build_website_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/98bb1f17d8f1c0ca92e137022750d952" alt="website" class="background_img" />\
+                <div class="overlay">Build a Website for Free</div>\
             </div>\
-            <div class='card shadow' id='about_redirect'>\
-                <img src='https://pic1.imgdb.cn/item/67be9b49d0e0a243d405dc31.png' alt='About' class='background_img' />\
-                <div class='overlay'><p>About</p></div>\
+            <div class="card shadow" id="radicals_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/4d53269914fa8697a9d456bd770b0377" alt="radical" class="background_img" />\
+                <div class="overlay">Dictionary of Radicals</div>\
             </div>\
         </div>\
-    ",
+        <hr>\
+        <h1>All Categories</h1>\
+        <div class="directory" style="padding: 0px;">\
+            <div class="card shadow" id="learning_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/35fe849d2c1dae5dc3af76c1144e0dbe" alt="Learning" class="background_img"/>\
+                <div class="overlay">Learning</div>\
+            </div>\
+            <div class="card shadow" id="humanities_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a" alt="Humanities" class="background_img" />\
+                <div class="overlay">Humanities</div>\
+            </div>\
+            <div class="card shadow" id="development_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/9b0dba5ba3f7b67bb99a492fb10a179d" alt="Development" class="background_img" />\
+                <div class="overlay">Development</div>\
+            </div>\
+            <div class="card shadow" id="others_redirect">\
+                <img src="https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg" alt="Others" class="background_img" />\
+                <div class="overlay">Others</div>\
+            </div>\
+            <div class="card shadow" id="about_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23" alt="About" class="background_img" />\
+                <div class="overlay">About</div>\
+            </div>\
+        </div>\
+    ',
+    main_classes: 'bottom_padding',
     click_listeners: {
-        type: "redirect",
+        type: 'redirect',
         list: [
-            "learning_redirect",
-            "humanities_redirect",
-            "development_redirect",
-            "others_redirect",
-            "about_redirect"
+            '8values_redirect',
+            'lovership_redirect',
+            'fascist_propaganda_redirect',
+            'build_website_redirect',
+            'radicals_redirect',
+            'learning_redirect',
+            'humanities_redirect',
+            'development_redirect',
+            'others_redirect',
+            'about_redirect'
         ]
     }
 }

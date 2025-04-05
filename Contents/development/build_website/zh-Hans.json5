@@ -45,5 +45,6 @@
         </ul>\
         <p>为了优化性能，强烈建议使用国内的<strong>图床服务</strong>存储图片。这样可以减少GitHub的负载，节省存储空间，并加快访问速度。</p>\
         <p>本教程仅触及了网站开发的皮毛。要实现更多自定义，你应该学习<strong>CSS</strong>和<strong>JavaScript</strong>。得益于<strong>大型语言模型（Large Language Models）</strong>的迅速发展，无代码开发的未来前景非常光明。</p>\
+        <p style="text-align: right;">版权 ©️ Hēsperus</p>\
     '
 }

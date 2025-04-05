@@ -45,5 +45,6 @@
         </ul>\
         <p>Um die Leistung zu optimieren, empfehle ich dringend, einen nationalen <strong>Bildhosting-Dienst</strong> für das Speichern von Bildern zu verwenden. Dies reduziert die Belastung von GitHub, spart Speicherplatz und beschleunigt den Zugriff.</p>\
         <p>Dieses Tutorial berührt nur die Oberfläche der Websitedevelopment. Um mehr Anpassung zu erreichen, sollten Sie <strong>CSS</strong> und <strong>JavaScript</strong> lernen. Dank der schnellen Fortschritte bei <strong>großen Sprachmodellen (LLMs)</strong> sieht die Zukunft der no-code Entwicklung sehr vielversprechend aus.</p>\
+        <p style="text-align: right;">Copyright ©️ Hēsperus</p>\
     '
 }

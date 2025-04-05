@@ -19,7 +19,7 @@ body {
 } body.dark {
 	color: rgb(255, 255, 255);
 } body * {
-	font-size: calc(15px + 0.3vw);
+	font-size: calc(15px + 0.2vw);
 } body.non_transition *, body.non_transition {
 	transition: none !important;
 }
@@ -31,7 +31,7 @@ body, main {
     display: none;
 }
 
-.center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong {
+.center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em {
 	transition: color 300ms, opacity 300ms;
 } .demobox, hr, img, body {
 	transition: background 300ms, opacity 300ms, filter 300ms, box-shadow 300ms;
@@ -65,10 +65,22 @@ hr {
 	background-color: rgb(100, 100, 100);
 }
 
+p {
+	margin: calc(15px + 0.2vw) 0px;
+}
+
+ol, ul {
+	margin: 0px;
+}
+
+li {
+	margin: calc(5px + 0.2vw) 0px;
+}
+
 h1 {
 	margin: 15px;
 	font-weight: 900;
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 	text-align: center;
 	font-size: calc(20px + 3vw);
 } body.dark h1 {
@@ -77,7 +89,7 @@ h1 {
 	margin: 15px;
 	font-size: calc(20px + 2.4vw);
 	font-weight: 800;
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 	text-align: center;
 } body.dark h2 {
 	color: rgb(254, 247, 167);
@@ -85,7 +97,7 @@ h1 {
 	margin: 15px;
 	font-size: calc(20px + 1.8vw);
 	font-weight: 700;
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 	text-align: center;
 } body.dark h3 {
 	color: rgb(254, 247, 167);
@@ -93,7 +105,7 @@ h1 {
 	margin: 15px;
 	font-size: calc(20px + 1.2vw);
 	font-weight: 600;
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 	text-align: center;
 } body.dark h4 {
 	color: rgb(254, 247, 167);
@@ -101,7 +113,7 @@ h1 {
 	margin: 15px;
 	font-size: calc(20px + 0.6vw);
 	font-weight: 500;
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 	text-align: center;
 } body.dark h5 {
 	color: rgb(254, 247, 167);
@@ -109,14 +121,14 @@ h1 {
 	margin: 15px;
 	font-size: 20px;
 	font-weight: 400;
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 	text-align: center;
 } body.dark h6 {
 	color: rgb(254, 247, 167);
 }
 
-p {
-	font-weight: 400;
+main p, main li, main strong, main em, main a, main .fake_a {
+	line-height: calc(25px + 0.2vw);
 }
 
 a, .fake_a {
@@ -203,7 +215,13 @@ img {
 }
 
 strong {
-	color: rgb(108, 46, 255);
+	color: rgb(132, 67, 255);
 } body.dark strong {
 	color: rgb(254, 247, 167);
+}
+
+em {
+	color: rgb(18, 164, 130);
+} body.dark em {
+	color: rgb(90, 255, 178);
 }

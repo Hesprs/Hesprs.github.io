@@ -108,7 +108,7 @@ function music_clicked() {
 	    		<div class='progress' id='pop_up_progress'></div>
 	    	</div>
 	    	<div style='display: flex; height: 40px; margin-bottom: auto; background-color: transparent;'>
-                <button id='pop_up_previous' class='action-btn cneterer' style='margin: 0px auto 0px auto;'>
+                <button id='pop_up_previous' class='action-btn centerer' style='margin: 0px auto 0px auto;'>
 	    			<img class='icon' src='https://img.icons8.com/fluency-systems-filled/100/end.png' alt='next' id='pop_up_previous_light'/>
 	    			<img class='icon' src='https://img.icons8.com/?size=100&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' id='pop_up_previous_dark'/>
 	    	  	</button>

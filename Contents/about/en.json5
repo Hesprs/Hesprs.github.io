@@ -31,6 +31,16 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons by <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update Log</h1>\
+        <h4>V 2.1.4 &nbsp; 5.4.2025</h4>\
+        <ol>\
+            <li>Add copyright statement to self-created articles;</li>\
+            <li>Reconstruct the "Homepage";</li>\
+            <li>Add a new article, "Liberated Lovership" to the "Humanity";</li>\
+            <li>Optimize the performance tremendously by adding throttle to repetitively called functions;</li>\
+            <li>Minish the font size and larger the paragraph spacing properly to ensure visual ease;</li>\
+            <li>Fix the bug of non-central-alighed music player control buttons in pop up menu;</li>\
+            <li>Fix the bug that the URL remains the previous page\'s after shifting to "Homepage".</li>\
+		</ol>\
         <h4>V 2.1.3 &nbsp; 1.4.2025</h4>\
         <ol>\
             <li>Add a new song "Una Mattina" to the music player;</li>\
@@ -101,6 +111,7 @@
             <li>Transfer some images to a more stable and faster image hosting service;</li>\
             <li>Start a new part - Update Log in "about".</li>\
 		</ol>\
+        <p style="text-align: right;">Copyright ©️ Hēsperus</p>\
     ',
     click_listeners: {
         type: 'redirect',

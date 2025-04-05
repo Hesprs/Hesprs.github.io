@@ -101,6 +101,7 @@
             <li>Einige Bilder zu einem stabileren und schnelleren Bildhosting-Dienst übertragen.</li>\
             <li>Beginnen eines neuen Abschnitts – Update-Log im Bereich „Über“.</li>\
         </ol>\
+        <p style="text-align: right;">Copyright ©️ Hēsperus</p>\
     ',
     click_listeners: {
         type: "redirect",

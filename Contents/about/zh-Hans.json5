@@ -101,6 +101,7 @@
             <li>将部分图片迁移至更稳定且更快速的图床服务。</li>\
             <li>在“关于”中新增部分 —— 更新日志。</li>\
         </ol>\
+        <p style="text-align: right;">版权 ©️ Hēsperus</p>\
     ',
     click_listeners: {
         type: "redirect",
