@@ -279,6 +279,7 @@ input[type=text] {
 	transition: top 150ms;
 	position: absolute;
 	top: 0px;
+	width: calc(100% - 30px);
 } #title_bar + hr {
 	position: absolute;
 	top: 46px;

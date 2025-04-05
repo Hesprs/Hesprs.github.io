@@ -677,7 +677,7 @@ function crumb(address, download) {
         for (let i = 0; i < formats.length; i++) {
             if (download[formats[i].format] != undefined) {
                 crumb_downloads += `
-                    <a href='${download[formats[i].format]}' style='height:30px;'>
+                    <a href='${download[formats[i].format]}' style='height:30px;' target="_blank">
 	    				<img class='icon' src='${formats[i].url}' style='height:30px; width: fit-content;' alt='${formats[i].format}'>
 	    			</a>
                 `;
