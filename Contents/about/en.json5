@@ -1,8 +1,7 @@
 {
     introduction: 'This page introduces his personal website, social media links (GitHub, Reddit, QQ), and contact details. It features his ideological test results from 8values, a detailed update log of site improvements, and a minimalist design.',
     content: '\
-        <h1>About Hēsperus</h1>\
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px;">\
+        <div class="directory">\
             <div class="demobox shadow">\
                 <img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Orca" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />\
                 <div class="center_text color" style="margin-left: 10px;">Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>\
@@ -31,6 +30,15 @@
         <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons by <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update Log</h1>\
+        <h4>V 2.2.0 &nbsp; 6.4.2025</h4>\
+        <ol>\
+            <li>Add a thin scroll bar for articles;</li>\
+            <li>Remove the floating title bar for it is incompatible in Safari, adding a sticky title bar instead;</li>\
+            <li>Create a more compact layout for small screen users;</li>\
+            <li>Move the GitHub badge to left-bottom corner in case it covers title bar or scroll bar;</li>\
+            <li>Add download a link for "Liberated Lovership" (English) in the title bar;</li>\
+            <li>Conduct a small amount of search engine optimization.</li>\
+		</ol>\
         <h4>V 2.1.4 &nbsp; 5.4.2025</h4>\
         <ol>\
             <li>Add copyright statement to self-created articles;</li>\
@@ -117,5 +125,6 @@
         type: 'redirect',
         list: ['8values_redirect']
     },
+    main_classes: 'top_padding',
     github: 'https://github.com/hesprs/hesprs.github.io'
 }

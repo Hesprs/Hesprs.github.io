@@ -1,8 +1,6 @@
 {
   	'introduction': '《解放恋爱论》由 Hēsperus 撰写，主张彻底重新定义爱情，反对传统婚姻的压迫性。倡导基于真挚情感的关系，不受性别、年龄或道德约束，呼吁废除继承制和性别角色等社会改革。这是一份支持LGBTQIA+权益、多元伴侣关系及情感真实性的宣言。',
   	'content': '\
-		<h1>解放恋爱论</h1>\
-		<hr/>\
 		<img src=\"https://img1.tucang.cc/api/image/show/b1ccfcace0d0565854fe957d1ebe6249\" alt=\"解放恋爱\"/>\
 		<h3>✨ 序言</h3>\
 		<p>爱与婚姻，这两个<strong>亘古不变</strong>的主题深植于人类历史长河，如今却比任何时候都更需要<strong>革命性变革</strong>。自人类初尝爱欲之始，爱的朝圣与演化便拉开帷幕。从父权制到一夫一妻制，它历经第一波性解放的呐喊，又在LGBT运动的浪潮中蓬勃生长。民智先驱如灯塔般指引世界前行。</p>\
@@ -84,5 +82,6 @@
 		<p>现在，正是 Hēsperus 重申他对爱情看法的时候：</p>\
 		恋爱应<strong>自由</strong>，爱人应<strong>平等</strong>，婚姻应<strong>解放</strong>！被家庭义务与社会成见异化的婚约，只配葬身地狱。我们向世界宣告：<strong>僵死教条当诛，解放恋爱万岁！ 🚩</strong></p>\
 		<p style=\"text-align: right;\">100% 原创 + 精翻 | 版权 ©️ Hēsperus | 2025年4月4日</p>\
-	'
+	',
+	main_classes: 'top_padding'
 }

@@ -1,8 +1,7 @@
 {
     introduction: '此页面介绍了他的个人网站、社交媒体链接（GitHub、Reddit、QQ）和联系方式，包含8values意识形态测试结果、详细的网站更新日志及简约设计。',
     content: '\
-        <h1>关于Hēsperus</h1>\
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px;">\
+        <div class="directory">\
             <div class="demobox shadow">\
                 <img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="虎鲸" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />\
                 <div class="center_text color" style="margin-left: 10px;">博客<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>\
@@ -31,6 +30,15 @@
         <p style="text-align: right;">版权所有 © Hēsperus 2025<br />图标提供：<a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>更新日志</h1>\
+        <h4>V 2.2.0 &nbsp; 2025年4月6日</h4>\
+        <ol>\
+            <li>为文章添加细滚动条；</li>\
+            <li>移除悬浮标题栏(因Safari不兼容)，改为固定定位标题栏；</li>\
+            <li>为小屏幕用户创建更紧凑的布局；</li>\
+            <li>将GitHub徽章移至左下角防止遮挡标题栏或滚动条；</li>\
+            <li>在标题栏添加《解放恋爱论》(英文版)下载链接；</li>\
+            <li>实施少量搜索引擎优化。</li>\
+        </ol>\
         <h4>V 2.1.4 &nbsp; 2025年4月5日</h4>\
         <ol>\
             <li>为原创文章添加版权声明；</li>\
@@ -114,10 +122,9 @@
         <p style="text-align: right;">版权 ©️ Hēsperus</p>\
     ',
     click_listeners: {
-        type: "redirect",
-        list: [
-            "8values_redirect",
-        ]
+        type: 'redirect',
+        list: ['8values_redirect']
     },
+    main_classes: 'top_padding',
     github: 'https://github.com/hesprs/hesprs.github.io'
 }

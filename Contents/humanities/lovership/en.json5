@@ -1,8 +1,6 @@
 {
   	introduction: '"The Liberated Lovership" by Hēsperus advocates for a radical redefinition of love, rejecting traditional marriage as oppressive. It promotes relationships based on genuine love, free from gender, age, or moral constraints, and calls for societal reforms like abolishing inheritance and gender roles. A manifesto for LGBTQIA+ rights, multi-partner relationships, and emotional authenticity.',
   	content: '\
-		<h1>The Liberated Lovership</h1>\
-		<hr/>\
 		<img src="https://img1.tucang.cc/api/image/show/b1ccfcace0d0565854fe957d1ebe6249" alt="Liberated Lovership"/>\
 		<h3>✨ Exordium</h3>\
 		<p>Love and marriage, two <strong>eternally immutable</strong> topics rooted in people\'s minds throughout history, need <strong>revolutionizing</strong> more urgently than ever before. Since the first humanoid began to harbour Eros, the pilgrimage and evolution of love started. From patriarchy to monogamy, it was dipped into the yell in the first wave of sexual liberation and thrived in the presence of the LGBT movement. Far-sighted vanguards from the populace shine like beacons, guiding the world forward.</p>\
@@ -85,6 +83,7 @@
 		<p>Lovership should be <strong>liberal</strong>, lovers must be <strong>universally egalitarian</strong>, and marriages are born to be <strong>liberated</strong>! Engagements alienated by so-called family obligations and societal stereotypes should only exist in the inferno. We are here manifest to the globe: <strong>Ossified norms deserve to die, live long the Liberated Lovership! 🚩</strong></p>\
 		<p style="text-align: right;">100% Original | Copyright ©️ Hēsperus | 4 April 2025</p>\
 	',
+	main_classes: 'top_padding',
 	downloads: {
 		md: 'https://cloud.06dn.com/s/JDVxia'
 	}

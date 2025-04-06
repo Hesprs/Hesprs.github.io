@@ -46,7 +46,6 @@ const previous_center = document.getElementById('previous_center');
 const nations = document.getElementById('nations');
 const pop_up_title = document.getElementById('pop_up_title');
 const pop_up_content = document.getElementById('pop_up_content');
-const crumb_navigation = document.getElementById('crumb_navigation');
 const content_district = document.getElementById('content_district');
 const search_button = document.getElementById('search_button');
 const search_button_center = document.getElementById('search_button_center');
@@ -509,9 +508,6 @@ async function shift_title(title, entry = true, back = false) {
         timer = 195 - timer;
     }
     setTimeout(() => {
-        if (articles[current_page] != undefined) {
-            crumb(articles[current_page].address, content.downloads);
-        }
         if (content.warning != undefined) {
             warn('alarm', content.warning);
         }
@@ -524,27 +520,42 @@ async function shift_title(title, entry = true, back = false) {
         content_0.scrollTo(0, 0);
         content_1.innerHTML = '';
         content_district.classList.toggle('slides');
-        content_0.innerHTML = `<main class='${content.main_classes}' style='${content.main_styles}'>${content.content}</main>`;
+        if (current_page.includes('search=') || articles[current_page].iframe != undefined) {
+            content_0.innerHTML = `
+                <main class='${content.main_classes}' style='${content.main_styles}'>
+                    ${content.content}
+                </main>
+            `;
+        } else {
+            content_0.innerHTML = `
+                <header>
+                    <h1>${articles[current_page][language]}</h1>
+                </header>
+                <footer id='title_bar' class='shadow'>
+		    		<div id='crumb_navigation'></div>
+		    		<div id='downloads' style='display: flex; gap: 10px; margin: 0px 0px 0px auto;'></div>
+		    	</footer>
+                <hr>
+                <main class='${content.main_classes}' style='${content.main_styles}'>
+                    ${content.content}
+                </main>
+            `;
+        }
+        if (articles[current_page] != undefined && articles[current_page].iframe == undefined) {
+            crumb(articles[current_page].address, content.downloads);
+        }
         cover.style.opacity = 0;
         content_district.style.opacity = 1;
         cover.style.pointerEvents = 'none';
         if (content.click_listeners != undefined) {
             event_listeners(content.click_listeners.list, content.click_listeners.type);
         }
-        const throttledScroll = throttle(scroll_to_hide, 100);
-        content_0.addEventListener('scroll', throttledScroll);
     }, timer);
 }
 
 async function resolve_url(entry) {
     let address, content, warning;
     if (articles[current_page] == undefined || current_page === '404' || current_page.includes('search=')) {
-        setTimeout(() => {
-            content_district.classList.add('non_transition');
-            setTimeout(() => content_district.classList.remove('non_transition'), 20);
-            content_district.classList.add('hide_title_bar');
-            content_district.classList.remove('top_show');
-        }, 195 - timer);
         for (let i = 0; i < entry_list.length; i ++) {
             document.getElementById(entry_list[i].value).checked = false;
         }
@@ -559,12 +570,6 @@ async function resolve_url(entry) {
             }
         }
     } else {
-        setTimeout(() => {
-            content_district.classList.add('non_transition');
-            setTimeout(() => content_district.classList.remove('non_transition'), 20);
-            content_district.classList.remove('hide_title_bar');
-            content_district.classList.add('top_show');
-        }, 195 - timer);
         if (entry) {
             document.getElementById(articles[current_page].address.split('/')[0]).checked = true;
             change_category();
@@ -577,7 +582,7 @@ async function resolve_url(entry) {
                 if (articles[current_page].languages[i] === language) {
                     content = {
                         content: `<iframe src='/Contents/${articles[current_page].address}/${language}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
-                        main_styles: 'width: 100%; height: 100%; position: absolute; padding: 0px;',
+                        main_classes: 'main_empty',
                     };
                     address = 'done';
                     break;
@@ -588,7 +593,7 @@ async function resolve_url(entry) {
                 address = 'done';
                 content = {
                     content: `<iframe src='/Contents/${articles[current_page].address}/${articles[current_page].languages[0]}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
-                    main_styles: 'width: 100%; height: 100%; position: absolute; padding: 0px;',
+                    main_classes: 'main_empty',
                 };
             }
             if (articles[current_page].iframe !== '') {
@@ -641,20 +646,21 @@ function language_warning() {
 }
 
 function compile_directory(directory) {
-    let content = '';
+    let content = '<div class="directory">';
     let click_listeners = [];
     for (let i = 0; i < directory.length; i ++) {
         let target = articles[directory[i]];
         content += `
-            <div class='card shadow' id='${directory[i]}_redirect'>
+            <article class='shadow' id='${directory[i]}_redirect'>
                 <img src="${target.thumbnail}" alt="${target[language]}" class='background_img'/>
                 <div class="overlay">${target[language]}</div>
-    	    </div>
+    	    </article>
         `;
         click_listeners.push(`${directory[i]}_redirect`);
     }
+    content += '</div>';
     return {
-        main_classes: 'directory',
+        main_classes: 'normal_padding',
         content: content,
         click_listeners: {
             type: 'redirect',
@@ -676,6 +682,7 @@ function event_listeners(listener_list, type) {
 function crumb(address, download) {
     let crumb = '', crumb_downloads = '';
     const crumb_list = address.split('/');
+    const crumb_navigation = document.getElementById('crumb_navigation');
     if (download != undefined) {
         for (let i = 0; i < formats.length; i++) {
             if (download[formats[i].format] != undefined) {
@@ -986,20 +993,4 @@ function warn(type, message) {
 function warning_bar_clicked() {
     warning_bar.classList.toggle('show');
     clearTimeout(timeout_2);
-}
-
-function scroll_to_hide() {
-    if (!current_page.includes('search=')) {
-        const content = document.getElementById(`content_${layer}`);
-        if (content.scrollTop > 1 && content.scrollTop < content.scrollHeight - content.clientHeight - 1) {
-            content_district.classList.add('hide_title_bar');
-            content_district.classList.remove('top_show');
-        } else if (content.scrollTop <= 1) {
-            content_district.classList.remove('hide_title_bar');
-            content_district.classList.add('top_show');
-        } else if (content.scrollTop >= content.scrollHeight - content.clientHeight - 1) {
-            content_district.classList.remove('hide_title_bar');
-            content_district.classList.remove('top_show');
-        }
-    }
 }

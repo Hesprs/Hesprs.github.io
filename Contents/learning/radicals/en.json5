@@ -1,8 +1,6 @@
 {
     introduction: 'The content is a dictionary of English radicals, providing definitions and explanations of various prefixes, suffixes, and root words, organized alphabetically to aid in understanding word formation and meanings.',
     content: '\
-        <h1>Dictionary of Radicals</h1>\
-        <hr />\
         <h2>A</h2>\
         <div class="demoblock">\
             <div class="demobox shadow color">\

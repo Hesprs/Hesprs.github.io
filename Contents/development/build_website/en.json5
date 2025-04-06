@@ -1,8 +1,6 @@
 {
     introduction: 'The content is a step-by-step guide on how to create a free personal website using GitHub Pages, covering everything from signing up for GitHub to deploying and     optimizing the site.',
     content: '\
-        <h1>Build a Website for Free</h1>\
-        <hr />\
         <h2>Overview</h2>\
         <p>A blog is used to <strong>record life moments</strong> and share insights (mainly to bypass the strict <strong>content moderation</strong> on social media). However, for beginners, setting up a blog involves buying a server, purchasing a domain name, configuring the environment, registering a certificate, and even filing records with the government—this can be extremely troublesome.</p>\
         <p>We will use <strong>GitHub</strong>, the world\'s largest code hosting platform (it doesn\'t require a VPN if your internet speed is good enough). Many open-source   projects are available there. Now that Microsoft has acquired GitHub, its stability is guaranteed.</p>\

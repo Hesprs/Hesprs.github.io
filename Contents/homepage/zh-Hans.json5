@@ -1,51 +1,51 @@
 {
     content: '\
         <h1>推荐文章</h1>\
-        <div class="directory" style="padding: 0px;">\
-            <div class="card shadow" id="8values_redirect">\
+        <div class="directory">\
+            <article class="shadow" id="8values_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/41c77f2809ee514d680b805b96f346e3" alt="ideologies" class="background_img" />\
                 <div class="overlay">价值观测试</div>\
-            </div>\
-            <div class="card shadow" id="lovership_redirect">\
+            </article>\
+            <article class="shadow" id="lovership_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d" alt="R evoL ution"    class="background_img" />\
                 <div class="overlay">解放恋爱论</div>\
-            </div>\
-            <div class="card shadow" id="fascist_propaganda_redirect">\
+            </article>\
+            <article class="shadow" id="fascist_propaganda_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/52f7b856ccd492df8dbaf0c13b032ed6" alt="fascist"   class="background_img"/>\
                 <div class="overlay">法西斯如何蛊惑人心</div>\
-            </div>\
-            <div class="card shadow" id="build_website_redirect">\
+            </article>\
+            <article class="shadow" id="build_website_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/98bb1f17d8f1c0ca92e137022750d952" alt="website" class="background_img" />\
                 <div class="overlay">免费搭建网站</div>\
-            </div>\
-            <div class="card shadow" id="radicals_redirect">\
+            </article>\
+            <article class="shadow" id="radicals_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/4d53269914fa8697a9d456bd770b0377" alt="radical" class="background_img" />\
                 <div class="overlay">词根大典</div>\
-            </div>\
+            </article>\
         </div>\
         <hr>\
         <h1>所有分类</h1>\
-        <div class="directory" style="padding: 0px;">\
-            <div class="card shadow" id="learning_redirect">\
+        <div class="directory">\
+            <article class="shadow" id="learning_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/35fe849d2c1dae5dc3af76c1144e0dbe" alt="Learning" class="background_img"/>\
                 <div class="overlay">求知</div>\
-            </div>\
-            <div class="card shadow" id="humanities_redirect">\
+            </article>\
+            <article class="shadow" id="humanities_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a" alt="Humanities" class="background_img" />\
                 <div class="overlay">人文</div>\
-            </div>\
-            <div class="card shadow" id="development_redirect">\
+            </article>\
+            <article class="shadow" id="development_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/9b0dba5ba3f7b67bb99a492fb10a179d" alt="Development" class="background_img" />\
                 <div class="overlay">开发</div>\
-            </div>\
-            <div class="card shadow" id="others_redirect">\
+            </article>\
+            <article class="shadow" id="others_redirect">\
                 <img src="https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg" alt="Others" class="background_img" />\
                 <div class="overlay">其他</div>\
-            </div>\
-            <div class="card shadow" id="about_redirect">\
+            </article>\
+            <article class="shadow" id="about_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23" alt="About" class="background_img" />\
                 <div class="overlay">关于</div>\
-            </div>\
+            </article>\
         </div>\
     ',
     main_classes: 'bottom_padding',

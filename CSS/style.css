@@ -52,6 +52,13 @@ body {
 	border-radius: 0px;
 }
 
+.main_empty {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 0px;
+}
+
 #badge {
 	background-color: rgb(30, 30, 30);
 	display: flex;
@@ -78,7 +85,7 @@ body {
 
 .crumb, .warning, .text_dark, .text_light, #search_bar {
 	transition: color 300ms, opacity 300ms;
-} .entry, .music_container, .progress_container, .warning_bar, .card, .overlay, .sidenav_wrapper, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, .rectangle_wrapper, .sidenav_wrapper {
+} .entry, .music_container, .progress_container, .warning_bar, article, .overlay, .sidenav_wrapper, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, .rectangle_wrapper, .sidenav_wrapper, footer {
 	transition: background-color 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms;
 }
 
@@ -90,7 +97,7 @@ body {
 	z-index: 0;
 } #content_district.slides #content_1, #content_0 {
 	z-index: 1;
-} #cover, #title_bar, #title_bar + hr {
+} #cover, footer, .github-corner {
 	z-index: 2;
 } #badge {
 	z-index: 3;
@@ -269,31 +276,20 @@ input[type=text] {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 15px;
-	padding: 15px;
 	min-height: unset;
 }
 
-#title_bar {
-	position: relative;
-    top: 0;
-    transition: top 150ms;
+footer {
+	position: sticky;
+    top: 15px;
 	padding: 8px 15px;
 	display: flex;
 	flex-direction: row;
-} #title_bar + hr {
-	position: relative;
-	top: 0;
-	transition: top 200ms, background-color 300ms;
-}
-
-
-#content_district.hide_title_bar #title_bar, #content_district.hide_title_bar #title_bar + hr {
-	top: -46.75px;
-} #content_district.hide_title_bar .content {
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-} #content_district.top_show .content {
-	top: 46.75px;
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	background-color: #ffffff;
+	border-radius: 15px;
+	margin: 0px 11px 15px 11px;
+} body.dark footer {
+	background-color: rgb(53, 53, 53);
 }
 
 #content_district.non_transition #title_bar, #content_district.non_transition .content, #content_district.non_transition .content_container, #content_district.non_transition #title_bar + hr, #content_district.non_transition .github-corner {
@@ -301,7 +297,8 @@ input[type=text] {
 }
 
 ::-webkit-scrollbar {
-	width: 5px;
+	width: 4px;
+	overflow: visible;
 }
 
 ::-webkit-scrollbar-track {
@@ -310,7 +307,7 @@ input[type=text] {
 
 ::-webkit-scrollbar-thumb {
 	background: rgba(30, 30, 30, 0.5);
-	border-radius: 2.5px;
+	border-radius: 2px;
 	transition: background 300ms;
 }
 
@@ -319,7 +316,6 @@ input[type=text] {
 }
 
 .content {
-	clip-path: polygon(0 46.75px, 100% 46.75px, 100% 100%, 0% 100%);
 	overflow-y: auto;
 	position: absolute;
 	top: 0;
@@ -327,7 +323,9 @@ input[type=text] {
 	right: 0;
 	bottom: 0;
 	margin: 0px;
-	transition: clip-path 200ms, top 200ms;
+	transition: clip-path 200ms;
+	scrollbar-gutter: stable both-edges;
+	-webkit-overflow-scrolling: touch;
 }
 
 .background {
@@ -386,18 +384,16 @@ input[type=text] {
 }
 
 .github-corner {
-	transform: scaleX(-1);
+	transform: scaleX(-1) scaleY(-1);
 	visibility: hidden;
 	pointer-events: none;
 	cursor: auto;
-    z-index: 10;
-    position: fixed;
-    top: 46.75px;
+    position: absolute;
+    bottom: 0;
     left: 0;
     border: 0;
     fill: #151513;
     color: rgb(255, 255, 255);
-	transition: top 200ms;
 } .github-corner:hover {
 	color: rgb(255, 255, 255);
 } body.dark .github-corner {
@@ -406,10 +402,6 @@ input[type=text] {
     cursor: pointer;
 } .octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
     animation: octocat-wave 560ms ease-in-out;
-}
-
-#content_district.hide_title_bar .github-corner {
-	top: 0px;
 }
 
 .github-corner.show {
@@ -693,7 +685,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	color: rgb(255, 255, 255);
 }
 
-.card {
+article {
 	cursor: pointer;
 	overflow: hidden;
 	border-radius: 15px;
@@ -701,7 +693,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	position: relative;
     flex: 1 1 200px;
 	min-width: 200px;
-} .card:hover .overlay {
+} article:hover .overlay {
 	opacity: 0;
 }
 
@@ -717,9 +709,10 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	align-items: flex-end;
 	border-radius: 0px 0px 15px 15px;
 	color: white;
-	font-size: calc(15px + 0.3vw);
+	font-size: calc(15px + 0.2vw);
 	margin: 0;
 }
+
 .thumbnail {
 	aspect-ratio: 1 / 1;
 	height: 100%;
@@ -770,6 +763,11 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	background-color: rgba(255, 255, 255);
 } body.dark .division, body.dark .vertical_division {
 	background-color: rgba(100, 100, 100);
+}
+
+footer + hr {
+	margin: 0px 15px;
+	width: calc(100% - 30px);
 }
 
 @media (min-width: 768px) {
@@ -923,9 +921,28 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 }
 
 @media (max-width: 767.9px) {
+	.directory {
+		gap: 10px;
+	}
+
+	::-webkit-scrollbar {
+		width: 2px;
+	}
+
 	#search_bar {
 		opacity: 0;
 		pointer-events: none;
+	}
+
+	footer {
+		top: 10px;
+		margin: 0px 6px 10px 6px;
+		padding: 8px 10px;
+	}
+
+	footer + hr {
+		margin: 0px 10px;
+		width: calc(100% - 20px);
 	}
 
 	#search_bar_center_wrapper .entry,
@@ -936,7 +953,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	}
 
 	#search_bar_wrapper {
-		margin: 0px 15px 0px 0px;
+		margin: 0px 10px 0px 0px;
 	}
 
 	.introduction {
@@ -952,9 +969,9 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	.sidenav {
 		display: flex;
 		height: 46px;
-		width: calc(100% - 30px);
+		width: calc(100% - 20px);
 		flex-direction: row;
-		margin: 15px;
+		margin: 10px;
 	}
 
 	.division {
@@ -973,13 +990,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	}
 
 	.rectangle_wrapper {
-		margin: 0px 15px 15px 15px;
-	}
-
-	.upper {
-		border-radius: 15px 0px 0px 15px;
-	} .lower {
-		border-radius: 0px 15px 15px 0px;
+		margin: 0px 10px 10px 10px;
 	}
 
 	.stretch_bar_wrapper,
@@ -1054,7 +1065,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	}
 
 	.sidenav.super_minimal #search_bar_center_wrapper {
-		margin: 0px 15px 0px 15px !important;
+		margin: 0px 10px 0px 10px !important;
 		flex-grow: 1;
 		border: rgb(255, 255, 255) solid 0.75px;
 	} body.dark .sidenav.super_minimal #search_bar_center_wrapper {

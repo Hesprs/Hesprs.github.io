@@ -1,8 +1,6 @@
 {
     introduction: 'Der Inhalt ist ein Schritt-für-Schritt-Leitfaden, wie man eine kostenlose persönliche Website mit GitHub Pages erstellt, abgedeckt von der Anmeldung bei GitHub bis zur Bereitstellung und Optimierung der Seite.',
     content: '\
-        <h1>Eine Website kostenlos erstellen</h1>\
-        <hr />\
         <h2>Überblick</h2>\
         <p>Ein Blog wird verwendet, um <strong>Lebensmomente aufzuzeichnen</strong> und Einsichten zu teilen (hauptsächlich um den strengen <strong>Inhaltsmoderationen</strong> in sozialen Medien auszuweichen). Für Anfänger kann das Einrichten eines Blogs jedoch sehr mühsam sein, da es das Kaufen eines Servers, den Kauf einer Domain, die Konfiguration der Umgebung, die Registrierung eines Zertifikats und sogar die Abgabe einer Meldung beim Staat erfordert.</p>\
         <p>Wir werden <strong>GitHub</strong> verwenden, die weltweit größte Plattform für Code-Hosting (es benötigt keinen VPN, wenn Ihre Internetverbindung gut genug ist). Viele Open-Source-Projekte sind dort verfügbar. Seit Microsoft GitHub übernommen hat, ist seine Stabilität garantiert.</p>\

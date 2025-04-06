@@ -38,27 +38,26 @@ body, main {
 }
 
 main {
-	padding: 1px 15px 1px 15px;
+	padding: 1px 11px 1px 11px;
 	overflow: scroll;
 	min-height: calc(100% - 2px);
-	width: calc(100% - 30px);
+	width: calc(100% - 22px);
 	scroll-behavior: smooth;
-	transition: padding 200ms;
 } main.normal_padding {
-	padding: 15px;
+	padding: 15px 11px;
     min-height: calc(100% - 30px);
 } main.top_padding {
-	padding: 15px 15px 1px 15px;
+	padding: 15px 11px 1px 11px;
     min-height: calc(100% - 16px);
 } main.bottom_padding {
-	padding: 1px 15px 15px 15px;
+	padding: 1px 11px 15px 11px;
     min-height: calc(100% - 16px);
 }
 
 hr {
 	height: 0.75px;
 	width: 100%;
-	margin: 15px 0px 15px 0px;
+	margin: 15px 0px;
 	background-color: rgba(255, 255, 255);
 	border: none;
 } body.dark hr {
@@ -211,6 +210,24 @@ img {
 	.corner_svg {
 		height: 60px;
 		width: 60px;
+	}
+
+	main {
+		padding: 1px 8px 1px 8px;
+		width: calc(100% - 16px);
+	} main.normal_padding {
+		padding: 10px 8px;
+		min-height: calc(100% - 20px);
+	} main.top_padding {
+		padding: 10px 8px 1px 8px;
+		min-height: calc(100% - 11px);
+	} main.bottom_padding {
+		padding: 1px 8px 10px 8px;
+		min-height: calc(100% - 11px);
+	}
+
+	hr {
+		margin: 10px 0px;
 	}
 }
 
