@@ -300,6 +300,7 @@ input[type=text] {
 
 .content {
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	border: transparent solid;
 	border-width: 46.75px 0px 0px 0px;
 	overscroll-behavior: contain;
