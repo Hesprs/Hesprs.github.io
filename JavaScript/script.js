@@ -56,6 +56,7 @@ const warning_bar = document.getElementById('warning_bar');
 const warning_text = document.getElementById('warning_text');
 const warning_icon = document.getElementById('warning_icon');
 const github_corner = document.getElementById('github_corner');
+const titleBar = document.getElementById('title_bar');
 const meta = document.getElementsByTagName('meta');
 const throttledResize = throttle(responsive_resize, 100);
 const throttledMouseMove = throttle(mouse_move, 16);
@@ -499,8 +500,8 @@ async function shift_title(title, entry = true, back = false) {
     } else {
         modify_url(`/${language}/${current_page}`);
     }
-    const content_1 = document.getElementById(`content_container_${1 - layer}`);
-    const content_0 = document.getElementById(`content_container_${layer}`);
+    const content_1 = document.getElementById(`content_${1 - layer}`);
+    const content_0 = document.getElementById(`content_${layer}`);
     clearInterval(timer_interval);
     if (timer >= 200) {
         timer = 0;
@@ -542,6 +543,7 @@ async function resolve_url(entry) {
             content_district.classList.add('non_transition');
             setTimeout(() => content_district.classList.remove('non_transition'), 20);
             content_district.classList.add('hide_title_bar');
+            content_district.classList.remove('top_show');
         }, 195 - timer);
         for (let i = 0; i < entry_list.length; i ++) {
             document.getElementById(entry_list[i].value).checked = false;
@@ -561,6 +563,7 @@ async function resolve_url(entry) {
             content_district.classList.add('non_transition');
             setTimeout(() => content_district.classList.remove('non_transition'), 20);
             content_district.classList.remove('hide_title_bar');
+            content_district.classList.add('top_show');
         }, 195 - timer);
         if (entry) {
             document.getElementById(articles[current_page].address.split('/')[0]).checked = true;
@@ -987,16 +990,16 @@ function warning_bar_clicked() {
 
 function scroll_to_hide() {
     if (!current_page.includes('search=')) {
-        const content = document.getElementById(`content_container_${layer}`);
-        if (content.scrollTop > 47 && content.scrollTop < content.scrollHeight - content.clientHeight - 5) {
+        const content = document.getElementById(`content_${layer}`);
+        if (content.scrollTop > 1 && content.scrollTop < content.scrollHeight - content.clientHeight - 1) {
             content_district.classList.add('hide_title_bar');
-            content_district.classList.remove('bottom_hide');
-        } else if (content.scrollTop <= 0) {
+            content_district.classList.remove('top_show');
+        } else if (content.scrollTop <= 1) {
             content_district.classList.remove('hide_title_bar');
-            content_district.classList.remove('bottom_hide');
-        } else if (content.scrollTop >= content.scrollHeight - content.clientHeight - 5) {
+            content_district.classList.add('top_show');
+        } else if (content.scrollTop >= content.scrollHeight - content.clientHeight - 1) {
             content_district.classList.remove('hide_title_bar');
-            content_district.classList.add('bottom_hide');
+            content_district.classList.remove('top_show');
         }
     }
 }
