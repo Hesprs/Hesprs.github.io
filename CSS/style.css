@@ -308,15 +308,20 @@ footer {
 ::-webkit-scrollbar-thumb {
 	background: rgba(30, 30, 30, 0.5);
 	border-radius: 2px;
-	transition: background 300ms;
+	transition: background-color 300ms;
+} body.dark ::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.75);
 }
 
 ::-webkit-scrollbar-thumb:hover {
 	background: rgba(30, 30, 30, 0.75);
+} body.dark ::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .content {
 	overflow-y: auto;
+	overflow-x: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;

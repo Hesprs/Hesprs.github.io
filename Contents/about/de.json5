@@ -37,6 +37,7 @@
             <li>Erstellen eines kompakteren Layouts für Nutzer mit kleinen Bildschirmen;</li>\
             <li>Verschieben des GitHub-Badges in die linke untere Ecke, um Überlappungen mit Titelleiste oder Scrollleiste zu vermeiden;</li>\
             <li>Hinzufügen eines Download-Links für "Die Befreiten Liebe" (Englisch) in der Titelleiste;</li>\
+            <li>Behebung des Fehlers, bei dem die Download-Icons in Safari nicht rechtsbündig ausgerichtet sind;</li>\
             <li>Durchführung kleinerer Suchmaschinenoptimierungen.</li>\
         </ol>\
         <h4>V 2.1.4 &nbsp; 05.04.2025</h4>\

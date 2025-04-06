@@ -37,6 +37,7 @@
             <li>Create a more compact layout for small screen users;</li>\
             <li>Move the GitHub badge to left-bottom corner in case it covers title bar or scroll bar;</li>\
             <li>Add download a link for "Liberated Lovership" (English) in the title bar;</li>\
+            <li>Fix the bug that the download icons are not aligned to right in Safari;</li>\
             <li>Conduct a small amount of search engine optimization.</li>\
 		</ol>\
         <h4>V 2.1.4 &nbsp; 5.4.2025</h4>\

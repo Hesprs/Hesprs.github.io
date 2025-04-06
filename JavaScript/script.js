@@ -533,7 +533,7 @@ async function shift_title(title, entry = true, back = false) {
                 </header>
                 <footer id='title_bar' class='shadow'>
 		    		<div id='crumb_navigation'></div>
-		    		<div id='downloads' style='display: flex; gap: 10px; margin: 0px 0px 0px auto;'></div>
+		    		<div id='downloads' style='display: flex; gap: 10px; width: fit-content;'></div>
 		    	</footer>
                 <hr>
                 <main class='${content.main_classes}' style='${content.main_styles}'>
@@ -687,8 +687,8 @@ function crumb(address, download) {
         for (let i = 0; i < formats.length; i++) {
             if (download[formats[i].format] != undefined) {
                 crumb_downloads += `
-                    <a href='${download[formats[i].format]}' style='height:30px;' target="_blank">
-	    				<img class='icon' src='${formats[i].url}' style='height:30px; width: fit-content;' alt='${formats[i].format}'>
+                    <a href='${download[formats[i].format]}' style='height:30px; width: 30px;' target='_blank'>
+	    				<img class='icon' src='${formats[i].url}' alt='${formats[i].format}'>
 	    			</a>
                 `;
             }
