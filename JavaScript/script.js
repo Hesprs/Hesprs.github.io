@@ -499,8 +499,8 @@ async function shift_title(title, entry = true, back = false) {
     } else {
         modify_url(`/${language}/${current_page}`);
     }
-    const content_1 = document.getElementById(`content_${1 - layer}`);
-    const content_0 = document.getElementById(`content_${layer}`);
+    const content_1 = document.getElementById(`content_container_${1 - layer}`);
+    const content_0 = document.getElementById(`content_container_${layer}`);
     clearInterval(timer_interval);
     if (timer >= 200) {
         timer = 0;
@@ -987,11 +987,16 @@ function warning_bar_clicked() {
 
 function scroll_to_hide() {
     if (!current_page.includes('search=')) {
-        const content = document.getElementById(`content_${layer}`);
+        const content = document.getElementById(`content_container_${layer}`);
         if (content.scrollTop > 47 && content.scrollTop < content.scrollHeight - content.clientHeight - 5) {
             content_district.classList.add('hide_title_bar');
-        } else if (content.scrollTop <= 0 || content.scrollTop >= content.scrollHeight - content.clientHeight - 5) {
+            content_district.classList.remove('bottom_hide');
+        } else if (content.scrollTop <= 0) {
             content_district.classList.remove('hide_title_bar');
+            content_district.classList.remove('bottom_hide');
+        } else if (content.scrollTop >= content.scrollHeight - content.clientHeight - 5) {
+            content_district.classList.remove('hide_title_bar');
+            content_district.classList.add('bottom_hide');
         }
     }
 }
