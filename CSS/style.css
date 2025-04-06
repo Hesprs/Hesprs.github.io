@@ -294,8 +294,6 @@ input[type=text] {
 	transform: translateY(0px);
 } #content_district.bottom_hide .content_container {
 	transform: translateY(-46.75px);
-}  #content_district.hide_title_bar .content_container, #content_district.bottom_hide .content_container {
-	bottom: 0px;
 }
 
 #content_district.non_transition #title_bar, #content_district.non_transition .content, #content_district.non_transition #title_bar + hr, #content_district.non_transition .github-corner {
@@ -317,10 +315,9 @@ input[type=text] {
 .content_container {
 	top: 0;
 	position: absolute;
-	transform: translateY(0px);
 	left: 0;
 	right: 0;
-	bottom: 46.75px;
+	bottom: 0;
   	overflow-y: scroll;
   	transition: transform 150ms, bottom 150ms;
 	-ms-overflow-style: none;
