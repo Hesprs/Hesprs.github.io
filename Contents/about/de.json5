@@ -22,12 +22,15 @@
                 <img class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />\
                 <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>\
             </div>\
+            <div class="demobox shadow">\
+                <img class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />\
+                <div class="center_text color" style="margin-left: 10px;">Icons von<br /><a href="https://icons8.com">Icons8</a></div>\
+            </div>\
         </div>\
         <hr />\
         <h1>Hēsperus\' Ideologie</h1>\
         <img src="https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699" />\
         <p style="text-align: center;" id="8values_redirect" class="fake_a">Von 8values, klicken Sie hier, um den Test selbst durchzuführen.</p>\
-        <p style="text-align: right;">Copyright © Hēsperus 2025<br />Icons von <a href="https://icons8.com">icons8</a></p>\
         <hr />\
         <h1>Update-Log</h1>\
         <h4>V 2.2.0 &nbsp; 06.04.2025</h4>\

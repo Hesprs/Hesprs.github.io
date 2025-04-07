@@ -533,7 +533,7 @@ async function shift_title(title, entry = true, back = false) {
                 </header>
                 <footer id='title_bar' class='shadow'>
 		    		<div id='crumb_navigation'></div>
-		    		<div id='downloads' style='display: flex; gap: 10px; width: fit-content;'></div>
+		    		<div id='downloads'></div>
 		    	</footer>
                 <hr>
                 <main class='${content.main_classes}' style='${content.main_styles}'>

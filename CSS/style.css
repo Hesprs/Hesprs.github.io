@@ -83,6 +83,12 @@ body {
     margin: 0;
 }
 
+#downloads {
+	display: flex;
+	width: fit-content;
+	gap: 5px;
+}
+
 .crumb, .warning, .text_dark, .text_light, #search_bar {
 	transition: color 300ms, opacity 300ms;
 } .entry, .music_container, .progress_container, .warning_bar, article, .overlay, .sidenav_wrapper, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, .rectangle_wrapper, .sidenav_wrapper, footer {
@@ -941,7 +947,7 @@ footer + hr {
 
 	footer {
 		top: 10px;
-		margin: 0px 6px 10px 6px;
+		margin: 0px 8px 10px 8px;
 		padding: 8px 10px;
 	}
 

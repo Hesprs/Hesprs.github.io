@@ -311,19 +311,19 @@ const translation = {
 const formats = [
     {
         format: 'pdf',
-        url: 'https://img1.tucang.cc/api/image/show/17d125a28eeb36fb38aaf6de246d8241'
+        url: 'https://img.icons8.com/fluency/100/pdf-2.png'
     },
     {
         format: 'md',
-        url: 'https://img1.tucang.cc/api/image/show/6a94a817d7c5d4c5aa6f462faa2008c0'
+        url: 'https://img.icons8.com/fluency/100/markdown.png'
     },
     {
         format: 'docx',
-        url: 'https://img1.tucang.cc/api/image/show/b7e68eba009c0b95777d6b6770d88407'
+        url: 'https://img.icons8.com/fluency/100/google-docs--v2.png'
     },
     {
         format: 'pptx',
-        url: 'https://img1.tucang.cc/api/image/show/f3864cd655d5f042f1ee98e277c6e66d'
+        url: 'https://img.icons8.com/fluency/100/ms-powerpoint.png'
     },
     {
         format: 'img',
