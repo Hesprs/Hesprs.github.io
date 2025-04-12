@@ -695,10 +695,12 @@ function event_listeners(listener_list, type) {
 }
 
 function crumb(address, download) {
+    const downloads = document.getElementById('downloads');
     let crumb = '', crumb_downloads = '';
     const crumb_list = address.split('/');
     const crumb_navigation = document.getElementById('crumb_navigation');
-    if (download != undefined) {
+    if (download !== '') {
+        downloads.classList.add('padding');
         for (let i = 0; i < formats.length; i++) {
             if (download[formats[i].format] != undefined) {
                 crumb_downloads += `
@@ -708,6 +710,8 @@ function crumb(address, download) {
                 `;
             }
         }
+    } else {
+        downloads.classList.remove('padding');
     }
     for (let i = 0; i < crumb_list.length; i++) {
         target = crumb_list[i];
@@ -721,7 +725,7 @@ function crumb(address, download) {
         }
     }
     crumb_navigation.innerHTML = crumb;
-    document.getElementById('downloads').innerHTML = crumb_downloads;
+    downloads.innerHTML = crumb_downloads;
     for (i = 0; i < crumb_list.length - 1; i++) {
         document.getElementById(`${crumb_list[i]}_crumb`).addEventListener('click', function() {
             shift_title(this.getAttribute('value'), false);

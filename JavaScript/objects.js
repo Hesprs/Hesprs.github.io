@@ -61,7 +61,7 @@ const articles = {
     humanities: {
         en: 'Humanities',
         'zh-Hans': '人文',
-        de: 'Geistes',
+        de: 'Geisteswissenschaften',
         address: 'articles/humanities',
         directory: ['lovership', 'fascist_propaganda'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a',

@@ -87,6 +87,7 @@ body {
 	display: flex;
 	width: fit-content;
 	gap: 5px;
+} #downloads.padding {
 	margin-left: 8px;
 }
 
