@@ -43,7 +43,8 @@
             <li>Add magnify effects when hovering article cards;</li>\
             <li>Add a new tool "Desk Scoring";</li>\
             <li>Fix the bug of twisted and clipped crumb navigation when its width is excessive by adding a horizontal scroll bar.</li>\
-            <li>Fix the bug of content scrollbar gutter width error in Safari.</li>\
+            <li>Fix the bug of content scrollbar gutter width error in Safari;</li>\
+            <li>Fix the bug that the scrollbar is not shown in "8values".</li>\
 		</ol>\
         <h4>V 2.2.0 &nbsp; 6.4.2025</h4>\
         <ol>\

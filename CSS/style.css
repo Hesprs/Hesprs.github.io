@@ -39,8 +39,14 @@ iframe {
 body {
 	flex-direction: row;
 	background-color: rgb(240, 244, 248) !important;
+	display: flex;
+	align-items: center;
 } body.dark {
 	background-color: rgb(38, 38, 38) !important;
+}
+
+main {
+	overflow: hidden;
 }
 
 .background_img {
@@ -97,7 +103,7 @@ body {
 	transition: background-color 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms;
 }
 
-#background_img {
+#background_img, body {
 	z-index: -2;
 } .background, .showcase {
 	z-index: -1;
@@ -304,28 +310,6 @@ footer {
 	transition: none !important;
 }
 
-::-webkit-scrollbar {
-	width: 4px;
-}
-
-::-webkit-scrollbar-track {
-	background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-	background: rgba(30, 30, 30, 0.5);
-	border-radius: 2px;
-	transition: background-color 300ms;
-} body.dark ::-webkit-scrollbar-thumb {
-	background: rgba(255, 255, 255, 0.75);
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: rgba(30, 30, 30, 0.75);
-} body.dark ::-webkit-scrollbar-thumb:hover {
-	background: rgba(255, 255, 255, 0.5);
-}
-
 .content {
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -335,9 +319,9 @@ footer {
 	right: 0;
 	bottom: 0;
 	margin: 0px;
-	transition: clip-path 200ms;
 	scrollbar-gutter: stable both-edges;
 	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: contain;
 }
 
 .background {
@@ -943,16 +927,23 @@ footer + hr {
 }
 
 @media (max-width: 767.9px) {
+	.octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
+		animation: none;
+	}
+	.octo-arm {
+		animation: octocat-wave 560ms ease-in-out;
+	}
+	.corner_svg {
+		height: 60px;
+		width: 60px;
+	}
+
 	.directory {
 		gap: 10px;
 	}
 
-	::-webkit-scrollbar {
-		width: 2px;
-	}
-
 	#crumb_navigation::-webkit-scrollbar {
-		height: 2px;
+		height: 3px;
 	}
 
 	#search_bar {

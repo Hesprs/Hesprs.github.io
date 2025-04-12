@@ -1,34 +1,33 @@
 html {
 	height: 0px;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow: hidden;
+} html::-webkit-scrollbar {
+	display: none;
 }
 
 body {
+	display: flex;
+	justify-content: center;
 	margin: 0px;
 	font-family: Jost;
-	display: flex;
-	align-items: center;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
+	position: absolute;
+	overflow-y: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	color: rgb(60, 60, 60);
-    z-index: -2;
-	flex-direction: column;
-	background-size: cover !important;
+	scrollbar-gutter: stable both-edges;
+	overscroll-behavior: contain;
+	scroll-behavior: smooth;
 } body.dark {
 	color: rgb(255, 255, 255);
 } body * {
 	font-size: calc(15px + 0.2vw);
 } body.non_transition *, body.non_transition {
 	transition: none !important;
-}
-
-body, main {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-} body::-webkit-scrollbar, main::-webkit-scrollbar {
-    display: none;
 }
 
 .center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em {
@@ -38,14 +37,14 @@ body, main {
 }
 
 main {
-	padding: 1px 11px 5px 11px;
-	overflow: scroll;
-	width: calc(100% - 22px);
+	padding: 1px 11px 1px 11px;
+	height: fit-content;
 	scroll-behavior: smooth;
+	width: calc(100% - 22px);
 } main.normal_padding {
 	padding: 15px 11px;
 } main.top_padding {
-	padding: 15px 11px 5px 11px;
+	padding: 15px 11px 1px 11px;
 } main.bottom_padding {
 	padding: 1px 11px 15px 11px;
 }
@@ -197,33 +196,23 @@ img {
 }
 
 @media (max-width: 768px) {
-	.octo-body:hover + .octo-arm, .corner:hover ~ .octo-arm, .octo-arm:hover {
-		animation: none;
-	}
-	.octo-arm {
-		animation: octocat-wave 560ms ease-in-out;
-	}
-	.corner_svg {
-		height: 60px;
-		width: 60px;
-	}
-
 	main {
-		padding: 1px 8px 1px 8px;
-		width: calc(100% - 16px);
+		padding: 1px 7px 1px 7px;
+		width: calc(100% - 14px);
 	} main.normal_padding {
-		padding: 10px 8px;
-		min-height: calc(100% - 20px);
+		padding: 10px 7px;
 	} main.top_padding {
-		padding: 10px 8px 1px 8px;
-		min-height: calc(100% - 11px);
+		padding: 10px 7px 1px 7px;
 	} main.bottom_padding {
-		padding: 1px 8px 10px 8px;
-		min-height: calc(100% - 11px);
+		padding: 1px 7px 10px 7px;
 	}
 
 	hr {
 		margin: 10px 0px;
+	}
+
+	::-webkit-scrollbar {
+		width: 3px !important;
 	}
 }
 
@@ -242,6 +231,7 @@ em {
 @supports not (scrollbar-gutter: stable both-edges) {
     main {
 		padding: 1px 15px 5px 15px;
+		width: calc(100% - 30px);
 	} main.normal_padding {
 		padding: 15px;
 	} main.top_padding {
@@ -249,4 +239,41 @@ em {
 	} main.bottom_padding {
 		padding: 1px 15px 15px 15px;
 	}
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(30, 30, 30, 0.5);
+	border-radius: 2px;
+	transition: background-color 300ms;
+} body.dark ::-webkit-scrollbar-thumb, body.dark::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.75);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(30, 30, 30, 0.75);
+} body.dark ::-webkit-scrollbar-thumb:hover, body.dark::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+  
+ul li {
+	padding-left: 16px;
+	text-indent: -16px;
+}
+  
+ul li::before {
+	content: "✦";
+	padding-right: 8px;
 }

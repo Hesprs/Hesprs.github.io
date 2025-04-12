@@ -27,13 +27,7 @@ body {
   bottom: 0;
   overflow: hidden;
 }
-html {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  overflow: hidden;
-} html::-webkit-scrollbar {
-  display: none;
-}
+
 .poster {
   color: #ffffff;
   text-align: center;
@@ -89,7 +83,7 @@ ul {
   font-weight: 500;
   font-size: calc(10px + 1.5vw);
   position: absolute;
-  bottom: 0px;
+  bottom: 15px;
   text-shadow: 2px 2px 3px black;
   text-align: center;
   width: 100%;

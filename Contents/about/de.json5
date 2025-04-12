@@ -43,7 +43,8 @@
             <li>Vergrößerungseffekt beim Überfahren von Artikelkarten hinzufügen;</li>\
             <li>Ein neues Werkzeug "Tischbewertung" hinzufügen;</li>\
             <li>Fehlerbehebung bei verdrehter und abgeschnittener Brotkrümelnavigation bei übermäßiger Breite durch Hinzufügen einer horizontalen Scrollleiste;</li>\
-            <li>Fehlerbehebung bei falscher Scrollleistenbreite in Safari.</li>\
+            <li>Fehlerbehebung bei falscher Scrollleistenbreite in Safari;</li>\
+            <li>Behebung des Fehlers, dass die Scrollleiste in "8values" nicht angezeigt wird.</li>\
         </ol>\
         <h4>V 2.2.0 &nbsp; 06.04.2025</h4>\
         <ol>\
