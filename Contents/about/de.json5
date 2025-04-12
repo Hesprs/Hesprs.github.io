@@ -33,13 +33,25 @@
         <p style="text-align: center;" id="8values_redirect" class="fake_a">Von 8values, klicken Sie hier, um den Test selbst durchzuführen.</p>\
         <hr />\
         <h1>Update-Log</h1>\
+        <h4>V 2.3.0 &nbsp; 12.04.2025</h4>\
+        <ol>\
+            <li>Alle Artikel in die Kategorie "Artikel" verschieben und eine neue Kategorie "Werkzeuge" erstellen, wobei "8values" dorthin verschoben wird;</li>\
+            <li>Einen neuen Artikel "Cyber-Poster für The Importance of Being Earnest" zur Unterkategorie "Lernen" hinzufügen;</li>\
+            <li>Responsives Design für "Cyber-Poster für The Importance of Being Earnest" implementieren;</li>\
+            <li>Den Titel der Website in "Hēsperus Zufluchtsort" ändern;</li>\
+            <li>Logik zur Artikelanfragebearbeitung optimieren;</li>\
+            <li>Vergrößerungseffekt beim Überfahren von Artikelkarten hinzufügen;</li>\
+            <li>Ein neues Werkzeug "Tischbewertung" hinzufügen;</li>\
+            <li>Fehlerbehebung bei verdrehter und abgeschnittener Brotkrümelnavigation bei übermäßiger Breite durch Hinzufügen einer horizontalen Scrollleiste;</li>\
+            <li>Fehlerbehebung bei falscher Scrollleistenbreite in Safari.</li>\
+        </ol>\
         <h4>V 2.2.0 &nbsp; 06.04.2025</h4>\
         <ol>\
             <li>Hinzufügen einer schmalen Scrollleiste für Artikel;</li>\
             <li>Entfernen der schwebenden Titelleiste aufgrund von Inkompatibilität mit Safari, stattdessen Hinzufügen einer festen Titelleiste;</li>\
             <li>Erstellen eines kompakteren Layouts für Nutzer mit kleinen Bildschirmen;</li>\
             <li>Verschieben des GitHub-Badges in die linke untere Ecke, um Überlappungen mit Titelleiste oder Scrollleiste zu vermeiden;</li>\
-            <li>Hinzufügen eines Download-Links für "Die Befreiten Liebe" (Englisch) in der Titelleiste;</li>\
+            <li>Hinzufügen von Download-Links für "Befreite Liebesbeziehung" in der Titelleiste;</li>\
             <li>Behebung des Fehlers, bei dem die Download-Icons in Safari nicht rechtsbündig ausgerichtet sind;</li>\
             <li>Durchführung kleinerer Suchmaschinenoptimierungen.</li>\
         </ol>\

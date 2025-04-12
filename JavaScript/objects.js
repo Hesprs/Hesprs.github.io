@@ -4,7 +4,6 @@ const articles = {
         'zh-Hans': '主页',
         de: 'Homepage',
         address: 'homepage',
-        //directory: ['learning', 'humanities', 'development', 'others', 'about'],
         languages: ['en', 'zh-Hans', 'de'],
         introduction: {
             en: 'Welcome to the personal blog of Hēsperus, whose aim is to create a website with high quality content, up-to-date aesthetics, and immersive personalized experience.',
@@ -14,12 +13,42 @@ const articles = {
         hide: true,
     },
 
+    articles: {
+        en: 'Articles',
+        'zh-Hans': '文章',
+        de: 'Artikel',
+        address: 'articles',
+        directory: ['learning', 'humanities', 'development', 'others'],
+        languages: ['en', 'zh-Hans', 'de'],
+        introduction: {
+            en: 'This is a collection of blog articles that Hēsperus has written.',
+            'zh-Hans': '这里是Hēsperus所写的一些博客文章。',
+            de: 'Dies ist eine Sammlung von Blogartikeln, die Hēsperus geschrieben hat.'
+        },
+        hide: true,
+    },
+
+    tools: {
+        en: 'Tools',
+        'zh-Hans': '工具',
+        de: 'Werkzeuge',
+        address: 'tools',
+        directory: ['8values', 'desk_scoring'],
+        languages: ['en', 'zh-Hans', 'de'],
+        introduction: {
+            en: 'This is a collection of tools that Hēsperus has developed.',
+            'zh-Hans': '这里是Hēsperus所开发的一些工具。',
+            de: 'Dies ist eine Sammlung von Werkzeugen, die von Hēsperus entwickelt wurden.'
+        },
+        hide: true,
+    },
+
     learning: {
         en: 'Learning',
         'zh-Hans': '求知',
         de: 'Lernen',
-        address: 'learning',
-        directory: ['radicals', 'save_power'],
+        address: 'articles/learning',
+        directory: ['radicals', 'ernest', 'save_power'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/35fe849d2c1dae5dc3af76c1144e0dbe',
         introduction: {
             en: 'The blogger regards this as the most frequently used category, which he wants to squeeze all the nuanced school assignments and learning notes in. Two reasons include getting all the finished works away from his desktop and seeking a new residence.',
@@ -33,8 +62,8 @@ const articles = {
         en: 'Humanities',
         'zh-Hans': '人文',
         de: 'Geistes',
-        address: 'humanities',
-        directory: ['lovership', 'fascist_propaganda', '8values'],
+        address: 'articles/humanities',
+        directory: ['lovership', 'fascist_propaganda'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a',
         introduction: {
             en: 'The Humanities are the fruit throughout the epic evolution of human intelligence, often including literature, sociology, economics, politics, art, history, philosophy and so on, serving as beacons of human progress.',
@@ -48,7 +77,7 @@ const articles = {
         en: 'Development',
         'zh-Hans': '开发',
         de: 'Entwicklung',
-        address: 'development',
+        address: 'articles/development',
         directory: ['build_website'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/9b0dba5ba3f7b67bb99a492fb10a179d',
         introduction: {
@@ -63,7 +92,7 @@ const articles = {
         en: 'Others',
         'zh-Hans': '其他',
         de: 'Andere',
-        address: 'others',
+        address: 'articles/others',
         directory: ['moonstone'],
         thumbnail: 'https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg',
         introduction: {
@@ -87,7 +116,7 @@ const articles = {
         en: 'Moonstone (Aphroselene)',
         'zh-Hans': '月长石 (阿芙罗塞勒涅)',
         de: 'Mondstein (Aphroselene)',
-        address: 'others/moonstone',
+        address: 'articles/others/moonstone',
         languages: ['en', 'zh-Hans', 'de'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/866691c4462ffcf585df787d0c60d6d2',
     },
@@ -96,7 +125,7 @@ const articles = {
         en: 'Dictionary of Radicals',
         'zh-Hans': '词根大典',
         de: 'Wortstamm-Wörterbuch',
-        address: 'learning/radicals',
+        address: 'articles/learning/radicals',
         languages: ['en'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/4d53269914fa8697a9d456bd770b0377',
     },
@@ -105,7 +134,7 @@ const articles = {
         en: 'How Fascists Propagate',
         'zh-Hans': '法西斯如何蛊惑人心',
         de: 'Wie Faschisten Propagieren',
-        address: 'humanities/fascist_propaganda',
+        address: 'articles/humanities/fascist_propaganda',
         languages: ['en', 'zh-Hans', 'de'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/52f7b856ccd492df8dbaf0c13b032ed6',
     },
@@ -114,7 +143,7 @@ const articles = {
         en: 'Save Ppower Icon',
         'zh-Hans': '节约能源图标',
         de: 'Energiesparsymbol',
-        address: 'learning/save_power',
+        address: 'articles/learning/save_power',
         languages: ['en'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/ae595ef56efb548dfd6861ff3d6dc986',
     },
@@ -123,7 +152,7 @@ const articles = {
         en: 'Build a Website for Free',
         'zh-Hans': '免费搭建网站',
         de: 'Eine Website Kostenlos Erstellen',
-        address: 'development/build_website',
+        address: 'articles/development/build_website',
         languages: ['en', 'zh-Hans', 'de'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/98bb1f17d8f1c0ca92e137022750d952',
     },
@@ -132,7 +161,7 @@ const articles = {
         en: 'Ideology Test',
         'zh-Hans': '价值观测试',
         de: 'Ideologie-Test',
-        address: 'humanities/8values',
+        address: 'tools/8values',
         iframe: 'https://github.com/8values/8values.github.io', 
         languages: ['en', 'zh-Hans'],
         introduction: {
@@ -147,9 +176,35 @@ const articles = {
         en: 'The Liberated Lovership',
         'zh-Hans': '解放恋爱论',
         de: 'Die Befreiten Liebe',
-        address: 'humanities/lovership',
+        address: 'articles/humanities/lovership',
         languages: ['en', 'zh-Hans'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d',
+    },
+
+    desk_scoring: {
+        en: 'Desk Scoring',
+        'zh-Hans': '桌椅评分',
+        de: 'Tischbewertung',
+        address: 'tools/desk_scoring',
+        iframe: '',
+        languages: ['en'],
+        introduction: {
+            en: 'This is a tool to mark the chair-over-desk condition.',
+        },
+        thumbnail: 'https://img1.tucang.cc/api/image/show/8ce4ecaa39f360dda0ab1d09529337c7',
+    },
+
+    ernest: {
+        en: 'Cyber Poster for The Importance of Being Earnest',
+        'zh-Hans': 'The Importance of Being Earnest 的赛博海报',
+        de: 'Cyber-Poster für The Importance of Being Earnest',
+        address: 'articles/learning/ernest',
+        iframe: '',
+        languages: ['en'],
+        introduction: {
+            en: 'This is a poster for The Importance of Being Earnest made by Hēsperus for the sake of a winter holiday homework.',
+        },
+        thumbnail: 'https://img1.tucang.cc/api/image/show/d22076f6a5ce8cf0879a26a7b4d01134',
     },
 };
 
@@ -264,9 +319,9 @@ const translation = {
         de: 'Katalog'
     },
     this_article_is_only_available_in: {
-        en: 'This article is only available in: ',
-        'zh-Hans': '此文仅有以下译本: ',
-        de: 'Dieser Artikel ist nur verfügbar in: '
+        en: 'This article is only available in ',
+        'zh-Hans': '此文仅有以下译本 ',
+        de: 'Dieser Artikel ist nur verfügbar in '
     },
     dot: {
         en: '. ',
@@ -302,9 +357,9 @@ const translation = {
         de: 'Klicken Sie Irgendwo, um Fortzufahren'
     },
     hesperus_blog: {
-        en: 'Hēsperus\' Blog',
-        'zh-Hans': 'Hēsperus 的博客',
-        de: 'Hēsperus Blog'
+        en: 'Hēsperus\' Sanctuary',
+        'zh-Hans': 'Hēsperus 的庇护所',
+        de: 'Hēsperus Zufluchtsort'
     }
 };
 

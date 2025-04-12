@@ -33,13 +33,25 @@
         <p style="text-align: center;" id="8values_redirect" class="fake_a">From 8values, click me to take the test for yourself.</p>\
         <hr />\
         <h1>Update Log</h1>\
+        <h4>V 2.3.0 &nbsp; 12.4.2025</h4>\
+        <ol>\
+            <li>Move all the articles to the "articles" categroy, creating a new categroy "tools", moving "8values" to it;</li>\
+            <li>Add a new article, "Cyber Poster for The Importance of Being Earnest" to the "Learning" sub-category;</li>\
+            <li>Conduct responsive design to "Cyber Poster for The Importance of Being Earnest";</li>\
+            <li>Change the title of the website to "Hēsperus\' Sanctuary";</li>\
+            <li>Optimize resolving article request logic;</li>\
+            <li>Add magnify effects when hovering article cards;</li>\
+            <li>Add a new tool "Desk Scoring";</li>\
+            <li>Fix the bug of twisted and clipped crumb navigation when its width is excessive by adding a horizontal scroll bar.</li>\
+            <li>Fix the bug of content scrollbar gutter width error in Safari.</li>\
+		</ol>\
         <h4>V 2.2.0 &nbsp; 6.4.2025</h4>\
         <ol>\
             <li>Add a thin scroll bar for articles;</li>\
             <li>Remove the floating title bar for it is incompatible in Safari, adding a sticky title bar instead;</li>\
             <li>Create a more compact layout for small screen users;</li>\
             <li>Move the GitHub badge to left-bottom corner in case it covers title bar or scroll bar;</li>\
-            <li>Add download a link for "Liberated Lovership" (English) in the title bar;</li>\
+            <li>Add download links for "Liberated Lovership" in the title bar;</li>\
             <li>Fix the bug that the download icons are not aligned to right in Safari;</li>\
             <li>Conduct a small amount of search engine optimization.</li>\
 		</ol>\

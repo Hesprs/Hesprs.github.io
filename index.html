@@ -5,7 +5,7 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<meta name='author' content='Hēsperus'>
 	<meta name='description' content=''>
-	<title>Hēsperus' Blog</title>
+	<title></title>
 	<link rel='stylesheet' href='CSS/style.css'>
 	<link rel='stylesheet' href='CSS/toggler.css'>
 	<link rel='stylesheet' href='CSS/pop_up.css'>
@@ -17,13 +17,11 @@
 	<input type='radio' id='en' name='language' value='en'>
 	<input type='radio' id='zh-Hans' name='language' value='zh-Hans'>
 	<input type='radio' id='de' name='language' value='de'>
-	<input type='radio' id='homepage' name='category' value='homepage'>
-	<input type='radio' id='learning' name='category' value='learning'>
-	<input type='radio' id='humanities' name='category' value='humanities'>
-	<input type='radio' id='development' name='category' value='development'>
-	<input type='radio' id='others' name='category' value='others'>
-	<input type='radio' id='about' name='category' value='about'>
 	<input type='checkbox' id='dn'>
+	<input type='radio' id='homepage' name='category' value='homepage'>
+	<input type='radio' id='articles' name='category' value='articles'>
+	<input type='radio' id='tools' name='category' value='tools'>
+	<input type='radio' id='about' name='category' value='about'>
 	<img id='background_img' alt='background image' class='background_img'>
 	<div class='centerer'  id='warning_bar'>
 		<div class='warning_bar clickable shadow' id='warning_bar_wrapper'>
@@ -70,43 +68,29 @@
 			<div class='sidenav_wrapper'>
 				<label for='homepage' class='entry clickable' id='homepage_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' id='homepage_icon'>
-						<dir class='center_text' id='text_homepage'></dir>
+						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' id='homepage_icon' />
+						<div class='center_text' id='text_homepage'></div>
 					</div>
 				</label>
 				<div class='division'></div>
-				<label for='learning' class='entry clickable' id='learning_label'>
+				<label for='articles' class='entry clickable' id='articles_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/quill-with-ink.png' alt='learning' id='learning_icon'>
-						<dir class='center_text' id='text_learning'></dir>
+						<img class='icon' src='https://img.icons8.com/fluency/100/torah.png' alt='articles' id='articles_icon' />
+						<div class='center_text' id='text_articles'></div>
 					</div>
 				</label>
 				<div class='division'></div>
-				<label for='humanities' class='entry clickable' id='humanities_label'>
+				<label for='tools' class='entry clickable' id='tools_label'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/mona-lisa.png' alt='humanities' id='humanities_icon'>
-						<dir class='center_text' id='text_humanities'></dir>
+						<img class='icon' src='https://img.icons8.com/fluency/100/swiss-army-knife.png' alt='tools' id='tools_icon' />
+						<div class='center_text' id='text_tools'></div>
 					</div>
 				</label>
 				<div class='division'></div>
-				<label for='development' class='entry clickable' id='development_label'>
-					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/macbook-settings.png' alt='development' id='development_icon'>
-						<dir class='center_text' id='text_development'></dir>
-					</div>
-				</label>
-				<div class='division'></div>
-				<label for='others' class='entry clickable' id='others_label'>
-					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/oat-milk.png' alt='others' id='others_icon'>
-						<dir class='center_text' id='text_others'></dir>
-					</div>
-				</label>
-				<div class='division'></div>
-				<label for='about' class='entry clickable lower' id='about_label'>
+				<label for='about' class='entry clickable' id='about_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' id='about_icon'>
-						<dir class='center_text' id='text_about'></dir>
+						<div class='center_text' id='text_about'></div>
 					</div>
 				</label>
 			</div>
@@ -114,7 +98,7 @@
 				<div class='entry clickable' id='previous_center'>
 					<div class='label_wrapper'  style='border-radius: 10px 10px 0px 0px;'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous' style='height: 30px; width:30px;'>
-						<dir class='center_text' id='text_previous_center' style='direction: rtl; margin: auto 0px auto auto;'></dir>
+						<div class='center_text' id='text_previous_center' style='direction: rtl; margin: auto 0px auto auto;'></div>
 					</div>
 				</div>
 				<div class='division show'></div>
@@ -127,7 +111,7 @@
 				</div>
 			</div>
 			<div class='sidenav_wrapper' style='margin: auto 0px 0px auto;'>
-				<div class='music_container upper' id='music_container'>
+				<div class='music_container' id='music_container'>
 					<div class='label_wrapper' style='min-height: 80px; flex-direction: column;'>
 						<div style='margin: 0px; display: flex; height: 30px;'>
 							<img class='icon' src='https://img.icons8.com/fluency/100/lyre.png' alt='music-cover' id='music_cover'/>
@@ -163,7 +147,7 @@
 					</div>
 				</div>
 				<div class='division'></div>
-				<label class='entry clickable lower' id='day_night' for='dn' style='display: flex; align-items: center; justify-content: center; text-align: center;'>
+				<label class='entry clickable' id='day_night' for='dn' style='display: flex; align-items: center; justify-content: center; text-align: center;'>
 					<div class='label_wrapper' style='min-width: 0px;'>
 						<div class='text_light' id='text_light'></div>
 						<div class='toggleWrapper fancy_color' id='toggleWrapper'>

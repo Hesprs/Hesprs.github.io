@@ -38,20 +38,16 @@ body, main {
 }
 
 main {
-	padding: 1px 11px 1px 11px;
+	padding: 1px 11px 5px 11px;
 	overflow: scroll;
-	min-height: calc(100% - 2px);
 	width: calc(100% - 22px);
 	scroll-behavior: smooth;
 } main.normal_padding {
 	padding: 15px 11px;
-    min-height: calc(100% - 30px);
 } main.top_padding {
-	padding: 15px 11px 1px 11px;
-    min-height: calc(100% - 16px);
+	padding: 15px 11px 5px 11px;
 } main.bottom_padding {
 	padding: 1px 11px 15px 11px;
-    min-height: calc(100% - 16px);
 }
 
 hr {
@@ -241,4 +237,16 @@ em {
 	color: rgb(18, 164, 130);
 } body.dark em {
 	color: rgb(90, 255, 178);
+}
+
+@supports not (scrollbar-gutter: stable both-edges) {
+    main {
+		padding: 1px 15px 5px 15px;
+	} main.normal_padding {
+		padding: 15px;
+	} main.top_padding {
+		padding: 15px 15px 5px 15px;
+	} main.bottom_padding {
+		padding: 1px 15px 15px 15px;
+	}
 }

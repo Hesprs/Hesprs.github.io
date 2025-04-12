@@ -33,13 +33,25 @@
         <p style="text-align: center;" id="8values_redirect" class="fake_a">来自8values，点击此处亲自测试。</p>\
         <hr />\
         <h1>更新日志</h1>\
+        <h4>V 2.3.0 &nbsp; 2025年4月12日</h4>\
+        <ol>\
+            <li>将所有文章移至"文章"分类，新建"工具"分类并将"8values"移至该分类；</li>\
+            <li>在"学习"子分类新增《The Importance of Being Earnest 的赛博海报》文章；</li>\
+            <li>为《The Importance of Being Earnest 的赛博海报》实施响应式设计；</li>\
+            <li>将网站标题更改为"Hēsperus的庇护所"；</li>\
+            <li>优化文章请求处理逻辑；</li>\
+            <li>为文章卡片添加悬停放大效果；</li>\
+            <li>新增"桌椅评分"工具；</li>\
+            <li>通过添加横向滚动条修复面包屑导航在宽度过大时扭曲截断的问题；</li>\
+            <li>修复Safari中内容滚动条边距宽度错误的问题。</li>\
+        </ol>\
         <h4>V 2.2.0 &nbsp; 2025年4月6日</h4>\
         <ol>\
             <li>为文章添加细滚动条；</li>\
             <li>移除悬浮标题栏(因Safari不兼容)，改为固定定位标题栏；</li>\
             <li>为小屏幕用户创建更紧凑的布局；</li>\
             <li>将GitHub徽章移至左下角防止遮挡标题栏或滚动条；</li>\
-            <li>在标题栏添加《解放恋爱论》(英文版)下载链接；</li>\
+            <li>在标题栏添加《解放恋爱论》下载链接；</li>\
             <li>修复Safari浏览器中下载图标未右对齐的问题；</li>\
             <li>实施少量搜索引擎优化。</li>\
         </ol>\

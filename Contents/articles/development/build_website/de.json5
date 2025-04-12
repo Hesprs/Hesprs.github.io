@@ -1,0 +1,48 @@
+{
+    introduction: 'Der Inhalt ist ein Schritt-für-Schritt-Leitfaden, wie man eine kostenlose persönliche Website mit GitHub Pages erstellt, abgedeckt von der Anmeldung bei GitHub bis zur Bereitstellung und Optimierung der Seite.',
+    content: '\
+        <h2>Überblick</h2>\
+        <p>Ein Blog wird verwendet, um <strong>Lebensmomente aufzuzeichnen</strong> und Einsichten zu teilen (hauptsächlich um den strengen <strong>Inhaltsmoderationen</strong> in sozialen Medien auszuweichen). Für Anfänger kann das Einrichten eines Blogs jedoch sehr mühsam sein, da es das Kaufen eines Servers, den Kauf einer Domain, die Konfiguration der Umgebung, die Registrierung eines Zertifikats und sogar die Abgabe einer Meldung beim Staat erfordert.</p>\
+        <p>Wir werden <strong>GitHub</strong> verwenden, die weltweit größte Plattform für Code-Hosting (es benötigt keinen VPN, wenn Ihre Internetverbindung gut genug ist). Viele Open-Source-Projekte sind dort verfügbar. Seit Microsoft GitHub übernommen hat, ist seine Stabilität garantiert.</p>\
+        <hr />\
+        <h2>Ablauf</h2>\
+        <h3>1. Registrieren Sie sich bei GitHub</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/113010b318eeb9c8da6403e8c6dc3ce6" alt="Anmelden" />\
+        <p>Melden Sie sich bei <a href="https://github.com/">https://github.com</a> an. Geben Sie Ihren Benutzernamen, Ihre E-Mail und Ihr Passwort ein und bestätigen Sie Ihre E-Mail-Adresse.</p>\
+        <h3>2. Erstellen Sie ein neues Repository</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/bbafb398935a68e8a91fc76d893b6884" alt="Erstellen eines Repositories" />\
+        <p>Klicken Sie auf das <strong>"+"</strong>-Symbol in der oberen rechten Ecke und wählen Sie <strong>"Neues Repository"</strong>, um ein neues Repository zu erstellen.</p>\
+        <h3>3. Geben Sie dem Repository einen Namen</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/ecf97aa545d470aa856933a79412151c" alt="Benennen des Repositories" />\
+        <p>In das Feld <strong>Repository name</strong> geben Sie den Namen Ihres Repositorys als <strong>(Ihr GitHub-Benutzername).github.io</strong> ein (dies wird Ihre Domain sein). Behalten Sie alle anderen Optionen standardmäßig bei und klicken Sie auf <strong>"Repository erstellen"</strong>.</p>\
+        <h3>4. Erstellen Sie einen Codespace</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/cd442448e9c358b3e6ffecfdfc68e97c" alt="Starten eines Codespaces" />\
+        <p>Nachdem Sie auf die Repository-Seite gekommen sind, klicken Sie auf <strong>"Einen Codespace erstellen"</strong> und bestätigen Sie (dieser Prozess kann etwas Zeit in Anspruch nehmen).</p>\
+        <h3>5. Erstellen Sie eine HTML-Datei</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/86c757b84f344d2c8def335f9de13522" alt="index.html" />\
+        <p>Auf Ihrem Computer erstellen Sie bitte eine neue Textdatei namens <strong>index.txt</strong> und schreiben Sie einige grundlegende HTML-Codes hinein. Speichern Sie dann die Datei und ändern Sie die Erweiterung in <strong>.html</strong>.</p>\
+        <h3>6. Laden Sie die Datei auf GitHub hoch</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/912108582d6a5fce0b88db6f7cede887" alt="Hochladen der Datei" />\
+        <p>Ziehen Sie Ihre <strong>index.html</strong>-Datei in die Webpage Ihres GitHub-Repositories und klicken Sie unten auf <strong>"Änderungen committen"</strong>.</p>\
+        <h3>7. Aktivieren Sie GitHub Pages</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/0a3d24dfa120ad0645e33bfcdb7395b8" alt="Aktivieren von GitHub Pages" />\
+        <p>Gehen Sie zu <strong>Einstellungen - Seiten</strong>, ändern Sie die <strong>Branch</strong>-Option von <strong>Keiner</strong> auf <strong>Haupt</strong> und klicken Sie auf <strong>"Speichern"</strong>. Warten Sie etwa eine Minute auf die Bereitstellung.</p>\
+        <h3>8. Bestätigen Sie die Bereitstellung</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/446ca4a5939cd1c8b29737334b043453" alt="Seite wurde erstellt" />\
+        <p>Aktualisieren Sie die Seite und Sie sollten eine Erfolgsmeldung sehen.</p>\
+        <h3>9. Besuchen Sie Ihre Website</h3>\
+        <img src="https://img1.tucang.cc/api/image/show/8e94d942d48c21f7dff1ac37ec6c6dba" alt="Ergebnis" />\
+        <p>Öffnen Sie Ihren Browser und besuchen Sie <strong>(Ihr GitHub-Benutzername).github.io</strong> - Ihre Website ist jetzt online! Herzlichen Glückwunsch zum erfolgreichen Veröffentlichen Ihrer ersten persönlichen Website.</p>\
+        <hr />\
+        <h2>Fazit</h2>\
+        <p>Obwohl GitHub Pages kostenlos ist, gibt es einige Einschränkungen:</p>\
+        <ul>\
+            <li><strong>Größe des Repositorys:</strong> Begrenzt auf 1 GB</li>\
+            <li><strong>Einschränkung für einzelne Dateiuploads:</strong> 100 MB</li>\
+            <li><strong>Monatliches Bandbreitenlimit:</strong> 100 GB (was normalerweise ausreichend ist)</li>\
+        </ul>\
+        <p>Um die Leistung zu optimieren, empfehle ich dringend, einen nationalen <strong>Bildhosting-Dienst</strong> für das Speichern von Bildern zu verwenden. Dies reduziert die Belastung von GitHub, spart Speicherplatz und beschleunigt den Zugriff.</p>\
+        <p>Dieses Tutorial berührt nur die Oberfläche der Websitedevelopment. Um mehr Anpassung zu erreichen, sollten Sie <strong>CSS</strong> und <strong>JavaScript</strong> lernen. Dank der schnellen Fortschritte bei <strong>großen Sprachmodellen (LLMs)</strong> sieht die Zukunft der no-code Entwicklung sehr vielversprechend aus.</p>\
+        <p style="text-align: right;">Copyright ©️ Hēsperus</p>\
+    '
+}

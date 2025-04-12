@@ -84,7 +84,7 @@ search_bar.addEventListener('input', () => synchronize_search('side'));
 search_bar_center.addEventListener('input', () => synchronize_search('center'));
 dn.addEventListener('click', toggle_dark);
 document.getElementById('warning_bar_wrapper').addEventListener('click', warning_bar_clicked);
-document.addEventListener('keydown', enter_to_search);
+document.addEventListener('keydown', keydown);
 document.addEventListener('touchcancel', mouse_up);
 document.addEventListener('mousemove', throttledMouseMove);
 document.addEventListener('touchmove', throttledMouseMove);
@@ -100,6 +100,7 @@ function initialize() {
         current_page = 'homepage';
         detect_language();
     } else {
+        if (redirect === 'ernest.html') redirect = 'ernest';
         document.body.classList.add('slide', 'non_transition');
         setTimeout(() => {
             document.body.classList.remove('non_transition');
@@ -176,8 +177,8 @@ function toggle_dark() {
 
 function responsive_resize() {
     if (window.innerWidth >= 768) {
-        if (window.innerHeight < 620) {
-            if (window.innerHeight < 574) {
+        if (window.innerHeight < 526) {
+            if (window.innerHeight < 474) {
                 if (sidenav_fold_level !== 2) {
                     transition_or_not(0);
                     if (sidenav_fold_level === 0) {
@@ -216,7 +217,7 @@ function responsive_resize() {
             minimal_start();
             sidenav_fold_level = 1;
         }
-        if (window.innerWidth < 574) {
+        if (window.innerWidth < 474) {
             if (sidenav_fold_level !== 2) {
                 transition_or_not(1);
                 super_minimal_start();
@@ -368,28 +369,22 @@ function categories() {
     pop_up_title.innerHTML = translation.catalogue[language];
     let content = '', category;
     for (i = 0; i < entry_list.length; i ++) {
+        let src;
         let name = entry_list[i].value;
         if (entry_list[i].checked) {
             category = entry_list[i].value;
         }
-        if (name === 'about') {
-            content += `
-                <label for='about' class='demobox shadow color clickable' id='pop_up_about_label'>
-		    		<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
-		    		<div class='center_text' style='margin-left: 10px;'>${articles.about[language]}</div>
-		    	</label>
-            `;
-        } else {
-            content += `
-                <label for='${name}' class='demobox shadow color clickable' id='pop_up_${name}_label'>
-		    		<img class='icon' src='${document.getElementById(`${name}_icon`).src}' alt='${name}' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
-		    		<div class='center_text' style='margin-left: 10px;'>${document.getElementById(`text_${name}`).innerHTML}</div>
-		    	</label>
-            `;
-        }
+        if (name === 'about') { src = 'https://img.icons8.com/fluency/100/info-popup.png' }
+        else { src = document.getElementById(`${name}_icon`).src }
+        content += `
+            <label for='${name}' class='demobox shadow color clickable' id='pop_up_${name}_label'>
+				<img class='icon' src='${src}' alt='${name}' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
+				<div class='center_text' style='margin-left: 10px;'>${document.getElementById(`text_${name}`).innerHTML}</div>
+			</label>
+        `;
     }
     pop_up_content.innerHTML = `
-        <div style='display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 15px; margin: auto 0px auto 0px;'>
+        <div class='directory' style='margin: auto 0px;'>
             ${content}
         </div>
     `;
@@ -494,11 +489,7 @@ async function shift_title(title, entry = true, back = false) {
     current_page = title;
     layer = 1 - layer;
     const content = await resolve_url(entry);
-    if (content.introduction != undefined) {
-        modify_url(`/${language}/${current_page}`, content.introduction);
-    } else {
-        modify_url(`/${language}/${current_page}`);
-    }
+    modify_url(`/${language}/${current_page}`, content.introduction);
     const content_1 = document.getElementById(`content_${1 - layer}`);
     const content_0 = document.getElementById(`content_${layer}`);
     clearInterval(timer_interval);
@@ -508,9 +499,7 @@ async function shift_title(title, entry = true, back = false) {
         timer = 195 - timer;
     }
     setTimeout(() => {
-        if (content.warning != undefined) {
-            warn('alarm', content.warning);
-        }
+        if (content.warning != undefined) warn('alarm', content.warning);
         if (content.github == undefined) {
             github_corner.classList.remove('show');
         } else {
@@ -520,7 +509,7 @@ async function shift_title(title, entry = true, back = false) {
         content_0.scrollTo(0, 0);
         content_1.innerHTML = '';
         content_district.classList.toggle('slides');
-        if (current_page.includes('search=') || articles[current_page].iframe != undefined) {
+        if (content.type === 'search' || content.type === 'iframe') {
             content_0.innerHTML = `
                 <main class='${content.main_classes}' style='${content.main_styles}'>
                     ${content.content}
@@ -540,33 +529,42 @@ async function shift_title(title, entry = true, back = false) {
                     ${content.content}
                 </main>
             `;
-        }
-        if (articles[current_page] != undefined && articles[current_page].iframe == undefined) {
             crumb(articles[current_page].address, content.downloads);
         }
-        cover.style.opacity = 0;
-        content_district.style.opacity = 1;
-        cover.style.pointerEvents = 'none';
-        if (content.click_listeners != undefined) {
-            event_listeners(content.click_listeners.list, content.click_listeners.type);
+        if (content.type === 'iframe') {
+            content_0.style.scrollbarGutter = 'auto';
+            document.getElementById('iframe').contentWindow.addEventListener('DOMContentLoaded', () => {
+                cover.style.opacity = 0;
+                content_district.style.opacity = 1;
+                cover.style.pointerEvents = 'none';
+            });
+        } else {
+            content_0.style.scrollbarGutter = '';
+            cover.style.opacity = 0;
+            content_district.style.opacity = 1;
+            cover.style.pointerEvents = 'none';
         }
+        if (content.click_listeners != undefined) event_listeners(content.click_listeners.list, content.click_listeners.type);
     }, timer);
 }
 
 async function resolve_url(entry) {
-    let address, content, warning;
-    if (articles[current_page] == undefined || current_page === '404' || current_page.includes('search=')) {
+    let address, content, warning, type;
+    if (articles[current_page] == undefined || current_page.includes('search=')) {
         for (let i = 0; i < entry_list.length; i ++) {
             document.getElementById(entry_list[i].value).checked = false;
         }
         change_category();
         if (!current_page.includes('search=')) {
             address = `404/${language}.json5`;
+            type = '404';
         } else {
-            address = 'done';
+            type = 'search';
             content = search(current_page.replace('search=', ''));
             if (content === '404') {
                 address = `404/${language}.json5`;
+            } else {
+                address = 'done';
             }
         }
     } else {
@@ -575,61 +573,78 @@ async function resolve_url(entry) {
             change_category();
         }
         if (articles[current_page].directory != undefined) {
+            type = 'directory';
             address = 'done';
             content = compile_directory(articles[current_page].directory);
-        } else if (articles[current_page].iframe != undefined) {
+        } else {
+            let actual_language
             for (let i = 0; i < articles[current_page].languages.length; i ++) {
                 if (articles[current_page].languages[i] === language) {
-                    content = {
-                        content: `<iframe src='/Contents/${articles[current_page].address}/${language}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
-                        main_classes: 'main_empty',
-                    };
-                    address = 'done';
+                    actual_language = language;
                     break;
                 }
             }
-            if (address == undefined) {
+            if (actual_language == undefined) {
                 warning = language_warning();
-                address = 'done';
+                actual_language = articles[current_page].languages[0];
+            }
+            if (articles[current_page].iframe != undefined) {
+                type = 'iframe';
                 content = {
-                    content: `<iframe src='/Contents/${articles[current_page].address}/${articles[current_page].languages[0]}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></iframe>`,
+                    content: `<iframe src='/Contents/${articles[current_page].address}/${actual_language}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></ iframe>`,
                     main_classes: 'main_empty',
                 };
+                address = 'done';
+                if (articles[current_page].iframe !== '') content.github = articles[current_page].iframe;
+            } else {
+                type = 'article';
+                address = `${articles[current_page].address}/${actual_language}.json5`;
             }
-            if (articles[current_page].iframe !== '') {
-                content.github = articles[current_page].iframe;
-            }
-        } else {
-            for (let i = 0; i < articles[current_page].languages.length; i ++) {
-                if (articles[current_page].languages[i] === language) {
-                    address = `${articles[current_page].address}/${language}.json5`;
-                    break;
-                }
-            }
-            if (address == undefined) {
-                warning = language_warning();
-                address = `${articles[current_page].address}/${articles[current_page].languages[0]}.json5`;
-            }
-        }
+        } 
     }
     if (address !== 'done') {
         content = await fetch(`/Contents/${address}`);
         content = await content.text();
         content = JSON5.parse(content);
     }
-    if (warning != undefined) {
-        content.warning = warning;
+    if (warning != undefined) content.warning = warning;
+    if (content.main_styles == undefined) content.main_styles = '';
+    if (content.main_classes == undefined) content.main_classes = '';
+    if (content.downloads == undefined) content.downloads = '';
+    if (content.introduction == undefined) {
+        if (current_page.includes('search=')) {
+            content.introduction = translation.search_description[language] + current_page.replace('search=', '') + translation.search_description[`${language}2`];
+        } else if (articles[current_page] != undefined) {
+            if (articles[current_page].introduction[language] == undefined) {
+                content.introduction = Object.values(articles[current_page].introduction)[0];
+            } else {
+                content.introduction = articles[current_page].introduction[language];
+            }
+        } else { 
+            content.introduction = translation.not_found_description[language];
+        }
     }
-    if (content.main_styles == undefined) {
-        content.main_styles = '';
-    }
-    if (content.main_classes == undefined) {
-        content.main_classes = '';
-    }
-    if (content.downloads == undefined) {
-        content.downloads = '';
-    }
+    content.type = type;
     return content;
+}
+
+function modify_url(url = '', introduction) {
+    if (url.split('/')[2] !== 'homepage') {
+        let stateObj = { id: '100' }; 
+        window.history.replaceState(stateObj, 'Page 3', url);
+        if (current_page.includes('search=')) {
+            document.title = current_page.replace('search=', translation.search[language].replace('...', ': '));
+        } else if (articles[current_page] != undefined) {
+            document.title = articles[current_page][language];
+        } else { 
+            document.title = current_page;
+        }
+    } else {
+        let stateObj = { id: '100' }; 
+        window.history.replaceState(stateObj, 'Page 3', '/');
+        document.title = translation.hesperus_blog[language];
+    }
+    meta.description.content = introduction;
 }
 
 function language_warning() {
@@ -817,39 +832,6 @@ function dn_complete() {
     `;
 }
 
-function modify_url(url = '', introduction) {
-    if (url.split('/')[2] !== 'homepage') {
-        let stateObj = { id: '100' }; 
-        window.history.replaceState(stateObj, 'Page 3', url);
-        if (current_page.includes('search=')) {
-            document.title = current_page.replace('search=', translation.search[language].replace('...', ': '));
-        } else if (articles[current_page] != undefined) {
-            document.title = articles[current_page][language];
-        } else { 
-            document.title = current_page;
-        }
-    } else {
-        let stateObj = { id: '100' }; 
-        window.history.replaceState(stateObj, 'Page 3', '/');
-        document.title = translation.hesperus_blog[language];
-    }
-    if (introduction == undefined) {
-        if (current_page.includes('search=')) {
-            meta.description.content = translation.search_description[language] + current_page.replace('search=', '') + translation.search_description[`${language}2`];
-        } else if (articles[current_page] != undefined) {
-            if (articles[current_page].introduction[language] == undefined) {
-                meta.description.content = Object.values(articles[current_page].introduction)[0];
-            } else {
-                meta.description.content = articles[current_page].introduction[language];
-            }
-        } else { 
-            meta.description.content = translation.not_found_description[language];
-        }
-    } else {
-        meta.description.content = introduction;
-    }
-}
-
 function back() {
     if (second_pop_up) {
         settings();
@@ -977,7 +959,7 @@ function synchronize_search(subject) {
     }
 }
 
-function enter_to_search(event) {
+function keydown(event) {
     if (event.key === 'Enter') {
         search_clicked();
     }

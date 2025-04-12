@@ -87,6 +87,7 @@ body {
 	display: flex;
 	width: fit-content;
 	gap: 5px;
+	margin-left: 8px;
 }
 
 .crumb, .warning, .text_dark, .text_light, #search_bar {
@@ -304,7 +305,6 @@ footer {
 
 ::-webkit-scrollbar {
 	width: 4px;
-	overflow: visible;
 }
 
 ::-webkit-scrollbar-track {
@@ -469,6 +469,7 @@ footer {
 .crumb {
 	font-weight: 500;
 	line-height: 17px;
+	text-wrap: nowrap;
 }
 
 .theme_color {
@@ -489,6 +490,11 @@ footer {
 	align-items: center;
 	padding: 0px;
 	font-weight: 400;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+} #crumb_navigation::-webkit-scrollbar {
+	height: 4px;
 }
 
 .icon {
@@ -704,8 +710,12 @@ article {
 	position: relative;
     flex: 1 1 200px;
 	min-width: 200px;
+} article img {
+	transition: transform 300ms;
 } article:hover .overlay {
 	opacity: 0;
+} article:hover img {
+	transform: scale(1.1);
 }
 
 .overlay {
@@ -870,7 +880,7 @@ footer + hr {
 		pointer-events: none;
 	}
 
-	@media (max-height: 619.9px) {
+	@media (max-height: 525.9px) {
 		.stretch_bar_wrapper,
 		.stretch_bar {
 			pointer-events: none;
@@ -938,6 +948,10 @@ footer + hr {
 
 	::-webkit-scrollbar {
 		width: 2px;
+	}
+
+	#crumb_navigation::-webkit-scrollbar {
+		height: 2px;
 	}
 
 	#search_bar {

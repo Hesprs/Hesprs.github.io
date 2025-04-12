@@ -7,8 +7,12 @@
                 <div class="overlay">价值观测试</div>\
             </article>\
             <article class="shadow" id="lovership_redirect">\
-                <img src="https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d" alt="R evoL ution"    class="background_img" />\
+                <img src="https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d" alt="R evoL ution" class="background_img" />\
                 <div class="overlay">解放恋爱论</div>\
+            </article>\
+            <article class="shadow" id="ernest_redirect">\
+                <img src="https://img1.tucang.cc/api/image/show/d22076f6a5ce8cf0879a26a7b4d01134" alt="The Importance of Being Earnest" class="background_img" />\
+                <div class="overlay">The Importance of Being Earnest 的赛博海报</div>\
             </article>\
             <article class="shadow" id="fascist_propaganda_redirect">\
                 <img src="https://img1.tucang.cc/api/image/show/52f7b856ccd492df8dbaf0c13b032ed6" alt="fascist"   class="background_img"/>\
@@ -42,10 +46,6 @@
                 <img src="https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg" alt="Others" class="background_img" />\
                 <div class="overlay">其他</div>\
             </article>\
-            <article class="shadow" id="about_redirect">\
-                <img src="https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23" alt="About" class="background_img" />\
-                <div class="overlay">关于</div>\
-            </article>\
         </div>\
     ',
     main_classes: 'bottom_padding',
@@ -54,6 +54,7 @@
         list: [
             '8values_redirect',
             'lovership_redirect',
+            'ernest_redirect',
             'fascist_propaganda_redirect',
             'build_website_redirect',
             'radicals_redirect',
@@ -61,7 +62,6 @@
             'humanities_redirect',
             'development_redirect',
             'others_redirect',
-            'about_redirect'
         ]
     }
 }

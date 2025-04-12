@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
+    <link href='../style.css' rel='stylesheet' type='text/css'>
+    <link href='/CSS/common.css' rel='stylesheet' type='text/css'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>8values</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <main>
+        <h1>8values</h1>
+        <hr>
+        <div class="center shadow" style="height: fit-content; width: calc(100% - 15px); max-width: 1000px; margin: auto;">
+            <div class="column">
+                <p class="labels">ECONOMIC</p>
+                <a href="#anchor"><img src="../value_images/equality.svg"></a>
+                <a href="#anchor"><img src="../value_images/markets.svg"></a>
+            </div>
+            <div class="column">
+                <p class="labels">DIPLOMATIC</p>
+                <a href="#anchor"><img src="../value_images/nation.svg"></a>
+                <a href="#anchor"><img src="../value_images/globe.svg"></a>
+            </div>
+            <div class="column">
+                <p class="labels">CIVIL</p>
+                <a href="#anchor"><img src="../value_images/liberty.svg"></a>
+                <a href="#anchor"><img src="../value_images/authority.svg"></a>
+            </div>
+            <div class="column">
+                <p class="labels">SOCIETAL</p>
+                <a href="#anchor"><img src="../value_images/tradition.svg"></a>
+                <a href="#anchor"><img src="../value_images/progress.svg"></a>
+            </div>
+        </div>
+        <button class="button shadow" onclick="location.href='instructions.html';" style="margin: 15px 0px;">Click here to start!</button>
+        <hr>
+        <h2>What is 8values?</h2>
+        <p>
+            8values is, in essence, a political quiz that attempts to assign percentages for eight different political values. You will be presented by a statement, and then you will answer with your opinion on the statement, from <b>Strongly Agree</b> to <b>Strongly Disagree</b>, with each answer slightly affecting your scores. At the end of the quiz, your answers will be compared to the maximum possible for each value, thus giving you a percentage. Answer honestly!<br />
+            There are <b><u><span id="numOfQuestions"></span></u></b> questions in the test.
+        </p>
+        <h2 id="anchor">What are the eight values?</h2>
+        <p>There are four independent axes - Economic, Diplomatic, Civil, and Society - and each has two opposing values assigned to them. They are:</p>
+        <div class="center shadow" style="height: fit-content; width: calc(100% - 15px); margin: auto; flex-direction: column;">
+            <div class="spacer">
+                <div class="explanation_blurb_left">
+                    <b style="color:#d32f2f;" class="value">EQUALITY</b>
+                    <p class="blurb-text">
+                        Those with higher Equality scores believe the economy should distribute value evenly among the populace. They tend to support progressive tax codes, social programs, and at high values, socialism.
+                    </p>
+                </div>
+                <div class="explanation_axis">
+                    <p class="labels">ECONOMIC</p>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 62"><path d="m24 36 12 9.29c2.83 2.02 10.16 6.67 11.16 9.88 1.44 4.66-3.54 6.27-7.16 5.53-3.39-.7-8.15-4.48-11-6.58L10 40.13C7.38 38.16 1.63 34.6 1.63 31s5.75-7.16 8.37-9.13L29 7.88C31.85 5.78 36.61 2 40 1.3c3.62-.74 8.6.87 7.16 5.53-1 3.21-8.33 7.86-11.16 9.88L24 26h154l-12-9.29c-2.83-2.02-10.16-6.67-11.16-9.88C153.4 2.17 158.38.56 162 1.3c3.39.7 8.15 4.48 11 6.58l19 13.99c2.62 1.97 8.37 5.53 8.37 9.13s-5.75 7.16-8.37 9.13l-19 13.99c-2.85 2.1-7.61 5.88-11 6.58-3.62.74-8.6-.87-7.16-5.53 1-3.21 8.33-7.86 11.16-9.88L178 36z"/></svg>
+                </div>
+                <div class="explanation_blurb_right">
+                    <b style="color:#00796b;" class="value">MARKETS</b>
+                    <p class="blurb-text">
+                        Those with higher Market scores believe the economy should be focused on rapid growth. They tend to support lower taxes, privatization, deregulation, and at high values, laissez-faire capitalism.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="spacer">
+                <div class="explanation_blurb_left">
+                    <b style="color:#f57c00;" class="value">NATION</b>
+                    <p class="blurb-text">
+                        Those with higher Nation scores are patriotic and nationalist. They often believe in an aggressive foreign policy, valuing the military, strength, sovereignty, and at high values, territorial expansion.
+                    </p>
+                </div>
+                <div class="explanation_axis">
+                    <p class="labels" class="value">DIPLOMATIC</p>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 62"><path d="m24 36 12 9.29c2.83 2.02 10.16 6.67 11.16 9.88 1.44 4.66-3.54 6.27-7.16 5.53-3.39-.7-8.15-4.48-11-6.58L10 40.13C7.38 38.16 1.63 34.6 1.63 31s5.75-7.16 8.37-9.13L29 7.88C31.85 5.78 36.61 2 40 1.3c3.62-.74 8.6.87 7.16 5.53-1 3.21-8.33 7.86-11.16 9.88L24 26h154l-12-9.29c-2.83-2.02-10.16-6.67-11.16-9.88C153.4 2.17 158.38.56 162 1.3c3.39.7 8.15 4.48 11 6.58l19 13.99c2.62 1.97 8.37 5.53 8.37 9.13s-5.75 7.16-8.37 9.13l-19 13.99c-2.85 2.1-7.61 5.88-11 6.58-3.62.74-8.6-.87-7.16-5.53 1-3.21 8.33-7.86 11.16-9.88L178 36z"/></svg>
+                </div>
+                <div class="explanation_blurb_right">
+                    <b style="color:#0288d1;" class="value">GLOBE</b>
+                    <p class="blurb-text">
+                        Those with higher Globe scores are cosmopolitan and globalist. They often believe in a peaceful foreign policy, emphasizing diplomacy, cooperation, integration, and at high values, a world government.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="spacer">
+                <div class="explanation_blurb_left">
+                    <b style="color:#fbc02d;" class="value">LIBERTY</b>
+                    <p class="blurb-text">
+                        Those with higher Liberty scores believe in strong civil liberties. They tend to support democracy and oppose state intervention in personal lives. Note that this refers to civil liberties, not economic liberties.
+                    </p>
+                </div>
+                <div class="explanation_axis">
+                    <p class="labels">CIVIL</p>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 62"><path d="m24 36 12 9.29c2.83 2.02 10.16 6.67 11.16 9.88 1.44 4.66-3.54 6.27-7.16 5.53-3.39-.7-8.15-4.48-11-6.58L10 40.13C7.38 38.16 1.63 34.6 1.63 31s5.75-7.16 8.37-9.13L29 7.88C31.85 5.78 36.61 2 40 1.3c3.62-.74 8.6.87 7.16 5.53-1 3.21-8.33 7.86-11.16 9.88L24 26h154l-12-9.29c-2.83-2.02-10.16-6.67-11.16-9.88C153.4 2.17 158.38.56 162 1.3c3.39.7 8.15 4.48 11 6.58l19 13.99c2.62 1.97 8.37 5.53 8.37 9.13s-5.75 7.16-8.37 9.13l-19 13.99c-2.85 2.1-7.61 5.88-11 6.58-3.62.74-8.6-.87-7.16-5.53 1-3.21 8.33-7.86 11.16-9.88L178 36z"/></svg>
+                </div>
+                <div class="explanation_blurb_right">
+                    <b style="color:#303f9f;" class="value">AUTHORITY</b>
+                    <p class="blurb-text">
+                        Those with higher Authority scores believe in strong state power. They tend to support state intervention in personal lives, government surveillance, and at high values, censorship or autocracy.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="spacer">
+                <div class="explanation_blurb_left">
+                    <b style="color:#689f38;" class="value">TRADITION</b>
+                    <p class="blurb-text">
+                        Those with higher Tradition scores believe in traditional values and strict adherence to a moral code. Though not always, they are usually religious, and support the status quo or the status quo ante.
+                    </p>
+                </div>
+                <div class="explanation_axis">
+                    <p class="labels">SOCIETY</p>
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 62"><path d="m24 36 12 9.29c2.83 2.02 10.16 6.67 11.16 9.88 1.44 4.66-3.54 6.27-7.16 5.53-3.39-.7-8.15-4.48-11-6.58L10 40.13C7.38 38.16 1.63 34.6 1.63 31s5.75-7.16 8.37-9.13L29 7.88C31.85 5.78 36.61 2 40 1.3c3.62-.74 8.6.87 7.16 5.53-1 3.21-8.33 7.86-11.16 9.88L24 26h154l-12-9.29c-2.83-2.02-10.16-6.67-11.16-9.88C153.4 2.17 158.38.56 162 1.3c3.39.7 8.15 4.48 11 6.58l19 13.99c2.62 1.97 8.37 5.53 8.37 9.13s-5.75 7.16-8.37 9.13l-19 13.99c-2.85 2.1-7.61 5.88-11 6.58-3.62.74-8.6-.87-7.16-5.53 1-3.21 8.33-7.86 11.16-9.88L178 36z"/></svg>
+                </div>
+                <div class="explanation_blurb_right">
+                    <b style="color:#7b1fa2;" class="value">PROGRESS</b>
+                    <p class="blurb-text">
+                        Those with higher Progress scores believe in social change and rationality. Though not always, they are usually secular or atheist, and support environmental action and scientific or technological research.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h3 style="margin-top: 17pt;">What's the "Closest Match" mean at the bottom of the results?</h3>
+        <p>
+            In addition to matching you to the eight values, the quiz also attempts to match you to a political ideology. This is a work in progress and is much less accurate than the values and axes, so don't take it too seriously. If you disagree with your assigned ideology, send us an email at eightvalues@gmail.com with your scores, matched ideology, and preferred ideology, and we'll look into adjusting the system. Thanks!
+        </p>
+        <h2>I don't like my scores!</h2>
+        <p>¯\_(ツ)_/¯<br/>If you have any suggestions or constructive criticism, feel free to send it to <a href="mailto:eightvalues@gmail.com">eightvalues@gmail.com</a> or open an issue on the GitHub page here: <a href="https://github.com/8values/8values.github.io">GitHub Page</a></p>
+    </main>
+</body>
+<script src="../JavaScript/questions.js" type="application/javascript"></script>
+<script src="../JavaScript/script.js" type="application/javascript"></script>
+<script>
+    check_dark();
+    document.getElementById("numOfQuestions").innerHTML = questions.length;
+</script>
+</html>
