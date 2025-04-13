@@ -5,7 +5,7 @@ let songIndex = 0;
 let sidenav_fold_level = 0;
 let sidenav_width_level = 0;
 let timer = 0;
-let custom_width = 170;
+let custom_width = 160;
 let pop_up_index = 0; // 0 void, 1 music, 2 catalogue, 3 options, 4 languages, 5 search;
 let isDragging = 0; // 0 void, 1 mouse, 2 touch
 let hovered = false;
@@ -269,7 +269,7 @@ function minimal_start() {
 function minimal_end(custom = true) {
     sidenav.classList.remove('minimal');
     if (custom) {
-        sidenav.style.width = `${Math.max(custom_width, 170)}px`;
+        sidenav.style.width = `${Math.max(custom_width, 160)}px`;
     }
     musicContainer.removeEventListener('click', music_clicked);
     dn_complete();
@@ -754,7 +754,7 @@ function mouse_move(e) {
     } else {
         position = e.touches[0].clientX - offset;
     }
-    if (position >= 170 && position <= background.offsetWidth - 345 && !sidenav_minimal) {
+    if (position >= 160 && position <= background.offsetWidth - 345 && !sidenav_minimal) {
         sidenav.style.width = `${position}px`;
     } else if (position < 46 && !sidenav_minimal) {
         transition_or_not(0);
@@ -764,7 +764,7 @@ function mouse_move(e) {
         musicContainer.addEventListener('click', music_clicked);
     } else if (position >= 100 && sidenav_minimal) {
         transition_or_not(0);
-        sidenav.style.width = '170px';
+        sidenav.style.width = '160px';
         sidenav_minimal = false;
         minimal_end(false);
         musicContainer.removeEventListener('click', music_clicked);

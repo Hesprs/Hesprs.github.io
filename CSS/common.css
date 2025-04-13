@@ -30,7 +30,7 @@ body {
 	transition: none !important;
 }
 
-.center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em {
+.center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before {
 	transition: color 300ms, opacity 300ms;
 } .demobox, hr, img, body {
 	transition: background 300ms, opacity 300ms, filter 300ms, box-shadow 300ms;
@@ -61,14 +61,16 @@ hr {
 
 p {
 	margin: calc(15px + 0.2vw) 0px;
+	text-align: justify;
 }
 
 ol, ul {
-	margin: 0px;
+	margin: -5px 0px 0px 0px;
 }
 
 li {
-	margin: calc(5px + 0.2vw) 0px;
+	margin: calc(10px + 0.2vw) 0px;
+	text-align: justify;
 }
 
 h1 {
@@ -214,12 +216,24 @@ img {
 	::-webkit-scrollbar {
 		width: 3px !important;
 	}
+
+	p {
+		text-align: left;
+	}
+
+	li {
+		text-align: left;
+	}
+
+	ul li {
+		padding-right: 0 !important;
+	}
 }
 
 strong {
-	color: rgb(132, 67, 255);
+	color: rgb(255, 97, 73);
 } body.dark strong {
-	color: rgb(254, 247, 167);
+	color: rgb(254, 142, 124);
 }
 
 em {
@@ -269,11 +283,15 @@ ul {
 }
   
 ul li {
-	padding-left: 16px;
-	text-indent: -16px;
+	padding-left: calc(15px + 2vw);
+	padding-right: calc(7.5px + 1vw);
+	text-indent: -22px;
 }
   
 ul li::before {
 	content: "✦";
 	padding-right: 8px;
+	color: rgb(132, 67, 255);
+} body.dark ul li::before {
+	color: rgb(254, 247, 167);
 }

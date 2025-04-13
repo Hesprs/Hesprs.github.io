@@ -671,7 +671,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 .label_wrapper {
 	width: calc(100% - 16px);
 	height: calc(100% - 16px);
-	min-width: 154px;
+	min-width: 144px;
 	min-height: 30px;
 	padding: 8px;
 	display: flex;
