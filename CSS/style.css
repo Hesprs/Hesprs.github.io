@@ -37,10 +37,10 @@ iframe {
 }
 
 body {
-	flex-direction: row;
 	background-color: rgb(240, 244, 248) !important;
 	display: flex;
 	align-items: center;
+	scrollbar-gutter: auto !important;
 } body.dark {
 	background-color: rgb(38, 38, 38) !important;
 }
