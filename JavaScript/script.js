@@ -83,8 +83,8 @@ function initialize() {
     document.getElementById(language).checked = true;
     music_title.innerHTML = translation.music_player[language];
     sidenav.style.width = `${custom_width}px`;
-    change_languages();
     resize();
+    change_languages();
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
 }
 
@@ -441,16 +441,15 @@ async function shift_title(title, entry = true, back = false) {
     cover.style.opacity = 1;
     content_district.style.opacity = 0;
     if (!back) {
-        if (title !== current_page) {
-            history.push(current_page);
-        }
+        if (title !== current_page) history.push(current_page);
     } else {
         history.pop();
     }
     current_page = title;
     layer = 1 - layer;
+    modify_url(current_page);
     const content = await resolve_url(entry);
-    modify_url(current_page, content.introduction);
+    meta.description.content = content.introduction;
     const content_1 = document.getElementById(`content_${1 - layer}`);
     const content_0 = document.getElementById(`content_${layer}`);
     clearInterval(timer_interval);
@@ -595,7 +594,7 @@ async function resolve_url(entry) {
     return content;
 }
 
-function modify_url(url = '', introduction) {
+function modify_url(url = '') {
     if (url !== 'homepage') {
         let stateObj = { id: '100' }; 
         window.history.replaceState(stateObj, 'Page 3', url);
@@ -611,7 +610,6 @@ function modify_url(url = '', introduction) {
         window.history.replaceState(stateObj, 'Page 3', '/');
         document.title = translation.hesperus_blog[language];
     }
-    meta.description.content = introduction;
 }
 
 function language_warning() {
