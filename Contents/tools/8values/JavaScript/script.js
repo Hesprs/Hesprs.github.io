@@ -233,9 +233,9 @@ function result_ini(language) {
 }
 
 function check_dark() {
-    document.body.classList.add('non-transition');
+    document.body.classList.add('non_transition');
     setTimeout(() => {
-        document.body.classList.remove('non-transition');
+        document.body.classList.remove('non_transition');
     }, 10);
     if (parent.document.body.classList.contains('dark')) {
         document.body.classList.add("dark");

@@ -33,7 +33,15 @@
         <p style="text-align: center;" id="8values_redirect" class="fake_a">Von 8values, klicken Sie hier, um den Test selbst durchzuführen.</p>\
         <hr />\
         <h1>Update-Log</h1>\
-        <h4>V 2.3.0 &nbsp; 12.04.2025</h4>\
+        <h4>V 2.3.1 &nbsp; 15 Apr. 2025</h4>\
+        <ol>\
+            <li>Behebung des Fehlers, bei dem die Website abstürzt, wenn Benutzer andere Sprachen als "en", "zh-Hans" oder "de" in die URL-Leiste eingeben;</li>\
+            <li>Entfernung des störenden Sprachabschnitts in Artikel-URLs - die Sprache wird nun automatisch anhand von Cookies und Systemsprache bestimmt;</li>\
+            <li>Anpassung des "Schreibtisch-Bewertung"-Tools an das Website-Design;</li>\
+            <li>Behebung des Fehlers, bei dem iframe-Seiten den Dark Mode nicht entsprechend den Einstellungen der Hauptwebsite wechseln;</li>\
+            <li>Behebung des abrupten Farbwechsels von Demonstrationsboxen (wie im "Wörterbuch der Radikale") beim Wechsel zwischen Light und Dark Mode.</li>\
+        </ol>\
+        <h4>V 2.3.0 &nbsp; 12 Apr. 2025</h4>\
         <ol>\
             <li>Alle Artikel in die Kategorie "Artikel" verschieben und eine neue Kategorie "Werkzeuge" erstellen, wobei "8values" dorthin verschoben wird;</li>\
             <li>Einen neuen Artikel "Cyber-Poster für The Importance of Being Earnest" zur Unterkategorie "Lernen" hinzufügen;</li>\
@@ -47,7 +55,7 @@
             <li>Fehlerbehebung bei falscher Scrollleistenbreite in Safari;</li>\
             <li>Behebung des Fehlers, dass die Scrollleiste in "8values" nicht angezeigt wird.</li>\
         </ol>\
-        <h4>V 2.2.0 &nbsp; 06.04.2025</h4>\
+        <h4>V 2.2.0 &nbsp; 06 Apr. 2025</h4>\
         <ol>\
             <li>Hinzufügen einer schmalen Scrollleiste für Artikel;</li>\
             <li>Entfernen der schwebenden Titelleiste aufgrund von Inkompatibilität mit Safari, stattdessen Hinzufügen einer festen Titelleiste;</li>\
@@ -57,7 +65,7 @@
             <li>Behebung des Fehlers, bei dem die Download-Icons in Safari nicht rechtsbündig ausgerichtet sind;</li>\
             <li>Durchführung kleinerer Suchmaschinenoptimierungen.</li>\
         </ol>\
-        <h4>V 2.1.4 &nbsp; 05.04.2025</h4>\
+        <h4>V 2.1.4 &nbsp; 05 Apr. 2025</h4>\
         <ol>\
             <li>Hinzufügen eines Urheberrechtsvermerks zu selbst erstellten Artikeln;</li>\
             <li>Neugestaltung der "Startseite";</li>\
@@ -67,14 +75,14 @@
             <li>Behebung des Fehlers mit nicht zentrierten Steuerungstasten des Musikplayers im Pop-up-Menü;</li>\
             <li>Behebung des Fehlers, bei dem die URL nach dem Wechsel zur "Startseite" die der vorherigen Seite beibehält.</li>\
         </ol>\
-        <h4>V 2.1.3 &nbsp; 01.04.2025</h4>\
+        <h4>V 2.1.3 &nbsp; 01 Apr. 2025</h4>\
         <ol>\
             <li>Hinzufügen eines neuen Songs "Una Mattina" zum Musikplayer;</li>\
             <li>Hinzufügen eines "Zurück"-Buttons zum Musikplayer;</li>\
             <li>Überarbeitung der Beschreibungen für "Startseite" und "Über";</li>\
             <li>Optimierung der Logik zur Auswahl der Beschreibung für jeden Artikel.</li>\
         </ol>\
-        <h4>V 2.1.2 &nbsp; 30.03.2025</h4>\
+        <h4>V 2.1.2 &nbsp; 30 Mär. 2025</h4>\
         <ol>\
             <li>Behebung des Fehlers mit nicht übereinstimmenden Farben an den Rändern der zentralen Suchleiste;</li>\
             <li>Behebung des Fehlers, bei dem das Musikcover im Einstellungen-Menü sich nicht dreht, selbst wenn Musik abgespielt wird;</li>\
@@ -98,7 +106,7 @@
                 </ul>\
             </li>\
         </ol>\
-        <h4>V 2.1.1 &nbsp; 29.3.2025</h4>\
+        <h4>V 2.1.1 &nbsp; 29 Mär. 2025</h4>\
         <ol>\
             <li>Die Titelleiste ist jetzt schwebend und erscheint nur noch oben oder unten auf der Inhaltsseite;</li>\
             <li>Die Auflösung einiger Bilder verbessern;</li>\
@@ -107,7 +115,7 @@
             <li>Die visuelle Darstellung und die chinesische Übersetzung von „values8“ verbessern;</li>\
             <li>Den Fehler der zentralen Suchleiste mit uneinheitlichen Randstärken beheben.</li>\
         </ol>\
-        <h4>V 2.1.0 &nbsp; 27.3.2025</h4>\
+        <h4>V 2.1.0 &nbsp; 27 Mär. 2025</h4>\
         <ol>\
             <li>Alle Bilder aus einem Bildhostingdienst mit illegaler Cookie-Nutzung zu einem stabileren, schnelleren und sichereren Dienst übertragen;</li>\
             <li>Falsche "zh_Hans" in "zh-Hans" korrigiert;</li>\
@@ -116,7 +124,7 @@
             <li>Fehler im Schatten unter Icons und Musikcover behoben;</li>\
             <li>Fehler der Quiz-Seite in 8values behoben, die nicht die gesamte Breite des Inhaltsbereichs einnimmt.</li>\
         </ol>\
-        <h4>V 2.0.1 &nbsp; 24.3.2025</h4>\
+        <h4>V 2.0.1 &nbsp; 24 Mär. 2025</h4>\
         <ol>\
             <li>Den Unschärfeeffekt für bessere visuelle Zugänglichkeit anpassen;</li>\
             <li>Das Selbstanpassungsverhältnis des Willkommensseiten-Slogans und von „Weiter“ anpassen;</li>\
@@ -125,7 +133,7 @@
             <li>Optimierung für die Anzeige in Safari;</li>\
             <li>Den Fehler der falschen Breite beim Wiederherstellen der minimierten Seiten-Navigation beheben.</li>\
         </ol>\
-        <h4>V 2.0.0 &nbsp; 23.3.2025</h4>\
+        <h4>V 2.0.0 &nbsp; 23 Mär. 2025</h4>\
         <ol>\
             <li>Die Benutzeroberfläche gründlich überarbeiten, indem der Unschärfeeffekt angewendet wird;</li>\
             <li>Bilder, die zuvor nur auf der Willkommensseite erschienen, werden nun auf der gesamten Website verwendet, wobei bei jedem Besuch zufällig eines als Hintergrund ausgewählt wird.</li>\

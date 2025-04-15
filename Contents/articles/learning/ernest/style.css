@@ -249,6 +249,6 @@ svg {
 
 @media (max-width: 690px) {
   .poster {
-    margin: auto calc(2px + 1.5vw);;
+    margin: auto calc(2px + 1.5vw);
   }
 }

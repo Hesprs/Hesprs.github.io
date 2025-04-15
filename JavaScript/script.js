@@ -12,7 +12,7 @@ let hovered = false;
 let ever_played_music = false;
 let second_pop_up = false;
 let sidenav_minimal = false;
-let current_page, language, timeout, timeout_2;
+let current_page, language, system_language, timeout, timeout_2;
 let history = [];
 
 const entry_list = document.getElementsByName('category');
@@ -57,64 +57,19 @@ const warning_icon = document.getElementById('warning_icon');
 const github_corner = document.getElementById('github_corner');
 const titleBar = document.getElementById('title_bar');
 const meta = document.getElementsByTagName('meta');
-const throttledResize = throttle(responsive_resize, 100);
-const throttledMouseMove = throttle(mouse_move, 16);
-
-stretch_bar.addEventListener('touchstart', touch_start);
-stretch_bar.addEventListener('mousedown', mouse_down);
-stretch_bar.addEventListener('mouseover', hover_color);
-stretch_bar.addEventListener('touchstart', hover_color);
-stretch_bar.addEventListener('mouseout', out_color);
-stretch_bar.addEventListener('touchend', out_color);
-audio.addEventListener('timeupdate', updateProgress);
-audio.addEventListener('ended', nextSong);
-progress_container.addEventListener('click', setProgress);
-nextButton.addEventListener('click', nextSong);
-prevButton.addEventListener('click', prevSong);
-playButton.addEventListener('click', plause);
-language_option.addEventListener('click', language_clicked);
-back_button.addEventListener('click', back);
-showcase.addEventListener('click', () => document.body.classList.add('slide'));
-shade.addEventListener('click', () => {back_shade(); second_pop_up = false;});
-previous.addEventListener('click', previous_page);
-previous_center.addEventListener('click', previous_page);
-search_button.addEventListener('click', search_clicked);
-search_button_center.addEventListener('click', search_clicked);
-search_bar.addEventListener('input', () => synchronize_search('side'));
-search_bar_center.addEventListener('input', () => synchronize_search('center'));
-dn.addEventListener('click', toggle_dark);
-document.getElementById('warning_bar_wrapper').addEventListener('click', warning_bar_clicked);
-document.addEventListener('keydown', keydown);
-document.addEventListener('touchcancel', mouse_up);
-document.addEventListener('mousemove', throttledMouseMove);
-document.addEventListener('touchmove', throttledMouseMove);
-document.addEventListener('mouseleave', mouse_up);
-window.addEventListener('DOMContentLoaded', initialize);
-window.addEventListener('resize', throttledResize);
-window.addEventListener('mouseup', mouse_up);
-window.addEventListener('touchend', mouse_up);
 
 function initialize() {
     let redirect = localStorage.getItem('title');
     if (redirect === null) {
         current_page = 'homepage';
-        detect_language();
     } else {
         if (redirect === 'ernest.html') redirect = 'ernest';
         document.body.classList.add('slide', 'non_transition');
-        setTimeout(() => {
-            document.body.classList.remove('non_transition');
-        }, 20);
+        setTimeout(() => document.body.classList.remove('non_transition'), 20);
         localStorage.removeItem('title');
-        if (redirect.includes('/')) {
-            redirect = redirect.split('/');
-            language = redirect[0];
-            current_page = redirect[1];
-        } else {
-            current_page = redirect;
-            detect_language();
-        }
+        current_page = redirect;
     }
+    detect_language();
     const currentTheme = window.matchMedia('(prefers-color-scheme: dark)');
     if (currentTheme.matches) {
         dn.checked = true;
@@ -129,7 +84,7 @@ function initialize() {
     music_title.innerHTML = translation.music_player[language];
     sidenav.style.width = `${custom_width}px`;
     change_languages();
-    responsive_resize();
+    resize();
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
 }
 
@@ -158,11 +113,17 @@ function throttle(func, interval) {
 
 function detect_language() {
     if (navigator.language.includes('zh')) {
-        language = 'zh-Hans';
+        system_language = 'zh-Hans';
     } else if (navigator.language.includes('de')) {
-        language = 'de';
+        system_language = 'de';
     } else {
-        language = 'en';
+        system_language = 'en';
+    }
+    let cookie_language = getCookie('language');
+    if (cookie_language !== 'void') {
+        language = cookie_language;
+    } else {
+        language = system_language;
     }
 }
 
@@ -175,7 +136,7 @@ function toggle_dark() {
     }
 }
 
-function responsive_resize() {
+const resize = throttle(function(e) {
     if (window.innerWidth >= 768) {
         if (window.innerHeight < 526) {
             if (window.innerHeight < 474) {
@@ -246,7 +207,7 @@ function responsive_resize() {
         pop_up_music_cover.style.width = `${proper}px`;
         pop_up_music_cover.style.height = `${proper}px`;
     }
-}
+}, 200);
 
 function transition_or_not(level) {
     if (sidenav_width_level === level) {
@@ -456,7 +417,7 @@ function language_clicked() {
 	    	</div>
         `;
         document.getElementById(language).checked = true;
-        pop_up_change_languages();
+        pop_up_change_languages(false);
         if (delay === 200) {
             pop_up.style.opacity = '1';
         } else {
@@ -489,7 +450,7 @@ async function shift_title(title, entry = true, back = false) {
     current_page = title;
     layer = 1 - layer;
     const content = await resolve_url(entry);
-    modify_url(`/${language}/${current_page}`, content.introduction);
+    modify_url(current_page, content.introduction);
     const content_1 = document.getElementById(`content_${1 - layer}`);
     const content_0 = document.getElementById(`content_${layer}`);
     clearInterval(timer_interval);
@@ -532,8 +493,14 @@ async function shift_title(title, entry = true, back = false) {
             crumb(articles[current_page].address, content.downloads);
         }
         if (content.type === 'iframe') {
+            const iframe_window = document.getElementById('iframe').contentWindow;
             content_0.style.scrollbarGutter = 'auto';
-            document.getElementById('iframe').contentWindow.addEventListener('DOMContentLoaded', () => {
+            iframe_window.addEventListener('DOMContentLoaded', () => {
+                if (dn.checked) {
+                    iframe_window.document.body.classList.add('non_transition');
+                    iframe_window.document.body.classList.add('dark')
+                    setTimeout(() => iframe_window.document.body.classList.remove('non_transition'), 10);
+                };
                 cover.style.opacity = 0;
                 content_district.style.opacity = 1;
                 cover.style.pointerEvents = 'none';
@@ -629,7 +596,7 @@ async function resolve_url(entry) {
 }
 
 function modify_url(url = '', introduction) {
-    if (url.split('/')[2] !== 'homepage') {
+    if (url !== 'homepage') {
         let stateObj = { id: '100' }; 
         window.history.replaceState(stateObj, 'Page 3', url);
         if (current_page.includes('search=')) {
@@ -747,7 +714,7 @@ function touch_start(e) {
     content_district.classList.toggle('slides');
 }
 
-function mouse_move(e) {
+const mouse_move = throttle(function(e) {
     if (isDragging === 0) return;
     if (isDragging === 1) {
         position = e.clientX - offset;
@@ -769,7 +736,7 @@ function mouse_move(e) {
         minimal_end(false);
         musicContainer.removeEventListener('click', music_clicked);
     }
-}
+}, 16);
 
 function mouse_up() {
     if (isDragging !== 0) {
@@ -879,27 +846,30 @@ function change_languages() {
     shift_title(current_page);
 }
 
-function pop_up_change_languages() {
+function pop_up_change_languages(shift = true) {
     let ele = document.getElementsByName('language');
     for (i = 0; i < ele.length; i++) {
         let e = document.getElementById(ele[i].value + '_label');
         if (ele[i].checked) {
             language = ele[i].value;
+            if (language === system_language) {
+                setCookie('language', language, -365);
+            } else {
+                setCookie('language', language, 36500);
+            }
             e.classList.add('checked');
             e.classList.remove('clickable');
-            ele[i].removeEventListener('click', shift_languages);
+            ele[i].removeEventListener('click', pop_up_change_languages);
         } else {
             e.classList.remove('checked');
             e.classList.add('clickable');
-            ele[i].addEventListener('click', shift_languages);
+            ele[i].addEventListener('click', pop_up_change_languages);
         }
     }
-}
-
-function shift_languages() {
-    pop_up_change_languages();
-    change_languages();
-    pop_up_title.innerHTML = translation.languages[language];
+    if (shift) {
+        pop_up_title.innerHTML = translation.languages[language];
+        change_languages();
+    }
 }
 
 function previous_page() {
@@ -980,3 +950,60 @@ function warning_bar_clicked() {
     warning_bar.classList.toggle('show');
     clearTimeout(timeout_2);
 }
+
+function getCookie(cname) {
+    let name = cname + '=';
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return 'void';
+}
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+stretch_bar.addEventListener('touchstart', touch_start);
+stretch_bar.addEventListener('mousedown', mouse_down);
+stretch_bar.addEventListener('mouseover', hover_color);
+stretch_bar.addEventListener('touchstart', hover_color);
+stretch_bar.addEventListener('mouseout', out_color);
+stretch_bar.addEventListener('touchend', out_color);
+audio.addEventListener('timeupdate', updateProgress);
+audio.addEventListener('ended', nextSong);
+progress_container.addEventListener('click', setProgress);
+nextButton.addEventListener('click', nextSong);
+prevButton.addEventListener('click', prevSong);
+playButton.addEventListener('click', plause);
+language_option.addEventListener('click', language_clicked);
+back_button.addEventListener('click', back);
+showcase.addEventListener('click', () => document.body.classList.add('slide'));
+shade.addEventListener('click', () => {back_shade(); second_pop_up = false;});
+previous.addEventListener('click', previous_page);
+previous_center.addEventListener('click', previous_page);
+search_button.addEventListener('click', search_clicked);
+search_button_center.addEventListener('click', search_clicked);
+search_bar.addEventListener('input', () => synchronize_search('side'));
+search_bar_center.addEventListener('input', () => synchronize_search('center'));
+dn.addEventListener('click', toggle_dark);
+document.getElementById('warning_bar_wrapper').addEventListener('click', warning_bar_clicked);
+document.addEventListener('keydown', keydown);
+document.addEventListener('touchcancel', mouse_up);
+document.addEventListener('mousemove', mouse_move);
+document.addEventListener('touchmove', mouse_move);
+document.addEventListener('mouseleave', mouse_up);
+window.addEventListener('DOMContentLoaded', initialize);
+window.addEventListener('resize', resize);
+window.addEventListener('mouseup', mouse_up);
+window.addEventListener('touchend', mouse_up);

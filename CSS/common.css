@@ -32,8 +32,16 @@ body {
 
 .center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before {
 	transition: color 300ms, opacity 300ms;
-} .demobox, hr, img, body {
-	transition: background 300ms, opacity 300ms, filter 300ms, box-shadow 300ms;
+} hr, img, body {
+	transition: background 300ms, opacity 300ms, box-shadow 300ms;
+} .demobox {
+	transition: color 300ms, background-color 300ms, box-shadow 300ms;
+}
+
+.background_color {
+	background-color: rgb(255, 255, 255);
+} body.dark .background_color {
+	background-color: rgb(53, 53, 53);
 }
 
 main {
@@ -129,7 +137,7 @@ main p, main li, main strong, main em, main a, main .fake_a {
 
 a, .fake_a {
     text-decoration: none;
-    color: rgb(102, 47, 255);
+    color: rgb(132, 67, 255);
 	font-weight: 800;
 	font-style: italic;
 	cursor: pointer;

@@ -3,39 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
+  <link href='/CSS/common.css' rel='stylesheet' type='text/css'>
   <title>Desk Scoring</title>
   <style>
     body {
-      margin: 0;
-      padding: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
+      min-height: 100vh;
+    }
+    main {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: calc(100vh - 40px);
+      overflow-x: hidden;
+      margin-top: auto;
+      margin-bottom: auto;
     }
-    h1 {
-      color: #007bff;
-      margin: 10px 0;
-      text-align: center;
-    }
-    #matrixContainer {
-      margin-bottom: 10px;
-      overflow-x: auto;
-      padding: 10px;
+    tr {
+      font-size: 0;
     }
     table {
-      width: 100%;
-      background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      padding: calc(1px + 0.15vw);
-    }
-    td {
-      border: none;
-      text-align: center;
+      padding: 0.5vw;
+      transition: background-color 0.3s, box-shadow 0.3s;
     }
     input[type="checkbox"] {
       width: 13vw;
@@ -43,8 +33,9 @@
       max-width: 90px;
       max-height: 90px;
       cursor: pointer;
-      accent-color: #007bff;
-      margin: calc(1px + 0.15vw);
+      accent-color: rgb(132, 67, 255);
+      margin: 0.5vw;
+      transition: accent-color 300ms, background-color 300ms, color 300ms;
     }
     button {
       background-color: #007bff;
@@ -54,6 +45,7 @@
       font-size: 16px;
       border-radius: 5px;
       cursor: pointer;
+      margin: 15px 0px;
       transition: background-color 0.3s ease;
     }
     button:hover {
@@ -61,31 +53,17 @@
     }
     #output {
       display: none;
-      margin-top: 20px;
-      font-size: 18px;
-      padding: 10px;
-      background: #ffffff;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       min-width: 250px;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      table, td {
-        font-size: 14px;
-      }
-      button {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
     }
   </style>
 </head>
 <body>
-  <h1>Desk Scoring</h1>
-  <div id="matrixContainer"></div>
-  <button onclick="handleOK()">OK</button>
-  <div id="output"></div>
+  <main class="bottom_padding">
+    <h1>Desk Scoring</h1>
+    <div id="matrixContainer"></div>
+    <button onclick="handleOK()">OK</button>
+    <div id="output" class="demobox shadow"></div>
+  </main>
   <script>
     const MATRIX = [
       [ 0,  9, 14,  1, 28,  3],
@@ -97,15 +75,14 @@
     document.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('matrixContainer');
       const table = document.createElement('table');
+      table.classList.add('shadow', 'background_color');
       MATRIX.forEach(row => {
         const tr = document.createElement('tr');
         row.forEach(value => {
-          const td = document.createElement('td');
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
           checkbox.value = value;
-          td.appendChild(checkbox);
-          tr.appendChild(td);
+          tr.appendChild(checkbox);
         });
         table.appendChild(tr);
       });

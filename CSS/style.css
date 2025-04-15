@@ -290,7 +290,6 @@ input[type=text] {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 15px;
-	min-height: unset;
 }
 
 footer {

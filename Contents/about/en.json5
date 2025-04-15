@@ -33,7 +33,15 @@
         <p style="text-align: center;" id="8values_redirect" class="fake_a">From 8values, click me to take the test for yourself.</p>\
         <hr />\
         <h1>Update Log</h1>\
-        <h4>V 2.3.0 &nbsp; 12.4.2025</h4>\
+        <h4>V 2.3.1 &nbsp; 15 Apr. 2025</h4>\
+        <ol>\
+            <li>Fix the bug of website breakdown when the user type in languages except "en", "zh-Hans", and "de" to URL bar and visit;</li>\
+            <li>Remove the nettlesome language section in the article URLs, now the website decides languages automatically with reference to cookies and user default language;</li>\
+            <li>Align the style of "Desk Scoring" with the website\'s theme;</li>\
+            <li>Fix the bug that the iframe pages are unable to shift dark mode depending on the parent website\'s settings;</li>\
+            <li>Fix the bug of the sudden colour change of demostrating box text (like those in "Dictionary of Radicals") when shifting light and dark mode.</li>\
+		</ol>\
+        <h4>V 2.3.0 &nbsp; 12 Apr. 2025</h4>\
         <ol>\
             <li>Move all the articles to the "articles" categroy, creating a new categroy "tools", moving "8values" to it;</li>\
             <li>Add a new article, "Cyber Poster for The Importance of Being Earnest" to the "Learning" sub-category;</li>\
@@ -47,7 +55,7 @@
             <li>Fix the bug of content scrollbar gutter width error in Safari;</li>\
             <li>Fix the bug that the scrollbar is not shown in "8values".</li>\
 		</ol>\
-        <h4>V 2.2.0 &nbsp; 6.4.2025</h4>\
+        <h4>V 2.2.0 &nbsp; 6 Apr. 2025</h4>\
         <ol>\
             <li>Add a thin scroll bar for articles;</li>\
             <li>Remove the floating title bar for it is incompatible in Safari, adding a sticky title bar instead;</li>\
@@ -57,7 +65,7 @@
             <li>Fix the bug that the download icons are not aligned to right in Safari;</li>\
             <li>Conduct a small amount of search engine optimization.</li>\
 		</ol>\
-        <h4>V 2.1.4 &nbsp; 5.4.2025</h4>\
+        <h4>V 2.1.4 &nbsp; 5 Apr. 2025</h4>\
         <ol>\
             <li>Add copyright statement to self-created articles;</li>\
             <li>Reconstruct the "Homepage";</li>\
@@ -67,14 +75,14 @@
             <li>Fix the bug of non-central-alighed music player control buttons in pop up menu;</li>\
             <li>Fix the bug that the URL remains the previous page\'s after shifting to "Homepage".</li>\
 		</ol>\
-        <h4>V 2.1.3 &nbsp; 1.4.2025</h4>\
+        <h4>V 2.1.3 &nbsp; 1 Apr. 2025</h4>\
         <ol>\
             <li>Add a new song "Una Mattina" to the music player;</li>\
             <li>Add a "previous" button to the music player;</li>\
             <li>Rewrite the description for "Homepage" and "About";</li>\
             <li>Optimize the logic of choosing description for each article.</li>\
 		</ol>\
-        <h4>V 2.1.2 &nbsp; 30.3.2025</h4>\
+        <h4>V 2.1.2 &nbsp; 30 Mar. 2025</h4>\
         <ol>\
             <li>Fix the bug of central search bar borders with nonidentical colours;</li>\
             <li>Fix the bug that the music cover in the "settings" pop up menu refuses to rotate even if the music is playing;</li>\
@@ -98,7 +106,7 @@
 		        </ul>\
             </li>\
 		</ol>\
-        <h4>V 2.1.1 &nbsp; 29.3.2025</h4>\
+        <h4>V 2.1.1 &nbsp; 29 Mar. 2025</h4>\
         <ol>\
             <li>The title bar is floating now, it will only appear at the top or bottom of the content page;</li>\
             <li>Improve some of the images\' resolution;</li>\
@@ -107,7 +115,7 @@
 		    <li>Improve the visual effect and Chinese translation of "8values";</li>\
             <li>Fix the bug of central search bar borders with nonidentical thickness.</li>\
 		</ol>\
-        <h4>V 2.1.0 &nbsp; 27.3.2025</h4>\
+        <h4>V 2.1.0 &nbsp; 27 Mar. 2025</h4>\
         <ol>\
 		    <li>Transfer all the images in a naughty image host service which causes illegal cookies use to a more stable, fater and safer one;</li>\
             <li>Change all the mistaken "zh_Hans" to "zh-Hans";</li>\
@@ -116,7 +124,7 @@
 		    <li>Fix the bug of shadow error under icons and music covers;</li>\
 		    <li>Fix the bug of the quiz page in 8values which doesn\'t span the whole width of the content area;</li>\
 		</ol>\
-        <h4>V 2.0.1 &nbsp; 24.3.2025</h4>\
+        <h4>V 2.0.1 &nbsp; 24 Mar. 2025</h4>\
         <ol>\
 		    <li>Adjust the blur effect for better visual accessibility;</li>\
 		    <li>Adjust the self-adapt ratio of welcome page slogan and "continue";</li>\
@@ -125,7 +133,7 @@
             <li>Optimize for Safari display;</li>\
             <li>Fix the bug of width error when release the minimized side navigation.</li>\
 		</ol>\
-        <h4>V 2.0.0 &nbsp; 23.3.2025</h4>\
+        <h4>V 2.0.0 &nbsp; 23 Mar. 2025</h4>\
         <ol>\
 		    <li>Reconstruct the user interface by applying the blur effect;</li>\
 		    <li>Images that previously appeared only on the welcome page are now applied across the whole website, with one being randomly selected as the background on each visit;</li>\
