@@ -94,7 +94,7 @@ const articles = {
         de: 'Andere',
         address: 'articles/others',
         directory: ['moonstone'],
-        thumbnail: 'https://file.nbfox.com/wp-content/uploads/2024/03/20240320134442-65fae84aae9ca.jpg',
+        thumbnail: 'https://img1.tucang.cc/api/image/show/88c2c5111e9d7c281d7307299d94e8d9',
         introduction: {
             en: 'It\'s impossible to involve all the topics of articles in the aforesaid categories. Consequently, an \'others\' folder is required to accommodate the rest articles. The documents in it usually involve a diverse range of propositions.',
             'zh-Hans': '无法将所有文章主题都归入上述类别，因此需要一个“其他”文件夹来容纳剩余的文章。其中的文档通常涉及各种不同的主题。',

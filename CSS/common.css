@@ -208,7 +208,7 @@ img {
 @media (max-width: 768px) {
 	main {
 		padding: 1px 8px 1px 8px;
-		width: calc(100% - 14px);
+		width: calc(100% - 16px);
 	} main.normal_padding {
 		padding: 10px 8px;
 	} main.top_padding {
