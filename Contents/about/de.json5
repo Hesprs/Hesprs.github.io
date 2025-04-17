@@ -33,6 +33,12 @@
         <p style="text-align: center;" id="8values_redirect" class="fake_a">Von 8values, klicken Sie hier, um den Test selbst durchzuführen.</p>\
         <hr />\
         <h1>Update-Log</h1>\
+        <h4>V 2.3.2 &nbsp; 17. Apr. 2025</h4>\
+        <ol>\
+            <li>Behebung des Fehlers, bei dem die Website ohne 404-Fehlerseite abstürzt;</li>\
+            <li>Behebung des schwarzen Platzhaltertextes in der Suchleiste im Dark-Modus;</li>\
+            <li>Die Website wählt nun automatisch zwischen Light- und Dark-Modus basierend auf Cookies und Systemeinstellungen.</li>\
+        </ol>\
         <h4>V 2.3.1 &nbsp; 15 Apr. 2025</h4>\
         <ol>\
             <li>Behebung des Fehlers, bei dem die Website abstürzt, wenn Benutzer andere Sprachen als "en", "zh-Hans" oder "de" in die URL-Leiste eingeben;</li>\

@@ -18,7 +18,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	color: rgb(60, 60, 60);
+	color: rgb(50, 50, 50);
 	scrollbar-gutter: stable both-edges;
 	overscroll-behavior: contain;
 	scroll-behavior: smooth;
@@ -207,14 +207,14 @@ img {
 
 @media (max-width: 768px) {
 	main {
-		padding: 1px 7px 1px 7px;
+		padding: 1px 8px 1px 8px;
 		width: calc(100% - 14px);
 	} main.normal_padding {
-		padding: 10px 7px;
+		padding: 10px 8px;
 	} main.top_padding {
-		padding: 10px 7px 1px 7px;
+		padding: 10px 8px 1px 8px;
 	} main.bottom_padding {
-		padding: 1px 7px 10px 7px;
+		padding: 1px 8px 10px 8px;
 	}
 
 	hr {
@@ -222,7 +222,7 @@ img {
 	}
 
 	::-webkit-scrollbar {
-		width: 3px !important;
+		width: 2px !important;
 	}
 
 	p {

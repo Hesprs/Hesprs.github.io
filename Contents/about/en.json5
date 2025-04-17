@@ -33,10 +33,16 @@
         <p style="text-align: center;" id="8values_redirect" class="fake_a">From 8values, click me to take the test for yourself.</p>\
         <hr />\
         <h1>Update Log</h1>\
+        <h4>V 2.3.2 &nbsp; 17 Apr. 2025</h4>\
+        <ol>\
+            <li>Fix the bug of website breakdown where a 404 page is absent;</li>\
+            <li>Fix the bug that the prompt in the search bar is still black when in dark mode;</li>\
+            <li>Now the website can decide light and dark mode automatically with reference to Cookies and user default theme.</li>\
+		</ol>\
         <h4>V 2.3.1 &nbsp; 15 Apr. 2025</h4>\
         <ol>\
             <li>Fix the bug of website breakdown when the user type in languages except "en", "zh-Hans", and "de" to URL bar and visit;</li>\
-            <li>Remove the nettlesome language section in the article URLs, now the website decides languages automatically with reference to cookies and user default language;</li>\
+            <li>Remove the nettlesome language section in the article URLs, now the website decides languages automatically with reference to Cookies and user default language;</li>\
             <li>Align the style of "Desk Scoring" with the website\'s theme;</li>\
             <li>Fix the bug that the iframe pages are unable to shift dark mode depending on the parent website\'s settings;</li>\
             <li>Fix the bug of the sudden colour change of demostrating box text (like those in "Dictionary of Radicals") when shifting light and dark mode.</li>\

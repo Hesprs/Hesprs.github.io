@@ -358,7 +358,7 @@ const translation = {
     },
     hesperus_blog: {
         en: 'Hēsperus\' Sanctuary',
-        'zh-Hans': 'Hēsperus 的庇护所',
+        'zh-Hans': 'Hēsperus 的庇护所',
         de: 'Hēsperus Zufluchtsort'
     }
 };

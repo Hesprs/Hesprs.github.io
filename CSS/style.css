@@ -1,28 +1,14 @@
 @keyframes rotateImage {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
 }
 
 @keyframes myAnim {
-	0%, 100% {
-		transform: translateY(0);
-	}
-	10%, 30%, 50%, 70% {
-		transform: translateY(-8px);
-	}
-	20%, 40%, 60% {
-		transform: translateY(8px);
-	}
-	80% {
-		transform: translateY(6.4px);
-	}
-	90% {
-		transform: translateY(-6.4px);
-	}
+	0%, 100% { transform: translateY(0) }
+	10%, 30%, 50%, 70% { transform: translateY(-8px) }
+	20%, 40%, 60% { transform: translateY(8px) }
+	80% { transform: translateY(6.4px) }
+	90% { transform: translateY(-6.4px) }
 }
 
 iframe {
@@ -97,7 +83,7 @@ main {
 	margin-left: 8px;
 }
 
-.crumb, .warning, .text_dark, .text_light, #search_bar {
+.crumb, .warning, .text_dark, .text_light, #search_bar, input[type=text] {
 	transition: color 300ms, opacity 300ms;
 } .entry, .music_container, .progress_container, .warning_bar, article, .overlay, .sidenav_wrapper, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, .rectangle_wrapper, .sidenav_wrapper, footer {
 	transition: background-color 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms;
@@ -130,6 +116,9 @@ input[type=text] {
 	padding: 0px;
 	text-align: center;
 	flex-grow: 1;
+	color: rgb(50, 50, 50);
+} body.dark input[type=text] {
+	color: rgb(255, 255, 255);
 }
 
 .sidenav.super_minimal .show {
@@ -652,7 +641,7 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 } .text_dark {
 	padding: 0px;
 	direction: rtl;
-	color: rgb(60, 60, 60);
+	color: rgb(50, 50, 50);
 	right: 0px;
 	margin: auto 0px auto 0px;
 	font-size: 10px;
@@ -678,12 +667,9 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 
 .entry {
 	cursor: pointer;
-	color: rgb(60, 60, 60);
 	height: 46px;
 	overflow: hidden;
 	background-color: transparent;
-} body.dark .entry {
-	color: rgb(255, 255, 255);
 }
 
 article {
@@ -942,7 +928,7 @@ footer + hr {
 	}
 
 	#crumb_navigation::-webkit-scrollbar {
-		height: 3px;
+		height: 2px;
 	}
 
 	#search_bar {
