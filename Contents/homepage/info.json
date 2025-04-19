@@ -1,0 +1,21 @@
+{
+    "description": {
+        "en": "Welcome to the personal blog of Hēsperus, whose aim is to create a website with high quality content, state-of-art aesthetics, and immersive personalized experience.",
+        "zh-Hans": "欢迎来到Hēsperus的个人博客，其目标是创建一个拥有高质量内容、现代美学和沉浸式个性化体验的网站。",
+        "de": "Willkommen beim persönlichen Blog von Hēsperus, dessen Ziel es ist, eine Website mit hochwertigen Inhalten, moderner Ästhetik und einzigartigem, immersiven Benutzererlebnis zu schaffen."
+    },
+    "main_classes": "bottom_padding",
+    "click_listeners": [
+        "8values_redirect",
+        "lovership_redirect",
+        "ernest_redirect",
+        "fascist_propaganda_redirect",
+        "build_website_redirect",
+        "radicals_redirect",
+        "learning_redirect",
+        "humanities_redirect",
+        "development_redirect",
+        "others_redirect"
+    ],
+    "no_markdown_download": true
+}

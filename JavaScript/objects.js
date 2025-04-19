@@ -5,11 +5,6 @@ const articles = {
         de: 'Homepage',
         address: 'homepage',
         languages: ['en', 'zh-Hans', 'de'],
-        introduction: {
-            en: 'Welcome to the personal blog of Hēsperus, whose aim is to create a website with high quality content, up-to-date aesthetics, and immersive personalized experience.',
-            'zh-Hans': '欢迎来到Hēsperus的个人博客，其目标是创建一个拥有高质量内容、现代美学和沉浸式个性化体验的网站。',
-            de: 'Willkommen beim persönlichen Blog von Hēsperus, dessen Ziel es ist, eine Website mit hochwertigen Inhalten, moderner Ästhetik und einzigartigem, immersiven Benutzererlebnis zu schaffen.'
-        },
         hide: true,
     },
 
@@ -20,7 +15,7 @@ const articles = {
         address: 'articles',
         directory: ['learning', 'humanities', 'development', 'others'],
         languages: ['en', 'zh-Hans', 'de'],
-        introduction: {
+        description: {
             en: 'This is a collection of blog articles that Hēsperus has written.',
             'zh-Hans': '这里是Hēsperus所写的一些博客文章。',
             de: 'Dies ist eine Sammlung von Blogartikeln, die Hēsperus geschrieben hat.'
@@ -35,7 +30,7 @@ const articles = {
         address: 'tools',
         directory: ['8values', 'desk_scoring'],
         languages: ['en', 'zh-Hans', 'de'],
-        introduction: {
+        description: {
             en: 'This is a collection of tools that Hēsperus has developed.',
             'zh-Hans': '这里是Hēsperus所开发的一些工具。',
             de: 'Dies ist eine Sammlung von Werkzeugen, die von Hēsperus entwickelt wurden.'
@@ -50,7 +45,7 @@ const articles = {
         address: 'articles/learning',
         directory: ['radicals', 'ernest', 'save_power'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/35fe849d2c1dae5dc3af76c1144e0dbe',
-        introduction: {
+        description: {
             en: 'The blogger regards this as the most frequently used category, which he wants to squeeze all the nuanced school assignments and learning notes in. Two reasons include getting all the finished works away from his desktop and seeking a new residence.',
             'zh-Hans': '博主认为这是最常用的分类，他希望将所有烦人的学校作业和学习笔记都塞进这里。原因有两个：一是将所有已完成的作品从桌面上移走，二是为它们寻找一个新的归宿。',
             de: 'Der Blogger betrachtet dies als die am häufigsten verwendete Kategorie, in die er alle feinen Schulaufgaben und Lernnotizen hineinpressen möchte. Zwei Gründe dafür sind, alle fertigen Arbeiten von seinem Desktop zu entfernen und einen neuen Aufbewahrungsort für sie zu finden.'
@@ -65,7 +60,7 @@ const articles = {
         address: 'articles/humanities',
         directory: ['lovership', 'fascist_propaganda'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a',
-        introduction: {
+        description: {
             en: 'The Humanities are the fruit throughout the epic evolution of human intelligence, often including literature, sociology, economics, politics, art, history, philosophy and so on, serving as beacons of human progress.',
             'zh-Hans': '人文科学是人类智慧漫长演进的结晶，通常包括文学、社会学、经济学、政治学、艺术、历史、哲学等，是人类进步的火炬。',
             de: 'Die Geisteswissenschaften sind die Frucht der epischen Entwicklung der menschlichen Intelligenz und umfassen oft Literatur, Soziologie, Wirtschaftswissenschaften, Politik, Kunst, Geschichte, Philosophie und so weiter. Sie dienen als Leuchtturm des menschlichen Fortschritts.'
@@ -80,7 +75,7 @@ const articles = {
         address: 'articles/development',
         directory: ['build_website'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/9b0dba5ba3f7b67bb99a492fb10a179d',
-        introduction: {
+        description: {
             en: 'The word \'development\' is used to describe the process of programming a digital work. Articles involved in this classification mainly contain the technique and experience relating to development.',
             'zh-Hans': '“开发” 一词用于描述编写数字作品的过程。此分类下的文章主要涉及与开发相关的技术和经验。',
             de: 'Das Wort "Entwicklung" wird verwendet, um den Prozess der Programmierung eines digitalen Werks zu beschreiben. Artikel in dieser Kategorie enthalten hauptsächlich Techniken und Erfahrungen im Zusammenhang mit der Entwicklung.'
@@ -95,7 +90,7 @@ const articles = {
         address: 'articles/others',
         directory: ['moonstone'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/88c2c5111e9d7c281d7307299d94e8d9',
-        introduction: {
+        description: {
             en: 'It\'s impossible to involve all the topics of articles in the aforesaid categories. Consequently, an \'others\' folder is required to accommodate the rest articles. The documents in it usually involve a diverse range of propositions.',
             'zh-Hans': '无法将所有文章主题都归入上述类别，因此需要一个“其他”文件夹来容纳剩余的文章。其中的文档通常涉及各种不同的主题。',
             de: 'Es ist unmöglich, alle Themen der Artikel in den oben genannten Kategorien unterzubringen. Daher ist ein "Andere"-Ordner erforderlich, um die restlichen Artikel aufzunehmen. Die Dokumente darin behandeln normalerweise eine Vielzahl von Themen.'
@@ -164,7 +159,7 @@ const articles = {
         address: 'tools/8values',
         iframe: 'https://github.com/8values/8values.github.io', 
         languages: ['en', 'zh-Hans'],
-        introduction: {
+        description: {
             en: '8values is, in essence, a political quiz that attempts to assign percentages for eight different political values. At the end of the quiz, your answers will be compared to the maximum possible for each value.',
             'zh-Hans': '8values 本质上是一个政治测验，它试图为八个不同的政治价值观分配百分比。在测验结束时，您的答案将与每个价值观的最大可能值进行比较.',
             de: '8values ist im Wesentlichen ein politischer Test, der versucht, Prozentsätze für acht verschiedene politische Werte zuzuordnen. Am Ende des Tests werden Ihre Antworten mit dem maximal möglichen Wert für jede politische Ausrichtung verglichen.'
@@ -177,7 +172,7 @@ const articles = {
         'zh-Hans': '解放恋爱论',
         de: 'Die Befreiten Liebe',
         address: 'articles/humanities/lovership',
-        languages: ['en', 'zh-Hans'],
+        languages: ['en', 'zh-Hans', 'de'],
         thumbnail: 'https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d',
     },
 
@@ -188,8 +183,8 @@ const articles = {
         address: 'tools/desk_scoring',
         iframe: '',
         languages: ['en'],
-        introduction: {
-            en: 'This is a tool to mark the chair-over-desk condition.',
+        description: {
+            en: 'This is a tool to mark the chair-on-desk condition.',
         },
         thumbnail: 'https://img1.tucang.cc/api/image/show/8ce4ecaa39f360dda0ab1d09529337c7',
     },
@@ -201,7 +196,7 @@ const articles = {
         address: 'articles/learning/ernest',
         iframe: '',
         languages: ['en'],
-        introduction: {
+        description: {
             en: 'This is a poster for The Importance of Being Earnest made by Hēsperus for the sake of a winter holiday homework.',
         },
         thumbnail: 'https://img1.tucang.cc/api/image/show/d22076f6a5ce8cf0879a26a7b4d01134',
@@ -338,18 +333,10 @@ const translation = {
         'zh-Hans': '搜索...',
         de: 'Suchen...'
     },
-    not_found_description: {
-        en: 'God knows what the user is looking for! We\'ve got nothing but void.',
-        'zh-Hans': '天知道用户在找什么！我们除了虚无什么都没有。',
-        de: 'Gott weiß, wonach der Benutzer sucht! Wir haben nichts außer Leere.'
-    },
     search_description: {
-        en: 'This page showcases the result of searching for "',
-        en2: '" in the blog repertoire.',
-        'zh-Hans': '此页面展示了在博客库中搜索 "',
-        "zh-Hans2": '" 的结果。',
-        de: 'Diese Seite zeigt das Ergebnis der Suche nach „',
-        de2: '“ im Blog-Repertoire.'
+        en: `This page showcases the result of searching for "%s" in the blog repertoire.`,
+        'zh-Hans': `此页面展示了在博客库中搜索 "%s" 的结果。`,
+        de: `Diese Seite zeigt das Ergebnis der Suche nach „%s“ im Blog-Repertoire.`,
     },
     click_anywhere_to_continue: {
         en: 'Click Anywhere to Continue',
@@ -360,7 +347,12 @@ const translation = {
         en: 'Hēsperus\' Sanctuary',
         'zh-Hans': 'Hēsperus 的庇护所',
         de: 'Hēsperus Zufluchtsort'
-    }
+    },
+    not_found_description: {
+        en: "God knows what the user is looking for! We've got nothing but void.",
+        'zh-Hans': "天知道用户在找什么！我们除了虚无什么都没有。",
+        de: "Gott weiß, wonach der Benutzer sucht! Wir haben nichts außer Leere."
+    },
 };
 
 const formats = [

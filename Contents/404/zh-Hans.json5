@@ -1,5 +1,0 @@
-{
-    main_styles: 'align-items: center; justify-content: center; display: flex;',
-    main_classes: 'main_empty',
-    content: '<h1>未找到!</h1>'
-}
