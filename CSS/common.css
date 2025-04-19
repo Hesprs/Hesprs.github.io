@@ -25,7 +25,7 @@ body {
 } body.dark {
 	color: rgb(255, 255, 255);
 } body * {
-	font-size: calc(12px + 0.35vw);
+	font-size: calc(13px + 0.35vw);
 } body.non_transition *, body.non_transition {
 	transition: none !important;
 }
@@ -132,7 +132,7 @@ h1 {
 }
 
 main p, main li, main strong, main em, main a, main .fake_a {
-	line-height: calc(21px + 0.35vw);
+	line-height: calc(22px + 0.35vw);
 }
 
 a, .fake_a {
