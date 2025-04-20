@@ -4,6 +4,7 @@
         "zh-Hans": "此页面介绍了他的个人网站、社交媒体链接（GitHub、Reddit、QQ）和联系方式，包含8values意识形态测试结果、详细的网站更新日志及简约设计。",
         "de": "Der Seite stellt seine persönliche Website vor, mit Links zu sozialen Medien (GitHub, Reddit, QQ) und Kontaktdaten. Enthält 8values-Ideologietestergebnisse, detaillierte Update-Protokolle und minimalistisches Design."
     },
+    "languages": ["en", "zh-Hans", "de"],
     "click_listeners": [ "8values_redirect" ],
     "main_classes": "top_padding",
     "github": "https://github.com/hesprs/hesprs.github.io",

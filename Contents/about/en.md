@@ -1,39 +1,51 @@
 <div class="directory">
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Orca" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Orca" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="Mail" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="Mail" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Mail<br />Hesprs@outlook.com</div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">QQ<br />Hesprs42</div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="Github" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="Github" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Icons by<br /><a href="https://icons8.com">Icons8</a></div>
     </div>
 </div>
 
 ---
 
-# Hēsperus' Ideology
+# 🏛️ Hēsperus' Ideology
 ![Ideology](https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699)
 <p style="text-align: center;" id="8values_redirect" class="fake_a">From 8values, click me to take the test for yourself.</p>
 
 ---
 
-# Update Log
+# 📜 Update Log
+
+#### V 2.4.1   20 Apr. 2025
+1. Further systematize and optimize the article resolve and request logic;
+2. Retrench code;
+3. Apply lazy loading for every images;
+4. Modify the "language not available" notification text;
+5. Now the search function searches key words in every languages, lest the case that search results disappear when shifted to other languages;
+6. Apply blur effect to the title bar;
+7. Align the colour of checked radio category buttons in the navigation panel with the theme colour;
+8. Fix the bug that the blur shadow doesn't cover the whole page in large screen devices;
+9. Fix the bug of Cookies-driven automatic dark mode shifting not working when the preference is light mode;
+10. Fix the bug of no search results appears when using URL with "search=" + Chinese characters to simulate the search function.
 
 #### V 2.4.0   19 Apr. 2025
 1. Reconstruct the content storing structure, abandoning the troublesome "JSON5" format, now params are stored in info.json and the articles are stored in markdown files which are automatically parsed into HTML when the article is requested;

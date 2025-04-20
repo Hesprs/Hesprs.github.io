@@ -1,0 +1,8 @@
+{
+    "description": {
+        "en": "This is a collection of tools that Hēsperus has developed.",
+        "zh-Hans": "这里是Hēsperus所开发的一些工具。",
+        "de": "Dies ist eine Sammlung von Werkzeugen, die von Hēsperus entwickelt wurden."
+    },
+    "directory": ["8values", "desk_scoring"]
+}

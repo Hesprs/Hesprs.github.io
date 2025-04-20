@@ -4,5 +4,6 @@
         "zh-Hans": "内容是一个英语词根词典，提供了各种前缀、后缀和根词的定义和解释，按照字母顺序组织，以帮助理解单词形成和含义。",
         "de": "Der Inhalt ist ein Wörterbuch von englischen Radikalen, die Definitionen und Erklärungen verschiedener Präfixe, Suffixe und Stammwörter bereitstellt, die alphabetisch aufgeführt sind, um die Wortbildung und Bedeutungen zu erleichtern."
     },
-    "no_markdown_download": true
+    "no_markdown_download": true,
+    "languages": ["en"]
 }

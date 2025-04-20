@@ -3,5 +3,6 @@
         "en": "The author made a hash of this icon due to an amusing assignment.",
         "zh-Hans": "作者由于一个可笑的作业而胡了一个图标。",
         "de": "Der Autor hat einen Hash von diesem Symbol gemacht, weil er eine lustige Aufgabe hatte."
-    }
+    },
+    "languages": ["en"]
 }

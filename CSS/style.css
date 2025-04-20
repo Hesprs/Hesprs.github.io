@@ -287,11 +287,13 @@ footer {
 	padding: 8px 15px;
 	display: flex;
 	flex-direction: row;
-	background-color: #ffffff;
 	border-radius: 15px;
 	margin: 0px 11px 15px 11px;
+	backdrop-filter: blur(5px) saturate(120%);
+	-webkit-backdrop-filter: blur(5px) saturate(120%);
+	background-color: rgba(255, 255, 255, 0.4);
 } body.dark footer {
-	background-color: rgb(53, 53, 53);
+	background-color: rgb(53, 53, 53, 0.4);
 }
 
 #content_district.non_transition #title_bar, #content_district.non_transition .content, #content_district.non_transition .content_container, #content_district.non_transition #title_bar + hr, #content_district.non_transition .github-corner {
@@ -418,19 +420,11 @@ footer {
 
 .checked {
 	cursor: default !important;
-	background-color: rgba(181, 221, 255, 0.5) !important;
-	color: rgb(109, 173, 208) !important;
+	background-color: rgba(132, 67, 255, 0.5) !important;
+	color: rgb(255, 255, 255) !important;
 } body.dark .checked {
-	background-color: rgba(60, 60, 60, 0.5) !important;
-	color: rgb(190, 222, 248) !important;
-}
-
-.demoblock {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: stretch;
-	gap: 15px;
+	background-color: rgb(254, 247, 167) !important;
+	color: rgb(50, 50, 50) !important;
 }
 
 .crumb {
@@ -465,9 +459,19 @@ footer {
 	height: 4px;
 }
 
+#music_title {
+	white-space: normal;
+	margin: auto 0px auto auto;
+	direction: rtl;
+	font-size: 15px;
+	height: 30px;
+	padding: 0px 0px 0px 5px;
+	line-height: 17px;
+}
+
 .icon {
 	border-radius: 0px;
-	margin: auto 0px auto 0px;
+	margin: auto 0px;
 	height: 30px;
 	width:30px;
 	box-shadow: none;
@@ -593,6 +597,8 @@ body.dark #pop_up_content.playing #pop_up_pause_dark {
 	transition: top 300ms;
 } #warning_bar.show {
 	top: 15px;
+} #warning_text {
+	margin-left: 8px;
 }
 
 #about_icon {

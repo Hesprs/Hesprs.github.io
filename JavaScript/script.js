@@ -60,22 +60,19 @@ const meta = document.getElementsByTagName('meta');
 
 function initialize() {
     let redirect = localStorage.getItem('title');
-    if (redirect === null) { current_page = 'homepage' }
+    if (redirect === null) redirect = 'homepage';
     else {
-        if (redirect === 'ernest.html') redirect = 'ernest';
+        redirect =  redirect === 'ernest.html' ? 'ernest' : decodeURIComponent(redirect);
         document.body.classList.add('slide', 'non_transition');
         setTimeout(() => document.body.classList.remove('non_transition'), 20);
         localStorage.removeItem('title');
-        current_page = redirect;
     }
     detect_language();
     const theme = getCookie('theme');
-    if (theme !== 'void') {
-        if (theme === 'dark') {
-            dn.checked = true;
-            document.body.classList.add('dark');
-        }
-    } else {
+    if (theme === 'dark') {
+        dn.checked = true;
+        document.body.classList.add('dark');
+    } else if (theme !== 'light') {
         const currentTheme = window.matchMedia('(prefers-color-scheme: dark)');
         if (currentTheme.matches) {
             dn.checked = true;
@@ -91,7 +88,7 @@ function initialize() {
     music_title.innerHTML = translation.music_player[language];
     sidenav.style.width = `${custom_width}px`;
     resize();
-    change_languages();
+    change_languages(redirect);
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
 }
 
@@ -119,27 +116,24 @@ function throttle(func, interval) {
 }
 
 function detect_language() {
-    if (navigator.language.includes('zh')) { system_language = 'zh-Hans' }
-    else if (navigator.language.includes('de')) { system_language = 'de' }
-    else { system_language = 'en' }
+    if (navigator.language.includes('zh')) system_language = 'zh-Hans';
+    else if (navigator.language.includes('de')) system_language = 'de';
+    else system_language = 'en';
     let cookie_language = getCookie('language');
-    if (cookie_language !== 'void') { language = cookie_language }
-    else { language = system_language }
+    language = cookie_language !== 'void' ? cookie_language : system_language;
 }
 
 function toggle_dark() {
     const currentTheme = window.matchMedia('(prefers-color-scheme: dark)');
     if (dn.checked) {
-        if (currentTheme.matches) { setCookie('theme', 'void', -1) }
-        else { setCookie('theme', 'dark') }
+        if (currentTheme.matches) setCookie('theme', 'void', -1);
+        else setCookie('theme', 'dark');
     } else {
-        if (currentTheme.matches) { setCookie('theme', 'light') }
-        else { setCookie('theme', 'void', -1) }
+        if (currentTheme.matches) setCookie('theme', 'light');
+        else setCookie('theme', 'void', -1);
     }
     document.body.classList.toggle('dark');
-    if (articles[current_page] != undefined) {
-        if (articles[current_page].iframe != undefined) document.getElementById('iframe').contentWindow.document.body.classList.toggle('dark');
-    }
+    if (articles[current_page] != undefined && articles[current_page].type === 'iframe') document.getElementById('iframe').contentWindow.document.body.classList.toggle('dark');
 }
 
 const resize = throttle(function(e) {
@@ -154,8 +148,8 @@ const resize = throttle(function(e) {
                 }
             } else if (sidenav_fold_level !== 1) {
                 transition_or_not(0);
-                if (sidenav_fold_level === 2) { super_minimal_end() }
-                else if (sidenav_fold_level === 0 && !sidenav_minimal) { minimal_start() }
+                if (sidenav_fold_level === 2) super_minimal_end();
+                else if (sidenav_fold_level === 0 && !sidenav_minimal) minimal_start();
                 sidenav_fold_level = 1;
             }
         } else if (sidenav_fold_level !== 0) {
@@ -181,8 +175,8 @@ const resize = throttle(function(e) {
         } else {
             if (sidenav_fold_level !== 1) {
                 transition_or_not(2);
-                if (sidenav_fold_level === 2) { super_minimal_end() }
-                else { minimal_start() }
+                if (sidenav_fold_level === 2) super_minimal_end();
+                else minimal_start();
                 sidenav_fold_level = 1;
             }
             if (sidenav_width_level !== 1) sidenav_width_level = 1;
@@ -234,8 +228,8 @@ function super_minimal_start() {
 
 function super_minimal_end() {
     sidenav.classList.remove('super_minimal');
-    if (ever_played_music) { music_cover.src = music[songIndex].img }
-    else { music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png' }
+    if (ever_played_music) music_cover.src = music[songIndex].img;
+    else music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
     document.getElementById('about_icon').src = 'https://img.icons8.com/fluency/100/info-popup.png';
     const about_label = document.getElementById('about_label');
     if (document.getElementById('about').checked) about_label.classList.add('checked');
@@ -294,8 +288,8 @@ function settings() {
         }
         document.getElementById('pop_up_language').addEventListener('click', language_clicked);
         document.getElementById('pop_up_music').addEventListener('click', music_clicked);
-        if (delay === 200) { pop_up.style.opacity = '1' }
-        else { show_pop_up() }
+        if (delay === 200) pop_up.style.opacity = '1';
+        else show_pop_up();
     }, delay);
 }
 
@@ -307,8 +301,7 @@ function categories() {
         let src;
         let name = entry_list[i].value;
         if (entry_list[i].checked) category = entry_list[i].value;
-        if (name === 'about') { src = 'https://img.icons8.com/fluency/100/info-popup.png' }
-        else { src = document.getElementById(`${name}_icon`).src }
+        src = name === 'about' ? 'https://img.icons8.com/fluency/100/info-popup.png' : document.getElementById(`${name}_icon`).src;
         content += `
             <label for='${name}' class='demobox shadow color clickable' id='pop_up_${name}_label'>
 				<img class='icon' src='${src}' alt='${name}' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
@@ -384,8 +377,8 @@ function language_clicked() {
         `;
         document.getElementById(language).checked = true;
         pop_up_change_languages(false);
-        if (delay === 200) { pop_up.style.opacity = '1' }
-        else { show_pop_up() }
+        if (delay === 200) pop_up.style.opacity = '1';
+        else show_pop_up();
     }, delay);
 }
 
@@ -402,7 +395,7 @@ async function shift_title(title, entry = true, back = false) {
     cover.style.opacity = 1;
     content_district.style.opacity = 0;
     if (!back) { if (title !== current_page) history.push(current_page) }
-    else { history.pop() }
+    else history.pop();
     current_page = title;
     layer = 1 - layer;
     modify_url(current_page);
@@ -411,11 +404,10 @@ async function shift_title(title, entry = true, back = false) {
     const content_1 = document.getElementById(`content_${1 - layer}`);
     const content_0 = document.getElementById(`content_${layer}`);
     clearInterval(timer_interval);
-    if (timer >= 200) { timer = 0 }
-    else { timer = 195 - timer }
+    timer = timer >= 200 ? 0 : 195 - timer;
     setTimeout(() => {
         if (content.warning != undefined) warn('alarm', content.warning);
-        if (content.github == undefined) { github_corner.classList.remove('show') }
+        if (content.github == undefined) github_corner.classList.remove('show');
         else {
             github_corner.href = content.github;
             github_corner.classList.add('show');
@@ -428,7 +420,7 @@ async function shift_title(title, entry = true, back = false) {
         } else {
             content_0.innerHTML = `
                 <header>
-                    <h1>${articles[current_page][language]}</h1>
+                    <h1>${articles[current_page].title[language]}</h1>
                 </header>
                 <footer id='title_bar' class='shadow'>
 		    		<div id='crumb_navigation'></div>
@@ -466,81 +458,70 @@ async function shift_title(title, entry = true, back = false) {
 
 async function resolve_url(entry) {
     let address, content, warning, type; // type: search, directory, iframe, 404, article
-    if (articles[current_page] == undefined || current_page.includes('search=')) {
-        for (let i = 0; i < entry_list.length; i ++) document.getElementById(entry_list[i].value).checked = false;
-        change_category();
+    if (articles[current_page] == undefined) {
+        if (entry) {
+            for (let i = 0; i < entry_list.length; i ++) document.getElementById(entry_list[i].value).checked = false;
+            change_category();
+        }
         if (!current_page.includes('search=')) {
-            address = `404/%${language}.md`;
+            address = `404/info.json`;
             type = '404';
         } else {
             type = 'search';
             content = search(current_page.replace('search=', ''));
-            if (content === '404') { address = `404/%${language}.md` }
-            else { address = 'done' }
+            address = content === '404' ? `404/info.json` : `done`;
         }
     } else {
+        type = articles[current_page].type;
         if (entry) {
             document.getElementById(articles[current_page].address.split('/')[0]).checked = true;
             change_category();
         }
-        if (articles[current_page].directory != undefined) {
-            type = 'directory';
+        address = `${articles[current_page].address}/info.json`;
+    }
+    if (address !== 'done') {
+        content = await fetch(`/Contents/${address}`);
+        content = await content.json();
+        if (type === 'search' || type === '404') address = `404/${language}.md`;
+        else if (type === 'directory') {
             address = 'done';
-            content = compile_directory(articles[current_page].directory);
+            content = {
+                ... compile_directory(content.directory),
+                ... content
+            }
         } else {
-            let actual_language;
-            for (let i = 0; i < articles[current_page].languages.length; i ++) {
-                if (articles[current_page].languages[i] === language) {
-                    actual_language = language;
-                    break;
-                }
-            }
-            if (actual_language == undefined) {
-                warning = language_warning();
-                actual_language = articles[current_page].languages[0];
-            }
-            if (articles[current_page].iframe != undefined) {
-                type = 'iframe';
+            const factual_language = actual_language(content.languages, 'array');
+            if (factual_language !== language) warning = translation.this_article_is_not_available_in[language];
+            if (type === 'iframe') {
                 content = {
-                    content: `<iframe src='/Contents/${articles[current_page].address}/${actual_language}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></ iframe>`,
+                    ... content,
+                    content: `<iframe src='/Contents/${articles[current_page].address}/${factual_language}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></ iframe>`,
                     main_classes: 'main_empty',
                 };
                 address = 'done';
-                if (articles[current_page].iframe !== '') content.github = articles[current_page].iframe;
-            } else {
-                type = 'article';
-                address = `${articles[current_page].address}/%${actual_language}.md`;
-            }
-        } 
-    }
-    if (address !== 'done') {
-        content = await fetch(`/Contents/${address.split('%')[0]}info.json`);
-        content = await content.json();
-        content.content = await fetch(`/Contents/${address.replace('%', '')}`);
-        content.content = await content.content.text();
-        content.content = marked.parse(content.content);
+            } else if (type = 'article') address = `${articles[current_page].address}/${factual_language}.md`;
+        }
+        if (address !== 'done') {
+            content.content = await fetch(`/Contents/${address}`);
+            content.content = await content.content.text();
+            content.content = marked.parse(content.content);
+        }
     }
     if (warning != undefined) content.warning = warning;
     if (content.main_styles == undefined) content.main_styles = '';
     if (content.main_classes == undefined) content.main_classes = '';
     if (type === 'article') {
-        let actual_language = address.split('/');
-        actual_language = actual_language[actual_language.length - 1].replace('.md', '').replace('%', '');
-        if (content.downloads != undefined && content.downloads[actual_language] != undefined) content.downloads = content.downloads[actual_language];
-        else { content.downloads = {} }
+        let factual_language = address.split('/');
+        factual_language = factual_language[factual_language.length - 1].replace('.md', '').replace('%', '');
+        content.downloads = content.downloads != undefined && content.downloads[factual_language] != undefined ? content.downloads[factual_language] : {};
         if (content.no_markdown_download == undefined) content.downloads.md = { 
             url: `/Contents/${address.replace('%', '')}`,
             type: 'direct'
         }
         if (content.downloads == undefined) content.downloads = '';
     } else { content.downloads = '' }
-    if (content.description == undefined) {
-        if (type === 'search') { content.description = translation.search_description }
-        else if (articles[current_page].description != undefined) { content.description = articles[current_page].description }
-        else { content.description = translation.not_found_description }
-    }
-    if (content.description[language] == undefined) { content.description = Object.values(content.description)[0] }
-    else { content.description = content.description[language] }
+    if (content.description == undefined) content.description = type === 'search' ? translation.search_description : translation.not_found_description;
+    content.description = content.description[actual_language(content.description)];
     if (type === 'search') content.description = content.description.replace('%s', current_page.replace('search=', ''));
     content.type = type;
     return content;
@@ -550,24 +531,14 @@ function modify_url(url = '') {
     if (url !== 'homepage') {
         let stateObj = { id: '100' }; 
         window.history.replaceState(stateObj, 'Page 3', url);
-        if (current_page.includes('search=')) { document.title = current_page.replace('search=', translation.search[language].replace('...', ': ')) }
-        else if (articles[current_page] != undefined) { document.title = articles[current_page][language] }
-        else { document.title = current_page }
+        if (current_page.includes('search=')) document.title = current_page.replace('search=', translation.search[language].replace('...', ': '));
+        else if (articles[current_page] != undefined) document.title = articles[current_page].title[actual_language(articles[current_page].title)];
+        else document.title = current_page;
     } else {
         let stateObj = { id: '100' }; 
         window.history.replaceState(stateObj, 'Page 3', '/');
         document.title = translation.hesperus_blog[language];
     }
-}
-
-function language_warning() {
-    let warning = translation.this_article_is_only_available_in[language];
-    for (let i = 0; i < articles[current_page].languages.length; i ++) {
-        if (i != 0) { warning += `, ${translation.language[articles[current_page].languages[i]]}` }
-        else { warning += translation.language[articles[current_page].languages[i]] }
-    }
-    warning += translation.dot[language];
-    return warning;
 }
 
 function compile_directory(directory) {
@@ -577,8 +548,8 @@ function compile_directory(directory) {
         let target = articles[directory[i]];
         content += `
             <article class='shadow' id='${directory[i]}_redirect'>
-                <img src="${target.thumbnail}" alt="${target[language]}" class='background_img'/>
-                <div class="overlay">${target[language]}</div>
+                <img loading='lazy' src='${target.thumbnail}' alt='${target[language]}' class='background_img' />
+                <div class='overlay'>${target.title[actual_language(target.title)]}</div>
     	    </article>
         `;
         click_listeners.push(`${directory[i]}_redirect`);
@@ -608,21 +579,19 @@ function crumb(address, download) {
     const crumb_navigation = document.getElementById('crumb_navigation');
     if (download !== '') {
         downloads.classList.add('padding');
-        for (let i = 0; i < formats.length; i++) {
-            if (download[formats[i].format] != undefined) {
-                if (download[formats[i].format].type == undefined || download[formats[i].format].type !== 'direct') {
-                    crumb_downloads += `
-                        <a href='${download[formats[i].format].url}' style='height:30px; width: 30px;' target='_blank'>
-	    		    		<img class='icon' src='${formats[i].url}' alt='${formats[i].format} download'>
-	    		    	</a>
-                    `; 
-                } else {
-                    crumb_downloads += `
-                        <a href='${download[formats[i].format].url}' style='height:30px; width: 30px;' download='${articles[current_page][language]}.${formats[i].format}'>
-	    		    		<img class='icon' src='${formats[i].url}' alt='${formats[i].format} download'>
-	    		    	</a>
-                    `; 
-                }
+        for (const key in download) {
+            if (download[key].type == undefined || download[key].type !== 'direct') {
+                crumb_downloads += `
+                    <a href='${download[key]}' style='height:30px; width: 30px;' target='_blank'>
+	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
+	    	    	</a>
+                `; 
+            } else {
+                crumb_downloads += `
+                    <a href='${download[key]}' style='height:30px; width: 30px;' download='${articles[current_page].title[language]}.${key}'>
+	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
+	    	    	</a>
+                `; 
             }
         }
     } else { downloads.classList.remove('padding') }
@@ -630,10 +599,10 @@ function crumb(address, download) {
         target = crumb_list[i];
         if (i !== crumb_list.length - 1) {
             crumb += `
-                <div class='crumb color clickable_color' id='${target}_crumb' value='${target}'>${articles[target][language]}</div>
+                <div class='crumb color clickable_color' id='${target}_crumb' value='${target}'>${articles[target].title[language]}</div>
                 <pre class='crumb color'> > </pre>
             `;
-        } else { crumb += `<div class='crumb theme_color' id='${target}_crumb'>${articles[target][language]}</div>` }
+        } else crumb += `<div class='crumb theme_color' id='${target}_crumb'>${articles[target].title[language]}</div>`;
     }
     crumb_navigation.innerHTML = crumb;
     downloads.innerHTML = crumb_downloads;
@@ -658,8 +627,8 @@ function touch_start(e) {
 
 const mouse_move = throttle(function(e) {
     if (isDragging === 0) return;
-    if (isDragging === 1) { position = e.clientX - offset } else { position = e.touches[0].clientX - offset }
-    if (position >= 160 && position <= background.offsetWidth - 345 && !sidenav_minimal) { sidenav.style.width = `${position}px` }
+    position = isDragging === 1 ? e.clientX - offset : e.touches[0].clientX - offset;
+    if (position >= 160 && position <= background.offsetWidth - 345 && !sidenav_minimal) sidenav.style.width = `${position}px`;
     else if (position < 46 && !sidenav_minimal) {
         transition_or_not(0);
         sidenav.style.width = '';
@@ -680,21 +649,13 @@ function mouse_up() {
         content_district.classList.toggle('slides');
         isDragging = 0;
         background.classList.remove('on_dragging');
-        if (articles[current_page] != undefined) {
-            if (articles[current_page].iframe != undefined) {
-                document.getElementById('iframe').contentWindow.focus();
-            }
-        }
     }
-    if (!hovered) {
-        stretch_bar_1.style.backgroundColor = 'transparent';
-    }
+    if (!hovered) stretch_bar_1.style.backgroundColor = 'transparent';
 }
 
 function hover_color() {
     hovered = true;
-    if (dn.checked) { stretch_bar_1.style.backgroundColor = 'rgb(190, 222, 248)' }
-    else { stretch_bar_1.style.backgroundColor = 'rgb(109, 173, 208)' }
+    stretch_bar_1.style.backgroundColor = dn.checked ? 'rgb(190, 222, 248)' : 'rgb(109, 173, 208)';
 }
 
 function out_color() {
@@ -739,7 +700,7 @@ function back() {
     if (second_pop_up) {
         settings();
         second_pop_up = false;
-    } else { back_shade() }
+    } else back_shade();
 }
 
 function back_shade() {
@@ -750,9 +711,9 @@ function back_shade() {
     pop_up.style.pointerEvents = 'none';
 }
 
-function change_languages() {
+function change_languages(title = current_page) {
     document.documentElement.setAttribute('lang', language);
-    for (let i = 0; i < entry_list.length; i ++) document.getElementById(`text_${entry_list[i].value}`).innerHTML = articles[entry_list[i].value][language];
+    for (let i = 0; i < entry_list.length; i ++) document.getElementById(`text_${entry_list[i].value}`).innerHTML = articles[entry_list[i].value].title[language];
     text_language.innerHTML = translation.language[language];
     text_previous.innerHTML = translation.previous[language];
     text_light.innerHTML = translation.light[language];
@@ -769,7 +730,7 @@ function change_languages() {
         text_dark.classList.remove('chinese');
         text_light.classList.remove('chinese');
     }
-    shift_title(current_page);
+    shift_title(title);
 }
 
 function pop_up_change_languages(shift = true) {
@@ -796,16 +757,23 @@ function pop_up_change_languages(shift = true) {
 }
 
 function previous_page() {
-    if (history.length != 0) { shift_title(history[history.length - 1], true, true) }
+    if (history.length != 0) shift_title(history[history.length - 1], true, true);
 }
 
 function search(prompt) {
     let article_list = [];
     for (const key in articles) {
-        if (articles[key][language].toLowerCase().includes(prompt.toLowerCase()) && articles[key].hide == undefined) { article_list.push(key) }
+        if (articles[key].hide == undefined) {
+            for (const key1 in articles[key].title) {
+                if (articles[key].title[key1].toLowerCase().includes(prompt.toLowerCase())) {
+                    article_list.push(key);
+                    break;
+                }
+            }
+        }
     }
-    if (article_list.length === 0) { return '404' }
-    else { return compile_directory(article_list) }
+    if (article_list.length === 0) return '404';
+    return compile_directory(article_list);
 }
 
 function search_clicked() {
@@ -839,8 +807,8 @@ function search_clicked() {
 }
 
 function synchronize_search(subject) {
-    if (subject === 'side') { search_bar_center.value = search_bar.value }
-    else if (subject === 'center') { search_bar.value = search_bar_center.value }
+    if (subject === 'side') search_bar_center.value = search_bar.value;
+    else if (subject === 'center') search_bar.value = search_bar_center.value;
     else if (subject === 'pop_up') {
         search_bar_center.value = document.getElementById('pop_up_search').value;
         search_bar.value = document.getElementById('pop_up_search').value;
@@ -877,9 +845,24 @@ function getCookie(cname) {
 
 function setCookie(cname, cvalue, exdays = 36500) {
   const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  d.setTime(d.getTime() + (exdays * 86400000));
   let expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function actual_language(directory, type = 'object') {
+    let actual_language;
+    if (type === 'object') actual_language = directory[language] != undefined ? language : Object.keys(directory)[0];
+    else if (type === 'array') {
+        for (let i = 0; i < directory.length; i ++) {
+            if (directory[i] === language) {
+                actual_language = language;
+                break;
+            }
+        }
+        if (actual_language == undefined) actual_language = directory[0];
+    }
+    return actual_language;
 }
 
 stretch_bar.addEventListener('touchstart', touch_start);

@@ -3,5 +3,6 @@
         "en": "The content explains how fascist regimes use psychological phenomena such as mass hysteria, deindividuation, and terror management theory to manipulate society, create fear, and establish control.",
         "zh-Hans": "内容解释了法西斯政权如何利用诸如集体恐惧、去个性化和恐怖管理理论等心理现象来操纵社会，制造恐惧并建立控制。",
         "de": "Der Inhalt erklärt, wie faschistische Regime psychologische Phänomene wie Massenhysterie, Entindividualisierung und die Terror-Management-Theorie nutzen, um die Gesellschaft zu manipulieren, Angst zu schüren und Kontrolle auszuüben."
-    }
+    },
+    "languages": ["en", "zh-Hans", "de"]
 }

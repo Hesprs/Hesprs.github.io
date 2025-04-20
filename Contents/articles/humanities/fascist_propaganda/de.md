@@ -1,4 +1,4 @@
-Es gibt drei Hauptpsychologische Phänomene, die von Faschismus und anderen autoritären Regimen genutzt werden:
+Es gibt drei **Hauptpsychologische Phänomene**, die von Faschismus und anderen autoritären Regimen genutzt werden:
 1. Massenhysterie;
 2. Entindividualisierung;
 3. Terror-Management-Theorie.
@@ -51,7 +51,7 @@ Mehrere Interpretationen dieser Phänomene wurden gefunden. Die am häufigsten v
 
 ---
 
-## Referenzen
+## 🔗 Referenzen
 
 1. LaKeisha Fleming, 8. Januar 2024, [Entindividualisierung: Wie die Anwesenheit anderer das Verhalten beeinflusst](https://www.verywellmind.com/deindividuation-7546896)
 2. Lisa Fritscher, 12. Dezember 2023, [Was ist Massenhysterie (Massenpsychose)?](https://www.verywellmind.com/understanding-groupthink-2671595)

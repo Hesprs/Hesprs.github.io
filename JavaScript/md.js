@@ -907,7 +907,7 @@
               }),
               (u.image = function (e, t, u) {
                   if (null === (e = d(this.options.sanitize, this.options.baseUrl, e))) return u;
-                  var n = '<img src="' + e + '" alt="' + u + '"';
+                  var n = '<img loading="lazy" src="' + e + '" alt="' + u + '"';
                   return t && (n += ' title="' + t + '"'), (n += this.options.xhtml ? "/>" : ">");
               }),
               (u.text = function (e) {

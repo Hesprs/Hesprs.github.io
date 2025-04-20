@@ -1,0 +1,8 @@
+{
+    "directory": ["learning", "humanities", "development", "others"],
+    "description": {
+        "en": "This is a collection of blog articles that Hēsperus has written.",
+        "zh-Hans": "这里是Hēsperus所写的一些博客文章。",
+        "de": "Dies ist eine Sammlung von Blogartikeln, die Hēsperus geschrieben hat."
+    }
+}

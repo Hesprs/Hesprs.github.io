@@ -1,0 +1,8 @@
+{
+    "description": {
+        "en": "The word \"development\" is used to describe the process of programming a digital work. Articles involved in this classification mainly contain the technique and experience relating to development.",
+        "zh-Hans": "“开发” 一词用于描述编写数字作品的过程。此分类下的文章主要涉及与开发相关的技术和经验。",
+        "de": "Das Wort „Entwicklung“ wird verwendet, um den Prozess der Programmierung eines digitalen Werks zu beschreiben. Artikel in dieser Kategorie enthalten hauptsächlich Techniken und Erfahrungen im Zusammenhang mit der Entwicklung."
+    },
+    "directory": ["build_website"]
+}

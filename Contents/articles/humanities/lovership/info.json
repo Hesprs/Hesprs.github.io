@@ -4,6 +4,7 @@
         "zh-Hans": "《解放恋爱论》由 Hēsperus 撰写，主张彻底重新定义爱情，反对传统婚姻的压迫性。倡导基于真挚情感的关系，不受性别、年龄或道德约束，呼吁废除继承制和性别角色等社会改革。这是一份支持LGBTQIA+权益、多元伴侣关系及情感真实性的宣言。",
         "de": "„Die Befreiten Liebe“ von Hēsperus plädiert für eine radikale Neudefinition von Liebe und lehnt die traditionelle Ehe als unterdrückend ab. Das Werk fördert Beziehungen, die auf echter Liebe basieren – frei von Geschlechter-, Alters- oder moralischen Zwängen – und fordert gesellschaftliche Reformen wie die Abschaffung von Erbschaft und Geschlechterrollen. Ein Manifest für LGBTQIA+-Rechte, Mehrfachbeziehungen und emotionale Authentizität."
     },
+    "languages": ["en", "zh-Hans", "de"],
     "downloads": {
         "zh-Hans": {
             "img": {

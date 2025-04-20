@@ -1,6 +1,6 @@
 ## A
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         a-<br />
         in, at, not, opposite, or emphasise, may form adverb
@@ -155,7 +155,7 @@
 
 ## B
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -bas, base-<br />
         low, humble, alkaline
@@ -206,7 +206,7 @@
 
 ## C
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -cad, cas, cid-<br />
         fall, befall
@@ -329,7 +329,7 @@
 
 ## D
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         dam - damn, demn<br />
         harm
@@ -372,7 +372,7 @@
 
 ## E
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         e, ex, ec, ecto, ef-<br />
         leave, exceed
@@ -463,7 +463,7 @@
 
 ## F
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -fa, fam, fan, fat, fabul, fess-<br />
         speak, foretell
@@ -558,7 +558,7 @@
 
 ## G
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         geo - gean<br />
         soil, earth
@@ -597,7 +597,7 @@
 
 ## H
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -habit-<br />
         live, dwell
@@ -636,7 +636,7 @@
 
 ## I
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         i, il, im, in, ir-<br />
         inside, enter, drive, opposite, not
@@ -739,7 +739,7 @@
 
 ## J
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         jeal-<br />
         ardour, attention
@@ -762,7 +762,7 @@
 
 ## K
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         kata-<br />
         down, leave, remove, reverse, opposite
@@ -781,7 +781,7 @@
 
 ## L
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -labor-<br />
         work, labour
@@ -860,7 +860,7 @@
 
 ## M
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         main, mani - man, manu-<br />
         hand, handle
@@ -955,7 +955,7 @@
 
 ## N
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -nat - nate<br />
         born
@@ -1010,7 +1010,7 @@
 
 ## O
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         o, ob, oc, of, op, obs, os-<br />
         toward, opposite, above
@@ -1057,7 +1057,7 @@
 
 ## P
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -pact, pag, pect-<br />
         tight, fastened, press
@@ -1208,7 +1208,7 @@
 
 ## Q
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         quadr, quadri, quadru, quart-<br />
         four, square
@@ -1227,7 +1227,7 @@
 
 ## R
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         re, red, reh-<br />
         again, back, against
@@ -1270,7 +1270,7 @@
 
 ## S
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         sacri, sacro, sacra - sacr, sanct, secr-<br />
         holy
@@ -1441,7 +1441,7 @@
 
 ## T
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -tach, tack-<br />
         nail, connection, handle
@@ -1552,7 +1552,7 @@
 
 ## U
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -ual<br />
         to form adjective
@@ -1587,7 +1587,7 @@
 
 ## V
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         vac, vacuo - vacu, van, vast - void<br />
         empty
@@ -1674,7 +1674,7 @@
 
 ## W
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -war, ware<br />
         observe
@@ -1697,7 +1697,7 @@
 
 ## Y
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -y<br />
         add after a noun to form adjective, or add after roots to form noun
@@ -1708,7 +1708,7 @@
 
 ## Z
 
-<div class="demoblock">
+<div class="directory">
     <div class="demobox shadow color">
         -zeal-<br />
         ardour, attention

@@ -1,4 +1,4 @@
-# Recommended Articles
+# 🤩 Recommended Articles
 
 <div class="directory">
     <article class="shadow" id="8values_redirect">
@@ -23,12 +23,13 @@
     </article>
     <article class="shadow" id="radicals_redirect">
         <img loading="lazy" src="https://img1.tucang.cc/api/image/show/4d53269914fa8697a9d456bd770b0377" alt="radical" class="background_img" />
+        <div class="overlay">Dictionary of Radicals</div>
     </article>
 </div>
 
 ---
 
-# All Categories
+# 📚 All Categories
 
 <div class="directory">
     <article class="shadow" id="learning_redirect">

@@ -4,6 +4,7 @@
         "zh-Hans": "欢迎来到Hēsperus的个人博客，其目标是创建一个拥有高质量内容、现代美学和沉浸式个性化体验的网站。",
         "de": "Willkommen beim persönlichen Blog von Hēsperus, dessen Ziel es ist, eine Website mit hochwertigen Inhalten, moderner Ästhetik und einzigartigem, immersiven Benutzererlebnis zu schaffen."
     },
+    "languages": ["en", "zh-Hans", "de"],
     "main_classes": "bottom_padding",
     "click_listeners": [
         "8values_redirect",

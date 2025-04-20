@@ -1,4 +1,4 @@
-There are three main psychological phenomena used by fascism and other autocratic regimes, they are:
+There are three main **psychological phenomena** used by fascism and other autocratic regimes, they are:
 1. Mass Hysteria;
 2. Deindividuation;
 3. Terror Management Theory.
@@ -51,7 +51,7 @@ Multiple interpretations have been found of these phenomena. And the most commun
 
 ---
 
-## References
+## 🔗 References
 
 1. LaKeisha Fleming, 8 January, 2024, [Deindividuation: How the Presence of Others Affects Behavior](https://www.verywellmind.com/deindividuation-7546896)
 2. Lisa Fritscher, 12 December, 2023, [What Is Mass Hysteria (Mass Psychosis)?](https://www.verywellmind.com/understanding-groupthink-2671595)

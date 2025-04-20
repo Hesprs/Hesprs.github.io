@@ -1,4 +1,4 @@
-# 推荐文章
+# 🤩 推荐文章
 
 <div class="directory">
     <article class="shadow" id="8values_redirect">
@@ -29,7 +29,7 @@
 
 ---
 
-# 所有分类
+# 📚 所有分类
 
 <div class="directory">
     <article class="shadow" id="learning_redirect">

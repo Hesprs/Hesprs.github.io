@@ -1,4 +1,4 @@
-# Empfohlene Artikel
+# 🤩 Empfohlene Artikel
 
 <div class="directory">
     <article class="shadow" id="8values_redirect">
@@ -29,7 +29,7 @@
 
 ---
 
-# Alle Kategorien
+# 📚 Alle Kategorien
 
 <div class="directory">
     <article class="shadow" id="learning_redirect">

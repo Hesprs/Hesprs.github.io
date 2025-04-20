@@ -1,39 +1,51 @@
 <div class="directory">
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="虎鲸" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="虎鲸" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">博客<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="邮件" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="邮件" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">邮箱<br />Hesprs@outlook.com</div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">QQ<br />Hesprs42</div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">图标提供<br /><a href="https://icons8.com">Icons8</a></div>
     </div>
 </div>
 
 ---
 
-# Hēsperus的价值观
+# 🏛️ Hēsperus的价值观
 ![意识形态](https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699)
 <p style="text-align: center;" id="8values_redirect" class="fake_a">来自 8values，点击此处亲自测试。</p>
 
 ---
 
-# 更新日志
+# 📜 更新日志
+
+#### V 2.4.1   2025年4月20日
+1. 进一步系统化和优化文章解析与请求逻辑；
+2. 精简代码；
+3. 为所有图片应用懒加载；
+4. 修改 "语言不可用" 提示文本；
+5. 现在搜索功能会查找所有语言版本的关键词，避免切换语言时搜索结果消失的问题；
+6. 为标题栏应用模糊效果；
+7. 将导航面板单选分类按钮的选中颜色与主题色对齐；
+8. 修复大屏幕设备上模糊阴影未覆盖整个页面的错误；
+9. 修复偏好为浅色模式时 Cookies 驱动的自动深色模式切换失效的问题；
+10. 修复使用带 "search=" + 中文字符的URL模拟搜索功能时不显示结果的问题。
 
 #### V 2.4.0   2025年4月19日
 1. 重构内容存储结构，弃用繁琐的 "JSON5" 格式，现在参数存储在 info.json 中，文章以 Markdown 文件存储，并在请求时自动解析为 HTML；

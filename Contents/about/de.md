@@ -1,40 +1,52 @@
 <div class="directory">
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Schwertwal" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Schwertwal" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="E-Mail" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="E-Mail" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">E-Mail<br />Hesprs@outlook.com</div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">QQ<br />Hesprs42</div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
         <div class="center_text color" style="margin-left: 10px;">Icons von<br /><a href="https://icons8.com">Icons8</a></div>
     </div>
 </div>
 
 ---
 
-# Hēsperus' Ideologie
+# 🏛️ Hēsperus' Ideologie
 
 ![Ideologie](https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699)
 <p style="text-align: center;" id="8values_redirect" class="fake_a">Von 8values, klicken Sie hier, um den Test selbst durchzuführen.</p>
 
 ---
 
-# Update-Log
+# 📜 Update-Log
+
+#### V 2.4.1   20. Apr. 2025
+1. Weitergehende Systematisierung und Optimierung der Artikelverarbeitungs- und Anfragelogik;
+2. Codebereinigung;
+3. Implementierung von Lazy Loading für alle Bilder;
+4. Anpassung des Hinweistextes "Sprache nicht verfügbar";
+5. Die Suchfunktion durchsucht nun Schlüsselwörter in allen Sprachen, um fehlende Suchergebnisse bei Sprachwechsel zu vermeiden;
+6. Anwendung des Unschärfeeffekts auf die Titelleiste;
+7. Anpassung der Farbe ausgewählter Radio-Kategorie-Schaltflächen im Navigationsbereich an die Themenfarbe;
+8. Behebung des Bugs, bei dem der Unschärfeschatten auf Großbildschirmen nicht die gesamte Seite abdeckte;
+9. Behebung des Bugs, bei dem der cookie-gesteuerte automatische Dunkelmodus-Wechsel im Lichtmodus nicht funktionierte;
+10. Behebung des Bugs, bei dem keine Suchergebnisse angezeigt wurden, wenn die URL mit "search=" + chinesischen Zeichen zur Simulation der Suchfunktion verwendet wurde.
 
 #### V 2.4.0   19. Apr. 2025
 1. Rekonstruktion der Inhaltspeicherstruktur: Das umständliche "JSON5"-Format wurde aufgegeben. Parameter werden nun in info.json gespeichert, während Artikel in Markdown-Dateien gespeichert werden, die automatisch in HTML geparst werden, wenn der Artikel angefordert wird;

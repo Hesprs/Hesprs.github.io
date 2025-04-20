@@ -171,29 +171,28 @@ img {
 .clickable {
 	cursor: pointer;
 } .clickable:hover {
-    color: rgb(109, 173, 208);
-    background-color: rgba(222, 241, 255, 0.5) !important;
+    color: rgb(255, 255, 255);
+    background-color: rgba(132, 67, 255, 0.2) !important;
 } body.dark .clickable:hover {
-	color: rgb(190, 222, 248);
-	background-color: rgba(75, 75, 75, 0.5) !important;
+	color: rgb(50, 50, 50);
+	background-color: rgba(254, 247, 167, 0.75) !important;
 } .clickable:active:hover {
-    background-color: rgba(181, 221, 255, 0.5) !important;
+    background-color: rgba(132, 67, 255, 0.5) !important;
 } body.dark .clickable:active:hover {
-	color: rgb(190, 222, 248);
-	background-color: rgba(60, 60, 60, 0.5) !important;
+	background-color: rgb(254, 247, 167) !important;
 }
 
 .demobox {
 	flex: 1 1 auto;
-	background-color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.75);
 	border-radius: 15px;
-	padding: 8px 8px 8px 8px;
+	padding: 8px;
 	align-items: center;
   	justify-content: center;
 	text-align: center;
 	display: flex;
 } body.dark .demobox {
-	background-color: rgb(53, 53, 53);
+	background-color: rgba(53, 53, 53, 0.75);
 }
 
 .center_text {
@@ -201,7 +200,6 @@ img {
 	align-items: center;
 	margin: auto auto auto 12px;
 	padding: 0px;
-	font-weight: 400;
 	white-space: nowrap;
 } .demobox .center_text {
 	flex-direction: column;

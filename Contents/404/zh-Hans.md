@@ -198,9 +198,9 @@
     </defs>
 </svg>
 
-# 未找到!
+# 😰 未找到!
 
 <div class="demobox shadow color clickable" style="flex-grow: 0;" id="homepage_redirect">
-    <img class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="UK flag" style="width: 30px; height:30px; margin: auto 0px auto auto;">
+    <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="主页" style="width: 30px; height:30px; margin: auto 0px auto auto;">
 	<div class="center_text" style="margin-left: 10px;">回到主页</div>
 </div>

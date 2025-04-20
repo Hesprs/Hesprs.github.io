@@ -1,4 +1,4 @@
-法西斯主义和其他专制政权主要使用三种心理学现象，它们是：
+法西斯主义和其他专制政权主要使用三种**心理学现象**，它们是：
 1. 集体恐惧；
 2. 去个性化；
 3. 恐怖管理理论。
@@ -51,7 +51,7 @@
 
 ---
 
-## 参考文献
+## 🔗 参考文献
 
 1. LaKeisha Fleming, 2024年1月8日, [去个性化：他人的存在如何影响行为](https://www.verywellmind.com/deindividuation-7546896)
 2. Lisa Fritscher, 2023年12月12日, [什么是集体恐惧（集体精神病）？](https://www.verywellmind.com/understanding-groupthink-2671595)
