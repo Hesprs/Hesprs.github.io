@@ -24,7 +24,7 @@
 
 ![命名仓库](https://img1.tucang.cc/api/image/show/ecf97aa545d470aa856933a79412151c)
 
-在 **Repository name** 字段中，输入你的仓库名称为 **(你的 GitHub 用户名).github.io**（这将是你的域名）。保持其他选项默认不变，然后点击 **"Create Repository"**。
+在 **Repository name** 字段中，输入你的仓库名称为 **(你的 GitHub 用户名).github.io**（这将是你的域名）。保持其他选项默认不变，然后点击 **"Create Repository"** 。
 
 #### 4. 创建 Codespace
 
@@ -36,7 +36,7 @@
 
 ![index.html](https://img1.tucang.cc/api/image/show/86c757b84f344d2c8def335f9de13522)
 
-在你的电脑上，请创建一个名为 **index.txt** 的新文本文件并在其中写入一些基本的 HTML 代码。然后保存文件并将扩展名重命名为 **.html**。
+在你的电脑上，请创建一个名为 **index.txt** 的新文本文件并在其中写入一些基本的 HTML 代码。然后保存文件并将扩展名重命名为 **.html** 。
 
 #### 6. 将文件上传到 GitHub
 
