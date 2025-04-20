@@ -42,13 +42,13 @@
 
 ![拖放文件](https://img1.tucang.cc/api/image/show/912108582d6a5fce0b88db6f7cede887)
 
-将你的 **index.html** 文件拖放到你的 GitHub 仓库网页中，然后点击底部的 **"Commit Changes"**。
+将你的 **index.html** 文件拖放到你的 GitHub 仓库网页中，然后点击底部的 **"Commit Changes"** 。
 
 #### 7. 启用 GitHub Pages
 
 ![启用GitHub页面](https://img1.tucang.cc/api/image/show/0a3d24dfa120ad0645e33bfcdb7395b8)
 
-前往 **Settings - Pages**, 然后将 **branch** 选项从 **None** 更改为 **Main** 并点击 **"Save"**。等待约一分钟进行部署。
+前往 **Settings - Pages** ，然后将 **branch** 选项从 **None** 更改为 **Main** 并点击 **"Save"** 。等待约一分钟进行部署。
 
 #### 8. 确认部署
 
