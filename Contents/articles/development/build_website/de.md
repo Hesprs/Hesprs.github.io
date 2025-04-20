@@ -2,7 +2,7 @@
 
 Ein Blog wird verwendet, um **Lebensmomente aufzuzeichnen** und Einsichten zu teilen (hauptsächlich um den strengen **Inhaltsmoderationen** in sozialen Medien auszuweichen). Für Anfänger kann das Einrichten eines Blogs jedoch sehr mühsam sein, da es das Kaufen eines Servers, den Kauf einer Domain, die Konfiguration der Umgebung, die Registrierung eines Zertifikats und sogar die Abgabe einer Meldung beim Staat erfordert.
 
-Wir werden 🛠️_GitHub_ verwenden, die weltweit größte Plattform für Code-Hosting. Viele Open-Source-Projekte sind dort verfügbar. Seit 🧰_Microsoft_ 🛠️_GitHub_ übernommen hat, ist seine Stabilität garantiert.
+Wir werden 🛠️ _GitHub_ verwenden, die weltweit größte Plattform für Code-Hosting. Viele Open-Source-Projekte sind dort verfügbar. Seit 🧰 _Microsoft_ 🛠️ _GitHub_ übernommen hat, ist seine Stabilität garantiert.
 
 ---
 

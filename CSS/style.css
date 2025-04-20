@@ -86,7 +86,7 @@ main {
 .crumb, .warning, .text_dark, .text_light, #search_bar, input[type=text] {
 	transition: color 300ms, opacity 300ms;
 } .entry, .music_container, .progress_container, .warning_bar, article, .overlay, .sidenav_wrapper, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, .rectangle_wrapper, .sidenav_wrapper, footer {
-	transition: background-color 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms;
+	transition: background 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms;
 }
 
 #background_img, body {
@@ -251,16 +251,19 @@ input[type=text] {
 	display: flex;
 	position: relative;
 	border-radius: 15px;
-	background-image: url(https://img1.tucang.cc/api/image/show/15855c09a9c3b8accc1f5c155f9c6e82);
+	background-image: url(https://img1.tucang.cc/api/image/show/860e018590474b3bfc6e47b2282a15fc);
+	background-size: 25px;
 	margin: 15px 15px 15px 0px;
 	border: rgb(255, 255, 255) solid 0.75px;
-	background-color: rgba(255, 255, 255, 0.70);
-	-webkit-backdrop-filter: blur(70px) saturate(200%);
-	backdrop-filter: blur(70px) saturate(200%);
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-backdrop-filter: blur(40px) saturate(230%) brightness(120%);
+	backdrop-filter: blur(40px) saturate(230%) brightness(120%);
+	transform: translateZ(0px);
 	overflow: hidden;
 } body.dark .rectangle_wrapper {
+	background-image: url(https://img1.tucang.cc/api/image/show/008c1e091030a4418249fa8070d96315);
 	border: rgb(100, 100, 100) solid 0.75px;
-	background-color: rgba(38, 38, 38, 0.70);
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 .rectangle {
@@ -741,18 +744,21 @@ article {
 }
 
 .sidenav_wrapper {
-	background-image: url(https://img1.tucang.cc/api/image/show/15855c09a9c3b8accc1f5c155f9c6e82);
 	display: flex;
 	margin: 0px;
 	border-radius: 15px;
 	overflow: hidden;
 	border: rgb(255, 255, 255) solid 0.75px;
-	background-color: rgba(255, 255, 255, 0.70);
-	-webkit-backdrop-filter: blur(70px) saturate(200%);
-	backdrop-filter: blur(70px) saturate(200%);
+	background-image: url(https://img1.tucang.cc/api/image/show/860e018590474b3bfc6e47b2282a15fc);
+	background-size: 25px;
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-backdrop-filter: blur(40px) saturate(230%) brightness(120%);
+	backdrop-filter: blur(40px) saturate(230%) brightness(120%);
+	transform: translateZ(0px);
 } body.dark .sidenav_wrapper {
+	background-image: url(https://img1.tucang.cc/api/image/show/008c1e091030a4418249fa8070d96315);
 	border: rgb(100, 100, 100) solid 0.75px;
-	background-color: rgba(38, 38, 38, 0.70);
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 .vertical_division {

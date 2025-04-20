@@ -2,7 +2,7 @@
 
 A blog is used to **record life moments** and share insights (mainly to bypass the strict **content moderation** on social media). However, for beginners, setting up a blog involves buying a server, purchasing a domain name, configuring the environment, registering a certificate, and even filing records with the government—this can be extremely troublesome.
 
-We will use 🛠️_GitHub_, the world's largest code hosting platform. Many open-source projects are available there. Now that 🧰_Microsoft_ has acquired 🛠️_GitHub_, its stability is guaranteed.
+We will use 🛠️ _GitHub_, the world's largest code hosting platform. Many open-source projects are available there. Now that 🧰 _Microsoft_ has acquired 🛠️ _GitHub_, its stability is guaranteed.
 
 ---
 
