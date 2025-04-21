@@ -420,7 +420,7 @@ async function shift_title(title, entry = true, back = false) {
         } else {
             content_0.innerHTML = `
                 <header>
-                    <h1>${articles[current_page].title[language]}</h1>
+                    <h1>${articles[current_page].title[actual_language(articles[current_page].title)]}</h1>
                 </header>
                 <footer id='title_bar' class='shadow'>
 		    		<div id='crumb_navigation'></div>
@@ -545,11 +545,12 @@ function compile_directory(directory) {
     let content = '<div class="directory">';
     let click_listeners = [];
     for (let i = 0; i < directory.length; i ++) {
-        let target = articles[directory[i]];
+        const target = articles[directory[i]];
+        const name = target.title[actual_language(target.title)];
         content += `
             <article class='shadow' id='${directory[i]}_redirect'>
-                <img loading='lazy' src='${target.thumbnail}' alt='${target[language]}' class='background_img' />
-                <div class='overlay'>${target.title[actual_language(target.title)]}</div>
+                <img loading='lazy' src='${target.thumbnail}' alt='${name}' class='background_img' />
+                <div class='overlay'>${name}</div>
     	    </article>
         `;
         click_listeners.push(`${directory[i]}_redirect`);
@@ -596,13 +597,14 @@ function crumb(address, download) {
         }
     } else { downloads.classList.remove('padding') }
     for (let i = 0; i < crumb_list.length; i++) {
-        target = crumb_list[i];
+        const target = crumb_list[i];
+        const name = articles[target].title[actual_language(articles[target].title)];
         if (i !== crumb_list.length - 1) {
             crumb += `
-                <div class='crumb color clickable_color' id='${target}_crumb' value='${target}'>${articles[target].title[language]}</div>
+                <div class='crumb color clickable_color' id='${target}_crumb' value='${target}'>${name}</div>
                 <pre class='crumb color'> > </pre>
             `;
-        } else crumb += `<div class='crumb theme_color' id='${target}_crumb'>${articles[target].title[language]}</div>`;
+        } else crumb += `<div class='crumb theme_color' id='${target}_crumb'>${name}</div>`;
     }
     crumb_navigation.innerHTML = crumb;
     downloads.innerHTML = crumb_downloads;
