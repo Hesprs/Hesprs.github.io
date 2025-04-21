@@ -61,10 +61,10 @@ hr {
 	height: 0.75px;
 	width: 100%;
 	margin: 15px 0px;
-	background-color: rgba(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.4);
 	border: none;
 } body.dark hr {
-	background-color: rgb(100, 100, 100);
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 p {
@@ -150,9 +150,9 @@ a, .fake_a {
 }
 
 .shadow {
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 } body.dark .shadow {
-	box-shadow: 0px 2px 5px rgb(30, 30, 30);
+	box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3);
 }
 
 img {
@@ -163,9 +163,9 @@ img {
 	max-width: 800px;
 	margin: 0px auto 0px auto;
 	display: block;
-	box-shadow: 0px 2px 5px rgb(200, 200, 200);
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 } body.dark main img {
-	box-shadow: 0px 2px 5px rgb(30, 30, 30);
+	box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3);
 }
 
 .clickable {
@@ -245,13 +245,13 @@ img {
 }
 
 strong {
-	color: rgb(130, 33, 15);
+	color: rgb(175, 51, 29);
 } body.dark strong {
 	color: rgb(254, 142, 124);
 }
 
 em {
-	color: rgb(12, 120, 95);
+	color: rgb(17, 148, 117);
 } body.dark em {
 	color: rgb(90, 255, 178);
 }

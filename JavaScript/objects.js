@@ -190,6 +190,15 @@ const articles = {
         address: 'articles/learning/ernest',
         thumbnail: 'https://img1.tucang.cc/api/image/show/d22076f6a5ce8cf0879a26a7b4d01134',
     },
+
+    nk_university: {
+        title: {
+            en: 'Oddyssey to the Nanking University',
+        },
+        type: 'article',
+        address: 'articles/learning/nk_university',
+        thumbnail: 'https://img1.tucang.cc/api/image/show/db3f7290bbb31ba8fd372e4cdbf5e428',
+    },
 };
 
 const music = [

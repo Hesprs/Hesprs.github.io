@@ -86,7 +86,7 @@ main {
 .crumb, .warning, .text_dark, .text_light, #search_bar, input[type=text] {
 	transition: color 300ms, opacity 300ms;
 } .entry, .music_container, .progress_container, .warning_bar, article, .overlay, .sidenav_wrapper, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, .rectangle_wrapper, .sidenav_wrapper, footer {
-	transition: background 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms;
+	transition: background 300ms, opacity 300ms, filter 300ms, border 300ms, box-shadow 300ms, backdrop-filter 300ms;
 }
 
 #background_img, body {
@@ -213,14 +213,14 @@ input[type=text] {
 }
 
 .progress_container {
-	border: rgb(255, 255, 255) solid 0.75px;
+	border: rgba(255, 255, 255, 0.4) solid 0.75px;
     border-radius: 2px;
     cursor: pointer;
     margin: auto 0px auto 0px;
     height: 4px;
     width: 100%;
 } body.dark .progress_container {
-	border: rgb(100, 100, 100) solid 0.75px;
+	border: rgba(255, 255, 255, 0.2) solid 0.75px;
 }
 
 .progress {
@@ -248,24 +248,8 @@ input[type=text] {
 
 .rectangle_wrapper {
 	flex-grow: 1;
-	display: flex;
 	position: relative;
-	border-radius: 15px;
-	background-image: url(https://img1.tucang.cc/api/image/show/860e018590474b3bfc6e47b2282a15fc);
-	background-size: 25px;
 	margin: 15px 15px 15px 0px;
-	border: rgb(255, 255, 255) solid 0.75px;
-	background-color: rgba(255, 255, 255, 0.55);
-	-webkit-backdrop-filter: blur(50px) saturate(250%);
-	backdrop-filter: blur(50px) saturate(250%);
-	transform: translateZ(0px);
-	overflow: hidden;
-} body.dark .rectangle_wrapper {
-	background-image: url(https://img1.tucang.cc/api/image/show/008c1e091030a4418249fa8070d96315);
-	-webkit-backdrop-filter: blur(50px) saturate(230%) brightness(110%);
-	backdrop-filter: blur(50px) saturate(230%) brightness(110%);
-	border: rgb(100, 100, 100) solid 0.75px;
-	background-color: rgba(0, 0, 0, 0.65);
 }
 
 .rectangle {
@@ -745,24 +729,24 @@ article {
 	line-height: 21px;
 }
 
-.sidenav_wrapper {
+.sidenav_wrapper, .rectangle_wrapper {
 	display: flex;
-	margin: 0px;
 	border-radius: 15px;
 	overflow: hidden;
-	border: rgb(255, 255, 255) solid 0.75px;
+	box-sizing: border-box;
+	border: rgba(255, 255, 255, 0.4) solid 0.75px;
 	background-image: url(https://img1.tucang.cc/api/image/show/860e018590474b3bfc6e47b2282a15fc);
 	background-size: 25px;
 	background-color: rgba(255, 255, 255, 0.55);
-	-webkit-backdrop-filter: blur(50px) saturate(250%);
-	backdrop-filter: blur(50px) saturate(250%);
+	-webkit-backdrop-filter: blur(50px) saturate(330%);
+	backdrop-filter: blur(50px) saturate(330%);
 	transform: translateZ(0px);
-} body.dark .sidenav_wrapper {
+} body.dark .sidenav_wrapper, body.dark .rectangle_wrapper {
 	background-image: url(https://img1.tucang.cc/api/image/show/008c1e091030a4418249fa8070d96315);
-	border: rgb(100, 100, 100) solid 0.75px;
+	border: rgba(255, 255, 255, 0.2) solid 0.75px;
 	background-color: rgba(0, 0, 0, 0.65);
-	-webkit-backdrop-filter: blur(50px) saturate(230%) brightness(110%);
-	backdrop-filter: blur(50px) saturate(230%) brightness(110%);
+	-webkit-backdrop-filter: blur(50px) saturate(300%) brightness(120%);
+	backdrop-filter: blur(50px) saturate(300%) brightness(120%);
 }
 
 .vertical_division {
@@ -775,9 +759,9 @@ article {
 }
 
 .division, .vertical_division {
-	background-color: rgba(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.4);
 } body.dark .division, body.dark .vertical_division {
-	background-color: rgba(100, 100, 100);
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 footer + hr {
