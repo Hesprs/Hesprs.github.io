@@ -515,7 +515,7 @@ async function resolve_url(entry) {
         factual_language = factual_language[factual_language.length - 1].replace('.md', '').replace('%', '');
         content.downloads = content.downloads != undefined && content.downloads[factual_language] != undefined ? content.downloads[factual_language] : {};
         if (content.no_markdown_download == undefined) content.downloads.md = { 
-            url: `/Contents/${address.replace('%', '')}`,
+            url: `/Contents/${address}`,
             type: 'direct'
         }
         if (content.downloads == undefined) content.downloads = '';
@@ -583,13 +583,13 @@ function crumb(address, download) {
         for (const key in download) {
             if (download[key].type == undefined || download[key].type !== 'direct') {
                 crumb_downloads += `
-                    <a href='${download[key]}' style='height:30px; width: 30px;' target='_blank'>
+                    <a href='${download[key].url}' style='height:30px; width: 30px;' target='_blank'>
 	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
 	    	    	</a>
                 `; 
             } else {
                 crumb_downloads += `
-                    <a href='${download[key]}' style='height:30px; width: 30px;' download='${articles[current_page].title[language]}.${key}'>
+                    <a href='${download[key].url}' style='height:30px; width: 30px;' download='${articles[current_page].title[actual_language(articles[current_page].title)]}.${key}'>
 	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
 	    	    	</a>
                 `; 
