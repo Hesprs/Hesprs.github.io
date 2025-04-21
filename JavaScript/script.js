@@ -394,7 +394,7 @@ async function shift_title(title, entry = true, back = false) {
     const timer_interval = setInterval(() => timer += 10, 10);
     cover.style.opacity = 1;
     content_district.style.opacity = 0;
-    if (!back) { if (title !== current_page) history.push(current_page) }
+    if (!back) { if (current_page != undefined && title !== current_page) history.push(current_page) }
     else history.pop();
     current_page = title;
     layer = 1 - layer;
