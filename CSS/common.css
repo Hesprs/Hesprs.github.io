@@ -245,13 +245,13 @@ img {
 }
 
 strong {
-	color: rgb(255, 97, 73);
+	color: rgb(130, 33, 15);
 } body.dark strong {
 	color: rgb(254, 142, 124);
 }
 
 em {
-	color: rgb(18, 164, 130);
+	color: rgb(12, 120, 95);
 } body.dark em {
 	color: rgb(90, 255, 178);
 }
