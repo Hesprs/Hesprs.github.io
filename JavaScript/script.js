@@ -253,7 +253,7 @@ function settings() {
     			<img class='icon' alt='music cover' style='height: 30px; width: 30px;' id='pop_up_settings_music_cover'>
     			<div class='center_text' style='margin: auto 0px auto auto;'>${translation.music_player[language]}</div>
     		</div>
-            <div class='entry clickable shadow' id='pop_up_language' style='margin: 15px 0px 15px 0px'>
+            <div class='entry clickable shadow' id='pop_up_language'>
     			<img src='${translation.nations[language]}' class='icon' alt='flag' style='height: 30px; width: 30px;'>
     			<div class='center_text' style='margin: auto 0px auto auto;'>${translation.language[language]}</div>
     		</div>
