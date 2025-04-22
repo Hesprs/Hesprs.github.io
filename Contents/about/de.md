@@ -36,6 +36,14 @@
 
 # 📜 Update-Log
 
+#### V 2.4.2   22. Apr. 2025
+1. Optimierung des Unschärfeeffekts für eine größere Ähnlichkeit mit dem Acrylic-Effekt;
+2. Verschönerung des Schatteneffekts und der Rahmenfarbe;
+3. Hinzufügen eines neuen Artikels "Odyssey to the Nanking University" in der Kategorie "Lernen";
+4. Behebung des Bugs beim Standard-Markdown-Download;
+5. Behebung des Bugs, bei dem das Klicken auf den "Zurück"-Button ohne Browserverlauf zu Website-Fehlern führte;
+6. Behebung des Bugs, bei dem der Titel als "undefined" angezeigt wurde, wenn der aktuelle Artikel keinen Übersetzung in der Benutzersprache hatte.
+
 #### V 2.4.1   20. Apr. 2025
 1. Weitergehende Systematisierung und Optimierung der Artikelverarbeitungs- und Anfragelogik;
 2. Codebereinigung;

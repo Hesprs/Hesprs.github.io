@@ -35,6 +35,14 @@
 
 # 📜 Update Log
 
+#### V 2.4.2   22 Apr. 2025
+1. Optimize the blur effect to make it more similar to the acrylic effect;
+2. Beautify the shadow effect and border colour;
+3. Add a new article, "Odyssey to the Nanking University" to the "Learning" category;
+4. Fix the bug of default markdown download failure;
+5. Fix the bug that clicking "previous" button and impose website failure when there's no browsing history;
+6. Fix the bug that the title will be displayed as "undefined" when the current article title doesn't have a translation in the user's language.
+
 #### V 2.4.1   20 Apr. 2025
 1. Further systematize and optimize the article resolve and request logic;
 2. Retrench code;

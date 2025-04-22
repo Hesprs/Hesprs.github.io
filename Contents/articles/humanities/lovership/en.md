@@ -17,7 +17,7 @@ The current concept insists on the norms of matrimony, which **imprisons** indiv
 **Liberated lovership**, in Hēsperus' viewpoint, is a relationship between individuals with the attributes below:
 1. based on the **Genuine Love** and **distinguished with matrimony**;
 2. regardless **ages**, **gender** or other **innate distinctions**, and free from the **alienation of money**;
-3. free to start or terminate a lovership, and free from the **expropriation of banal morality**.
+3. free to start or terminate a lovership, and free from the **yoke of banal morality**.
 
 To make it understandable, Hēsperus uses a more straightforward yet not comprehensive interpretation here (these entries are all based on **Liberated Lovership**, and equally apply to everyone involved in romances):
 1. Lovers don't need to be related with marriage or sex;

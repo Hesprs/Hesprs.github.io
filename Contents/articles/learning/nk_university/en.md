@@ -1,6 +1,6 @@
 # ✨ Exordium
 
-![group photo](https://pb.plusx.cn/plus/immediate/89863634/20250331121920242/ZDL5451.JPG~tplv-9lv23dm2t1-wm-display-v1:0:watermark/1/image/dG9zLWNuLWktOWx2MjNkbTJ0MS9wbHVzL21lZGlhLzQ3NDk4Mi8xNzQzMjE4MzE1MTY3L3BsdXMucG5n/dissolve/100/gravity/SouthEast/dx/44/dy/29/ws/0.3/wst/2:1600:3000:gif.JPG?sign=1745247630-b2A8P2FG-imagex-c99bf55b4e4952abdea000b9464e00cc)
+![group photo](https://img1.tucang.cc/api/image/show/1f7a2a2ec82f244a27b6baf0a25f302f)
 
 From 31.3.2025 to 3.4.2025, my schoolmates and I were honourably invited to an odyssey at Nanking University Xianlin Campus to explore the rich scholarly atmosphere and state-of-the-art educational concept. It was the very moment for everything to prosper. During these four days, our trip was dipped in the gentle stroke of the spring breeze and bloomed in our pilgrimages toward self-exploration.
 
@@ -10,7 +10,7 @@ This trip is characterised by various lectures on a host of subjects and a bona 
 
 # 🏛️ Symposium of Thinking Sparkles
 
-![teacher](https://pb.plusx.cn/plus/immediate/89863634/20250401145432989/IMGL7180.JPG~tplv-9lv23dm2t1-wm-display-v1:0:watermark/1/image/dG9zLWNuLWktOWx2MjNkbTJ0MS9wbHVzL21lZGlhLzQ3NDk4Mi8xNzQzMjE4MzE1MTY3L3BsdXMucG5n/dissolve/100/gravity/SouthEast/dx/42/dy/28/ws/0.3/wst/2:1600:3000:gif.JPG?sign=1745247216-K4F7LHqy-imagex-de3eac0bb3a4214a6e96a9acc954b4a5)
+![teacher](https://img1.tucang.cc/api/image/show/3a0b5d6212a40cd8301548d8105841c7)
 
 One of the lectures - The Emergence of Intelligence was truly a mindblower. It was a multi-dimensional exploration of neuroscience, intelligence theorems and philosophy. The teacher first mentioned natural science which serves as the main content of our study, claiming that these subjects are merely fundamental theorems in the great edifice of human cognition. He further introduced the concept of **metaphysics** as an upper step above real science. It is the study of "existence as much". To put it another way, it is the study of the science rules themselves - why the universe is constructed? How free is the will? While normal science may ask: What basic matters construct the cosmos? Or Creatures' will forms in which cerebral cortex? Moreover, the teacher interpreted **theology** as the highest level of the pyramid, for it tries to systematize the issues debated in metaphysics, forming a general interpretation to the populace.
 
@@ -20,9 +20,9 @@ This reflection leaves me with more questions than answers, which is perhaps the
 
 # 🔥 The Practise of Soldering
 
-![soldering](https://pb.plusx.cn/plus/immediate/89863634/20250401111120189/SUJ00022.JPG~tplv-9lv23dm2t1-wm-display-v1:0:watermark/1/image/dG9zLWNuLWktOWx2MjNkbTJ0MS9wbHVzL21lZGlhLzQ3NDk4Mi8xNzQzMjE4MzE1MTY3L3BsdXMucG5n/dissolve/100/gravity/SouthEast/dx/49/dy/32/ws/0.3/wst/2:1600:3000:gif.JPG?sign=1745247353-HY12Fe4p-imagex-2e1a3a6b093e95bca8422a6ceb47f459)
+![soldering](https://img1.tucang.cc/api/image/show/2a6c75a79393089f11301a04f10803fa)
 
-I was once defrauded by the illusion that electronic and electrical engineering is about machine tools, robotic arms and futuristic giant structures like space elevators and orbital cities. The teacher mentioned modelling by CAD, which is expected. However, it was je ne sais quoi surprising that the soldering and assembling circuit also took a large amount of the student's time.  On second thought, it is also reasonable that the student's work is to learn, not to say empty words or construct space elevators.
+I was once defrauded by the illusion that electronic and electrical engineering is about machine tools, robotic arms and futuristic giant structures like space elevators and orbital cities. The teacher mentioned modelling by a CAD software, which is expected. However, it was je ne sais quoi surprising that the soldering and assembling circuit also took a large amount of the student's time.  On second thought, it is also reasonable that the student's work is to learn, not to say empty words or construct space elevators.
 
 Another insight that I've gained is the rethinking of soldering. In the past, I often witnessed my father holding a soldering iron, and repairing circuit boards from a mosquito swatter or a tiny fan. Before this experience, I used to think the soldering iron was a cool yet formidable tool, for it is often charged with high current and with a temperature of hundreds of Celsius, often accompanied by a smoky smell. In the class, all the students were asked to solder a Keyboard instrument, not until that moment did I realise that soldering is on earth a fairly simple stuff. Nonetheless, making a qualified keyboard was de facto challenging, and what I made was literally a freak - the "keys" were ruggedly aligned while the noise it made was just like the yell of a vampire.
 
