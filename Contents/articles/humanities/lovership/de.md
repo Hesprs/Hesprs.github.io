@@ -16,13 +16,13 @@ Das gegenwärtige Konzept beharrt auf den Normen der Ehe, die Individuen durch v
 
 **Liberated Lovership** (Befreite Liebesbeziehung) ist aus Hēsperus' Sicht eine Beziehung zwischen Individuen mit folgenden Merkmalen:
 1. basierend auf **echter Liebe** und **unterschieden von der Ehe**;
-2. unabhängig von **Alter**, **Geschlecht** oder anderen **angeborenen Unterschieden** und frei von der **Entfremdung durch Geld**;
-3. frei, eine Liebesbeziehung zu beginnen oder zu beenden, und frei von der **Aneignung durch banale Moral**.
+2. unabhängig von **Alter**, **Geschlecht** oder anderen **angeborenen Unterschieden**;
+3. frei, eine Liebesbeziehung zu beginnen oder zu beenden, und frei von der **Aneignung durch banale Moral** oder der **Entfremdung durch Geld**.
 
 Um es verständlich zu machen, verwendet Hēsperus hier eine einfachere, aber nicht vollständige Interpretation (diese Punkte basieren alle auf **Liberated Lovership** und gelten gleichermaßen für alle, die in Liebesbeziehungen involviert sind):
 1. Liebende müssen nicht durch Ehe oder Sex verbunden sein;
 2. Hēsperus unterstützt **🏳️‍🌈 LGBTQIA+**, **frühe Liebe** und **generationsübergreifende Liebe**;
-3. Menschen können sich in jeden verlieben, den sie möchten, wenn beide es wünschen, sogar **Mehrfachliebesbeziehungen** sind erlaubt; sie können auch die Liebe beenden, wann immer sie wollen. Das Thema Liebe und Sex ist kein Geheimnis oder ein politisch sensibles Problem, Menschen können frei darüber diskutieren.
+3. Menschen können sich in jeden verlieben, den sie möchten, wenn beide es wünschen, sogar **Mehrfachliebesbeziehungen** sind erlaubt; sie können auch die Liebe beenden, wann immer sie wollen.
 
 #### 💞 Echte Liebe erklärt
 

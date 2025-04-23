@@ -420,7 +420,7 @@ async function shift_title(title, entry = true, back = false) {
         } else {
             content_0.innerHTML = `
                 <header>
-                    <h1>${articles[current_page].title[actual_language(articles[current_page].title)]}</h1>
+                    <h1>${actual_language(articles[current_page].title)}</h1>
                 </header>
                 <footer id='title_bar' class='shadow'>
 		    		<div id='crumb_navigation'></div>
@@ -521,7 +521,7 @@ async function resolve_url(entry) {
         if (content.downloads == undefined) content.downloads = '';
     } else { content.downloads = '' }
     if (content.description == undefined) content.description = type === 'search' ? translation.search_description : translation.not_found_description;
-    content.description = content.description[actual_language(content.description)];
+    content.description = actual_language(content.description);
     if (type === 'search') content.description = content.description.replace('%s', current_page.replace('search=', ''));
     content.type = type;
     return content;
@@ -532,7 +532,7 @@ function modify_url(url = '') {
         let stateObj = { id: '100' }; 
         window.history.replaceState(stateObj, 'Page 3', url);
         if (current_page.includes('search=')) document.title = current_page.replace('search=', translation.search[language].replace('...', ': '));
-        else if (articles[current_page] != undefined) document.title = articles[current_page].title[actual_language(articles[current_page].title)];
+        else if (articles[current_page] != undefined) document.title = actual_language(articles[current_page].title);
         else document.title = current_page;
     } else {
         let stateObj = { id: '100' }; 
@@ -546,7 +546,7 @@ function compile_directory(directory) {
     let click_listeners = [];
     for (let i = 0; i < directory.length; i ++) {
         const target = articles[directory[i]];
-        const name = target.title[actual_language(target.title)];
+        const name = actual_language(target.title);
         content += `
             <article class='shadow' id='${directory[i]}_redirect'>
                 <img loading='lazy' src='${target.thumbnail}' alt='${name}' class='background_img' />
@@ -589,7 +589,7 @@ function crumb(address, download) {
                 `; 
             } else {
                 crumb_downloads += `
-                    <a href='${download[key].url}' style='height:30px; width: 30px;' download='${articles[current_page].title[actual_language(articles[current_page].title)]}.${key}'>
+                    <a href='${download[key].url}' style='height:30px; width: 30px;' download='${actual_language(articles[current_page].title)}.${key}'>
 	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
 	    	    	</a>
                 `; 
@@ -598,7 +598,7 @@ function crumb(address, download) {
     } else { downloads.classList.remove('padding') }
     for (let i = 0; i < crumb_list.length; i++) {
         const target = crumb_list[i];
-        const name = articles[target].title[actual_language(articles[target].title)];
+        const name = actual_language(articles[target].title);
         if (i !== crumb_list.length - 1) {
             crumb += `
                 <div class='crumb color clickable_color' id='${target}_crumb' value='${target}'>${name}</div>
@@ -854,7 +854,7 @@ function setCookie(cname, cvalue, exdays = 36500) {
 
 function actual_language(directory, type = 'object') {
     let actual_language;
-    if (type === 'object') actual_language = directory[language] != undefined ? language : Object.keys(directory)[0];
+    if (type === 'object') actual_language = directory[language] != undefined ? directory[language] : Object.values(directory)[0];
     else if (type === 'array') {
         for (let i = 0; i < directory.length; i ++) {
             if (directory[i] === language) {

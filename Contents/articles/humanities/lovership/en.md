@@ -16,13 +16,13 @@ The current concept insists on the norms of matrimony, which **imprisons** indiv
 
 **Liberated lovership**, in Hēsperus' viewpoint, is a relationship between individuals with the attributes below:
 1. based on the **Genuine Love** and **distinguished with matrimony**;
-2. regardless **ages**, **gender** or other **innate distinctions**, and free from the **alienation of money**;
-3. free to start or terminate a lovership, and free from the **yoke of banal morality**.
+2. regardless **ages**, **gender** or other **innate distinctions**;
+3. free to start or terminate a lovership, and free from the **yoke of banal morality** or the **alienation of money**.
 
 To make it understandable, Hēsperus uses a more straightforward yet not comprehensive interpretation here (these entries are all based on **Liberated Lovership**, and equally apply to everyone involved in romances):
 1. Lovers don't need to be related with marriage or sex;
 2. Hēsperus supports **🏳️‍🌈 LGBTQIA+**, **early romance** and **intergenerational romance**;
-3. People can fall in love with whomever they want if they both desire, even **multi-lovership** is permitted; they can also choose to end a love whenever they want. The issue of love and sex is not a confidentiality or a politically sensitive problem, people can discuss it freely.
+3. People can fall in love with whomever they want if they both desire, even **multi-lovership** is permitted; they can also choose to end a love whenever they want.
 
 #### 💞 Genuine Love Explained
 
