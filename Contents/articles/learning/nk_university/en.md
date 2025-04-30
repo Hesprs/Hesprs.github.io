@@ -1,4 +1,4 @@
-# ✨ Exordium
+## ✨ Exordium
 
 ![group photo](https://img1.tucang.cc/api/image/show/1f7a2a2ec82f244a27b6baf0a25f302f)
 
@@ -8,7 +8,7 @@ This trip is characterised by various lectures on a host of subjects and a bona 
 
 ---
 
-# 🏛️ Symposium of Thinking Sparkles
+## 🏛️ Symposium of Thinking Sparkles
 
 ![teacher](https://img1.tucang.cc/api/image/show/3a0b5d6212a40cd8301548d8105841c7)
 
@@ -18,7 +18,7 @@ This lecture also discussed the "consciousness" of artificial intelligence and c
 
 This reflection leaves me with more questions than answers, which is perhaps the mark of a philosophical lecture. Intelligence, it seems, is not a light we shine on the world but a flickering candle held up in the dark.
 
-# 🔥 The Practise of Soldering
+## 🔥 The Practise of Soldering
 
 ![soldering](https://img1.tucang.cc/api/image/show/2a6c75a79393089f11301a04f10803fa)
 
@@ -26,7 +26,7 @@ I was once defrauded by the illusion that electronic and electrical engineering 
 
 Another insight that I've gained is the rethinking of soldering. In the past, I often witnessed my father holding a soldering iron, and repairing circuit boards from a mosquito swatter or a tiny fan. Before this experience, I used to think the soldering iron was a cool yet formidable tool, for it is often charged with high current and with a temperature of hundreds of Celsius, often accompanied by a smoky smell. In the class, all the students were asked to solder a Keyboard instrument, not until that moment did I realise that soldering is on earth a fairly simple stuff. Nonetheless, making a qualified keyboard was de facto challenging, and what I made was literally a freak - the "keys" were ruggedly aligned while the noise it made was just like the yell of a vampire.
 
-# 🍣 Food, 🏫 Housing and 🚲 Transportation
+## 🍣 Food, 🏫 Housing and 🚲 Transportation
 
 ![map](https://img1.tucang.cc/api/image/show/5c4db8ac70ee33cd54c9dcf17b43630e)
 
@@ -38,7 +38,7 @@ As for traversing the sprawling Xianlin Campus, my strategy was contrary sharply
 
 ---
 
-# 📜 Conclusion
+## 📜 Conclusion
 
 ![sunset](https://img1.tucang.cc/api/image/show/db3f7290bbb31ba8fd372e4cdbf5e428)
 

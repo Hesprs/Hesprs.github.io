@@ -88,6 +88,7 @@ h6 { font-size: 20px !important }
 body.zh-Hans h1, body.zh-Hans h2, body.zh-Hans h3, body.zh-Hans h4, body.zh-Hans h5, body.zh-Hans h6 {
 	font-family:'STDongGuanTi bld' !important;
 	font-weight: normal !important;
+	line-height: 120% !important;
 }
 
 a, .fake_a {
