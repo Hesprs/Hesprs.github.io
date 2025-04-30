@@ -1,11 +1,14 @@
+:root {
+    --violet: rgb(132, 67, 255);
+	--gold: rgb(254, 247, 167);
+}
+
 html {
 	height: 0px;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	overflow: hidden;
-} html::-webkit-scrollbar {
-	display: none;
-}
+} html::-webkit-scrollbar { display: none }
 
 body {
 	display: flex;
@@ -22,13 +25,10 @@ body {
 	scrollbar-gutter: stable both-edges;
 	overscroll-behavior: contain;
 	scroll-behavior: smooth;
-} body.dark {
-	color: rgb(255, 255, 255);
-} body * {
-	font-size: calc(13px + 0.35vw);
-} body.non_transition *, body.non_transition {
-	transition: none !important;
-}
+} body.dark { color: rgb(255, 255, 255) }
+body.en *, body.de * { font-size: calc(14px + 0.3vw) }
+body.zh-Hans * { font-size: calc(13px + 0.3vw) }
+body.non_transition *, body.non_transition { transition: none !important }
 
 .center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before {
 	transition: color 300ms, opacity 300ms;
@@ -38,24 +38,17 @@ body {
 	transition: color 300ms, background-color 300ms, box-shadow 300ms;
 }
 
-.background_color {
-	background-color: rgb(255, 255, 255);
-} body.dark .background_color {
-	background-color: rgb(53, 53, 53);
-}
+.background_color { background-color: rgb(255, 255, 255) }
+body.dark .background_color { background-color: rgb(53, 53, 53) }
 
 main {
 	padding: 1px 11px 1px 11px;
 	height: fit-content;
 	scroll-behavior: smooth;
 	width: calc(100% - 22px);
-} main.normal_padding {
-	padding: 15px 11px;
-} main.top_padding {
-	padding: 15px 11px 1px 11px;
-} main.bottom_padding {
-	padding: 1px 11px 15px 11px;
-}
+} main.normal_padding { padding: 15px 11px }
+main.top_padding { padding: 15px 11px 1px 11px }
+main.bottom_padding { padding: 1px 11px 15px 11px }
 
 hr {
 	height: 0.75px;
@@ -63,97 +56,55 @@ hr {
 	margin: 15px 0px;
 	background-color: rgba(255, 255, 255, 0.4);
 	border: none;
-} body.dark hr {
-	background-color: rgba(255, 255, 255, 0.2);
-}
+} body.dark hr { background-color: rgba(255, 255, 255, 0.2) }
 
 p {
 	margin: 15px 0px;
 	text-align: justify;
 }
 
-ol, ul {
-	margin: -5px 0px 0px 0px;
-}
+ol, ul { margin: -5px 0px 0px 0px }
 
 li {
 	margin: 10px 0px;
 	text-align: justify;
 }
 
-h1 {
-	margin: 15px;
-	font-weight: 900;
-	color: rgb(132, 67, 255);
+h1, h2, h3, h4, h5, h6 {
+	margin: calc(20px + 0.8vw) 0px;
 	text-align: center;
-	font-size: calc(20px + 3vw);
-} body.dark h1 {
-	color: rgb(254, 247, 167);
-} h2 {
-	margin: 15px;
-	font-size: calc(20px + 2.4vw);
-	font-weight: 800;
-	color: rgb(132, 67, 255);
-	text-align: center;
-} body.dark h2 {
-	color: rgb(254, 247, 167);
-} h3 {
-	margin: 15px;
-	font-size: calc(20px + 1.8vw);
-	font-weight: 700;
-	color: rgb(132, 67, 255);
-	text-align: center;
-} body.dark h3 {
-	color: rgb(254, 247, 167);
-} h4 {
-	margin: 15px;
-	font-size: calc(20px + 1.2vw);
-	font-weight: 600;
-	color: rgb(132, 67, 255);
-	text-align: center;
-} body.dark h4 {
-	color: rgb(254, 247, 167);
-} h5 {
-	margin: 15px;
-	font-size: calc(20px + 0.6vw);
-	font-weight: 500;
-	color: rgb(132, 67, 255);
-	text-align: center;
-} body.dark h5 {
-	color: rgb(254, 247, 167);
-} h6 {
-	margin: 15px;
-	font-size: 20px;
-	font-weight: 400;
-	color: rgb(132, 67, 255);
-	text-align: center;
-} body.dark h6 {
-	color: rgb(254, 247, 167);
-}
+	color: var(--violet);
+	font-family: Cormorant SC;
+	font-weight: bold;
+	line-height: 100%;
+} body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 { color: var(--gold) }
+h1 { font-size: calc(30px + 2.5vw) !important }
+h2 { font-size: calc(28px + 2vw) !important }
+h3 { font-size: calc(26px + 1.5vw) !important }
+h4 { font-size: calc(24px + 1vw) !important }
+h5 { font-size: calc(22px + 0.5vw) !important }
+h6 { font-size: 20px !important }
 
-main p, main li, main strong, main em, main a, main .fake_a {
-	line-height: calc(22px + 0.35vw);
+body.zh-Hans h1, body.zh-Hans h2, body.zh-Hans h3, body.zh-Hans h4, body.zh-Hans h5, body.zh-Hans h6 {
+	font-family:'STDongGuanTi bld' !important;
+	font-weight: normal !important;
 }
 
 a, .fake_a {
     text-decoration: none;
-    color: rgb(132, 67, 255);
+    color: var(--violet);
 	font-weight: 800;
 	font-style: italic;
 	cursor: pointer;
-} body.dark a, body.dark .fake_a {
-	color: rgb(254, 247, 167);
-} a:hover, .fake_a:hover {
-    color: rgb(109, 173, 208);
-} body.dark a:hover, body.dark .fake_a:hover {
-	color: rgb(109, 173, 208);
-}
+} body.dark a, body.dark .fake_a { color: var(--gold) }
+a:hover, .fake_a:hover { color: rgb(109, 173, 208) }
+body.dark a:hover, body.dark .fake_a:hover { color: rgb(109, 173, 208) }
 
-.shadow {
-	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-} body.dark .shadow {
-	box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3);
-}
+.shadow { box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15) }
+body.dark .shadow { box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3) }
+
+main p, main li, main strong, main em, main a, main .fake_a { line-height: calc(23px + 0.3vw) }
+body.zh-Hans main p, body.zh-Hans main li, body.zh-Hans main strong, body.zh-Hans main em, body.zh-Hans main a, body.zh-Hans main .fake_a { line-height: calc(23px + 0.3vw) }
 
 img {
 	border-radius: 15px;
@@ -164,26 +115,19 @@ img {
 	margin: 0px auto 0px auto;
 	display: block;
 	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-} body.dark main img {
-	box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3);
-}
+} body.dark main img { box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3) }
 
-.clickable {
-	cursor: pointer;
-} .clickable:hover {
+.clickable { cursor: pointer }
+.clickable:hover {
     color: rgb(255, 255, 255);
-    background-color: rgba(132, 67, 255, 0.2) !important;
+    background-color: rgba(132, 67, 255, 0.2);
 } body.dark .clickable:hover {
 	color: rgb(50, 50, 50);
-	background-color: rgba(254, 247, 167, 0.75) !important;
-} .clickable:active:hover {
-    background-color: rgba(132, 67, 255, 0.5) !important;
-} body.dark .clickable:active:hover {
-	background-color: rgb(254, 247, 167) !important;
-}
+	background-color: rgba(254, 247, 167, 0.75);
+} .clickable:active:hover { background-color: rgba(132, 67, 255, 0.5) }
+body.dark .clickable:active:hover { background-color: var(--gold) }
 
 .demobox {
-	flex: 1 1 auto;
 	background-color: rgba(255, 255, 255, 0.75);
 	border-radius: 15px;
 	padding: 8px;
@@ -191,39 +135,29 @@ img {
   	justify-content: center;
 	text-align: center;
 	display: flex;
-} body.dark .demobox {
-	background-color: rgba(53, 53, 53, 0.75);
-}
+	gap: 10px;
+} body.dark .demobox { background-color: rgba(53, 53, 53, 0.75) }
+.directory .demobox { flex: 1 1 auto }
 
 .center_text {
 	display: flex;
 	align-items: center;
-	margin: auto auto auto 12px;
+	margin: 0;
 	padding: 0px;
 	white-space: nowrap;
-} .demobox .center_text {
-	flex-direction: column;
-}
+} .demobox .center_text { flex-direction: column }
 
 @media (max-width: 768px) {
 	main {
 		padding: 1px 8px 1px 8px;
-		width: calc(100% - 16px);
-	} main.normal_padding {
-		padding: 10px 8px;
-	} main.top_padding {
-		padding: 10px 8px 1px 8px;
-	} main.bottom_padding {
-		padding: 1px 8px 10px 8px;
-	}
+		width: calc(100% - 16px)
+	} main.normal_padding { padding: 10px 8px }
+	main.top_padding { padding: 10px 8px 1px 8px }
+	main.bottom_padding { padding: 1px 8px 10px 8px }
 
-	hr {
-		margin: 10px 0px;
-	}
+	hr { margin: 10px 0px }
 
-	::-webkit-scrollbar {
-		width: 2px !important;
-	}
+	::-webkit-scrollbar { width: 2px !important }
 
 	p {
 		text-align: left;
@@ -235,61 +169,44 @@ img {
 		margin: 6px 0px;
 	}
 
-	ul li {
-		padding-right: 0 !important;
-	}
+	ul li { padding-right: 0 !important }
 
-	ol {
-		padding-right: 0 !important;
-	}
+	ol { padding-right: 0 !important }
 }
 
-strong {
-	color: rgb(175, 51, 29);
-} body.dark strong {
-	color: rgb(254, 142, 124);
-}
+strong { color: rgb(175, 51, 29) }
+body.dark strong { color: rgb(254, 142, 124) }
 
-em {
-	color: rgb(17, 148, 117);
-} body.dark em {
-	color: rgb(90, 255, 178);
-}
+em { color: rgb(17, 148, 117) }
+body.dark em { color: rgb(90, 255, 178) }
 
 @supports not (scrollbar-gutter: stable both-edges) {
     main {
 		padding: 1px 15px 5px 15px;
 		width: calc(100% - 30px);
-	} main.normal_padding {
-		padding: 15px;
-	} main.top_padding {
-		padding: 15px 15px 5px 15px;
-	} main.bottom_padding {
-		padding: 1px 15px 15px 15px;
+	} main.normal_padding { padding: 15px }
+	main.top_padding { padding: 15px 15px 5px 15px }
+	main.bottom_padding { padding: 1px 15px 15px 15px }
+
+	@media (max-width: 768px) {
+		main {
+			padding: 1px 10px 1px 10px;
+			width: calc(100% - 20px)
+		} main.normal_padding { padding: 10px 10px }
+		main.top_padding { padding: 10px 10px 1px 10px }
+		main.bottom_padding { padding: 1px 10px 10px 10px }
 	}
 }
 
-::-webkit-scrollbar {
-	width: 4px;
-}
-
-::-webkit-scrollbar-track {
-	background-color: transparent;
-}
-
+::-webkit-scrollbar { width: 4px }
+::-webkit-scrollbar-track { background-color: transparent }
 ::-webkit-scrollbar-thumb {
 	background: rgba(30, 30, 30, 0.5);
 	border-radius: 2px;
 	transition: background-color 300ms;
-} body.dark ::-webkit-scrollbar-thumb, body.dark::-webkit-scrollbar-thumb {
-	background: rgba(255, 255, 255, 0.75);
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: rgba(30, 30, 30, 0.75);
-} body.dark ::-webkit-scrollbar-thumb:hover, body.dark::-webkit-scrollbar-thumb:hover {
-	background: rgba(255, 255, 255, 0.5);
-}
+} body.dark ::-webkit-scrollbar-thumb, body.dark::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.25) }
+::-webkit-scrollbar-thumb:hover { background: rgba(30, 30, 30, 0.75) }
+body.dark ::-webkit-scrollbar-thumb:hover, body.dark::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.5) }
 
 ul {
 	list-style: none;
@@ -310,7 +227,5 @@ ol {
 ul li::before {
 	content: "✦";
 	padding-right: 8px;
-	color: rgb(132, 67, 255);
-} body.dark ul li::before {
-	color: rgb(254, 247, 167);
-}
+	color: var(--violet);
+} body.dark ul li::before { color: var(--gold) }

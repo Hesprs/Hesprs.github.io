@@ -33,6 +33,8 @@
     transition: background-color 300ms, box-shadow 300ms;
 } body.dark .center {
     background-color: rgb(53, 53, 53);
+} .center p {
+    line-height: unset;
 }
 
 .column img, .arrow {

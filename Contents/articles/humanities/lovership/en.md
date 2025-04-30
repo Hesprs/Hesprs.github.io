@@ -12,7 +12,7 @@ The current concept insists on the norms of matrimony, which **imprisons** indiv
 
 ![LGBT](https://img1.tucang.cc/api/image/show/4d0b0e32db33de510e425816f6ca68d2)
 
-#### 🗽 Liberated Lovership Explained
+### 🗽 Liberated Lovership Explained
 
 **Liberated lovership**, in Hēsperus' viewpoint, is a relationship between individuals with the attributes below:
 1. based on the **Genuine Love** and **distinguished with matrimony**;
@@ -24,7 +24,7 @@ To make it understandable, Hēsperus uses a more straightforward yet not compre
 2. Hēsperus supports **🏳️‍🌈 LGBTQIA+**, **early romance** and **intergenerational romance**;
 3. People can fall in love with whomever they want if they both desire, even **multi-lovership** is permitted; they can also choose to end a love whenever they want.
 
-#### 💞 Genuine Love Explained
+### 💞 Genuine Love Explained
 
 **Genuine Love** is a coordination based on **mutual** affections, which should contain:
 1. **Sexual Attraction**;
@@ -39,7 +39,7 @@ What it **shouldn't** contain:
 3. conventional **Love Morality**;
 4. any other **reluctant enforcements**.
 
-#### 🦋 Sexual Terms Explained
+### 🦋 Sexual Terms Explained
 
 **Sexual Attraction** is desire driven by sexual enchantment, which is not shackled by sexual behaviour or isomerism. It can emerge in homosexual contexts, and not all sexual attraction can lead to sexual behaviours;
 
@@ -48,6 +48,8 @@ What it **shouldn't** contain:
 **Sexually Consequential Behaviour** is a sexual behaviour that is aimed at obtaining a **baby**.
 
 It's crucial to clarify that having sexual behaviour does not mean harbouring sexual attraction, and vice versa.
+
+---
 
 ### ❤️ Pursuit of Love
 
@@ -63,6 +65,8 @@ In Hēsperus' view, love is a process of reviving pure affections and dependenc
 
 People love, because they **desire love**. We see an **idealization** of ourselves, we see beauty, integrity and perfection which we lack, so we love. Everyone below the firmament is **born with defects and the certainty of mortality**, but we dedicate ourselves to **strive for perfection and eternity**, that is the **essence of love**, and also the **essence of life and existence**. Humanity has fully comprehended that the **material is easy to fade, but the human ideal cannot be effaced**. Consequently, we begin to desire, pursue, express and create. In the journey of consummation, we gain happiness, well-being, and love.
 
+---
+
 ### 👰 Lovership and Matrimony
 
 ![wedding](https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a)
@@ -73,9 +77,9 @@ So why should matrimony exist?
 
 🤵‍♂️ _Friedrich Engels_ posited, in 📕 _The Origin of the Family, Private Property and the State_, that monogamous marriage originated from the **concentration of wealth** in the hands of individual men and their desire to ensure that this wealth could be passed down to their biological offspring. It is obvious that the marriage is born to be **selfish**. This form of marriage is characterized by the **subjugation** of women, who were confined to domestic roles and forced into a life of **unpaid labour** focused on child-rearing and household management. The reason marriage emphasises durability may be to facilitate the growth of their children but inevitably sinks into the swamp of societal inequality and the ossification of love. There is an emerging sense amongst people that marriages backfire love. It is not a contract ensuring genuineness, but more like a **shackle imprisoning free will** and **alienating lovers**, especially **females**.
 
-**Absurd social morality** often deceives us that the lovers is designated to get married, and couples should have children, a matrimony should be eternal and exclusive until death. Moreover, it has coined a host of fantasies and stupid rhetoric to confuse the populace, camouflaging it as a divine process that must pass through. Inarguably, the propaganda of it is a complete triumph, almost everyone falls prostrate and deifies it piously as if it is an unchangeable rule. What companies it, is the **annihilation of humanities** and the **ignorance of the flexibility of human temperament**. In most cases, the lasting progress of marriage will be ultimately transformed into a kind of **flawed lovership**, a **slavery**, a **legitimate prostitution**.
+**Absurd social morality** often deceives us that the lovers is designated to get married, and couples should have children, a matrimony must be eternal and exclusive until death. Moreover, it has coined a host of fantasies and stupid rhetoric to confuse the populace, camouflaging it as a divine process that must pass through. Inarguably, its propaganda is a complete triumph, almost everyone falls prostrate and deifies it piously as if it is a specter haunting the humankind. What companies it, is the **annihilation of humanities** and the **ignorance of the flexibility of human temperament**. In most cases, the lasting progress of marriage will be ultimately transformed into a kind of **flawed lovership**, a **slavery**, a **legitimate prostitution**.
 
-Naysayers always allege irresponsibly that all people have been entitled to the right to love and devorce freely, depicting that lovership is originally liberal. This is a **misunderstanding of freedom** de facto. True freedom is **multidimensional** -- including political freedom, economic freedom (not refer to free-market here), structural freedom, cultural freedom, etc. Love participants seemingly own the freedom, the social ethics, however, reject it, and conservative parents curse them with flushing faces. The **Liberated Lovership** can be ushered only if an "overall reform" has taken place.
+Naysayers always allege irresponsibly that all people have been entitled to the right to love and divorce freely, depicting that lovership is originally liberal. This is a **misunderstanding of freedom** de facto. True freedom is **multidimensional** -- including political freedom, economic freedom (not refer to free-market here), structural freedom, cultural freedom, etc. Love participants seemingly own the freedom, the social ethics, however, reject it, and conservative parents curse them with flushing faces. The **Liberated Lovership** can be ushered only if an "overall reform" has taken place.
 
 In Hēsperus' ideal, the solutions are: **the deprivation of the right of inheritance**, **social upbringing**, and **public ownership**. This is not an ingenious idea, as early as 1848 AD, 🤵‍♂️ _Karl Marx_ and 🤵‍♂️ _Friedrich Engels_ announced it in 📙 _Communist Manifesto_ . After implementing such policies, the duty of raising kids is no longer attached to couples, so matrimony will have lost its necessity to exist. It is not tantamount to smashing romances. However, **⛓️‍💥 WE HAVE NOTHING TO LOSE BUT OUR CHAINS**, an **entirely new, free and redefined** love is waiting for us.
 
@@ -84,6 +88,8 @@ We know that aforesaid solutions may be too utopian and optimistic, but at least
 1. Distinguish and **disconnect** lovership and marriages, realizing that lovership means mutual affection, especially **Liberated Lovership**; and marriages only stand for the responsibility of **Sexually Consequential Behaviour**;
 2. Abolish any taboos about **LGBTQIA+**, **early romance**, **intergenerational romance**, **multi-lovership** and **gender discriminations in marriages**;
 3. **Reshape societal morality**, emphasising the difference between lovership and marriages, eliminating taboos, and promoting **love egalitarianism**.
+
+---
 
 ### 😣 Alienation is Anywhere
 
@@ -97,8 +103,8 @@ Age discrimination in lovership is an absolute empty word. We can see lifeless y
 
 Then let's talk about **early romance**. Especially in East Asian countries, school teachers and parents coined it to refer to the **lovership among students or juveniles**, regarding it can hamper students' academic excellence but **with no evidence**. Hēsperus gives a breakdown of this issue:
 
-- The **alienation of school role**: The school is a place for students to achieve **comprehensive development**, including **setting a correct value of love**. However, East Asian teachers and parents all have cold feet with cowardice when countering this issue, attempting to address it by prohibiting school lovership autocratically, which is **irresponsible** and **foolish**. The conceivable outcome is, that students become depressed in an oppressive atmosphere, somewhat freaky in their love values, and teachers and parents become insane with suppressing student lovership. The school is no longer an educational sanctuary that cultivates healthy, confident and optimistic youngsters, but a **detention factory** manufacturing glittery yet flawed machines.
-- The **alienation of lovership**: The abuse of love by students is responsible for this problem as well. However, it's not their fault. Commonly, all mammal has a rutting period. The genesis of it is the absence of a **correct love value**. Under the influence of modern media, it is easy for them to barely regard it as romance, intimation, youth, gorgeousness, the impulse of sex and so on, which is shortsighted. Consequently, students often fall into **flawed loverships**. Some of their lovership is based on **purely sexual attraction**, alienating the healing power of love to sexual satisfaction, or more radically, **volunteer prostitution**. To this, Hēsperus neither approves it nor vindicates it.
+- The **alienation of school role**: The school is a place for students to achieve **comprehensive development**, including **setting a correct value of love**. However, East Asian teachers and parents all have cold feet with cowardice when countering this issue, attempting to address it by prohibiting school loverships autocratically, which is **irresponsible** and **foolish**. The conceivable outcome is, that students become depressed in an oppressive atmosphere, somewhat freaky in their love values, and teachers and parents turn insane with suppressing student loverships. The school is no longer an educational sanctuary that cultivates healthy, confident and optimistic youngsters, but a **detention factory** manufacturing glittery yet flawed machines.
+- The **alienation of lovership**: The abuse of love by students is responsible for this problem as well. However, it's not their fault. Commonly, all mammal has a rutting period. The genesis of it is the absence of a **correct love value**. Under the influence of modern media, it is easy for them to barely regard it as romance, intimation, youth, gorgeousness, the impulse of sex and so on, which is shortsighted. Consequently, students often fall into **flawed loverships**. Some of their loverships is based on **purely sexual attraction**, alienating the healing power of love to sexual satisfaction, or more radically, **volunteer prostitution**. To this, Hēsperus neither approves nor vindicates it.
 - Importance of **Liberated Lovership**: Hēsperus believes that a appropriate **value of love**, such as **Liberated Lovership** is the very solution for it. It is reasonable to believe that lovers in a genuine **Liberated Lovership** are fully rational because they can comprehend the essence of love and what they can virtually attain in a romance. They entrust their relationship to their communal comprehension and respect, rather than fragile sexual affection or lust. Although this hasn't been testified, schools and families cannot use this as a pretext to refuse a beneficial trial that enables lovership to be put to **positive use**.
 
 ---

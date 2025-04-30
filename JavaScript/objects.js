@@ -77,7 +77,7 @@ const articles = {
         },
         type: 'directory',
         address: 'articles/others',
-        thumbnail: 'https://img1.tucang.cc/api/image/show/88c2c5111e9d7c281d7307299d94e8d9',
+        thumbnail: 'https://img1.tucang.cc/api/image/show/e5c051e9039a6c6ed15308c8499bb6cd',
         hide: true,
     },
 
@@ -395,4 +395,10 @@ const showcases = [
 const warning_icons = {
     alarm: 'https://img.icons8.com/fluency/100/box-important--v1.png',
     error: 'https://img.icons8.com/fluency/100/cancel.png',
+}
+
+const font_demand = {
+    'zh-Hans': 'https://chinese-fonts-cdn.deno.dev/packages/stdgt/dist/%E4%B8%8A%E5%9B%BE%E4%B8%9C%E8%A7%82%E4%BD%93-%E7%B2%97%E4%BD%93/result.css',
+    en: 'https://fonts.loli.net/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap',
+    de: 'https://fonts.loli.net/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap',
 }

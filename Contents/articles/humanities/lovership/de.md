@@ -12,7 +12,7 @@ Das gegenwärtige Konzept beharrt auf den Normen der Ehe, die Individuen durch v
 
 ![LGBT](https://img1.tucang.cc/api/image/show/4d0b0e32db33de510e425816f6ca68d2)
 
-#### 🗽 Liberated Lovership erklärt
+### 🗽 Liberated Lovership erklärt
 
 **Liberated Lovership** (Befreite Liebesbeziehung) ist aus Hēsperus' Sicht eine Beziehung zwischen Individuen mit folgenden Merkmalen:
 1. basierend auf **echter Liebe** und **unterschieden von der Ehe**;
@@ -24,7 +24,7 @@ Um es verständlich zu machen, verwendet Hēsperus hier eine einfachere, aber n
 2. Hēsperus unterstützt **🏳️‍🌈 LGBTQIA+**, **frühe Liebe** und **generationsübergreifende Liebe**;
 3. Menschen können sich in jeden verlieben, den sie möchten, wenn beide es wünschen, sogar **Mehrfachliebesbeziehungen** sind erlaubt; sie können auch die Liebe beenden, wann immer sie wollen.
 
-#### 💞 Echte Liebe erklärt
+### 💞 Echte Liebe erklärt
 
 **Echte Liebe** ist eine Verbindung, die auf **gegenseitigen** Gefühlen basiert und folgendes beinhalten sollte:
 1. **Sexuelle Anziehung**;
@@ -39,7 +39,7 @@ Was sie **nicht** enthalten sollte:
 3. konventionelle **Liebesmoral**;
 4. jegliche anderen **zwanghaften Durchsetzungen**.
 
-#### 🦋 Sexuelle Begriffe erklärt
+### 🦋 Sexuelle Begriffe erklärt
 
 **Sexuelle Anziehung** ist ein Verlangen, das durch sexuelle Faszination angetrieben wird und nicht durch sexuelles Verhalten oder Isomerie eingeschränkt ist. Es kann in homosexuellen Kontexten auftreten, und nicht alle sexuellen Anziehungen führen zu sexuellem Verhalten;
 
@@ -48,6 +48,8 @@ Was sie **nicht** enthalten sollte:
 **Sexuell folgenreiches Verhalten** ist ein sexuelles Verhalten, das darauf abzielt, ein **Baby** zu bekommen.
 
 Es ist entscheidend zu klären, dass sexuelles Verhalten nicht bedeutet, sexuelle Anziehung zu empfinden, und umgekehrt.
+
+---
 
 ### ❤️ Das Streben nach Liebe
 
@@ -62,6 +64,8 @@ Warum lieben Menschen?
 Aus Hēsperus' Sicht ist Liebe ein Prozess der Wiederbelebung reiner Zuneigung und Abhängigkeit, die nur in der Kindheit existiert, und ermöglicht es Liebenden, ein "zweites Selbst" als Hafen für ihre Temperamente zu suchen. Liebe wird als Schlüssel zu Glück, Tugend und der Verwirklichung des vollen Potenzials gesehen, ein Mensch ohne Liebe ist gebrochen, nur Liebe kann Menschen aus der Verwirrung und Nihilität einer schnelllebigen Welt retten. Liebe beginnt mit **sexueller Anziehung**, erstreckt sich aber auf alle Aspekte des Lebens und die psychologische **Abhängigkeit, Zugehörigkeit, Authentizität und Verständnis**.
 
 Menschen lieben, weil sie **Liebe begehren**. Wir sehen eine **Idealisierung** unserer selbst, wir sehen Schönheit, Integrität und Perfektion, die uns fehlen, also lieben wir. Jeder unter dem Himmelszelt ist **mit Fehlern und der Gewissheit der Sterblichkeit geboren**, aber wir widmen uns dem **Streben nach Perfektion und Ewigkeit**, das ist das **Wesen der Liebe** und auch das **Wesen des Lebens und der Existenz**. Die Menschheit hat vollständig begriffen, dass das **Materielle leicht verblasst**, aber das **menschliche Ideal nicht ausgelöscht werden kann**. Folglich beginnen wir zu begehren, zu streben, auszudrücken und zu erschaffen. Auf dem Weg zur Vollendung gewinnen wir Glück, Wohlbefinden und **Liebe**.
+
+---
 
 ### 👰 Liebesbeziehung und Ehe
 
@@ -84,6 +88,8 @@ Wir wissen, dass die oben genannten Lösungen zu utopisch und optimistisch sein 
 1. Unterscheiden und **trennen** Sie Liebesbeziehungen und Ehen, und erkennen Sie, dass Liebesbeziehungen gegenseitige Zuneigung bedeuten, insbesondere **Liberated Lovership**; und Ehen nur für die Verantwortung von **sexuell folgenreichem Verhalten** stehen;
 2. Abschaffung jeglicher Tabus über **LGBTQIA+**, **frühe Liebe**, **generationsübergreifende Liebe**, **Mehrfachliebesbeziehungen** und **Geschlechterdiskriminierung in Ehen**;
 3. **Gesellschaftliche Moral neu gestalten**, den Unterschied zwischen Liebesbeziehungen und Ehen betonen, Tabus beseitigen und **Liebesegalitarismus** fördern.
+
+---
 
 ### 😣 Entfremdung ist überall
 

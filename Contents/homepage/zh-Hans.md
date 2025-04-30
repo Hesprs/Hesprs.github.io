@@ -45,7 +45,7 @@
         <div class="overlay">开发</div>
     </article>
     <article class="shadow" id="others_redirect">
-        <img loading="lazy" src="https://img1.tucang.cc/api/image/show/88c2c5111e9d7c281d7307299d94e8d9" alt="Others" class="background_img" />
+        <img loading="lazy" src="https://img1.tucang.cc/api/image/show/e5c051e9039a6c6ed15308c8499bb6cd" alt="Others" class="background_img" />
         <div class="overlay">其他</div>
     </article>
 </div>

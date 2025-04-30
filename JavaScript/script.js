@@ -15,7 +15,6 @@ let sidenav_minimal = false;
 let current_page, language, system_language, timeout, timeout_2;
 let history = [];
 
-const entry_list = document.getElementsByName('category');
 const cover = document.getElementById('cover');
 const sidenav = document.getElementById('sidenav');
 const background = document.getElementById('background');
@@ -57,8 +56,17 @@ const warning_icon = document.getElementById('warning_icon');
 const github_corner = document.getElementById('github_corner');
 const titleBar = document.getElementById('title_bar');
 const meta = document.getElementsByTagName('meta');
+const language_list = document.getElementsByName('language');
+const entry_list = document.getElementsByName('category');
 
 function initialize() {
+    if (navigator.language.includes('zh')) system_language = 'zh-Hans';
+    else if (navigator.language.includes('de')) system_language = 'de';
+    else system_language = 'en';
+    let cookie_language = getCookie('language');
+    language = cookie_language !== 'void' ? cookie_language : system_language;
+    font_check();
+    document.body.classList.add(language);
     let redirect = localStorage.getItem('title');
     if (redirect === null) redirect = 'homepage';
     else {
@@ -67,7 +75,6 @@ function initialize() {
         setTimeout(() => document.body.classList.remove('non_transition'), 20);
         localStorage.removeItem('title');
     }
-    detect_language();
     const theme = getCookie('theme');
     if (theme === 'dark') {
         dn.checked = true;
@@ -92,6 +99,12 @@ function initialize() {
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
 }
 
+function font_check() {
+    const links = document.getElementsByTagName('link');
+    for (let i = 0; i < links.length; i++) if (links[i].href === font_demand[language]) return;
+    load_font(font_demand[language]);
+}
+
 function throttle(func, interval) {
     let timeout = null;
     let lastArgs = null;
@@ -113,14 +126,6 @@ function throttle(func, interval) {
             }
         }
     };
-}
-
-function detect_language() {
-    if (navigator.language.includes('zh')) system_language = 'zh-Hans';
-    else if (navigator.language.includes('de')) system_language = 'de';
-    else system_language = 'en';
-    let cookie_language = getCookie('language');
-    language = cookie_language !== 'void' ? cookie_language : system_language;
 }
 
 function toggle_dark() {
@@ -219,7 +224,6 @@ function super_minimal_start() {
     music_cover.src = 'https://img.icons8.com/fluency/100/settings.png';
     document.getElementById('about_icon').src = 'https://img.icons8.com/fluency/100/magical-scroll.png';
     const about_label = document.getElementById('about_label');
-    about_label.classList.remove('checked');
     about_label.htmlFor = '';
     musicContainer.removeEventListener('click', music_clicked);
     about_label.addEventListener('click', categories);
@@ -232,7 +236,6 @@ function super_minimal_end() {
     else music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
     document.getElementById('about_icon').src = 'https://img.icons8.com/fluency/100/info-popup.png';
     const about_label = document.getElementById('about_label');
-    if (document.getElementById('about').checked) about_label.classList.add('checked');
     about_label.htmlFor = 'about';
     musicContainer.addEventListener('click', music_clicked);
     about_label.removeEventListener('click', categories);
@@ -282,10 +285,6 @@ function settings() {
             pop_up_settings_music_cover.src = music[songIndex].img;
             pop_up_settings_music_cover.style.borderRadius = '50%';
         } else { pop_up_settings_music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png' }
-        if (language === 'zh-Hans') {
-            document.getElementById('pop_up_text_dark').classList.add('chinese');
-            document.getElementById('pop_up_text_light').classList.add('chinese');
-        }
         document.getElementById('pop_up_language').addEventListener('click', language_clicked);
         document.getElementById('pop_up_music').addEventListener('click', music_clicked);
         if (delay === 200) pop_up.style.opacity = '1';
@@ -296,57 +295,29 @@ function settings() {
 function categories() {
     pop_up_index = 2;
     pop_up_title.innerHTML = translation.catalogue[language];
-    let content = '', category;
+    let content = '';
     for (i = 0; i < entry_list.length; i ++) {
-        let src;
         let name = entry_list[i].value;
-        if (entry_list[i].checked) category = entry_list[i].value;
-        src = name === 'about' ? 'https://img.icons8.com/fluency/100/info-popup.png' : document.getElementById(`${name}_icon`).src;
+        let src = name === 'about' ? 'https://img.icons8.com/fluency/100/info-popup.png' : document.getElementById(`${name}_icon`).src;
         content += `
             <label for='${name}' class='demobox shadow color clickable' id='pop_up_${name}_label'>
-				<img class='icon' src='${src}' alt='${name}' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
-				<div class='center_text' style='margin-left: 10px;'>${document.getElementById(`text_${name}`).innerHTML}</div>
+				<img class='icon' src='${src}' alt='${name}'>
+				<div class='center_text'>${document.getElementById(`text_${name}`).innerHTML}</div>
 			</label>
         `;
     }
     pop_up_content.innerHTML = `<div class='directory' style='margin: auto 0px;'>${content}</div>`;
-    if (category != undefined) {
-        document.getElementById(`pop_up_${category}_label`).classList.remove('clickable');
-        document.getElementById(`pop_up_${category}_label`).classList.add('checked');
+    for (i = 0; i < entry_list.length; i ++) {
+        const entry = entry_list[i].value;
+        if (entry_list[i].checked) document.getElementById(`pop_up_${entry}_label`).classList.add('checked');
+        document.getElementById(`pop_up_${entry}_label`).addEventListener('click', catagory_check);
     }
     show_pop_up();
 }
 
-function change_category() {
-    let ee;
-    for (i = 0; i < entry_list.length; i++) {
-        let e = document.getElementById(`${entry_list[i].value}_label`);
-        if (pop_up_index === 2) ee = document.getElementById(`pop_up_${entry_list[i].value}_label`);
-        if (entry_list[i].checked) {
-            if(!(entry_list[i].value === 'about' && sidenav_fold_level === 2)) {
-                e.classList.add('checked');
-                e.classList.remove('clickable');
-            }
-            if (ee) {
-                ee.classList.add('checked');
-                ee.classList.remove('clickable');
-            }
-            entry_list[i].removeEventListener('click', entry_clicked);
-        } else {
-            e.classList.remove('checked');
-            e.classList.add('clickable');
-            if (ee) {
-                ee.classList.remove('checked');
-                ee.classList.add('clickable');
-            }
-            entry_list[i].addEventListener('click', entry_clicked);
-        }
-    }
-}
-
-function entry_clicked() {
-    change_category();
-    shift_title(this.value, false);
+function catagory_check() {
+    for (i = 0; i < entry_list.length; i ++) document.getElementById(`pop_up_${entry_list[i].value}_label`).classList.remove('checked');
+    this.classList.add('checked');
 }
 
 function language_clicked() {
@@ -362,20 +333,19 @@ function language_clicked() {
         pop_up_content.innerHTML = `
 	    	<div class='directory' style='margin: auto 0px;'>
 	    		<label for='en' class='demobox shadow color clickable' id='en_label'>
-	    			<img class='icon' src='https://img.icons8.com/fluency/100/great-britain-circular.png' alt='UK flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
-	    			<div class='center_text' style='margin-left: 10px;'>English</div>
+	    			<img class='icon' src='https://img.icons8.com/fluency/100/great-britain-circular.png' alt='UK flag'>
+	    			<div class='center_text'>English</div>
 	    		</label>
 	    		<label for='zh-Hans' class='demobox shadow color clickable' id='zh-Hans_label'>
-	    			<img class='icon' src='https://img.icons8.com/fluency/100/china-circular.png' alt='CN flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
-	    			<div class='center_text' style='margin-left: 10px;'>简体中文</div>
+	    			<img class='icon' src='https://img.icons8.com/fluency/100/china-circular.png' alt='CN flag'>
+	    			<div class='center_text'>简体中文</div>
 	    		</label>
 	    		<label for='de' class='demobox shadow color clickable' id='de_label'>
-	    			<img class='icon' src='https://img.icons8.com/fluency/100/germany-circular.png' alt='DE flag' style='width: 30px; height:30px; margin: auto 0px auto auto;'>
-	    			<div class='center_text' style='margin-left: 10px;'>Deutsch</div>
+	    			<img class='icon' src='https://img.icons8.com/fluency/100/germany-circular.png' alt='DE flag'>
+	    			<div class='center_text'>Deutsch</div>
 	    		</label>
 	    	</div>
         `;
-        document.getElementById(language).checked = true;
         pop_up_change_languages(false);
         if (delay === 200) pop_up.style.opacity = '1';
         else show_pop_up();
@@ -389,94 +359,89 @@ function show_pop_up() {
     pop_up.style.pointerEvents = 'auto';
 }
 
-async function shift_title(title, entry = true, back = false) {
-    timer = 0;
-    const timer_interval = setInterval(() => timer += 10, 10);
-    cover.style.opacity = 1;
-    content_district.style.opacity = 0;
-    if (!back) { if (current_page != undefined && title !== current_page) history.push(current_page) }
-    else history.pop();
-    current_page = title;
-    layer = 1 - layer;
-    modify_url(current_page);
-    const content = await resolve_url(entry);
-    meta.description.content = content.description;
-    const content_1 = document.getElementById(`content_${1 - layer}`);
-    const content_0 = document.getElementById(`content_${layer}`);
-    clearInterval(timer_interval);
-    timer = timer >= 200 ? 0 : 195 - timer;
-    setTimeout(() => {
-        if (content.warning != undefined) warn('alarm', content.warning);
-        if (content.github == undefined) github_corner.classList.remove('show');
-        else {
-            github_corner.href = content.github;
-            github_corner.classList.add('show');
-        }
-        content_0.scrollTo(0, 0);
-        content_1.innerHTML = '';
-        content_district.classList.toggle('slides');
-        if (content.type === 'search' || content.type === 'iframe' || content.type === '404') {
-            content_0.innerHTML = `<main class='${content.main_classes}' style='${content.main_styles}'>${content.content}</main>`;
-        } else {
-            content_0.innerHTML = `
-                <header>
-                    <h1>${actual_language(articles[current_page].title)}</h1>
-                </header>
-                <footer id='title_bar' class='shadow'>
-		    		<div id='crumb_navigation'></div>
-		    		<div id='downloads'></div>
-		    	</footer>
-                <hr>
-                <main class='${content.main_classes}' style='${content.main_styles}'>
-                    ${content.content}
-                </main>
-            `;
-            crumb(articles[current_page].address, content.downloads);
-        }
-        if (content.type === 'iframe') {
-            const iframe_window = document.getElementById('iframe').contentWindow;
-            content_0.style.scrollbarGutter = 'auto';
-            iframe_window.addEventListener('DOMContentLoaded', () => {
-                if (dn.checked) {
-                    iframe_window.document.body.classList.add('non_transition');
-                    iframe_window.document.body.classList.add('dark')
-                    setTimeout(() => iframe_window.document.body.classList.remove('non_transition'), 10);
-                };
+async function shift_title(title, back = false, force = false) {
+    if (force || title !== current_page) {
+        if (!back) { if (current_page != undefined && title !== current_page) history.push(current_page) }
+        else history.pop();
+        current_page = title;
+        timer = 0;
+        const timer_interval = setInterval(() => timer += 10, 10);
+        cover.style.opacity = 1;
+        content_district.style.opacity = 0;
+        layer = 1 - layer;
+        modify_url(current_page);
+        const content = await resolve_url();
+        meta.description.content = content.description;
+        const content_1 = document.getElementById(`content_${1 - layer}`);
+        const content_0 = document.getElementById(`content_${layer}`);
+        clearInterval(timer_interval);
+        timer = timer >= 200 ? 0 : 195 - timer;
+        setTimeout(() => {
+            if (content.warning != undefined) warn('alarm', content.warning);
+            if (content.github == undefined) github_corner.classList.remove('show');
+            else {
+                github_corner.href = content.github;
+                github_corner.classList.add('show');
+            }
+            content_0.scrollTo(0, 0);
+            content_1.innerHTML = '';
+            content_district.classList.toggle('slides');
+            if (content.type === 'search' || content.type === 'iframe' || content.type === '404') {
+                content_0.innerHTML = `<main class='${content.main_classes}' style='${content.main_styles}'>${content.content}</main>`;
+            } else {
+                content_0.innerHTML = `
+                    <header>
+                        <h1>${actual_language(articles[current_page].title)}</h1>
+                    </header>
+                    <footer id='title_bar' class='shadow'>
+	    	    		<div id='crumb_navigation'></div>
+	    	    		<div id='downloads'></div>
+	    	    	</footer>
+                    <hr>
+                    <main class='${content.main_classes}' style='${content.main_styles}'>
+                        ${content.content}
+                    </main>
+                `;
+                crumb(articles[current_page].address, content.downloads);
+            }
+            if (content.type === 'iframe') {
+                const iframe_window = document.getElementById('iframe').contentWindow;
+                content_0.style.scrollbarGutter = 'auto';
+                iframe_window.addEventListener('DOMContentLoaded', () => {
+                    if (dn.checked) {
+                        iframe_window.document.body.classList.add('non_transition');
+                        iframe_window.document.body.classList.add('dark')
+                        setTimeout(() => iframe_window.document.body.classList.remove('non_transition'), 10);
+                    };
+                    cover.style.opacity = 0;
+                    content_district.style.opacity = 1;
+                    cover.style.pointerEvents = 'none';
+                });
+            } else {
+                content_0.style.scrollbarGutter = '';
                 cover.style.opacity = 0;
                 content_district.style.opacity = 1;
                 cover.style.pointerEvents = 'none';
-            });
-        } else {
-            content_0.style.scrollbarGutter = '';
-            cover.style.opacity = 0;
-            content_district.style.opacity = 1;
-            cover.style.pointerEvents = 'none';
-        }
-        if (content.click_listeners != undefined) event_listeners(content.click_listeners);
-    }, timer);
+            }
+            if (content.click_listeners != undefined) event_listeners(content.click_listeners);
+        }, timer);
+    }
 }
 
-async function resolve_url(entry) {
+async function resolve_url() {
     let address, content, warning, type; // type: search, directory, iframe, 404, article
+    for (let i = 0; i < entry_list.length; i ++) { entry_list[i].checked = current_page === entry_list[i].value ? true : false }
     if (articles[current_page] == undefined) {
-        if (entry) {
-            for (let i = 0; i < entry_list.length; i ++) document.getElementById(entry_list[i].value).checked = false;
-            change_category();
-        }
         if (!current_page.includes('search=')) {
-            address = `404/info.json`;
+            address = '404/info.json';
             type = '404';
         } else {
             type = 'search';
             content = search(current_page.replace('search=', ''));
-            address = content === '404' ? `404/info.json` : `done`;
+            address = content === '404' ? '404/info.json' : 'done';
         }
     } else {
         type = articles[current_page].type;
-        if (entry) {
-            document.getElementById(articles[current_page].address.split('/')[0]).checked = true;
-            change_category();
-        }
         address = `${articles[current_page].address}/info.json`;
     }
     if (address !== 'done') {
@@ -609,7 +574,7 @@ function crumb(address, download) {
     crumb_navigation.innerHTML = crumb;
     downloads.innerHTML = crumb_downloads;
     for (i = 0; i < crumb_list.length - 1; i++) {
-        document.getElementById(`${crumb_list[i]}_crumb`).addEventListener('click', function() { shift_title(this.getAttribute('value'), false) })
+        document.getElementById(`${crumb_list[i]}_crumb`).addEventListener('click', function() { shift_title(this.getAttribute('value')) })
     }
 }
 
@@ -725,41 +690,29 @@ function change_languages(title = current_page) {
     nations.src = translation.nations[language];
     document.getElementById('continue').innerHTML = translation.click_anywhere_to_continue[language];
     if (!ever_played_music) music_title.innerHTML = translation.music_player[language];
-    if (language === 'zh-Hans') {
-        text_dark.classList.add('chinese');
-        text_light.classList.add('chinese');
-    } else {
-        text_dark.classList.remove('chinese');
-        text_light.classList.remove('chinese');
-    }
-    shift_title(title);
+    shift_title(title, undefined, true);
 }
 
 function pop_up_change_languages(shift = true) {
-    let ele = document.getElementsByName('language');
-    for (i = 0; i < ele.length; i++) {
-        let e = document.getElementById(ele[i].value + '_label');
-        if (ele[i].checked) {
-            language = ele[i].value;
-            if (language === system_language) { setCookie('language', language, -1) }
-            else { setCookie('language', language) }
-            e.classList.add('checked');
-            e.classList.remove('clickable');
-            ele[i].removeEventListener('click', pop_up_change_languages);
-        } else {
-            e.classList.remove('checked');
-            e.classList.add('clickable');
-            ele[i].addEventListener('click', pop_up_change_languages);
+    for (i = 0; i < language_list.length; i++) {
+        if (language_list[i].checked && language_list[i].value !== language) {
+            document.body.classList.remove(language);
+            language = language_list[i].value;
+            font_check();
+            document.body.classList.add(language);
+            if (language === system_language) setCookie('language', language, -1);
+            else setCookie('language', language);
+            if (shift) {
+                pop_up_title.innerHTML = translation.languages[language];
+                change_languages();
+            }
+            break;
         }
-    }
-    if (shift) {
-        pop_up_title.innerHTML = translation.languages[language];
-        change_languages();
     }
 }
 
 function previous_page() {
-    if (history.length != 0) shift_title(history[history.length - 1], true, true);
+    if (history.length != 0) shift_title(history[history.length - 1], true);
 }
 
 function search(prompt) {
@@ -867,6 +820,14 @@ function actual_language(directory, type = 'object') {
     return actual_language;
 }
 
+function load_font(href) { 
+    let preloaded = document.createElement('link');
+    preloaded.type = "text/css";
+    preloaded.rel = "stylesheet";
+    preloaded.href = href;
+    document.head.appendChild(preloaded);
+}
+
 stretch_bar.addEventListener('touchstart', touch_start);
 stretch_bar.addEventListener('mousedown', mouse_down);
 stretch_bar.addEventListener('mouseover', hover_color);
@@ -900,3 +861,5 @@ window.addEventListener('DOMContentLoaded', initialize);
 window.addEventListener('resize', resize);
 window.addEventListener('mouseup', mouse_up);
 window.addEventListener('touchend', mouse_up);
+for (let i = 0; i < language_list.length; i++) language_list[i].addEventListener('change', pop_up_change_languages);
+for (let i = 0; i < entry_list.length; i++) entry_list[i].addEventListener('change', function () { shift_title(this.value) });

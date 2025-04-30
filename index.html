@@ -10,18 +10,14 @@
 	<link rel='stylesheet' href='CSS/toggler.css'>
 	<link rel='stylesheet' href='CSS/pop_up.css'>
 	<link rel='stylesheet' href='CSS/common.css'>
-	<link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
 	<link type='image/png' sizes='100x100' rel='icon' href='https://img.icons8.com/fluency/100/orca.png'>
+	<link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
 </head>
 <body>
 	<input type='radio' id='en' name='language' value='en'>
 	<input type='radio' id='zh-Hans' name='language' value='zh-Hans'>
 	<input type='radio' id='de' name='language' value='de'>
 	<input type='checkbox' id='dn'>
-	<input type='radio' id='homepage' name='category' value='homepage'>
-	<input type='radio' id='articles' name='category' value='articles'>
-	<input type='radio' id='tools' name='category' value='tools'>
-	<input type='radio' id='about' name='category' value='about'>
 	<img id='background_img' alt='background image' class='background_img'>
 	<div class='centerer'  id='warning_bar'>
 		<div class='warning_bar clickable shadow' id='warning_bar_wrapper'>
@@ -48,7 +44,7 @@
 			<div class='sidenav_wrapper' id='search_bar_wrapper'>
 				<div class='entry clickable' id='previous_page'>
 					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous' style='height: 30px; width:30px;'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous'>
 						<div class='center_text' id='text_previous' style='direction: rtl; margin: auto 0px auto auto;'></div>
 					</div>
 				</div>
@@ -60,12 +56,13 @@
 					<div class='vertical_division' id='side_division'></div>
 					<div class='entry clickable' id='search_button'>
 						<div class='label_wrapper' style='min-width: 30px;'>
-							<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' style='height: 30px; width:30px;' />
+							<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' />
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class='sidenav_wrapper'>
+				<input type='radio' id='homepage' name='category' value='homepage'>
 				<label for='homepage' class='entry clickable' id='homepage_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' id='homepage_icon' />
@@ -73,6 +70,7 @@
 					</div>
 				</label>
 				<div class='division'></div>
+				<input type='radio' id='articles' name='category' value='articles'>
 				<label for='articles' class='entry clickable' id='articles_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/torah.png' alt='articles' id='articles_icon' />
@@ -80,6 +78,7 @@
 					</div>
 				</label>
 				<div class='division'></div>
+				<input type='radio' id='tools' name='category' value='tools'>
 				<label for='tools' class='entry clickable' id='tools_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/swiss-army-knife.png' alt='tools' id='tools_icon' />
@@ -87,6 +86,7 @@
 					</div>
 				</label>
 				<div class='division'></div>
+				<input type='radio' id='about' name='category' value='about'>
 				<label for='about' class='entry clickable' id='about_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' id='about_icon'>
@@ -143,7 +143,7 @@
 				</div>
 				<div class='division'></div>
 				<label class='entry clickable' id='day_night' for='dn' style='display: flex; align-items: center; justify-content: center; text-align: center;'>
-					<div class='label_wrapper' style='min-width: 0px;'>
+					<div class='label_wrapper' style='min-width: 0px; gap: 0px;'>
 						<div class='text_light' id='text_light'></div>
 						<div class='toggleWrapper fancy_color' id='toggleWrapper'>
 							<div class='toggle'>
@@ -197,6 +197,6 @@
 </body>
 <script src='JavaScript/music player.js'></script>
 <script src='JavaScript/objects.js'></script>
-<script src='JavaScript/script.js'></script>
 <script src="JavaScript/md.js"></script>
+<script src='JavaScript/script.js'></script>
 </html>

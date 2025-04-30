@@ -1,42 +1,53 @@
 <div class="directory">
     <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Schwertwal" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Schwertwal" style="width: 40px; height: 40px;" />
         <div class="center_text color" style="margin-left: 10px;">Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>
     </div>
     <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="E-Mail" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="E-Mail" style="width: 40px; height: 40px;" />
         <div class="center_text color" style="margin-left: 10px;">E-Mail<br />Hesprs@outlook.com</div>
     </div>
     <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px;" />
         <div class="center_text color" style="margin-left: 10px;">QQ<br />Hesprs42</div>
     </div>
     <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px;" />
         <div class="center_text color" style="margin-left: 10px;">GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px;" />
         <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
     </div>
     <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px; margin: auto 0px auto auto;" />
+        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px;" />
         <div class="center_text color" style="margin-left: 10px;">Icons von<br /><a href="https://icons8.com">Icons8</a></div>
     </div>
 </div>
 
 ---
 
-# 🏛️ Hēsperus' Ideologie
+## 🏛️ Hēsperus' Ideologie
 
-![Ideologie](https://img1.tucang.cc/api/image/show/f5d53bee43913b14f76313138bd85699)
+![Ideologie](https://img1.tucang.cc/api/image/show/9ef969e2fd744505a8a06561d56a1a9d)
 <p style="text-align: center;" id="8values_redirect" class="fake_a">Von 8values, klicken Sie hier, um den Test selbst durchzuführen.</p>
 
 ---
 
-# 📜 Update-Log
+## 📜 Update-Log
 
-#### V 2.4.2   22. Apr. 2025
+### V 2.4.3   30. Apr. 2025
+1. Anwendung ästhetischerer Schriftarten für Artikelüberschriften und Willkommensslogans;
+2. Anpassung der chinesischen Schriftdarstellung;
+3. Implementierung des dynamischen Ladens von Schriftarten;
+4. Optimierung der Logik zur Bestimmung des Auswahlzustands von Radio-Buttons (Sprach- und Katalogschaltflächen);
+5. Codebereinigung;
+6. Behebung des Bugs, bei dem bei Wechsel zu Artikeln oder anderen Verzeichnissen eine Katalogschaltfläche weiterhin ausgewählt blieb;
+7. Behebung des Bugs mit übermäßig komprimierter Zeilenhöhe auf der "8values"-Testseite;
+8. Anpassung der Schriftgröße von "Licht / Dunkel"-Anzeige und "Musikplayer"-Titel für ein einheitlicheres Erscheinungsbild;
+9. Änderung des Cover-Bildes für das "Andere"-Verzeichnis.
+
+### V 2.4.2   22. Apr. 2025
 1. Optimierung des Unschärfeeffekts für eine größere Ähnlichkeit mit dem Acrylic-Effekt;
 2. Verschönerung des Schatteneffekts und der Rahmenfarbe;
 3. Hinzufügen eines neuen Artikels "Odyssey to the Nanking University" in der Kategorie "Lernen";
@@ -44,7 +55,7 @@
 5. Behebung des Bugs, bei dem das Klicken auf den "Zurück"-Button ohne Browserverlauf zu Website-Fehlern führte;
 6. Behebung des Bugs, bei dem der Titel als "undefined" angezeigt wurde, wenn der aktuelle Artikel keinen Übersetzung in der Benutzersprache hatte.
 
-#### V 2.4.1   20. Apr. 2025
+### V 2.4.1   20. Apr. 2025
 1. Weitergehende Systematisierung und Optimierung der Artikelverarbeitungs- und Anfragelogik;
 2. Codebereinigung;
 3. Implementierung von Lazy Loading für alle Bilder;
@@ -56,7 +67,7 @@
 9. Behebung des Bugs, bei dem der cookie-gesteuerte automatische Dunkelmodus-Wechsel im Lichtmodus nicht funktionierte;
 10. Behebung des Bugs, bei dem keine Suchergebnisse angezeigt wurden, wenn die URL mit "search=" + chinesischen Zeichen zur Simulation der Suchfunktion verwendet wurde.
 
-#### V 2.4.0   19. Apr. 2025
+### V 2.4.0   19. Apr. 2025
 1. Rekonstruktion der Inhaltspeicherstruktur: Das umständliche "JSON5"-Format wurde aufgegeben. Parameter werden nun in info.json gespeichert, während Artikel in Markdown-Dateien gespeichert werden, die automatisch in HTML geparst werden, wenn der Artikel angefordert wird;
 2. Hinzufügen von Download-Links im Markdown-Format zu allen möglichen Artikeln;
 3. Deutsche Übersetzung von "Die Befreiten Liebe" hinzugefügt;
@@ -67,19 +78,19 @@
 8. Einführung dynamischer linker Abstände für geordnete Listen und dynamischer Skalierung von Artikelkarten, um die Lesbarkeit für Nutzer kleiner Bildschirme zu verbessern;
 9. Anpassung der Farbe der ausgewählten Radio-Kategorie-Schaltflächen im Navigationsbereich, um sie deutlicher sichtbar zu machen.
 
-#### V 2.3.2   17. Apr. 2025
+### V 2.3.2   17. Apr. 2025
 1. Behebung des Fehlers, bei dem die Website ohne 404-Fehlerseite abstürzt;
 2. Behebung des schwarzen Platzhaltertextes in der Suchleiste im Dark-Modus;
 3. Die Website wählt nun automatisch zwischen Light- und Dark-Modus basierend auf Cookies und Systemeinstellungen.
 
-#### V 2.3.1   15 Apr. 2025
+### V 2.3.1   15 Apr. 2025
 1. Behebung des Fehlers, bei dem die Website abstürzt, wenn Benutzer andere Sprachen als "en", "zh-Hans" oder "de" in die URL-Leiste eingeben;
 2. Entfernung des störenden Sprachabschnitts in Artikel-URLs - die Sprache wird nun automatisch anhand von Cookies und Systemsprache bestimmt;
 3. Anpassung des "Schreibtisch-Bewertung"-Tools an das Website-Design;
 4. Behebung des Fehlers, bei dem iframe-Seiten den Dark Mode nicht entsprechend den Einstellungen der Hauptwebsite wechseln;
 5. Behebung des abrupten Farbwechsels von Demonstrationsboxen (wie im "Wörterbuch der Radikale") beim Wechsel zwischen Light und Dark Mode.
 
-#### V 2.3.0   12 Apr. 2025
+### V 2.3.0   12 Apr. 2025
 1. Alle Artikel in die Kategorie "Artikel" verschieben und eine neue Kategorie "Werkzeuge" erstellen, wobei "8values" dorthin verschoben wird;
 2. Einen neuen Artikel "Cyber-Poster für The Importance of Being Earnest" zur Unterkategorie "Lernen" hinzufügen;
 3. Responsives Design für "Cyber-Poster für The Importance of Being Earnest" implementieren;
@@ -92,7 +103,7 @@
 10. Fehlerbehebung bei falscher Scrollleistenbreite in Safari;
 11. Behebung des Fehlers, dass die Scrollleiste in "8values" nicht angezeigt wird.
 
-#### V 2.2.0   06 Apr. 2025
+### V 2.2.0   06 Apr. 2025
 1. Hinzufügen einer schmalen Scrollleiste für Artikel;
 2. Entfernen der schwebenden Titelleiste aufgrund von Inkompatibilität mit Safari, stattdessen Hinzufügen einer festen Titelleiste;
 3. Erstellen eines kompakteren Layouts für Nutzer mit kleinen Bildschirmen;
@@ -101,7 +112,7 @@
 6. Behebung des Fehlers, bei dem die Download-Icons in Safari nicht rechtsbündig ausgerichtet sind;
 7. Durchführung kleinerer Suchmaschinenoptimierungen.
 
-#### V 2.1.4   05 Apr. 2025
+### V 2.1.4   05 Apr. 2025
 1. Hinzufügen eines Urheberrechtsvermerks zu selbst erstellten Artikeln;
 2. Neugestaltung der "Startseite";
 3. Hinzufügen eines neuen Artikels "Die Befreiten Liebe" in der Kategorie "Menschlichkeit";
@@ -110,13 +121,13 @@
 6. Behebung des Fehlers mit nicht zentrierten Steuerungstasten des Musikplayers im Pop-up-Menü;
 7. Behebung des Fehlers, bei dem die URL nach dem Wechsel zur "Startseite" die der vorherigen Seite beibehält.
 
-#### V 2.1.3   01 Apr. 2025
+### V 2.1.3   01 Apr. 2025
 1. Hinzufügen eines neuen Songs "Una Mattina" zum Musikplayer;
 2. Hinzufügen eines "Zurück"-Buttons zum Musikplayer;
 3. Überarbeitung der Beschreibungen für "Startseite" und "Über";
 4. Optimierung der Logik zur Auswahl der Beschreibung für jeden Artikel.
 
-#### V 2.1.2   30 Mär. 2025
+### V 2.1.2   30 Mär. 2025
 1. Behebung des Fehlers mit nicht übereinstimmenden Farben an den Rändern der zentralen Suchleiste;
 2. Behebung des Fehlers, bei dem das Musikcover im Einstellungen-Menü sich nicht dreht, selbst wenn Musik abgespielt wird;
 3. Behebung des Fehlers mit redundanten Schatten unter den Symbolen für "Einstellungen" und "Musikcover" in der Hauptoberfläche;
@@ -136,7 +147,7 @@
     - Hinzufügung zweier weiterer Ideologien: "Juche/Spartanismus" und "Gemäßigte Linke";
     - Überarbeitung einiger Fragebewertungswerte für mehr Objektivität.
 
-#### V 2.1.1   29 Mär. 2025
+### V 2.1.1   29 Mär. 2025
 1. Die Titelleiste ist jetzt schwebend und erscheint nur noch oben oder unten auf der Inhaltsseite;
 2. Die Auflösung einiger Bilder verbessern;
 3. Den Radius der abgerundeten Ecken der zentralen Suchleiste anpassen;
@@ -144,7 +155,7 @@
 5. Die visuelle Darstellung und die chinesische Übersetzung von „values8“ verbessern;
 6. Den Fehler der zentralen Suchleiste mit uneinheitlichen Randstärken beheben.
 
-#### V 2.1.0   27 Mär. 2025
+### V 2.1.0   27 Mär. 2025
 1. Alle Bilder aus einem Bildhostingdienst mit illegaler Cookie-Nutzung zu einem stabileren, schnelleren und sichereren Dienst übertragen;
 2. Falsche "zh_Hans" in "zh-Hans" korrigiert;
 3. Auflösung einiger Bilder verbessert;
@@ -152,7 +163,7 @@
 5. Fehler im Schatten unter Icons und Musikcover behoben;
 6. Fehler der Quiz-Seite in 8values behoben, die nicht die gesamte Breite des Inhaltsbereichs einnimmt.
 
-#### V 2.0.1   24 Mär. 2025
+### V 2.0.1   24 Mär. 2025
 1. Den Unschärfeeffekt für bessere visuelle Zugänglichkeit anpassen;
 2. Das Selbstanpassungsverhältnis des Willkommensseiten-Slogans und von „Weiter“ anpassen;
 3. Die Auflösung eines Hintergrundbildes verbessern;
@@ -160,7 +171,7 @@
 5. Optimierung für die Anzeige in Safari;
 6. Den Fehler der falschen Breite beim Wiederherstellen der minimierten Seiten-Navigation beheben.
 
-#### V 2.0.0   23 Mär. 2025
+### V 2.0.0   23 Mär. 2025
 1. Die Benutzeroberfläche gründlich überarbeiten, indem der Unschärfeeffekt angewendet wird;
 2. Bilder, die zuvor nur auf der Willkommensseite erschienen, werden nun auf der gesamten Website verwendet, wobei bei jedem Besuch zufällig eines alHintergrund ausgewählt wird.
 3. Ein Hēsperus-Abzeichen wird während des Ladens der Website angezeigt, um die Leere des weißen Bildschirms auszugleichen;

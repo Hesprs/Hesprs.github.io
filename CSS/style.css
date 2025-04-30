@@ -34,9 +34,7 @@ main { overflow: hidden }
 	height: 100%;
 	object-fit: cover;
 	max-width: unset;
-} #background_img {
-	border-radius: 0px;
-}
+} #background_img { border-radius: 0px }
 
 .main_empty {
 	width: 100%;
@@ -158,14 +156,14 @@ input[type=text] {
 } .slogan {
 	padding: 15px;
 	white-space: pre-wrap;
-	font-weight: 600;
-	font-size: calc(30px + 3vw);
+	font-size: calc(30px + 4vw) !important;
 	position: absolute;
 	text-shadow: 3px 3px 6px rgb(40, 40, 40);
 	text-align: center;
 	width: calc(100% - 30px);
 	color: rgb(254, 247, 167);
-}
+} body.zh-Hans .slogan { font-family: 'STDongGuanTi bld'; }
+body.en .slogan, body.de .slogan { font-family: 'Cormorant SC'; font-weight: 700; }
 
 .music_container {
 	background-color: transparent;
@@ -371,11 +369,11 @@ body.dark .github-corner { color: rgb(255, 255, 255) }
 	right: 0;
 }
 
-.checked {
+.checked, body.zh-Hans #zh-Hans_label, body.en #en_label, body.de #de_label, input[type="radio"]:checked + label {
 	cursor: default !important;
 	background-color: rgba(132, 67, 255, 0.5) !important;
 	color: rgb(255, 255, 255) !important;
-} body.dark .checked {
+} body.dark .checked, body.dark.zh-Hans #zh-Hans_label, body.dark.en #en_label, body.dark.de #de_label, body.dark input[type="radio"]:checked + label {
 	background-color: rgb(254, 247, 167) !important;
 	color: rgb(50, 50, 50) !important;
 }
@@ -408,7 +406,6 @@ body.dark .theme_color { color: rgb(254, 247, 167) }
 	white-space: normal;
 	margin: auto 0px auto auto;
 	direction: rtl;
-	font-size: 15px;
 	height: 30px;
 	padding: 0px 0px 0px 5px;
 	line-height: 17px;
@@ -490,14 +487,6 @@ body.dark #next_dark, body.dark #previous_dark, body.dark #pop_up_next_dark, bod
 } #warning_bar.show { top: 15px }
 #warning_text { margin-left: 8px }
 
-#about_icon {
-	width: 30px;
-	height: 30px;
-	opacity: 1;
-	visibility: visible;
-	object-fit: cover;
-}
-
 #pop_up_title {
 	margin: 0px auto;
 	font-size: 22px;
@@ -531,8 +520,8 @@ body.dark #next_dark, body.dark #previous_dark, body.dark #pop_up_next_dark, bod
 .text_dark, .text_light {
 	padding: 0px;
 	margin: auto 0px;
-	font-size: 10px;
-	font-weight: 800;
+	font-size: 11px !important;
+	font-weight: 700;
 	overflow: visible;
 	width: 0px;
 } .text_light {
@@ -545,6 +534,8 @@ body.dark #next_dark, body.dark #previous_dark, body.dark #pop_up_next_dark, bod
 	right: 0px;
 } body.dark .text_dark { color: rgb(254, 247, 167) }
 
+body.zh-Hans .text_dark, body.zh-Hans .text_light { font-size: calc(12px + 0.3vw) !important }
+
 .transitioning, .sidenav.transitioning * { transition: all 300ms !important }
 	
 .label_wrapper {
@@ -554,6 +545,7 @@ body.dark #next_dark, body.dark #previous_dark, body.dark #pop_up_next_dark, bod
 	min-height: 30px;
 	padding: 8px;
 	display: flex;
+	gap: 12px;
 }
 
 .entry {
@@ -596,13 +588,6 @@ article:hover img { transform: scale(1.1) }
 	object-fit: cover;
 	border-radius: 15px;
 	margin-right: 8px;
-}
-
-.introduction {
-	font-size: 16px;
-	margin: auto 0px auto 0px;
-	text-align: center;
-	line-height: 18px;
 }
 
 .title {
@@ -748,11 +733,6 @@ footer + hr {
 
 	#search_bar_wrapper { margin: 0px 10px 0px 0px }
 
-	.introduction {
-		font-size: 11px;
-		line-height: 13px;
-	}
-
 	.title {
 		font-size: 14px;
 		line-height: 15px;
@@ -799,23 +779,9 @@ footer + hr {
 
 	.entry { width: 46px }
 
-	.sidenav.super_minimal .division {
-		width: 0px;
-		opacity: 0;
-		visibility: hidden;
-		overflow: hidden;
-		padding: 0px;
-	}
+	.sidenav.super_minimal .entry, .sidenav.super_minimal .division { width: 0px }
 
-	.sidenav.super_minimal .entry { width: 0px }
-
-	.sidenav.super_minimal #about_label {
-		visibility: visible;
-		opacity: 1;
-		height: 46px;
-		width: 46px;
-		font-weight: 400;
-	}
+	.sidenav.super_minimal #about_label { width: 46px }
 
 	.sidenav.super_minimal #search_bar_wrapper {
 		overflow: hidden;
@@ -828,6 +794,18 @@ footer + hr {
 
 	.sidenav.super_minimal #search_bar_center_wrapper .entry { width: 30px; padding: 8px }
 }
+
+.sidenav.super_minimal #about_label {
+	cursor: pointer !important;
+	background-color: transparent !important;
+} .sidenav.super_minimal #about_label:hover {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgba(132, 67, 255, 0.2) !important;
+} body.dark .sidenav.super_minimal #about_label:hover {
+	color: rgb(50, 50, 50) !important;
+	background-color: rgba(254, 247, 167, 0.75) !important;
+} .sidenav.super_minimal #about_label:active:hover { background-color: rgba(132, 67, 255, 0.5) !important }
+body.dark .sidenav.super_minimal #about_label:active:hover { background-color: var(--gold) !important }
 
 #search_bar_wrapper { transition: height 300ms, filter 300ms, background-color 300ms, border 300ms }
 
@@ -848,7 +826,6 @@ footer + hr {
    	animation: swing ease-in-out 1.3s infinite alternate;
     transform-origin: 98% 98%;
     transform-box: fill-box;
-    
 }
 
 #girllight {
