@@ -633,8 +633,8 @@ body.dark .flip_button.hovered { background-color: rgba(0, 0, 0, 0.4) }
 } .description {
 	margin: auto 3px auto 0;
 	text-align: left;
-	font-size: calc(12px + 0.2vw) !important;
-	line-height: calc(19px + 0.2vw) !important;
+	font-size: calc(14px + 0.05vw) !important;
+	line-height: calc(20px + 0.05vw) !important;
 } .description_area .centerer {
 	position: absolute;
 	top: 50%;
