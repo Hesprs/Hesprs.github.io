@@ -252,15 +252,15 @@ function settings() {
     setTimeout(() => {
         pop_up_title.innerHTML = translation.options[language];
         pop_up_content.innerHTML = `
-            <div class='entry clickable shadow' id='pop_up_music' style='margin: auto 0px 0px 0px'>
+            <div class='entry clickable shadow border' id='pop_up_music' style='margin: auto 0px 0px 0px'>
     			<img class='icon' alt='music cover' style='height: 30px; width: 30px;' id='pop_up_settings_music_cover'>
     			<div class='center_text' style='margin: auto 0px auto auto;'>${translation.music_player[language]}</div>
     		</div>
-            <div class='entry clickable shadow' id='pop_up_language'>
+            <div class='entry clickable shadow border' id='pop_up_language'>
     			<img src='${translation.nations[language]}' class='icon' alt='flag' style='height: 30px; width: 30px;'>
     			<div class='center_text' style='margin: auto 0px auto auto;'>${translation.language[language]}</div>
     		</div>
-            <label class='entry clickable shadow' for='dn' style='margin: 0px 0px auto 0px'>
+            <label class='entry clickable shadow border' for='dn' style='margin: 0px 0px auto 0px'>
     			<div class='text_light' id='pop_up_text_light'>${translation.light[language]}</div>
     			<div class='toggleWrapper fancy_color'>
     				<div class='toggle'>
@@ -300,7 +300,7 @@ function categories() {
         let name = entry_list[i].value;
         let src = name === 'about' ? 'https://img.icons8.com/fluency/100/info-popup.png' : document.getElementById(`${name}_icon`).src;
         content += `
-            <label for='${name}' class='demobox shadow color clickable' id='pop_up_${name}_label'>
+            <label for='${name}' class='demobox shadow color clickable border' id='pop_up_${name}_label'>
 				<img class='icon' src='${src}' alt='${name}'>
 				<div class='center_text'>${document.getElementById(`text_${name}`).innerHTML}</div>
 			</label>
@@ -332,15 +332,15 @@ function language_clicked() {
         pop_up_title.innerHTML = translation.languages[language];
         pop_up_content.innerHTML = `
 	    	<div class='directory' style='margin: auto 0px;'>
-	    		<label for='en' class='demobox shadow color clickable' id='en_label'>
+	    		<label for='en' class='demobox shadow color clickable border' id='en_label'>
 	    			<img class='icon' src='https://img.icons8.com/fluency/100/great-britain-circular.png' alt='UK flag'>
 	    			<div class='center_text'>English</div>
 	    		</label>
-	    		<label for='zh-Hans' class='demobox shadow color clickable' id='zh-Hans_label'>
+	    		<label for='zh-Hans' class='demobox shadow color clickable border' id='zh-Hans_label'>
 	    			<img class='icon' src='https://img.icons8.com/fluency/100/china-circular.png' alt='CN flag'>
 	    			<div class='center_text'>简体中文</div>
 	    		</label>
-	    		<label for='de' class='demobox shadow color clickable' id='de_label'>
+	    		<label for='de' class='demobox shadow color clickable border' id='de_label'>
 	    			<img class='icon' src='https://img.icons8.com/fluency/100/germany-circular.png' alt='DE flag'>
 	    			<div class='center_text'>Deutsch</div>
 	    		</label>
@@ -386,6 +386,7 @@ async function shift_title(title, back = false, force = false) {
             content_0.scrollTo(0, 0);
             content_1.innerHTML = '';
             content_district.classList.toggle('slides');
+            if (content.custom_css != undefined) load_font(content.custom_css);
             if (content.type === 'search' || content.type === 'iframe' || content.type === '404') {
                 content_0.innerHTML = `<main class='${content.main_classes}' style='${content.main_styles}'>${content.content}</main>`;
             } else {
@@ -393,7 +394,7 @@ async function shift_title(title, back = false, force = false) {
                     <header>
                         <h1>${actual_language(articles[current_page].title)}</h1>
                     </header>
-                    <footer id='title_bar' class='shadow'>
+                    <footer id='title_bar' class='shadow border'>
 	    	    		<div id='crumb_navigation'></div>
 	    	    		<div id='downloads'></div>
 	    	    	</footer>
@@ -433,27 +434,28 @@ async function resolve_url() {
     for (let i = 0; i < entry_list.length; i ++) { entry_list[i].checked = current_page === entry_list[i].value ? true : false }
     if (articles[current_page] == undefined) {
         if (!current_page.includes('search=')) {
-            address = '404/info.json';
+            address = '404';
             type = '404';
         } else {
             type = 'search';
             content = search(current_page.replace('search=', ''));
-            address = content === '404' ? '404/info.json' : 'done';
+            address = content === '404' ? '404' : 'done';
         }
     } else {
         type = articles[current_page].type;
-        address = `${articles[current_page].address}/info.json`;
+        address = articles[current_page].address;
     }
     if (address !== 'done') {
-        content = await fetch(`/Contents/${address}`);
+        content = await fetch(`/Contents/${address}/info.json`);
         content = await content.json();
+        if (content.custom_css != undefined) content.custom_css = `/Contents/${address}/style.css`;
         if (type === 'search' || type === '404') address = `404/${language}.md`;
         else if (type === 'directory') {
-            address = 'done';
             content = {
                 ... compile_directory(content.directory),
                 ... content
             }
+            address = 'done';
         } else {
             const factual_language = actual_language(content.languages, 'array');
             if (factual_language !== language) warning = translation.this_article_is_not_available_in[language];
@@ -508,23 +510,11 @@ function modify_url(url = '') {
 
 function compile_directory(directory) {
     let content = '<div class="directory">';
-    let click_listeners = [];
-    for (let i = 0; i < directory.length; i ++) {
-        const target = articles[directory[i]];
-        const name = actual_language(target.title);
-        content += `
-            <article class='shadow' id='${directory[i]}_redirect'>
-                <img loading='lazy' src='${target.thumbnail}' alt='${name}' class='background_img' />
-                <div class='overlay'>${name}</div>
-    	    </article>
-        `;
-        click_listeners.push(`${directory[i]}_redirect`);
-    }
+    for (let i = 0; i < directory.length; i ++) content += `<article-card>${directory[i]}</article-card>`;
     content += '</div>';
     return {
         main_classes: 'normal_padding',
         content: content,
-        click_listeners: click_listeners
     };
 }
 
@@ -738,15 +728,15 @@ function search_clicked() {
         search_bar.value = '';
         search_bar_center.value = '';
         document.getElementById('pop_up_search').value = '';
-    } else if ((sidenav.classList.contains('minimal') && !sidenav.classList.contains('super_minimal')) || (window.innerWidth < 768 && window.innerWidth >= 574)) {
+    } else if ((sidenav.classList.contains('minimal') && !sidenav.classList.contains('super_minimal')) || (window.innerWidth < 768 && window.innerWidth >= 474)) {
         pop_up_index = 5;
         pop_up_title.innerHTML = translation.search[language].replace('...', '');
         pop_up_content.innerHTML = `
-            <div class='sidenav_wrapper shadow'style='margin: 15px 0px 15px 0px; height: calc(100% - 30px); flex-direction: column;'>
-                <input type='text' class='shadow' id='pop_up_search' value='${search_bar.value}' placeholder='${translation.search[language]}'>
+            <div class='pop_up_search_wrapper shadow border'>
+                <input type='text' id='pop_up_search' value='${search_bar.value}' placeholder='${translation.search[language]}'>
                 <hr style='margin: 0px; width: 100%;'>
-                <div class='entry clickable shadow' id='pop_up_search_button'>
-                    <img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' style='height: 30px; width:30px; margin-left: auto;'></img>
+                <div class='entry clickable' id='pop_up_search_button'>
+                    <img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search'></img>
                     <div class='center_text'>${translation.search[language].replace('...', '')}</div>
                 <div>
             <div>

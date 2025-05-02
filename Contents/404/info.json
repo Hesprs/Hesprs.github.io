@@ -1,5 +1,5 @@
 {
     "main_styles": "align-items: center; justify-content: center; display: flex; flex-direction: column;",
     "main_classes": "main_empty",
-    "click_listeners": [ "homepage_redirect" ]
+    "custom_css": "true"
 }

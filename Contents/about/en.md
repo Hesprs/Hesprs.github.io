@@ -1,28 +1,22 @@
 <div class="directory">
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Orca" style="width: 40px; height: 40px;" />
-        <div class="center_text color">Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="Mail" style="width: 40px; height: 40px;" />
-        <div class="center_text color">Mail<br />Hesprs@outlook.com</div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px;" />
-        <div class="center_text color">QQ<br />Hesprs42</div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="Github" style="width: 40px; height: 40px;" />
-        <div class="center_text color">GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px;" />
-        <div class="center_text color">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px;" />
-        <div class="center_text color">Icons by<br /><a href="https://icons8.com">Icons8</a></div>
-    </div>
+    <demo-box src="https://img.icons8.com/fluency/100/orca.png" alt="Orca">
+        Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/mail--v1.png" alt="Mail">
+        Mail<br />Hesprs@outlook.com
+    </demo-box>
+    <demo-box src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ">
+        QQ<br />Hesprs42
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/github.png" alt="Github">
+        GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit">
+        Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8">
+        Icons by<br /><a href="https://icons8.com">Icons8</a>
+    </demo-box>
 </div>
 
 ---
@@ -34,6 +28,15 @@
 ---
 
 ## 📜 Update Log
+
+### V 2.5.0   2 May 2025
+1. Simplify the website using custom elements;
+2. The article entries are now flippable cards with content introductions on their back, empowered by a custom element with super smooth transitions and splendid visual effects;
+3. Add a thin border and transparency to most elements to ensure a more uniform appearance and ethereal texture;
+4. Fix the bug of extra padding between the "Go Back to Homepage" button icon and text in the 404 page;
+5. Adjust article cards' scale and padding to make them more readable on small-screen devices;
+6. Make it possible to dynamically load the extra style sheets;
+7. Neaten CSS sheets.
 
 ### V 2.4.3   30 Apr. 2025
 1. Apply more aesthetic fonts for articles titles and welcome slogans;
@@ -74,7 +77,7 @@
 5. Redesign the 404 page;
 6. Fix the bug that the upper-left search bar overflows its container;
 7. Slightly adjust the opacity of the blur effect;
-8. Adopt dynamic left padding of the ordered list and the dynamic scale of article cards to make them more readable for small screen users;
+8. Adopt dynamic left padding of the ordered list and the dynamic scale of article cards to make them more readable for small-screen users;
 9. Adjust the colour of checked radio category buttons in the navigation panel to make them more obvious.
 
 ### V 2.3.2   17 Apr. 2025
@@ -105,7 +108,7 @@
 ### V 2.2.0   6 Apr. 2025
 1. Add a thin scroll bar for articles;
 2. Remove the floating title bar for it is incompatible in Safari, adding a sticky title bar instead;
-3. Create a more compact layout for small screen users;
+3. Create a more compact layout for small-screen users;
 4. Move the GitHub badge to left-bottom corner in case it covers title bar or scroll bar;
 5. Add download links for "Liberated Lovership" in the title bar;
 6. Fix the bug that the download icons are not aligned to right in Safari;

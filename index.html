@@ -20,13 +20,13 @@
 	<input type='checkbox' id='dn'>
 	<img id='background_img' alt='background image' class='background_img'>
 	<div class='centerer'  id='warning_bar'>
-		<div class='warning_bar clickable shadow' id='warning_bar_wrapper'>
+		<div class='warning_bar clickable shadow border' id='warning_bar_wrapper'>
 			<img class='icon' id='warning_icon' alt='warn!' src='https://img.icons8.com/fluency/100/box-important--v1.png' />
 			<div class='center_text' id='warning_text'></div>
 		</div>
 	</div>
 	<div class='shade' id='shade'></div>
-	<div class='pop_up' id='pop_up'>
+	<div class='pop_up border' id='pop_up'>
 		<div style='padding: 8px 15px 8px 15px; display: flex; width: calc(100% - 30px);'>
 			<img class='icon' src='https://img1.tucang.cc/api/image/show/08f73f8d7cf3b996c07e7eb648db55f5' alt='back' style='height: 30px; width: 17.4px;' id='back'>
 			<div class='center_text theme_color' id='pop_up_title'></div>
@@ -41,7 +41,7 @@
 	</div>
 	<div class='background' id='background'>
 		<div class='sidenav' id='sidenav'>
-			<div class='sidenav_wrapper' id='search_bar_wrapper'>
+			<div class='sidenav_wrapper border' id='search_bar_wrapper'>
 				<div class='entry clickable' id='previous_page'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous'>
@@ -61,7 +61,7 @@
 					</div>
 				</div>
 			</div>
-			<div class='sidenav_wrapper'>
+			<div class='sidenav_wrapper border'>
 				<input type='radio' id='homepage' name='category' value='homepage'>
 				<label for='homepage' class='entry clickable' id='homepage_label'>
 					<div class='label_wrapper'>
@@ -94,7 +94,7 @@
 					</div>
 				</label>
 			</div>
-			<div class='sidenav_wrapper' id='search_bar_center_wrapper'>
+			<div class='sidenav_wrapper border' id='search_bar_center_wrapper'>
 				<div class='entry clickable' id='previous_center'>
 					<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous' />
 				</div>
@@ -105,14 +105,14 @@
 					<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' />
 				</div>
 			</div>
-			<div class='sidenav_wrapper' style='margin: auto 0px 0px auto;'>
+			<div class='sidenav_wrapper border' style='margin: auto 0px 0px auto;'>
 				<div class='music_container' id='music_container'>
 					<div class='label_wrapper' style='min-height: 80px; flex-direction: column;'>
 						<div style='margin: 0px; display: flex; height: 30px;'>
 							<img class='icon' src='https://img.icons8.com/fluency/100/lyre.png' alt='music-cover' id='music_cover'/>
 							<div id='music_title' class='center_text'></div>
 						</div>
-						<div class='progress_container' id='progress_container'>
+						<div class='progress_container border' id='progress_container'>
 							<div class='progress' id='progress'></div>
 						</div>
 						<div style='margin: 0px; display: flex; height: 20px;'>
@@ -168,7 +168,7 @@
 		<div class='stretch_bar_wrapper' id='stretch_bar'>
 			<div class='stretch_bar' id='stretch_bar_1'></div>	
 		</div>
-		<div class='rectangle_wrapper'>
+		<div class='rectangle_wrapper border'>
 			<div class='rectangle' id='content_district'>
 				<a class="github-corner" aria-label="View source on GitHub" id='github_corner'>
 					<svg viewBox="0 0 250 250" aria-hidden="true" class="corner_svg">
@@ -197,6 +197,7 @@
 </body>
 <script src='JavaScript/music player.js'></script>
 <script src='JavaScript/objects.js'></script>
+<script src='JavaScript/elements.js'></script>
 <script src="JavaScript/md.js"></script>
 <script src='JavaScript/script.js'></script>
 </html>

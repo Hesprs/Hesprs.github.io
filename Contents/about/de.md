@@ -1,28 +1,22 @@
 <div class="directory">
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="Schwertwal" style="width: 40px; height: 40px;" />
-        <div class="center_text color" style="margin-left: 10px;">Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="E-Mail" style="width: 40px; height: 40px;" />
-        <div class="center_text color" style="margin-left: 10px;">E-Mail<br />Hesprs@outlook.com</div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px;" />
-        <div class="center_text color" style="margin-left: 10px;">QQ<br />Hesprs42</div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px;" />
-        <div class="center_text color" style="margin-left: 10px;">GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px;" />
-        <div class="center_text color" style="margin-left: 10px;">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px;" />
-        <div class="center_text color" style="margin-left: 10px;">Icons von<br /><a href="https://icons8.com">Icons8</a></div>
-    </div>
+    <demo-box src="https://img.icons8.com/fluency/100/orca.png" alt="Schwertwal">
+        Blog<br /><a href="https://hesprs.github.io">hesprs.github.io</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/mail--v1.png" alt="E-Mail">
+        E-Mail<br />Hesprs@outlook.com
+    </demo-box>
+    <demo-box src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ">
+        QQ<br />Hesprs42
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/github.png" alt="GitHub">
+        GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit">
+        Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8">
+        Icons von<br /><a href="https://icons8.com">Icons8</a>
+    </demo-box>
 </div>
 
 ---
@@ -35,6 +29,15 @@
 ---
 
 ## 📜 Update-Log
+
+### V 2.5.0   2. Mai 2025
+1. Vereinfachung der Website durch benutzerdefinierte Elemente;
+2. Artikeleinträge sind jetzt umklappbare Karten mit Inhaltsbeschreibungen auf der Rückseite, ermöglicht durch ein benutzerdefiniertes Element mit besonders flüssigen Übergängen und hervorragenden visuellen Effekten;
+3. Hinzufügen einer dünnen Umrandung und Transparenz zu den meisten Elementen für ein einheitlicheres Erscheinungsbild und eine ätherische Textur;
+4. Behebung des Bugs mit zusätzlichem Abstand zwischen dem "Zurück zur Homepage"-Button-Icon und dem Text auf der 404-Seite;
+5. Anpassung der Skalierung und des Abstands von Artikelkarten für bessere Lesbarkeit auf kleinen Bildschirmen;
+6. Ermöglichung des dynamischen Ladens zusätzlicher Stylesheets;
+7. Bereinigung der CSS-Stylesheets.
 
 ### V 2.4.3   30. Apr. 2025
 1. Anwendung ästhetischerer Schriftarten für Artikelüberschriften und Willkommensslogans;

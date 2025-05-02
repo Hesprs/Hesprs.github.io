@@ -351,6 +351,16 @@ const translation = {
         'zh-Hans': "天知道用户在找什么！我们除了虚无什么都没有。",
         de: "Gott weiß, wonach der Benutzer sucht! Wir haben nichts außer Leere."
     },
+    enter: {
+        en: "Explore",
+        'zh-Hans': "探索",
+        de: "Erkunden"
+    },
+    loading: {
+        en: "Loading...",
+        'zh-Hans': "加载中...",
+        de: "Laden..."
+    },
 }
 
 const formats = {

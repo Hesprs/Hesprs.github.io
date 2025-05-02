@@ -1,0 +1,41 @@
+#handboy {
+    animation: swing ease-in-out 1.3s infinite alternate;
+ transform-origin: 98% 98%;
+ transform-box: fill-box;
+}
+
+#girllight {
+    animation: swing ease-in-out 1.3s infinite alternate;
+ transform-origin: 0% 97%;
+ transform-box: fill-box;
+}
+
+#hairgirl {
+ animation: swinghair ease-in-out 1.3s infinite alternate;
+    transform-origin: 60% 0%;
+ transform-box: fill-box;
+}
+
+#zero {
+   transform-box:fill-box;
+   animation: bounce-top normal 3s 1s infinite;
+}
+
+@keyframes swing {
+ 0% { transform: rotate(10deg); }
+ 100% { transform: rotate(-10deg); }
+}
+
+@keyframes swinghair {
+ 0% { transform: rotate(6deg); }
+ 100% { transform: rotate(-6deg); }
+}
+
+@keyframes bounce-top {
+ 30% { transform: translateY(-45px); animation-timing-function: ease-in; }
+ 15%, 42.5%, 57.5%, 67.5%, 73.75%, 80% { transform: translateY(0px); animation-timing-function: ease-out; }
+ 48.75% { transform: translateY(-24px); animation-timing-function: ease-in; }
+ 62.5% { transform: translateY(-12px); animation-timing-function: ease-in; }
+ 71.25% { transform: translateY(-6px); animation-timing-function: ease-in; }
+ 76.25% { transform: translateY(-4px); animation-timing-function: ease-in; }
+}

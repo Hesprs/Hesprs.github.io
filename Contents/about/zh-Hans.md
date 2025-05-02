@@ -1,28 +1,22 @@
 <div class="directory">
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/orca.png" alt="虎鲸" style="width: 40px; height: 40px;" />
-        <div class="center_text color">博客<br /><a href="https://hesprs.github.io">hesprs.github.io</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/mail--v1.png" alt="邮件" style="width: 40px; height: 40px;" />
-        <div class="center_text color">邮箱<br />Hesprs@outlook.com</div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ" style="width: 40px; height: 40px;" />
-        <div class="center_text color">QQ<br />Hesprs42</div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/github.png" alt="GitHub" style="width: 40px; height: 40px;" />
-        <div class="center_text color">GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit" style="width: 40px; height: 40px;" />
-        <div class="center_text color">Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a></div>
-    </div>
-    <div class="demobox shadow">
-        <img loading="lazy" class="icon" src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8" style="width: 40px; height: 40px;" />
-        <div class="center_text color">图标提供<br /><a href="https://icons8.com">Icons8</a></div>
-    </div>
+    <demo-box src="https://img.icons8.com/fluency/100/orca.png" alt="虎鲸">
+        博客<br /><a href="https://hesprs.github.io">hesprs.github.io</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/mail--v1.png" alt="邮件">
+        邮箱<br />Hesprs@outlook.com
+    </demo-box>
+    <demo-box src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/ external-tencent-qq-an-instant-messaging-software-service-and-web-portal-developed-logo-color-tal-revivo.png" alt="QQ">
+        QQ<br />Hesprs42
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/github.png" alt="GitHub">
+        GitHub<br /><a href="https://github.com/Hesprs">Hesprs</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/fluency/100/reddit.png" alt="Reddit">
+        Reddit<br /><a href="https://www.reddit.com/user/Hesprs/">Hesprs</a>
+    </demo-box>
+    <demo-box src="https://img.icons8.com/color/48/icons8-new-logo.png" alt="icons8">
+        图标提供<br /><a href="https://icons8.com">Icons8</a>
+    </demo-box>
 </div>
 
 ---
@@ -34,6 +28,15 @@
 ---
 
 ## 📜 更新日志
+
+### V 2.5.0   2025年5月2日
+1. 使用自定义元素简化网站结构；
+2. 文章条目现为可翻转卡片（背面显示内容简介），由具有丝滑过渡和出色视觉效果的自定义元素驱动；
+3. 为多数元素添加细边框和透明度，确保更统一的视觉效果和空灵质感；
+4. 修复 404 页面 "返回首页" 按钮图标与文字间距异常的错误；
+5. 调整文章卡片缩放比例和内边距，提升小屏幕设备可读性；
+6. 实现动态加载额外样式表功能；
+7. 优化 CSS 样式表结构。
 
 ### V 2.4.3   2025年4月30日
 1. 为文章标题和欢迎标语应用更美观的字体；

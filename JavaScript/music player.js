@@ -76,9 +76,9 @@ function music_clicked() {
     setTimeout(() => {
         pop_up_title.innerHTML = translation.music_player[language];
         pop_up_content.innerHTML = `
-            <img alt='music-cover' id='pop_up_music_cover' />
-	    	<div id='pop_up_music_title' class='center_text color' style='margin: 15px auto 0px auto; height: 30px; width: fit-content; font-size: 18px;'>${translation.music_player[language]}</div>
-	    	<div class='progress_container' id='pop_up_progress_container' style = 'margin: 15px 0px 15px 0px; height: 4px; width: 100%;'>
+            <img alt='music-cover' id='pop_up_music_cover' class='shadow border' />
+	    	<div id='pop_up_music_title' class='center_text color'>${translation.music_player[language]}</div>
+	    	<div class='progress_container border' id='pop_up_progress_container'>
 	    		<div class='progress' id='pop_up_progress'></div>
 	    	</div>
 	    	<div style='display: flex; height: 40px; margin-bottom: auto; background-color: transparent;'>
@@ -113,10 +113,9 @@ function music_clicked() {
             updateProgress();
             pop_up_music_title.innerText = music[songIndex].name;
             pop_up_music_cover.src = music[songIndex].img_HD;
-            pop_up_music_cover.classList.add('shadow');
         } else {
             pop_up_music_cover.src = 'https://img1.tucang.cc/api/image/show/622efd0dcd56878de1d4dbda7e348373';
-            pop_up_music_cover.classList.add('filter');
+            pop_up_music_cover.style.borderRadius = '50%';
         }
         let proper = Math.min(pop_up_content.offsetWidth - 30, pop_up_content.offsetHeight - 150)
         pop_up_music_cover.style.width = `${proper}px`;
@@ -131,8 +130,5 @@ function first_play(reload = false) {
     music_cover.style.borderRadius = '50%';
     music_title.style.fontSize = '15px';
     ever_played_music = true;
-    if (pop_up_index === 1) {
-        pop_up_music_cover.classList.remove('filter');
-        pop_up_music_cover.classList.add('shadow');
-    }
+    if (pop_up_index === 1) pop_up_music_cover.style.borderRadius = '';
 }

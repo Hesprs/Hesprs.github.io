@@ -6,17 +6,5 @@
     },
     "languages": ["en", "zh-Hans", "de"],
     "main_classes": "bottom_padding",
-    "click_listeners": [
-        "8values_redirect",
-        "lovership_redirect",
-        "ernest_redirect",
-        "fascist_propaganda_redirect",
-        "build_website_redirect",
-        "radicals_redirect",
-        "learning_redirect",
-        "humanities_redirect",
-        "development_redirect",
-        "others_redirect"
-    ],
     "no_markdown_download": true
 }
