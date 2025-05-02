@@ -50,14 +50,14 @@ class ArticleCard extends HTMLElement {
         }
         this.getElementsByClassName('flip_button')[0].addEventListener('click', async function(event) {
             event.stopPropagation();
-            setTimeout(() => this.parentElement.parentElement.classList.add('hide'), 200);
+            setTimeout(() => this.parentElement.parentElement.classList.add('hide'), 175);
             this.parentElement.parentElement.classList.add('flip');
             let content = await fetch(`/Contents/${articles[index].address}/info.json`);
             content = await content.json();
             this.parentElement.parentElement.getElementsByClassName('description_area')[0].innerHTML = `<p class='description'>${actual_language(content.description)}</p>`;
         });
         this.getElementsByClassName('flip_button')[1].addEventListener('click', function() {
-            this.parentElement.parentElement.classList.remove('hide');
+            setTimeout(() => this.parentElement.parentElement.classList.add(this.parentElement.parentElement.classList.remove('hide')), 175);
             this.parentElement.parentElement.classList.remove('flip');
         });
     }

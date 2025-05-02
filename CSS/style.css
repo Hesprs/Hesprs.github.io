@@ -642,8 +642,8 @@ body.dark .flip_button.hovered { background-color: rgba(0, 0, 0, 0.4) }
 	height: 0px;
 	align-items: center;
 } body.zh-Hans .description {
-	font-size: calc(11px + 0.2vw) !important;
-	line-height: calc(18px + 0.2vw) !important;
+	font-size: calc(13px + 0.05vw) !important;
+	line-height: calc(19px + 0.05vw) !important;
 } .description_area .centerer p { text-wrap: nowrap }
 
 .title {
