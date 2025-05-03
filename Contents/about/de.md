@@ -30,6 +30,11 @@
 
 ## 📜 Update-Log
 
+### V 2.5.1   3. Mai 2025
+1. Anwendung eines stereoskopischen Effekts auf Titel und Willkommensseiten-Slogan;
+2. Behebung des Bugs, bei dem die Rückseite der Artikelkarten im Safari-Browser sichtbar blieb;
+3. Nutzer werden zur Startseite weitergeleitet, wenn sie den "Zurück"-Button ohne Browserverlauf anklicken.
+
 ### V 2.5.0   2. Mai 2025
 1. Vereinfachung der Website durch benutzerdefinierte Elemente;
 2. Artikeleinträge sind jetzt umklappbare Karten mit Inhaltsbeschreibungen auf der Rückseite, ermöglicht durch ein benutzerdefiniertes Element mit besonders flüssigen Übergängen und hervorragenden visuellen Effekten;

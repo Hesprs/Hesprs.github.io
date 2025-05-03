@@ -1,6 +1,7 @@
 :root {
     --violet: rgb(132, 67, 255);
 	--gold: rgb(254, 247, 167);
+	--halfPixel: calc(0.2px + 0.02vw);
 }
 
 html {
@@ -31,7 +32,7 @@ body.zh-Hans * { font-size: calc(13px + 0.3vw) }
 body.non_transition *, body.non_transition { transition: none !important }
 
 .center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before {
-	transition: color 300ms, opacity 300ms;
+	transition: color 300ms, opacity 300ms, text-shadow 300ms;
 } hr, img, body {
 	transition: background 300ms, opacity 300ms, box-shadow 300ms;
 } .demobox {
@@ -78,12 +79,129 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	line-height: 100%;
 } body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 { color: var(--gold) }
-h1 { font-size: calc(30px + 2.5vw) !important }
-h2 { font-size: calc(28px + 2vw) !important }
-h3 { font-size: calc(26px + 1.5vw) !important }
-h4 { font-size: calc(24px + 1vw) !important }
-h5 { font-size: calc(22px + 0.5vw) !important }
-h6 { font-size: 20px !important }
+
+h1 {
+	font-size: calc(30px + 2.5vw) !important;
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(247, 247, 247),
+		0 calc(var(--halfPixel) * 2) 0 rgb(238, 237, 238),
+		0 calc(var(--halfPixel) * 3) 0 rgb(229, 227, 229),
+		0 calc(var(--halfPixel) * 4) 0 rgb(220, 217, 220),
+		0 calc(var(--halfPixel) * 5) 0 rgb(211, 207, 211),
+		0 calc(var(--halfPixel) * 6) 0 rgb(202, 197, 202),
+		0 calc(var(--halfPixel) * 7) 0 rgb(193, 187, 193),
+		0 calc(var(--halfPixel) * 8) 0 rgb(184, 177, 184),
+		0 calc(var(--halfPixel) * 9) 0 rgb(175, 167, 175),
+		var(--halfPixel) calc(var(--halfPixel) * 10) 4px rgba(0, 0, 0, 0.3);
+} body.dark h1{
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(140, 140, 113),
+		0 calc(var(--halfPixel) * 2) 0 rgb(128, 128, 104),
+		0 calc(var(--halfPixel) * 3) 0 rgb(116, 116, 95),
+		0 calc(var(--halfPixel) * 4) 0 rgb(104, 104, 86),
+		0 calc(var(--halfPixel) * 5) 0 rgb(92, 92, 77),
+		0 calc(var(--halfPixel) * 6) 0 rgb(80, 80, 68),
+		0 calc(var(--halfPixel) * 7) 0 rgb(68, 68, 59),
+		0 calc(var(--halfPixel) * 8) 0 rgb(56, 56, 50),
+		0 calc(var(--halfPixel) * 9) 0 rgb(44, 44, 41),
+		var(--halfPixel) calc(var(--halfPixel) * 10) 4px rgba(0, 0, 0, 0.6);
+} h2 {
+	font-size: calc(28px + 2vw) !important;
+	text-shadow:
+		0 var(--halfPixel) 0px rgb(247, 247, 247),
+		0 calc(var(--halfPixel) * 2) 0 rgb(238, 237, 238),
+		0 calc(var(--halfPixel) * 3) 0 rgb(229, 227, 229),
+		0 calc(var(--halfPixel) * 4) 0 rgb(220, 217, 220),
+		0 calc(var(--halfPixel) * 5) 0 rgb(211, 207, 211),
+		0 calc(var(--halfPixel) * 6) 0 rgb(202, 197, 202),
+		0 calc(var(--halfPixel) * 7) 0 rgb(193, 187, 193),
+		0 calc(var(--halfPixel) * 8) 0 rgb(184, 177, 184),
+		var(--halfPixel) calc(var(--halfPixel) * 9) 4px rgba(0, 0, 0, 0.3);
+} body.dark h2 {
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(140, 140, 113),
+		0 calc(var(--halfPixel) * 2) 0 rgb(128, 128, 104),
+		0 calc(var(--halfPixel) * 3) 0 rgb(116, 116, 95),
+		0 calc(var(--halfPixel) * 4) 0 rgb(104, 104, 86),
+		0 calc(var(--halfPixel) * 5) 0 rgb(92, 92, 77),
+		0 calc(var(--halfPixel) * 6) 0 rgb(80, 80, 68),
+		0 calc(var(--halfPixel) * 7) 0 rgb(68, 68, 59),
+		0 calc(var(--halfPixel) * 8) 0 rgb(56, 56, 50),
+		var(--halfPixel) calc(var(--halfPixel) * 9) 4px rgba(0, 0, 0, 0.6);
+} h3 {
+	font-size: calc(26px + 1.5vw) !important;
+	text-shadow:
+		0 var(--halfPixel) 0px rgb(247, 247, 247),
+		0 calc(var(--halfPixel) * 2) 0 rgb(238, 237, 238),
+		0 calc(var(--halfPixel) * 3) 0 rgb(229, 227, 229),
+		0 calc(var(--halfPixel) * 4) 0 rgb(220, 217, 220),
+		0 calc(var(--halfPixel) * 5) 0 rgb(211, 207, 211),
+		0 calc(var(--halfPixel) * 6) 0 rgb(202, 197, 202),
+		0 calc(var(--halfPixel) * 7) 0 rgb(193, 187, 193),
+		var(--halfPixel) calc(var(--halfPixel) * 8) 4px rgba(0, 0, 0, 0.3);
+} body.dark h3 {
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(140, 140, 113),
+		0 calc(var(--halfPixel) * 2) 0 rgb(128, 128, 104),
+		0 calc(var(--halfPixel) * 3) 0 rgb(116, 116, 95),
+		0 calc(var(--halfPixel) * 4) 0 rgb(104, 104, 86),
+		0 calc(var(--halfPixel) * 5) 0 rgb(92, 92, 77),
+		0 calc(var(--halfPixel) * 6) 0 rgb(80, 80, 68),
+		0 calc(var(--halfPixel) * 7) 0 rgb(68, 68, 59),
+		var(--halfPixel) calc(var(--halfPixel) * 8) 4px rgba(0, 0, 0, 0.6);
+} h4 {
+	font-size: calc(24px + 1vw) !important;
+	text-shadow:
+		0 var(--halfPixel) 0px rgb(247, 247, 247),
+		0 calc(var(--halfPixel) * 2) 0 rgb(238, 237, 238),
+		0 calc(var(--halfPixel) * 3) 0 rgb(229, 227, 229),
+		0 calc(var(--halfPixel) * 4) 0 rgb(220, 217, 220),
+		0 calc(var(--halfPixel) * 5) 0 rgb(211, 207, 211),
+		0 calc(var(--halfPixel) * 6) 0 rgb(202, 197, 202),
+		var(--halfPixel) calc(var(--halfPixel) * 7) 4px rgba(0, 0, 0, 0.3);
+} body.dark h4 {
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(140, 140, 113),
+		0 calc(var(--halfPixel) * 2) 0 rgb(128, 128, 104),
+		0 calc(var(--halfPixel) * 3) 0 rgb(116, 116, 95),
+		0 calc(var(--halfPixel) * 4) 0 rgb(104, 104, 86),
+		0 calc(var(--halfPixel) * 5) 0 rgb(92, 92, 77),
+		0 calc(var(--halfPixel) * 6) 0 rgb(80, 80, 68),
+		var(--halfPixel) calc(var(--halfPixel) * 7) 4px rgba(0, 0, 0, 0.6);
+} h5 {
+	font-size: calc(22px + 0.5vw) !important;
+	text-shadow:
+		0 var(--halfPixel) 0px rgb(247, 247, 247),
+		0 calc(var(--halfPixel) * 2) 0 rgb(238, 237, 238),
+		0 calc(var(--halfPixel) * 3) 0 rgb(229, 227, 229),
+		0 calc(var(--halfPixel) * 4) 0 rgb(220, 217, 220),
+		0 calc(var(--halfPixel) * 5) 0 rgb(211, 207, 211),
+		var(--halfPixel) calc(var(--halfPixel) * 6) 4px rgba(0, 0, 0, 0.3);
+} body.dark h5 {
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(140, 140, 113),
+		0 calc(var(--halfPixel) * 2) 0 rgb(128, 128, 104),
+		0 calc(var(--halfPixel) * 3) 0 rgb(116, 116, 95),
+		0 calc(var(--halfPixel) * 4) 0 rgb(104, 104, 86),
+		0 calc(var(--halfPixel) * 5) 0 rgb(92, 92, 77),
+		var(--halfPixel) calc(var(--halfPixel) * 6) 4px rgba(0, 0, 0, 0.6);
+} h6 {
+	font-size: 20px !important;
+	font-size: calc(22px + 0.5vw) !important;
+	text-shadow:
+		0 var(--halfPixel) 0px rgb(247, 247, 247),
+		0 calc(var(--halfPixel) * 2) 0 rgb(238, 237, 238),
+		0 calc(var(--halfPixel) * 3) 0 rgb(229, 227, 229),
+		0 calc(var(--halfPixel) * 4) 0 rgb(220, 217, 220),
+		var(--halfPixel) calc(var(--halfPixel) * 5) 4px rgba(0, 0, 0, 0.3);
+} body.dark h6 {
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(140, 140, 113),
+		0 calc(var(--halfPixel) * 2) 0 rgb(128, 128, 104),
+		0 calc(var(--halfPixel) * 3) 0 rgb(116, 116, 95),
+		0 calc(var(--halfPixel) * 4) 0 rgb(104, 104, 86),
+		var(--halfPixel) calc(var(--halfPixel) * 5) 4px rgba(0, 0, 0, 0.6);
+}
 
 body.zh-Hans h1, body.zh-Hans h2, body.zh-Hans h3, body.zh-Hans h4, body.zh-Hans h5, body.zh-Hans h6 {
 	font-family:'STDongGuanTi bld' !important;

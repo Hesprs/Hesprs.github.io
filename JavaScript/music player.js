@@ -1,46 +1,46 @@
-function loadSong(need_reload = true) {
+function loadMusic(need_reload = true) {
     if (need_reload) audio.src = music[songIndex].url;
     music_title.innerText = music[songIndex].name;
-    if (sidenav_fold_level !== 2) music_cover.src = music[songIndex].img;
+    if (sidenavWrapLevel !== 2) music_cover.src = music[songIndex].img;
     if (pop_up_index === 1) {
         pop_up_music_title.innerText = music[songIndex].name;
         pop_up_music_cover.src = music[songIndex].img_HD;
     }
 }
 
-function playSong() {
-    if (!ever_played_music) first_play();
-    musicContainer.classList.add('playing');
-    pop_up_content.classList.add('playing');
-    audio.play();
+function toggleMusicPlayState() {
+    if (musicContainer.classList.contains('playing')) {
+        musicContainer.classList.remove('playing');
+        pop_up_content.classList.remove('playing');
+        audio.pause();
+    } else {
+        if (!everPlayedMusic) firstPlayMusic();
+        musicContainer.classList.add('playing');
+        pop_up_content.classList.add('playing');
+        audio.play();
+    }
 }
 
-function pauseSong() {
-    musicContainer.classList.remove('playing');
-    pop_up_content.classList.remove('playing');
-    audio.pause();
-}
-
-function nextSong() {
-    if (!ever_played_music) first_play();
+function nextMusic() {
+    if (!everPlayedMusic) firstPlayMusic();
     else {
         songIndex++;
         if (songIndex === music.length) songIndex = 0;
-        loadSong();
+        loadMusic();
     }
     if (musicContainer.classList.contains('playing')) audio.play();
     progress.style.width = '0px';
     if (pop_up_index === 1) pop_up_progress.style.width = '0px';
 }
 
-function prevSong() {
-    if (!ever_played_music) {
+function previousMusic() {
+    if (!everPlayedMusic) {
         songIndex = music.length - 1;
-        first_play(true);
+        firstPlayMusic(true);
     } else {
         songIndex--;
         if (songIndex === -1) songIndex = music.length - 1;
-        loadSong();
+        loadMusic();
     }
     if (musicContainer.classList.contains('playing')) audio.play();
     progress.style.width = '0px';
@@ -54,18 +54,13 @@ function updateProgress() {
 }
 
 function setProgress(e) {
-    if (!ever_played_music) first_play();
+    if (!everPlayedMusic) firstPlayMusic();
     const width = this.clientWidth;
     const clickX = e.offsetX;
     audio.currentTime = (clickX / width) * audio.duration;
 }
 
-function plause() {
-    if (musicContainer.classList.contains('playing')) pauseSong();
-    else playSong();
-}
-
-function music_clicked() {
+function musicButtonClicked() {
     let delay = 0;
     if (pop_up_index === 3) {
         delay = 200;
@@ -105,11 +100,11 @@ function music_clicked() {
         window.pop_up_progress_container = document.getElementById('pop_up_progress_container');
         window.pop_up_music_title = document.getElementById('pop_up_music_title');
         window.pop_up_music_cover = document.getElementById('pop_up_music_cover');
-        pop_up_nextButton.addEventListener('click', nextSong);
-        pop_up_prevButton.addEventListener('click', prevSong);
-        pop_up_playButton.addEventListener('click', plause);
+        pop_up_nextButton.addEventListener('click', nextMusic);
+        pop_up_prevButton.addEventListener('click', previousMusic);
+        pop_up_playButton.addEventListener('click', toggleMusicPlayState);
         pop_up_progress_container.addEventListener('click', setProgress);
-        if (ever_played_music) {
+        if (everPlayedMusic) {
             updateProgress();
             pop_up_music_title.innerText = music[songIndex].name;
             pop_up_music_cover.src = music[songIndex].img_HD;
@@ -121,14 +116,14 @@ function music_clicked() {
         pop_up_music_cover.style.width = `${proper}px`;
         pop_up_music_cover.style.height = `${proper}px`;
         if (delay === 200) pop_up.style.opacity = '1';
-        else show_pop_up();
+        else showPopUp();
     }, delay);
 }
 
-function first_play(reload = false) {
-    loadSong(reload);
+function firstPlayMusic(reload = false) {
+    loadMusic(reload);
     music_cover.style.borderRadius = '50%';
     music_title.style.fontSize = '15px';
-    ever_played_music = true;
+    everPlayedMusic = true;
     if (pop_up_index === 1) pop_up_music_cover.style.borderRadius = '';
 }

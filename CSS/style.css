@@ -1,3 +1,9 @@
+:root {
+    --violet: rgb(132, 67, 255);
+	--gold: rgb(254, 247, 167);
+	--halfPixel: calc(0.2px + 0.02vw);
+}
+
 @keyframes rotateImage {
     from { transform: rotate(0deg) }
     to { transform: rotate(360deg) }
@@ -151,10 +157,20 @@ input[type=text] {
 	white-space: pre-wrap;
 	font-size: calc(30px + 4vw) !important;
 	position: absolute;
-	text-shadow: 3px 3px 6px rgb(40, 40, 40);
+	text-shadow:
+		0 var(--halfPixel) 0 rgb(140, 140, 113),
+		0 calc(var(--halfPixel) * 2) 0 rgb(128, 128, 104),
+		0 calc(var(--halfPixel) * 3) 0 rgb(116, 116, 95),
+		0 calc(var(--halfPixel) * 4) 0 rgb(104, 104, 86),
+		0 calc(var(--halfPixel) * 5) 0 rgb(92, 92, 77),
+		0 calc(var(--halfPixel) * 6) 0 rgb(80, 80, 68),
+		0 calc(var(--halfPixel) * 7) 0 rgb(68, 68, 59),
+		0 calc(var(--halfPixel) * 8) 0 rgb(56, 56, 50),
+		0 calc(var(--halfPixel) * 9) 0 rgb(44, 44, 41),
+		var(--halfPixel) calc(var(--halfPixel) * 10) 4px rgba(0, 0, 0, 0.6);
 	text-align: center;
 	width: calc(100% - 30px);
-	color: rgb(254, 247, 167);
+	color: var(--gold);
 } body.zh-Hans .slogan { font-family: 'STDongGuanTi bld'; }
 body.en .slogan, body.de .slogan { font-family: 'Cormorant SC'; font-weight: 700; }
 
@@ -197,12 +213,12 @@ body.en .slogan, body.de .slogan { font-family: 'Cormorant SC'; font-weight: 700
 }
 
 .progress {
-    background-color: rgb(132, 67, 255);
+    background-color: var(--violet);
     border-radius: 5px;
     height: 100%;
     width: 0%;
     transition: width 100ms linear, background-color 300ms;
-} body.dark .progress { background-color: rgb(254, 247, 167) }
+} body.dark .progress { background-color: var(--gold) }
 
 .toggleWrapper {
     height: 100%;
@@ -313,11 +329,11 @@ footer {
 	cx: 50%;
 	cy: 50%;
 	r: 50%;
-	stroke: rgb(132, 67, 255);
+	stroke: var(--violet);
 	stroke-width: 6px;
 	stroke-linecap: round;
 	transform-origin: center;
-} body.dark .spinner > circle { stroke: rgb(254, 247, 167) }
+} body.dark .spinner > circle { stroke: var(--gold) }
 
 .github-corner {
 	transform: scaleX(-1) scaleY(-1);
@@ -362,7 +378,7 @@ body.dark .github-corner { color: rgb(255, 255, 255) }
 	background-color: rgba(132, 67, 255, 0.5) !important;
 	color: rgb(255, 255, 255) !important;
 } body.dark .checked, body.dark.zh-Hans #zh-Hans_label, body.dark.en #en_label, body.dark.de #de_label, body.dark input[type="radio"]:checked + label {
-	background-color: rgb(254, 247, 167) !important;
+	background-color: var(--gold) !important;
 	color: rgb(50, 50, 50) !important;
 }
 
@@ -372,8 +388,8 @@ body.dark .github-corner { color: rgb(255, 255, 255) }
 	text-wrap: nowrap;
 }
 
-.theme_color { color: rgb(132, 67, 255) }
-body.dark .theme_color { color: rgb(254, 247, 167) }
+.theme_color { color: var(--violet) }
+body.dark .theme_color { color: var(--gold) }
 
 .clickable_color { cursor: pointer }
 .clickable_color:hover, body.dark .clickable_color:hover { color: rgb(109, 173, 208) }
@@ -482,14 +498,14 @@ body.dark #next_dark, body.dark #previous_dark, body.dark #pop_up_next_dark, bod
 	overflow: visible;
 	width: 0px;
 } .text_light {
-	color: rgb(132, 67, 255);
+	color: var(--violet);
 	left: 0px;
 } body.dark .text_light { color: rgb(255, 255, 255) }
 .text_dark {
 	direction: rtl;
 	color: rgb(50, 50, 50);
 	right: 0px;
-} body.dark .text_dark { color: rgb(254, 247, 167) }
+} body.dark .text_dark { color: var(--gold) }
 
 body.zh-Hans .text_dark, body.zh-Hans .text_light { font-size: calc(12px + 0.3vw) !important }
 
@@ -759,6 +775,11 @@ footer + hr {
 		width: 60px;
 	}
 
+	.article_title {
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+	}
+
 	.directory { gap: 10px }
 
 	#pop_up_language { margin: 10px 0px }
@@ -872,4 +893,9 @@ body.dark .sidenav.super_minimal #about_label:active:hover { background-color: v
 	filter: none;
 	border: none;
 	border-radius: 23px;
+}
+
+.article_title {
+	margin-left: 15px;
+	margin-right: 15px;
 }

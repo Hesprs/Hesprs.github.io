@@ -2,17 +2,18 @@ let layer = 0;
 let position = 0;
 let offset = 0;
 let songIndex = 0;
-let sidenav_fold_level = 0;
-let sidenav_width_level = 0;
+let sidenavWrapLevel = 0;
+let screenWidthLevel = 0;
 let timer = 0;
 let custom_width = 160;
 let pop_up_index = 0; // 0 void, 1 music, 2 catalogue, 3 options, 4 languages, 5 search;
 let isDragging = 0; // 0 void, 1 mouse, 2 touch
 let hovered = false;
-let ever_played_music = false;
+let everPlayedMusic = false;
 let second_pop_up = false;
 let sidenav_minimal = false;
-let current_page, language, system_language, timeout, timeout_2;
+let page = 'homepage';
+let language, system_language, timeout, timeout_2;
 let history = [];
 
 const cover = document.getElementById('cover');
@@ -67,14 +68,13 @@ function initialize() {
     language = cookie_language !== 'void' ? cookie_language : system_language;
     font_check();
     document.body.classList.add(language);
-    let redirect = localStorage.getItem('title');
-    if (redirect === null) redirect = 'homepage';
-    else {
-        redirect =  redirect === 'ernest.html' ? 'ernest' : decodeURIComponent(redirect);
+    let redirect = localStorage.getItem('page');
+    if (redirect !== null) {
+        redirect = redirect === 'ernest.html' ? 'ernest' : decodeURIComponent(redirect);
         document.body.classList.add('slide', 'non_transition');
         setTimeout(() => document.body.classList.remove('non_transition'), 20);
-        localStorage.removeItem('title');
-    }
+        localStorage.removeItem('page');
+    } else redirect = 'homepage';
     const theme = getCookie('theme');
     if (theme === 'dark') {
         dn.checked = true;
@@ -94,7 +94,7 @@ function initialize() {
     document.getElementById(language).checked = true;
     music_title.innerHTML = translation.music_player[language];
     sidenav.style.width = `${custom_width}px`;
-    resize();
+    responsiveResizeLayout();
     change_languages(redirect);
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
 }
@@ -102,7 +102,7 @@ function initialize() {
 function font_check() {
     const links = document.getElementsByTagName('link');
     for (let i = 0; i < links.length; i++) if (links[i].href === font_demand[language]) return;
-    load_font(font_demand[language]);
+    loadCSS(font_demand[language]);
 }
 
 function throttle(func, interval) {
@@ -128,7 +128,7 @@ function throttle(func, interval) {
     };
 }
 
-function toggle_dark() {
+function toggleTheme() {
     const currentTheme = window.matchMedia('(prefers-color-scheme: dark)');
     if (dn.checked) {
         if (currentTheme.matches) setCookie('theme', 'void', -1);
@@ -138,53 +138,53 @@ function toggle_dark() {
         else setCookie('theme', 'void', -1);
     }
     document.body.classList.toggle('dark');
-    if (articles[current_page] != undefined && articles[current_page].type === 'iframe') document.getElementById('iframe').contentWindow.document.body.classList.toggle('dark');
+    if (articles[page] != undefined && articles[page].type === 'iframe') document.getElementById('iframe').contentWindow.document.body.classList.toggle('dark');
 }
 
-const resize = throttle(function(e) {
+const responsiveResizeLayout = throttle(function() {
     if (window.innerWidth >= 768) {
         if (window.innerHeight < 526) {
             if (window.innerHeight < 474) {
-                if (sidenav_fold_level !== 2) {
+                if (sidenavWrapLevel !== 2) {
                     transition_or_not(0);
-                    if (sidenav_fold_level === 0) minimal_start();
+                    if (sidenavWrapLevel === 0) minimal_start();
                     super_minimal_start();
-                    sidenav_fold_level = 2;
+                    sidenavWrapLevel = 2;
                 }
-            } else if (sidenav_fold_level !== 1) {
+            } else if (sidenavWrapLevel !== 1) {
                 transition_or_not(0);
-                if (sidenav_fold_level === 2) super_minimal_end();
-                else if (sidenav_fold_level === 0 && !sidenav_minimal) minimal_start();
-                sidenav_fold_level = 1;
+                if (sidenavWrapLevel === 2) super_minimal_end();
+                else if (sidenavWrapLevel === 0 && !sidenav_minimal) minimal_start();
+                sidenavWrapLevel = 1;
             }
-        } else if (sidenav_fold_level !== 0) {
+        } else if (sidenavWrapLevel !== 0) {
             transition_or_not(0);
-            if (sidenav_fold_level === 2) super_minimal_end();
+            if (sidenavWrapLevel === 2) super_minimal_end();
             if (!sidenav_minimal) minimal_end();
-            sidenav_fold_level = 0;
+            sidenavWrapLevel = 0;
         }
         if (cover.offsetWidth < 300) sidenav.style.width = `${window.innerWidth - 345}px`;
-        if (sidenav_width_level !== 0) sidenav_width_level = 0;
+        if (screenWidthLevel !== 0) screenWidthLevel = 0;
     } else {
-        if (sidenav_fold_level === 0 && !sidenav_minimal) {
+        if (sidenavWrapLevel === 0 && !sidenav_minimal) {
             minimal_start();
-            sidenav_fold_level = 1;
+            sidenavWrapLevel = 1;
         }
         if (window.innerWidth < 474) {
-            if (sidenav_fold_level !== 2) {
+            if (sidenavWrapLevel !== 2) {
                 transition_or_not(1);
                 super_minimal_start();
-                sidenav_fold_level = 2;
+                sidenavWrapLevel = 2;
             }
-            if (sidenav_width_level !== 2) sidenav_width_level = 2;
+            if (screenWidthLevel !== 2) screenWidthLevel = 2;
         } else {
-            if (sidenav_fold_level !== 1) {
+            if (sidenavWrapLevel !== 1) {
                 transition_or_not(2);
-                if (sidenav_fold_level === 2) super_minimal_end();
+                if (sidenavWrapLevel === 2) super_minimal_end();
                 else minimal_start();
-                sidenav_fold_level = 1;
+                sidenavWrapLevel = 1;
             }
-            if (sidenav_width_level !== 1) sidenav_width_level = 1;
+            if (screenWidthLevel !== 1) screenWidthLevel = 1;
         } 
     }
     if (pop_up_index === 1) {
@@ -194,8 +194,8 @@ const resize = throttle(function(e) {
     }
 }, 100);
 
-function transition_or_not(level) {
-    if (sidenav_width_level === level) {
+function transition_or_not(targetscreenWidthLevel) {
+    if (screenWidthLevel === targetscreenWidthLevel) {
         clearTimeout(timeout);
         sidenav.classList.add('transitioning');
         timeout = setTimeout(() => sidenav.classList.remove('transitioning'), 300)
@@ -206,7 +206,7 @@ function minimal_start() {
     sidenav.classList.add('minimal');
     custom_width = sidenav.offsetWidth;
     musicContainer.classList.add('clickable');
-    musicContainer.addEventListener('click', music_clicked);
+    musicContainer.addEventListener('click', musicButtonClicked);
     sidenav.style.width = '';
     dn_minimal();
 }
@@ -215,7 +215,7 @@ function minimal_end(custom = true) {
     sidenav.classList.remove('minimal');
     if (custom) sidenav.style.width = `${Math.max(custom_width, 160)}px`;
     musicContainer.classList.remove('clickable');
-    musicContainer.removeEventListener('click', music_clicked);
+    musicContainer.removeEventListener('click', musicButtonClicked);
     dn_complete();
 }
 
@@ -225,24 +225,24 @@ function super_minimal_start() {
     document.getElementById('about_icon').src = 'https://img.icons8.com/fluency/100/magical-scroll.png';
     const about_label = document.getElementById('about_label');
     about_label.htmlFor = '';
-    musicContainer.removeEventListener('click', music_clicked);
-    about_label.addEventListener('click', categories);
-    musicContainer.addEventListener('click', settings);
+    musicContainer.removeEventListener('click', musicButtonClicked);
+    about_label.addEventListener('click', categoriesButtonClicked);
+    musicContainer.addEventListener('click', OptionsButtonClicked);
 }
 
 function super_minimal_end() {
     sidenav.classList.remove('super_minimal');
-    if (ever_played_music) music_cover.src = music[songIndex].img;
+    if (everPlayedMusic) music_cover.src = music[songIndex].img;
     else music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
     document.getElementById('about_icon').src = 'https://img.icons8.com/fluency/100/info-popup.png';
     const about_label = document.getElementById('about_label');
     about_label.htmlFor = 'about';
-    musicContainer.addEventListener('click', music_clicked);
-    about_label.removeEventListener('click', categories);
-    musicContainer.removeEventListener('click', settings);
+    musicContainer.addEventListener('click', musicButtonClicked);
+    about_label.removeEventListener('click', categoriesButtonClicked);
+    musicContainer.removeEventListener('click', OptionsButtonClicked);
 }
 
-function settings() {
+function OptionsButtonClicked() {
     let delay = 0;
     if (pop_up_index === 1 || pop_up_index === 4) {
         delay = 200;
@@ -281,18 +281,18 @@ function settings() {
     		</label>
         `;
         const pop_up_settings_music_cover = document.getElementById('pop_up_settings_music_cover');
-        if (ever_played_music) {
+        if (everPlayedMusic) {
             pop_up_settings_music_cover.src = music[songIndex].img;
             pop_up_settings_music_cover.style.borderRadius = '50%';
         } else { pop_up_settings_music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png' }
-        document.getElementById('pop_up_language').addEventListener('click', language_clicked);
-        document.getElementById('pop_up_music').addEventListener('click', music_clicked);
+        document.getElementById('pop_up_language').addEventListener('click', languageButtonClicked);
+        document.getElementById('pop_up_music').addEventListener('click', musicButtonClicked);
         if (delay === 200) pop_up.style.opacity = '1';
-        else show_pop_up();
+        else showPopUp();
     }, delay);
 }
 
-function categories() {
+function categoriesButtonClicked() {
     pop_up_index = 2;
     pop_up_title.innerHTML = translation.catalogue[language];
     let content = '';
@@ -312,7 +312,7 @@ function categories() {
         if (entry_list[i].checked) document.getElementById(`pop_up_${entry}_label`).classList.add('checked');
         document.getElementById(`pop_up_${entry}_label`).addEventListener('click', catagory_check);
     }
-    show_pop_up();
+    showPopUp();
 }
 
 function catagory_check() {
@@ -320,7 +320,7 @@ function catagory_check() {
     this.classList.add('checked');
 }
 
-function language_clicked() {
+function languageButtonClicked() {
     let delay = 0;
     if (pop_up_index === 3) {
         delay = 200;
@@ -348,29 +348,59 @@ function language_clicked() {
         `;
         pop_up_change_languages(false);
         if (delay === 200) pop_up.style.opacity = '1';
-        else show_pop_up();
+        else showPopUp();
     }, delay);
 }
 
-function show_pop_up() {
+function searchButtonClicked() {
+    if (pop_up_index === 5 && search_bar.value != '') {
+        back();
+        changePage(`search=${search_bar.value}`);
+        search_bar.value = '';
+        search_bar_center.value = '';
+        document.getElementById('pop_up_search').value = '';
+    } else if ((sidenav.classList.contains('minimal') && !sidenav.classList.contains('super_minimal')) || (window.innerWidth < 768 && window.innerWidth >= 474)) {
+        pop_up_index = 5;
+        pop_up_title.innerHTML = translation.search[language].replace('...', '');
+        pop_up_content.innerHTML = `
+            <div class='pop_up_search_wrapper shadow border'>
+                <input type='text' id='pop_up_search' value='${search_bar.value}' placeholder='${translation.search[language]}'>
+                <hr style='margin: 0px; width: 100%;'>
+                <div class='entry clickable' id='pop_up_search_button'>
+                    <img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search'></img>
+                    <div class='center_text'>${translation.search[language].replace('...', '')}</div>
+                <div>
+            <div>
+        `;
+        document.getElementById('pop_up_search').addEventListener('input', () => synchronize_search('pop_up'));
+        document.getElementById('pop_up_search_button').addEventListener('click', searchButtonClicked);
+        showPopUp();
+    } else if (search_bar.value != '') {
+        changePage(`search=${search_bar.value}`);
+        search_bar.value = '';
+        search_bar_center.value = '';
+    }
+}
+
+function showPopUp() {
     shade.style.opacity = '1';
     pop_up.style.opacity = '1';
     shade.style.pointerEvents = 'auto';
     pop_up.style.pointerEvents = 'auto';
 }
 
-async function shift_title(title, back = false, force = false) {
-    if (force || title !== current_page) {
-        if (!back) { if (current_page != undefined && title !== current_page) history.push(current_page) }
+async function changePage(title = page, back = false, force = false) {
+    if (force || title !== page) {
+        if (!back) { if (page != undefined && title !== page) history.push(page) }
         else history.pop();
-        current_page = title;
+        page = title;
         timer = 0;
         const timer_interval = setInterval(() => timer += 10, 10);
         cover.style.opacity = 1;
         content_district.style.opacity = 0;
         layer = 1 - layer;
-        modify_url(current_page);
-        const content = await resolve_url();
+        modify_url(page);
+        const content = await resolvePage();
         meta.description.content = content.description;
         const content_1 = document.getElementById(`content_${1 - layer}`);
         const content_0 = document.getElementById(`content_${layer}`);
@@ -386,13 +416,13 @@ async function shift_title(title, back = false, force = false) {
             content_0.scrollTo(0, 0);
             content_1.innerHTML = '';
             content_district.classList.toggle('slides');
-            if (content.custom_css != undefined) load_font(content.custom_css);
+            if (content.custom_css != undefined) loadCSS(content.custom_css);
             if (content.type === 'search' || content.type === 'iframe' || content.type === '404') {
                 content_0.innerHTML = `<main class='${content.main_classes}' style='${content.main_styles}'>${content.content}</main>`;
             } else {
                 content_0.innerHTML = `
                     <header>
-                        <h1>${actual_language(articles[current_page].title)}</h1>
+                        <h1 class='article_title'>${actual_language(articles[page].title)}</h1>
                     </header>
                     <footer id='title_bar' class='shadow border'>
 	    	    		<div id='crumb_navigation'></div>
@@ -403,7 +433,7 @@ async function shift_title(title, back = false, force = false) {
                         ${content.content}
                     </main>
                 `;
-                crumb(articles[current_page].address, content.downloads);
+                compileCrumb(articles[page].address, content.downloads);
             }
             if (content.type === 'iframe') {
                 const iframe_window = document.getElementById('iframe').contentWindow;
@@ -429,21 +459,21 @@ async function shift_title(title, back = false, force = false) {
     }
 }
 
-async function resolve_url() {
+async function resolvePage() {
     let address, content, warning, type; // type: search, directory, iframe, 404, article
-    for (let i = 0; i < entry_list.length; i ++) { entry_list[i].checked = current_page === entry_list[i].value ? true : false }
-    if (articles[current_page] == undefined) {
-        if (!current_page.includes('search=')) {
+    for (let i = 0; i < entry_list.length; i ++) { entry_list[i].checked = page === entry_list[i].value ? true : false }
+    if (articles[page] == undefined) {
+        if (!page.includes('search=')) {
             address = '404';
             type = '404';
         } else {
             type = 'search';
-            content = search(current_page.replace('search=', ''));
+            content = search(page.replace('search=', ''));
             address = content === '404' ? '404' : 'done';
         }
     } else {
-        type = articles[current_page].type;
-        address = articles[current_page].address;
+        type = articles[page].type;
+        address = articles[page].address;
     }
     if (address !== 'done') {
         content = await fetch(`/Contents/${address}/info.json`);
@@ -452,7 +482,7 @@ async function resolve_url() {
         if (type === 'search' || type === '404') address = `404/${language}.md`;
         else if (type === 'directory') {
             content = {
-                ... compile_directory(content.directory),
+                ... compileDirectory(content.directory),
                 ... content
             }
             address = 'done';
@@ -462,11 +492,11 @@ async function resolve_url() {
             if (type === 'iframe') {
                 content = {
                     ... content,
-                    content: `<iframe src='/Contents/${articles[current_page].address}/${factual_language}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></ iframe>`,
+                    content: `<iframe src='/Contents/${articles[page].address}/${factual_language}/index.html' sandbox='allow-scripts allow-same-origin' id='iframe'></ iframe>`,
                     main_classes: 'main_empty',
                 };
                 address = 'done';
-            } else if (type = 'article') address = `${articles[current_page].address}/${factual_language}.md`;
+            } else if (type = 'article') address = `${articles[page].address}/${factual_language}.md`;
         }
         if (address !== 'done') {
             content.content = await fetch(`/Contents/${address}`);
@@ -489,7 +519,7 @@ async function resolve_url() {
     } else { content.downloads = '' }
     if (content.description == undefined) content.description = type === 'search' ? translation.search_description : translation.not_found_description;
     content.description = actual_language(content.description);
-    if (type === 'search') content.description = content.description.replace('%s', current_page.replace('search=', ''));
+    if (type === 'search') content.description = content.description.replace('%s', page.replace('search=', ''));
     content.type = type;
     return content;
 }
@@ -498,9 +528,9 @@ function modify_url(url = '') {
     if (url !== 'homepage') {
         let stateObj = { id: '100' }; 
         window.history.replaceState(stateObj, 'Page 3', url);
-        if (current_page.includes('search=')) document.title = current_page.replace('search=', translation.search[language].replace('...', ': '));
-        else if (articles[current_page] != undefined) document.title = actual_language(articles[current_page].title);
-        else document.title = current_page;
+        if (page.includes('search=')) document.title = page.replace('search=', translation.search[language].replace('...', ': '));
+        else if (articles[page] != undefined) document.title = actual_language(articles[page].title);
+        else document.title = page;
     } else {
         let stateObj = { id: '100' }; 
         window.history.replaceState(stateObj, 'Page 3', '/');
@@ -508,7 +538,7 @@ function modify_url(url = '') {
     }
 }
 
-function compile_directory(directory) {
+function compileDirectory(directory) {
     let content = '<div class="directory">';
     for (let i = 0; i < directory.length; i ++) content += `<article-card>${directory[i]}</article-card>`;
     content += '</div>';
@@ -518,17 +548,7 @@ function compile_directory(directory) {
     };
 }
 
-function event_listeners(listener_list) {
-    for (let i = 0; i < listener_list.length; i ++) {
-        let type = listener_list[i].split('_');
-        type = type[type.length - 1];
-        if (type === 'redirect') {
-            document.getElementById(listener_list[i]).addEventListener('click', function() { shift_title(this.getAttribute('id').replace('_redirect', '')) });
-        }
-    }
-}
-
-function crumb(address, download) {
+function compileCrumb(address, download) {
     const downloads = document.getElementById('downloads');
     let crumb = '', crumb_downloads = '';
     const crumb_list = address.split('/');
@@ -544,7 +564,7 @@ function crumb(address, download) {
                 `; 
             } else {
                 crumb_downloads += `
-                    <a href='${download[key].url}' style='height:30px; width: 30px;' download='${actual_language(articles[current_page].title)}.${key}'>
+                    <a href='${download[key].url}' style='height:30px; width: 30px;' download='${actual_language(articles[page].title)}.${key}'>
 	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
 	    	    	</a>
                 `; 
@@ -564,25 +584,35 @@ function crumb(address, download) {
     crumb_navigation.innerHTML = crumb;
     downloads.innerHTML = crumb_downloads;
     for (i = 0; i < crumb_list.length - 1; i++) {
-        document.getElementById(`${crumb_list[i]}_crumb`).addEventListener('click', function() { shift_title(this.getAttribute('value')) })
+        document.getElementById(`${crumb_list[i]}_crumb`).addEventListener('click', function() { changePage(this.getAttribute('value')) })
     }
 }
 
-function mouse_down(e) {
+function event_listeners(listener_list) {
+    for (let i = 0; i < listener_list.length; i ++) {
+        let type = listener_list[i].split('_');
+        type = type[type.length - 1];
+        if (type === 'redirect') {
+            document.getElementById(listener_list[i]).addEventListener('click', function() { changePage(this.getAttribute('id').replace('_redirect', '')) });
+        }
+    }
+}
+
+function mouseDown(e) {
     offset = e.clientX - sidenav.offsetWidth;
     isDragging = 1;
     background.classList.add('on_dragging');
     content_district.classList.toggle('slides');
 }
 
-function touch_start(e) {
+function touchStart(e) {
     offset = e.touches[0].clientX - sidenav.offsetWidth;
     isDragging = 2;
     background.classList.add('on_dragging');
     content_district.classList.toggle('slides');
 }
 
-const mouse_move = throttle(function(e) {
+const mouseMove = throttle(function(e) {
     if (isDragging === 0) return;
     position = isDragging === 1 ? e.clientX - offset : e.touches[0].clientX - offset;
     if (position >= 160 && position <= background.offsetWidth - 345 && !sidenav_minimal) sidenav.style.width = `${position}px`;
@@ -591,17 +621,17 @@ const mouse_move = throttle(function(e) {
         sidenav.style.width = '';
         sidenav_minimal = true;
         minimal_start();
-        musicContainer.addEventListener('click', music_clicked);
+        musicContainer.addEventListener('click', musicButtonClicked);
     } else if (position >= 100 && sidenav_minimal) {
         transition_or_not(0);
         sidenav.style.width = '160px';
         sidenav_minimal = false;
         minimal_end(false);
-        musicContainer.removeEventListener('click', music_clicked);
+        musicContainer.removeEventListener('click', musicButtonClicked);
     }
 }, 16);
 
-function mouse_up() {
+function mouseUp() {
     if (isDragging !== 0) {
         content_district.classList.toggle('slides');
         isDragging = 0;
@@ -655,7 +685,7 @@ function dn_complete() {
 
 function back() {
     if (second_pop_up) {
-        settings();
+        OptionsButtonClicked();
         second_pop_up = false;
     } else back_shade();
 }
@@ -668,7 +698,7 @@ function back_shade() {
     pop_up.style.pointerEvents = 'none';
 }
 
-function change_languages(title = current_page) {
+function change_languages(targetPage = page) {
     document.documentElement.setAttribute('lang', language);
     for (let i = 0; i < entry_list.length; i ++) document.getElementById(`text_${entry_list[i].value}`).innerHTML = articles[entry_list[i].value].title[language];
     text_language.innerHTML = translation.language[language];
@@ -679,8 +709,8 @@ function change_languages(title = current_page) {
     search_bar_center.placeholder = translation.search[language];
     nations.src = translation.nations[language];
     document.getElementById('continue').innerHTML = translation.click_anywhere_to_continue[language];
-    if (!ever_played_music) music_title.innerHTML = translation.music_player[language];
-    shift_title(title, undefined, true);
+    if (!everPlayedMusic) music_title.innerHTML = translation.music_player[language];
+    changePage(targetPage, undefined, true);
 }
 
 function pop_up_change_languages(shift = true) {
@@ -702,7 +732,7 @@ function pop_up_change_languages(shift = true) {
 }
 
 function previous_page() {
-    if (history.length != 0) shift_title(history[history.length - 1], true);
+    if (history.length != 0) changePage(history[history.length - 1], true);
 }
 
 function search(prompt) {
@@ -718,37 +748,7 @@ function search(prompt) {
         }
     }
     if (article_list.length === 0) return '404';
-    return compile_directory(article_list);
-}
-
-function search_clicked() {
-    if (pop_up_index === 5 && search_bar.value != '') {
-        back();
-        shift_title(`search=${search_bar.value}`);
-        search_bar.value = '';
-        search_bar_center.value = '';
-        document.getElementById('pop_up_search').value = '';
-    } else if ((sidenav.classList.contains('minimal') && !sidenav.classList.contains('super_minimal')) || (window.innerWidth < 768 && window.innerWidth >= 474)) {
-        pop_up_index = 5;
-        pop_up_title.innerHTML = translation.search[language].replace('...', '');
-        pop_up_content.innerHTML = `
-            <div class='pop_up_search_wrapper shadow border'>
-                <input type='text' id='pop_up_search' value='${search_bar.value}' placeholder='${translation.search[language]}'>
-                <hr style='margin: 0px; width: 100%;'>
-                <div class='entry clickable' id='pop_up_search_button'>
-                    <img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search'></img>
-                    <div class='center_text'>${translation.search[language].replace('...', '')}</div>
-                <div>
-            <div>
-        `;
-        document.getElementById('pop_up_search').addEventListener('input', () => synchronize_search('pop_up'));
-        document.getElementById('pop_up_search_button').addEventListener('click', search_clicked);
-        show_pop_up();
-    } else if (search_bar.value != '') {
-        shift_title(`search=${search_bar.value}`);
-        search_bar.value = '';
-        search_bar_center.value = '';
-    }
+    return compileDirectory(article_list);
 }
 
 function synchronize_search(subject) {
@@ -760,8 +760,8 @@ function synchronize_search(subject) {
     }
 }
 
-function keydown(event) {
-    if (event.key === 'Enter') search_clicked();
+function keyDown(event) {
+    if (event.key === 'Enter') searchButtonClicked();
 }
 
 function warn(type, message) {
@@ -771,7 +771,7 @@ function warn(type, message) {
     timeout_2 = setTimeout(() => warning_bar.classList.remove('show'), 3000);
 }
 
-function warning_bar_clicked() {
+function warningMessageClicked() {
     warning_bar.classList.toggle('show');
     clearTimeout(timeout_2);
 }
@@ -810,7 +810,7 @@ function actual_language(directory, type = 'object') {
     return actual_language;
 }
 
-function load_font(href) { 
+function loadCSS(href) { 
     let preloaded = document.createElement('link');
     preloaded.type = "text/css";
     preloaded.rel = "stylesheet";
@@ -818,38 +818,38 @@ function load_font(href) {
     document.head.appendChild(preloaded);
 }
 
-stretch_bar.addEventListener('touchstart', touch_start);
-stretch_bar.addEventListener('mousedown', mouse_down);
-stretch_bar.addEventListener('mouseover', hover_color);
-stretch_bar.addEventListener('touchstart', hover_color);
-stretch_bar.addEventListener('mouseout', out_color);
-stretch_bar.addEventListener('touchend', out_color);
 audio.addEventListener('timeupdate', updateProgress);
-audio.addEventListener('ended', nextSong);
+audio.addEventListener('ended', nextMusic);
 progress_container.addEventListener('click', setProgress);
-nextButton.addEventListener('click', nextSong);
-prevButton.addEventListener('click', prevSong);
-playButton.addEventListener('click', plause);
-language_option.addEventListener('click', language_clicked);
+nextButton.addEventListener('click', nextMusic);
+prevButton.addEventListener('click', previousMusic);
+playButton.addEventListener('click', toggleMusicPlayState);
+language_option.addEventListener('click', languageButtonClicked);
 back_button.addEventListener('click', back);
 showcase.addEventListener('click', () => document.body.classList.add('slide'));
 shade.addEventListener('click', () => {back_shade(); second_pop_up = false;});
 previous.addEventListener('click', previous_page);
 previous_center.addEventListener('click', previous_page);
-search_button.addEventListener('click', search_clicked);
-search_button_center.addEventListener('click', search_clicked);
+search_button.addEventListener('click', searchButtonClicked);
+search_button_center.addEventListener('click', searchButtonClicked);
 search_bar.addEventListener('input', () => synchronize_search('side'));
 search_bar_center.addEventListener('input', () => synchronize_search('center'));
-dn.addEventListener('click', toggle_dark);
-document.getElementById('warning_bar_wrapper').addEventListener('click', warning_bar_clicked);
-document.addEventListener('keydown', keydown);
-document.addEventListener('touchcancel', mouse_up);
-document.addEventListener('mousemove', mouse_move);
-document.addEventListener('touchmove', mouse_move);
-document.addEventListener('mouseleave', mouse_up);
+dn.addEventListener('click', toggleTheme);
+document.getElementById('warning_bar_wrapper').addEventListener('click', warningMessageClicked);
+document.addEventListener('keydown', keyDown);
 window.addEventListener('DOMContentLoaded', initialize);
-window.addEventListener('resize', resize);
-window.addEventListener('mouseup', mouse_up);
-window.addEventListener('touchend', mouse_up);
+window.addEventListener('resize', responsiveResizeLayout);
+stretch_bar.addEventListener('mouseover', hover_color);
+stretch_bar.addEventListener('touchstart', hover_color);
+stretch_bar.addEventListener('mouseout', out_color);
+stretch_bar.addEventListener('touchend', out_color);
+stretch_bar.addEventListener('touchstart', touchStart);
+stretch_bar.addEventListener('mousedown', mouseDown);
+window.addEventListener('mouseup', mouseUp);
+document.addEventListener('mouseleave', mouseUp);
+window.addEventListener('touchend', mouseUp);
+document.addEventListener('touchcancel', mouseUp);
+document.addEventListener('mousemove', mouseMove);
+document.addEventListener('touchmove', mouseMove);
 for (let i = 0; i < language_list.length; i++) language_list[i].addEventListener('change', pop_up_change_languages);
-for (let i = 0; i < entry_list.length; i++) entry_list[i].addEventListener('change', function () { shift_title(this.value) });
+for (let i = 0; i < entry_list.length; i++) entry_list[i].addEventListener('change', function () { changePage(this.value) });

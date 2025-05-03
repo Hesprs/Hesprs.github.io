@@ -29,6 +29,11 @@
 
 ## 📜 Update Log
 
+### V 2.5.1   3 May 2025
+1. Apply the stereoscopic effect to the title and the welcome page slogan;
+2. Fix the bug that causes the back side of the article cards to still be visible when the user's browser is Safari;
+3. Users will be navigated to the homepage if they click the "previous" button but there's no browsing history.
+
 ### V 2.5.0   2 May 2025
 1. Simplify the website using custom elements;
 2. The article entries are now flippable cards with content introductions on their back, empowered by a custom element with super smooth transitions and splendid visual effects;
@@ -44,7 +49,7 @@
 3. Apply dynamic loading for fonts;
 4. Optimize radio button checked state style judging logic (language and catalogue buttons) ;
 5. Retrench codes;
-6. Fix the bug that when users shift to articles or other directories, one of the catalogue buttons is still checked;
+6. Fix the bug that causes one of the catalogue buttons to still be checked when users shift to articles or other directories;
 7. Fix the bug of over-compressed line height in "8values" test page;
 8. Adjust the font size of "Light / Dark" indicator and "Music Player" title for a more uniform appearance;
 9. Change the cover image of the "Others" directory.
@@ -54,8 +59,8 @@
 2. Beautify the shadow effect and border colour;
 3. Add a new article, "Odyssey to the Nanking University" to the "Learning" category;
 4. Fix the bug of default markdown download failure;
-5. Fix the bug that clicking "previous" button and impose website failure when there's no browsing history;
-6. Fix the bug that the title will be displayed as "undefined" when the current article title doesn't have a translation in the user's language.
+5. Fix the bug that causes website failure when users click "previous" button but there's no browsing history;
+6. Fix the bug that causes the title to be displayed as "undefined" when the current article title doesn't have a translation in the user's language.
 
 ### V 2.4.1   20 Apr. 2025
 1. Further systematize and optimize the article resolve and request logic;
@@ -65,7 +70,7 @@
 5. Now the search function searches key words in every languages, lest the case that search results disappear when shifted to other languages;
 6. Apply blur effect to the title bar;
 7. Align the colour of checked radio category buttons in the navigation panel with the theme colour;
-8. Fix the bug that the blur shadow doesn't cover the whole page in large screen devices;
+8. Fix the bug that causes the blur shadow not to cover the whole page in large screen devices;
 9. Fix the bug of Cookies-driven automatic dark mode shifting not working when the preference is light mode;
 10. Fix the bug of no search results appears when using URL with "search=" + Chinese characters to simulate the search function.
 
@@ -75,21 +80,21 @@
 3. Add German translation to "The Liberated Lovership";
 4. Refactor the download link generating logic and interactive element adder (eventListener adder) logic;
 5. Redesign the 404 page;
-6. Fix the bug that the upper-left search bar overflows its container;
+6. Fix the bug of the upper-left search bar overflow;
 7. Slightly adjust the opacity of the blur effect;
 8. Adopt dynamic left padding of the ordered list and the dynamic scale of article cards to make them more readable for small-screen users;
 9. Adjust the colour of checked radio category buttons in the navigation panel to make them more obvious.
 
 ### V 2.3.2   17 Apr. 2025
 1. Fix the bug of website breakdown where a 404 page is absent;
-2. Fix the bug that the prompt in the search bar is still black when in dark mode;
+2. Fix the bug that causes the keywords in the search bar to still be black when in dark mode;
 3. Now the website can decide light and dark mode automatically with reference to Cookies and user default theme.
 
 ### V 2.3.1   15 Apr. 2025
 1. Fix the bug of website breakdown when the user type in languages except "en", "zh-Hans", and "de" to URL bar and visit;
 2. Remove the nettlesome language section in the article URLs, now the website decides languages automatically with reference to Cookies and user default language;
 3. Align the style of "Desk Scoring" with the website's theme;
-4. Fix the bug that the iframe pages are unable to shift dark mode depending on the parent website's settings;
+4. Fix the bug that causes the iframe pages to be unable to shift dark mode depending on the parent website's settings;
 5. Fix the bug of the sudden colour change of demostrating box text (like those in "Dictionary of Radicals") when shifting light and dark mode.
 
 ### V 2.3.0   12 Apr. 2025
@@ -103,7 +108,7 @@
 8. Add a new tool "Desk Scoring";
 9. Fix the bug of twisted and clipped crumb navigation when its width is excessive by adding a horizontal scroll bar.
 10. Fix the bug of content scrollbar gutter width error in Safari;
-11. Fix the bug that the scrollbar is not shown in "8values".
+11. Fix the bug of the missing scrollbar in "8values".
 
 ### V 2.2.0   6 Apr. 2025
 1. Add a thin scroll bar for articles;
@@ -111,7 +116,7 @@
 3. Create a more compact layout for small-screen users;
 4. Move the GitHub badge to left-bottom corner in case it covers title bar or scroll bar;
 5. Add download links for "Liberated Lovership" in the title bar;
-6. Fix the bug that the download icons are not aligned to right in Safari;
+6. Fix the bug that causes the download icons to be not aligned to right in Safari;
 7. Conduct a small amount of search engine optimization.
 
 ### V 2.1.4   5 Apr. 2025
@@ -131,10 +136,10 @@
 
 ### V 2.1.2   30 Mar. 2025
 1. Fix the bug of central search bar borders with nonidentical colours;
-2. Fix the bug that the music cover in the "settings" pop up menu refuses to rotate even if the music is playing;
-3. Fix the bug of redundant shadow under "settings" and "music cover" icons in the main interface;
+2. Fix the bug that causes the music cover in the "Options" pop up menu to refuse to rotate even if the music is playing;
+3. Fix the bug of redundant shadow under "Options" and "music cover" icons in the main interface;
 4. Fix the bug of misaligned height of 1 pixel between content area and title bar;
-5. Fix the bug that the title bar will be shown lingeringly when shifting to a new page and the bar is hidden previously;
+5. Fix the bug that causes the title bar to be shown lingeringly when shifting to a new page and the bar is hidden previously;
 6. Fix the bug of title bar failure in search and 404 pages;
 7. Fix the bug of non-central-alighed 404 page;
 8. Fix some nuanced spelling mistakes;

@@ -5,12 +5,12 @@
 	<title>Hēsperus' Blog</title>
     <script>
         function inpage_navi() {
-            let current_page = window.location.href;
-//            current_page = current_page.replace('http://127.0.0.1:5500/', '');
+            let page = window.location.href;
+//            page = page.replace('http://127.0.0.1:5500/', '');
 //            location.replace('http://127.0.0.1:5500');
-            current_page = current_page.replace('https://hesprs.github.io/', '');
+            page = page.replace('https://hesprs.github.io/', '');
             location.replace('https://hesprs.github.io');
-            localStorage.setItem('title', current_page);
+            localStorage.setItem('page', page);
         }
         window.addEventListener('DOMContentLoaded', inpage_navi);
     </script>

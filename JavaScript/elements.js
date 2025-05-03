@@ -9,7 +9,7 @@ class IconButton extends HTMLElement {
             <img loading="lazy" class="icon" src="${src}" alt="${text}">
 	        <div class="center_text">${text}</div>
         `;
-        if (redirect != undefined) this.addEventListener('click', function() { shift_title(redirect) });        
+        if (redirect != undefined) this.addEventListener('click', function() { changePage(redirect) });        
     }
 }
 
@@ -42,22 +42,22 @@ class ArticleCard extends HTMLElement {
                 </div>
             </div>
         `;
-        this.getElementsByClassName('flip_front')[0].addEventListener('click', function() { shift_title(index) });
-        this.getElementsByClassName('read_button')[0].addEventListener('click', function() { shift_title(index) });
+        this.getElementsByClassName('flip_front')[0].addEventListener('click', function() { changePage(index) });
+        this.getElementsByClassName('read_button')[0].addEventListener('click', function() { changePage(index) });
         for (let i = 0; i < 2; i ++) {
             this.getElementsByClassName('flip_button')[i].addEventListener('mouseenter', function() { this.classList.add('hovered') });
             this.getElementsByClassName('flip_button')[i].addEventListener('mouseleave', function() { this.classList.remove('hovered') });
         }
         this.getElementsByClassName('flip_button')[0].addEventListener('click', async function(event) {
             event.stopPropagation();
-            setTimeout(() => this.parentElement.parentElement.classList.add('hide'), 175);
+            setTimeout(() => this.parentElement.parentElement.classList.add('hide'), 175); // prevent the bug on Safari
             this.parentElement.parentElement.classList.add('flip');
             let content = await fetch(`/Contents/${articles[index].address}/info.json`);
             content = await content.json();
             this.parentElement.parentElement.getElementsByClassName('description_area')[0].innerHTML = `<p class='description'>${actual_language(content.description)}</p>`;
         });
         this.getElementsByClassName('flip_button')[1].addEventListener('click', function() {
-            setTimeout(() => this.parentElement.parentElement.classList.add(this.parentElement.parentElement.classList.remove('hide')), 175);
+            setTimeout(() => this.parentElement.parentElement.classList.add(this.parentElement.parentElement.classList.remove('hide')), 175); // prevent the bug on Safari
             this.parentElement.parentElement.classList.remove('flip');
         });
     }
