@@ -1,4 +1,4 @@
-# 🤩 推荐文章
+## 🤩 推荐文章
 
 <div class="directory">
     <article-card>8values</article-card>
@@ -11,7 +11,7 @@
 
 ---
 
-# 📚 所有分类
+## 📚 所有分类
 
 <div class="directory">
     <article-card>learning</article-card>

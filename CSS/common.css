@@ -1,7 +1,7 @@
 :root {
     --violet: rgb(132, 67, 255);
 	--gold: rgb(254, 247, 167);
-	--halfPixel: calc(0.2px + 0.02vw);
+	--halfPixel: calc(0.25px + 0.015vw);
 }
 
 html {

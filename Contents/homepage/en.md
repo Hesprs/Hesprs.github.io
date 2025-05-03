@@ -1,4 +1,4 @@
-# 🤩 Recommended Articles
+## 🤩 Recommended Articles
 
 <div class="directory">
     <article-card>8values</article-card>
@@ -11,7 +11,7 @@
 
 ---
 
-# 📚 All Categories
+## 📚 All Categories
 
 <div class="directory">
     <article-card>learning</article-card>
