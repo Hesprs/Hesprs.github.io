@@ -30,7 +30,7 @@
 
 ## 📜 Update-Log
 
-### V 2.5.1   3. Mai 2025
+### V 2.5.1   3. Mai 2025
 1. Anwendung eines stereoskopischen Effekts auf Titel und Willkommensseiten-Slogan;
 2. Behebung des Bugs, bei dem die Rückseite der Artikelkarten im Safari-Browser sichtbar blieb;
 3. Nutzer werden zur Startseite weitergeleitet, wenn sie den "Zurück"-Button ohne Browserverlauf anklicken.

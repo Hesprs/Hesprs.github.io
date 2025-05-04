@@ -67,13 +67,6 @@ input[type='radio'] {
     overflow: hidden;
 }
 
-.pop_up .pop_up_search_wrapper .entry {
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 0px;
-}
-
 .pop_up_search_wrapper input[type='text'] {
 	width: 100%;
 	border-radius: 15px 15px 0px 0px;
@@ -81,7 +74,15 @@ input[type='radio'] {
 	transition: background-color 300ms;
 } body.dark .pop_up_search_wrapper input[type='text'] { background-color: rgb(53, 53, 53) }
 
-#pop_up_search_button { border-radius: 0px 0px 15px 15px }
+#pop_up_search_button {
+    border-radius: 0px 0px 15px 15px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+} body.dark #pop_up_search_button { background-color: rgb(53, 53, 53); }
+#pop_up_search_button:hover { background-color: rgba(255, 255, 255, 0.4) }
+body.dark #pop_up_search_button:hover { background-color: rgba(0, 0, 0, 0.4) }
+#pop_up_search_button:active:hover { background-color: rgba(132, 67, 255, 0.5) }
+body.dark #pop_up_search_button:active:hover { background-color: var(--themeColor) }
 
 #pop_up_music_title {
     margin: 15px auto 0px auto;
@@ -107,6 +108,14 @@ input[type='radio'] {
 .pop_up .text_light, .pop_up .text_dark {
 	visibility: visible;
 	opacity: 1;
+}
+
+#pop_up_title {
+	margin: 0px auto;
+	font-size: 22px;
+	height: 30px;
+	font-weight: 500;
+    color: var(--themeColor);
 }
 
 @media (max-width: 768px) {

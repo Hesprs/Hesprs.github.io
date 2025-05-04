@@ -29,7 +29,7 @@
 	<div class='pop_up border' id='pop_up'>
 		<div style='padding: 8px 15px 8px 15px; display: flex; width: calc(100% - 30px);'>
 			<img class='icon' src='https://img1.tucang.cc/api/image/show/08f73f8d7cf3b996c07e7eb648db55f5' alt='back' style='height: 30px; width: 17.4px;' id='back'>
-			<div class='center_text theme_color' id='pop_up_title'></div>
+			<div class='center_text' id='pop_up_title'></div>
 			<div style='width: 17.4px'></div>
 		</div>
 		<hr style='margin: 0px; width: 100%;'>
@@ -39,74 +39,68 @@
 		<div class='slogan' id='slogan'></div>
 		<div class='continue' id='continue'></div>
 	</div>
-	<div class='background' id='background'>
+	<div class='background border shadow' id='background'>
 		<div class='sidenav' id='sidenav'>
-			<div class='sidenav_wrapper border' id='search_bar_wrapper'>
-				<div class='entry clickable' id='previous_page'>
+			<div class='sidenav_wrapper' id='search_bar_wrapper'>
+				<div class='entry clickable border shadow upper' id='previous_page'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous'>
 						<div class='center_text' id='text_previous' style='direction: rtl; margin: auto 0px auto auto;'></div>
 					</div>
 				</div>
-				<div class='division'></div>
-				<div class='search_gutter'>
+				<div class='entry border shadow lower' style='flex-direction: row; display: flex;'>
 					<div class='label_wrapper' id='search_input_wrapper'>
 						<input type='text' id='search_bar'>
 					</div>
 					<div class='vertical_division' id='side_division'></div>
-					<div class='entry clickable' id='search_button'>
-						<div class='label_wrapper' style='min-width: 30px;'>
-							<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' />
-						</div>
+					<div class='clickable label_wrapper' id='search_button' style='min-width: 30px; width: 30px;'>
+						<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' />
 					</div>
 				</div>
 			</div>
-			<div class='sidenav_wrapper border'>
+			<div class='sidenav_wrapper' id='category_wrapper'>
 				<input type='radio' id='homepage' name='category' value='homepage'>
-				<label for='homepage' class='entry clickable' id='homepage_label'>
+				<label for='homepage' class='entry clickable border shadow upper' id='homepage_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' id='homepage_icon' />
 						<div class='center_text' id='text_homepage'></div>
 					</div>
 				</label>
-				<div class='division'></div>
 				<input type='radio' id='articles' name='category' value='articles'>
-				<label for='articles' class='entry clickable' id='articles_label'>
+				<label for='articles' class='entry clickable border shadow middle' id='articles_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/torah.png' alt='articles' id='articles_icon' />
 						<div class='center_text' id='text_articles'></div>
 					</div>
 				</label>
-				<div class='division'></div>
 				<input type='radio' id='tools' name='category' value='tools'>
-				<label for='tools' class='entry clickable' id='tools_label'>
+				<label for='tools' class='entry clickable border shadow middle' id='tools_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/swiss-army-knife.png' alt='tools' id='tools_icon' />
 						<div class='center_text' id='text_tools'></div>
 					</div>
 				</label>
-				<div class='division'></div>
 				<input type='radio' id='about' name='category' value='about'>
-				<label for='about' class='entry clickable' id='about_label'>
+				<label for='about' class='entry clickable border shadow lower' id='about_label'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' id='about_icon'>
 						<div class='center_text' id='text_about'></div>
 					</div>
 				</label>
 			</div>
-			<div class='sidenav_wrapper border' id='search_bar_center_wrapper'>
-				<div class='entry clickable' id='previous_center'>
+			<div class='sidenav_wrapper' id='search_bar_center_wrapper'>
+				<div class='button_wrapper clickable' id='previous_center'>
 					<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous' />
 				</div>
-				<div class='division show'></div>
+				<div class='division'></div>
 				<input type='text' id='search_bar_center'>
-				<div class='division show'></div>
-				<div class='entry clickable' id='search_button_center'>
+				<div class='division'></div>
+				<div class='button_wrapper clickable' id='search_button_center'>
 					<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' />
 				</div>
 			</div>
-			<div class='sidenav_wrapper border' style='margin: auto 0px 0px auto;'>
-				<div class='music_container' id='music_container'>
+			<div class='sidenav_wrapper'>
+				<div class='music_container border upper shadow' id='music_container'>
 					<div class='label_wrapper' style='min-height: 80px; flex-direction: column;'>
 						<div style='margin: 0px; display: flex; height: 30px;'>
 							<img class='icon' src='https://img.icons8.com/fluency/100/lyre.png' alt='music-cover' id='music_cover'/>
@@ -119,30 +113,28 @@
 							<button id='previous' class='action-btn centerer'>
 								<img class='icon' src='https://img.icons8.com/fluency-systems-filled/200/end.png' alt='next' style='right: 0px;' id='previous_light'/>
 								<img class='icon' src='https://img.icons8.com/?size=200&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' style='right: 0px;' id='previous_dark'/>
-					  		</button>
-						  	<button id='play' class='action-btn centerer' style='margin: 0px auto 0px auto;'>
+							</button>
+							<button id='play' class='action-btn centerer' style='margin: 0px auto 0px auto;'>
 								<img class='icon' src='https://img.icons8.com/fluency-systems-filled/200/play.png' alt='play' id='play_light'/>
 								<img class='icon' src='https://img.icons8.com/fluency-systems-filled/200/pause.png' alt='pause' id='pause_light'/>
 								<img class='icon' src='https://img.icons8.com/?size=200&id=q0nxNdfpbYVl&format=png&color=FFFFFF' alt='pause' id='pause_dark'/>
 								<img class='icon' src='https://img.icons8.com/?size=200&id=fjx0LfGCNuZb&format=png&color=FFFFFF' alt='play' id='play_dark'/>
-						  	</button>
-						  	<button id='next' class='action-btn centerer'>
+							</button>
+							<button id='next' class='action-btn centerer'>
 								<img class='icon' src='https://img.icons8.com/fluency-systems-filled/200/end.png' alt='next' style='right: 0px;' id='next_light'/>
 								<img class='icon' src='https://img.icons8.com/?size=200&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' style='right: 0px;' id='next_dark'/>
-					  		</button>
+							</button>
 						</div>
 						<audio src='https://music.163.com/song/media/outer/url?id=443070377.mp3' id='audio'></audio>
 					</div>
 				</div>
-				<div class='division'></div>
-				<div class='entry clickable' id='language_option'>
+				<div class='entry clickable border shadow middle' id='language_option'>
 					<div class='label_wrapper'>
 						<img class='icon' alt='flag' style='height: 30px; width: 30px;' id='nations'>
 						<div class='center_text' id='text_language' style='direction: rtl; margin: auto 0px auto auto;'></div>
 					</div>
 				</div>
-				<div class='division'></div>
-				<label class='entry clickable' id='day_night' for='dn' style='display: flex; align-items: center; justify-content: center; text-align: center;'>
+				<label class='entry clickable border shadow lower' id='day_night' for='dn' style='display: flex; align-items: center; justify-content: center; text-align: center;'>
 					<div class='label_wrapper' style='min-width: 0px; gap: 0px;'>
 						<div class='text_light' id='text_light'></div>
 						<div class='toggleWrapper fancy_color' id='toggleWrapper'>
@@ -166,9 +158,9 @@
 			</div>
 		</div>
 		<div class='stretch_bar_wrapper' id='stretch_bar'>
-			<div class='stretch_bar' id='stretch_bar_1'></div>	
+			<div class='stretch_bar' id='stretch_bar_1'></div>
 		</div>
-		<div class='rectangle_wrapper border'>
+		<div class='rectangle_wrapper'>
 			<div class='rectangle' id='content_district'>
 				<a class="github-corner" aria-label="View source on GitHub" id='github_corner'>
 					<svg viewBox="0 0 250 250" aria-hidden="true" class="corner_svg">
@@ -183,9 +175,9 @@
 			<div class='rectangle' id='cover'>
 				<svg class='spinner'>
 					<circle>
-					  <animateTransform attributeName='transform' type='rotate' values='-90;810' keyTimes='0;1' dur='2s' repeatCount='indefinite'></animateTransform>
-					  <animate attributeName='stroke-dashoffset' values='0%;0%;-157.080%' calcMode='spline' keySplines='0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0' keyTimes='0;0.5;1' dur='2s' repeatCount='indefinite'></animate>
-					  <animate attributeName='stroke-dasharray' values='0% 314.159%;157.080% 157.080%;0% 314.159%' calcMode='spline' keySplines='0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0' keyTimes='0;0.5;1' dur='2s' repeatCount='indefinite'></animate>
+						<animateTransform attributeName='transform' type='rotate' values='-90;810' keyTimes='0;1' dur='2s' repeatCount='indefinite'></animateTransform>
+						<animate attributeName='stroke-dashoffset' values='0%;0%;-157.080%' calcMode='spline' keySplines='0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0' keyTimes='0;0.5;1' dur='2s' repeatCount='indefinite'></animate>
+						<animate attributeName='stroke-dasharray' values='0% 314.159%;157.080% 157.080%;0% 314.159%' calcMode='spline' keySplines='0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0' keyTimes='0;0.5;1' dur='2s' repeatCount='indefinite'></animate>
 					</circle>
 				</svg>
 			</div>

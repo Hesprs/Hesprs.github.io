@@ -143,8 +143,8 @@ function toggleTheme() {
 
 const responsiveResizeLayout = throttle(function() {
     if (window.innerWidth >= 768) {
-        if (window.innerHeight < 526) {
-            if (window.innerHeight < 474) {
+        if (window.innerHeight < 580) {
+            if (window.innerHeight < 534) {
                 if (sidenavWrapLevel !== 2) {
                     transition_or_not(0);
                     if (sidenavWrapLevel === 0) minimal_start();
@@ -170,7 +170,7 @@ const responsiveResizeLayout = throttle(function() {
             minimal_start();
             sidenavWrapLevel = 1;
         }
-        if (window.innerWidth < 474) {
+        if (window.innerWidth < 504) {
             if (sidenavWrapLevel !== 2) {
                 transition_or_not(1);
                 super_minimal_start();
@@ -194,8 +194,8 @@ const responsiveResizeLayout = throttle(function() {
     }
 }, 100);
 
-function transition_or_not(targetscreenWidthLevel) {
-    if (screenWidthLevel === targetscreenWidthLevel) {
+function transition_or_not(targetScreenWidthLevel) {
+    if (screenWidthLevel === targetScreenWidthLevel) {
         clearTimeout(timeout);
         sidenav.classList.add('transitioning');
         timeout = setTimeout(() => sidenav.classList.remove('transitioning'), 300)
@@ -204,7 +204,7 @@ function transition_or_not(targetscreenWidthLevel) {
 
 function minimal_start() {
     sidenav.classList.add('minimal');
-    custom_width = sidenav.offsetWidth;
+    custom_width = sidenav.offsetWidth - 30;
     musicContainer.classList.add('clickable');
     musicContainer.addEventListener('click', musicButtonClicked);
     sidenav.style.width = '';
@@ -359,14 +359,14 @@ function searchButtonClicked() {
         search_bar.value = '';
         search_bar_center.value = '';
         document.getElementById('pop_up_search').value = '';
-    } else if ((sidenav.classList.contains('minimal') && !sidenav.classList.contains('super_minimal')) || (window.innerWidth < 768 && window.innerWidth >= 474)) {
+    } else if ((sidenav.classList.contains('minimal') && !sidenav.classList.contains('super_minimal')) || (window.innerWidth < 768 && window.innerWidth >= 504)) {
         pop_up_index = 5;
         pop_up_title.innerHTML = translation.search[language].replace('...', '');
         pop_up_content.innerHTML = `
             <div class='pop_up_search_wrapper shadow border'>
                 <input type='text' id='pop_up_search' value='${search_bar.value}' placeholder='${translation.search[language]}'>
                 <hr style='margin: 0px; width: 100%;'>
-                <div class='entry clickable' id='pop_up_search_button'>
+                <div class='demobox clickable' id='pop_up_search_button'>
                     <img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search'></img>
                     <div class='center_text'>${translation.search[language].replace('...', '')}</div>
                 <div>
@@ -579,7 +579,7 @@ function compileCrumb(address, download) {
                 <div class='crumb color clickable_color' id='${target}_crumb' value='${target}'>${name}</div>
                 <pre class='crumb color'> > </pre>
             `;
-        } else crumb += `<div class='crumb theme_color' id='${target}_crumb'>${name}</div>`;
+        } else crumb += `<div class='crumb' id='${target}_crumb' style='color: var(--themeColor)'>${name}</div>`;
     }
     crumb_navigation.innerHTML = crumb;
     downloads.innerHTML = crumb_downloads;
@@ -599,14 +599,14 @@ function event_listeners(listener_list) {
 }
 
 function mouseDown(e) {
-    offset = e.clientX - sidenav.offsetWidth;
+    offset = e.clientX - sidenav.offsetWidth + 30;
     isDragging = 1;
     background.classList.add('on_dragging');
     content_district.classList.toggle('slides');
 }
 
 function touchStart(e) {
-    offset = e.touches[0].clientX - sidenav.offsetWidth;
+    offset = e.touches[0].clientX - sidenav.offsetWidth + 30;
     isDragging = 2;
     background.classList.add('on_dragging');
     content_district.classList.toggle('slides');
@@ -637,17 +637,6 @@ function mouseUp() {
         isDragging = 0;
         background.classList.remove('on_dragging');
     }
-    if (!hovered) stretch_bar_1.style.backgroundColor = 'transparent';
-}
-
-function hover_color() {
-    hovered = true;
-    stretch_bar_1.style.backgroundColor = dn.checked ? 'rgb(190, 222, 248)' : 'rgb(109, 173, 208)';
-}
-
-function out_color() {
-    hovered = false;
-    if (!isDragging) stretch_bar_1.style.backgroundColor = 'transparent';
 }
 
 function dn_minimal() {
@@ -789,10 +778,10 @@ function getCookie(cname) {
 }
 
 function setCookie(cname, cvalue, exdays = 36500) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 86400000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 86400000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function actual_language(directory, type = 'object') {
@@ -839,10 +828,6 @@ document.getElementById('warning_bar_wrapper').addEventListener('click', warning
 document.addEventListener('keydown', keyDown);
 window.addEventListener('DOMContentLoaded', initialize);
 window.addEventListener('resize', responsiveResizeLayout);
-stretch_bar.addEventListener('mouseover', hover_color);
-stretch_bar.addEventListener('touchstart', hover_color);
-stretch_bar.addEventListener('mouseout', out_color);
-stretch_bar.addEventListener('touchend', out_color);
 stretch_bar.addEventListener('touchstart', touchStart);
 stretch_bar.addEventListener('mousedown', mouseDown);
 window.addEventListener('mouseup', mouseUp);

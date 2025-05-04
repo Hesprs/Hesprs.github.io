@@ -1,7 +1,8 @@
 :root {
-    --violet: rgb(132, 67, 255);
-	--gold: rgb(254, 247, 167);
+    --themeColor: rgb(132, 67, 255);
 	--halfPixel: calc(0.25px + 0.015vw);
+} body.dark {
+	--themeColor: rgb(254, 247, 167);
 }
 
 html {
@@ -34,9 +35,9 @@ body.non_transition *, body.non_transition { transition: none !important }
 .center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before {
 	transition: color 300ms, opacity 300ms, text-shadow 300ms;
 } hr, img, body {
-	transition: background 300ms, opacity 300ms, box-shadow 300ms;
+	transition: background 300ms, opacity 300ms, box-shadow 300ms, border 300ms;
 } .demobox {
-	transition: color 300ms, background-color 300ms, box-shadow 300ms;
+	transition: color 300ms, background-color 300ms, box-shadow 300ms, border 300ms;
 }
 
 .background_color { background-color: rgb(255, 255, 255) }
@@ -74,11 +75,11 @@ li {
 h1, h2, h3, h4, h5, h6 {
 	margin: calc(20px + 0.8vw) 0px;
 	text-align: center;
-	color: var(--violet);
+	color: var(--themeColor);
 	font-family: Cormorant SC;
 	font-weight: bold;
 	line-height: 100%;
-} body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 { color: var(--gold) }
+}
 
 h1 {
 	font-size: calc(30px + 2.5vw) !important;
@@ -211,13 +212,11 @@ body.zh-Hans h1, body.zh-Hans h2, body.zh-Hans h3, body.zh-Hans h4, body.zh-Hans
 
 a, .fake_a {
     text-decoration: none;
-    color: var(--violet);
+    color: var(--themeColor);
 	font-weight: 800;
 	font-style: italic;
 	cursor: pointer;
-} body.dark a, body.dark .fake_a { color: var(--gold) }
-a:hover, .fake_a:hover { color: rgb(109, 173, 208) }
-body.dark a:hover, body.dark .fake_a:hover { color: rgb(109, 173, 208) }
+} a:hover, .fake_a:hover, body.dark a:hover, body.dark .fake_a:hover { color: rgb(109, 173, 208) }
 
 .shadow { box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15) }
 body.dark .shadow { box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3) }
@@ -226,6 +225,7 @@ body.dark .shadow { box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3) }
 	border: rgba(255, 255, 255, 0.4) solid 0.75px;
 	box-sizing: border-box;
 	border-radius: 15px;
+	overflow: hidden;
 } body.dark .border { border: rgba(255, 255, 255, 0.2) solid 0.75px }
 
 ul { list-style-type: none }
@@ -262,20 +262,16 @@ img {
 }
 
 .clickable { cursor: pointer }
-.clickable:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgba(132, 67, 255, 0.2);
-} body.dark .clickable:hover {
-	color: rgb(50, 50, 50);
-	background-color: rgba(254, 247, 167, 0.75);
-} .clickable:active:hover { background-color: rgba(132, 67, 255, 0.5) }
-body.dark .clickable:active:hover { background-color: var(--gold) }
+.clickable:hover { background-color: rgba(255, 255, 255, 0.4) }
+body.dark .clickable:hover { background-color: rgba(0, 0, 0, 0.4) }
+.clickable:active:hover { background-color: rgba(132, 67, 255, 0.5) }
+body.dark .clickable:active:hover { background-color: var(--themeColor) }
 
 .demobox {
 	background-color: rgba(255, 255, 255, 0.2);
 	padding: 8px;
 	align-items: center;
-  	justify-content: center;
+	justify-content: center;
 	text-align: center;
 	display: flex;
 	gap: 10px;
@@ -355,7 +351,7 @@ ul {
 	list-style: none;
 	padding-left: 0;
 }
-  
+
 ul li {
 	padding-left: calc(15px + 2vw);
 	padding-right: calc(7.5px + 1vw);
@@ -370,5 +366,5 @@ ol {
 ul li::before {
 	content: "✦";
 	padding-right: 8px;
-	color: var(--violet);
-} body.dark ul li::before { color: var(--gold) }
+	color: var(--themeColor);
+}

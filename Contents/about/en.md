@@ -29,7 +29,7 @@
 
 ## 📜 Update Log
 
-### V 2.5.1   3 May 2025
+### V 2.5.1   3 May 2025
 1. Apply the stereoscopic effect to the title and the welcome page slogan;
 2. Fix the bug that causes the back side of the article cards to still be visible when the user's browser is Safari;
 3. Users will be navigated to the homepage if they click the "previous" button but there's no browsing history.
