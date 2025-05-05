@@ -50,8 +50,8 @@ class ArticleCard extends HTMLElement {
         }
         this.getElementsByClassName('flip_button')[0].addEventListener('click', async function(event) {
             event.stopPropagation();
-            setTimeout(() => this.parentElement.parentElement.classList.add('hide'), 175); // prevent the bug on Safari
-            this.parentElement.parentElement.classList.add('flip');
+            setTimeout(() => this.parentElement.parentElement.classList.add(this.parentElement.parentElement.classList.add('hide')), 50);
+            this.parentElement.parentElement.classList.add('flip'); // prevent the bug on Safari
             if (this.parentElement.parentElement.getElementsByClassName('description')[0] == undefined) {
                 let content = await fetch(`/Contents/${articles[index].address}/info.json`);
                 content = await content.json();
@@ -59,8 +59,8 @@ class ArticleCard extends HTMLElement {
             }
         });
         this.getElementsByClassName('flip_button')[1].addEventListener('click', function() {
-            setTimeout(() => this.parentElement.parentElement.classList.add(this.parentElement.parentElement.classList.remove('hide')), 175); // prevent the bug on Safari
-            this.parentElement.parentElement.classList.remove('flip');
+            setTimeout(() => this.parentElement.parentElement.classList.add(this.parentElement.parentElement.classList.remove('hide')), 125); // prevent the bug on Safari
+            this.parentElement.parentElement.classList.remove('flip',);
         });
     }
 }

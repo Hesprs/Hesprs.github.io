@@ -286,7 +286,7 @@ body.dark .clickable:active:hover { background-color: var(--themeColor) }
 	white-space: nowrap;
 } .demobox .center_text { flex-direction: column }
 
-@media (max-width: 768px) {
+@media (max-width: 766.9px) {
 	main {
 		padding: 1px 8px 1px 8px;
 		width: calc(100% - 16px)
@@ -320,14 +320,14 @@ em { color: rgb(17, 148, 117) }
 body.dark em { color: rgb(90, 255, 178) }
 
 @supports not (scrollbar-gutter: stable both-edges) {
-    main {
+	main {
 		padding: 1px 15px 5px 15px;
 		width: calc(100% - 30px);
 	} main.normal_padding { padding: 15px }
 	main.top_padding { padding: 15px 15px 5px 15px }
 	main.bottom_padding { padding: 1px 15px 15px 15px }
 
-	@media (max-width: 768px) {
+	@media (max-width: 766.9px) {
 		main {
 			padding: 1px 10px 1px 10px;
 			width: calc(100% - 20px)

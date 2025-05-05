@@ -94,6 +94,20 @@ function initialize() {
     document.getElementById(language).checked = true;
     music_title.innerHTML = translation.music_player[language];
     sidenav.style.width = `${custom_width}px`;
+    console.log(`
+\`7MMF'  \`7MMF'\`7MM"""YMM   .M"""bgd \`7MM"""Mq.\`7MM"""YMM  \`7MM"""Mq.\`7MMF'   \`7MF'.M"""bgd
+  MM      MM    MM    \`7  ,MI    "Y   MM   \`MM. MM    \`7    MM   \`MM. \`MA     ,V ,MI    "Y
+  MM      MM    MM   d    \`MMb.       MM   ,M9  MM   d      MM   ,M9   VM:   ,V  \`MMb.
+  MMmmmmmmMM    MMmmMM      \`YMMNq.   MMmmdM9   MMmmMM      MMmmdM9     MM.  M'    \`YMMNq.
+  MM      MM    MM   Y  , .     \`MM   MM        MM   Y  ,   MM  YM.     \`MM A'   .     \`MM
+  MM      MM    MM     ,M Mb     dM   MM        MM     ,M   MM   \`Mb.    :MM;    Mb     dM
+.JMML.  .JMML..JMMmmmmMMM P"Ybmmd"  .JMML.    .JMMmmmmMMM .JMML. .JMM.    VF     P"Ybmmd"
+
+Hēsperus or HESPERVS or Hesprs | V 2.6.0 | See https://github.com//Hesprs/Hesprs.github.io
+
+Open-source library list: %c Marked %c https://github.com/markedjs/marked `,
+"padding: 6px 3px; border-radius: 15px 0 0 15px; color: #fff; background: rgb(109, 121, 208); font-weight: bold;",
+"padding: 6px 3px;border-radius: 0 15px 15px 0; color: #fff; background: rgb(132, 67, 255);",)
     responsiveResizeLayout();
     change_languages(redirect);
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600); // for smooth experience and preload the images
@@ -142,7 +156,7 @@ function toggleTheme() {
 }
 
 const responsiveResizeLayout = throttle(function() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 767) {
         if (window.innerHeight < 580) {
             if (window.innerHeight < 534) {
                 if (sidenavWrapLevel !== 2) {
@@ -224,7 +238,7 @@ function super_minimal_start() {
     music_cover.src = 'https://img.icons8.com/fluency/100/settings.png';
     document.getElementById('about_icon').src = 'https://img.icons8.com/fluency/100/magical-scroll.png';
     const about_label = document.getElementById('about_label');
-    about_label.htmlFor = '';
+    about_label.htmlFor = 'meaningless';
     musicContainer.removeEventListener('click', musicButtonClicked);
     about_label.addEventListener('click', categoriesButtonClicked);
     musicContainer.addEventListener('click', OptionsButtonClicked);
@@ -434,6 +448,7 @@ async function changePage(title = page, back = false, force = false) {
                     </main>
                 `;
                 compileCrumb(articles[page].address, content.downloads);
+                content_0.addEventListener('scroll', toggleFooterBlur);
             }
             if (content.type === 'iframe') {
                 const iframe_window = document.getElementById('iframe').contentWindow;
@@ -806,6 +821,13 @@ function loadCSS(href) {
     preloaded.href = href;
     document.head.appendChild(preloaded);
 }
+
+const toggleFooterBlur = throttle(function() {
+    const footer = document.getElementById('title_bar');
+    const top = footer.getBoundingClientRect().top;
+    if (((window.innerWidth >= 767 && top <= 31) || (window.innerWidth < 767 && top <= 88)) && !footer.classList.contains('blurred')) footer.classList.add('blurred');
+    else if ((window.innerWidth >= 767 && top > 31) || (window.innerWidth < 767 && top > 88)) footer.classList.remove('blurred'); 
+}, 200);
 
 audio.addEventListener('timeupdate', updateProgress);
 audio.addEventListener('ended', nextMusic);
