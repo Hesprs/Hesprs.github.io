@@ -380,7 +380,7 @@ function searchButtonClicked() {
             <div class='pop_up_search_wrapper shadow border'>
                 <input type='text' id='pop_up_search' value='${search_bar.value}' placeholder='${translation.search[language]}'>
                 <hr style='margin: 0px; width: 100%;'>
-                <div class='demobox clickable' id='pop_up_search_button'>
+                <div class='demobox' id='pop_up_search_button'>
                     <img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search'></img>
                     <div class='center_text'>${translation.search[language].replace('...', '')}</div>
                 <div>

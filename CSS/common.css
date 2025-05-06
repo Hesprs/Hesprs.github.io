@@ -32,16 +32,16 @@ body.en *, body.de * { font-size: calc(14px + 0.3vw) }
 body.zh-Hans * { font-size: calc(13px + 0.3vw) }
 body.non_transition *, body.non_transition { transition: none !important }
 
-.center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before {
+.center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before, .text_transition {
 	transition: color 300ms, opacity 300ms, text-shadow 300ms;
-} hr, img, body {
+} hr, img, body, .container_transition {
 	transition: background 300ms, opacity 300ms, box-shadow 300ms, border 300ms;
 } .demobox {
 	transition: color 300ms, background-color 300ms, box-shadow 300ms, border 300ms;
 }
 
-.background_color { background-color: rgb(255, 255, 255) }
-body.dark .background_color { background-color: rgb(53, 53, 53) }
+.background_color { background-color: rgba(255, 255, 255, 0.2) }
+body.dark .background_color { background-color: rgba(255, 255, 255, 0.1) }
 
 main {
 	padding: 1px 11px 1px 11px;

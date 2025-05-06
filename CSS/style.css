@@ -73,7 +73,7 @@ body {
 
 .crumb, .warning, .text_dark, .text_light, .flip_button svg {
 	transition: color 300ms, opacity 300ms, fill 300ms;
-} .entry, .music_container, .progress_container, .warning_bar, .flip_front, .flip_back, .overlay, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, footer, .flip_button, .sidenav, .stretch_bar_wrapper, .label_wrapper, .flip_button, .button_wrapper, .blurred {
+} .entry, .music_container, .progress_container, .warning_bar, .flip_front, .flip_back, .overlay, .vertical_division, .stretch_bar, .division, #search_bar_center_wrapper, footer, .flip_button, .sidenav, .stretch_bar_wrapper, .label_wrapper, .flip_button, .button_wrapper {
 	transition: background 300ms, opacity 300ms, border 300ms, box-shadow 300ms, backdrop-filter 300ms, filter 300ms;
 } .read_button, input[type=text] {
 	transition: border 300ms, color 300ms, background 300ms, box-shadow 300ms;

@@ -29,6 +29,14 @@
 
 ## 📜 Update Log
 
+### V 2.6.0   6 May 2025
+1. Reconstruct the layout of the website, wrapping the side navigation panel and the main content area in an acrylic background, adjusting the padding between panel sections and smoothing the background corners;
+2. Apply the floating glass and hover effect of the article card to every eligible element, including the title bar and buttons;
+3. The title bar can change its colour dynamically according to the position to ensure visual ease;
+4. The basic information of the website is now output in the browser console when a user visits the website;
+5. Apply the transition of brightness to the article cards when being flipped;
+6. Beautify the "Desk Scoring" tool.
+
 ### V 2.5.1   3 May 2025
 1. Apply the stereoscopic effect to the title and the welcome page slogan;
 2. Fix the bug that causes the back side of the article cards to still be visible when the user's browser is Safari;

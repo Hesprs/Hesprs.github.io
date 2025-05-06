@@ -38,20 +38,13 @@
       margin: 0.5vw;
       transition: accent-color 300ms, background-color 300ms, color 300ms;
     }
-    button {
-      background-color: #1687ff;
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      font-size: 16px;
-      border-radius: 15px;
-      cursor: pointer;
-      margin: 15px 0px;
-      transition: background-color 0.3s, color 0.3s;
-    }
     #output {
       display: none;
       min-width: 250px;
+    }
+    #button {
+      padding: 8px 20px;
+      margin: 15px 0;
     }
   </style>
 </head>
@@ -59,45 +52,10 @@
   <main class="bottom_padding">
     <h1>Desk Scoring</h1>
     <div id="matrixContainer"></div>
-    <button class="clickable" onclick="handleOK()">OK</button>
-    <div id="output" class="demobox shadow"></div>
+    <icon-button execute="handleOK()" id="button">OK</icon-button>
+    <div id="output" class="demobox shadow border"></div>
   </main>
-  <script>
-    const MATRIX = [
-      [ 0, 19, 15, 14,  1,  0],
-      [ 8,  3,  7, 22, 24, 21],
-      [11, 28, 17,  5, 23,  6],
-      [ 9, 12, 20,  4, 27, 16],
-      [25,  2, 10, 29, 26, 18]
-    ];
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('matrixContainer');
-      const table = document.createElement('table');
-      table.classList.add('shadow', 'background_color');
-      MATRIX.forEach(row => {
-        const tr = document.createElement('tr');
-        row.forEach(value => {
-          const checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.value = value;
-          tr.appendChild(checkbox);
-        });
-        table.appendChild(tr);
-      });
-      container.appendChild(table);
-    });
-    function handleOK() {
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-      const selectedValues = Array.from(checkboxes, cb => parseInt(cb.value, 10));
-      selectedValues.sort((a, b) => a - b);
-      const outputDiv = document.getElementById('output');
-      if (selectedValues.length === 0) {
-        outputDiv.style.display = 'none';
-      } else {
-        outputDiv.style.display = 'block';
-        outputDiv.textContent = selectedValues.join(', ');
-      }
-    }
-  </script>
 </body>
+<script src='../script.js'></script>
+<script src='/JavaScript/elements.js'></script>
 </html>
