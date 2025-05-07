@@ -7,17 +7,23 @@ const MATRIX = [
 ];
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('matrixContainer');
-    const table = document.createElement('table');
-    table.classList.add('shadow', 'background_color', 'border', 'container_transition');
+    const table = document.createElement('div');
+    table.classList.add('shadow', 'background_color', 'border', 'container_transition', 'martix');
     MATRIX.forEach(row => {
-        const tr = document.createElement('tr');
+        const line = document.createElement('div');
+        line.classList.add('line');
         row.forEach(value => {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
+            line.appendChild(checkbox);
             checkbox.value = value;
-            tr.appendChild(checkbox);
+            checkbox.id = value === 0 ? '' : value;
+            const indicator = document.createElement('label');
+            indicator.classList = value !== 0 ? 'indicator border shadow container_transition' : 'indicator unclickable';
+            indicator.htmlFor = value;
+            line.appendChild(indicator);
         });
-        table.appendChild(tr);
+        table.appendChild(line);
     });
     container.appendChild(table);
 });

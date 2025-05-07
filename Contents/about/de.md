@@ -31,12 +31,12 @@
 ## 📜 Update-Log
 
 ### V 2.6.0   6. Mai 2025
-1. Das Layout der Website wurde überarbeitet: Seiten-Navigationspanel und Hauptinhaltsbereich sind nun in einem Acryl-Hintergrund eingebettet, mit angepasstem Abstand zwischen den Panelabschnitten und abgerundeten Hintergrundecken;
-2. Der schwebende Glas-Effekt und Hover-Effekt der Artikelkarten wurden auf alle geeigneten Elemente ausgeweitet, einschließlich Titelleiste und Schaltflächen;
-3. Die Titelleiste kann ihre Farbe nun dynamisch entsprechend der Position ändern, um visuelle Harmonie zu gewährleisten;
-4. Die grundlegenden Informationen der Website werden nun in der Browserkonsole ausgegeben, wenn ein Benutzer die Seite besucht;
-5. Übergang der Helligkeit wird angewandt, wenn die Artikelkarten umgedreht werden;
-6. Das „Desk Scoring“-Tool wurde optisch verbessert.
+1. Neugestaltung des Website-Layouts: Die seitliche Navigationsleiste und der Hauptinhaltbereich wurden in einen Acryl-Hintergrund eingebettet, mit angepassten Abständen zwischen Panel-Bereichen und abgerundeten Hintergrundkanten;
+2. Der schwebende Glaseffekt und Hover-Effekt der Artikelkarten wurde auf alle geeigneten Elemente übertragen, inklusive Titelleiste und Buttons;
+3. Die Titelleiste kann ihre Farbe dynamisch anhand der Position ändern, um visuelle Harmonie zu gewährleisten;
+4. Grundlegende Website-Informationen werden nun in der Browser-Konsole ausgegeben, wenn ein Nutzer die Seite besucht;
+5. Ein Helligkeitsübergang wurde für Artikelkarten beim Umklappen implementiert;
+6. Verschönerung des "Tischbewertung"-Tools.
 
 ### V 2.5.1   3. Mai 2025
 1. Anwendung eines stereoskopischen Effekts auf Titel und Willkommensseiten-Slogan;

@@ -269,7 +269,7 @@ body.dark .clickable:active:hover { background-color: var(--themeColor) }
 
 .demobox {
 	background-color: rgba(255, 255, 255, 0.2);
-	padding: 8px;
+	padding: 8px 12px;
 	align-items: center;
 	justify-content: center;
 	text-align: center;

@@ -8,9 +8,7 @@
   <link href='/CSS/common.css' rel='stylesheet' type='text/css'>
   <title>Desk Scoring</title>
   <style>
-    body {
-      min-height: 100vh;
-    }
+    body { min-height: 100vh }
     main {
       display: flex;
       flex-direction: column;
@@ -20,23 +18,29 @@
       margin-top: auto;
       margin-bottom: auto;
     }
-    tr {
-      font-size: 0;
-    }
-    table {
-      border-radius: 8px;
-      padding: 0.5vw;
-      transition: background-color 0.3s, box-shadow 0.3s;
+    .martix {
+      padding: 0.75vw;
+      border-radius: 3vw;
     }
     input[type="checkbox"] {
+      width: 0;
+      height: 0;
+      margin: 0;
+    }
+    .indicator {
       width: 13vw;
-      height: 13vw;
       max-width: 90px;
-      max-height: 90px;
+      aspect-ratio: 1/1;
       cursor: pointer;
-      accent-color: rgb(132, 67, 255);
-      margin: 0.5vw;
-      transition: accent-color 300ms, background-color 300ms, color 300ms;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0.75vw;
+      border-radius: 1.5vw !important;
+    } body.dark .indicator { background-color: rgba(0, 0, 0, 0.2) }
+    body.dark input[type="checkbox"]:checked + .indicator { background-color: rgba(255, 255, 255, 0.5) }
+    input[type="checkbox"]:checked + .indicator { background-color: rgba(132, 67, 255, 0.4) }
+    .unclickable {
+      pointer-events: none;
+      opacity: 0;
     }
     #output {
       display: none;
@@ -45,6 +49,10 @@
     #button {
       padding: 8px 20px;
       margin: 15px 0;
+    }
+    .line {
+      display: flex;
+      flex-direction: row;
     }
   </style>
 </head>
