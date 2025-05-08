@@ -28,12 +28,12 @@ body {
 	overscroll-behavior: contain;
 	scroll-behavior: smooth;
 } body.dark { color: rgb(255, 255, 255) }
-body.en *, body.de * { font-size: calc(14px + 0.3vw) }
-body.zh-Hans * { font-size: calc(13px + 0.3vw) }
+html[lang = en] *, html[lang = de] * { font-size: calc(14px + 0.3vw) }
+html[lang = zh-Hans] * { font-size: calc(13px + 0.3vw) }
 body.non_transition *, body.non_transition { transition: none !important }
 
 .center_text, p, li, a, h1, h2, h3, h4, h5, h6, strong, em, ul li::before, .text_transition {
-	transition: color 300ms, opacity 300ms, text-shadow 300ms;
+	transition: color 300ms, opacity 300ms, text-shadow 300ms, fill 300ms;
 } hr, img, body, .container_transition {
 	transition: background 300ms, opacity 300ms, box-shadow 300ms, border 300ms;
 } .demobox {
@@ -204,7 +204,7 @@ h1 {
 		var(--halfPixel) calc(var(--halfPixel) * 5) 4px rgba(0, 0, 0, 0.6);
 }
 
-body.zh-Hans h1, body.zh-Hans h2, body.zh-Hans h3, body.zh-Hans h4, body.zh-Hans h5, body.zh-Hans h6 {
+html[lang = zh-Hans] h1, html[lang = zh-Hans] h2, html[lang = zh-Hans] h3, html[lang = zh-Hans] h4, html[lang = zh-Hans] h5, html[lang = zh-Hans] h6 {
 	font-family:'STDongGuanTi bld' !important;
 	font-weight: normal !important;
 	line-height: 120% !important;
@@ -231,7 +231,7 @@ body.dark .shadow { box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.3) }
 ul { list-style-type: none }
 
 main p, main li, main strong, main em, main a, main .fake_a { line-height: calc(23px + 0.3vw) }
-body.zh-Hans main p, body.zh-Hans main li, body.zh-Hans main strong, body.zh-Hans main em, body.zh-Hans main a, body.zh-Hans main .fake_a { line-height: calc(23px + 0.3vw) }
+html[lang = zh-Hans] main p, html[lang = zh-Hans] main li, html[lang = zh-Hans] main strong, html[lang = zh-Hans] main em, html[lang = zh-Hans] main a, html[lang = zh-Hans] main .fake_a { line-height: calc(23px + 0.3vw) }
 
 img {
 	border-radius: 15px;

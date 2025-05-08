@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
     <link href='https://fonts.loli.net/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
     <link href='https://chinese-fonts-cdn.deno.dev/packages/stdgt/dist/%E4%B8%8A%E5%9B%BE%E4%B8%9C%E8%A7%82%E4%BD%93-%E7%B2%97%E4%BD%93/result.css' rel='stylesheet'>
@@ -9,42 +9,42 @@
     <title>8values</title>
     <meta charset="utf-8">
 </head>
-<body class="zh-Hans">
+<body>
     <main>
         <h1>8values</h1>
         <hr>
-        <div class="center shadow" style="height: fit-content; width: calc(100% - 15px); max-width: 1000px; margin: auto;">
+        <div class="center demobox shadow border" style="height: fit-content; max-width: 1000px; margin: auto; padding: 0.75vw; min-height: 0px;">
             <div class="column">
-                <p class="labels">经济</p>
+                <div class="labels">经济</div>
                 <a href="#anchor"><img src="../value_images/equality.svg"></a>
                 <a href="#anchor"><img src="../value_images/markets.svg"></a>
             </div>
             <div class="column">
-                <p class="labels">外交</p>
+                <div class="labels">外交</div>
                 <a href="#anchor"><img src="../value_images/nation.svg"></a>
                 <a href="#anchor"><img src="../value_images/globe.svg"></a>
             </div>
             <div class="column">
-                <p class="labels">民事</p>
+                <div class="labels">民事</div>
                 <a href="#anchor"><img src="../value_images/liberty.svg"></a>
                 <a href="#anchor"><img src="../value_images/authority.svg"></a>
             </div>
             <div class="column">
-                <p class="labels">社会</p>
+                <div class="labels">社会</div>
                 <a href="#anchor"><img src="../value_images/tradition.svg"></a>
                 <a href="#anchor"><img src="../value_images/progress.svg"></a>
             </div>
         </div>
-        <button class="button shadow" onclick="location.href='instructions.html';" style="margin: 15px 0px;">点击以开始!</button>
+        <button class="demobox clickable border shadow" onclick="location.href='instructions.html';" style="margin: 15px 0;">✨ 点击以开始!</button>
         <hr>
         <h2>什么是 8values？</h2>
         <p>
-            8values 本质上是一个政治测验，它试图为八个不同的政治价值观分配百分比。您将看到一些语句，然后您将回答您对该语句的看法，从<b>非常同意</b>到<b>非常不同意</b>，每个答案都会略微影响您的分数。在测验结束时，您的答案将与每个价值观的最大可能值进行比较，从而为您提供一个百分比。请诚实回答！<br/>
-            该测验有<b><u><span id="numOfQuestions"></span></u></b>个问题。
+            8values 本质上是一个政治测验，它试图为八个不同的政治价值观分配百分比。您将看到一些语句，然后您将回答您对该语句的看法，从 <b>非常同意</b> 到 <b>非常不同意</b>，每个答案都会略微影响您的分数。在测验结束时，您的答案将与每个价值观的最大可能值进行比较，从而为您提供一个百分比。请诚实回答！<br/>
+            该测验有 <b><u><span id="numOfQuestions"></span></u></b> 个问题。
         </p>
         <h2 id="anchor">八个价值观是什么?</h2>
         <p>有四个独立的轴——经济、外交、民事和社会，每个轴都有两个对立的值。它们是：</p>
-        <div class="center shadow" style="height: fit-content; width: calc(100% - 15px); margin: auto; flex-direction: column;">
+        <div class="center demobox border shadow" style="padding: 8px; flex-direction: column;">
             <div class="spacer">
                 <div class="explanation_blurb_left">
                     <b style="color:#d32f2f;" class="value">平等</b>
@@ -121,7 +121,7 @@
                 </div>
             </div>
         </div>
-        <h2>“最接近匹配”是什么意思？</h3>
+        <h2>“最接近匹配”是什么意思？</h2>
         <p>
             除了将您与八种价值观相匹配外，测验还尝试将您与政治意识形态相匹配。这是一项正在进行中的工作，其准确性远远低于价值观和坐标轴，所以不要太认真。如果您不同意您被分配的意识形态，请给我们发送电子邮件：eightvalues@gmail.com，并附上您的分数、匹配的意识形态和首选意识形态，我们将研究如何调整该系统。谢谢！
         </p>
@@ -132,6 +132,7 @@
 <script src="../JavaScript/questions.js" type="application/javascript"></script>
 <script src="../JavaScript/script.js" type="application/javascript"></script>
 <script>
+    check_dark();
     document.getElementById("numOfQuestions").innerHTML = questions.length;
 </script>
 </html>

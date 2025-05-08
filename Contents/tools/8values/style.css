@@ -4,9 +4,7 @@
     overflow: visible;
 }
 
-.value {
-    margin: 0px 0px 5px 0px;
-}
+.value { margin: 0px 0px 5px 0px }
 
 .buttons {
     display: flex;
@@ -22,27 +20,8 @@
 }
 
 .center {
-    border-radius: 15px;
-    padding: 7.5px;
-    background-color: white;
-    width: calc(100% - 30px);
-    height: calc(100px + 20vw);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    transition: background-color 300ms, box-shadow 300ms;
-} body.dark .center {
-    background-color: rgb(53, 53, 53);
-} .center p {
-    line-height: unset;
-}
-
-.column img, .arrow {
-    box-shadow: none;
-    filter: drop-shadow(0px 2px 3px rgb(200, 200, 200))
-} body.dark .column img, body.dark .arrow {
-    box-shadow: none;
-    filter: drop-shadow(0px 2px 3px rgb(30, 30, 30));
+    gap: 0 !important;
+    min-height: 250px;
 }
 
 .blurb-text {
@@ -53,9 +32,11 @@
 .center p {
     margin: 0px;
     width: 100%;
-    font-size: calc(10px + 2vw);
     text-align: center;
+    line-height: unset !important;
 }
+
+#question-text { font-size: calc(10px + 2vw) }
 
 .labels {
     overflow: visible !important;
@@ -73,21 +54,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
-    padding: 7.5px;
+    gap: 1.5vw;
+    padding: 0.75vw;
     width: 25%;
 }
 
-.column img {
-    transition: transform 300ms, filter 300ms;
-    border-radius: 0px;
-} .column img:hover {
-    transform: scale(1.05);
-} .axis img {
+.arrow { fill:rgb(53, 53, 53) }
+body.dark .arrow { fill:rgb(255, 255, 255) }
+.column img:hover { transform: scale(1.05) }
+.axis {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} .axis img { width: calc(50px + 5vw) }
+.column img, .arrow, .axis img {
+    border: none !important;
     box-shadow: none !important;
-    border-radius: 0px !important;
-    width: calc(50px + 5vw);
-}
+    border-radius: 0 !important;
+    transition: transform 300ms, filter 300ms, fill 300ms;
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.3))
+} body.dark .column img, body.dark .arrow, body.dark .axis img { filter: drop-shadow(0px 2px 3px rgb(0, 0, 0, 0.6)) }
 
 .spacer {
     margin: 7.5px;
@@ -95,69 +82,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.spacer > div{
+} .spacer > div{
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.button {
+
+button {
     font-family: Jost;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    padding: 7.5px;
+    color: rgb(50, 50, 50);
     width: 100%;
-    text-align: center;
-    text-decoration: none;
-    display: block;
     transition: color 300ms, background-color 300ms, box-shadow 300ms;
-    cursor: pointer;
-    background-color: #03a9f4;
-}
+} body.dark button { color: white }
 
-.button:hover, .button:focus { background: #1687e0; }
-.stronglyAgree { background: #1b5e20; }
-.stronglyAgree:hover, .stronglyAgree:focus { background: #154a19; }
-.agree { background: #4caf50; }
-.agree:hover, .agree:focus { background: #29942e; }
-.neutral { background: #949494; }
-.neutral:hover, .neutral:focus { background: #656565; }
-.disagree { background: #f44336; }
-.disagree:hover, .disagree:focus { background: #b6170e; }
-.stronglyDisagree { background: #b71c1c; }
-.stronglyDisagree:hover, .stronglyDisagree:focus { background: #920c0c; }
-
-.small_button {
-    background-color: #333;
-}
-
-.small_button:hover, .small_button:focus {
-    background: #222;
-}
-
-.small_button_off {
-    background-color: #ddd;
-    color: #888;
-    border: 2px solid #888;
-    cursor: not-allowed;
-    margin: -4px auto;
-}
-.arrow {
-    fill:rgb(53, 53, 53);
-    transition: fill 300ms, filter 300ms;
-} body.dark .arrow {
-    fill:rgb(255, 255, 255);
-}
-
-.axis {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .bar {
     height: calc(10px + 4vw);
     padding: 8pt;
@@ -171,43 +110,22 @@
     background-color: #eeeeee;
     display: block;
     width: 50%;
+    transition: box-shadow 300ms;
 }
 
-.equality {
-    background-color: #f44336;
-    border-right-style: solid;
-}
-.wealth {
-    background-color: #00897b;
-    border-left-style: solid;
-}
-.liberty {
-    background-color: #ffeb3b;
-    border-right-style: solid;
-}
-.authority {
-    background-color: #3f51b5;
-    border-left-style: solid;
-}
-.peace {
-    background-color: #03a9f4;
-    border-left-style: solid;
-}
-.might {
-    background-color: #ff9800;
-    border-right-style: solid;
-}
-.progress {
-    background-color: #9c27b0;
-    border-left-style: solid;
-}
-.tradition {
-    background-color: #8bc34a;
-    border-right-style: solid;
-}
+.equality, .liberty, .might, .tradition { border-right-style: solid }
+.wealth, .progress, .peace, .authority { border-left-style: solid }
+.equality { background-color: #f44336 }
+.wealth { background-color: #00897b }
+.liberty { background-color: #ffeb3b }
+.authority { background-color: #3f51b5 }
+.peace { background-color: #03a9f4 }
+.might { background-color: #ff9800 }
+.progress { background-color: #9c27b0 }
+.tradition { background-color: #8bc34a }
 
 .text-wrapper {
-    font-size: calc(10px + 3vw);
+    font-size: calc(10px + 3vw) !important;
     font-weight: 500;
     width: fit-content;
     height: 100%;
@@ -216,14 +134,11 @@
     transition: color 300ms;
 }
 
-.explanation_blurb_left {
-    width: 100%;
-}
+.explanation_blurb_left { width: 100% }
 .explanation_blurb_right {
     width: 100%;
     margin-top: 10px;
-}
-.explanation_axis {
+} .explanation_axis {
     height: 0px;
     width: 0px;
     margin: 0px;
@@ -238,13 +153,9 @@
 }
 
 @media (min-width: 768px) {
-    .content {
-        flex-direction: row;
-    }
+    .content { flex-direction: row }
 
-    .buttons {
-        margin-left: 7.5px;
-    }
+    .buttons { margin-left: 7.5px }
 
     .questions {
         margin-right: 7.5px;
@@ -252,17 +163,11 @@
         width: 60%;
     }
 
-    .center {
-        width: unset;
-    }
+    .center { width: unset }
 
-    .responsive {
-        height: 100% !important;
-    }
+    .responsive { height: 100% !important }
 
-    .spacer {
-        flex-direction: row;
-    }
+    .spacer { flex-direction: row }
 
     .explanation_blurb_left {
         width: 42.5%;

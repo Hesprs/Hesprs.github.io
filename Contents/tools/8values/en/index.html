@@ -9,33 +9,33 @@
     <title>8values</title>
     <meta charset="utf-8">
 </head>
-<body class="en">
+<body>
     <main>
         <h1>8values</h1>
         <hr>
-        <div class="center shadow" style="height: fit-content; width: calc(100% - 15px); max-width: 1000px; margin: auto;">
+        <div class="center demobox shadow border" style="height: fit-content; max-width: 1000px; margin: auto; padding: 0.75vw; min-height: 0px;">
             <div class="column">
-                <p class="labels">ECONOMIC</p>
+                <div class="labels">ECONOMIC</div>
                 <a href="#anchor"><img src="../value_images/equality.svg"></a>
                 <a href="#anchor"><img src="../value_images/markets.svg"></a>
             </div>
             <div class="column">
-                <p class="labels">DIPLOMATIC</p>
+                <div class="labels">DIPLOMATIC</div>
                 <a href="#anchor"><img src="../value_images/nation.svg"></a>
                 <a href="#anchor"><img src="../value_images/globe.svg"></a>
             </div>
             <div class="column">
-                <p class="labels">CIVIL</p>
+                <div class="labels">CIVIL</div>
                 <a href="#anchor"><img src="../value_images/liberty.svg"></a>
                 <a href="#anchor"><img src="../value_images/authority.svg"></a>
             </div>
             <div class="column">
-                <p class="labels">SOCIETAL</p>
+                <div class="labels">SOCIETAL</div>
                 <a href="#anchor"><img src="../value_images/tradition.svg"></a>
                 <a href="#anchor"><img src="../value_images/progress.svg"></a>
             </div>
         </div>
-        <button class="button shadow" onclick="location.href='instructions.html';" style="margin: 15px 0px;">Click here to start!</button>
+        <button class="demobox clickable border shadow" onclick="location.href='instructions.html';" style="margin: 15px 0px;">✨ Click here to start!</button>
         <hr>
         <h2>What is 8values?</h2>
         <p>
@@ -44,7 +44,7 @@
         </p>
         <h2 id="anchor">What are the eight values?</h2>
         <p>There are four independent axes - Economic, Diplomatic, Civil, and Society - and each has two opposing values assigned to them. They are:</p>
-        <div class="center shadow" style="height: fit-content; width: calc(100% - 15px); margin: auto; flex-direction: column;">
+        <div class="center demobox border shadow" style="padding: 8px; flex-direction: column;">
             <div class="spacer">
                 <div class="explanation_blurb_left">
                     <b style="color:#d32f2f;" class="value">EQUALITY</b>
@@ -132,6 +132,7 @@
 <script src="../JavaScript/questions.js" type="application/javascript"></script>
 <script src="../JavaScript/script.js" type="application/javascript"></script>
 <script>
+    check_dark();
     document.getElementById("numOfQuestions").innerHTML = questions.length;
 </script>
 </html>

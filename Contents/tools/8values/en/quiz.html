@@ -11,24 +11,24 @@
     <script src='../JavaScript/questions.js'></script>
     <script src='../JavaScript/script.js'></script>
 </head>
-<body class="en">
+<body>
     <main class="bottom_padding">
         <h1>8values Test</h1>
         <hr>
         <h3 style="text-align:center;" id="question-number">Loading...</h3>
         <div class="content">
             <div class="questions">
-                <div class="center shadow responsive" style="padding: 15px;">
+                <div class="center demobox border shadow responsive" style="padding: 15px;">
                     <p id="question-text"></p>
                 </div>
             </div>
             <div class="buttons">
-                <button class="button stronglyAgree shadow" onclick="next_question(1.0, 'en')">Strongly Agree</button>
-                <button class="button agree shadow" onclick="next_question(0.5, 'en')" style="margin: 15px 0px;">Agree</button>
-                <button class="button neutral shadow" onclick="next_question(0.0, 'en')">Neutral / Unsure</button>
-                <button class="button disagree shadow" onclick="next_question(-0.5, 'en')" style="margin: 15px 0px;">Disagree</button>
-                <button class="button stronglyDisagree shadow" onclick="next_question(-1.0, 'en')">Strongly Disagree</button>
-                <button class="button small_button shadow" onclick="location.href='instructions.html';" id="back_button" style="margin-top:15px;">Back</button>
+                <button class="demobox clickable border shadow" onclick="next_question(1.0, 'en')">🤩 Strongly Agree</button>
+                <button class="demobox clickable border shadow" onclick="next_question(0.5, 'en')" style="margin: 15px 0px;">😁 Agree</button>
+                <button class="demobox clickable border shadow" onclick="next_question(0.0, 'en')">😐 Neutral / Unsure</button>
+                <button class="demobox clickable border shadow" onclick="next_question(-0.5, 'en')" style="margin: 15px 0px;">😥 Disagree</button>
+                <button class="demobox clickable border shadow" onclick="next_question(-1.0, 'en')">😰 Strongly Disagree</button>
+                <button class="demobox clickable border shadow" onclick="location.href='instructions.html';" id="back_button" style="margin-top:15px;">🔙 Back</button>
             </div>
         </div>
     </main>

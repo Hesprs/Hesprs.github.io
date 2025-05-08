@@ -30,6 +30,13 @@
 
 ## 📜 Update-Log
 
+### V 2.6.1   8. Mai 2025
+1. Überarbeitung des Codes für den Dunkel-/Hellmodus-Wechsler, "8values"-Tool, Website-Inhaltsstrukturen und sprachspezifische Styles;
+2. Anwendung des Glass-UI-Designs auf das "8values"-Tool;
+3. Behebung des Bugs mit ungleichen Abständen an den Seiten der Navigationsleiste in der Mobilansicht;
+4. Behebung des Bugs mit zu großem Abstand zwischen den Wertesymbolen auf der ersten Seite des "8values"-Tools;
+5. Behebung des Bugs, bei dem die erste Seite des "8values"-Tools nach Klicken des "Zurück"-Buttons auf der Ergebnisseite im Hellmodus verblieb, obwohl die Hauptwebsite im Dunkelmodus war.
+
 ### V 2.6.0   6. Mai 2025
 1. Neugestaltung des Website-Layouts: Die seitliche Navigationsleiste und der Hauptinhaltbereich wurden in einen Acryl-Hintergrund eingebettet, mit angepassten Abständen zwischen Panel-Bereichen und abgerundeten Hintergrundkanten;
 2. Der schwebende Glaseffekt und Hover-Effekt der Artikelkarten wurde auf alle geeigneten Elemente übertragen, inklusive Titelleiste und Buttons;

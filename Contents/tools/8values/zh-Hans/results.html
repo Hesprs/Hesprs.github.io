@@ -11,17 +11,17 @@
     <script src="../JavaScript/ideologies.js"></script>
     <script src='../JavaScript/script.js'></script>
 </head>
-<body class="zh-Hans">
+<body>
     <main class="bottom_padding">
         <h1>8values 结果</h1>
         <hr>
         <h3 style="margin: 0px;" id="economic-label"></h3>
         <div class="axis">
             <img id="img-equality" src="../value_images/equality.svg"/>
-            <div class="bar equality" id="bar-equality">
+            <div class="bar equality shadow" id="bar-equality">
                 <div class="text-wrapper" id="equality"></div>
             </div>
-            <div class="bar wealth" id="bar-wealth">
+            <div class="bar wealth shadow" id="bar-wealth">
                 <div class="text-wrapper" id="wealth" style="margin-left: auto;"></div>
             </div>
             <img id="img-wealth" src="../value_images/markets.svg"/>
@@ -29,10 +29,10 @@
         <h3 style="margin: 0px;" id="diplomatic-label"></h3>
         <div class="axis">
             <img id="img-might" src="../value_images/nation.svg"/>
-            <div class="bar might" id="bar-might">
+            <div class="bar might shadow" id="bar-might">
                 <div class="text-wrapper" id="might"></div>
             </div>
-            <div class="bar peace" id="bar-peace">
+            <div class="bar peace shadow" id="bar-peace">
                 <div class="text-wrapper" id="peace" style="margin-left: auto;"></div>
             </div>
             <img id="img-peace" src="../value_images/globe.svg"/>
@@ -40,10 +40,10 @@
         <h3 style="margin: 0px;" id="state-label"></h3>
         <div class="axis">
             <img id="img-liberty" src="../value_images/liberty.svg"/>
-            <div class="bar liberty" id="bar-liberty">
+            <div class="bar liberty shadow" id="bar-liberty">
                 <div class="text-wrapper" id="liberty"></div>
             </div>
-            <div class="bar authority" id="bar-authority">
+            <div class="bar authority shadow" id="bar-authority">
                 <div class="text-wrapper" id="authority" style="margin-left: auto;"></div>
             </div>
             <img id="img-authority" src="../value_images/authority.svg"/>
@@ -51,10 +51,10 @@
         <h3 style="margin: 0px;" id="society-label"></h3>
         <div class="axis">
             <img id="img-tradition" src="../value_images/tradition.svg"/>
-            <div class="bar tradition" id="bar-tradition">
+            <div class="bar tradition shadow" id="bar-tradition">
                 <div class="text-wrapper" id="tradition"></div>
             </div>
-            <div class="bar progress" id="bar-progress">
+            <div class="bar progress shadow" id="bar-progress">
                 <div class="text-wrapper" id="progress" style="margin-left: auto;"></div>
             </div>
             <img id="img-progress" src="../value_images/progress.svg"/>
@@ -65,7 +65,7 @@
         <hr/>
         <img id="banner" />
         <p style="margin: 15px 0px; text-align: center;">长按或右键点击保存</p>
-        <button class="button shadow" onclick="location.href='index.html';">返回</button>
+        <button class="demobox clickable border shadow" onclick="location.href='index.html';">🔙 返回</button>
     </main>
     <script>
         check_dark();

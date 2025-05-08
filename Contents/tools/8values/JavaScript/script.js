@@ -8,11 +8,8 @@ let qn = 0;
 
 function init_question(language) {
     document.getElementById("question-text").innerHTML = questions[qn][language];
-    if (language === 'zh-Hans') {
-       document.getElementById("question-number").innerHTML = "第 " + (qn + 1) + " 个问题，共 " + (questions.length)+" 个"; 
-    } else {
-        document.getElementById("question-number").innerHTML = "Question " + (qn + 1) + " of " + (questions.length);
-    }
+    if (language === 'zh-Hans') document.getElementById("question-number").innerHTML = "第 " + (qn + 1) + " 个问题，共 " + (questions.length)+" 个"; 
+    else document.getElementById("question-number").innerHTML = "Question " + (qn + 1) + " of " + (questions.length);
 }
 
 function calc_max() {
@@ -36,25 +33,17 @@ function next_question(mult, language) {
     qn++; 
     if (qn < questions.length) {
         init_question(language);
-        if (qn === 1) {
-            document.getElementById("back_button").onclick = () => prev_question(language);
-        }
-    } else {
-        results();
-    }
+        if (qn === 1) document.getElementById("back_button").onclick = () => prev_question(language);
+    } else results();
 }
 
 function prev_question(language) {
     qn--;
     init_question(language);
-    if (qn === 0) {
-        document.getElementById("back_button").onclick = () => location.href = 'instructions.html';
-    }
+    if (qn === 0) document.getElementById("back_button").onclick = () => location.href = 'instructions.html';
 }
 
-function calc_score(score, max) {
-    return (100*(max + score)/(2*max)).toFixed(1);
-}
+function calc_score(score, max) { return (100*(max + score)/(2*max)).toFixed(1) }
 
 function results() {
     let final_econ = econ_array.reduce((a, b) => a + b, 0);
@@ -69,25 +58,15 @@ function results() {
 }
 
 function setLabel(val, ary) {
-    if (val > 100) {
-        return "";
-    } else if (val > 90) {
-        return ary[0];
-    } else if (val > 75) {
-        return ary[1];
-    } else if (val > 60) {
-        return ary[2];
-    } else if (val >= 40) {
-        return ary[3];
-    } else if (val >= 25) {
-        return ary[4];
-    } else if (val >= 10) {
-        return ary[5];
-    } else if (val >= 0) {
-        return ary[6];
-    } else {
-        return "";
-    }
+    if (val > 100) return "";
+    else if (val > 90) return ary[0];
+    else if (val > 75) return ary[1];
+    else if (val > 60) return ary[2];
+    else if (val >= 40) return ary[3];
+    else if (val >= 25) return ary[4];
+    else if (val >= 10) return ary[5];
+    else if (val >= 0) return ary[6];
+    else return "";
 }
 
 function getQueryVariable(variable) {
@@ -95,9 +74,7 @@ function getQueryVariable(variable) {
     var vars = query.split("&");
     for (var i = 0; i < vars.length; i++) {
         var pair = vars[i].split("=");
-        if (pair[0] == variable) {
-            return pair[1];
-        }
+        if (pair[0] == variable) return pair[1];
     }
     return (NaN);
 }
@@ -107,9 +84,7 @@ function setBarValue(name, value) {
     outerel = document.getElementById("bar-" + name);
     outerel.style.width = (value + "%");
     innerel.innerHTML = (value + "%");
-    if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
-        innerel.style.visibility = "hidden";
-    }
+    if (innerel.offsetWidth + 20 > outerel.offsetWidth) innerel.style.visibility = "hidden";
 }
 
 function draw() {
@@ -119,7 +94,6 @@ function draw() {
     c.height = 650;
     ctx.fillStyle = "#EEEEEE";
     ctx.fillRect(0, 0, 800, 650);
-
     img = document.getElementById("img-equality");
     ctx.drawImage(img, 20, 140, 100, 100);
     img = document.getElementById("img-wealth");
@@ -136,7 +110,6 @@ function draw() {
     ctx.drawImage(img, 20, 530, 100, 100);
     img = document.getElementById("img-progress");
     ctx.drawImage(img, 680, 530, 100, 100);
-
     ctx.fillStyle = "#222222";
     ctx.fillRect(120, 150, 560, 80);
     ctx.fillRect(120, 280, 560, 80);
@@ -165,34 +138,16 @@ function draw() {
     ctx.font = "50px Jost";
     ctx.textAlign = "right";;
     ctx.fillText(ideology, 780, 80);
-
     ctx.textAlign = "left";
-    if (equality > 30) {
-        ctx.fillText(equality + "%", 130, 207.5);
-    }
-    if (might > 30) {
-        ctx.fillText(might + "%", 130, 337.5);
-    }
-    if (liberty > 30) {
-        ctx.fillText(liberty + "%", 130, 467.5);
-    }
-    if (tradition > 30) {
-        ctx.fillText(tradition + "%", 130, 597.5);
-    }
+    if (equality > 30) ctx.fillText(equality + "%", 130, 207.5);
+    if (might > 30) ctx.fillText(might + "%", 130, 337.5);
+    if (liberty > 30) ctx.fillText(liberty + "%", 130, 467.5);
+    if (tradition > 30) ctx.fillText(tradition + "%", 130, 597.5);
     ctx.textAlign = "right"
-    if (wealth > 30) {
-        ctx.fillText(wealth + "%", 670, 207.5);
-    }
-    if (peace > 30) {
-        ctx.fillText(peace + "%", 670, 337.5);
-    }
-    if (authority > 30) {
-        ctx.fillText(authority + "%", 670, 467.5);
-    }
-    if (progress > 30) {
-        ctx.fillText(progress + "%", 670, 597.5);
-    }
-
+    if (wealth > 30) ctx.fillText(wealth + "%", 670, 207.5);
+    if (peace > 30) ctx.fillText(peace + "%", 670, 337.5);
+    if (authority > 30) ctx.fillText(authority + "%", 670, 467.5);
+    if (progress > 30) ctx.fillText(progress + "%", 670, 597.5);
     ctx.font = "300 30px Jost";
     ctx.textAlign = "center";
     ctx.fillText(document.getElementById("economic-label").innerHTML, 400, 140);
@@ -234,12 +189,7 @@ function result_ini(language) {
 
 function check_dark() {
     document.body.classList.add('non_transition');
-    setTimeout(() => {
-        document.body.classList.remove('non_transition');
-    }, 10);
-    if (parent.document.body.classList.contains('dark')) {
-        document.body.classList.add("dark");
-    } else {
-        document.body.classList.remove("dark");
-    }
+    setTimeout(() => document.body.classList.remove('non_transition'), 10);
+    if (parent.document.body.classList.contains('dark')) document.body.classList.add("dark");
+    else document.body.classList.remove("dark");
 }
