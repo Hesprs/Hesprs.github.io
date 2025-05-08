@@ -34,7 +34,8 @@
 2. Apply the glass UI design to the "8values" tool;
 3. Fix the bug of unidentical spacing at the left and right sides of the navigation bar in the mobile view;
 4. Fix the bug of huge spacing between value icons in the first page of the "8values" tool；
-5. Fix the bug that causes the first page of the "8values" tool to stay in the light theme after clicking the "back" button on the results page, even if the main website is in dark theme.
+5. Fix the bug that causes the first page of the "8values" tool to stay in the light theme after clicking the "back" button on the results page, even if the main website is in dark theme;
+6. Compress the value icons in the "8values" tool radically for better performance.
 
 ### V 2.6.0   6 May 2025
 1. Reconstruct the layout of the website, wrapping the side navigation panel and the main content area in an acrylic background, adjusting the padding between panel sections and smoothing the background corners;

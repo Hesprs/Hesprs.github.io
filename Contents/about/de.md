@@ -35,7 +35,8 @@
 2. Anwendung des Glass-UI-Designs auf das "8values"-Tool;
 3. Behebung des Bugs mit ungleichen Abständen an den Seiten der Navigationsleiste in der Mobilansicht;
 4. Behebung des Bugs mit zu großem Abstand zwischen den Wertesymbolen auf der ersten Seite des "8values"-Tools;
-5. Behebung des Bugs, bei dem die erste Seite des "8values"-Tools nach Klicken des "Zurück"-Buttons auf der Ergebnisseite im Hellmodus verblieb, obwohl die Hauptwebsite im Dunkelmodus war.
+5. Behebung des Bugs, bei dem die erste Seite des "8values"-Tools nach Klicken des "Zurück"-Buttons auf der Ergebnisseite im Hellmodus verblieb, obwohl die Hauptwebsite im Dunkelmodus war;
+6. Radikale Komprimierung der Wertesymbole im "8values"-Tool für bessere Leistung.
 
 ### V 2.6.0   6. Mai 2025
 1. Neugestaltung des Website-Layouts: Die seitliche Navigationsleiste und der Hauptinhaltbereich wurden in einen Acryl-Hintergrund eingebettet, mit angepassten Abständen zwischen Panel-Bereichen und abgerundeten Hintergrundkanten;
