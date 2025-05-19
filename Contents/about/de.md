@@ -30,6 +30,12 @@
 
 ## 📜 Update-Log
 
+### V 2.7.0   19. Mai 2025
+1. Alle CSS-Dateien mit SCSS neu codieren;
+2. Acryl-Effekt auf das Pop-up-Fenster anwenden;
+3. Das übersichtliche mobile Layout vor V 2.6.0 wiederherstellen;
+4. Diverse Code-Refactoring, Logikoptimierung und Fehlerbehebungen.
+
 ### V 2.6.1   8. Mai 2025
 1. Überarbeitung des Codes für den Dunkel-/Hellmodus-Wechsler, "8values"-Tool, Website-Inhaltsstrukturen und sprachspezifische Styles;
 2. Anwendung des Glass-UI-Designs auf das "8values"-Tool;
@@ -107,14 +113,14 @@
 2. Behebung des schwarzen Platzhaltertextes in der Suchleiste im Dark-Modus;
 3. Die Website wählt nun automatisch zwischen Light- und Dark-Modus basierend auf Cookies und Systemeinstellungen.
 
-### V 2.3.1   15 Apr. 2025
+### V 2.3.1   15. Apr. 2025
 1. Behebung des Fehlers, bei dem die Website abstürzt, wenn Benutzer andere Sprachen als "en", "zh-Hans" oder "de" in die URL-Leiste eingeben;
 2. Entfernung des störenden Sprachabschnitts in Artikel-URLs - die Sprache wird nun automatisch anhand von Cookies und Systemsprache bestimmt;
 3. Anpassung des "Schreibtisch-Bewertung"-Tools an das Website-Design;
 4. Behebung des Fehlers, bei dem iframe-Seiten den Dark Mode nicht entsprechend den Einstellungen der Hauptwebsite wechseln;
 5. Behebung des abrupten Farbwechsels von Demonstrationsboxen (wie im "Wörterbuch der Radikale") beim Wechsel zwischen Light und Dark Mode.
 
-### V 2.3.0   12 Apr. 2025
+### V 2.3.0   12. Apr. 2025
 1. Alle Artikel in die Kategorie "Artikel" verschieben und eine neue Kategorie "Werkzeuge" erstellen, wobei "8values" dorthin verschoben wird;
 2. Einen neuen Artikel "Cyber-Poster für The Importance of Being Earnest" zur Unterkategorie "Lernen" hinzufügen;
 3. Responsives Design für "Cyber-Poster für The Importance of Being Earnest" implementieren;
@@ -127,7 +133,7 @@
 10. Fehlerbehebung bei falscher Scrollleistenbreite in Safari;
 11. Behebung des Fehlers, dass die Scrollleiste in "8values" nicht angezeigt wird.
 
-### V 2.2.0   06 Apr. 2025
+### V 2.2.0   6. Apr. 2025
 1. Hinzufügen einer schmalen Scrollleiste für Artikel;
 2. Entfernen der schwebenden Titelleiste aufgrund von Inkompatibilität mit Safari, stattdessen Hinzufügen einer festen Titelleiste;
 3. Erstellen eines kompakteren Layouts für Nutzer mit kleinen Bildschirmen;
@@ -136,7 +142,7 @@
 6. Behebung des Fehlers, bei dem die Download-Icons in Safari nicht rechtsbündig ausgerichtet sind;
 7. Durchführung kleinerer Suchmaschinenoptimierungen.
 
-### V 2.1.4   05 Apr. 2025
+### V 2.1.4   5. Apr. 2025
 1. Hinzufügen eines Urheberrechtsvermerks zu selbst erstellten Artikeln;
 2. Neugestaltung der "Startseite";
 3. Hinzufügen eines neuen Artikels "Die Befreiten Liebe" in der Kategorie "Menschlichkeit";
@@ -145,13 +151,13 @@
 6. Behebung des Fehlers mit nicht zentrierten Steuerungstasten des Musikplayers im Pop-up-Menü;
 7. Behebung des Fehlers, bei dem die URL nach dem Wechsel zur "Startseite" die der vorherigen Seite beibehält.
 
-### V 2.1.3   01 Apr. 2025
+### V 2.1.3   1. Apr. 2025
 1. Hinzufügen eines neuen Songs "Una Mattina" zum Musikplayer;
 2. Hinzufügen eines "Zurück"-Buttons zum Musikplayer;
 3. Überarbeitung der Beschreibungen für "Startseite" und "Über";
 4. Optimierung der Logik zur Auswahl der Beschreibung für jeden Artikel.
 
-### V 2.1.2   30 Mär. 2025
+### V 2.1.2   30. Mär. 2025
 1. Behebung des Fehlers mit nicht übereinstimmenden Farben an den Rändern der zentralen Suchleiste;
 2. Behebung des Fehlers, bei dem das Musikcover im Einstellungen-Menü sich nicht dreht, selbst wenn Musik abgespielt wird;
 3. Behebung des Fehlers mit redundanten Schatten unter den Symbolen für "Einstellungen" und "Musikcover" in der Hauptoberfläche;
@@ -171,7 +177,7 @@
     - Hinzufügung zweier weiterer Ideologien: "Juche/Spartanismus" und "Gemäßigte Linke";
     - Überarbeitung einiger Fragebewertungswerte für mehr Objektivität.
 
-### V 2.1.1   29 Mär. 2025
+### V 2.1.1   29. Mär. 2025
 1. Die Titelleiste ist jetzt schwebend und erscheint nur noch oben oder unten auf der Inhaltsseite;
 2. Die Auflösung einiger Bilder verbessern;
 3. Den Radius der abgerundeten Ecken der zentralen Suchleiste anpassen;
@@ -179,7 +185,7 @@
 5. Die visuelle Darstellung und die chinesische Übersetzung von „values8“ verbessern;
 6. Den Fehler der zentralen Suchleiste mit uneinheitlichen Randstärken beheben.
 
-### V 2.1.0   27 Mär. 2025
+### V 2.1.0   27. Mär. 2025
 1. Alle Bilder aus einem Bildhostingdienst mit illegaler Cookie-Nutzung zu einem stabileren, schnelleren und sichereren Dienst übertragen;
 2. Falsche "zh_Hans" in "zh-Hans" korrigiert;
 3. Auflösung einiger Bilder verbessert;
@@ -187,7 +193,7 @@
 5. Fehler im Schatten unter Icons und Musikcover behoben;
 6. Fehler der Quiz-Seite in 8values behoben, die nicht die gesamte Breite des Inhaltsbereichs einnimmt.
 
-### V 2.0.1   24 Mär. 2025
+### V 2.0.1   24. Mär. 2025
 1. Den Unschärfeeffekt für bessere visuelle Zugänglichkeit anpassen;
 2. Das Selbstanpassungsverhältnis des Willkommensseiten-Slogans und von „Weiter“ anpassen;
 3. Die Auflösung eines Hintergrundbildes verbessern;
@@ -195,7 +201,7 @@
 5. Optimierung für die Anzeige in Safari;
 6. Den Fehler der falschen Breite beim Wiederherstellen der minimierten Seiten-Navigation beheben.
 
-### V 2.0.0   23 Mär. 2025
+### V 2.0.0   23. Mär. 2025
 1. Die Benutzeroberfläche gründlich überarbeiten, indem der Unschärfeeffekt angewendet wird;
 2. Bilder, die zuvor nur auf der Willkommensseite erschienen, werden nun auf der gesamten Website verwendet, wobei bei jedem Besuch zufällig eines alHintergrund ausgewählt wird.
 3. Ein Hēsperus-Abzeichen wird während des Ladens der Website angezeigt, um die Leere des weißen Bildschirms auszugleichen;

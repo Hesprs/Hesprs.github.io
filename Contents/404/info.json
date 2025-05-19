@@ -1,5 +1,5 @@
 {
-    "main_styles": "align-items: center; justify-content: center; display: flex; flex-direction: column;",
-    "main_classes": "main_empty",
-    "custom_css": "true"
+    "main_classes": "main_empty main404",
+    "main_styles": "display: flex; align-items: center; justify-content: center;",
+    "custom_css": true
 }

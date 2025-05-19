@@ -16,10 +16,9 @@
 	<input type='radio' id='zh-Hans' name='language' value='zh-Hans'>
 	<input type='radio' id='de' name='language' value='de'>
 	<input type='checkbox' id='dn'>
-	<input type='checkbox' id='meaningless'>
 	<img id='background_img' alt='background image' class='background_img'>
 	<div class='centerer'  id='warning_bar'>
-		<div class='warning_bar clickable shadow border' id='warning_bar_wrapper'>
+		<div class='warning_bar clickable' id='warning_bar_wrapper'>
 			<img class='icon' id='warning_icon' alt='warn!' src='https://img.icons8.com/fluency/100/box-important--v1.png' />
 			<div class='center_text' id='warning_text'></div>
 		</div>
@@ -38,74 +37,43 @@
 		<div class='slogan' id='slogan'></div>
 		<div class='continue' id='continue'></div>
 	</div>
-	<div class='background border shadow' id='background'>
+	<div class='background' id='background'>
 		<div class='sidenav' id='sidenav'>
-			<div class='sidenav_wrapper' id='search_bar_wrapper'>
-				<div class='entry clickable border shadow upper' id='previousPage'>
+			<div class='sidenav_wrapper'>
+				<div class='entry upper' id='previousPage'>
 					<div class='label_wrapper'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous'>
 						<div class='center_text' id='text_previous' style='direction: rtl; margin: auto 0px auto auto;'></div>
 					</div>
 				</div>
-				<div class='entry border shadow lower' style='flex-direction: row; display: flex;'>
-					<div class='label_wrapper' id='search_input_wrapper'>
-						<input type='text' id='search_bar'>
-					</div>
+				<div class='entry lower' style='flex-direction: row; display: flex;'  id='search_bar_wrapper'>
+					<input type='text' id='search_bar'>
 					<div class='vertical_division'></div>
-					<div class='clickable label_wrapper' id='search_button' style='min-width: 30px; width: 30px;'>
+					<div class='button_wrapper' id='search_button'>
 						<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' />
 					</div>
 				</div>
 			</div>
-			<div class='sidenav_wrapper' id='category_wrapper'>
-				<input type='radio' id='homepage' name='category' value='homepage'>
-				<label for='homepage' class='entry clickable border shadow upper' id='homepage_label'>
-					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/orca.png' alt='homepage' id='homepage_icon' />
-						<div class='center_text' id='text_homepage'></div>
-					</div>
-				</label>
-				<input type='radio' id='articles' name='category' value='articles'>
-				<label for='articles' class='entry clickable border shadow middle' id='articles_label'>
-					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/torah.png' alt='articles' id='articles_icon' />
-						<div class='center_text' id='text_articles'></div>
-					</div>
-				</label>
-				<input type='radio' id='tools' name='category' value='tools'>
-				<label for='tools' class='entry clickable border shadow middle' id='tools_label'>
-					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/swiss-army-knife.png' alt='tools' id='tools_icon' />
-						<div class='center_text' id='text_tools'></div>
-					</div>
-				</label>
-				<input type='radio' id='about' name='category' value='about'>
-				<label for='about' class='entry clickable border shadow lower' id='about_label'>
-					<div class='label_wrapper'>
-						<img class='icon' src='https://img.icons8.com/fluency/100/info-popup.png' alt='about' id='about_icon'>
-						<div class='center_text' id='text_about'></div>
-					</div>
-				</label>
-			</div>
+			<div class='sidenav_wrapper' id='category_wrapper'></div>
 			<div class='sidenav_wrapper' id='search_bar_center_wrapper'>
-				<div class='button_wrapper clickable' id='previous_center'>
+				<div class='button_wrapper' id='previous_center'>
 					<img class='icon' src='https://img.icons8.com/fluency/100/circled-chevron-left.png' alt='previous' />
 				</div>
 				<div class='division'></div>
 				<input type='text' id='search_bar_center'>
 				<div class='division'></div>
-				<div class='button_wrapper clickable' id='search_button_center'>
+				<div class='button_wrapper' id='search_button_center'>
 					<img class='icon' src='https://img.icons8.com/fluency/100/search.png' alt='search' />
 				</div>
 			</div>
 			<div class='sidenav_wrapper'>
-				<div class='music_container border upper shadow' id='music_container'>
-					<div class='label_wrapper' style='min-height: 76px; flex-direction: column;'>
+				<div class='entry upper' id='music_container'>
+					<div class='label_wrapper' id='music-wrapper'>
 						<div style='margin: 0px; display: flex; height: 30px;'>
 							<img class='icon' src='https://img.icons8.com/fluency/100/lyre.png' alt='music-cover' id='music_cover'/>
 							<div id='music_title' class='center_text'></div>
 						</div>
-						<div class='progress_container border' id='progress_container'>
+						<div class='progress_container' id='progress_container'>
 							<div class='progress' id='progress'></div>
 						</div>
 						<div style='margin: 0px; display: flex; height: 20px;'>
@@ -124,20 +92,20 @@
 								<img class='icon' src='https://img.icons8.com/?size=200&id=s1kxUJVDmJvK&format=png&color=FFFFFF' alt='next' style='right: 0px;' id='next_dark'/>
 							</button>
 						</div>
-						<audio src='https://music.163.com/song/media/outer/url?id=443070377.mp3' id='audio'></audio>
+						<audio id='audio'></audio>
 					</div>
 				</div>
-				<div class='entry clickable border shadow middle' id='language_option'>
+				<div class='entry middle' id='language_option'>
 					<div class='label_wrapper'>
-						<img class='icon' alt='flag' style='height: 30px; width: 30px;' id='nations'>
+						<img class='icon' alt='national flag' id='nations'>
 						<div class='center_text' id='text_language' style='direction: rtl; margin: auto 0px auto auto;'></div>
 					</div>
 				</div>
-				<label class='entry clickable border shadow lower' id='day_night' for='dn'>
+				<label class='entry lower' for='dn'>
 					<div class='label_wrapper' style='min-width: 30px; gap: 0px;'>
 						<div class='text_light' id='text_light'></div>
-						<div class='toggleWrapper' id='toggleWrapper'>
-							<div class='themeTogglerBig shadow'>
+						<div class='toggleWrapper'>
+							<div class='themeTogglerBig'>
 								<span class='themeTogglerBig-handler'>
 									<span class='crater--1'></span>
 									<span class='crater--2'></span>
@@ -150,7 +118,7 @@
 								<span class='star--5'></span>
 								<span class='star--6'></span>
 							</div>
-							<svg aria-hidden="true" class="themeTogglerSmall" height="30" width="30" viewBox="0 0 32 32">
+							<svg aria-hidden="true" class="themeTogglerSmall" viewBox="0 0 32 32">
 								<clipPath id="a"><path d="M0 0h32v32H0Zm6 16a1 1 0 0 0 20 0 1 1 0 0 0-20 0"/></clipPath>
 								<g clip-path="url(#a)">
 									<path d="M30.7 21.3 27.1 16l3.7-5.3c.4-.5.1-1.3-.6-1.4l-6.3-1.1-1.1-6.3c-.1-.6-.8-.9-1.4-.6L16 5l-5.4-3.7c-.5-.4-1.3-.1-1.4.6l-1 6.3-6.4 1.1c-.6.1-.9.9-.6 1.3L4.9 16l-3.7 5.3c-.4.5-.1 1.3.6 1.4l6.3 1.1 1.1 6.3c.1.6.8.9 1.4.6l5.3-3.7 5.3 3.7c.5.4 1.3.1 1.4-.6l1.1-6.3 6.3-1.1c.8-.1 1.1-.8.7-1.4M16 25.1c-5.1 0-9.1-4.1-9.1-9.1 0-5.1 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1c0 5.1-4 9.1-9.1 9.1"/>
@@ -165,17 +133,16 @@
 			</div>
 		</div>
 		<div class='stretch_bar_wrapper' id='stretch_bar'>
-			<div class='stretch_bar' id='stretch_bar_1'></div>
+			<div class='stretch_bar'></div>
 		</div>
 		<div class='rectangle_wrapper'>
 			<div class='rectangle' id='content_district'>
 				<a class="github-corner" aria-label="View source on GitHub" id='github_corner'>
-					<svg viewBox="0 0 250 250" aria-hidden="true" class="corner_svg">
-						<path d='M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z' class='corner' />
-						<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
-						<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+					<svg aria-hidden="true" class="corner_svg" viewBox="0 0 2500 2500">
+						<path d="m0 0 1150 1150h150l120 270 1080 1080V0Z" class="corner"/><path d="M1150 1150c-1 1 37 15 48 4l139-138c32-24 62-32 85-30-84-106-147-242 16-406 47-46 102-68 159-70 6-16 35-74 117-109 0 0 47 24 74 161 43 24 84 56 121 92 36 36 68 78 92 122 137 26 162 73 162 73-36 82-94 111-109 117-3 58-24 112-71 159-164 164-300 100-406 16 2 28-10 68-50 108L1410 1365c-12 12 6 54 8 53Z" fill="currentColor" class="octo-body"/>
+						<path d="M1283 1090c-145-93-93-194-93-194 30-69 15-110 15-110-13-66 29-23 29-23 39 46 21 110 21 110-26 103 51 146 89 159" fill="currentColor" class="octo-arm"/>
 					</svg>
-				</a>	
+				</a>
 				<div class='content' id='content_1'></div>
 				<div class='content' id='content_0'></div>
 			</div>
@@ -191,10 +158,11 @@
 		</div>
 	</div>
 	<div class='showcase' id='badge'>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet"><path d="m365.105 107.073-49.316 22.882-48.419 22.462a12535.837 12475.643 0 0 1-14.28 6.621l-.501.229.647.984c8.644 13.132 12.617 29.507 10.888 44.868a5.204 5.179 0 0 0-.05.594c.02.017 11.663-5.387 11.712-5.437.019-.02-.125-.382-.32-.807-.468-1.02-.796-1.832-.977-2.422-4.806-15.582 20.156-42.933 65.37-71.626l1.935-1.228 28.975-13.431c15.936-7.387 28.996-13.453 29.02-13.477.06-.062-2.305-5.167-2.394-5.164-.037.001-14.568 6.73-32.29 14.952m-88.203 21.45a158975 158975 0 0 1-49.075 22.778l-29.7 13.782-43.204 20.049c-27.747 12.874-30.387 14.108-30.407 14.21-.013.061.316.837.73 1.723.807 1.731.994 2.307 1.186 3.66 2.245 15.841-23.241 42.713-66.195 69.792l-1.405.887-29.055 13.488C13.798 296.308.73 302.404.737 302.436c.02.085 1.379 3.071 1.926 4.233.262.557.505 1.013.541 1.013.05 0 30.33-14.075 55.608-25.849l36.883-17.164 14.402-6.702a135854.98 135202.63 0 0 1 27.8-12.938l6.54-3.042 2.604-1.21-.21-.247c-4.534-5.339-8.957-12.61-11.775-19.363-.018-.042.624-.376 1.508-.783.847-.39 3.08-1.426 4.96-2.303 5.572-2.601 6.495-3.015 6.56-2.949.033.034.47.943.97 2.02 2.613 5.635 4.644 9.013 7.704 12.82 1.157 1.44 3.818 4.434 3.941 4.434.017 0 1.203-.545 2.636-1.21 10.439-4.855 12.193-5.665 12.218-5.64.053.053-1.831 2.72-3.216 4.548-4.67 6.171-10.57 12.223-16.688 17.114l-1.313 1.05-21.135 9.811a28256.678 28120.996 0 0 0-21.144 9.821c-.005.005.527 1.154 1.184 2.553l1.195 2.544.23-.024c.303-.031-.472.32 8.9-4.03l22.102-10.26 19.961-9.264 12.813-5.947 22.586-10.481 13.33-6.187 17.406-8.077c3.647-1.693 8.745-4.058 11.328-5.255s4.731-2.222 4.774-2.277c.097-.125.64-2.132.956-3.535 3.339-14.824.17-30.495-8.724-43.15-.404-.576-.76-1.047-.79-1.049-.047 0-13.969 6.437-14.31 6.617-.171.09-.171.09.915-1.461 4.666-6.665 10.312-12.875 16.63-18.293 1.144-.983 3.863-3.175 4.37-3.522.178-.124 33.339-15.589 41.006-19.125.152-.07.286-.133.298-.141.054-.03-2.37-5.112-2.437-5.108-.038.003-4.035 1.845-8.878 4.096m-83.092 5.015-1.589.099c-6.882.43-14.15 2.204-20.617 5.033-.608.265-1.129.503-1.156.528-.063.053 2.322 5.18 2.424 5.213.04.014.47-.151.956-.366 16.625-7.345 35.859-6.11 51.756 3.325l.243.144 3.064-1.423c1.685-.784 3.067-1.455 3.068-1.493.007-.09-1.622-1.166-3.061-2.022-8.796-5.235-17.934-8.143-28.112-8.945-.909-.071-6.219-.143-6.976-.093m49.814 25.653c-1.221.972-2.222 1.79-2.223 1.82 0 .027.236.352.525.72 11.937 15.192 15.633 35.803 9.69 54.017-.149.458-.27.894-.27.97 0 .302-1.387 3.842-1.556 3.968-.054.042-.241.4-.417.796-11.912 26.908-42.98 39.78-70.857 29.357l-.752-.281-1.734.802-3.45 1.6c-.943.44-1.72.824-1.726.856-.022.129 3.448 1.65 5.571 2.443 29.146 10.878 61.27-.967 76.132-28.075.988-1.802 2.597-5.171 2.683-5.617.017-.086.232-.667.478-1.29 8.355-21.192 4.923-44.656-9.225-63.084a11.002 10.949 0 0 0-.594-.734c-.03-.02-1.054.76-2.275 1.732m-23.4 21.65c-3.013 6.991-3.889 14.233-2.419 19.994.095.372.152.697.124.719-.09.074-37.741 17.53-37.763 17.509-.013-.013.159-.474.381-1.026 2.745-6.821 3.463-13.423 2.075-19.083a14.795 14.724 0 0 1-.187-.814l4.468-2.072c10.423-4.83 18.946-8.786 25.901-12.02 8.379-3.897 7.565-3.545 7.42-3.207m-76.317 40.887a559 559 0 0 0-2.571 1.195l-.57.27.403.847c2.945 6.204 7.26 12.247 12.547 17.57l1.935 1.949 1.125-1.01a97.106 96.64 0 0 0 2.126-1.976l1.001-.967-1.442-1.393c-4.807-4.638-9.066-10.45-11.919-16.266-.31-.632-.579-1.15-.598-1.146-.02 0-.936.419-2.037.927" fill-rule="evenodd" style="fill:#fff; fill-opacity:1; stroke-width:1.37809;"/></svg>
+		<svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 4000 4000">
+			<path d="m3651 1070-493 230-484 224A125358 124756 0 01 2530 1590l-5 3 6 10a690 690 0 01 110 448 52 52 0 00-1 6l117-54-3-8-10-25c-48-155 201-429 654-716l19-12 290-134 290-135-24-52-323 150m-880 214a1589750 1589750 0 01-490 228l-300 138-430 199a11944 11944 0 00-304 142l7 18a90 90 0 01 12 36c23 159-232 427-662 698l-14 10-290 134-290 135a2062 2062 0 00 24 53s303-140 556-259l369-171L1100 2580a1358550 1352026 0 01 278-130l65-30 26-12-2-3c-45-53-90-126-117-193l15-8A14560 14560 0 00 1480 2150l10 20a563 563 0 00 116 173l26-12c105-49 122-57 123-56l-33 45a990 990 0 01-167 171l-13 10-210 99a282567 281210 0 00-212 98l11 26 12 25h3c3 0-5 3 89-40l220-103 200-93 128-60L2010 2350l134-62 174-80c36-18 87-41 113-53l48-23 10-35a543 543 0 00-96-442L2250 1720c-2 0-2 0 10-15a992 992 0 01 210-218 91420 91420 0 01 412-193l-24-50-89 40m-830 50-17 1a623 623 0 00-218 56l25 52 10-4a565 565 0 01 517 34l2 1 30-14 32-15-31-20a633 633 0 00-350-90m497 256-22 18 5 7a588 588 0 01 75 598 560 560 0 01-709 293l-7-2-18 8-34 16-17 8a617 617 0 00 849-325 640 640 0 00-93-631 110 110 0 00-6-7l-23 17m-234 216a321 321 0 00-23 208L1802 2190l3-10a315 315 0 00 21-191 148 147 0 01-2-9l45-20 260-120c83-40 75-36 73-33m-763 410a5590 5590 0 00-26 11l-5 3 4 8c30 62 72 123 125 176l20 20 10-10a971 966 0 00 22-20l10-10-14-14a600 600 0 01-126-174l-20 10" fill="#fff" fill-opacity="1" fill-rule="evenodd"/>
+		</svg>
 	</div>
 </body>
 <script src='JavaScript/elements.js'></script>
-<script src="JavaScript/md.js"></script>
 <script src='JavaScript/script.js'></script>
 </html>

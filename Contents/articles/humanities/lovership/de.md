@@ -1,6 +1,6 @@
-![Liberated Lovership](https://img1.tucang.cc/api/image/show/b1ccfcace0d0565854fe957d1ebe6249)
+## ✨ Prolog
 
-### ✨ Prolog
+![Liberated Lovership](https://img1.tucang.cc/api/image/show/b1ccfcace0d0565854fe957d1ebe6249)
 
 Liebe und Ehe, zwei **ewig unveränderliche** Themen, die sich seit jeher in den Köpfen der Menschen verankert haben, müssen dringender denn je **revolutioniert** werden. Seit der erste Menschoid Eros empfand, begann die Pilgerreise und Evolution der Liebe. Vom Patriarchat zur Monogamie, tauchte sie in den Schrei der ersten Welle der sexuellen Befreiung ein und gedieh im Zuge der LGBT-Bewegung. Weitsichtige Vorreiter aus der Bevölkerung leuchten wie Leuchttürme und führen die Welt vorwärts.
 
@@ -8,7 +8,7 @@ Das gegenwärtige Konzept beharrt auf den Normen der Ehe, die Individuen durch v
 
 ---
 
-### ✒️ Definitionen
+## ✒️ Definitionen
 
 ![LGBT](https://img1.tucang.cc/api/image/show/4d0b0e32db33de510e425816f6ca68d2)
 
@@ -51,7 +51,7 @@ Es ist entscheidend zu klären, dass sexuelles Verhalten nicht bedeutet, sexuell
 
 ---
 
-### ❤️ Das Streben nach Liebe
+## ❤️ Das Streben nach Liebe
 
 ![Symposium](https://img1.tucang.cc/api/image/show/b628679e9e8064e76c91c8088b977533)
 
@@ -67,7 +67,7 @@ Menschen lieben, weil sie **Liebe begehren**. Wir sehen eine **Idealisierung** u
 
 ---
 
-### 👰 Liebesbeziehung und Ehe
+## 👰 Liebesbeziehung und Ehe
 
 ![wedding](https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a)
 
@@ -91,7 +91,7 @@ Wir wissen, dass die oben genannten Lösungen zu utopisch und optimistisch sein 
 
 ---
 
-### 😣 Entfremdung ist überall
+## 😣 Entfremdung ist überall
 
 ![Communist Manifesto](https://img1.tucang.cc/api/image/show/0c2656036dc7a3f110f628ec47f63690)
 
@@ -109,7 +109,7 @@ Dann sprechen wir über **frühe Liebe**. Besonders in ostasiatischen Ländern b
 
 ---
 
-### 📜 Fazit
+## 📜 Fazit
 
 ![RevoLution](https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d)
 

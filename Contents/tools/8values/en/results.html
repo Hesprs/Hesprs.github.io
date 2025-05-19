@@ -8,8 +8,6 @@
     <title>8values Results</title>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <script src="../JavaScript/ideologies.js"></script>
-    <script src='../JavaScript/script.js'></script>
 </head>
 <body>
     <main class="bottom_padding">
@@ -67,19 +65,21 @@
         <p style="margin: 15px 0px; text-align: center;">long press or right click to save</p>
         <button class="demobox clickable border shadow" onclick="location.href='index.html';">🔙 Back</button>
     </main>
-    <script>
-        check_dark();
-        result_ini('en');
-        econArray = ["Communist","Socialist","Social","Centrist","Market","Capitalist","Laissez-Faire"];
-        diplArray = ["Cosmopolitan","Internationalist","Peaceful","Balanced","Patriotic","Nationalist","Chauvinist"];
-        govtArray = ["Anarchist","Libertarian","Liberal","Moderate","Statist","Authoritarian","Totalitarian"];
-        sctyArray = ["Revolutionary","Very Progressive","Progressive","Neutral","Traditional","Very Traditional","Reactionary"];
-        document.getElementById("economic-label").innerHTML = `Economic: ${setLabel(equality, econArray)}`;
-        document.getElementById("diplomatic-label").innerHTML = `Diplomatic: ${setLabel(peace, diplArray)}`;
-        document.getElementById("state-label").innerHTML = `Civil: ${setLabel(liberty, govtArray)}`;
-        document.getElementById("society-label").innerHTML = `Societal: ${setLabel(progress, sctyArray)}`;
-        document.getElementById("ideology-label").innerHTML = `Closest Match:<br>${ideology}`;
-        window.onload = () => {setTimeout(draw(), 100)};
-    </script>
 </body>
+<script src="../JavaScript/ideologies.js"></script>
+<script src='../JavaScript/script.js'></script>
+<script src='/JavaScript/iframe.js'></script>
+<script>
+    result_ini('en');
+    econArray = ["Communist","Socialist","Social","Centrist","Market","Capitalist","Laissez-Faire"];
+    diplArray = ["Cosmopolitan","Internationalist","Peaceful","Balanced","Patriotic","Nationalist","Chauvinist"];
+    govtArray = ["Anarchist","Libertarian","Liberal","Moderate","Statist","Authoritarian","Totalitarian"];
+    sctyArray = ["Revolutionary","Very Progressive","Progressive","Neutral","Traditional","Very Traditional","Reactionary"];
+    document.getElementById("economic-label").innerHTML = `Economic: ${setLabel(equality, econArray)}`;
+    document.getElementById("diplomatic-label").innerHTML = `Diplomatic: ${setLabel(peace, diplArray)}`;
+    document.getElementById("state-label").innerHTML = `Civil: ${setLabel(liberty, govtArray)}`;
+    document.getElementById("society-label").innerHTML = `Societal: ${setLabel(progress, sctyArray)}`;
+    document.getElementById("ideology-label").innerHTML = `Closest Match:<br>${ideology}`;
+    window.onload = () => {setTimeout(draw(), 100)};
+</script>
 </html>

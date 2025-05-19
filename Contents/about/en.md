@@ -29,11 +29,17 @@
 
 ## 📜 Update Log
 
+### V 2.7.0   19 May 2025
+1. Recode all the CSS files by SCSS;
+2. Apply acrylic effect to the pop up window;
+3. Restore the neat mobile layout before V 2.6.0;
+4. Micsellaneous code refactoration, logic optimization and bug fixes.
+
 ### V 2.6.1   8 May 2025
 1. Refactor the code of dark / light theme toggler, "8values" tool, website content storing structures, and language-specific styles;
 2. Apply the glass UI design to the "8values" tool;
 3. Fix the bug of unidentical spacing at the left and right sides of the navigation bar in the mobile view;
-4. Fix the bug of huge spacing between value icons in the first page of the "8values" tool；
+4. Fix the bug of huge spacing between value icons in the first page of the "8values" tool;
 5. Fix the bug that causes the first page of the "8values" tool to stay in the light theme after clicking the "back" button on the results page, even if the main website is in dark theme;
 6. Compress the value icons in the "8values" tool radically for better performance.
 
@@ -56,8 +62,8 @@
 3. Add a thin border and transparency to most elements to ensure a more uniform appearance and ethereal texture;
 4. Fix the bug of extra padding between the "Go Back to Homepage" button icon and text in the 404 page;
 5. Adjust article cards' scale and padding to make them more readable on small-screen devices;
-6. Make it possible to dynamically load the extra style sheets;
-7. Neaten CSS sheets.
+6. Make it possible to dynamically load the extra CSS files;
+7. Neaten CSS files.
 
 ### V 2.4.3   30 Apr. 2025
 1. Apply more aesthetic fonts for articles titles and welcome slogans;

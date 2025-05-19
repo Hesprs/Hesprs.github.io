@@ -1,14 +1,14 @@
+## ✨ Exordium
+
 ![Liberated Lovership](https://img1.tucang.cc/api/image/show/b1ccfcace0d0565854fe957d1ebe6249)
 
-### ✨ Exordium
+Love and marriage, two **eternally immutable** topics rooted in people's minds throughout history, more urgently than ever need **revolutionizing**. Since the first humanoid began to harbour Eros, the pilgrimage and evolution of love started. From patriarchy to monogamy, it was dipped into the yell in the first wave of sexual liberation and thrived in the presence of the LGBT movement. Far-sighted vanguards from the populace shine like beacons, guiding the world forward.
 
-Love and marriage, two **eternally immutable** topics rooted in people's minds throughout history, need **revolutionizing** more urgently than ever before. Since the first humanoid began to harbour Eros, the pilgrimage and evolution of love started. From patriarchy to monogamy, it was dipped into the yell in the first wave of sexual liberation and thrived in the presence of the LGBT movement. Far-sighted vanguards from the populace shine like beacons, guiding the world forward.
-
-The current concept insists on the norms of matrimony, which **imprisons** individuals through various **ossified moral shackles**. The prevalence of affectional TV series and the highly debated gender issues on mass media **didn't, cannot, and won't** liberate humanity from these rigid dilemmas. Ironically, they **please the massive** by complying with these rules as if they are revelations emerging on altars.
+The current concept adheres to the dogma of matrimony, **imprisoning** individuals through various **ossified moral shackles**. The prevalence of affectional TV series and the highly debated gender issues on mass media **didn't, cannot, and won't** liberate humanity from these rigid dilemmas. Ironically, they **please the massive** by complying with these rules as if they are revelations emerging on altars.
 
 ---
 
-### ✒️ Definitions
+## ✒️ Definitions
 
 ![LGBT](https://img1.tucang.cc/api/image/show/4d0b0e32db33de510e425816f6ca68d2)
 
@@ -51,7 +51,7 @@ It's crucial to clarify that having sexual behaviour does not mean harbouring se
 
 ---
 
-### ❤️ Pursuit of Love
+## ❤️ Pursuit of Love
 
 ![Symposium](https://img1.tucang.cc/api/image/show/b628679e9e8064e76c91c8088b977533)
 
@@ -67,7 +67,7 @@ People love, because they **desire love**. We see an **idealization** of ourselv
 
 ---
 
-### 👰 Lovership and Matrimony
+## 👰 Lovership and Matrimony
 
 ![wedding](https://img1.tucang.cc/api/image/show/1ef7c1490c9f292af671eccc0475b05a)
 
@@ -91,7 +91,7 @@ We know that aforesaid solutions may be too utopian and optimistic, but at least
 
 ---
 
-### 😣 Alienation is Anywhere
+## 😣 Alienation is Anywhere
 
 ![Communist Manifesto](https://img1.tucang.cc/api/image/show/0c2656036dc7a3f110f628ec47f63690)
 
@@ -109,7 +109,7 @@ Then let's talk about **early romance**. Especially in East Asian countries, sch
 
 ---
 
-### 📜 Conclusion
+## 📜 Conclusion
 
 ![RevoLution](https://img1.tucang.cc/api/image/show/8c06d219b88fcb9ef38edf2c63b67c7d)
 

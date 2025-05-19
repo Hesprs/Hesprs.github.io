@@ -8,8 +8,6 @@
     <title>8values 结果</title>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <script src="../JavaScript/ideologies.js"></script>
-    <script src='../JavaScript/script.js'></script>
 </head>
 <body>
     <main class="bottom_padding">
@@ -67,19 +65,21 @@
         <p style="margin: 15px 0px; text-align: center;">长按或右键点击保存</p>
         <button class="demobox clickable border shadow" onclick="location.href='index.html';">🔙 返回</button>
     </main>
-    <script>
-        check_dark();
-        result_ini('zh-Hans');
-        const econArray = ["共产主义", "社会主义", "社会", "中间派", "市场", "资本主义", "自由放任"]
-        const diplArray = ["世界主义", "国际主义", "和平主义", "平衡", "爱国主义", "民族主义", "沙文主义"]
-        const govtArray = ["无政府主义", "自由主义", "自由派", "温和派", "国家主义", "专制主义", "极权主义"]
-        const sctyArray = ["革命", "非常进步", "进步", "中立", "传统", "非常传统", "反动"]
-        document.getElementById("economic-label").innerHTML = `经济：${setLabel(equality, econArray)}`;
-        document.getElementById("diplomatic-label").innerHTML = `外交：${setLabel(peace, diplArray)}`;
-        document.getElementById("state-label").innerHTML = `民事：${setLabel(liberty, govtArray)}`;
-        document.getElementById("society-label").innerHTML = `社会：${setLabel(progress, sctyArray)}`;
-        document.getElementById("ideology-label").innerHTML = `最接近匹配:<br>${ideology}`;
-        window.onload = () => {setTimeout(draw(), 100)};
-    </script>
 </body>
+<script src="../JavaScript/ideologies.js"></script>
+<script src='../JavaScript/script.js'></script>
+<script src='/JavaScript/iframe.js'></script>
+<script>
+    result_ini('zh-Hans');
+    const econArray = ["共产主义", "社会主义", "社会", "中间派", "市场", "资本主义", "自由放任"]
+    const diplArray = ["世界主义", "国际主义", "和平主义", "平衡", "爱国主义", "民族主义", "沙文主义"]
+    const govtArray = ["无政府主义", "自由主义", "自由派", "温和派", "国家主义", "专制主义", "极权主义"]
+    const sctyArray = ["革命", "非常进步", "进步", "中立", "传统", "非常传统", "反动"]
+    document.getElementById("economic-label").innerHTML = `经济：${setLabel(equality, econArray)}`;
+    document.getElementById("diplomatic-label").innerHTML = `外交：${setLabel(peace, diplArray)}`;
+    document.getElementById("state-label").innerHTML = `民事：${setLabel(liberty, govtArray)}`;
+    document.getElementById("society-label").innerHTML = `社会：${setLabel(progress, sctyArray)}`;
+    document.getElementById("ideology-label").innerHTML = `最接近匹配:<br>${ideology}`;
+    window.onload = () => {setTimeout(draw(), 100)};
+</script>
 </html>
