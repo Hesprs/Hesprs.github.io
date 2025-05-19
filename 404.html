@@ -6,10 +6,10 @@
     <script>
         function inpage_navi() {
             let page = window.location.href;
-            page = page.replace('http://127.0.0.1:5500/', '');
-            location.replace('http://127.0.0.1:5500');
-//            page = page.replace('https://hesprs.github.io/', '');
-//            location.replace('https://hesprs.github.io');
+//            page = page.replace('http://127.0.0.1:5500/', '');
+//            location.replace('http://127.0.0.1:5500');
+            page = page.replace('https://hesprs.github.io/', '');
+            location.replace('https://hesprs.github.io');
             localStorage.setItem('page', page);
         }
         window.addEventListener('DOMContentLoaded', inpage_navi);
