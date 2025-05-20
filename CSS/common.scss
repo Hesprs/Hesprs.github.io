@@ -127,7 +127,10 @@ hr {
   border: none;
 }
 ol, ul { margin: -5px 0 0 }
-li, p { text-align: justify }
+li, p {
+  text-align: justify;
+  @media (max-width: 766.9px) { text-align: left }
+}
 p { margin: 15px 0px }
 li { margin: 10px 0px }
 ul {

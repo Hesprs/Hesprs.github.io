@@ -474,26 +474,6 @@ article-card {
 // #endregion
 
 // #region Side navigation
-.text_dark, .text_light {
-	margin: auto 0px;
-	font-size: 11px !important;
-	font-weight: 700;
-	overflow: visible;
-	width: 0px;
-	color: rgb(255, 255, 255);
-	html[lang = zh-Hans] & { font-size: calc(12px + 0.3vw) !important }
-	.minimal & { opacity: 0 }
-} .text_light {
-	color: var(--themeColor);
-	left: 0px;
-	.dark & { color: rgb(255, 255, 255) }
-} .text_dark {
-	direction: rtl;
-	color: rgb(50, 50, 50);
-	right: 0px;
-	.dark & { color: var(--themeColor) }
-}
-
 .transitioning, .sidenav.transitioning * { transition: all 300ms !important }
 	
 .label_wrapper {
@@ -825,6 +805,26 @@ html {
     height: 30px;
     width: 100%;
 	@include preset.center;
+}
+.text_dark, .text_light {
+	margin: auto 0px;
+	font-size: 11px !important;
+	font-weight: 700;
+	overflow: visible;
+	width: 0px;
+	color: rgb(255, 255, 255);
+	transition: var(--contentTransition);
+	html[lang = zh-Hans] & { font-size: calc(12px + 0.3vw) !important }
+	.minimal & { opacity: 0 }
+} .text_light {
+	color: var(--themeColor);
+	left: 0px;
+	.dark & { color: rgb(255, 255, 255) }
+} .text_dark {
+	direction: rtl;
+	color: rgb(50, 50, 50);
+	right: 0px;
+	.dark & { color: var(--themeColor) }
 }
 .themeTogglerBig {
 	box-sizing: content-box !important;
