@@ -6,12 +6,6 @@ function check_dark() {
     }
 }
 
-function initialize() {
-    window.parent.toggleFooterBlur(this.scrollTop, this.clientHeight, this.scrollHeight);
-    check_dark();
-    let scrollSubject = document.getElementById('scrollSubject');
-    if (scrollSubject === null) scrollSubject  = document.body;
-    scrollSubject.addEventListener('scroll', function() { window.parent.toggleFooterBlur(this.scrollTop, this.clientHeight, this.scrollHeight) });
-}
+function initialize() { check_dark() }
 
 initialize();

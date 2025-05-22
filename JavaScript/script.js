@@ -111,13 +111,20 @@ const articles = {
 
 const music = [
     {
+        name:'Night Voyager (Orchestral)',
+        author: 'Bilibili @孙沛_fugamusic',
+        url: 'https://od.lk/s/MTdfNDU2NTM5MTZf/Voyaging%20Star.mp3',
+        img: 'https://p1.music.126.net/EIJc2Wt5AEsIHCFcVxm6pg==/109951165033567317.jpg?param=100x100',
+        img_HD: 'https://p1.music.126.net/EIJc2Wt5AEsIHCFcVxm6pg==/109951165033567317.jpg?param=1000x1000'
+    },{
         name:'Marry Christmas, Mr. Laurence',
         url: 'https://music.163.com/song/media/outer/url?id=443070377.mp3',
         img: 'https://p1.music.126.net/PywoXPKK3AjseU0Wx9wdXw==/109951167267731534.jpg?param=100x100',
         img_HD: 'https://p1.music.126.net/PywoXPKK3AjseU0Wx9wdXw==/109951167267731534.jpg?param=1000x1000'
     },{
         name:'Una Mattina',
-        url: 'https://www.kumeiwp.com/wj/230557/2025/03/30/0cc64a9cee29640d0d28f46c1b20d131.mp3',
+        author: 'Ludovico Einaudi | Toutube @ThatCelloGuy',
+        url: 'https://od.lk/s/MTdfNDU2NTM4NDJf/Una%20Mattina.mp3',
         img: 'https://p1.music.126.net/jCy2nwCEF_NhI184jkDsTA==/109951165967129801.jpg?param=100x100',
         img_HD: 'https://p1.music.126.net/jCy2nwCEF_NhI184jkDsTA==/109951165967129801.jpg?param=1000x1000'
     },{
