@@ -4,15 +4,10 @@
 	<meta charset='utf-8'>
 	<title>Hēsperus' Blog</title>
     <script>
-        function inpage_navi() {
-            let page = window.location.href;
-//            page = page.replace('http://127.0.0.1:5500/', '');
-//            location.replace('http://127.0.0.1:5500');
-            page = page.replace('https://hesprs.github.io/', '');
-            location.replace('https://hesprs.github.io');
-            localStorage.setItem('page', page);
-        }
-        window.addEventListener('DOMContentLoaded', inpage_navi);
+        (function inpageNavigation() {
+            localStorage.setItem('page', window.location.pathname.substring(1) + window.location.search);
+            location.replace(window.location.origin);
+        })();
     </script>
 </head>
 </html>

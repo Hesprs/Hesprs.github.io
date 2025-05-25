@@ -29,6 +29,10 @@
 
 ## 📜 Update Log
 
+### V 2.7.1   25 May 2025
+1. Refine the 404-page redirection script for conciseness and immediate execution.
+2. Add a new song "Night Voyager (Orchestral)" to the music player.
+
 ### V 2.7.0   19 May 2025
 1. Recode all the CSS files by SCSS;
 2. Apply acrylic effect to the pop up window;

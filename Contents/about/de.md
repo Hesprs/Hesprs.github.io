@@ -30,6 +30,10 @@
 
 ## 📜 Update-Log
 
+### V 2.7.1   25. Mai 2025
+1. Überarbeitung des 404-Seiten-Umleitungsskripts für Prägnanz und sofortige Ausführung.
+2. Hinzufügen eines neuen Liedes „Night Voyager (Orchestral)" zum Musik-Player.
+
 ### V 2.7.0   19. Mai 2025
 1. Alle CSS-Dateien mit SCSS neu codieren;
 2. Acryl-Effekt auf das Pop-up-Fenster anwenden;

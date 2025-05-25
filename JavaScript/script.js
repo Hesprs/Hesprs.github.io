@@ -234,7 +234,7 @@ const translation = {
     search_description: {
         en: `This page showcases the result of searching for "%s" in the blog repertoire.`,
         'zh-Hans': `此页面展示了在博客库中搜索 "%s" 的结果。`,
-        de: `Diese Seite zeigt das Ergebnis der Suche nach „%s“ im Blog-Repertoire.`,
+        de: `Diese Seite zeigt das Ergebnis der Suche nach „%s" im Blog-Repertoire.`,
     },
     click_anywhere_to_continue: {
         en: 'Click Anywhere to Continue',
@@ -334,7 +334,7 @@ let everPlayedMusic = false;
 let second_pop_up = false;
 let sidenav_minimal = false;
 let page = 'homepage';
-let language, system_language, timeout, timeout_2;
+let language, systemLanguage, timeout, timeout_2;
 let history = [];
 
 const cover = document.getElementById('cover');
@@ -376,11 +376,11 @@ const titleBar = document.getElementById('title_bar');
 const meta = document.getElementsByTagName('meta');
 const language_list = document.getElementsByName('language');
 function initialize() {
-    if (navigator.language.includes('zh')) system_language = 'zh-Hans';
-    else if (navigator.language.includes('de')) system_language = 'de';
-    else system_language = 'en';
+    if (navigator.language.includes('zh')) systemLanguage = 'zh-Hans';
+    else if (navigator.language.includes('de')) systemLanguage = 'de';
+    else systemLanguage = 'en';
     let cookie_language = getCookie('language');
-    language = cookie_language !== 'void' ? cookie_language : system_language;
+    language = cookie_language !== 'void' ? cookie_language : systemLanguage;
     font_check();
     let redirect = localStorage.getItem('page');
     if (redirect !== null) {
@@ -426,7 +426,7 @@ function initialize() {
   MM      MM    MM     ,M Mb     dM   MM        MM     ,M   MM   \`Mb.    :MM;    Mb     dM
 .JMML.  .JMML..JMMmmmmMMM P"Ybmmd"  .JMML.    .JMMmmmmMMM .JMML. .JMM.    VF     P"Ybmmd"
 
-Hēsperus or HESPERVS or Hesprs | V 2.7.0 | See https://github.com//Hesprs/Hesprs.github.io
+Hēsperus or HESPERVS or Hesprs | V 2.7.1 | See https://github.com//Hesprs/Hesprs.github.io
 
 Open-source library list: %c Marked %c https://github.com/markedjs/marked `,
 "padding: 6px 3px; border-radius: 15px 0 0 15px; color: #fff; background: rgb(109, 121, 208); font-weight: bold;",
@@ -1140,7 +1140,7 @@ function pop_up_change_languages(shift = true) {
         if (language_list[i].checked && language_list[i].value !== language) {
             language = language_list[i].value;
             font_check();
-            if (language === system_language) setCookie('language', language, -1);
+            if (language === systemLanguage) setCookie('language', language, -1);
             else setCookie('language', language);
             if (shift) {
                 pop_up_title.innerHTML = translation.languages[language];
