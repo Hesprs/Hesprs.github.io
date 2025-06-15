@@ -1,5 +1,4 @@
 # Hēsperus' Sanctuary
----
 
 ## Introduction
 
@@ -12,11 +11,18 @@ This project is a personal blog of Hēsperus, run by Github Pages on hesprs.git
 3. Glassmorphism UI;
 4. Simple music player;
 5. Internationalization (support English, simplified Chinese, and German);
-6. Responsive design.
+6. Markdown syntax support;
+7. Light and dark mode;
+8. Responsive design.
 
 ## Libraries used
 
 - **marked.js** - https://github.com/markedjs/marked
+
+## Periscope
+
+- [ ] Add tags to the articles;
+- [ ] Make the footer in each article can display instructions, tags, etc.
 
 ## Current Bugs
 

@@ -1,5 +1,6 @@
-/.cursor
-/Trash
-/CSS/style.scss
-/CSS/_preset.scss
-/CSS/common.scss
+.cursor
+.cursorignore
+.gitignore
+CSS/style.scss
+CSS/_preset.scss
+CSS/common.scss

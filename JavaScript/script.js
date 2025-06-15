@@ -1,4 +1,21 @@
 // #region Registry
+const information = {
+    version: 'V 2.7.2 Beta',
+    startDate: '',
+    articleCount: 9,
+    blogger: 'Hēsperus',
+    reference: 'https://github.com//Hesprs/Hesprs.github.io',
+    ASCIIart: `
+\`7MMF'  \`7MMF'\`7MM"""YMM   .M"""bgd \`7MM"""Mq.\`7MM"""YMM  \`7MM"""Mq.\`7MMF'   \`7MF'.M"""bgd
+  MM      MM    MM    \`7  ,MI    "Y   MM   \`MM. MM    \`7    MM   \`MM. \`MA     ,V ,MI    "Y
+  MM      MM    MM   d    \`MMb.       MM   ,M9  MM   d      MM   ,M9   VM:   ,V  \`MMb.
+  MMmmmmmmMM    MMmmMM      \`YMMNq.   MMmmdM9   MMmmMM      MMmmdM9     MM.  M'    \`YMMNq.
+  MM      MM    MM   Y  , .     \`MM   MM        MM   Y  ,   MM  YM.     \`MM A'   .     \`MM
+  MM      MM    MM     ,M Mb     dM   MM        MM     ,M   MM   \`Mb.    :MM;    Mb     dM
+.JMML.  .JMML..JMMmmmmMMM P"Ybmmd"  .JMML.    .JMMmmmmMMM .JMML. .JMM.    VF     P"Ybmmd"
+`
+}
+
 const articles = {
     homepage: {
         title: { en: 'Homepage', 'zh-Hans': '主页', de: 'Homepage' },
@@ -263,7 +280,7 @@ const translation = {
     },
 }
 
-const formats = {
+const formatIcons = {
     pdf: 'https://img.icons8.com/fluency/100/pdf-2.png',
     md: 'https://img.icons8.com/fluency/100/markdown.png',
     docx: 'https://img.icons8.com/fluency/100/google-docs--v2.png',
@@ -299,12 +316,12 @@ const showcases = [
     },
 ]
 
-const warning_icons = {
+const warningIcons = {
     alarm: 'https://img.icons8.com/fluency/100/box-important--v1.png',
     error: 'https://img.icons8.com/fluency/100/cancel.png',
 }
 
-const font_demand = {
+const fontDemand = {
     'zh-Hans': 'https://chinese-fonts-cdn.deno.dev/packages/stdgt/dist/%E4%B8%8A%E5%9B%BE%E4%B8%9C%E8%A7%82%E4%BD%93-%E7%B2%97%E4%BD%93/result.css',
     en: 'https://fonts.loli.net/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap',
     de: 'https://fonts.loli.net/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap',
@@ -314,7 +331,7 @@ const categories = {
     homepage: 'https://img.icons8.com/fluency/100/orca.png',
     articles: 'https://img.icons8.com/fluency/100/torah.png',
     tools: 'https://img.icons8.com/fluency/100/swiss-army-knife.png',
-    about: 'https://img.icons8.com/fluency/100/info-popup.png'
+    about: 'https://img.icons8.com/fluency/100/info-popup.png',
 }
 // #endregion
 
@@ -329,7 +346,6 @@ let timer = 0;
 let custom_width = 160;
 let pop_up_index = 0; // 0 void, 1 music, 2 catalogue, 3 options, 4 languages, 5 search;
 let isDragging = 0; // 0 void, 1 mouse, 2 touch
-let hovered = false;
 let everPlayedMusic = false;
 let second_pop_up = false;
 let sidenav_minimal = false;
@@ -363,7 +379,7 @@ const previous = document.getElementById('previousPage');
 const previous_center = document.getElementById('previous_center');
 const pop_up_title = document.getElementById('pop_up_title');
 const pop_up_content = document.getElementById('pop_up_content');
-const content_district = document.getElementById('content_district');
+const contentArea = document.getElementById('contentArea');
 const search_button = document.getElementById('search_button');
 const search_button_center = document.getElementById('search_button_center');
 const search_bar = document.getElementById('search_bar');
@@ -372,16 +388,16 @@ const warning_bar = document.getElementById('warning_bar');
 const warning_text = document.getElementById('warning_text');
 const warning_icon = document.getElementById('warning_icon');
 const github_corner = document.getElementById('github_corner');
-const titleBar = document.getElementById('title_bar');
 const meta = document.getElementsByTagName('meta');
 const language_list = document.getElementsByName('language');
+
 function initialize() {
     if (navigator.language.includes('zh')) systemLanguage = 'zh-Hans';
     else if (navigator.language.includes('de')) systemLanguage = 'de';
     else systemLanguage = 'en';
     let cookie_language = getCookie('language');
     language = cookie_language !== 'void' ? cookie_language : systemLanguage;
-    font_check();
+    fontLocalization();
     let redirect = localStorage.getItem('page');
     if (redirect !== null) {
         redirect = redirect === 'ernest.html' ? 'ernest' : decodeURIComponent(redirect);
@@ -409,40 +425,30 @@ function initialize() {
     music_title.innerHTML = translation.music_player[language];
     sidenav.style.width = `${custom_width}px`;
     let content = '';
-    for (const key in categories) {
+    for (let i = 0; i < Object.keys(categories).length; i ++) {
         let positionClass = '';
-        if (key === 'homepage') positionClass = 'upper';
-        else if (key === 'about') positionClass = 'lower';
+        if (i === 0) positionClass = 'upper';
+        else if (i === Object.keys(categories).length - 1) positionClass = 'lower';
         else positionClass = 'middle';
-        content += `<icon-entry class='${positionClass}'>${key}</icon-entry>`;
+        content += `<icon-entry class='${positionClass}'>${Object.keys(categories)[i]}</icon-entry>`;
     }
     document.getElementById('category_wrapper').innerHTML = content;
-    console.log(`
-\`7MMF'  \`7MMF'\`7MM"""YMM   .M"""bgd \`7MM"""Mq.\`7MM"""YMM  \`7MM"""Mq.\`7MMF'   \`7MF'.M"""bgd
-  MM      MM    MM    \`7  ,MI    "Y   MM   \`MM. MM    \`7    MM   \`MM. \`MA     ,V ,MI    "Y
-  MM      MM    MM   d    \`MMb.       MM   ,M9  MM   d      MM   ,M9   VM:   ,V  \`MMb.
-  MMmmmmmmMM    MMmmMM      \`YMMNq.   MMmmdM9   MMmmMM      MMmmdM9     MM.  M'    \`YMMNq.
-  MM      MM    MM   Y  , .     \`MM   MM        MM   Y  ,   MM  YM.     \`MM A'   .     \`MM
-  MM      MM    MM     ,M Mb     dM   MM        MM     ,M   MM   \`Mb.    :MM;    Mb     dM
-.JMML.  .JMML..JMMmmmmMMM P"Ybmmd"  .JMML.    .JMMmmmmMMM .JMML. .JMM.    VF     P"Ybmmd"
-
-Hēsperus or HESPERVS or Hesprs | V 2.7.1 | See https://github.com//Hesprs/Hesprs.github.io
-
-Open-source library list: %c Marked %c https://github.com/markedjs/marked `,
-"padding: 6px 3px; border-radius: 15px 0 0 15px; color: #fff; background: rgb(109, 121, 208); font-weight: bold;",
-"padding: 6px 3px;border-radius: 0 15px 15px 0; color: #fff; background: rgb(132, 67, 255);",)
+    console.log(`${information.ASCIIart}\nMade by ${information.blogger} | ${information.version} | See ${information.reference} for more\n\nOpen-source library list: %c Marked %c https://github.com/markedjs/marked`,
+        "padding: 6px 3px; border-radius: 15px 0 0 15px; color: #fff; background: rgb(109, 121, 208); font-weight: bold;",
+        "padding: 6px 3px;border-radius: 0 15px 15px 0; color: #fff; background: rgb(132, 67, 255);"
+    );
     responsiveResizeLayout();
     change_languages(redirect);
     setTimeout(() => {document.getElementById('badge').classList.add('hide')}, 600);
 }
 
-function font_check() {
+function fontLocalization() {
     const links = document.getElementsByTagName('link');
-    for (let i = 0; i < links.length; i++) if (links[i].href === font_demand[language]) return;
-    loadCSS(font_demand[language]);
+    for (let i = 0; i < links.length; i++) if (links[i].href === fontDemand[language]) return;
+    loadCSS(fontDemand[language]);
 }
 
-window.throttle = function(func, interval) {
+const throttle = function(func, interval) {
     let timeout = null;
     let lastArgs = null;
     let lastCallTime = -Infinity;
@@ -493,7 +499,7 @@ function loadCSS(href) {
 }
 
 function warn(type, message) {
-    warning_icon.src = warning_icons[type];
+    warning_icon.src = warningIcons[type];
     warning_text.innerHTML = message;
     warning_bar.classList.add('show');
     timeout_2 = setTimeout(() => warning_bar.classList.remove('show'), 3000);
@@ -504,7 +510,7 @@ function warningMessageClicked() {
     clearTimeout(timeout_2);
 }
 
-class IconEntry extends HTMLElement {
+class iconEntry extends HTMLElement {
     constructor() { super() }
     connectedCallback() {
         const category = this.textContent;
@@ -518,7 +524,7 @@ class IconEntry extends HTMLElement {
         `;
         this.addEventListener('click', () => changePage(category));
     }
-} customElements.define('icon-entry', IconEntry);
+} customElements.define('icon-entry', iconEntry);
 // #endregion
 
 // #region Responsivity
@@ -544,7 +550,7 @@ const responsiveResizeLayout = throttle(function() {
             if (!sidenav_minimal) endMinimal();
             sidenavWrapLevel = 0;
         }
-        if (cover.offsetWidth < 300) sidenav.style.width = `${window.innerWidth - 345}px`;
+        if (contentArea.offsetWidth < 400) sidenav.style.width = `${window.innerWidth - 430}px`;
         if (screenWidthLevel !== 0) screenWidthLevel = 0;
     } else {
         if (sidenavWrapLevel === 0 && !sidenav_minimal) {
@@ -613,16 +619,13 @@ function endSuperMinimal() {
     musicContainer.removeEventListener('click', OptionsButtonClicked);
 }
 
-window.toggleFooterBlur = throttle(function(scrollTop, clientHeight, scrollHeight) {
+window.toggleFooterBlur = throttle( function() {
     if (articles[page] != undefined && articles[page].type !== 'iframe') {
         const footer = document.getElementById('title_bar');
         const top = footer.getBoundingClientRect().top;
         if (((window.innerWidth >= 767 && top <= 31) || (window.innerWidth < 767 && top <= 78)) && !footer.classList.contains('blurred')) footer.classList.add('blurred');
         else if ((window.innerWidth >= 767 && top > 31) || (window.innerWidth < 767 && top > 78)) footer.classList.remove('blurred');
     }
-//    if (scrollTop + clientHeight >= scrollHeight - 5) background.classList.remove('hide');
-//    else if (scrollTop >= 56) background.classList.add('hide');
-//    else background.classList.remove('hide');
 }, 200);
 // #endregion
 
@@ -832,7 +835,7 @@ async function changePage(title = page, back = false, force = false) {
         timer = 0;
         const timer_interval = setInterval(() => timer += 10, 10);
         cover.style.opacity = 1;
-        content_district.style.opacity = 0;
+        contentArea.style.opacity = 0;
         layer = 1 - layer;
         modifyURL(page);
         const content = await resolvePage();
@@ -852,7 +855,7 @@ async function changePage(title = page, back = false, force = false) {
             background.classList.remove('hide');
             sidenav.classList.remove('darken');
             content_1.innerHTML = '';
-            content_district.classList.toggle('slides');
+            contentArea.classList.toggle('slides');
             if (content.custom_css) loadCSS(content.custom_css);
             if (content.type === 'search' || content.type === '404') {
                 content_0.innerHTML = `
@@ -865,7 +868,7 @@ async function changePage(title = page, back = false, force = false) {
                 iframe_window.addEventListener('DOMContentLoaded', () => {
                     if (content.darken_sidenav) sidenav.classList.add('darken');
                     cover.style.opacity = 0;
-                    content_district.style.opacity = 1;
+                    contentArea.style.opacity = 1;
                     cover.style.pointerEvents = 'none';
                 });
             } else {
@@ -888,7 +891,7 @@ async function changePage(title = page, back = false, force = false) {
                 background.classList.remove('iframe');
                 content_0.style.scrollbarGutter = '';
                 cover.style.opacity = 0;
-                content_district.style.opacity = 1;
+                contentArea.style.opacity = 1;
                 cover.style.pointerEvents = 'none';
             }
             if (content.click_listeners != undefined) addEventListeners(content.click_listeners);
@@ -934,7 +937,7 @@ async function resolvePage() {
                     main_classes: 'main_empty',
                 };
                 address = 'done';
-            } else if (type = 'article') address = `${articles[page].address}/${factual_language}.md`;
+            } else if (type === 'article') address = `${articles[page].address}/${factual_language}.md`;
         }
         if (address !== 'done') {
             content.content = await fetch(`/Contents/${address}`);
@@ -997,13 +1000,13 @@ function compileCrumb(address, download) {
             if (download[key].type == undefined || download[key].type !== 'direct') {
                 crumb_downloads += `
                     <a href='${download[key].url}' style='height:30px; width: 30px;' target='_blank'>
-	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
+	    	    		<img class='icon' src='${formatIcons[key]}' alt='${key} download'>
 	    	    	</a>
                 `; 
             } else {
                 crumb_downloads += `
                     <a href='${download[key].url}' style='height:30px; width: 30px;' download='${actual_language(articles[page].title)}.${key}'>
-	    	    		<img class='icon' src='${formats[key]}' alt='${key} download'>
+	    	    		<img class='icon' src='${formatIcons[key]}' alt='${key} download'>
 	    	    	</a>
                 `; 
             }
@@ -1057,20 +1060,20 @@ function mouseDown(e) {
     offset = e.clientX - sidenav.offsetWidth + 30;
     isDragging = 1;
     background.classList.add('on_dragging');
-    content_district.classList.toggle('slides');
+    contentArea.classList.toggle('slides');
 }
 
 function touchStart(e) {
     offset = e.touches[0].clientX - sidenav.offsetWidth + 30;
     isDragging = 2;
     background.classList.add('on_dragging');
-    content_district.classList.toggle('slides');
+    contentArea.classList.toggle('slides');
 }
 
 const mouseMove = throttle(function(e) {
     if (isDragging === 0) return;
     position = isDragging === 1 ? e.clientX - offset : e.touches[0].clientX - offset;
-    if (position >= 160 && position <= background.offsetWidth - 345 && !sidenav_minimal) sidenav.style.width = `${position}px`;
+    if (position >= 160 && position <= background.offsetWidth - 430 && !sidenav_minimal) sidenav.style.width = `${position}px`;
     else if (position < 46 && !sidenav_minimal) {
         transition_or_not(0);
         sidenav.style.width = '';
@@ -1088,7 +1091,7 @@ const mouseMove = throttle(function(e) {
 
 function mouseUp() {
     if (isDragging !== 0) {
-        content_district.classList.toggle('slides');
+        contentArea.classList.toggle('slides');
         isDragging = 0;
         background.classList.remove('on_dragging');
     }
@@ -1139,7 +1142,7 @@ function pop_up_change_languages(shift = true) {
     for (i = 0; i < language_list.length; i++) {
         if (language_list[i].checked && language_list[i].value !== language) {
             language = language_list[i].value;
-            font_check();
+            fontLocalization();
             if (language === systemLanguage) setCookie('language', language, -1);
             else setCookie('language', language);
             if (shift) {
@@ -1258,7 +1261,7 @@ function adjustPopUpMusicCover() {
 function firstPlayMusic() {
     loadMusic();
     music_cover.style.borderRadius = '50%';
-    music_title.style.fontSize = '14px';
+    music_title.style.fontSize = '13px';
     everPlayedMusic = true;
     if (pop_up_index === 1) pop_up_music_cover.style.borderRadius = '';
 }

@@ -1,5 +1,5 @@
 let ideodist = Infinity;
-let quality, peace, liberty, progress, wealth, might, authority, tradition, ideology;
+let peace, liberty, progress, wealth, might, authority, tradition, ideology;
 let max_econ = 0;
 let max_dipl = 0;
 let max_govt = 0;
@@ -132,10 +132,10 @@ function draw() {
     ctx.fillStyle = "#9c27b0";
     ctx.fillRect(682 - 5.6 * progress, 544, 5.6 * progress - 2, 72);
     ctx.fillStyle = "#222222";
-    ctx.font = "700 80px Jost";
+    ctx.font = "700 80px Onest";
     ctx.textAlign = "left";
     ctx.fillText("8values", 20, 80);
-    ctx.font = "50px Jost";
+    ctx.font = "50px Onest";
     ctx.textAlign = "right";;
     ctx.fillText(ideology, 780, 80);
     ctx.textAlign = "left";
@@ -148,7 +148,7 @@ function draw() {
     if (peace > 30) ctx.fillText(peace + "%", 670, 337.5);
     if (authority > 30) ctx.fillText(authority + "%", 670, 467.5);
     if (progress > 30) ctx.fillText(progress + "%", 670, 597.5);
-    ctx.font = "300 30px Jost";
+    ctx.font = "300 30px Onest";
     ctx.textAlign = "center";
     ctx.fillText(document.getElementById("economic-label").innerHTML, 400, 140);
     ctx.fillText(document.getElementById("diplomatic-label").innerHTML, 400, 270);

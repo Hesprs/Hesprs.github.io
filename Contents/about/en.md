@@ -35,9 +35,9 @@
 
 ### V 2.7.0   19 May 2025
 1. Recode all the CSS files by SCSS;
-2. Apply acrylic effect to the pop up window;
+2. Apply acrylic effect to the pop-up menu;
 3. Restore the neat mobile layout before V 2.6.0;
-4. Micsellaneous code refactoration, logic optimization and bug fixes.
+4. Miscellaneous code refactoration, logic optimization and bug fixes.
 
 ### V 2.6.1   8 May 2025
 1. Refactor the code of dark / light theme toggler, "8values" tool, website content storing structures, and language-specific styles;
@@ -151,7 +151,7 @@
 3. Add a new article, "Liberated Lovership" to the "Humanity";
 4. Optimize the performance tremendously by adding throttle to repetitively called functions;
 5. Minish the font size and larger the paragraph spacing properly to ensure visual ease;
-6. Fix the bug of non-central-alighed music player control buttons in pop up menu;
+6. Fix the bug of non-central-alighed music player control buttons in pop-up menu;
 7. Fix the bug that the URL remains the previous page's after shifting to "Homepage".
 
 ### V 2.1.3   1 Apr. 2025
@@ -162,7 +162,7 @@
 
 ### V 2.1.2   30 Mar. 2025
 1. Fix the bug of central search bar borders with nonidentical colours;
-2. Fix the bug that causes the music cover in the "Options" pop up menu to refuse to rotate even if the music is playing;
+2. Fix the bug that causes the music cover in the "Options" pop-up menu to refuse to rotate even if the music is playing;
 3. Fix the bug of redundant shadow under "Options" and "music cover" icons in the main interface;
 4. Fix the bug of misaligned height of 1 pixel between content area and title bar;
 5. Fix the bug that causes the title bar to be shown lingeringly when shifting to a new page and the bar is hidden previously;

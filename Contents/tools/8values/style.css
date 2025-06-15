@@ -91,7 +91,7 @@ body.dark .arrow { fill:rgb(255, 255, 255) }
 }
 
 button {
-    font-family: Jost;
+    font-family: Onest;
     color: rgb(50, 50, 50);
     width: 100%;
     transition: color 300ms, background-color 300ms, box-shadow 300ms;
