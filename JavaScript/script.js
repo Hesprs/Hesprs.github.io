@@ -398,7 +398,9 @@ function initialize() {
     let cookie_language = getCookie('language');
     language = cookie_language !== 'void' ? cookie_language : systemLanguage;
     fontLocalization();
-    let redirect = localStorage.getItem('page');
+    let redirect;
+    try { redirect = localStorage.getItem('page') }
+    catch { redirect = null }
     if (redirect !== null) {
         redirect = redirect === 'ernest.html' ? 'ernest' : decodeURIComponent(redirect);
         document.body.classList.add('slide', 'non_transition');
