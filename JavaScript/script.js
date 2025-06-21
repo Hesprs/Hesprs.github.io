@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Beta',
+    version: 'V 2.7.2 Gamma',
     startDate: '',
     articleCount: 9,
     blogger: 'Hēsperus',
@@ -472,15 +472,17 @@ const throttle = function(func, interval) {
 }
 
 function getCookie(cname) {
-    let name = cname + '=';
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return 'void';
+    try {
+        let name = cname + '=';
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return 'void';
+    } catch { return 'void' }
 }
 
 function setCookie(cname, cvalue, exdays = 36500) {
