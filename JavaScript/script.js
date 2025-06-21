@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Gamma',
+    version: 'V 2.7.2 Delta',
     startDate: '',
     articleCount: 9,
     blogger: 'Hēsperus',
@@ -435,7 +435,7 @@ function initialize() {
         content += `<icon-entry class='${positionClass}'>${Object.keys(categories)[i]}</icon-entry>`;
     }
     document.getElementById('category_wrapper').innerHTML = content;
-    console.log(`${information.ASCIIart}\nMade by ${information.blogger} | ${information.version} | See ${information.reference} for more\n\nOpen-source library list: %c Marked %c https://github.com/markedjs/marked`,
+    if (window.top === window.self) console.log(`${information.ASCIIart}\nMade by ${information.blogger} | ${information.version} | See ${information.reference} for more\n\nOpen-source library list: %c Marked %c https://github.com/markedjs/marked`,
         "padding: 6px 3px; border-radius: 15px 0 0 15px; color: #fff; background: rgb(109, 121, 208); font-weight: bold;",
         "padding: 6px 3px;border-radius: 0 15px 15px 0; color: #fff; background: rgb(132, 67, 255);"
     );
