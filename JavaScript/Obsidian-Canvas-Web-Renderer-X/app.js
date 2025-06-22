@@ -59,7 +59,7 @@ const minimapState = {
     }
 };
 
-let canvasBaseDir = './data/'; // Default base directory for related files
+let canvasBaseDir = './example/'; // Default base directory for related files
 
 // === Init ===
 async function initCanvas() {
@@ -107,7 +107,7 @@ function onCanvasMouseUp(e) {
                 worldCoords.y >= node.y && worldCoords.y <= node.y + node.height) {
                 if (node.file.match(/\.(png|jpg|jpeg|gif|svg)$/i)) {
                     const img = new Image();
-                    img.src = canvasBaseDir + node.file;
+                    img.src = canvasBaseDir + decodeURIComponent(node.file);
                     img.className = 'canvas-preview-img';
                     const backdrop = document.createElement('div');
                     backdrop.className = 'canvas-preview-backdrop';
@@ -122,7 +122,7 @@ function onCanvasMouseUp(e) {
                 } else if (node.file.match(/\.mp3$/i)) {
                     const audio = document.createElement('audio');
                     audio.controls = true;
-                    audio.src = canvasBaseDir + node.file;
+                    audio.src = canvasBaseDir + decodeURIComponent(node.file);
                     audio.style.width = '300px';
                     createPreviewModal(audio, 'audio');
                 }
@@ -417,7 +417,7 @@ function isNodeInViewport(node, margin = 200) {
 function loadImageForNode(node) {
     if (!imageCache[node.file]) {
         const img = new Image();
-        img.src = canvasBaseDir + node.file;
+        img.src = canvasBaseDir + decodeURIComponent(node.file);
         img.onload = requestDraw;
         img.onerror = requestDraw;
         imageCache[node.file] = img;
@@ -429,7 +429,7 @@ async function loadMarkdownForNode(node) {
     if (!markdownCache[node.file]) {
         markdownCache[node.file] = { status: 'loading', content: null, frontmatter: null };
         try {
-            let result = await fetch(canvasBaseDir + node.file);
+            let result = await fetch(canvasBaseDir + decodeURIComponent(node.file));
             result = await result.text();
             const frontmatterMatch = result.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
             if (frontmatterMatch) {
