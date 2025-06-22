@@ -1,9 +1,9 @@
 ## 🎁 简介
 
 <img src="https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23" style="object-fit: cover; aspect-ratio: 7/4;"/>
-<p style="text-align: center">这是 Hēsperus 的个人标志</p>
+<p style="text-align: center">Hēsperus 的个人标志</p>
 
-该项目是 Hēsperus 的**个人博客**，通过 Github Pages 运行在 hesprs.github.io 上。网站是一个 **SPA**（单页应用），所有内容都在单个 HTML 页面上通过脚本展示。它使用**原生 HTML、JavaScript 和 SCSS** 构建。除开源 JavaScript 库外，所有代码均由 Hēsperus 本人创建。
+该项目是 Hēsperus 的**个人博客**，通过 Github Pages 运行在 https://hesprs.github.io 上。网站是一个 **SPA**（单页应用），所有内容都在单个 HTML 页面上通过脚本展示。它使用**原生 HTML、JavaScript 和 SCSS** 构建。除开源 JavaScript 库外，所有代码均由 Hēsperus 本人创建。
 
 特点：
 1. SPA 及其所有优势（平滑过渡、高效的文件结构、简洁的URL、连续体验等）；

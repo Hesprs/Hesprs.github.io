@@ -1,9 +1,9 @@
 ## 🎁 Introduction
 
 <img src="https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23" style="object-fit: cover; aspect-ratio: 7/4;"/>
-<p style="text-align: center">This is Hēsperus' personal logo</p>
+<p style="text-align: center">Hēsperus' personal logo</p>
 
-This project is a **personal blog** of Hēsperus, run by Github Pages on hesprs.github.io. The website is an **SPA** (Single Page Application), where all the website content is scripted and dispalyed on a single HTML page. It is built through **vanilla HTML, JavaScript and SCSS**. All the code except open-source Javascript liberaries is created by Hēsperus himself.
+This project is a **personal blog** of Hēsperus, run by Github Pages on https://hesprs.github.io. The website is an **SPA** (Single Page Application), where all the website content is scripted and dispalyed on a single HTML page. It is built through **vanilla HTML, JavaScript and SCSS**. All the code except open-source Javascript liberaries is created by Hēsperus himself.
 
 Features:
 1. SPA and all its benefits (smooth transition, efficient file structure, neat URL, continuous experience, etc.);
