@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Zeta',
+    version: 'V 2.7.2 Eta',
     startDate: '',
     articleCount: 10,
     blogger: 'Hēsperus',
@@ -837,7 +837,6 @@ async function changePage(title = page, back = false, force = false) {
         if (!back) { if (page != undefined && title !== page) history.push(page) }
         else history.pop();
         document.body.classList.remove(page);
-        document.body.classList.add(title);
         page = title;
         timer = 0;
         const timer_interval = setInterval(() => timer += 10, 10);
@@ -901,6 +900,7 @@ async function changePage(title = page, back = false, force = false) {
                 contentArea.style.opacity = 1;
                 cover.style.pointerEvents = 'none';
             }
+            if (content.type !== '404' && content.type !== 'search') document.body.classList.add(title);
             if (content.click_listeners != undefined) addEventListeners(content.click_listeners);
         }, timer);
     }
