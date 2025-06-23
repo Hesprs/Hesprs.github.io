@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Theta',
+    version: 'V 2.7.2 Iota',
     startDate: '',
     articleCount: 10,
     blogger: 'Hēsperus',
@@ -614,7 +614,7 @@ function startSuperMinimal() {
     music_cover.src = 'https://img.icons8.com/fluency/100/settings.png';
     document.getElementById('about').getElementsByClassName('icon')[0].src = 'https://img.icons8.com/fluency/100/magical-scroll.png';
     musicContainer.removeEventListener('click', musicButtonClicked);
-    musicContainer.addEventListener('click', OptionsButtonClicked);
+    musicContainer.addEventListener('click', optionsButtonClicked);
 }
 
 function endSuperMinimal() {
@@ -623,7 +623,7 @@ function endSuperMinimal() {
     else music_cover.src = 'https://img.icons8.com/fluency/100/lyre.png';
     document.getElementById('about').getElementsByClassName('icon')[0].src = 'https://img.icons8.com/fluency/100/info-popup.png';
     musicContainer.addEventListener('click', musicButtonClicked);
-    musicContainer.removeEventListener('click', OptionsButtonClicked);
+    musicContainer.removeEventListener('click', optionsButtonClicked);
 }
 
 window.toggleFooterBlur = throttle( function() {
@@ -650,7 +650,7 @@ function themeButtonClicked() {
     if (articles[page] != undefined && articles[page].type === 'iframe') document.getElementById('iframe').contentWindow.document.body.classList.toggle('dark');
 }
 
-function OptionsButtonClicked() {
+function optionsButtonClicked() {
     let delay = 0;
     if (pop_up_index === 1 || pop_up_index === 4) {
         delay = 200;
@@ -836,8 +836,9 @@ async function changePage(title = page, back = false, force = false) {
     else if (force || title !== page) {
         if (!back) { if (page != undefined && title !== page) history.push(page) }
         else history.pop();
-        document.body.classList.remove(page);
+        if (articles[page] != undefined) document.body.classList.remove(page);
         page = title;
+        if (articles[page] != undefined) document.body.classList.add(page);
         timer = 0;
         const timer_interval = setInterval(() => timer += 10, 10);
         cover.style.opacity = 1;
@@ -900,7 +901,6 @@ async function changePage(title = page, back = false, force = false) {
                 contentArea.style.opacity = 1;
                 cover.style.pointerEvents = 'none';
             }
-            if (content.type !== '404' && content.type !== 'search') document.body.classList.add(title);
             if (content.click_listeners != undefined) addEventListeners(content.click_listeners);
         }, timer);
     }
@@ -1122,7 +1122,7 @@ function showPopUp() {
 
 function buttonBack() {
     if (second_pop_up) {
-        OptionsButtonClicked();
+        optionsButtonClicked();
         second_pop_up = false;
     } else normalBack();
 }

@@ -1,30 +1,5 @@
 ---
-title: تجربتي مع macOS بعد عامين من الانتقال من Windows كمبرمج
-titleEN: "Switching from Windows to macOS: A Developer's Experience After 2 Years"
-publishedAt: 2024-11-30T18:04:00
-summary: تجربة شاملة للانتقال من نظام Windows إلى macOS من منظور مطور برمجيات، مع مناقشة التحديات والمميزات وأهم النصائح بعد عامين من الاستخدام
-tags:
-  - macOS
-  - Apple
-  - تطوير_برمجيات
-  - Windows
-  - MacBookPro
-  - AppleSilicon
-  - M1
-  - برمجة
-  - التحول_إلى_ماك
-  - تجربة_شخصية
-  - مطورين_عرب
-  - بيئة_التطوير
-  - مقارنة_أنظمة_التشغيل
-  - التقنية
-category: تقنية
-categoryEN: Technology
-categorySlug: technology
-language: ar
 direction: rtl
-slug: switching-from-windows-to-macos-as-a-developer
-image: https://utfs.io/f/v2xJeOfpKRkEaOxSRuQCgkj8fhK3dZYObDTiV04wzBncst5u
 ---
 
 قبل عامين، اتخذت قرارًا جريئًا بالانتقال من Windows إلى macOS بعد 15 عامًا من استخدام نظام مايكروسوفت. كمطور برمجيات، كان هذا القرار مدفوعًا برغبتي في تجربة بيئة تطوير مختلفة وأكثر تكاملًا، خاصة مع تزايد شعبية أجهزة Apple Silicon. في هذا المقال، سأشارككم رحلتي الكاملة وما تعلمته خلال هذين العامين.
