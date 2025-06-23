@@ -21,7 +21,6 @@ tags:
 category: تقنية
 categoryEN: Technology
 categorySlug: technology
-isFeature: true
 language: ar
 direction: rtl
 slug: switching-from-windows-to-macos-as-a-developer

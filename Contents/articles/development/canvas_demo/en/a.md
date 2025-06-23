@@ -1,32 +1,3 @@
----
-title: My Experience with macOS After Two Years of Switching from Windows as a Developer
-titleEN: "Switching from Windows to macOS: A Developer's Experience After 2 Years"
-publishedAt: 2024-11-30T18:04:00
-summary: A comprehensive experience of transitioning from Windows to macOS from a software developer's perspective, discussing the challenges, advantages, and key tips after two years of use.
-tags:
-  - macOS
-  - Apple
-  - Software_Development
-  - Windows
-  - MacBookPro
-  - AppleSilicon
-  - M1
-  - Programming
-  - Switching_to_Mac
-  - Personal_Experience
-  - Arab_Developers
-  - Development_Environment
-  - OS_Comparison
-  - Technology
-category: Technology
-categorySlug: technology
-isFeature: true
-language: en
-direction: ltr
-slug: switching-from-windows-to-macos-as-a-developer
-image: https://utfs.io/f/v2xJeOfpKRkEaOxSRuQCgkj8fhK3dZYObDTiV04wzBncst5u
----
-
 Two years ago, I made the bold decision to switch from Windows to macOS after 15 years of using Microsoft's system. As a software developer, this decision was driven by my desire to experience a different and more integrated development environment, especially with the growing popularity of Apple Silicon devices. In this article, I will share my complete journey and what I’ve learned over these two years.
 
 ## Initial Transition
