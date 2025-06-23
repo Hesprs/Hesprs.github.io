@@ -1,6 +1,4 @@
----
-direction: rtl
----
+(**GitHub does not allow markdown files with frontmatter to be requested**, so I have to display this Arabian article in left-to-right, if you can download my project at https://github.com/Hesprs/Obsidian-Canvas-Web-Renderer-X and run it in your local environment, you can enjoy the natural text direction of Arabian!)
 
 قبل عامين، اتخذت قرارًا جريئًا بالانتقال من Windows إلى macOS بعد 15 عامًا من استخدام نظام مايكروسوفت. كمطور برمجيات، كان هذا القرار مدفوعًا برغبتي في تجربة بيئة تطوير مختلفة وأكثر تكاملًا، خاصة مع تزايد شعبية أجهزة Apple Silicon. في هذا المقال، سأشارككم رحلتي الكاملة وما تعلمته خلال هذين العامين.
 

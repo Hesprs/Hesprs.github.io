@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Iota',
+    version: 'V 2.7.2 Kappa',
     startDate: '',
     articleCount: 10,
     blogger: 'Hēsperus',
