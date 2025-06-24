@@ -27,3 +27,4 @@ This project is a personal blog of Hēsperus, run by Github Pages on hesprs.git
 ## Current Bugs
 
 1. The words in search bar are not properly rotated in horizontal mode.
+2. Flipping card in a directory that only has one row of article card causes abrupt jerk of that row.

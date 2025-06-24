@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Lambda',
+    version: 'V 2.7.2 Mu',
     startDate: '',
     articleCount: 10,
     blogger: 'Hēsperus',
