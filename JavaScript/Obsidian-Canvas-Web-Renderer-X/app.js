@@ -1,4 +1,4 @@
-// V 1.3.0
+// V 1.3.1
 
 const nodeMap = {};
 const canvas = document.getElementById('myCanvas');
@@ -39,6 +39,15 @@ const dragState = {
 const overlayState = {
     selectedOverlayId: null,
     isHoveringSelectedOverlay: false
+};
+
+// === Pinch-to-Zoom State ===
+let pinchZoomState = {
+    isPinching: false,
+    initialDistance: 0,
+    initialScale: 1,
+    initialMidpoint: { x: 0, y: 0 },
+    lastTouches: []
 };
 
 // === Init ===
@@ -123,9 +132,18 @@ const getColor = (colorIndex) => {
 // Add window-level event listeners
 window.addEventListener('mousedown', onWindowMouseDown);
 window.addEventListener('mouseup', onWindowMouseUp);
-window.addEventListener('touchstart', (e) => onWindowMouseDown(e.touches[0], true), { passive: true });
-window.addEventListener('touchmove', (e) => onWindowMouseMove(e.touches[0], true), { passive: true });
-window.addEventListener('touchend', () => onWindowMouseUp(dragState.lastTouchPoint), { passive: true });
+window.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    onWindowMouseDown(e.touches[0], true);
+}, { passive: false });
+window.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    onWindowMouseMove(e.touches[0], true);
+}, { passive: false });
+window.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    onWindowMouseUp(dragState.lastTouchPoint);
+}, { passive: false });
 
 function isUIControl(target) {
     // Check if the event target is a button, input, slider, or inside controls/minimap
@@ -225,8 +243,8 @@ function select(id) {
         current.classList.add('active');
         overlayState.isHoveringSelectedOverlay = true;
         if (!current._hasHoverListeners) {
-            current._mouseenterHandler = () => { overlayState.isHoveringSelectedOverlay = true; };
-            current._mouseleaveHandler = () => { overlayState.isHoveringSelectedOverlay = false; };
+            current._mouseenterHandler = () => overlayState.isHoveringSelectedOverlay = true;
+            current._mouseleaveHandler = () => overlayState.isHoveringSelectedOverlay = false;
             current.addEventListener('mouseenter', current._mouseenterHandler);
             current.addEventListener('mouseleave', current._mouseleaveHandler);
             current._hasHoverListeners = true;
@@ -235,32 +253,12 @@ function select(id) {
     overlayState.selectedOverlayId = id;
 }
 
-const onWindowWheel = throttle((e) => {
-    if (overlayState.isHoveringSelectedOverlay) return;
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const worldX = (mouseX - offsetX) / scale;
-    const worldY = (mouseY - offsetY) / scale;
-    const zoomFactor = 1.06;
-    let newScale = scale;
-    if (e.deltaY < 0) newScale *= zoomFactor;
-    else newScale /= zoomFactor;
-    newScale = Math.max(0.05, Math.min(20, newScale));
-    offsetX = mouseX - worldX * newScale;
-    offsetY = mouseY - worldY * newScale;
-    scale = newScale;
-    zoomSlider.value = scaleToSlider(scale);
-    requestDraw();
-}, 16)
-
 const onWindowResize = throttle( () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     requestDraw();
 }, 16)
 
-window.addEventListener('wheel', onWindowWheel, { passive: true });
 window.addEventListener('resize', onWindowResize);
 initCanvas();
 const zoomSlider = document.getElementById('zoom-slider');
@@ -843,6 +841,7 @@ function updateScale(newScale) {
     requestDraw();
 }
 
+// === Preview Modal ===
 function createPreviewModal(content, type) {
     const modal = document.createElement('div');
     modal.className = 'canvas-preview-modal';
@@ -868,3 +867,98 @@ function createPreviewModal(content, type) {
     document.body.appendChild(backdrop);
     document.body.appendChild(modal);
 }
+
+function getTouchDistance(touches) {
+    const dx = touches[0].clientX - touches[1].clientX;
+    const dy = touches[0].clientY - touches[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+}
+function getTouchMidpoint(touches) {
+    return {
+        x: (touches[0].clientX + touches[1].clientX) / 2,
+        y: (touches[0].clientY + touches[1].clientY) / 2
+    };
+}
+
+function onPinchStart(e) {
+    if (e.touches.length !== 2) return;
+    pinchZoomState.isPinching = true;
+    pinchZoomState.initialDistance = getTouchDistance(e.touches);
+    pinchZoomState.initialScale = scale;
+    pinchZoomState.initialMidpoint = getTouchMidpoint(e.touches);
+    pinchZoomState.lastTouches = [e.touches[0], e.touches[1]];
+    e.preventDefault();
+}
+function onPinchMove(e) {
+    if (!pinchZoomState.isPinching || e.touches.length !== 2) return;
+    const newDistance = getTouchDistance(e.touches);
+    let zoomFactor = newDistance / pinchZoomState.initialDistance;
+    let newScale = Math.max(0.05, Math.min(20, pinchZoomState.initialScale * zoomFactor));
+    // Calculate world coordinates at midpoint before zoom
+    const rect = canvas.getBoundingClientRect();
+    const midpoint = getTouchMidpoint(e.touches);
+    const screenX = midpoint.x - rect.left;
+    const screenY = midpoint.y - rect.top;
+    const worldX = (screenX - offsetX) / scale;
+    const worldY = (screenY - offsetY) / scale;
+    // Update scale and offset so midpoint stays fixed
+    scale = newScale;
+    offsetX = screenX - worldX * scale;
+    offsetY = screenY - worldY * scale;
+    zoomSlider.value = scaleToSlider(scale);
+    requestDraw();
+    e.preventDefault();
+}
+function onPinchEnd(e) {
+    if (e.touches.length < 2) pinchZoomState.isPinching = false;
+}
+
+// Attach pinch-to-zoom listeners to both canvas and overlaysLayer
+[canvas, overlaysLayer].forEach(el => {
+    el.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 2) onPinchStart(e);
+    }, { passive: false });
+    el.addEventListener('touchmove', function(e) {
+        if (pinchZoomState.isPinching && e.touches.length === 2) onPinchMove(e);
+    }, { passive: false });
+    el.addEventListener('touchend', function(e) {
+        onPinchEnd(e);
+    }, { passive: false });
+    el.addEventListener('touchcancel', function(e) {
+        onPinchEnd(e);
+    }, { passive: false });
+});
+
+// Amend wheel event suppression logic
+window.addEventListener('wheel', function(e) {
+    if (overlayState.isHoveringSelectedOverlay) return;
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const worldX = (mouseX - offsetX) / scale;
+    const worldY = (mouseY - offsetY) / scale;
+    let didZoom = false;
+    // Zoom if ctrlKey or vertical wheel
+    if (e.ctrlKey || Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        let zoomFactor = 1.06;
+        let newScale = scale;
+        if (e.deltaY < 0) newScale *= zoomFactor;
+        else newScale /= zoomFactor;
+        newScale = Math.max(0.05, Math.min(20, newScale));
+        offsetX = mouseX - worldX * newScale;
+        offsetY = mouseY - worldY * newScale;
+        scale = newScale;
+        zoomSlider.value = scaleToSlider(scale);
+        didZoom = true;
+    }
+    // Pan horizontally if horizontal wheel
+    if (Math.abs(e.deltaX) > 0) {
+        offsetX -= e.deltaX;
+    }
+    // Optionally, pan vertically if not zooming (for trackpad two-finger pan)
+    if (!didZoom && Math.abs(e.deltaY) > 0) {
+        offsetY -= e.deltaY;
+    }
+    requestDraw();
+    e.preventDefault();
+}, { passive: false });
