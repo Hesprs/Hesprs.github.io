@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Pi',
+    version: 'V 2.7.2 Rho',
     startDate: '',
     articleCount: 10,
     blogger: 'Hēsperus',

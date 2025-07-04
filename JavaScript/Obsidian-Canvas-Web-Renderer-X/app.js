@@ -775,33 +775,32 @@ function onWindowMouseDown(eve, touch = false) {
 }
 
 const onWindowMouseMove = throttle((eve, touch = false) => {
-    if (!dragState.isDragging) return;
-    const e = touch ? eve.touches[0] : eve;
-    const dx = e.clientX - dragState.lastClientX;
-    const dy = e.clientY - dragState.lastClientY;
-    offsetX += dx;
-    offsetY += dy;
-    dragState.lastClientX = e.clientX;
-    dragState.lastClientY = e.clientY;
-    if (touch) {
-        dragState.lastTouchPoint = eve;
-        if (pinchZoomState.isPinching) {
-            const newDistance = getTouchDistance(eve.touches);
-            let zoomFactor = newDistance / pinchZoomState.initialDistance;
-            let newScale = Math.max(0.05, Math.min(20, pinchZoomState.initialScale * zoomFactor));
-            // Calculate world coordinates at midpoint before zoom
-            const rect = canvas.getBoundingClientRect();
-            const midpoint = getTouchMidpoint(eve.touches);
-            const screenX = midpoint.x - rect.left;
-            const screenY = midpoint.y - rect.top;
-            const worldX = (screenX - offsetX) / scale;
-            const worldY = (screenY - offsetY) / scale;
-            // Update scale and offset so midpoint stays fixed
-            scale = newScale;
-            offsetX = screenX - worldX * scale;
-            offsetY = screenY - worldY * scale;
-            zoomSlider.value = scaleToSlider(scale);
-        }
+    if (!dragState.isDragging && !pinchZoomState.isPinching) return;
+    if (dragState.isDragging) {
+        const e = touch ? eve.touches[0] : eve;
+        const dx = e.clientX - dragState.lastClientX;
+        const dy = e.clientY - dragState.lastClientY;
+        offsetX += dx;
+        offsetY += dy;
+        dragState.lastClientX = e.clientX;
+        dragState.lastClientY = e.clientY;
+        if (touch) dragState.lastTouchPoint = eve;
+    } else if (pinchZoomState.isPinching && touch) {
+        const newDistance = getTouchDistance(eve.touches);
+        let zoomFactor = newDistance / pinchZoomState.initialDistance;
+        let newScale = Math.max(0.05, Math.min(20, pinchZoomState.initialScale * zoomFactor));
+        // Calculate world coordinates at midpoint before zoom
+        const rect = canvas.getBoundingClientRect();
+        const midpoint = getTouchMidpoint(eve.touches);
+        const screenX = midpoint.x - rect.left;
+        const screenY = midpoint.y - rect.top;
+        const worldX = (screenX - offsetX) / scale;
+        const worldY = (screenY - offsetY) / scale;
+        // Update scale and offset so midpoint stays fixed
+        scale = newScale;
+        offsetX = screenX - worldX * scale;
+        offsetY = screenY - worldY * scale;
+        zoomSlider.value = scaleToSlider(scale);
     }
     requestDraw();
 }, 16)
