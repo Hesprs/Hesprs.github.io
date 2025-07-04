@@ -48,7 +48,9 @@ const pinchZoomState = {
     initialDistance: 0,
     initialScale: 1,
     initialMidpoint: { x: 0, y: 0 },
-    lastTouches: []
+    lastTouches: [],
+    lastMidpointX: 0,
+    lastMidpointY: 0
 };
 
 function overlayJudger(node) {
@@ -750,6 +752,8 @@ function onWindowMouseDown(eve, touch = false) {
             pinchZoomState.initialScale = scale;
             pinchZoomState.initialMidpoint = getTouchMidpoint(eve.touches);
             pinchZoomState.lastTouches = [eve.touches[0], eve.touches[1]];
+            pinchZoomState.lastMidpointX = pinchZoomState.initialMidpoint.x;
+            pinchZoomState.lastMidpointY = pinchZoomState.initialMidpoint.y;
             dragState.isDragging = false;
         } else {
             overlayState.isHoveringSelectedOverlay = false;
@@ -798,23 +802,23 @@ const onWindowMouseMove = throttle((eve, touch = false) => {
         const worldY = (screenY - offsetY) / scale;
         // Update scale and offset so midpoint stays fixed
         scale = newScale;
-        offsetX = screenX - worldX * scale;
-        offsetY = screenY - worldY * scale;
+        offsetX = screenX - worldX * scale - pinchZoomState.lastMidpointX + midpoint.x;
+        offsetY = screenY - worldY * scale - pinchZoomState.lastMidpointY + midpoint.y;
         zoomSlider.value = scaleToSlider(scale);
+        pinchZoomState.lastMidpointX = midpoint.x;
+        pinchZoomState.lastMidpointY = midpoint.y;
     }
     requestDraw();
 }, 16)
 
-function onWindowMouseUp(eve, touch = false) {
-    if (touch && eve.touches.length === 1) {
+function onWindowMouseUp(eve, touch = false, lag = false) {
+    if (touch && eve.touches.length === 1 && !lag) {
         const e = eve.touches[0];
         pinchZoomState.isPinching = false;
-        dragState.isDragging = true;
         dragState.lastTouchPoint = eve;
-        dragState.lastX = e.clientX;
-        dragState.lastY = e.clientY;
         dragState.lastClientX = e.clientX;
         dragState.lastClientY = e.clientY;
+        dragState.isDragging = true;
         return;
     }
     if (!dragState.isDragging) return;
@@ -880,7 +884,10 @@ function onTouch(e, state) {
     if (!isUIControl(e.target) && (!overlayState.isHoveringSelectedOverlay || (overlayState.isHoveringSelectedOverlay && e.touches.length > 1))) e.preventDefault();
     if (state === 'start') onWindowMouseDown(e, true);
     else if (state === 'move') onWindowMouseMove(e, true);
-    else if (state === 'end') onWindowMouseUp(dragState.lastTouchPoint, true);
+    else if (state === 'end') {
+        if (pinchZoomState.isPinching) onWindowMouseUp(e, true);
+        else onWindowMouseUp(dragState.lastTouchPoint, true, true);
+    }
 }
 // #endregion
 
