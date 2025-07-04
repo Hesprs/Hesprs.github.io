@@ -43,7 +43,7 @@ const overlayState = {
 };
 
 // === Pinch-to-Zoom State ===
-let pinchZoomState = {
+const pinchZoomState = {
     isPinching: false,
     initialDistance: 0,
     initialScale: 1,
@@ -744,26 +744,34 @@ function onWindowMouseDown(eve, touch = false) {
     if (isUIControl(eve.target)) return;
     const e = touch ? eve.touches[0] : eve;
     if (touch) {
-        if (eve.touches.length >= 2) {
+        if (eve.touches.length > 1) {
             pinchZoomState.isPinching = true;
             pinchZoomState.initialDistance = getTouchDistance(eve.touches);
             pinchZoomState.initialScale = scale;
             pinchZoomState.initialMidpoint = getTouchMidpoint(eve.touches);
             pinchZoomState.lastTouches = [eve.touches[0], eve.touches[1]];
+            dragState.isDragging = false;
         } else {
             overlayState.isHoveringSelectedOverlay = false;
             const worldCoords = pointerAtWorld(e);
             const node = findNodeAt(worldCoords.x, worldCoords.y);
             if (node && node.id === overlayState.selectedOverlayId) overlayState.isHoveringSelectedOverlay = true;
+            if (overlayState.isHoveringSelectedOverlay) return;
+            dragState.lastTouchPoint = eve;
+            dragState.isDragging = true;
+            dragState.lastX = e.clientX;
+            dragState.lastY = e.clientY;
+            dragState.lastClientX = e.clientX;
+            dragState.lastClientY = e.clientY;
         }
+    } else {
+        if (overlayState.isHoveringSelectedOverlay) return;
+        dragState.isDragging = true;
+        dragState.lastX = e.clientX;
+        dragState.lastY = e.clientY;
+        dragState.lastClientX = e.clientX;
+        dragState.lastClientY = e.clientY;
     }
-    if (overlayState.isHoveringSelectedOverlay) return;
-    if (touch) dragState.lastTouchPoint = eve;
-    dragState.isDragging = true;
-    dragState.lastX = e.clientX;
-    dragState.lastY = e.clientY;
-    dragState.lastClientX = e.clientX;
-    dragState.lastClientY = e.clientY;
 }
 
 const onWindowMouseMove = throttle((eve, touch = false) => {
@@ -778,12 +786,12 @@ const onWindowMouseMove = throttle((eve, touch = false) => {
     if (touch) {
         dragState.lastTouchPoint = eve;
         if (pinchZoomState.isPinching) {
-            const newDistance = getTouchDistance(e.touches);
+            const newDistance = getTouchDistance(eve.touches);
             let zoomFactor = newDistance / pinchZoomState.initialDistance;
             let newScale = Math.max(0.05, Math.min(20, pinchZoomState.initialScale * zoomFactor));
             // Calculate world coordinates at midpoint before zoom
             const rect = canvas.getBoundingClientRect();
-            const midpoint = getTouchMidpoint(e.touches);
+            const midpoint = getTouchMidpoint(eve.touches);
             const screenX = midpoint.x - rect.left;
             const screenY = midpoint.y - rect.top;
             const worldX = (screenX - offsetX) / scale;
@@ -799,11 +807,21 @@ const onWindowMouseMove = throttle((eve, touch = false) => {
 }, 16)
 
 function onWindowMouseUp(eve, touch = false) {
+    if (touch && eve.touches.length === 1) {
+        const e = eve.touches[0];
+        pinchZoomState.isPinching = false;
+        dragState.isDragging = true;
+        dragState.lastTouchPoint = eve;
+        dragState.lastX = e.clientX;
+        dragState.lastY = e.clientY;
+        dragState.lastClientX = e.clientX;
+        dragState.lastClientY = e.clientY;
+        return;
+    }
     if (!dragState.isDragging) return;
     dragState.isDragging = false;
     if ((dragState.lastClientX - dragState.lastX) ** 2 + (dragState.lastClientY - dragState.lastY) ** 2 > 25) return;
     const e = touch ? eve.touches[0] : eve;
-    if (touch && eve.touches.length < 2) pinchZoomState.isPinching = false;
     const worldCoords = pointerAtWorld(e);
     const node = findNodeAt(worldCoords.x, worldCoords.y);
     if (overlayJudger(node) === 1) select(node.id);
