@@ -1,6 +1,6 @@
 // #region Registry
 const information = {
-    version: 'V 2.7.2 Sigma',
+    version: 'v2.7.2 Tau',
     startDate: '',
     articleCount: 10,
     blogger: 'Hēsperus',
