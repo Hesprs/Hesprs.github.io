@@ -17,7 +17,8 @@ This project is a personal blog of Hēsperus, run by Github Pages on hesprs.git
 
 ## Libraries used
 
-- **marked.js** - https://github.com/markedjs/marked
+- **Marked.js** - https://github.com/markedjs/marked
+- **Obsidian-Canvas-Renderer-X** - https://github.com/hesprs/Obsidian-Canvas-Web-Renderer-X
 
 ## Periscope
 

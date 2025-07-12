@@ -1,7 +1,7 @@
 // #region Registry
 const information = {
-    version: 'v2.7.2 Tau',
-    startDate: '',
+    version: 'v2.7.2 Upsilon',
+    startDate: '2025-01-01',
     articleCount: 10,
     blogger: 'Hēsperus',
     reference: 'https://github.com//Hesprs/Hesprs.github.io',
