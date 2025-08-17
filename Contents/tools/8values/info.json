@@ -1,9 +1,0 @@
-{
-    "github": "https://github.com/8values/8values.github.io", 
-    "languages": ["en", "zh-Hans"],
-    "description": {
-        "en": "8values is, in essence, a political quiz that attempts to assign percentages for eight different political values. At the end of the quiz, your answers will be compared to the maximum possible for each value.",
-        "zh-Hans": "8values 本质上是一个政治测验，它试图为八个不同的政治价值观分配百分比。在测验结束时，您的答案将与每个价值观的最大可能值进行比较.",
-        "de": "8values ist im Wesentlichen ein politischer Test, der versucht, Prozentsätze für acht verschiedene politische Werte zuzuordnen. Am Ende des Tests werden Ihre Antworten mit dem maximal möglichen Wert für jede politische Ausrichtung verglichen."
-    }
-}

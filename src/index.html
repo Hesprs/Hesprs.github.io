@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Hēsperus" />
+		<meta name="description" content="" />
+		<title></title>
+		<link rel="stylesheet" href="CSS/style.scss" />
+		<link rel="stylesheet" href="CSS/common.scss" />
+		<link type="image/png" sizes="100x100" rel="icon" href="https://img.icons8.com/fluency/100/orca.png" />
+		<link href="https://fonts.loli.net/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<input type="radio" id="en" name="language" value="en" />
+		<input type="radio" id="zh-Hans" name="language" value="zh-Hans" />
+		<input type="radio" id="de" name="language" value="de" />
+		<input type="checkbox" id="dn" />
+		<img id="background_img" alt="background image" class="background_img" />
+		<div class="centerer" id="warning_bar">
+			<div class="warning_bar clickable" id="warning_bar_wrapper">
+				<img class="icon" id="warning_icon" alt="warn!" src="https://img.icons8.com/fluency/100/box-important--v1.png" />
+				<div class="center_text" id="warning_text"></div>
+			</div>
+		</div>
+		<div class="shade" id="shade"></div>
+		<div class="pop_up border" id="pop_up">
+			<div style="padding: 8px 15px 8px 15px; display: flex; width: calc(100% - 30px)">
+				<img class="icon" src="https://img1.tucang.cc/api/image/show/08f73f8d7cf3b996c07e7eb648db55f5" alt="back" style="height: 30px; width: 17.4px" id="back" />
+				<div class="center_text" id="pop_up_title"></div>
+				<div style="width: 17.4px"></div>
+			</div>
+			<hr style="margin: 0px; width: 100%" />
+			<div class="pop_up_content" id="pop_up_content"></div>
+		</div>
+		<div class="showcase" id="showcase">
+			<div class="slogan" id="slogan"></div>
+			<div class="continue" id="continue"></div>
+		</div>
+		<div class="background" id="background">
+			<div class="sidenav" id="sidenav">
+				<div class="sidenav_wrapper">
+					<div class="entry upper" id="previousPage">
+						<div class="label_wrapper">
+							<img class="icon" src="https://img.icons8.com/fluency/100/circled-chevron-left.png" alt="previous" />
+							<div class="center_text" id="text_previous" style="direction: rtl; margin: auto 0px auto auto"></div>
+						</div>
+					</div>
+					<div class="entry lower" style="flex-direction: row; display: flex" id="search_bar_wrapper">
+						<input type="text" id="search_bar" />
+						<div class="vertical_division"></div>
+						<div class="button_wrapper" id="search_button">
+							<img class="icon" src="https://img.icons8.com/fluency/100/search.png" alt="search" />
+						</div>
+					</div>
+				</div>
+				<div class="sidenav_wrapper" id="category_wrapper"></div>
+				<div class="sidenav_wrapper" id="search_bar_center_wrapper">
+					<div class="button_wrapper" id="previous_center">
+						<img class="icon" src="https://img.icons8.com/fluency/100/circled-chevron-left.png" alt="previous" />
+					</div>
+					<div class="division"></div>
+					<input type="text" id="search_bar_center" />
+					<div class="division"></div>
+					<div class="button_wrapper" id="search_button_center">
+						<img class="icon" src="https://img.icons8.com/fluency/100/search.png" alt="search" />
+					</div>
+				</div>
+				<div class="sidenav_wrapper">
+					<div class="entry upper" id="music_container">
+						<div class="label_wrapper" id="music-wrapper">
+							<div style="margin: 0px; display: flex; height: 30px">
+								<img class="icon" src="https://img.icons8.com/fluency/100/lyre.png" alt="music-cover" id="music_cover" />
+								<div id="music_title" class="center_text"></div>
+							</div>
+							<div class="progress_container" id="progress_container">
+								<div class="progress" id="progress"></div>
+							</div>
+							<div style="margin: 0px; display: flex; height: 20px">
+								<button id="previous" class="action-btn centerer">
+									<img class="icon" src="https://img.icons8.com/fluency-systems-filled/200/end.png" alt="next" style="right: 0px" id="previous_light" />
+									<img class="icon" src="https://img.icons8.com/?size=200&id=s1kxUJVDmJvK&format=png&color=FFFFFF" alt="next" style="right: 0px" id="previous_dark" />
+								</button>
+								<button id="play" class="action-btn centerer" style="margin: 0px auto 0px auto">
+									<img class="icon" src="https://img.icons8.com/fluency-systems-filled/200/play.png" alt="play" id="play_light" />
+									<img class="icon" src="https://img.icons8.com/fluency-systems-filled/200/pause.png" alt="pause" id="pause_light" />
+									<img class="icon" src="https://img.icons8.com/?size=200&id=q0nxNdfpbYVl&format=png&color=FFFFFF" alt="pause" id="pause_dark" />
+									<img class="icon" src="https://img.icons8.com/?size=200&id=fjx0LfGCNuZb&format=png&color=FFFFFF" alt="play" id="play_dark" />
+								</button>
+								<button id="next" class="action-btn centerer">
+									<img class="icon" src="https://img.icons8.com/fluency-systems-filled/200/end.png" alt="next" style="right: 0px" id="next_light" />
+									<img class="icon" src="https://img.icons8.com/?size=200&id=s1kxUJVDmJvK&format=png&color=FFFFFF" alt="next" style="right: 0px" id="next_dark" />
+								</button>
+							</div>
+							<audio id="audio"></audio>
+						</div>
+					</div>
+					<div class="entry middle" id="language_option">
+						<div class="label_wrapper">
+							<img class="icon" alt="national flag" id="nations" />
+							<div class="center_text" id="text_language" style="direction: rtl; margin: auto 0px auto auto"></div>
+						</div>
+					</div>
+					<label class="entry lower" for="dn">
+						<div class="label_wrapper" style="min-width: 30px; gap: 0px">
+							<div class="text_light" id="text_light"></div>
+							<div class="toggleWrapper">
+								<div class="themeTogglerBig">
+									<span class="themeTogglerBig-handler">
+										<span class="crater--1"></span>
+										<span class="crater--2"></span>
+										<span class="crater--3"></span>
+									</span>
+									<span class="star--1"></span>
+									<span class="star--2"></span>
+									<span class="star--3"></span>
+									<span class="star--4"></span>
+									<span class="star--5"></span>
+									<span class="star--6"></span>
+								</div>
+								<svg aria-hidden="true" class="themeTogglerSmall" viewBox="0 0 32 32">
+									<clipPath id="a"><path d="M0 0h32v32H0Zm6 16a1 1 0 0 0 20 0 1 1 0 0 0-20 0" /></clipPath>
+									<g clip-path="url(#a)">
+										<path d="M30.7 21.3 27.1 16l3.7-5.3c.4-.5.1-1.3-.6-1.4l-6.3-1.1-1.1-6.3c-.1-.6-.8-.9-1.4-.6L16 5l-5.4-3.7c-.5-.4-1.3-.1-1.4.6l-1 6.3-6.4 1.1c-.6.1-.9.9-.6 1.3L4.9 16l-3.7 5.3c-.4.5-.1 1.3.6 1.4l6.3 1.1 1.1 6.3c.1.6.8.9 1.4.6l5.3-3.7 5.3 3.7c.5.4 1.3.1 1.4-.6l1.1-6.3 6.3-1.1c.8-.1 1.1-.8.7-1.4M16 25.1c-5.1 0-9.1-4.1-9.1-9.1 0-5.1 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1c0 5.1-4 9.1-9.1 9.1" />
+									</g>
+									<path class="themeTogglerSmall__circle" d="M16 7.7c-4.6 0-8.2 3.7-8.2 8.2s3.6 8.4 8.2 8.4 8.2-3.7 8.2-8.2-3.6-8.4-8.2-8.4m0 14.4c-3.4 0-6.1-2.9-6.1-6.2s2.7-6.1 6.1-6.1 6.1 2.9 6.1 6.2-2.7 6.1-6.1 6.1" />
+									<path class="themeTogglerSmall__inner" d="M16 9.5c-3.6 0-6.4 2.9-6.4 6.4s2.8 6.5 6.4 6.5 6.4-2.9 6.4-6.4-2.8-6.5-6.4-6.5" />
+								</svg>
+							</div>
+							<div class="text_dark" id="text_dark"></div>
+						</div>
+					</label>
+				</div>
+			</div>
+			<div class="stretch_bar_wrapper" id="stretch_bar">
+				<div class="stretch_bar"></div>
+			</div>
+			<div class="rectangle_wrapper">
+				<div class="rectangle" id="contentArea">
+					<a class="github-corner" aria-label="View source on GitHub" id="github_corner">
+						<svg aria-hidden="true" class="corner_svg" viewBox="0 0 2500 2500">
+							<path d="m0 0 1150 1150h150l120 270 1080 1080V0Z" class="corner" />
+							<path d="M1150 1150c-1 1 37 15 48 4l139-138c32-24 62-32 85-30-84-106-147-242 16-406 47-46 102-68 159-70 6-16 35-74 117-109 0 0 47 24 74 161 43 24 84 56 121 92 36 36 68 78 92 122 137 26 162 73 162 73-36 82-94 111-109 117-3 58-24 112-71 159-164 164-300 100-406 16 2 28-10 68-50 108L1410 1365c-12 12 6 54 8 53Z" fill="currentColor" class="octo-body" />
+							<path d="M1283 1090c-145-93-93-194-93-194 30-69 15-110 15-110-13-66 29-23 29-23 39 46 21 110 21 110-26 103 51 146 89 159" fill="currentColor" class="octo-arm" />
+						</svg>
+					</a>
+					<div class="content" id="content_1"></div>
+					<div class="content" id="content_0"></div>
+				</div>
+				<div class="rectangle" id="cover">
+					<svg class="spinner">
+						<circle>
+							<animateTransform attributeName="transform" type="rotate" values="-90;810" keyTimes="0;1" dur="2s" repeatCount="indefinite"></animateTransform>
+							<animate attributeName="stroke-dashoffset" values="0%;0%;-157.080%" calcMode="spline" keySplines="0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"></animate>
+							<animate attributeName="stroke-dasharray" values="0% 314.159%;157.080% 157.080%;0% 314.159%" calcMode="spline" keySplines="0.61, 1, 0.88, 1; 0.12, 0, 0.39, 0" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"></animate>
+						</circle>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="showcase" id="badge">
+			<svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 4000 4000">
+				<path
+					d="m3651 1070-493 230-484 224A125358 124756 0 01 2530 1590l-5 3 6 10a690 690 0 01 110 448 52 52 0 00-1 6l117-54-3-8-10-25c-48-155 201-429 654-716l19-12 290-134 290-135-24-52-323 150m-880 214a1589750 1589750 0 01-490 228l-300 138-430 199a11944 11944 0 00-304 142l7 18a90 90 0 01 12 36c23 159-232 427-662 698l-14 10-290 134-290 135a2062 2062 0 00 24 53s303-140 556-259l369-171L1100 2580a1358550 1352026 0 01 278-130l65-30 26-12-2-3c-45-53-90-126-117-193l15-8A14560 14560 0 00 1480 2150l10 20a563 563 0 00 116 173l26-12c105-49 122-57 123-56l-33 45a990 990 0 01-167 171l-13 10-210 99a282567 281210 0 00-212 98l11 26 12 25h3c3 0-5 3 89-40l220-103 200-93 128-60L2010 2350l134-62 174-80c36-18 87-41 113-53l48-23 10-35a543 543 0 00-96-442L2250 1720c-2 0-2 0 10-15a992 992 0 01 210-218 91420 91420 0 01 412-193l-24-50-89 40m-830 50-17 1a623 623 0 00-218 56l25 52 10-4a565 565 0 01 517 34l2 1 30-14 32-15-31-20a633 633 0 00-350-90m497 256-22 18 5 7a588 588 0 01 75 598 560 560 0 01-709 293l-7-2-18 8-34 16-17 8a617 617 0 00 849-325 640 640 0 00-93-631 110 110 0 00-6-7l-23 17m-234 216a321 321 0 00-23 208L1802 2190l3-10a315 315 0 00 21-191 148 147 0 01-2-9l45-20 260-120c83-40 75-36 73-33m-763 410a5590 5590 0 00-26 11l-5 3 4 8c30 62 72 123 125 176l20 20 10-10a971 966 0 00 22-20l10-10-14-14a600 600 0 01-126-174l-20 10"
+					fill="#fff"
+					fill-opacity="1"
+					fill-rule="evenodd" />
+			</svg>
+		</div>
+	</body>
+	<script type="module" src="JavaScript/script.js"></script>
+	<script type="module" src="JavaScript/elements.js"></script>
+</html>

@@ -1,0 +1,236 @@
+// #region Presets
+@use 'sass:math';
+@use 'preset';
+
+@mixin text-shadow($levels, $base-color, $shadow-color, $dark-mode: false) {
+  $shadow: ();
+  @for $i from 1 through $levels {
+    $shadow: append($shadow, 0 calc(var(--halfPixel) * #{$i}) 0 adjust-color($base-color, $lightness: -($i * 3%)), comma);
+  }
+  $shadow: append($shadow, var(--halfPixel) calc(var(--halfPixel) * #{$levels + 1}) 4px rgba(0, 0, 0, if($dark-mode, 0.6, 0.3)));
+  text-shadow: $shadow;
+}
+
+@mixin heading-styles($size, $levels) {
+  html[lang = en] &, html[lang = de] & { font-size: calc(#{$size}px + #{math.div($size, 10)}vw) !important }
+  html[lang = zh-Hans] & { font-size: calc(#{$size - 3}px + #{math.div($size - 3, 10)}vw) !important }
+  @include text-shadow($levels, rgb(247, 247, 247), rgba(0, 0, 0, 0.3));
+  .dark & { @include text-shadow($levels, rgb(140, 140, 113), rgba(0, 0, 0, 0.6), true) }
+}
+// #endregion
+
+// #region Base styles
+:root {
+  --themeColor: rgb(132, 67, 255);
+  --fontColor: rgb(50, 50, 50);
+  --firstBackgroundColor: rgba(255, 255, 255, 0.2);
+  --secondBackgroundColor: rgba(255, 255, 255, 0.2);
+  --borderColor: rgba(255, 255, 255, 0.4);
+	--contentTransition: color 300ms, opacity 300ms, text-shadow 300ms, fill 300ms;
+  --containerTransition: background 300ms, opacity 300ms, box-shadow 300ms, border 300ms, filter 300ms, backdrop-filter 300ms;
+  --omnipotentTransition: background 300ms, opacity 300ms, box-shadow 300ms, border 300ms, color 300ms, fill 300ms;
+  --halfPixel: calc(0.25px + 0.015vw);
+}
+.dark {
+  --themeColor: rgb(254, 247, 167);
+  --fontColor: rgb(255, 255, 255);
+  --firstBackgroundColor: rgba(255, 255, 255, 0.1);
+  --secondBackgroundColor: rgba(0, 0, 0, 0.2);
+  --borderColor: rgba(255, 255, 255, 0.2);
+}
+main {
+  box-sizing: border-box;
+  padding: 1px 11px;
+  height: fit-content;
+  width: 100%;
+  flex-direction: column;
+  overflow-x: hidden;
+  &.normal_padding { padding: 15px 11px }
+  &.top_padding { padding: 15px 11px 1px }
+  &.bottom_padding { padding: 1px 11px 15px }
+} @supports not (scrollbar-gutter: stable both-edges) {
+  main {
+    padding: 1px 15px 5px 15px;
+    &.normal_padding { padding: 15px }
+    &.top_padding { padding: 15px 15px 5px 15px }
+    &.bottom_padding { padding: 1px 15px 15px 15px }
+    @media (max-width: 766.9px) {
+      padding: 1px 10px 1px 10px;
+      width: calc(100% - 20px);
+      &.normal_padding { padding: 10px 10px }
+      &.top_padding { padding: 10px 10px 1px 10px }
+      &.bottom_padding { padding: 1px 10px 10px 10px }
+    }
+  }
+} @media (max-width: 766.9px) {
+  main {
+    padding: 1px 8px;
+    &.normal_padding { padding: 10px 8px; }
+    &.top_padding { padding: 10px 8px 1px; }
+    &.bottom_padding { padding: 1px 8px 10px; }
+  }
+}
+
+html {
+  height: 0px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: hidden;
+  font-family: Onest;
+  * {
+    font-size: calc(14px + 0.2vw);
+    line-height: calc(19px + 0.3vw);
+  }
+  &::-webkit-scrollbar { display: none; }
+  &[lang=en], &[lang=de] {
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Cormorant SC;
+      font-weight: bold;
+      line-height: 100%;
+    }
+  } &[lang=zh-Hans] {
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "STDongGuanTi bld";
+      font-weight: normal;
+      line-height: 120%;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  color: var(--fontColor);
+  @include preset.full;
+  &.dark::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.25) }
+  &.non_transition, &.non_transition * { transition: none !important }
+}
+// #endregion
+
+// #region Defined elements
+img {
+	object-fit: contain;
+} main {
+  > img, > p > img {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+    @include preset.borderShadow;
+  }
+}
+hr {
+  height: 0.75px;
+  width: 100%;
+  margin: 15px 0;
+  background-color: var(--borderColor);
+  border: none;
+}
+ol, ul { margin: -5px 0 0 }
+li, p {
+  text-align: justify;
+  @media (max-width: 766.9px) { text-align: left }
+}
+p { margin: 15px 0px }
+li { margin: 10px 0px }
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  li {
+  	padding-left: calc(15px + 2vw);
+  	padding-right: calc(7.5px + 1vw);
+  	text-indent: calc(-18px - 0.35vw);
+    &::before {
+    	content: "✦";
+    	padding-right: 8px;
+    	color: var(--themeColor);
+    }
+  }
+}
+ol {
+	padding-left: calc(15px + 2vw);
+	padding-right: calc(7.5px + 1vw);
+}
+::-webkit-scrollbar {
+  width: 4px;
+  &-track { background-color: transparent; }
+  &-thumb {
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 2px;
+    .dark & { background: rgba(255, 255, 255, 0.25) }
+    &:hover { background: rgba(30, 30, 30, 0.75) }
+  }
+  @media (max-width: 766.9px) { width: 2px !important }
+}
+strong { color: rgb(175, 51, 29) }
+.dark strong { color: rgb(254, 142, 124) }
+em { color: rgb(17, 148, 117) }
+.dark em { color: rgb(90, 255, 178) }
+a, .fake_a {
+  text-decoration: none;
+  color: var(--themeColor);
+	font-weight: 800;
+	font-style: italic;
+	cursor: pointer;
+  &:hover { color: rgb(109, 173, 208) }
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: calc(20px + 0.8vw) 0;
+  text-align: center;
+  color: var(--themeColor);
+  transition: var(--contentTransition);
+}
+$headings: ( (h1, 30, 9), (h2, 28, 8), (h3, 26, 7), (h4, 24, 6), (h5, 22, 5), (h6, 20, 4) );
+@each $heading, $size, $levels in $headings { #{$heading} { @include heading-styles($size, $levels) } }
+p, li, em, a, .fake_a, strong { transition: var(--contentTransition) }
+img, hr { transition: var(--containerTransition) }
+// #endregion
+
+// #region Cutom classes
+.icon {
+	margin: auto 0px;
+	height: 30px;
+	width:30px;
+}
+
+.directory {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	width: 100%;
+	@media (max-width: 766.9px) { gap: 10px }
+  .demobox { flex: 1 1 auto }
+}
+
+.center_text {
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+  transition: var(--contentTransition);
+}
+
+.demobox {
+	background-color: var(--firstBackgroundColor);
+	padding: 7.25px 11.25px;
+	@include preset.center;
+  @include preset.borderShadow;
+	text-align: center;
+	gap: 10px;
+  transition: var(--omnipotentTransition);
+  .center_text { flex-direction: column }
+}
+
+.clickable {
+  cursor: pointer;
+  @media (hover: hover) {
+    &:hover { background-color: rgba(255, 255, 255, 0.4) }
+    .dark &:hover { background-color: rgba(0, 0, 0, 0.4) }
+  } &:active:hover {
+    background-color: var(--themeColor);
+    color: rgb(255, 255, 255);
+  } .dark &:active:hover { color: rgb(50, 50, 50) }
+}
+// #endregion
