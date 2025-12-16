@@ -1,5 +1,7 @@
 ## 🎁 简介
 
+**声明：本网站目前正在重建中，将很快被弃用。**
+
 <img src="https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23" style="object-fit: cover; aspect-ratio: 7/4;"/>
 <p style="text-align: center">Hēsperus 的个人标志</p>
 

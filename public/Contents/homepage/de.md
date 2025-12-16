@@ -1,5 +1,7 @@
 ## 🎁 Einführung
 
+**Haftungsausschluss: Diese Website wird derzeit neu aufgebaut und wird bald veraltet sein.**
+
 <img src="https://img1.tucang.cc/api/image/show/6c24d2f07bf7cdc817e1dc57ecedfb23" style="object-fit: cover; aspect-ratio: 7/4;"/>
 <p style="text-align: center">Das persönliche Logo von Hēsperus</p>
 
