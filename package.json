@@ -14,23 +14,23 @@
 		"check": "vue-tsc && oxfmt --check && oxlint "
 	},
 	"dependencies": {
-		"@json-canvas-viewer/vue": "^1.0.5",
+		"@json-canvas-viewer/vue": "^1.1.1",
 		"@tabler/icons-vue": "^3.44.0",
 		"vitepress": "2.0.0-alpha.17",
 		"vitepress-theme-trito": "^1.1.1",
-		"vue": "^3.5.34",
+		"vue": "^3.5.35",
 		"vue3-carousel": "^0.17.0"
 	},
 	"devDependencies": {
-		"@types/node": "^25.8.0",
-		"oxfmt": "^0.50.0",
-		"oxlint": "^1.65.0",
-		"oxlint-tsgolint": "^0.22.1",
-		"sass": "^1.99.0",
+		"@types/node": "^25.9.1",
+		"oxfmt": "^0.53.0",
+		"oxlint": "^1.68.0",
+		"oxlint-tsgolint": "^0.23.0",
+		"sass": "^1.100.0",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.13",
+		"vite": "^8.0.16",
 		"vite-plugin-json-canvas": "^1.0.1",
-		"vue-tsc": "^3.2.9"
+		"vue-tsc": "^3.3.3"
 	},
 	"packageManager": "pnpm@10.29.3"
 }
