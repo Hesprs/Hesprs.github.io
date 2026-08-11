@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  paths:
-    - pages/**
-    - public/**
-    - .vitepress/**
+    paths:
+      - pages/**
+      - public/**
+      - .vitepress/**
   workflow_dispatch:
 
 permissions:
