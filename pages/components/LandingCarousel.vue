@@ -5,24 +5,23 @@ import { VPLink } from 'vitepress-theme-trito';
 import { Carousel, Navigation, Slide } from 'vue3-carousel';
 
 const carouselConfig: Partial<CarouselConfig> = {
-	autoplay: 8000,
-	gap: 600,
-	itemsToShow: 0.5,
-	mouseDrag: false,
-	transition: 600,
-	transitionEasing: 'cubic-bezier(.3,0,.3,1)',
-	wrapAround: true,
-};
-
-const { projects } = defineProps<{
-	projects: Array<{
-		title: string;
-		logo: string;
-		description: string;
-		descriptionShort: string;
-		link: string;
-	}>;
-}>();
+		autoplay: 8000,
+		gap: 600,
+		itemsToShow: 0.5,
+		mouseDrag: false,
+		transition: 600,
+		transitionEasing: 'cubic-bezier(.3,0,.3,1)',
+		wrapAround: true,
+	},
+	{ projects } = defineProps<{
+		projects: Array<{
+			title: string;
+			logo: string;
+			description: string;
+			descriptionShort: string;
+			link: string;
+		}>;
+	}>();
 </script>
 
 <template>

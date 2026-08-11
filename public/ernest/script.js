@@ -1,10 +1,10 @@
-const audio = document.getElementById('audio');
-const dial = document.getElementById('dial');
-const hand = document.getElementById('hand');
-const hand2 = document.getElementById('hand2');
-const back = document.getElementById('back');
-let isPlaying = false;
-let show = false;
+const audio = document.getElementById('audio'),
+	dial = document.getElementById('dial'),
+	hand = document.getElementById('hand'),
+	hand2 = document.getElementById('hand2'),
+	back = document.getElementById('back');
+let isPlaying = false,
+	show = false;
 
 document.body.addEventListener('click', () => {
 	if (!show) {

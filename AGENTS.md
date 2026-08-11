@@ -8,6 +8,7 @@ This project is a VitePress personal portfolio website hosted on GitHub pages.
 
 ## Commands
 
-- `pnpm lint`: format and fix fixable lint errors (must run before `pnpm check`).
-- `pnpm check`: checks types, lint, and format, doesn't change code.
-- `pnpm build`: build the website.
+- `bun fix`: format and fix fixable lint errors (must run before `bun check`).
+- `bun dev`: start a dev server.
+- `bun check`: checks types, lint, and format, doesn't change code.
+- `bun run build`: build the website.

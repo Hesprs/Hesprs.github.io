@@ -8,21 +8,11 @@ function p(path: string) {
 	return resolve(__dirname, '..', path);
 }
 
-const inDev = process.env.MODE === 'dev';
-
 export default defineConfig<ThemeConfig>({
 	cleanUrls: true,
 	head: [
 		['link', { href: '/favicon.ico', rel: 'icon' }],
 		['meta', { content: 'dark light', name: 'color-scheme' }],
-		[
-			'script',
-			{
-				'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
-				defer: '',
-				src: inDev ? '' : 'https://analytics.consensia.cc/script.js',
-			},
-		],
 	],
 	lastUpdated: true,
 	locales: {
@@ -54,8 +44,8 @@ export default defineConfig<ThemeConfig>({
 							{ link: '/projects/json-canvas-viewer', text: 'JSON Canvas Viewer' },
 							{ link: '/projects/trito', text: 'Trito' },
 							{
-								link: '/projects/obsidian-webdav-sync',
-								text: 'Obsidian WebDAV Sync',
+								link: '/projects/sync-engine',
+								text: 'Sync Engine',
 							},
 						],
 						text: 'Projects',
@@ -99,8 +89,8 @@ export default defineConfig<ThemeConfig>({
 							},
 							{ link: '/zh-Hans/projects/trito', text: 'Trito' },
 							{
-								link: '/zh-Hans/projects/obsidian-webdav-sync',
-								text: 'Obsidian WebDAV Sync',
+								link: '/zh-Hans/projects/sync-engine',
+								text: 'Sync Engine',
 							},
 						],
 						text: '项目',

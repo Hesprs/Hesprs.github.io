@@ -5,7 +5,7 @@ import ProjectPage from '@/ProjectPage.vue';
 
 const theme = {
 	enhanceApp({ app }: { app: App }) {
-		app.component('project', ProjectPage);
+		app.component('Project', ProjectPage);
 	},
 	extends: Theme,
 };

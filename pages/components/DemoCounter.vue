@@ -15,10 +15,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const count = ref<number>(0);
-
-const increment = () => count.value++;
-const decrement = () => count.value--;
+const count = ref<number>(0),
+	increment = () => count.value++,
+	decrement = () => count.value--;
 </script>
 
 <style scoped>

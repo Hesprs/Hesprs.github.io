@@ -7,8 +7,8 @@ import type { Props } from '@/ProjectCard.vue';
 import LinkIconsKey from '@/keys';
 import ProjectCard from '@/ProjectCard.vue';
 
-const linkIcons = shallowRef<Props['linkIcons']>({});
-const { frontmatter } = useData<typeof Theme>();
+const linkIcons = shallowRef<Props['linkIcons']>({}),
+	{ frontmatter } = useData<typeof Theme>();
 provide(LinkIconsKey, (_icons: Props['linkIcons']) => (linkIcons.value = _icons));
 </script>
 

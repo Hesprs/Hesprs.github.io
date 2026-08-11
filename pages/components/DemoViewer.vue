@@ -8,8 +8,9 @@ import {
 } from '@json-canvas-viewer/vue';
 import { useData } from 'vitepress';
 import Counter from './DemoCounter.vue';
-const { isDark } = useData();
-const isPrerendering = import.meta.env.SSR;
+
+const { isDark } = useData(),
+	isPrerendering = import.meta.env.SSR;
 </script>
 
 <template>
