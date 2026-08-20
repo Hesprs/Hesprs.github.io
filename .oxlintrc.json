@@ -82,7 +82,8 @@
 		"vitest/no-conditional-expect": "off",
 		"jest/require-hook": "off",
 		"vitest/prefer-called-once": "off",
-		"eslint/no-underscore-dangle": "off"
+		"eslint/no-underscore-dangle": "off",
+		"eslint/one-var": ["warn", "never"]
 	},
 	"env": {
 		"builtin": true,

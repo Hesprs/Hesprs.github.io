@@ -132,184 +132,184 @@ import {
 } from '@tabler/icons-vue';
 
 const skills = [
-		{
-			color: '#EFD81C',
-			icon: IconBrandJavascript,
-			link: 'https://developer.mozilla.org/docs/Web/JavaScript',
-			name: 'JavaScript',
-		},
-		{
-			color: '#3178C6',
-			icon: IconBrandTypescript,
-			link: 'https://www.typescriptlang.org/',
-			name: 'TypeScript',
-		},
-		{
-			color: '#CF649A',
-			icon: IconBrandSass,
-			link: 'https://sass-lang.com/',
-			name: 'SCSS',
-		},
-		{
-			color: '#41b883',
-			icon: IconBrandVue,
-			link: 'https://vuejs.org/',
-			name: 'Vue',
-		},
-		{
-			color: '#58c4dc',
-			icon: IconBrandReact,
-			link: 'https://react.dev/',
-			name: 'React',
-		},
-		{
-			color: '#3776AB',
-			icon: IconBrandPython,
-			link: 'https://www.python.org/',
-			name: 'Python',
-		},
-		{
-			color: '#F05032',
-			icon: IconBrandGit,
-			link: 'https://git-scm.com/',
-			name: 'Git',
-		},
-		{
-			color: '#0C8CE9',
-			icon: IconBrandFigma,
-			link: 'https://www.figma.com',
-			name: 'Figma',
-		},
-		{
-			color: '#F4792B',
-			icon: IconBrandBlender,
-			link: 'https://www.blender.org/',
-			name: 'Blender',
-		},
-		{
-			color: '#000000',
-			icon: IconRobot,
-			link: 'https://agentskills.io/',
-			name: 'Agent Harness',
-		},
-		{
-			color: '#67d55e',
-			icon: IconPuzzle,
-			link: 'https://wxt.dev/',
-			name: 'Browser Extension',
-		},
-		{
-			color: '#f37726',
-			icon: IconFileCode,
-			link: 'https://jupyter.org/',
-			name: 'Jupyter Notebook',
-		},
-		{
-			color: '#4d6fb7',
-			icon: IconSnowflake,
-			link: 'https://nixos.org/',
-			name: 'NixOS',
-		},
-		{
-			color: '#417e38',
-			icon: IconBrandNodejs,
-			link: 'https://nodejs.org/',
-			name: 'Node.js',
-		},
+	{
+		color: '#EFD81C',
+		icon: IconBrandJavascript,
+		link: 'https://developer.mozilla.org/docs/Web/JavaScript',
+		name: 'JavaScript',
+	},
+	{
+		color: '#3178C6',
+		icon: IconBrandTypescript,
+		link: 'https://www.typescriptlang.org/',
+		name: 'TypeScript',
+	},
+	{
+		color: '#CF649A',
+		icon: IconBrandSass,
+		link: 'https://sass-lang.com/',
+		name: 'SCSS',
+	},
+	{
+		color: '#41b883',
+		icon: IconBrandVue,
+		link: 'https://vuejs.org/',
+		name: 'Vue',
+	},
+	{
+		color: '#58c4dc',
+		icon: IconBrandReact,
+		link: 'https://react.dev/',
+		name: 'React',
+	},
+	{
+		color: '#3776AB',
+		icon: IconBrandPython,
+		link: 'https://www.python.org/',
+		name: 'Python',
+	},
+	{
+		color: '#F05032',
+		icon: IconBrandGit,
+		link: 'https://git-scm.com/',
+		name: 'Git',
+	},
+	{
+		color: '#0C8CE9',
+		icon: IconBrandFigma,
+		link: 'https://www.figma.com',
+		name: 'Figma',
+	},
+	{
+		color: '#F4792B',
+		icon: IconBrandBlender,
+		link: 'https://www.blender.org/',
+		name: 'Blender',
+	},
+	{
+		color: '#000000',
+		icon: IconRobot,
+		link: 'https://agentskills.io/',
+		name: 'Agent Harness',
+	},
+	{
+		color: '#67d55e',
+		icon: IconPuzzle,
+		link: 'https://wxt.dev/',
+		name: 'Browser Extension',
+	},
+	{
+		color: '#f37726',
+		icon: IconFileCode,
+		link: 'https://jupyter.org/',
+		name: 'Jupyter Notebook',
+	},
+	{
+		color: '#4d6fb7',
+		icon: IconSnowflake,
+		link: 'https://nixos.org/',
+		name: 'NixOS',
+	},
+	{
+		color: '#417e38',
+		icon: IconBrandNodejs,
+		link: 'https://nodejs.org/',
+		name: 'Node.js',
+	},
 
-		{
-			color: '#f472b6',
-			icon: IconBurger,
-			link: 'https://bun.com/',
-			name: 'Bun',
-		},
-		{
-			color: '#70ffaf',
-			icon: IconBrandDeno,
-			link: 'https://deno.com/',
-			name: 'Deno',
-		},
-		{
-			color: '#ff1e56',
-			icon: IconCircleDashedLetterT,
-			link: 'https://turborepo.dev/',
-			name: 'Turborepo',
-		},
-	],
-	perspectives = [
-		{
-			icon: IconWorldMap,
-			name: '世界主义',
-			title: '一个拥有共同目标的地球家园，并向星辰敞开道路。',
-		},
-		{
-			icon: IconCreativeCommons,
-			name: '自主文化运动',
-			title: '智力成果不应被高墙围困，每个人都应拥有访问、修改和分享的自由。',
-		},
-		{
-			icon: IconGenderTransgender,
-			name: 'LGBT 权益',
-			title: '没有什么比看到一个人被与生俱来的东西所束缚更糟糕了。',
-		},
-		{
-			icon: IconBlendMode,
-			name: '机会平等',
-			title: '帝王之后与贫民之子，皆有平等的起点。',
-		},
-		{
-			icon: IconCell,
-			name: '反种族主义',
-			title: '所有种族都是幻象，我们共享同一身份——人类。',
-		},
-		{
-			icon: IconSettingsBolt,
-			name: '技术进步主义',
-			title: '自时间之初，我们的宇宙便已踏上永无止境的进步之旅。',
-		},
-	],
-	projects = [
-		{
-			description:
-				'Sync Engine 是下一代 Obsidian 插件，可将你的仓库与自有基础设施同步。它是首个允许通过自定义模块扩展核心功能的 Obsidian 插件。',
-			descriptionShort: '快速且可扩展的 Obsidian 仓库同步引擎。',
-			link: '/zh-Hans/projects/sync-engine',
-			logo: 'https://github.com/hesprs/sync-engine/raw/refs/heads/main/docs/public/logo.svg',
-			title: 'Sync Engine',
-		},
-		{
-			description:
-				'一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。',
-			descriptionShort: '直接在浏览器中查看 JSON 画布。',
-			link: '/zh-Hans/projects/json-canvas-viewer',
-			logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
-			title: 'JSON Canvas Viewer',
-		},
-		{
-			description:
-				'一个仅 1KB 核心体积、可摇树优化的 TypeScript 库，用于稳健的人类手势识别。支持鼠标、触控、触摸板与滚轮事件，是 Hammer.js 的现代化、可扩展替代方案。',
-			descriptionShort: '轻量且可扩展的人类手势识别器。',
-			link: '/zh-Hans/projects/pointeract',
-			logo: 'https://pointeract.consensia.cc/logo.svg',
-			title: 'Pointeract',
-		},
-		{
-			description:
-				'一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。',
-			descriptionShort: '一种旨在重塑模块化实践的新型 TypeScript 软件架构。',
-			link: '/zh-Hans/researches/synthkernel',
-			logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
-			title: 'SynthKernel',
-		},
-		{
-			description:
-				'一款经过视觉焕新的 VitePress 默认主题替代品。它以独特美学、极小 API 干预以及完善的 TypeScript 支持，提升静态站点的 UI/UX 体验。',
-			descriptionShort: '视觉焕然一新的 VitePress 默认主题。',
-			link: '/zh-Hans/projects/trito',
-			logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
-			title: 'Trito',
-		},
-	];
+	{
+		color: '#f472b6',
+		icon: IconBurger,
+		link: 'https://bun.com/',
+		name: 'Bun',
+	},
+	{
+		color: '#70ffaf',
+		icon: IconBrandDeno,
+		link: 'https://deno.com/',
+		name: 'Deno',
+	},
+	{
+		color: '#ff1e56',
+		icon: IconCircleDashedLetterT,
+		link: 'https://turborepo.dev/',
+		name: 'Turborepo',
+	},
+];
+const perspectives = [
+	{
+		icon: IconWorldMap,
+		name: '世界主义',
+		title: '一个拥有共同目标的地球家园，并向星辰敞开道路。',
+	},
+	{
+		icon: IconCreativeCommons,
+		name: '自主文化运动',
+		title: '智力成果不应被高墙围困，每个人都应拥有访问、修改和分享的自由。',
+	},
+	{
+		icon: IconGenderTransgender,
+		name: 'LGBT 权益',
+		title: '没有什么比看到一个人被与生俱来的东西所束缚更糟糕了。',
+	},
+	{
+		icon: IconBlendMode,
+		name: '机会平等',
+		title: '帝王之后与贫民之子，皆有平等的起点。',
+	},
+	{
+		icon: IconCell,
+		name: '反种族主义',
+		title: '所有种族都是幻象，我们共享同一身份——人类。',
+	},
+	{
+		icon: IconSettingsBolt,
+		name: '技术进步主义',
+		title: '自时间之初，我们的宇宙便已踏上永无止境的进步之旅。',
+	},
+];
+const projects = [
+	{
+		description:
+			'Sync Engine 是下一代 Obsidian 插件，可将你的仓库与自有基础设施同步。它是首个允许通过自定义模块扩展核心功能的 Obsidian 插件。',
+		descriptionShort: '快速且可扩展的 Obsidian 仓库同步引擎。',
+		link: '/zh-Hans/projects/sync-engine',
+		logo: 'https://github.com/hesprs/sync-engine/raw/refs/heads/main/docs/public/logo.svg',
+		title: 'Sync Engine',
+	},
+	{
+		description:
+			'一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。',
+		descriptionShort: '直接在浏览器中查看 JSON 画布。',
+		link: '/zh-Hans/projects/json-canvas-viewer',
+		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
+		title: 'JSON Canvas Viewer',
+	},
+	{
+		description:
+			'一个仅 1KB 核心体积、可摇树优化的 TypeScript 库，用于稳健的人类手势识别。支持鼠标、触控、触摸板与滚轮事件，是 Hammer.js 的现代化、可扩展替代方案。',
+		descriptionShort: '轻量且可扩展的人类手势识别器。',
+		link: '/zh-Hans/projects/pointeract',
+		logo: 'https://pointeract.consensia.cc/logo.svg',
+		title: 'Pointeract',
+	},
+	{
+		description:
+			'一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。',
+		descriptionShort: '一种旨在重塑模块化实践的新型 TypeScript 软件架构。',
+		link: '/zh-Hans/researches/synthkernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		title: 'SynthKernel',
+	},
+	{
+		description:
+			'一款经过视觉焕新的 VitePress 默认主题替代品。它以独特美学、极小 API 干预以及完善的 TypeScript 支持，提升静态站点的 UI/UX 体验。',
+		descriptionShort: '视觉焕然一新的 VitePress 默认主题。',
+		link: '/zh-Hans/projects/trito',
+		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
+		title: 'Trito',
+	},
+];
 </script>
 
 <style lang="scss" scoped>

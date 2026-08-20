@@ -8,9 +8,9 @@ import {
 } from '@json-canvas-viewer/vue';
 import { useData } from 'vitepress';
 
-const { isDark } = useData(),
-	isPrerendering = import.meta.env.SSR,
-	{ canvas } = defineProps<{ canvas: JSONCanvas }>();
+const { isDark } = useData();
+const isPrerendering = import.meta.env.SSR;
+const { canvas } = defineProps<{ canvas: JSONCanvas }>();
 </script>
 
 <template>
